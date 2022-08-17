@@ -1,0 +1,61 @@
+[user]
+	name = Gustavo Santos
+
+[github]
+  user = gustavofsantos
+
+[core]
+  editor = nvim
+
+[pretty]
+  default = format:"%C(yellow)%h %C(blue)%cs %C(reset)%s%C(red)%d %C(green)%an%C(reset), %C(cyan)%ar'"
+  deploy = format:"%h  %cs  %<(15,trunc)%an  %s"
+
+[push]
+  config = default
+  default = tracking
+
+[diff]
+  tool = difftastic
+
+[difftool]
+  prompt = false
+
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+  difftool = true
+
+[alias]
+  dft = difftool
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = true
+  pager = true
+[color "branch"]
+  current = yellow reverse
+  local   = yellow
+  remote  = green
+[color "diff"]
+  meta = blue
+  frag = magenta
+  old  = red
+  new  = green
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = blue
+[alias]
+  d       = diff
+  ds      = diff --staged
+  dw      = diff --color-words
+  l       = log --pretty=default
+  lg      = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches
+  conflicted = !nvim +Conflicted
+[init]
+  defaultBranch = main

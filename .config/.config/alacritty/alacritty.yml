@@ -1,0 +1,396 @@
+font:
+  normal:
+    family: MonoLisaCustom Nerd Font
+    style: Regular
+  italic:
+    family: MonoLisaCustom Nerd Font
+    style: Regular Italic
+  bold:
+    family: MonoLisaCustom Nerd Font
+    style: Medium
+  bold_italic:
+    family: MonoLisaCustom Nerd Font
+    style: Medium Italic
+  size: 12
+
+env:
+  TERM: xterm-256color
+
+window:
+  dynamic_padding: false
+  # opacity: 0.975
+  gtk_theme_variant: dark
+
+draw_bold_text_with_bright_colors: true
+
+mouse:
+  hide_when_typing: true
+  save_to_clipboard: true
+
+key_bindings:
+  - { key: F11, action: ToggleFullscreen }
+
+cursor:
+  # Cursor style
+  style:
+    shape: Block
+
+    # Values for `blinking`:
+    #   - Never: Prevent the cursor from ever blinking
+    #   - Off: Disable blinking by default
+    #   - On: Enable blinking by default
+    #   - Always: Force the cursor to always blink
+    blinking: Always
+
+schemes:
+  rose_pine: &rose_pine
+    primary:
+      background: "0x191724"
+      foreground: "0xe0def4"
+    cursor:
+      text: "0xe0def4"
+      cursor: "0x524f67"
+    vi_mode_cursor:
+      text: "0xe0def4"
+      cursor: "0x524f67"
+    line_indicator:
+      foreground: None
+      background: None
+    selection:
+      text: "0xe0def4"
+      background: "0x403d52"
+    normal:
+      black: "0x26233a"
+      red: "0xeb6f92"
+      green: "0x31748f"
+      yellow: "0xf6c177"
+      blue: "0x9ccfd8"
+      magenta: "0xc4a7e7"
+      cyan: "0xebbcba"
+      white: "0xe0def4"
+    bright:
+      black: "0x6e6a86"
+      red: "0xeb6f92"
+      green: "0x31748f"
+      yellow: "0xf6c177"
+      blue: "0x9ccfd8"
+      magenta: "0xc4a7e7"
+      cyan: "0xebbcba"
+      white: "0xe0def4"
+    hints:
+      start:
+        foreground: "#908caa"
+        background: "#1f1d2e"
+      end:
+        foreground: "#6e6a86"
+  rose_pine_dawn: &rose_pine_dawn
+    primary:
+      background: "0xfaf4ed"
+      foreground: "0x575279"
+    cursor:
+      text: "0x575279"
+      cursor: "0xcecacd"
+    vi_mode_cursor:
+      text: "0x575279"
+      cursor: "0xcecacd"
+    line_indicator:
+      foreground: None
+      background: None
+    selection:
+      text: "0x575279"
+      background: "0xdfdad9"
+    normal:
+      black: "0xf2e9e1"
+      red: "0xb4637a"
+      green: "0x286983"
+      yellow: "0xea9d34"
+      blue: "0x56949f"
+      magenta: "0x907aa9"
+      cyan: "0xd7827e"
+      white: "0x575279"
+    bright:
+      black: "0x9893a5"
+      red: "0xb4637a"
+      green: "0x286983"
+      yellow: "0xea9d34"
+      blue: "0x56949f"
+      magenta: "0x907aa9"
+      cyan: "0xd7827e"
+      white: "0x575279"
+    hints:
+      start:
+        foreground: "#797593"
+        background: "#fffaf3"
+      end:
+        foreground: "#9893a5"
+        background: "#fffaf3"
+  rose_pine_moon: &rose_pine_moon
+    primary:
+      background: "0x232136"
+      foreground: "0xe0def4"
+    cursor:
+      text: "0xe0def4"
+      cursor: "0x56526e"
+    vi_mode_cursor:
+      text: "0xe0def4"
+      cursor: "0x56526e"
+    line_indicator:
+      foreground: None
+      background: None
+    selection:
+      text: "0xe0def4"
+      background: "0x44415a"
+    normal:
+      black: "0x393552"
+      red: "0xeb6f92"
+      green: "0x3e8fb0"
+      yellow: "0xf6c177"
+      blue: "0x9ccfd8"
+      magenta: "0xc4a7e7"
+      cyan: "0xea9a97"
+      white: "0xe0def4"
+    bright:
+      black: "0x6e6a86"
+      red: "0xeb6f92"
+      green: "0x3e8fb0"
+      yellow: "0xf6c177"
+      blue: "0x9ccfd8"
+      magenta: "0xc4a7e7"
+      cyan: "0xea9a97"
+      white: "0xe0def4"
+    hints:
+      start:
+        foreground: "#908caa"
+        background: "#2a273f"
+      end:
+        foreground: "#6e6a86"
+        background: "#2a273f"
+  kanagawa: &kanagawa
+    primary:
+      background: '0x1f1f28'
+      foreground: '0xdcd7ba'
+    normal:
+      black:   '0x090618'
+      red:     '0xc34043'
+      green:   '0x76946a'
+      yellow:  '0xc0a36e'
+      blue:    '0x7e9cd8'
+      magenta: '0x957fb8'
+      cyan:    '0x6a9589'
+      white:   '0xc8c093'
+    bright:
+      black:   '0x727169'
+      red:     '0xe82424'
+      green:   '0x98bb6c'
+      yellow:  '0xe6c384'
+      blue:    '0x7fb4ca'
+      magenta: '0x938aa9'
+      cyan:    '0x7aa89f'
+      white:   '0xdcd7ba'
+    selection:
+      background: '0x2d4f67'
+      foreground: '0xc8c093'
+    indexed_colors:
+      - { index: 16, color: '0xffa066' }
+      - { index: 17, color: '0xff5d62' }
+  dracula: &dracula
+    primary:
+      background: '#282a36'
+      foreground: '#f8f8f2'
+      bright_foreground: '#ffffff'
+    cursor:
+      text: CellBackground
+      cursor: CellForeground
+    vi_mode_cursor:
+      text: CellBackground
+      cursor: CellForeground
+    search:
+      matches:
+        foreground: '#44475a'
+        background: '#50fa7b'
+      focused_match:
+        foreground: '#44475a'
+        background: '#ffb86c'
+      bar:
+        background: '#282a36'
+        foreground: '#f8f8f2'
+    hints:
+      start:
+        foreground: '#282a36'
+        background: '#f1fa8c'
+      end:
+        foreground: '#f1fa8c'
+        background: '#282a36'
+    line_indicator:
+      foreground: None
+      background: None
+    selection:
+      text: CellForeground
+      background: '#44475a'
+    normal:
+      black: '#21222c'
+      red: '#ff5555'
+      green: '#50fa7b'
+      yellow: '#f1fa8c'
+      blue: '#bd93f9'
+      magenta: '#ff79c6'
+      cyan: '#8be9fd'
+      white: '#f8f8f2'
+    bright:
+      black: '#6272a4'
+      red: '#ff6e6e'
+      green: '#69ff94'
+      yellow: '#ffffa5'
+      blue: '#d6acff'
+      magenta: '#ff92df'
+      cyan: '#a4ffff'
+      white: '#ffffff'
+  substrata: &substrata
+    # Colors (Substrata)
+    # Default colors
+    primary:
+      background: '#191c25'
+      foreground: '#b5b4c9'
+
+    # Cursor colors
+    cursor:
+      text: '#191c25'
+      cursor: '#b5b4c9'
+
+    # Normal colors
+    normal:
+      black:   '#191c25'
+      red:     '#cf8164'
+      green:   '#76a065'
+      yellow:  '#ab924c'
+      blue:    '#8296b0'
+      magenta: '#a18daf'
+      cyan:    '#659ea2'
+      white:   '#b5b4c9'
+
+    # Bright colors
+    bright:
+      black:   '#5b5f71'
+      red:     '#fe9f7c'
+      green:   '#92c47e'
+      yellow:  '#d2b45f'
+      blue:    '#a0b9d8'
+      magenta: '#c6aed7'
+      cyan:    '#7dc2c7'
+      white:   '#f0ecfe'
+
+  rasmus: &rasmus
+    # Default colors
+    primary:
+      background: '#1a1a19'
+      foreground: '#d1d1d1'
+
+    # Cursor colors
+    # cursor:
+    #   text: '#1a1a19'
+    #   cursor: '#d1d1d1'
+
+    # Normal colors
+    normal:
+      black:   '#333332'
+      red:     '#ff968c'
+      green:   '#61957f'
+      yellow:  '#ffc591'
+      blue:    '#8db4d4'
+      magenta: '#de9bc8'
+      cyan:    '#7bb099'
+      white:   '#d1d1d1'
+
+    # Bright colors
+    bright:
+      black:   '#4c4c4b'
+      red:     '#ffafa5'
+      green:   '#7aae98'
+      yellow:  '#ffdeaa'
+      blue:    '#a6cded'
+      magenta: '#f7b4e1'
+      cyan:    '#94c9b2'
+      white:   '#eaeaea'
+
+  solarized_dark: &solarized_dark
+    # Default colors
+    primary:
+      background: '0x001e26'
+      foreground: '0x708183'
+
+    # Normal colors
+    normal:
+      black:   '0x073642'
+      red:     '0xdc322f'
+      green:   '0x859900'
+      yellow:  '0xb58900'
+      blue:    '0x268bd2'
+      magenta: '0xd33682'
+      cyan:    '0x2aa198'
+      white:   '0xeee8d5'
+
+    # Bright colors
+    bright:
+      black:   '0x002b36'
+      red:     '0xcb4b16'
+      green:   '0x586e75'
+      yellow:  '0x657b83'
+      blue:    '0x839496'
+      magenta: '0x6c71c4'
+      cyan:    '0x93a1a1'
+      white:   '0xfdf6e3'
+
+  solarized_light: &solarized_light
+    # Default colors
+    primary:
+      background: '0xfdf6e3'
+      foreground: '0x586e75'
+
+    # Normal colors
+    normal:
+      black:   '0x073642'
+      red:     '0xdc322f'
+      green:   '0x859900'
+      yellow:  '0xb58900'
+      blue:    '0x268bd2'
+      magenta: '0xd33682'
+      cyan:    '0x2aa198'
+      white:   '0xeee8d5'
+
+    # Bright colors
+    bright:
+      black:   '0x002b36'
+      red:     '0xcb4b16'
+      green:   '0x586e75'
+      yellow:  '0x657b83'
+      blue:    '0x839496'
+      magenta: '0x6c71c4'
+      cyan:    '0x93a1a1'
+      white:   '0xfdf6e3'
+
+  gruvbox_material: &gruvbox_material
+    primary:
+      background: '0x282828'
+      foreground: '0xdfbf8e'
+
+    normal:
+      black:   '0x665c54'
+      red:     '0xea6962'
+      green:   '0xa9b665'
+      yellow:  '0xe78a4e'
+      blue:    '0x7daea3'
+      magenta: '0xd3869b'
+      cyan:    '0x89b482'
+      white:   '0xdfbf8e'
+
+    bright:
+      black:   '0x928374'
+      red:     '0xea6962'
+      green:   '0xa9b665'
+      yellow:  '0xe3a84e'
+      blue:    '0x7daea3'
+      magenta: '0xd3869b'
+      cyan:    '0x89b482'
+      white:   '0xdfbf8e'
+
+colors: *kanagawa

@@ -1,0 +1,1137 @@
+{
+  "workbench.startupEditor": "none",
+  "workbench.colorTheme": "Night Owl",
+  "workbench.editor.showTabs": true,
+  "workbench.editor.tabSizing": "fit",
+  "workbench.tree.indent": 16,
+  "editor.fontFamily": "'MonoLisaCustom Nerd Font', 'Dank Mono', 'Operator Mono Book', 'Fira Code', 'DankMono Nerd Font', 'mplus Nerd Font', 'Sudo Nerd Font', 'mplus Nerd Font'",
+  "editor.fontSize": 15, // external display
+  //"editor.fontSize": 14, // notebook only
+  "editor.lineHeight": 28,
+  "editor.fontWeight": "400",
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 2,
+  "editor.lineNumbers": "on",
+  "editor.folding": true,
+  // "editor.glyphMargin": false,
+  "editor.guides.indentation": false,
+  "editor.fontLigatures": "'calt' on, 'liga' on, 'zero' on, 'ss02' on",
+  "editor.cursorSurroundingLines": 8,
+  "editor.formatOnSave": true,
+  "editor.bracketPairColorization.enabled": false,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "breadcrumbs.enabled": false,
+  "window.title": "${dirty}${activeEditorShort}",
+  "window.menuBarVisibility": "hidden",
+  "terminal.integrated.fontFamily": "'MonoLisa Alt', 'Cartograph CF', 'MonoLisa', 'DankMono Nerd Font', 'Dank Mono', 'Fira Code', 'mplus Nerd Font'",
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.gpuAcceleration": "auto",
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
+  },
+  "[javascript]": {
+    "editor.maxTokenizationLineLength": 2500,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.maxTokenizationLineLength": 2500,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.maxTokenizationLineLength": 2500,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.maxTokenizationLineLength": 2500,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma",
+    "editor.formatOnSave": true
+  },
+  "explorer.confirmDragAndDrop": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "vim.leader": "<space>",
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.surround": true,
+  "vim.sneak": true,
+  "vim.sneakUseIgnorecaseAndSmartcase": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [":W"],
+      "after": [":w"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "title": "",
+      "before": [],
+      "commands": []
+    },
+    {
+      "title": "Find file",
+      "before": ["<C-p>"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "title": "Toggle explorer",
+      "before": ["<C-b>"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "title": "Close current editor",
+      "before": ["<C-q>"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "title": "Workspace symbols",
+      "before": ["<leader>", "F"],
+      "commands": ["workbench.action.showAllSymbols"]
+    },
+    {
+      "title": "Comment line",
+      "before": ["<leader>", "/"],
+      "commands": ["editor.action.commentLine"]
+    },
+    {
+      "title": "Quick fix",
+      "before": ["<leader>", "."],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      "title": "Rename",
+      "before": ["<leader>", "r"],
+      "commands": ["editor.action.rename"]
+    },
+    {
+      "title": "Close all editors",
+      "before": ["<leader>", "C"],
+      "commands": ["workbench.action.closeAllEditors"]
+    },
+    {
+      "title": "Toggle terminal",
+      "before": ["<C-t>"],
+      "commands": ["workbench.action.terminal.toggleTerminal"]
+    },
+    {
+      "title": "Move to panel right",
+      "before": ["<leader>", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    {
+      "title": "Move to panel left",
+      "before": ["<leader>", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "title": "Move to panel above",
+      "before": ["<leader>", "k"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "title": "Move to panel below",
+      "before": ["<leader>", "j"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    // WINDOW
+    {
+      "title": "Split editor",
+      "before": ["<leader>", "w", "s"],
+      "commands": ["workbench.action.splitEditor"]
+    },
+    {
+      "title": "Split editor horizontal",
+      "before": ["<leader>", "w", "S"],
+      "commands": ["workbench.action.splitEditorOrthogonal"]
+    },
+    // BUFFER
+    {
+      "title": "Previous file",
+      "before": ["<leader>", "b", "b"],
+      "commands": ["editor.action.previousMatchFindAction"]
+    },
+    {
+      "title": "Format file",
+      "before": ["<leader>", "b", "f"],
+      "commands": ["editor.action.formatDocument"]
+    },
+    // GIT
+    {
+      "title": "Checkout branch",
+      "before": ["<leader>", "g", "b"],
+      "commands": ["git.checkout"]
+    },
+    {
+      "title": "Git: open diff",
+      "before": ["<leader>", "g", "d"],
+      "commands": ["git.timeline.openDiff"]
+    },
+    {
+      "title": "Git: rebase",
+      "before": ["<leader>", "g", "r"],
+      "commands": ["git.rebase"]
+    }
+  ],
+  "workbench.colorCustomizations": {
+    "[Night Owl]": {
+      "activityBar.background": "#000C1D",
+      "activityBar.border": "#102a44",
+      "editorGroup.border": "#102a44",
+      "sideBar.background": "#001122",
+      "editorCursor.foreground": "#FAF39F",
+      "sideBar.border": "#102a44",
+      "sideBar.foreground": "#8BADC1"
+    },
+    "[Night Owl (No Italics)]": {
+      "activityBar.background": "#000C1D",
+      "activityBar.border": "#102a44",
+      "editorGroup.border": "#102a44",
+      "editorCursor.foreground": "#FAF39F",
+      "sideBar.background": "#001122",
+      "sideBar.border": "#102a44",
+      "sideBar.foreground": "#8BADC1"
+    },
+    "[Iceberg]": {
+      "editorCursor.foreground": "#e2a478"
+    },
+    "[Nord]": {
+      "editorCursor.foreground": "#EBCB8B"
+    },
+    "[Subliminal]": {
+      "editorCursor.background": "#000",
+      "editorCursor.foreground": "#e6a437"
+    }
+  },
+  "editor.tokenColorCustomizations": {
+    "[Night Owl]": {
+      "textMateRules": [
+        {
+          "name": "Italic font style",
+          "scope": [
+            "storage.type.js",
+            "storage.type.ts",
+            "storage.type.tsx",
+            "storage.type.class.js",
+            "storage.type.class.ts",
+            "storage.type.class.tsx",
+            "storage.type.function.js",
+            "storage.type.function.ts",
+            "storage.type.function.tsx",
+            "storage.type.type.ts",
+            "storage.type.type.tsx",
+            "keyword.control.conditional.js",
+            "keyword.control.conditional.ts",
+            "keyword.control.conditional.tsx",
+            "support.type.property-name.json",
+            "support.type.property-name.css",
+            "variable.other.assignment.prisma",
+            "storage.type.model.prisma",
+            "storage.type.config.prisma",
+            "entity.name.tag.yaml",
+            "variable.other.env",
+            "keyword.other.sql"
+          ],
+          "settings": {
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "name": "Normal font style",
+          "scope": [
+            "variable.other.constant.js",
+            "variable.other.constant.ts",
+            "variable.other.constant.tsx",
+            "entity.name.function.js",
+            "entity.name.function.ts",
+            "entity.name.function.tsx"
+          ],
+          "settings": {
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "punctuation.support.type.property-name.begin.json",
+            "punctuation.support.type.property-name.end.json",
+            "punctuation.accessor.js",
+            "punctuation.accessor.ts",
+            "punctuation.accessor.tsx",
+            "punctuation.accessor.optional.js",
+            "punctuation.accessor.optional.ts",
+            "punctuation.accessor.optional.tsx",
+            "punctuation.separator.key-value.mapping.yaml"
+          ],
+          "settings": {
+            "foreground": "#7FDBCA80"
+          }
+        },
+        {
+          "scope": [
+            "punctuation.separator.dictionary.key-value.json",
+            "punctuation.definition.dictionary.begin.json",
+            "punctuation.definition.dictionary.end.json",
+            "punctuation.definition.array.begin.json",
+            "punctuation.definition.array.end.json",
+            "punctuation.separator.dictionary.pair.json",
+            "punctuation.separator.array.json"
+          ],
+          "settings": {
+            "foreground": "#CAECE680"
+          }
+        },
+        {
+          "scope": [
+            "punctuation.definition.string.begin.json",
+            "punctuation.definition.string.end.json",
+            "punctuation.separator.key-value.js",
+            "punctuation.separator.key-value.ts",
+            "punctuation.separator.key-value.tsx"
+          ],
+          "settings": {
+            "foreground": "#C789D680"
+          }
+        },
+        {
+          "name": "Not so important tokens",
+          "scope": [
+            "keyword.operator.assignment.js",
+            "keyword.operator.assignment.ts",
+            "keyword.operator.assignment.tsx",
+            "keyword.operator.ternary.js",
+            "keyword.operator.ternary.ts",
+            "keyword.operator.ternary.tsx",
+            "punctuation.separator.comma.js",
+            "punctuation.separator.comma.ts",
+            "punctuation.separator.comma.tsx",
+            "punctuation.definition.template-expression.begin.js",
+            "punctuation.definition.template-expression.end.js",
+            "punctuation.section.embedded.begin.js",
+            "punctuation.section.embedded.begin.ts",
+            "punctuation.section.embedded.begin.tsx",
+            "punctuation.section.embedded.end.js",
+            "punctuation.section.embedded.end.ts",
+            "punctuation.section.embedded.end.tsx",
+            "punctuation.definition.binding-pattern.array.js",
+            "punctuation.definition.binding-pattern.array.ts",
+            "punctuation.definition.binding-pattern.array.tsx",
+            "punctuation.separator.comma.js",
+            "punctuation.definition.block.js",
+            "punctuation.definition.block.ts",
+            "punctuation.definition.block.tsx",
+            "punctuation.definition.binding-pattern.object.js",
+            "punctuation.definition.binding-pattern.object.ts",
+            "punctuation.definition.binding-pattern.object.tsx",
+            "punctuation.definition.parameters.begin.js",
+            "punctuation.definition.parameters.begin.ts",
+            "punctuation.definition.parameters.begin.tsx",
+            "punctuation.definition.parameters.end.js",
+            "punctuation.definition.parameters.end.ts",
+            "punctuation.definition.parameters.end.tsx",
+            "storage.type.function.arrow.js",
+            "storage.type.function.arrow.ts",
+            "storage.type.function.arrow.tsx",
+            "punctuation.separator.parameter.js"
+          ],
+          "settings": {
+            "foreground": "#D7DBE0AB"
+          }
+        },
+        {
+          "name": "Not important tokens",
+          "scope": [
+            "punctuation.separator.comma.ts",
+            "punctuation.terminator.statement.js",
+            "punctuation.terminator.statement.ts",
+            "punctuation.terminator.statement.tsx",
+            "meta.brace.round.js",
+            "meta.brace.round.ts",
+            "meta.brace.round.tsx",
+            "punctuation.definition.tag.prisma",
+            "punctuation.section.property-list.begin.bracket.curly.css",
+            "punctuation.section.property-list.end.bracket.curly.css",
+            "punctuation.terminator.rule.css",
+            "punctuation.separator.list.comma.css",
+            "punctuation.terminator.tailwind.tailwind"
+          ],
+          "settings": {
+            "foreground": "#D7DBE050"
+          }
+        },
+        {
+          "scope": [
+            "support.class.component.js",
+            "support.class.component.ts",
+            "support.class.component.tsx"
+          ],
+          "settings": {
+            "foreground": "#CAECE6"
+          }
+        },
+        {
+          "scope": [
+            "punctuation.definition.string.template.begin.js",
+            "punctuation.definition.string.template.begin.ts",
+            "punctuation.definition.string.template.begin.tsx",
+            "punctuation.definition.string.template.end.js",
+            "punctuation.definition.string.template.end.ts",
+            "punctuation.definition.string.template.end.tsx",
+            "punctuation.definition.string.begin.js",
+            "punctuation.definition.string.begin.ts",
+            "punctuation.definition.string.begin.tsx",
+            "punctuation.definition.string.end.js",
+            "punctuation.definition.string.end.ts",
+            "punctuation.definition.string.end.tsx",
+            "punctuation.definition.typeparameters.begin.tsx",
+            "punctuation.definition.typeparameters.end.tsx",
+            "string.quoted.double.end.prisma",
+            "string.quoted.double.start.prisma",
+            "punctuation.definition.string.begin.yaml",
+            "punctuation.definition.string.end.yaml"
+          ],
+          "settings": {
+            "foreground": "#ECC48D80"
+          }
+        },
+        {
+          "name": "Imports",
+          "scope": [
+            "meta.import.js string",
+            "meta.import.js variable",
+            "meta.import.js meta.block variable.other",
+            "meta.import.tsx",
+            "meta.import.tsx string",
+            "meta.import.tsx variable",
+            "meta.import.tsx meta.block variable.other",
+            "meta.import.ts",
+            "meta.import.ts string",
+            "meta.import.ts variable",
+            "meta.import.ts meta.block variable.other",
+            "meta.import.ts keyword.control.type.ts",
+            "meta.import.tsx keyword.control.type.tsx",
+            "meta.import.ts variable.other.readwrite.alias.ts",
+            "meta.import.tsx variable.other.readwrite.alias.tsx",
+            "meta.import.js string.quoted.single.js",
+            "meta.import.ts string.quoted.single.ts",
+            "meta.import.tsx string.quoted.single.tsx",
+            "meta.import.js string.quoted.double.js",
+            "meta.import.ts string.quoted.double.ts",
+            "meta.import.tsx string.quoted.double.tsx",
+            "meta.import.js variable.other.readwrite.alias.js",
+            "meta.import.js constant.language.import-export-all.js",
+            "meta.export.js variable.other.readwrite.alias.js",
+            "meta.export.js string.quoted.single.js",
+            "meta.export.js keyword.control.default.js",
+            "constant.language.import-export-all.ts",
+            "constant.language.import-export-all.tsx"
+          ],
+          "settings": {
+            "foreground": "#8BADC1"
+          }
+        },
+        {
+          "scope": [
+            "meta.import.js",
+            "punctuation.terminator.statement.js",
+            "punctuation.terminator.statement.ts",
+            "punctuation.terminator.statement.tsx",
+            "keyword.control.import.js",
+            "keyword.control.from.js",
+            "keyword.control.import.tsx",
+            "keyword.control.from.tsx",
+            "keyword.control.import.ts",
+            "keyword.control.from.ts",
+            "meta.import.ts punctuation.definition.block.ts",
+            "meta.import.tsx punctuation.definition.block.tsx",
+            "meta.import.js punctuation.definition.string.begin.js",
+            "meta.import.js punctuation.definition.string.end.js",
+            "meta.import.tsx punctuation.definition.string.begin.tsx",
+            "meta.import.tsx punctuation.definition.string.end.tsx",
+            "meta.import.ts punctuation.definition.string.begin.ts",
+            "meta.import.ts punctuation.definition.string.end.ts",
+            "meta.import.js punctuation.definition.block.js",
+            "meta.import.ts punctuation.definition.block.ts",
+            "meta.import.tsx punctuation.definition.block.tsx",
+            "meta.import.js punctuation.separator.comma.js",
+            "meta.import.ts punctuation.separator.comma.ts",
+            "meta.import.tsx punctuation.separator.comma.tsx",
+            "meta.export.js keyword.control.export.js",
+            "meta.export.js punctuation.definition.block.js",
+            "meta.export.js punctuation.definition.string.begin.js",
+            "meta.export.js punctuation.definition.string.end.js",
+            "keyword.control.as.js",
+            "keyword.control.as.ts",
+            "keyword.control.as.tsx",
+            "comment.line.double-slash.js",
+            "comment.line.double-slash.ts",
+            "comment.line.double-slash.tsx",
+            "comment.block.documentation.js",
+            "comment.block.documentation.ts",
+            "comment.block.documentation.tsx"
+          ],
+          "settings": {
+            "foreground": "#8BADC180"
+          }
+        }
+      ]
+    },
+    "[Overnight Slumber Italics]": {
+      "textMateRules": [
+        {
+          "name": "Symbols",
+          "scope": ["meta.brace.round.js"],
+          "settings": {
+            "foreground": "#8EACE380"
+          }
+        },
+        {
+          "name": "Quotes",
+          "scope": [
+            "punctuation.definition.string.begin.js",
+            "punctuation.definition.string.end.js"
+          ],
+          "settings": {
+            "foreground": "#ECC48D80"
+          }
+        },
+        {
+          "name": "Not so important tokens",
+          "scope": [
+            "keyword.operator.assignment.js",
+            "keyword.operator.assignment.ts",
+            "keyword.operator.assignment.tsx",
+            "keyword.operator.ternary.js",
+            "keyword.operator.ternary.ts",
+            "keyword.operator.ternary.tsx",
+            "punctuation.separator.comma.js",
+            "punctuation.separator.comma.ts",
+            "punctuation.separator.comma.tsx",
+            "punctuation.definition.template-expression.begin.js",
+            "punctuation.definition.template-expression.end.js",
+            "punctuation.section.embedded.begin.js",
+            "punctuation.section.embedded.begin.ts",
+            "punctuation.section.embedded.begin.tsx",
+            "punctuation.section.embedded.end.js",
+            "punctuation.section.embedded.end.ts",
+            "punctuation.section.embedded.end.tsx",
+            "punctuation.definition.binding-pattern.array.js",
+            "punctuation.definition.binding-pattern.array.ts",
+            "punctuation.definition.binding-pattern.array.tsx",
+            "punctuation.separator.comma.js",
+            "punctuation.definition.block.js",
+            "punctuation.definition.block.ts",
+            "punctuation.definition.block.tsx",
+            "punctuation.definition.binding-pattern.object.js",
+            "punctuation.definition.binding-pattern.object.ts",
+            "punctuation.definition.binding-pattern.object.tsx",
+            "punctuation.definition.parameters.begin.js",
+            "punctuation.definition.parameters.begin.ts",
+            "punctuation.definition.parameters.begin.tsx",
+            "punctuation.definition.parameters.end.js",
+            "punctuation.definition.parameters.end.ts",
+            "punctuation.definition.parameters.end.tsx",
+            "storage.type.function.arrow.js",
+            "storage.type.function.arrow.ts",
+            "storage.type.function.arrow.tsx",
+            "keyword.operator.spread.js",
+            "keyword.operator.spread.ts",
+            "keyword.operator.spread.tsx",
+            "meta.brace.square.js",
+            "meta.brace.square.ts",
+            "meta.brace.square.tsx",
+            "punctuation.separator.key-value.js",
+            "punctuation.separator.key-value.ts",
+            "punctuation.separator.key-value.tsx",
+            "punctuation.accessor.js",
+            "punctuation.accessor.ts",
+            "punctuation.accessor.tsx"
+          ],
+          "settings": {
+            "foreground": "#D7DBE0AB"
+          }
+        },
+        {
+          "name": "Imports",
+          "scope": [
+            "meta.import.js string",
+            "meta.import.js variable",
+            "meta.import.js meta.block variable.other",
+            "meta.import.tsx",
+            "meta.import.tsx string",
+            "meta.import.tsx variable",
+            "meta.import.tsx meta.block variable.other",
+            "meta.import.ts",
+            "meta.import.ts string",
+            "meta.import.ts variable",
+            "meta.import.ts meta.block variable.other",
+            "meta.import.ts keyword.control.type.ts",
+            "meta.import.tsx keyword.control.type.tsx",
+            "meta.import.ts variable.other.readwrite.alias.ts",
+            "meta.import.tsx variable.other.readwrite.alias.tsx",
+            "meta.import.js string.quoted.single.js",
+            "meta.import.ts string.quoted.single.ts",
+            "meta.import.tsx string.quoted.single.tsx",
+            "meta.import.js string.quoted.double.js",
+            "meta.import.ts string.quoted.double.ts",
+            "meta.import.tsx string.quoted.double.tsx",
+            "meta.import.js variable.other.readwrite.alias.js",
+            "meta.import.js constant.language.import-export-all.js",
+            "meta.export.js variable.other.readwrite.alias.js",
+            "meta.export.js string.quoted.single.js",
+            "meta.export.js keyword.control.default.js",
+            "constant.language.import-export-all.ts",
+            "constant.language.import-export-all.tsx"
+          ],
+          "settings": {
+            "foreground": "#8BADC1"
+          }
+        },
+        {
+          "scope": [
+            "meta.import.js",
+            "punctuation.terminator.statement.js",
+            "punctuation.terminator.statement.ts",
+            "punctuation.terminator.statement.tsx",
+            "keyword.control.import.js",
+            "keyword.control.from.js",
+            "keyword.control.import.tsx",
+            "keyword.control.from.tsx",
+            "keyword.control.import.ts",
+            "keyword.control.from.ts",
+            "meta.import.ts punctuation.definition.block.ts",
+            "meta.import.tsx punctuation.definition.block.tsx",
+            "meta.import.js punctuation.definition.string.begin.js",
+            "meta.import.js punctuation.definition.string.end.js",
+            "meta.import.tsx punctuation.definition.string.begin.tsx",
+            "meta.import.tsx punctuation.definition.string.end.tsx",
+            "meta.import.ts punctuation.definition.string.begin.ts",
+            "meta.import.ts punctuation.definition.string.end.ts",
+            "meta.import.js punctuation.definition.block.js",
+            "meta.import.ts punctuation.definition.block.ts",
+            "meta.import.tsx punctuation.definition.block.tsx",
+            "meta.import.js punctuation.separator.comma.js",
+            "meta.import.ts punctuation.separator.comma.ts",
+            "meta.import.tsx punctuation.separator.comma.tsx",
+            "meta.export.js keyword.control.export.js",
+            "meta.export.js punctuation.definition.block.js",
+            "meta.export.js punctuation.definition.string.begin.js",
+            "meta.export.js punctuation.definition.string.end.js",
+            "keyword.control.as.js",
+            "keyword.control.as.ts",
+            "keyword.control.as.tsx",
+            "comment.line.double-slash.js",
+            "comment.line.double-slash.ts",
+            "comment.line.double-slash.tsx",
+            "comment.block.documentation.js",
+            "comment.block.documentation.ts",
+            "comment.block.documentation.tsx"
+          ],
+          "settings": {
+            "foreground": "#8BADC180"
+          }
+        }
+      ]
+    },
+    "[Aeon Italic]": {
+      "textMateRules": [
+        {
+          "name": "Import symbols",
+          "scope": [
+            "meta.import.js string",
+            "meta.import.js variable",
+            "meta.import.js meta.block variable.other",
+            "meta.import.tsx",
+            "meta.import.tsx string",
+            "meta.import.tsx variable",
+            "meta.import.tsx meta.block variable.other",
+            "meta.import.ts",
+            "meta.import.ts string",
+            "meta.import.ts variable",
+            "meta.import.ts meta.block variable.other",
+            "meta.import.ts keyword.control.type.ts",
+            "meta.import.tsx keyword.control.type.tsx",
+            "meta.import.ts variable.other.readwrite.alias.ts",
+            "meta.import.tsx variable.other.readwrite.alias.tsx",
+            "meta.import.js string.quoted.single.js",
+            "meta.import.ts string.quoted.single.ts",
+            "meta.import.tsx string.quoted.single.tsx",
+            "meta.import.js string.quoted.double.js",
+            "meta.import.ts string.quoted.double.ts",
+            "meta.import.tsx string.quoted.double.tsx",
+            "meta.import.js variable.other.readwrite.alias.js",
+            "meta.import.js constant.language.import-export-all.js",
+            "meta.export.js variable.other.readwrite.alias.js",
+            "meta.export.js string.quoted.single.js",
+            "meta.export.js keyword.control.default.js",
+            "constant.language.import-export-all.ts",
+            "constant.language.import-export-all.tsx"
+          ],
+          "settings": {
+            "foreground": "#B8C5E2C3"
+          }
+        },
+        {
+          "name": "Import tokens",
+          "scope": [
+            "meta.import.js",
+            "punctuation.terminator.statement.js",
+            "punctuation.terminator.statement.ts",
+            "punctuation.terminator.statement.tsx",
+            "keyword.control.import.js",
+            "keyword.control.from.js",
+            "keyword.control.import.tsx",
+            "keyword.control.from.tsx",
+            "keyword.control.import.ts",
+            "keyword.control.from.ts",
+            "meta.import.ts punctuation.definition.block.ts",
+            "meta.import.tsx punctuation.definition.block.tsx",
+            "meta.import.js punctuation.definition.string.begin.js",
+            "meta.import.js punctuation.definition.string.end.js",
+            "meta.import.tsx punctuation.definition.string.begin.tsx",
+            "meta.import.tsx punctuation.definition.string.end.tsx",
+            "meta.import.ts punctuation.definition.string.begin.ts",
+            "meta.import.ts punctuation.definition.string.end.ts",
+            "meta.import.js punctuation.definition.block.js",
+            "meta.import.ts punctuation.definition.block.ts",
+            "meta.import.tsx punctuation.definition.block.tsx",
+            "meta.import.js punctuation.separator.comma.js",
+            "meta.import.ts punctuation.separator.comma.ts",
+            "meta.import.tsx punctuation.separator.comma.tsx",
+            "meta.export.js keyword.control.export.js",
+            "meta.export.js punctuation.definition.block.js",
+            "meta.export.js punctuation.definition.string.begin.js",
+            "meta.export.js punctuation.definition.string.end.js"
+          ],
+          "settings": {
+            "foreground": "#8695B799"
+          }
+        }
+      ]
+    },
+    "[Solarized Dark]": {
+      "textMateRules": [
+        {
+          "scope": [
+            "comment",
+            "storage.type.js",
+            "storage.type.ts",
+            "storage.modifier.async.js",
+            "keyword.control.conditional.js",
+            "keyword.control.import.js",
+            "keyword.control.from.js",
+            "keyword.control.flow.js",
+            "entity.other.attribute-name.js",
+            "meta.function-call.js"
+          ],
+          "settings": {
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "scope": [
+            "entity.other.attribute-name.js",
+            "meta.object-literal.key.js"
+          ],
+          "settings": {
+            "foreground": "#93a1a1"
+          }
+        },
+        {
+          "scope": [
+            "punctuation.section.embedded.begin.js",
+            "punctuation.section.embedded.end.js",
+            "punctuation.definition.block.js",
+            "punctuation.terminator.statement.js",
+            "punctuation.separator.comma.js",
+            "punctuation.separator.parameter.js",
+            "punctuation.definition.parameters.begin.js",
+            "punctuation.definition.parameters.end.js",
+            "keyword.operator.assignment.js",
+            "punctuation.separator.key-value.js"
+          ],
+          "settings": {
+            "foreground": "#586e75"
+          }
+        },
+        {
+          "scope": [
+            "support.class.component.js",
+            "variable.other.readwrite.js"
+          ],
+          "settings": {
+            "foreground": "#b58900"
+          }
+        },
+        {
+          "scope": ["keyword.operator.new.js", "storage.modifier.async.js"],
+          "settings": {
+            "foreground": "#cb4b16"
+          }
+        }
+      ]
+    },
+    "[Iceberg][Iceberg Light]": {
+      "textMateRules": [
+        {
+          "scope": [
+            "comment",
+            "storage.type.js",
+            "storage.type.ts",
+            "storage.modifier.async.js",
+            "keyword.control.conditional.js",
+            "keyword.control.import.js",
+            "keyword.control.from.js",
+            "keyword.control.flow.js",
+            "entity.other.attribute-name.js",
+            "meta.function-call.js"
+          ],
+          "settings": {
+            "fontStyle": "italic"
+          }
+        }
+      ]
+    },
+    "[Nord]": {
+      "textMateRules": [
+        {
+          "scope": [
+            "comment",
+            "storage.type.js",
+            "storage.type.ts",
+            "storage.modifier.async.js",
+            "keyword.control.conditional.js",
+            "keyword.control.import.js",
+            "keyword.control.default.js",
+            "keyword.control.default.js.jsx",
+            "keyword.control.export.js",
+            "keyword.control.export.js.jsx",
+            "keyword.control.from.js",
+            "keyword.control.flow.js",
+            "storage.type.function.js",
+            "storage.type.function.js.jsx",
+            "entity.other.attribute-name.js"
+          ],
+          "settings": {
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "scope": [
+            "punctuation.definition.string.begin.json.comments",
+            "punctuation.definition.string.end.json.comments",
+            "punctuation.definition.string.begin.js",
+            "punctuation.definition.string.end.js"
+          ],
+          "settings": {
+            "foreground": "#A3BE8C80"
+          }
+        },
+        {
+          "scope": [
+            "punctuation.definition.tag.begin.js.jsx",
+            "punctuation.definition.tag.end.js.jsx"
+          ],
+          "settings": {
+            "foreground": "#81A1C180"
+          }
+        }
+      ]
+    },
+    "[Substrata]": {
+      "textMateRules": [
+        {
+          "scope": [
+            "storage.type.js",
+            "storage.type.ts",
+            "keyword.control.conditional.js",
+            "keyword.control.conditional.ts",
+            "keyword.control.import.js",
+            "keyword.control.import.ts",
+            "keyword.control.import.tsx",
+            "keyword.control.from.js",
+            "keyword.control.from.ts",
+            "keyword.control.from.tsx",
+            "keyword.control.export.js",
+            "keyword.control.export.ts",
+            "keyword.control.export.tsx",
+            "keyword.control.default.js",
+            "keyword.control.default.ts",
+            "keyword.control.default.tsx",
+            "storage.type.type.ts",
+            "storage.type.type.tsx",
+            "storage.type.tsx",
+            "storage.modifier.ts",
+            "storage.modifier.tsx",
+            "storage.modifier.async.ts",
+            "storage.modifier.async.tsx",
+            "meta.object-literal.key.js",
+            "meta.object-literal.key.ts",
+            "meta.object-literal.key.tsx",
+            "keyword.control.as.ts",
+            "keyword.control.as.tsx",
+            "entity.other.attribute-name.tsx",
+            "entity.other.attribute-name.js",
+            "storage.type.class.js",
+            "storage.type.class.ts",
+            "variable.object.property.ts",
+            "variable.object.property.tsx"
+          ],
+          "settings": {
+            "fontStyle": "italic"
+          }
+        }
+      ]
+    },
+    "[CodeSandbox]": {
+      "textMateRules": [
+        {
+          "scope": [
+            "storage.type.js",
+            "storage.type.ts",
+            "keyword.control.conditional.js",
+            "keyword.control.conditional.ts",
+            "keyword.control.import.js",
+            "keyword.control.import.ts",
+            "keyword.control.import.tsx",
+            "keyword.control.from.js",
+            "keyword.control.from.ts",
+            "keyword.control.from.tsx",
+            "keyword.control.export.js",
+            "keyword.control.export.ts",
+            "keyword.control.export.tsx",
+            "keyword.control.default.js",
+            "keyword.control.default.ts",
+            "keyword.control.default.tsx",
+            "storage.type.type.ts",
+            "storage.type.type.tsx",
+            "storage.type.tsx",
+            "storage.type.function.js",
+            "storage.modifier.ts",
+            "storage.modifier.tsx",
+            "storage.modifier.async.ts",
+            "storage.modifier.async.tsx",
+            "meta.object-literal.key.js",
+            "meta.object-literal.key.ts",
+            "meta.object-literal.key.tsx",
+            "keyword.control.as.ts",
+            "keyword.control.as.tsx",
+            "entity.other.attribute-name.tsx",
+            "entity.other.attribute-name.js",
+            "entity.name.function.js",
+            "storage.type.class.js",
+            "storage.type.class.ts",
+            "variable.object.property.ts",
+            "variable.object.property.tsx"
+          ],
+          "settings": {
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "scope": ["entity.name.function.js"],
+          "settings": {
+            "foreground": "#FFFFFF"
+          }
+        }
+      ]
+    },
+    "[Subliminal]": {
+      "textMateRules": [
+        {
+          "scope": [
+            "storage.type.js",
+            "storage.type.ts",
+            "keyword.control.conditional.js",
+            "keyword.control.conditional.ts",
+            "keyword.control.import.js",
+            "keyword.control.import.ts",
+            "keyword.control.import.tsx",
+            "keyword.control.from.js",
+            "keyword.control.from.ts",
+            "keyword.control.from.tsx",
+            "keyword.control.export.js",
+            "keyword.control.export.ts",
+            "keyword.control.export.tsx",
+            "keyword.control.default.js",
+            "keyword.control.default.ts",
+            "keyword.control.default.tsx",
+            "storage.type.type.ts",
+            "storage.type.type.tsx",
+            "storage.type.tsx",
+            "storage.modifier.ts",
+            "storage.modifier.tsx",
+            "storage.modifier.async.ts",
+            "storage.modifier.async.tsx",
+            "meta.object-literal.key.js",
+            "meta.object-literal.key.ts",
+            "meta.object-literal.key.tsx",
+            "keyword.control.as.ts",
+            "keyword.control.as.tsx",
+            "entity.other.attribute-name.tsx",
+            "entity.other.attribute-name.js",
+            "storage.type.class.js",
+            "storage.type.class.ts",
+            "variable.object.property.ts",
+            "variable.object.property.tsx"
+          ],
+          "settings": {
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "scope": [
+            "meta.import.js",
+            "keyword.control.from.js",
+            "keyword.control.import.js",
+            "string.quoted.single.js",
+            "punctuation.definition.tag.begin.js",
+            "punctuation.definition.tag.end.js",
+            "punctuation.definition.tag.begin.ts",
+            "punctuation.definition.tag.end.ts",
+            "punctuation.definition.tag.begin.tsx",
+            "punctuation.definition.tag.end.tsx",
+            "punctuation.section.embedded.begin.js",
+            "punctuation.section.embedded.end.js",
+            "punctuation.section.embedded.begin.ts",
+            "punctuation.section.embedded.end.ts",
+            "punctuation.section.embedded.begin.tsx",
+            "punctuation.section.embedded.end.tsx",
+            "punctuation.definition.block.js",
+            "punctuation.definition.block.ts",
+            "punctuation.definition.block.tsx",
+            "punctuation.terminator.statement.js",
+            "punctuation.terminator.statement.ts",
+            "punctuation.terminator.statement.tsx",
+            "meta.brace.round.js",
+            "meta.brace.round.ts",
+            "meta.brace.round.tsx",
+            "punctuation.definition.parameters.begin.js",
+            "punctuation.definition.parameters.end.js",
+            "punctuation.definition.parameters.begin.ts",
+            "punctuation.definition.parameters.end.ts",
+            "punctuation.definition.binding-pattern.object.js",
+            "punctuation.definition.binding-pattern.object.ts",
+            "punctuation.definition.binding-pattern.object.tsx",
+            "storage.type.ts"
+          ],
+          "settings": {
+            "foreground": "#7F7F7F"
+          }
+        },
+        {
+          "scope": [
+            "support.class.component.js",
+            "support.class.component.tsx",
+            "entity.name.tag.js",
+            "entity.name.tag.tsx",
+            "entity.name.type.class.ts",
+            "entity.name.type.alias.ts",
+            "entity.name.type.alias.tsx"
+          ],
+          "settings": {
+            "foreground": "#F7CAA9"
+          }
+        },
+        {
+          "scope": [
+            "punctuation.definition.tag.begin.js",
+            "punctuation.definition.tag.end.js",
+            "punctuation.definition.tag.begin.tsx",
+            "punctuation.definition.tag.end.tsx"
+          ],
+          "settings": {
+            "foreground": "#F7CAA960"
+          }
+        },
+        {
+          "scope": [
+            "entity.name.function.js",
+            "entity.name.function.ts",
+            "entity.name.function.tsx"
+          ],
+          "settings": {
+            "foreground": "#FBCCD0"
+          }
+        },
+        {
+          "scope": ["storage.modifier.async.ts", "storage.modifier.ts"],
+          "settings": {
+            "foreground": "#F1A5AB"
+          }
+        },
+        {
+          "scope": "string.quoted.single.js",
+          "settings": {
+            "foreground": "#A9CFA4"
+          }
+        },
+        {
+          "scope": [
+            "punctuation.definition.string.begin.json.comments",
+            "punctuation.definition.string.end.json.comments",
+            "punctuation.definition.string.begin.js",
+            "punctuation.definition.string.end.js",
+            "punctuation.definition.string.begin.ts",
+            "punctuation.definition.string.end.ts",
+            "punctuation.definition.string.begin.tsx",
+            "punctuation.definition.string.end.tsx"
+          ],
+          "settings": {
+            "foreground": "#A9CFA480"
+          }
+        },
+        {
+          "scope": "punctuation.terminator.statement.js",
+          "settings": {
+            "foreground": "#61666B"
+          }
+        },
+        {
+          "scope": [
+            "variable.other.readwrite.alias.js",
+            "keyword.operator.assignment.js",
+            "storage.type.function.arrow.js",
+            "meta.definition.variable.js"
+          ],
+          "settings": {
+            "foreground": "#D4D4D4"
+          }
+        },
+        {
+          "scope": [
+            "punctuation.support.type.property-name.begin.json.comments",
+            "punctuation.support.type.property-name.end.json.comments"
+          ],
+          "settings": {
+            "foreground": "#D4D4D480"
+          }
+        },
+        {
+          "scope": ["keyword.operator.comparison.js"],
+          "settings": {
+            "foreground": "#FFE2A9"
+          }
+        }
+      ]
+    }
+  },
+  "explorer.confirmDelete": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[dockercompose]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.iconTheme": "eq-material-theme-icons-ocean",
+  "git.autofetch": true
+}

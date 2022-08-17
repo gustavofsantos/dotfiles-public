@@ -1,0 +1,23 @@
+theme = "night_owl"
+
+[editor]
+line-number = "relative"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+'`' = '`'
+'<' = '>'
+
+[keys.normal]
+C-s = ":w"
+
+[keys.insert]
+"C-s" = ["normal_mode", ":w"]
