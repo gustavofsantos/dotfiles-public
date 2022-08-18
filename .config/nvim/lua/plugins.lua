@@ -22,8 +22,15 @@ return packer.startup(function(use)
   use 'pantharshit00/vim-prisma' -- Prisma files colorscheme
   use 'norcalli/nvim-colorizer.lua' -- Display colors
   use 'tpope/vim-surround'
-  use 'tpope/vim-commentary'
   use 'tpope/vim-fugitive'
+
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
+
   use 'justinmk/vim-sneak'
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-ui-select.nvim'
@@ -51,4 +58,3 @@ return packer.startup(function(use)
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
 end)
-
