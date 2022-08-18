@@ -117,9 +117,9 @@ export EDITOR='nvim'
 # For a full list of active aliases, run `alias`.
 #
 alias bashconfig="nvim ~/.bashrc"
-alias dotfiles="nvim ~/dotfiles/README.md"
+alias dotfiles="nvim ~/dotfiles-public/README.md"
 alias vimrc="nvim ~/.vimrc"
-alias alacritty_config="nvim ~/dotfiles/.config/alacritty/alacritty.yml"
+alias alacritty_config="nvim ~/dotfiles-public/.config/alacritty/alacritty.yml"
 
 alias v="nvim"
 alias vim="nvim"
@@ -151,9 +151,6 @@ alias lw_test_urls="docker-compose exec loggi_web_app bash -c 'python manage.py 
 alias lw_show_urls="docker-compose exec loggi_web_app bash -c 'python manage.py show_urls'"
 
 # -----
-
-# Code Metrics
-alias drstrange="npx eslint -c ~/dotfiles/complexity-eslint.config.js"
 
 # Git aliases
 alias g="git"
