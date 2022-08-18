@@ -23,14 +23,7 @@ return packer.startup(function(use)
   use 'norcalli/nvim-colorizer.lua' -- Display colors
   use 'tpope/vim-surround'
   use 'tpope/vim-fugitive'
-
-  use {
-    'numToStr/Comment.nvim',
-    config = function()
-      require('Comment').setup()
-    end
-  }
-
+  use 'numToStr/Comment.nvim'
   use 'justinmk/vim-sneak'
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-ui-select.nvim'
