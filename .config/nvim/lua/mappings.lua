@@ -50,22 +50,29 @@ nnoremap("<S-Tab>", ":BufferLineCyclePrev<CR>")
 nnoremap("<A-h>", ":BufferLineMoveNext<CR>")
 nnoremap("<A-l>", ":+tabmove<CR>")
 
+-- find non git-ignored files inside the current dir
 nnoremap("<leader><leader>", ":Telescope find_files theme=ivy<CR>")
 nnoremap("<leader>ff", ":Telescope find_files theme=ivy<CR>")
+-- find files using git source
 nnoremap("<leader>fg", ":Telescope git_files theme=ivy<CR>")
 nnoremap("<leader>fe", ":Telescope oldfiles theme=ivy<CR>")
 nnoremap("<leader>fb", ":Telescope buffers theme=ivy<CR>")
 nnoremap("<leader>fy", ":Telescope yank_history theme=ivy<CR>")
 nnoremap("<leader>fl", ":Telescope live_grep theme=ivy<CR>")
 nnoremap("<leader>fj", ":Telescope jumplist theme=ivy<CR>")
-nnoremap("<leader>fm", ":Telescope harpoon marks theme=ivy<CR>")
 nnoremap("gr", ":Telescope lsp_references<CR>")
 vnoremap("<leader>fr", "<Esc><cmd>lua require('telescope').refactoring.refactors()<CR>")
 nnoremap("<F3>", ":Telescope grep_string theme=ivy<CR>")
 vnoremap("<F3>", "\"zy:Telescope grep_string default_text=<C-r>z<cr>")
 nnoremap("<F5>", ":UndotreeToggle<CR>")
 
+-- copy buffer path to clipboard
 nnoremap("<leader>cbp", "<cmd>let @+ = expand(\"%\")<CR>")
+
+-- mark file with harpoon
+nnoremap("<leader>m", ":lua require('harpoon.mark').add_file()<CR>")
+-- find marks
+nnoremap("<leader>fm", ":Telescope harpoon marks theme=ivy<CR>")
 
 -- Git
 nnoremap("<leader>gs", ":Neogit<CR>")
