@@ -37,7 +37,6 @@ return packer.startup(function(use)
   use 'ThePrimeagen/harpoon'
   use 'akinsho/bufferline.nvim'
   use 'nvim-lualine/lualine.nvim'
-  use 'sindrets/diffview.nvim'
   use 'kyazdani42/nvim-tree.lua'
   use 'nvim-treesitter/nvim-treesitter'
   use 'akinsho/toggleterm.nvim'
@@ -46,8 +45,12 @@ return packer.startup(function(use)
   use 'windwp/nvim-autopairs'
   use 'lewis6991/gitsigns.nvim'
   use 'gbprod/yanky.nvim'
-
+  use 'MunifTanjim/prettier.nvim'
   use 'neovim/nvim-lspconfig'
+  use {
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+  }
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'onsails/lspkind-nvim'
   use 'hrsh7th/cmp-nvim-lsp'
@@ -55,6 +58,6 @@ return packer.startup(function(use)
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-vsnip'
-  use 'hrsh7th/vim-vsnip'
+  use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
 end)
