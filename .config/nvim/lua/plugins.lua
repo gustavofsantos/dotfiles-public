@@ -40,10 +40,6 @@ return packer.startup(function(use)
   use 'gbprod/yanky.nvim'
   use 'MunifTanjim/prettier.nvim'
   use 'neovim/nvim-lspconfig'
-  use {
-    "glepnir/lspsaga.nvim",
-    branch = "main",
-  }
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'onsails/lspkind-nvim'
   use 'hrsh7th/cmp-nvim-lsp'
