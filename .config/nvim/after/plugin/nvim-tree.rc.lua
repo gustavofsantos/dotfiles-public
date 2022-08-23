@@ -27,7 +27,7 @@ nvimtree.setup {
     ignore_list = {},
   },
   diagnostics = {
-    enable = true,
+    enable = false,
     show_on_dirs = true,
     icons = {
       hint = "",
