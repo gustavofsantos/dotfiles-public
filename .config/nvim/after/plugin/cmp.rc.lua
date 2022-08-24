@@ -9,7 +9,7 @@ cmp.setup({
     end,
   },
   completion = {
-    autocomplete = false
+    autocomplete = true
   },
   mapping = cmp.mapping.preset.insert({
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -22,15 +22,23 @@ cmp.setup({
     }),
   }),
   sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'buffer' },
     { name = 'luasnip' },
+    { name = 'nvim_lua ' },
+    { name = 'nvim_lsp' },
+    { name = 'buffer', keyword_length = 5 },
   }),
   formatting = {
     format = lspkind.cmp_format({
       with_text = false,
       mode = 'symbol', -- show only symbol annotations
       maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+      menu = {
+        buffer = "[buf]",
+        nvim_lsp = "[LSP]",
+        nvim_lua = "[api]",
+        path = "[path]",
+        luasnip = "[snip]",
+      }
     })
   }
 })
