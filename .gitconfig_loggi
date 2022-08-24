@@ -1,0 +1,7 @@
+[user]
+  name = Gustavo Santos
+  email = gustavo.fernandes@loggi.com
+[include]
+  path = ~/dotfiles-public/.config/git/.gitconfig
+[submodule]
+  recurse = true
