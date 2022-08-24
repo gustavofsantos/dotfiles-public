@@ -24,16 +24,25 @@ return packer.startup(function(use)
 
   use 'tpope/vim-surround'
   use 'tpope/vim-fugitive'
+
   use 'numToStr/Comment.nvim'
   use 'justinmk/vim-sneak'
+
+  -- Telescope
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-ui-select.nvim'
+
   use 'ThePrimeagen/harpoon'
+
+  -- IDE like view
   use 'akinsho/bufferline.nvim'
   use 'nvim-lualine/lualine.nvim'
   use 'kyazdani42/nvim-tree.lua'
+
   use 'nvim-treesitter/nvim-treesitter'
+
   use 'akinsho/toggleterm.nvim'
+
   use 'folke/trouble.nvim'
   use 'windwp/nvim-ts-autotag'
   use 'windwp/nvim-autopairs'
@@ -42,6 +51,10 @@ return packer.startup(function(use)
   use 'MunifTanjim/prettier.nvim'
   use 'neovim/nvim-lspconfig'
   use 'jose-elias-alvarez/null-ls.nvim'
+
+  use { 'sindrets/diffview.nvim' }
+
+  -- Completion
   use 'onsails/lspkind-nvim'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-nvim-lua'
@@ -50,5 +63,7 @@ return packer.startup(function(use)
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
   use 'saadparwaiz1/cmp_luasnip'
+
+  -- Snippets
   use 'L3MON4D3/LuaSnip'
 end)
