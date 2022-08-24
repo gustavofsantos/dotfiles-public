@@ -19,12 +19,6 @@ g.github_function_style = "italic"
 
 cmd [[set termguicolors]]
 cmd [[set background=dark]]
--- cmd [[colorscheme solarized8_flat]]
--- cmd [[colorscheme gruvbox-material]]
--- cmd [[colorscheme rasmus]]
--- cmd [[colorscheme moonlight]]
--- cmd [[colorscheme github_dark]]
--- cmd [[colorscheme darcula-solid]]
 cmd [[colorscheme kanagawa]]
 cmd [[set noerrorbells]]
 cmd [[set tabstop=2 softtabstop=2]]
@@ -95,7 +89,7 @@ cmd [[command! W w " Bind :W to :w]]
 cmd [[command! Worklog :tabnew | :e ~/Obsidian/loggi/worklog.md]]
 cmd [[command! Tasks :tabnew | :e ~/Obsidian/Inbox.md]]
 cmd [[command! Format :lua vim.lsp.buf.formatting()<CR>]]
-cmd [[command! ReloadConfig :source ~/.config/nvim/init.lua]]
+cmd [[command! ReloadConfig :source ~/.config/nvim/init.lua<CR>]]
 
 -- Run the current test file
 cmd [[command! LWT :lua require('toggleterm').exec("lwt " .. string.gsub(vim.fn.expand("%"), "loggi/", ""))]]
