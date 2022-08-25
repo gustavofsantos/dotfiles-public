@@ -65,10 +65,6 @@ cmd [[set statusline+=%{ConflictedVersion()}]]
 cmd [[set signcolumn=yes]]
 cmd [[set mouse=nv]]
 
-cmd [[let g:solarized_termcolors=256]]
-cmd [[let g:solarized_italic=1]]
-cmd [[let g:solarized_termtrans=1]]
-
 cmd [[let g:gruvbox_material_background = 'hard']]
 
 cmd [[let g:sneak#label = 1]]
@@ -81,13 +77,14 @@ if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
 endif
 ]]
 
-cmd [[command! Q q " Bind :Q to :q]]
+cmd [[command! Q q]]
 cmd [[command! Qall qall]]
 cmd [[command! QA qall]]
 cmd [[command! E e]]
-cmd [[command! W w " Bind :W to :w]]
+cmd [[command! W w]]
 cmd [[command! Worklog :tabnew | :e ~/Obsidian/loggi/worklog.md]]
 cmd [[command! Tasks :tabnew | :e ~/Obsidian/Inbox.md]]
+cmd [[command! Journal :lua vim.cmd(string.format("tabnew ~/notes/journal/%s.md", os.date("%Y-%m-%d")))<CR>]]
 cmd [[command! Format :lua vim.lsp.buf.formatting()<CR>]]
 cmd [[command! ReloadConfig :source ~/.config/nvim/init.lua<CR>]]
 
