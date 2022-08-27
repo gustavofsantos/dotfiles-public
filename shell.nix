@@ -4,7 +4,6 @@ pkgs.mkShell {
   buildInputs = [
     pkgs.tmux
     pkgs.neovim
-    pkgs.nodejs-16_x
     pkgs.which
     pkgs.htop
     pkgs.zlib
