@@ -15,15 +15,24 @@ return packer.startup(function(use)
 
   -- colorscheme
   use 'rebelot/kanagawa.nvim'
+  use 'sainnhe/sonokai'
+  use 'ellisonleao/gruvbox.nvim'
+  use 'folke/tokyonight.nvim'
 
   use 'mbbill/undotree' -- tree of changes
 
-  use 'sheerun/vim-polyglot'
+  -- use 'sheerun/vim-polyglot'
+  use 'yuezk/vim-js'
+  use 'HerringtonDarkholme/yats.vim'
+  use 'maxmellon/vim-jsx-pretty'
   use 'pantharshit00/vim-prisma' -- Prisma files colorscheme
   use 'norcalli/nvim-colorizer.lua' -- Display colors
 
   use 'tpope/vim-surround'
-  use 'tpope/vim-fugitive'
+
+  -- Git
+  use 'TimUntersberger/neogit'
+  use { 'akinsho/git-conflict.nvim', tag = "*" }
 
   use 'numToStr/Comment.nvim'
   use 'justinmk/vim-sneak'
@@ -40,6 +49,8 @@ return packer.startup(function(use)
   use 'kyazdani42/nvim-tree.lua'
 
   use 'nvim-treesitter/nvim-treesitter'
+  use 'nvim-treesitter/nvim-treesitter-textobjects'
+  use 'RRethy/nvim-treesitter-textsubjects'
 
   use 'akinsho/toggleterm.nvim'
 
@@ -51,8 +62,6 @@ return packer.startup(function(use)
   use 'MunifTanjim/prettier.nvim'
   use 'neovim/nvim-lspconfig'
   use 'jose-elias-alvarez/null-ls.nvim'
-
-  use { 'sindrets/diffview.nvim' }
 
   -- Completion
   use 'onsails/lspkind-nvim'

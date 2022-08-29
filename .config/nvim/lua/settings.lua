@@ -11,15 +11,12 @@ if g.neovide then
   o.guifont = "MonoLisaCustom Nerd Font"
 end
 
-g.rasmus_italic_functions = true
-g.rasmus_bold_functions = true
-
-g.github_comment_style = "italic"
-g.github_function_style = "italic"
+cmd [[let g:sonokai_enable_italic = 1]]
 
 cmd [[set termguicolors]]
 cmd [[set background=dark]]
-cmd [[colorscheme kanagawa]]
+-- cmd [[colorscheme kanagawa]]
+cmd [[colorscheme sonokai]]
 cmd [[set noerrorbells]]
 cmd [[set tabstop=2 softtabstop=2]]
 cmd [[set shiftwidth=2]]

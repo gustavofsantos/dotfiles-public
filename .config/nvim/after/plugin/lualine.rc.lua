@@ -5,8 +5,8 @@ lualine.setup({
   options = {
     icons_enabled = true,
     theme = 'auto',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
+    component_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
     always_divide_middle = true,
     globalstatus = false,
     refresh = {
@@ -16,8 +16,8 @@ lualine.setup({
     }
   },
   sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', ''},
+    lualine_a = { 'mode' },
+    lualine_b = { 'branch', 'diff', '' },
     lualine_c = {
       {
         'filename',
@@ -25,9 +25,9 @@ lualine.setup({
         path = 0
       }
     },
-    lualine_x = {'', 'diagnostics', 'filetype'},
-    lualine_y = {''},
-    lualine_z = {''}
+    lualine_x = { '', 'diagnostics', 'filetype' },
+    lualine_y = { '' },
+    lualine_z = { '' }
   },
-  extensions = { 'quickfix', 'nvim-tree', 'toggleterm', 'fugitive' }
+  extensions = { 'quickfix', 'nvim-tree', 'toggleterm' }
 })
