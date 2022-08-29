@@ -16,15 +16,17 @@ return packer.startup(function(use)
   -- colorscheme
   use 'rebelot/kanagawa.nvim'
   use 'sainnhe/sonokai'
+  use 'kaiuri/nvim-juliana'
   use 'ellisonleao/gruvbox.nvim'
   use 'folke/tokyonight.nvim'
 
   use 'mbbill/undotree' -- tree of changes
 
   -- use 'sheerun/vim-polyglot'
-  use 'yuezk/vim-js'
-  use 'HerringtonDarkholme/yats.vim'
-  use 'maxmellon/vim-jsx-pretty'
+  use 'yuezk/vim-js' -- JavaScript highlight
+  use 'HerringtonDarkholme/yats.vim' -- TypeScript highlight
+  use 'maxmellon/vim-jsx-pretty' -- JSX highlight
+  use 'numirias/semshi' -- Better Python highlight
   use 'pantharshit00/vim-prisma' -- Prisma files colorscheme
   use 'norcalli/nvim-colorizer.lua' -- Display colors
 
