@@ -6,9 +6,9 @@ local cmd = vim.cmd
 g.mapleader = " "
 
 if g.neovide then
-  g.neovide_cursor_trail_legnth = 0
-  g.neovide_cursor_animation_length = 0
-  o.guifont = "MonoLisaCustom Nerd Font"
+	g.neovide_cursor_trail_legnth = 0
+	g.neovide_cursor_animation_length = 0
+	o.guifont = "MonoLisaCustom Nerd Font"
 end
 
 cmd [[let g:sonokai_enable_italic = 1]]

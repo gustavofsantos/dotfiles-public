@@ -33,6 +33,7 @@ return packer.startup(function(use)
   use 'tpope/vim-surround'
 
   -- Git
+  use 'tpope/vim-fugitive'
   use 'TimUntersberger/neogit'
   use { 'akinsho/git-conflict.nvim', tag = "*" }
 
