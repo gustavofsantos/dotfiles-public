@@ -31,9 +31,6 @@ mouse:
 key_bindings:
   - { key: F11, action: ToggleFullscreen }
 
-bell:
-  duration: 300
-
 cursor:
   # Cursor style
   style:
