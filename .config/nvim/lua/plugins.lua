@@ -26,6 +26,7 @@ return packer.startup(function(use)
   use 'yuezk/vim-js' -- JavaScript highlight
   use 'HerringtonDarkholme/yats.vim' -- TypeScript highlight
   use 'maxmellon/vim-jsx-pretty' -- JSX highlight
+  use 'mustache/vim-mustache-handlebars' -- handlebars highlight
   use 'numirias/semshi' -- Better Python highlight
   use 'pantharshit00/vim-prisma' -- Prisma files colorscheme
   use 'norcalli/nvim-colorizer.lua' -- Display colors

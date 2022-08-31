@@ -6,17 +6,20 @@ local cmd = vim.cmd
 g.mapleader = " "
 
 if g.neovide then
-	g.neovide_cursor_trail_legnth = 0
-	g.neovide_cursor_animation_length = 0
-	o.guifont = "MonoLisaCustom Nerd Font"
+  g.neovide_cursor_trail_legnth = 0
+  g.neovide_cursor_animation_length = 0
+  o.guifont = "MonoLisaCustom Nerd Font"
 end
 
 cmd [[let g:sonokai_enable_italic = 1]]
+cmd [[let g:sonokai_style = 'atlantis']]
+cmd [[let g:sonokai_better_performance = 1]]
 
 cmd [[set termguicolors]]
 cmd [[set background=dark]]
 -- cmd [[colorscheme kanagawa]]
 cmd [[colorscheme tokyonight]]
+-- cmd [[colorscheme sonokai]]
 cmd [[set noerrorbells]]
 cmd [[set tabstop=2 softtabstop=2]]
 cmd [[set shiftwidth=2]]
@@ -80,7 +83,7 @@ cmd [[command! Worklog :tabnew | :e ~/Obsidian/loggi/worklog.md]]
 cmd [[command! Tasks :tabnew | :e ~/Obsidian/Inbox.md]]
 cmd [[command! Journal :lua vim.cmd(string.format("tabnew ~/notes/journal/%s.md", os.date("%Y-%m-%d")))<CR>]]
 cmd [[command! Format :lua vim.lsp.buf.formatting()<CR>]]
-cmd [[command! ReloadConfig :source ~/.config/nvim/init.lua<CR>]]
+cmd [[command! Reload :luafile ~/.config/nvim/init.lua<CR>]]
 
 -- Run the current test file
 cmd [[command! LWT :lua require('toggleterm').exec("lwt " .. string.gsub(vim.fn.expand("%"), "loggi/", ""))]]
@@ -95,9 +98,9 @@ cmd [[highlight Comment cterm=italic term=italic gui=italic]]
 cmd [[highlight htmlArg cterm=italic term=italic gui=italic]]
 cmd [[highlight xmlAttrib cterm=italic term=italic gui=italic]]
 -- cmd [[highlight jsClassProperty cterm=italic term=italic gui=italic]]
--- cmd [[highlight jsThis cterm=italic term=italic gui=italic]]
--- cmd [[highlight jsNull cterm=italic term=italic gui=italic]]
--- cmd [[highlight jsUndefined cterm=italic term=italic gui=italic]]
+cmd [[highlight jsThis cterm=italic term=italic gui=italic]]
+cmd [[highlight jsNull cterm=italic term=italic gui=italic]]
+cmd [[highlight jsUndefined cterm=italic term=italic gui=italic]]
 -- cmd [[highlight jsExport cterm=italic term=italic gui=italic]]
 -- cmd [[highlight jsImport cterm=italic term=italic gui=italic]]
 -- cmd [[highlight jsFrom cterm=italic term=italic gui=italic]]
