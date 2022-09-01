@@ -11,6 +11,7 @@ font:
   bold_italic:
     family: MonoLisaCustom Nerd Font
     style: Bold Italic
+  # size: 18 # recording
   size: 13
 
 env:
