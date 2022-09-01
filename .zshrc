@@ -108,7 +108,7 @@ alias em="emacs -nw"
 
 # Loggi aliases
 alias lggt="npm run test -- --coverage=false"
-alias lglt="npx eslint $(git diff --relative --name-only HEAD | grep -E '\.jsx?$' | xargs)"
+# alias lglt="npx eslint $(git diff --relative --name-only HEAD | grep -E '\.jsx?$' | xargs)"
 alias lw_diff="git diff -U0 master...HEAD '*.py'"
 alias lw_diff_files="git diff --name-only master...HEAD '*.py'"
 alias lw_format="lw_diff | ~/loggi/web/ops/black.sh fix"
