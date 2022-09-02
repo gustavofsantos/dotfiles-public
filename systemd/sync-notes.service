@@ -1,0 +1,6 @@
+[Unit]
+Description=Sync notes with GitHub
+
+[Service]
+ExecStart=/home/gustavo/dotfiles-public/scripts/sync-notes.sh
+User=gustavo

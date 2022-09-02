@@ -1,0 +1,9 @@
+[Unit]
+Description=Sync notes with GitHub
+
+[Timer]
+Unit=sync-notes.service
+OnUnitActiveSec=60min
+
+[Install]
+WantedBy=timers.target
