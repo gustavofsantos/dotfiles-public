@@ -65,6 +65,7 @@ return packer.startup(function(use)
   use 'gbprod/yanky.nvim'
   use 'MunifTanjim/prettier.nvim'
   use 'neovim/nvim-lspconfig'
+  use 'williamboman/mason.nvim'
   use 'jose-elias-alvarez/null-ls.nvim'
 
   -- Completion
