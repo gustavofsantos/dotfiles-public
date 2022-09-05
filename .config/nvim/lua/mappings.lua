@@ -67,6 +67,9 @@ nnoremap("<F3>", ":Telescope grep_string theme=ivy<CR>")
 vnoremap("<F3>", "\"zy:Telescope grep_string default_text=<C-r>z<cr>")
 nnoremap("<F5>", ":UndotreeToggle<CR>")
 
+-- switch
+nnoremap("<leader>ss", ":Switch<CR>")
+
 -- copy buffer path to clipboard
 nnoremap("<leader>cbp", "<cmd>let @+ = expand(\"%\")<CR>")
 

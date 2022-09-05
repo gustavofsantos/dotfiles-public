@@ -39,6 +39,7 @@ return packer.startup(function(use)
 
   use 'numToStr/Comment.nvim'
   use 'justinmk/vim-sneak'
+  use 'AndrewRadev/switch.vim'
 
   -- Telescope
   use 'nvim-telescope/telescope.nvim'

@@ -15,6 +15,17 @@ cmd [[let g:sonokai_enable_italic = 1]]
 cmd [[let g:sonokai_style = 'atlantis']]
 cmd [[let g:sonokai_better_performance = 1]]
 
+cmd [[
+let g:switch_custom_definitions =
+    \ [
+    \   {
+    \     '^\(.*\)TODO\(.*\)$': '\1DOING\2',
+    \     '^\(.*\)DOING\(.*\)$': '\1DONE\2',
+    \     '^\(.*\)DONE\(.*\)$': '\1TODO\2',
+    \   },
+    \ ]
+]]
+
 cmd [[set termguicolors]]
 cmd [[set background=dark]]
 -- cmd [[colorscheme kanagawa]]
