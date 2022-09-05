@@ -14,3 +14,10 @@ ln -sf $(pwd)/tmux.conf ~/.tmux.conf
 ## Setting up Bash
 
 ## Setting up Git
+
+## Setup Neovim
+
+```
+cd ~/dotfiles-public/.config/nvim
+lndir $(pwd) ~/.config/nvim
+```

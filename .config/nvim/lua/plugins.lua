@@ -63,6 +63,7 @@ return packer.startup(function(use)
   use 'windwp/nvim-autopairs'
   use 'lewis6991/gitsigns.nvim'
   use 'gbprod/yanky.nvim'
+  use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
   use 'MunifTanjim/prettier.nvim'
   use 'neovim/nvim-lspconfig'
   use 'williamboman/mason.nvim'
