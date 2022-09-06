@@ -1,0 +1,6 @@
+[Unit]
+Description=Notify todo
+
+[Service]
+ExecStart=/home/gustavo/dotfiles-public/scripts/journal-notify.sh
+User=gustavo
