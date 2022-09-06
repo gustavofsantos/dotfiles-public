@@ -103,6 +103,7 @@ local servers = {
   'yamlls',
   'dotls',
   'prismals',
+  'elixirls',
   'purescriptls',
   'tailwindcss',
   'svelte'

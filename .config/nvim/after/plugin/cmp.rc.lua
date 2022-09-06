@@ -8,9 +8,6 @@ cmp.setup({
       require('luasnip').lsp_expand(args.body)
     end,
   },
-  completion = {
-    autocomplete = true
-  },
   mapping = cmp.mapping.preset.insert({
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -25,7 +22,7 @@ cmp.setup({
     { name = 'luasnip' },
     { name = 'nvim_lua ' },
     { name = 'nvim_lsp' },
-    { name = 'buffer', keyword_length = 5 },
+    { name = 'buffer' },
   }),
   formatting = {
     format = lspkind.cmp_format({
