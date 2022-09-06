@@ -17,6 +17,7 @@ return packer.startup(function(use)
   use 'rebelot/kanagawa.nvim'
   use 'sainnhe/sonokai'
   use 'kaiuri/nvim-juliana'
+  use 'olivercederborg/poimandres.nvim'
   use 'ellisonleao/gruvbox.nvim'
   use 'folke/tokyonight.nvim'
 
@@ -28,6 +29,7 @@ return packer.startup(function(use)
   use 'maxmellon/vim-jsx-pretty' -- JSX highlight
   use 'mustache/vim-mustache-handlebars' -- handlebars highlight
   use 'pantharshit00/vim-prisma' -- Prisma files colorscheme
+  use 'elixir-editors/vim-elixir' -- Elixir highlighting
   use 'norcalli/nvim-colorizer.lua' -- Display colors
 
   use 'tpope/vim-surround'
