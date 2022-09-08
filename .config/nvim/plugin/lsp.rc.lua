@@ -80,6 +80,10 @@ lspconfig.tsserver.setup {
   capabilities = capabilities
 }
 
+lspconfig.elixirls.setup {
+  cmd = { vim.fn.stdpath("data") .. "/mason/packages/elixir-ls/language_server.sh" }
+}
+
 lspconfig.sumneko_lua.setup {
   on_attach = on_attach,
   settings = {
@@ -103,7 +107,6 @@ local servers = {
   'yamlls',
   'dotls',
   'prismals',
-  'elixirls',
   'purescriptls',
   'tailwindcss',
   'svelte'
