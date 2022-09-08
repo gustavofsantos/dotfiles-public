@@ -27,6 +27,7 @@ defmodule JournalReader do
 
   defp read_today_file() do
     path = today_file_path(today_file_name())
+    IO.puts("Reading " <> path)
 
     case File.read(path) do
       {:ok, file} -> file |> String.split("\n")
