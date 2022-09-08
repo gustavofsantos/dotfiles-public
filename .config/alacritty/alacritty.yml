@@ -499,4 +499,4 @@ schemes:
       cyan:    '0x89b482'
       white:   '0xdfbf8e'
 
-colors: *kanagawa
+colors: *solarized_dark
