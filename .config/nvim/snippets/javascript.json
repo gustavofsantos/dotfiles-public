@@ -1,4 +1,10 @@
 {
+  "Constant": {
+    "prefix": "co",
+    "body": [
+      "const $1 = $0;"
+    ]
+  },
   "Function": {
     "prefix": "fun",
     "body": [
@@ -22,9 +28,7 @@
     ]
   },
   "Describe": {
-    "prefix": [
-      "desc"
-    ],
+    "prefix": "desc",
     "body": [
       "describe(\"$1\", () => {",
       "\t$0",
@@ -33,9 +37,7 @@
     "description": "Describe block"
   },
   "Before Each": {
-    "prefix": [
-      "be"
-    ],
+    "prefix": "be",
     "body": [
       "beforeEach($1() => {",
       "\t$0",
@@ -43,9 +45,7 @@
     ]
   },
   "It": {
-    "prefix": [
-      "it"
-    ],
+    "prefix": "it",
     "body": [
       "it$1(\"$2\", $3($4) => {",
       "\t$0",
@@ -61,14 +61,12 @@
   "Expect": {
     "prefix": "exp",
     "body": [
-      "expect($1)$0;"
+      "expect($1).$0;"
     ]
   },
   "React Const Component": {
     "description": "Declare a React component",
-    "prefix": [
-      "rcc"
-    ],
+    "prefix": "rcc",
     "body": [
       "import React from \"react\"",
       "",

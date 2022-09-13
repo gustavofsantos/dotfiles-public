@@ -8,6 +8,10 @@
           "javascriptreact"
         ],
         "path": "./javascript.json"
+      },
+      {
+        "language": ["markdown"],
+        "path": "./markdown.json"
       }
     ]
   }
