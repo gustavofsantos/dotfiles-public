@@ -1,0 +1,35 @@
+{
+  "Describe": {
+    "prefix": [
+      "desc"
+    ],
+    "body": [
+      "describe(\"$1\", () => {",
+      "\t$0",
+      "});"
+    ],
+    "description": "Describe block"
+  },
+  "It": {
+    "description": "Synchronous it block",
+    "prefix": [
+      "it"
+    ],
+    "body": [
+      "it(\"$1\", () => {",
+      "\t$0",
+      "});"
+    ]
+  },
+  "Async It": {
+    "description": "Asynchronous it block",
+    "prefix": [
+      "ait"
+    ],
+    "body": [
+      "it(\"$1\", async () => {",
+      "\t$0",
+      "});"
+    ]
+  }
+}
