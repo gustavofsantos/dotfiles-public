@@ -1,4 +1,26 @@
 {
+  "Function": {
+    "prefix": "fun",
+    "body": [
+      "function $1($2) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Async function": {
+    "prefix": "afun",
+    "body": [
+      "async function $1($2) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Import": {
+    "prefix": "imp",
+    "body": [
+      "import {$0} from \"$1\";"
+    ]
+  },
   "Describe": {
     "prefix": [
       "desc"
@@ -10,26 +32,51 @@
     ],
     "description": "Describe block"
   },
-  "It": {
-    "description": "Synchronous it block",
+  "Before Each": {
     "prefix": [
-      "it"
+      "be"
     ],
     "body": [
-      "it(\"$1\", () => {",
+      "beforeEach($1() => {",
       "\t$0",
       "});"
     ]
   },
-  "Async It": {
-    "description": "Asynchronous it block",
+  "It": {
     "prefix": [
-      "ait"
+      "it"
     ],
     "body": [
-      "it(\"$1\", async () => {",
+      "it$1(\"$2\", $3($4) => {",
       "\t$0",
       "});"
+    ]
+  },
+  "It todo": {
+    "prefix": "itt",
+    "body": [
+      "it.todo(\"$0\");"
+    ]
+  },
+  "Expect": {
+    "prefix": "exp",
+    "body": [
+      "expect($1)$0;"
+    ]
+  },
+  "React Const Component": {
+    "description": "Declare a React component",
+    "prefix": [
+      "rcc"
+    ],
+    "body": [
+      "import React from \"react\"",
+      "",
+      "const $1 = ($2) => {",
+      "\t$0",
+      "};",
+      "",
+      "export default $1;"
     ]
   }
 }
