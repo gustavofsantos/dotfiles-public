@@ -17,7 +17,7 @@ return packer.startup(function(use)
   use 'rebelot/kanagawa.nvim'
   use 'ishan9299/nvim-solarized-lua'
   use 'sainnhe/sonokai'
-  use 'ellisonleao/gruvbox.nvim'
+  use 'sam4llis/nvim-tundra'
   use 'folke/tokyonight.nvim'
 
   use 'mbbill/undotree' -- tree of changes
