@@ -1,34 +1,34 @@
-# font:
-#   normal:
-#     family: MonoLisaCustom Nerd Font
-#     style: Medium
-#   italic:
-#     family: MonoLisaCustom Nerd Font
-#     style: Medium Italic
-#   bold:
-#     family: MonoLisaCustom Nerd Font
-#     style: Bold
-#   bold_italic:
-#     family: MonoLisaCustom Nerd Font
-#     style: Bold Italic
-#   # size: 18 # recording
-#   size: 12
-
 font:
   normal:
-    family: OperatorMono Nerd Font
+    family: MonoLisaCustom Nerd Font
     style: Medium
   italic:
-    family: OperatorMono Nerd Font
+    family: MonoLisaCustom Nerd Font
     style: Medium Italic
   bold:
-    family: OperatorMono Nerd Font
+    family: MonoLisaCustom Nerd Font
     style: Bold
   bold_italic:
-    family: OperatorMono Nerd Font
+    family: MonoLisaCustom Nerd Font
     style: Bold Italic
   # size: 18 # recording
-  size: 15
+  size: 12
+
+# font:
+#   normal:
+#     family: OperatorMono Nerd Font
+#     style: Medium
+#   italic:
+#     family: OperatorMono Nerd Font
+#     style: Medium Italic
+#   bold:
+#     family: OperatorMono Nerd Font
+#     style: Bold
+#   bold_italic:
+#     family: OperatorMono Nerd Font
+#     style: Bold Italic
+#   # size: 18 # recording
+#   size: 15
 
 env:
   TERM: xterm-256color
