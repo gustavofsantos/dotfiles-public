@@ -73,15 +73,16 @@ nnoremap("<leader>ss", ":Switch<CR>")
 -- copy buffer path to clipboard
 nnoremap("<leader>cbp", "<cmd>let @+ = expand(\"%\")<CR>")
 
--- mark file with harpoon
-nnoremap("<leader>m", ":lua require('harpoon.mark').add_file()<CR>")
--- find marks
-nnoremap("<leader>fm", ":Telescope harpoon marks theme=ivy<CR>")
+-- Harpoon
+nnoremap("<leader>m", ":lua require('harpoon.mark').add_file()<CR>") -- mark file with harpoon
+nnoremap("<leader>fm", ":Telescope harpoon marks theme=ivy<CR>") -- find marks
 
 -- Git
-nnoremap("<leader>gs", ":Neogit<CR>")
+nnoremap("<leader>gs", ":tab G<CR>")
 nnoremap("<leader>gb", ":Telescope git_branches theme=ivy<CR>")
-nnoremap("<leader>gh", ":Gitsigns preview_hunk")
+nnoremap("<leader>gh", ":Gitsigns preview_hunk<CR>")
+nnoremap("<leader>grh", ":Gitsigns reset_hunk<CR>")
+nnoremap("<leader>grb", ":Gitsigns reset_buffer<CR>")
 -- vmap("<leader>b", ":<C-U>!git blame <C-R>=expand(\"%:p\") <CR> \| sed -n <C-R>=line(\"'<\") <CR>,<C-R>=line(\"'>\") <CR>p <CR>")
 
 -- Window
