@@ -60,12 +60,15 @@ nnoremap("<leader>fb", ":Telescope buffers theme=ivy<CR>")
 nnoremap("<leader>fy", ":Telescope yank_history theme=ivy<CR>")
 nnoremap("<leader>fl", ":Telescope live_grep theme=ivy<CR>")
 nnoremap("<leader>fj", ":Telescope jumplist theme=ivy<CR>")
-nnoremap("<leader>fs", ":Telescope lsp_dynamic_workspace_symbols<CR>")
 nnoremap("gr", ":Telescope lsp_references<CR>")
 vnoremap("<leader>fr", "<Esc><cmd>lua require('telescope').refactoring.refactors()<CR>")
 nnoremap("<F3>", ":Telescope grep_string theme=ivy<CR>")
 vnoremap("<F3>", "\"zy:Telescope grep_string default_text=<C-r>z<cr>")
 nnoremap("<F5>", ":UndotreeToggle<CR>")
+
+-- code insights
+nnoremap("<leader>fs", ":Telescope lsp_dynamic_workspace_symbols<CR>")
+nnoremap("<leader>ft", ":TroubleToggle<CR>")
 
 -- switch
 nnoremap("<leader>ss", ":Switch<CR>")
