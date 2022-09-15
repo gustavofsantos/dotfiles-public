@@ -82,6 +82,7 @@ nnoremap("<leader>fm", ":Telescope harpoon marks theme=ivy<CR>") -- find marks
 
 -- Git
 nnoremap("<leader>gs", ":tab G<CR>")
+nnoremap("gs", ":tab G<CR>")
 nnoremap("<leader>gb", ":Telescope git_branches theme=ivy<CR>")
 nnoremap("<leader>gh", ":Gitsigns preview_hunk<CR>")
 nnoremap("<leader>grh", ":Gitsigns reset_hunk<CR>")
