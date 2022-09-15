@@ -12,7 +12,7 @@ if g.neovide then
 end
 
 cmd [[let g:sonokai_enable_italic = 1]]
--- cmd [[let g:sonokai_style = 'atlantis']]
+cmd [[let g:sonokai_style = 'atlantis']]
 cmd [[let g:sonokai_better_performance = 1]]
 
 cmd [[
