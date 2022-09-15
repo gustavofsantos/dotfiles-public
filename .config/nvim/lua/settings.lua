@@ -12,7 +12,7 @@ if g.neovide then
 end
 
 cmd [[let g:sonokai_enable_italic = 1]]
-cmd [[let g:sonokai_style = 'atlantis']]
+-- cmd [[let g:sonokai_style = 'atlantis']]
 cmd [[let g:sonokai_better_performance = 1]]
 
 cmd [[
@@ -30,8 +30,8 @@ cmd [[set termguicolors]]
 cmd [[set background=dark]]
 -- cmd [[colorscheme kanagawa]]
 -- cmd [[colorscheme tokyonight]]
--- cmd [[colorscheme sonokai]]
-cmd [[colorscheme solarized-flat]]
+cmd [[colorscheme sonokai]]
+-- cmd [[colorscheme solarized-flat]]
 -- cmd [[colorscheme tundra]]
 cmd [[set noerrorbells]]
 cmd [[set tabstop=2 softtabstop=2]]
