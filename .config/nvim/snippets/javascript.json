@@ -1,4 +1,10 @@
 {
+  "Non blank space": {
+    "prefix": "nbs",
+    "body": [
+      "&nbsp;"
+    ]
+  },
   "Constant": {
     "prefix": "co",
     "body": [
