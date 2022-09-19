@@ -1,5 +1,5 @@
 local bufferline = require('bufferline')
-if (not bufferline) then return end
+if (true or not bufferline) then return end
 
 bufferline.setup({
   options = {
