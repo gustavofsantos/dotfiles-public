@@ -543,4 +543,4 @@ schemes:
       cyan:    '0x85dacc'
       white:   '0xfff1f3'
 
-colors: *monokai_pro
+colors: *solarized_dark
