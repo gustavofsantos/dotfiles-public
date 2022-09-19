@@ -81,7 +81,8 @@ nnoremap("<leader>m", ":lua require('harpoon.mark').add_file()<CR>") -- mark fil
 nnoremap("<leader>fm", ":Telescope harpoon marks theme=ivy<CR>") -- find marks
 
 -- Git
-nnoremap("<leader>gs", ":tab G<CR>")
+-- nnoremap("<leader>gs", ":tab G<CR>")
+nnoremap("<leader>gs", ":Neogit<CR>")
 nnoremap("gs", ":tab G<CR>")
 nnoremap("<leader>gb", ":Telescope git_branches theme=ivy<CR>")
 nnoremap("<leader>gh", ":Gitsigns preview_hunk<CR>")
