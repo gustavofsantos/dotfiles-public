@@ -12,7 +12,7 @@ font:
     family: MonoLisaCustom Nerd Font
     style: Bold Italic
   # size: 18 # recording
-  size: 13
+  size: 12
 
 # font:
 #   normal:
@@ -37,7 +37,7 @@ window:
   title: Terminal
   dynamic_padding: false
   # opacity: 0.975
-  gtk_theme_variant: dark
+  gtk_theme_variant: light
 
 draw_bold_text_with_bright_colors: true
 
@@ -543,4 +543,4 @@ schemes:
       cyan:    '0x85dacc'
       white:   '0xfff1f3'
 
-colors: *solarized_dark
+colors: *kanagawa

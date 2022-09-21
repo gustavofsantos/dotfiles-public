@@ -28,10 +28,10 @@ let g:switch_custom_definitions =
 
 cmd [[set termguicolors]]
 cmd [[set background=dark]]
--- cmd [[colorscheme kanagawa]]
+cmd [[colorscheme kanagawa]]
 -- cmd [[colorscheme tokyonight]]
 -- cmd [[colorscheme sonokai]]
-cmd [[colorscheme solarized-flat]]
+-- cmd [[colorscheme solarized-flat]]
 -- cmd [[colorscheme tundra]]
 cmd [[set noerrorbells]]
 cmd [[set tabstop=2 softtabstop=2]]

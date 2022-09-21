@@ -81,14 +81,13 @@ nnoremap("<leader>m", ":lua require('harpoon.mark').add_file()<CR>") -- mark fil
 nnoremap("<leader>fm", ":Telescope harpoon marks theme=ivy<CR>") -- find marks
 
 -- Git
--- nnoremap("<leader>gs", ":tab G<CR>")
-nnoremap("<leader>gs", ":Neogit<CR>")
-nnoremap("gs", ":tab G<CR>")
+nnoremap("<leader>gs", ":tab G<CR>")
 nnoremap("<leader>gb", ":Telescope git_branches theme=ivy<CR>")
 nnoremap("<leader>gh", ":Gitsigns preview_hunk<CR>")
 nnoremap("<leader>grh", ":Gitsigns reset_hunk<CR>")
 nnoremap("<leader>grb", ":Gitsigns reset_buffer<CR>")
--- vmap("<leader>b", ":<C-U>!git blame <C-R>=expand(\"%:p\") <CR> \| sed -n <C-R>=line(\"'<\") <CR>,<C-R>=line(\"'>\") <CR>p <CR>")
+vnoremap("<leader>b",
+  ":<C-U>!git blame <C-R>=expand(\"%:p\") <CR> | sed -n <C-R>=line(\"'<\") <CR>,<C-R>=line(\"'>\") <CR>p <CR>")
 
 -- Window
 nnoremap("<leader>h", "<C-w>h")
