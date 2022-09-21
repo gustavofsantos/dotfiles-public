@@ -1,0 +1,27 @@
+{
+  "Function": {
+    "prefix": "def",
+    "body": [
+      "def $1($2):",
+      "\t$0",
+      ""
+    ]
+  },
+  "Class": {
+    "prefix": "cls",
+    "body": [
+      "class $1:",
+      "\tdef __init__(self, $2):",
+      "\t$0"
+    ]
+  },
+  "Static method": {
+    "prefix": "static",
+    "body": [
+      "@staticmethod",
+      "def $1($2):",
+      "\t$0",
+      ""
+    ]
+  }
+}
