@@ -5,13 +5,24 @@
       {
         "language": [
           "javascript",
-          "javascriptreact"
+          "javascriptreact",
+          "typescript",
+          "typescriptreact"
         ],
         "path": "./javascript.json"
       },
       {
-        "language": ["markdown"],
+        "language": [
+          "markdown"
+        ],
         "path": "./markdown.json"
+      },
+      {
+        "language": [
+          "git",
+          "gitcommit"
+        ],
+        "path": "./gitcommit.json"
       }
     ]
   }
