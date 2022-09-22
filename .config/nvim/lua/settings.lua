@@ -28,7 +28,8 @@ let g:switch_custom_definitions =
 
 cmd [[set termguicolors]]
 cmd [[set background=dark]]
-cmd [[colorscheme kanagawa]]
+-- cmd [[colorscheme kanagawa]]
+cmd [[colorscheme jellybeans]]
 -- cmd [[colorscheme gruvbox]]
 -- cmd [[colorscheme tokyonight]]
 -- cmd [[colorscheme sonokai]]
@@ -55,7 +56,7 @@ cmd [[set nohlsearch]]
 cmd [[set nu]]
 cmd [[set number]]
 cmd [[set relativenumber]]
-
+cmd [[set tags^=.git/tags]]
 cmd [[set scrolloff=5]]
 cmd [[set splitright]]
 cmd [[set splitbelow]]

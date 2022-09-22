@@ -17,6 +17,7 @@ return packer.startup(function(use)
   use 'rebelot/kanagawa.nvim'
   use 'ishan9299/nvim-solarized-lua'
   use 'sainnhe/sonokai'
+  use 'nanotech/jellybeans.vim'
   use 'ellisonleao/gruvbox.nvim'
   use { 'lalitmee/cobalt2.nvim', requires = 'tjdevries/colorbuddy.nvim' }
 
