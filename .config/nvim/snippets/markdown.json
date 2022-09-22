@@ -8,5 +8,17 @@
       "",
       "$0"
     ]
+  },
+  "Todo": {
+    "prefix": "todo",
+    "body": [
+      "- TODO $0"
+    ]
+  },
+  "Done": {
+    "prefix": "done",
+    "body": [
+      "- DONE $0"
+    ]
   }
 }
