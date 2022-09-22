@@ -11,6 +11,7 @@
 
 [commit]
   gpgsign = true
+  template = ~/dotfiles-public/gitmessage
 
 [github]
   user = gustavofsantos
@@ -62,11 +63,11 @@
   changed = green
   untracked = blue
 [alias]
+  c       = commit
   d       = diff
   ds      = diff --staged
   dw      = diff --color-words
   l       = log --pretty=default
   lg      = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches
-  conflicted = !nvim +Conflicted
 [init]
   defaultBranch = main
