@@ -1,6 +1,5 @@
 [user]
   name = Gustavo Santos
-  email = gustavofsantos@outlook.com
   signingKey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN6jpSle2MDWM6pTPtTFBrArA9uaNoXsH2+EV6a5rV/o
 
 [gpg]
