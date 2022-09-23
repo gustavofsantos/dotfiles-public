@@ -35,11 +35,12 @@ return packer.startup(function(use)
   use 'norcalli/nvim-colorizer.lua' -- Display colors
 
   use 'tpope/vim-surround'
+  use 'tpope/vim-repeat'
 
   -- Git
   use 'tpope/vim-fugitive'
-  use 'TimUntersberger/neogit'
-  use { 'akinsho/git-conflict.nvim', tag = "*" }
+  use 'tpope/vim-rhubarb'
+  use 'sindrets/diffview.nvim'
 
   use 'numToStr/Comment.nvim'
   use 'justinmk/vim-sneak'
@@ -47,7 +48,6 @@ return packer.startup(function(use)
 
   -- Telescope
   use 'nvim-telescope/telescope.nvim'
-  use 'nvim-telescope/telescope-ui-select.nvim'
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   use 'ThePrimeagen/harpoon'
@@ -56,7 +56,6 @@ return packer.startup(function(use)
   use 'akinsho/bufferline.nvim'
   use 'nvim-lualine/lualine.nvim'
   use 'kyazdani42/nvim-tree.lua'
-  use 'sindrets/diffview.nvim'
 
   use 'nvim-treesitter/nvim-treesitter'
   use 'nvim-treesitter/nvim-treesitter-textobjects'

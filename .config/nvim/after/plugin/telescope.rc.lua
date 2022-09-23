@@ -6,9 +6,6 @@ telescope.setup {
     dynamic_preview_title = true,
   },
   extensions = {
-    ["ui-select"] = {
-      require('telescope.themes').get_dropdown {}
-    },
     fzf = {
       fuzzy = true, -- false will only do exact matching
       override_generic_sorter = true, -- override the generic sorter
@@ -19,4 +16,3 @@ telescope.setup {
 }
 
 telescope.load_extension('harpoon')
-telescope.load_extension('ui-select')
