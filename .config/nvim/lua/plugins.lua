@@ -16,10 +16,8 @@ return packer.startup(function(use)
   -- colorscheme
   use 'rebelot/kanagawa.nvim'
   use 'ishan9299/nvim-solarized-lua'
-  use 'sainnhe/sonokai'
-  use 'nanotech/jellybeans.vim'
+  use 'olivercederborg/poimandres.nvim'
   use 'ellisonleao/gruvbox.nvim'
-  use { 'lalitmee/cobalt2.nvim', requires = 'tjdevries/colorbuddy.nvim' }
 
   use 'mbbill/undotree' -- tree of changes
 
