@@ -56,7 +56,8 @@ cmp.setup({
     format = lspkind.cmp_format({
       with_text = true,
       mode = 'symbol', -- show only symbol annotations
-      maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+      -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+      maxwidth = 60,
       menu = {
         luasnip = "[snip]",
         buffer = "[buf]",
@@ -71,6 +72,7 @@ cmp.setup({
 cmp.setup.filetype('gitcommit', {
   sources = cmp.config.sources({
     { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
+    { name = 'luasnip' }
   }, {
     { name = 'buffer' },
   })

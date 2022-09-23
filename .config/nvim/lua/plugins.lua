@@ -31,6 +31,7 @@ return packer.startup(function(use)
   use 'pantharshit00/vim-prisma' -- Prisma files colorscheme
   use 'udalov/kotlin-vim' -- Kotlin highlight
   use 'elixir-editors/vim-elixir' -- Elixir highlighting
+  use 'vim-python/python-syntax' -- Python syntax highlight
   use 'norcalli/nvim-colorizer.lua' -- Display colors
 
   use 'tpope/vim-surround'

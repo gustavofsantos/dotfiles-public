@@ -14,6 +14,7 @@ end
 cmd [[let g:sonokai_enable_italic = 1]]
 cmd [[let g:sonokai_style = 'atlantis']]
 cmd [[let g:sonokai_better_performance = 1]]
+cmd [[let g:python_highlight_all = 1]]
 
 cmd [[
 let g:switch_custom_definitions =
@@ -28,8 +29,8 @@ let g:switch_custom_definitions =
 
 cmd [[set termguicolors]]
 cmd [[set background=dark]]
--- cmd [[colorscheme kanagawa]]
-cmd [[colorscheme jellybeans]]
+cmd [[colorscheme kanagawa]]
+-- cmd [[colorscheme jellybeans]]
 -- cmd [[colorscheme gruvbox]]
 -- cmd [[colorscheme tokyonight]]
 -- cmd [[colorscheme sonokai]]
