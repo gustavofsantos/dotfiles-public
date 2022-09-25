@@ -48,19 +48,23 @@
   interactive = auto
   ui = true
   pager = true
+
 [color "branch"]
   current = yellow reverse
   local   = yellow
   remote  = green
+
 [color "diff"]
   meta = blue
   frag = magenta
   old  = red
   new  = green
+
 [color "status"]
   added = yellow
   changed = green
   untracked = blue
+
 [alias]
   c       = commit
   d       = diff
@@ -68,5 +72,6 @@
   dw      = diff --color-words
   l       = log --pretty=default
   lg      = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches
+
 [init]
   defaultBranch = main
