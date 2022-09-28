@@ -15,8 +15,8 @@ nvimtree.setup {
     highlight_git = true,
     icons = {
       show = {
-        file = false,
-        folder = false
+        file = true,
+        folder = true
       }
     },
     special_files = { "package.json", "Makefile", "README.md", "readme.md" },
@@ -27,8 +27,8 @@ nvimtree.setup {
     ignore_list = {},
   },
   diagnostics = {
-    enable = false,
-    show_on_dirs = true,
+    enable = true,
+    show_on_dirs = false,
     icons = {
       hint = "",
       info = "",

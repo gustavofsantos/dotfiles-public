@@ -105,6 +105,7 @@ local servers = {
   'jsonls',
   'eslint',
   'yamlls',
+  'gopls',
   'dotls',
   'prismals',
   'purescriptls',
