@@ -1,5 +1,5 @@
-local bufferline = require('bufferline')
-if (not bufferline) then return end
+local status, bufferline = pcall(require, 'bufferline')
+if (not status) then return end
 
 bufferline.setup({
   options = {

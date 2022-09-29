@@ -30,8 +30,8 @@ nnoremap("dgl", ":diffget //3<CR>") -- vimdiff get from right
 nnoremap("<C-b>", ":NvimTreeToggle<CR>") -- toggle file explorer
 nnoremap("<C-q>", ":q<CR>") -- close current buffer
 inoremap("<C-q>", ":q<CR>") -- close current buffer
-inoremap("<C-s>", "<Esc>:wa<CR>") -- save all buffers
-nnoremap("<C-s>", ":wa<CR>") -- save all buffers
+inoremap("<C-s>", "<Esc>:w<CR>") -- save buffer
+nnoremap("<C-s>", ":w<CR>") -- save buffer
 nnoremap("<C-t>", "<Cmd>exe v:count1 . \"ToggleTerm\"<CR>") -- toggle terminal
 inoremap("<C-t>", "<Esc><Cmd>exe v:count1 . \"ToggleTerm\"<CR>") -- toggle terminal
 
@@ -45,13 +45,11 @@ vnoremap("<A-j>", ":m '>+1<CR>gv=gv")
 vnoremap("<A-k>", ":m '<-2<CR>gv=gv")
 
 -- Tabs
-nnoremap("<Tab>", ":BufferLineCycleNext<CR>")
-nnoremap("<S-Tab>", ":BufferLineCyclePrev<CR>")
-nnoremap("<A-h>", ":BufferLineMoveNext<CR>")
+nnoremap("<A-h>", ":-tabmove<CR>")
 nnoremap("<A-l>", ":+tabmove<CR>")
 
+nnoremap("<leader><leader>", "<C-^>")
 -- find non git-ignored files inside the current dir
-nnoremap("<leader><leader>", ":Telescope find_files theme=ivy<CR>")
 nnoremap("<leader>ff", ":Telescope find_files theme=ivy<CR>")
 -- find files using git source
 nnoremap("<leader>fg", ":Telescope git_files theme=ivy<CR>")
@@ -83,13 +81,11 @@ nnoremap("<leader>fm", ":Telescope harpoon marks theme=ivy<CR>") -- find marks
 -- Git
 nnoremap("<leader>gs", ":tab G<CR>")
 nnoremap("<leader>gb", ":Telescope git_branches theme=ivy<CR>")
-nnoremap("<leader>gh", ":Gitsigns preview_hunk<CR>")
-nnoremap("<leader>grh", ":Gitsigns reset_hunk<CR>")
-nnoremap("<leader>grb", ":Gitsigns reset_buffer<CR>")
 vnoremap("<leader>b",
   ":<C-U>!git blame <C-R>=expand(\"%:p\") <CR> | sed -n <C-R>=line(\"'<\") <CR>,<C-R>=line(\"'>\") <CR>p <CR>")
 
 -- Window
+nnoremap("<leader>o", ":only<CR>")
 nnoremap("<leader>h", "<C-w>h")
 nnoremap("<leader>j", "<C-w>j")
 nnoremap("<leader>k", "<C-w>k")

@@ -16,7 +16,6 @@ return packer.startup(function(use)
   -- colorscheme
   use 'rebelot/kanagawa.nvim'
   use 'ishan9299/nvim-solarized-lua'
-  use 'olivercederborg/poimandres.nvim'
   use 'ellisonleao/gruvbox.nvim'
 
   use 'mbbill/undotree' -- tree of changes
@@ -34,15 +33,13 @@ return packer.startup(function(use)
 
   use 'tpope/vim-surround'
   use 'tpope/vim-repeat'
+  use 'tpope/vim-commentary'
+  use 'AndrewRadev/switch.vim'
 
   -- Git
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
-  use 'sindrets/diffview.nvim'
 
-  use 'numToStr/Comment.nvim'
-  use 'justinmk/vim-sneak'
-  use 'AndrewRadev/switch.vim'
 
   -- Telescope
   use 'nvim-telescope/telescope.nvim'
@@ -51,9 +48,7 @@ return packer.startup(function(use)
   use 'ThePrimeagen/harpoon'
 
   -- IDE like view
-  use 'akinsho/bufferline.nvim'
-  use 'nvim-lualine/lualine.nvim'
-  use 'kyazdani42/nvim-tree.lua'
+  -- use 'kyazdani42/nvim-tree.lua'
 
   use 'nvim-treesitter/nvim-treesitter'
   use 'nvim-treesitter/nvim-treesitter-textobjects'
@@ -64,7 +59,6 @@ return packer.startup(function(use)
   use 'folke/trouble.nvim'
   use 'windwp/nvim-ts-autotag'
   use 'windwp/nvim-autopairs'
-  use 'lewis6991/gitsigns.nvim'
   use 'gbprod/yanky.nvim'
   use 'MunifTanjim/prettier.nvim'
   use 'neovim/nvim-lspconfig'
