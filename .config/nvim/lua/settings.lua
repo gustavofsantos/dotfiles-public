@@ -5,12 +5,6 @@ local cmd = vim.cmd
 
 g.mapleader = " "
 
-if g.neovide then
-  g.neovide_cursor_trail_legnth = 0
-  g.neovide_cursor_animation_length = 0
-  o.guifont = "MonoLisaCustom Nerd Font"
-end
-
 cmd [[let g:sonokai_enable_italic = 1]]
 cmd [[let g:sonokai_style = 'atlantis']]
 cmd [[let g:sonokai_better_performance = 1]]
@@ -28,11 +22,11 @@ let g:switch_custom_definitions =
 ]]
 
 cmd [[set termguicolors]]
-cmd [[set background=light]]
+cmd [[set background=dark]]
 -- cmd [[colorscheme kanagawa]]
 -- cmd [[colorscheme jellybeans]]
 -- cmd [[colorscheme gruvbox]]
-cmd [[colorscheme solarized-flat]]
+cmd [[colorscheme solarized]]
 cmd [[set noerrorbells]]
 cmd [[set tabstop=2 softtabstop=2]]
 cmd [[set shiftwidth=2]]
@@ -71,13 +65,13 @@ cmd [[set signcolumn=no]]
 cmd [[set pumheight=10]]
 cmd [[set grepprg=ag]]
 cmd [[set wildmode=list:longest,full]]
-cmd [[set laststatus=3]]
+-- Nvim global statusline
+-- cmd [[set laststatus=3]]
 
 cmd [[set backupdir=~/.tmp]]
 cmd [[set directory=~/.tmp]]
 cmd [[set guioptions-=T]]
 
-cmd [[set signcolumn=yes]]
 cmd [[set mouse=nv]]
 
 cmd [[set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)]]

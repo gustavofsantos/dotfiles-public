@@ -2,7 +2,7 @@ local toggleterm = require("toggleterm")
 if (not toggleterm) then return end
 
 toggleterm.setup {
-  -- direction = 'tab'
+  direction = 'tab',
   size = 28,
   winbar = {
     enabled = true,
