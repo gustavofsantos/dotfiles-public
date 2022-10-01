@@ -12,7 +12,7 @@ font:
     family: MonoLisaCustom Nerd Font
     style: Bold Italic
   # size: 18 # recording
-  size: 12
+  size: 11
 
 # font:
 #   normal:
@@ -543,4 +543,4 @@ schemes:
       cyan:    '0x85dacc'
       white:   '0xfff1f3'
 
-colors: *kanagawa
+colors: *solarized_dark

@@ -18,6 +18,7 @@ return packer.startup(function(use)
   use 'ishan9299/nvim-solarized-lua'
   use 'ellisonleao/gruvbox.nvim'
   use 'nanotech/jellybeans.vim'
+  use 'doums/darcula'
 
   use 'mbbill/undotree' -- tree of changes
 
@@ -36,6 +37,7 @@ return packer.startup(function(use)
   use 'tpope/vim-repeat'
   use 'tpope/vim-commentary'
   use 'AndrewRadev/switch.vim'
+  use 'justinmk/vim-sneak'
 
   -- Git
   use 'tpope/vim-fugitive'
@@ -49,7 +51,7 @@ return packer.startup(function(use)
   use 'ThePrimeagen/harpoon'
 
   -- IDE like view
-  -- use 'kyazdani42/nvim-tree.lua'
+  use 'kyazdani42/nvim-tree.lua'
 
   use 'nvim-treesitter/nvim-treesitter'
   use 'nvim-treesitter/nvim-treesitter-textobjects'
