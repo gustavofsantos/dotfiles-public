@@ -18,7 +18,7 @@ return packer.startup(function(use)
   use 'ishan9299/nvim-solarized-lua'
   use 'ellisonleao/gruvbox.nvim'
   use 'nanotech/jellybeans.vim'
-  use 'doums/darcula'
+  use 'kvrohit/rasmus.nvim'
 
   use 'mbbill/undotree' -- tree of changes
 
