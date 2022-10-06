@@ -1,5 +1,0 @@
-[user]
-  name = Gustavo Santos
-  email = gustavofsantos@outlook.com
-[include]
-  path = ~/dotfiles-public/.gitconfig

@@ -151,7 +151,7 @@ alias cat="bat"
 alias gogh="bash -c  \"\$(wget -qO- https://git.io/vQgMr)\""
 
 export PATH=$PATH:"$HOME"/.local/bin
-# export PATH=$PATH:"$HOME"/dotfiles/bash_scripts
+export PATH=$PATH:"$HOME"/dotfiles-public/bin
 export PATH=$PATH:"$HOME"/.emacs.d/bin
 
 eval "$(zoxide init bash)"

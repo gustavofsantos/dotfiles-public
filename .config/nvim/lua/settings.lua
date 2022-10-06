@@ -1,6 +1,4 @@
-local opt = vim.opt
 local g = vim.g
-local o = vim.o
 local cmd = vim.cmd
 
 g.mapleader = " "
@@ -42,13 +40,13 @@ cmd [[set undodir=~/.config/vim/undodir]]
 cmd [[set undofile]]
 cmd [[set incsearch]]
 cmd [[set switchbuf=useopen]]
-cmd [[set cmdheight=2]]
+cmd [[set cmdheight=1]]
 cmd [[set hidden]]
 cmd [[set encoding=utf-8]]
 cmd [[set nohlsearch]]
-cmd [[set nu]]
-cmd [[set number]]
-cmd [[set relativenumber]]
+-- cmd [[set nu]]
+-- cmd [[set number]]
+-- cmd [[set relativenumber]]
 cmd [[set tags^=.git/tags]]
 cmd [[set showtabline=2]]
 cmd [[set winwidth=100]]
