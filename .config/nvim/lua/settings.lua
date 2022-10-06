@@ -1,6 +1,9 @@
 local g = vim.g
 local cmd = vim.cmd
 
+g.rasmus_italic_comments = true
+g.rasmus_italic_keywords = true
+
 g.mapleader = " "
 
 cmd [[let g:sonokai_enable_italic = 1]]
@@ -24,7 +27,8 @@ cmd [[set background=dark]]
 -- cmd [[colorscheme kanagawa]]
 -- cmd [[colorscheme jellybeans]]
 -- cmd [[colorscheme gruvbox]]
-cmd [[colorscheme solarized]]
+cmd [[colorscheme rasmus]]
+-- cmd [[colorscheme solarized]]
 cmd [[set noerrorbells]]
 cmd [[set tabstop=2 softtabstop=2]]
 cmd [[set shiftwidth=2]]
@@ -42,6 +46,7 @@ cmd [[set incsearch]]
 cmd [[set switchbuf=useopen]]
 cmd [[set cmdheight=1]]
 cmd [[set hidden]]
+cmd [[set foldmethod]]
 cmd [[set encoding=utf-8]]
 cmd [[set nohlsearch]]
 -- cmd [[set nu]]
