@@ -1,10 +1,10 @@
 font:
   normal:
     family: MonoLisa Custom
-    style: Regular
+    style: Medium
   italic:
     family: MonoLisa Custom
-    style: Regular Italic
+    style: Medium Italic
   bold:
     family: MonoLisa Custom
     style: Bold
