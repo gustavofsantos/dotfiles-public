@@ -1,15 +1,15 @@
 font:
   normal:
-    family: MonoLisaCustom Nerd Font
+    family: MonoLisa Custom
     style: Regular
   italic:
-    family: MonoLisaCustom Nerd Font
+    family: MonoLisa Custom
     style: Regular Italic
   bold:
-    family: MonoLisaCustom Nerd Font
+    family: MonoLisa Custom
     style: Bold
   bold_italic:
-    family: MonoLisaCustom Nerd Font
+    family: MonoLisa Custom
     style: Bold Italic
   # size: 18 # recording
   size: 11
@@ -543,4 +543,4 @@ schemes:
       cyan:    '0x85dacc'
       white:   '0xfff1f3'
 
-colors: *solarized_dark
+colors: *rasmus
