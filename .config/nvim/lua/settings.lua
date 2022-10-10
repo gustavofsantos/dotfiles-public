@@ -3,6 +3,8 @@ local cmd = vim.cmd
 
 g.rasmus_italic_comments = true
 g.rasmus_italic_keywords = true
+g.rasmus_bold_booleans = true
+g.rasmus_bold_functions = true
 
 g.mapleader = " "
 
@@ -18,7 +20,7 @@ let g:switch_custom_definitions =
     \     '^\(.*\)TODO\(.*\)$': '\1DOING\2',
     \     '^\(.*\)DOING\(.*\)$': '\1DONE\2',
     \     '^\(.*\)DONE\(.*\)$': '\1TODO\2',
-    \   },
+    \   }
     \ ]
 ]]
 
@@ -49,9 +51,9 @@ cmd [[set hidden]]
 cmd [[set foldmethod]]
 cmd [[set encoding=utf-8]]
 cmd [[set nohlsearch]]
--- cmd [[set nu]]
--- cmd [[set number]]
--- cmd [[set relativenumber]]
+cmd [[set nu]]
+cmd [[set number]]
+cmd [[set relativenumber]]
 cmd [[set tags^=.git/tags]]
 cmd [[set showtabline=2]]
 cmd [[set winwidth=100]]
