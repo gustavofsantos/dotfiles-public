@@ -8,7 +8,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="lambda"
+ZSH_THEME="gentoo"
+# ZSH_THEME="lambda"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -142,11 +143,8 @@ alias trename="tmux rename-session"
 
 # alias emacs="emacs -nw"
 
-alias ls="exa -F"
-alias ll="exa -l"
-alias tree="exa -T"
-
-alias cat="bat"
+alias ls="ls -G"
+alias ll="ls -lG"
 
 alias gogh="bash -c  \"\$(wget -qO- https://git.io/vQgMr)\""
 
@@ -154,9 +152,7 @@ export PATH=$PATH:"$HOME"/.local/bin
 export PATH=$PATH:"$HOME"/dotfiles-public/bin
 export PATH=$PATH:"$HOME"/.emacs.d/bin
 
-eval "$(zoxide init bash)"
-
-export NVM_DIR="$HOME/.nvm"
+eval "$(zoxide init zsh)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

@@ -19,6 +19,7 @@ return packer.startup(function(use)
   use 'ellisonleao/gruvbox.nvim'
   use 'nanotech/jellybeans.vim'
   use 'kvrohit/rasmus.nvim'
+  use 'olivercederborg/poimandres.nvim'
 
   use 'mbbill/undotree' -- tree of changes
 
@@ -42,7 +43,6 @@ return packer.startup(function(use)
   -- Git
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
-
 
   -- Telescope
   use 'nvim-telescope/telescope.nvim'
