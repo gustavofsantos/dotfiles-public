@@ -20,6 +20,8 @@ return packer.startup(function(use)
   use 'nanotech/jellybeans.vim'
   use 'kvrohit/rasmus.nvim'
   use 'olivercederborg/poimandres.nvim'
+  use { 'dracula/vim', as = 'dracula' }
+
 
   use 'mbbill/undotree' -- tree of changes
 
@@ -31,7 +33,8 @@ return packer.startup(function(use)
   use 'pantharshit00/vim-prisma' -- Prisma files colorscheme
   use 'udalov/kotlin-vim' -- Kotlin highlight
   use 'elixir-editors/vim-elixir' -- Elixir highlighting
-  use 'vim-python/python-syntax' -- Python syntax highlight
+  -- use 'vim-python/python-syntax' -- Python syntax highlight
+  use 'numirias/semshi' -- Python enhanced syntax
   use 'norcalli/nvim-colorizer.lua' -- Display colors
 
   use 'tpope/vim-surround'

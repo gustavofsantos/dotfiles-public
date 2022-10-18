@@ -85,7 +85,7 @@ lspconfig.sumneko_lua.setup {
 }
 
 local servers = {
-  -- 'pyright',
+  'pyright',
   'dockerls',
   'html',
   'jsonls',
