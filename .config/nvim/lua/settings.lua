@@ -25,7 +25,7 @@ let g:switch_custom_definitions =
 ]]
 
 cmd [[set termguicolors]]
-cmd [[set background=dark]]
+cmd [[set background=light]]
 -- cmd [[colorscheme kanagawa]]
 -- cmd [[colorscheme poimandres]]
 -- cmd [[colorscheme jellybeans]]
