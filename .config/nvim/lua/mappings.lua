@@ -47,6 +47,7 @@ nnoremap("<A-l>", ":+tabmove<CR>")
 
 -- Notes
 nnoremap("<leader>nj", ":Journal<CR>")
+nnoremap("<leader>nd", ":vsl ~/notes/debug_notes.md<CR>")
 nnoremap("<leader>nl", ":vsp ~/notes/loggi/work-notes.md<CR>")
 nnoremap("<leader>nw", ":vsp ~/notes/loggi/worklog.md<CR>")
 
