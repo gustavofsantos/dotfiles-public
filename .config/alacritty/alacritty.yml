@@ -543,4 +543,4 @@ schemes:
       cyan:    '0x85dacc'
       white:   '0xfff1f3'
 
-colors: *solarized_dark
+colors: *gruvbox_material
