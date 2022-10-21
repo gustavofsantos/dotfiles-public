@@ -8,9 +8,6 @@ local env = vim.env
 local termcodes = utils.termcodes
 local nmap = utils.nmap
 local vmap = utils.vmap
-local imap = utils.imap
-local xmap = utils.xmap
-local omap = utils.omap
 local nnoremap = utils.nnoremap
 local inoremap = utils.inoremap
 local vnoremap = utils.vnoremap
@@ -25,6 +22,7 @@ nmap("cv", "\"+p")
 vmap("cv", "\"+p")
 nmap("cV", "\"+P")
 
+
 nnoremap("dgh", ":diffget //2<CR>") -- vimdiff get from left
 nnoremap("dgl", ":diffget //3<CR>") -- vimdiff get from right
 nnoremap("<C-b>", ":NvimTreeToggle<CR>") -- toggle file explorer
@@ -36,7 +34,6 @@ nnoremap("<C-t>", "<Cmd>exe v:count1 . \"ToggleTerm\"<CR>") -- toggle terminal
 inoremap("<C-t>", "<Esc><Cmd>exe v:count1 . \"ToggleTerm\"<CR>") -- toggle terminal
 
 -- Move lines
-
 nnoremap("<A-j>", ":m .+1<CR>==")
 nnoremap("<A-k>", ":m .-2<CR>==")
 inoremap("<A-j>", "<Esc>:m .+1<CR>==gi")
@@ -47,6 +44,11 @@ vnoremap("<A-k>", ":m '<-2<CR>gv=gv")
 -- Tabs
 nnoremap("<A-h>", ":-tabmove<CR>")
 nnoremap("<A-l>", ":+tabmove<CR>")
+
+-- Notes
+nnoremap("<leader>nj", ":Journal<CR>")
+nnoremap("<leader>nl", ":vsp ~/notes/loggi/work-notes.md<CR>")
+nnoremap("<leader>nw", ":vsp ~/notes/loggi/worklog.md<CR>")
 
 nnoremap("<leader><leader>", "<C-^>")
 -- find non git-ignored files inside the current dir
@@ -73,7 +75,7 @@ nnoremap("<leader>cbp", "<cmd>let @+ = expand(\"%\")<CR>")
 
 -- Harpoon
 nnoremap("<leader>m", ":lua require('harpoon.mark').add_file()<CR>") -- mark file with harpoon
-nnoremap("<leader>fm", ":Telescope harpoon marks theme=ivy<CR>") -- find marks
+nnoremap("<leader>fm", ":Telescope harpoon marks<CR>") -- find marks
 
 -- Git
 nnoremap("<leader>gs", ":tab G<CR>")
