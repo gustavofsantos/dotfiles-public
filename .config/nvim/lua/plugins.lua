@@ -18,9 +18,10 @@ return packer.startup(function(use)
   use 'ishan9299/nvim-solarized-lua'
   use 'ellisonleao/gruvbox.nvim'
   use 'nanotech/jellybeans.vim'
+  use 'haishanh/night-owl.vim'
+  use 'doums/darcula'
   use 'https://gitlab.com/__tpb/monokai-pro.nvim'
   use 'olivercederborg/poimandres.nvim'
-  use { 'dracula/vim', as = 'dracula' }
 
   use 'mbbill/undotree' -- tree of changes
 
