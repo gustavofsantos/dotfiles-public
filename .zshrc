@@ -108,7 +108,7 @@ alias emacs="emacsclient -c -a 'emacs'"
 alias em="emacs -nw"
 
 # Loggi aliases
-alias lggt="npm run test -- --bail --coverage=false"
+alias lggt="npm run test -- --bail --coverage=false --watchAll=false"
 # alias lglt="npx eslint $(git diff --relative --name-only HEAD | grep -E '\.jsx?$' | xargs)"
 alias lw_diff="git diff -U0 master...HEAD '*.py'"
 alias lw_diff_files="git diff --name-only master...HEAD '*.py'"

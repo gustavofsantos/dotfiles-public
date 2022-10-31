@@ -18,7 +18,7 @@ return packer.startup(function(use)
   use 'ishan9299/nvim-solarized-lua'
   use 'ellisonleao/gruvbox.nvim'
   use 'nanotech/jellybeans.vim'
-  use 'haishanh/night-owl.vim'
+  use 'projekt0n/github-nvim-theme'
   use 'doums/darcula'
   use 'https://gitlab.com/__tpb/monokai-pro.nvim'
   use 'olivercederborg/poimandres.nvim'
