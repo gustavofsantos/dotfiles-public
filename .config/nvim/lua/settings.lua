@@ -31,9 +31,9 @@ cmd [[set background=dark]]
 -- cmd [[colorscheme darcula]]
 -- cmd [[colorscheme poimandres]]
 -- cmd [[colorscheme jellybeans]]
--- cmd [[colorscheme gruvbox]]
+cmd [[colorscheme gruvbox]]
 -- cmd [[colorscheme rasmus]]
-cmd [[colorscheme solarized]]
+-- cmd [[colorscheme solarized]]
 -- cmd [[colorscheme github_light]]
 cmd [[set noerrorbells]]
 cmd [[set tabstop=2 softtabstop=2]]
@@ -112,6 +112,7 @@ cmd [[command! Reload :luafile ~/.config/nvim/init.lua<CR>]]
 
 -- Run the current test file
 cmd [[command! LWT :lua require('toggleterm').exec("lwt " .. string.gsub(vim.fn.expand("%"), "loggi/", ""))]]
+cmd [[command! LGGT :lua require('toggleterm').exec("lggt " .. vim.fn.expand("%"))]]
 
 cmd [[
 autocmd TermEnter term://*toggleterm#*
