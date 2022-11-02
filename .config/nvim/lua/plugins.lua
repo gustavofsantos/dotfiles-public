@@ -18,10 +18,6 @@ return packer.startup(function(use)
   use 'ishan9299/nvim-solarized-lua'
   use 'ellisonleao/gruvbox.nvim'
   use 'nanotech/jellybeans.vim'
-  use 'projekt0n/github-nvim-theme'
-  use 'doums/darcula'
-  use 'https://gitlab.com/__tpb/monokai-pro.nvim'
-  use 'olivercederborg/poimandres.nvim'
 
   use 'mbbill/undotree' -- tree of changes
 
@@ -33,7 +29,6 @@ return packer.startup(function(use)
   use 'pantharshit00/vim-prisma' -- Prisma files colorscheme
   use 'udalov/kotlin-vim' -- Kotlin highlight
   use 'elixir-editors/vim-elixir' -- Elixir highlighting
-  -- use 'vim-python/python-syntax' -- Python syntax highlight
   use 'numirias/semshi' -- Python enhanced syntax
   use 'norcalli/nvim-colorizer.lua' -- Display colors
 
@@ -46,6 +41,7 @@ return packer.startup(function(use)
   -- Git
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
+  use 'lewis6991/gitsigns.nvim'
 
   -- Telescope
   use 'nvim-telescope/telescope.nvim'
