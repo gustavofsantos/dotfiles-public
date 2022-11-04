@@ -18,6 +18,8 @@ return packer.startup(function(use)
   use 'ishan9299/nvim-solarized-lua'
   use 'ellisonleao/gruvbox.nvim'
   use 'nanotech/jellybeans.vim'
+  use 'ackyshake/Spacegray.vim'
+  use 'kvrohit/rasmus.nvim'
 
   use 'mbbill/undotree' -- tree of changes
 
@@ -53,8 +55,8 @@ return packer.startup(function(use)
   use 'kyazdani42/nvim-tree.lua'
 
   use 'nvim-treesitter/nvim-treesitter'
-  use 'nvim-treesitter/nvim-treesitter-textobjects'
-  use 'RRethy/nvim-treesitter-textsubjects'
+  -- use 'nvim-treesitter/nvim-treesitter-textobjects'
+  -- use 'RRethy/nvim-treesitter-textsubjects'
 
   use 'akinsho/toggleterm.nvim'
 

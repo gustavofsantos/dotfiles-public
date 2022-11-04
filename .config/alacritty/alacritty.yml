@@ -633,4 +633,4 @@ schemes:
       cyan:    '0x9aedfe'
       white:   '0xe6e6e6'
 
-colors: *solarized_dark
+colors: *rasmus
