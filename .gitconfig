@@ -24,7 +24,7 @@
 
 [push]
   config = default
-  default = tracking
+  default = current
 
 [diff]
   tool = difftastic
@@ -38,8 +38,11 @@
 [pager]
   difftool = true
 
-[alias]
-  dft = difftool
+[rerere]
+  enabled = true
+
+[branch]
+  autosetuprebase = always
 
 [color]
   diff = auto
@@ -67,14 +70,16 @@
 
 [alias]
   c       = commit
-  cm      = commit -m
-  s       = status
+  co      = checkout
+  s       = status --short
   d       = diff
   ds      = diff --staged
   dw      = diff --color-words
   l       = log --pretty=default
   lg      = log --color --graph --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)' --abbrev-commit --branches
   rh      = reset --hard
+  dft     = difftool
+  undo    = reset --soft HEAD~1
 
 [init]
   defaultBranch = main
