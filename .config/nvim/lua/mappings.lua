@@ -85,14 +85,14 @@ vnoremap("<leader>b",
   ":<C-U>!git blame <C-R>=expand(\"%:p\") <CR> | sed -n <C-R>=line(\"'<\") <CR>,<C-R>=line(\"'>\") <CR>p <CR>")
 
 -- Window
-nnoremap("<leader>o", ":only<CR>")
-nnoremap("<C-h>", "<C-w>h")
-nnoremap("<C-j>", "<C-w>j")
-nnoremap("<C-k>", "<C-w>k")
-nnoremap("<C-l>", "<C-w>l")
+-- nnoremap("<leader>o", ":only<CR>")
+-- nnoremap("<C-h>", "<C-w>h")
+-- nnoremap("<C-j>", "<C-w>j")
+-- nnoremap("<C-k>", "<C-w>k")
+-- nnoremap("<C-l>", "<C-w>l")
 nnoremap("<leader>ws", ":vsplit<CR>")
 nnoremap("<leader>wS", ":split<CR>")
-nnoremap("<leader>=", "<C-w>=")
+-- nnoremap("<leader>=", "<C-w>=")
 tnoremap("<Esc>", "<C-\\><C-n>")
 
 -- Editing
