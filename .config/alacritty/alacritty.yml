@@ -12,7 +12,7 @@ font:
     family: MonoLisa Custom
     style: Bold Italic
   # size: 18 # recording
-  size: 11
+  size: 12
 
 # font:
 #   normal:
@@ -28,7 +28,7 @@ font:
 #     family: OperatorMono Nerd Font
 #     style: Bold Italic
 #   # size: 18 # recording
-#   size: 15
+#   size: 13
 
 env:
   TERM: xterm-256color
