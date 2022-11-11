@@ -43,7 +43,6 @@ return packer.startup(function(use)
   -- Git
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
-  use 'lewis6991/gitsigns.nvim'
 
   -- Telescope
   use 'nvim-telescope/telescope.nvim'
@@ -53,6 +52,8 @@ return packer.startup(function(use)
 
   -- IDE like view
   use 'kyazdani42/nvim-tree.lua'
+  use 'nvim-lualine/lualine.nvim'
+  use 'lewis6991/gitsigns.nvim'
 
   use 'nvim-treesitter/nvim-treesitter'
   -- use 'nvim-treesitter/nvim-treesitter-textobjects'

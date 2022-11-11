@@ -17,7 +17,7 @@ lualine.setup({
   },
   sections = {
     lualine_a = { 'mode' },
-    lualine_b = { 'branch', 'diff', '' },
+    lualine_b = {},
     lualine_c = {
       {
         'filename',
@@ -25,9 +25,9 @@ lualine.setup({
         path = 0
       }
     },
-    lualine_x = { '', 'diagnostics', 'filetype' },
-    lualine_y = { '' },
-    lualine_z = { '' }
+    lualine_x = { 'diagnostics' },
+    lualine_y = { 'branch' },
+    lualine_z = {}
   },
   extensions = { 'quickfix', 'nvim-tree', 'toggleterm' }
 })
