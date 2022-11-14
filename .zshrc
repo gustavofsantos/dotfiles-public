@@ -94,9 +94,9 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='nvim'
 
 alias bashconfig="nvim ~/.bashrc"
-alias dotfiles="nvim ~/dotfiles/README.md"
+alias dotfiles="nvim ~/dotfiles-public/README.md"
 alias vimrc="nvim ~/.vimrc"
-alias alacritty_config="nvim ~/dotfiles/.config/alacritty/alacritty.yml"
+alias alacritty_config="nvim ~/.config/alacritty/alacritty.yml"
 
 alias v="nvim"
 alias vim="nvim"
