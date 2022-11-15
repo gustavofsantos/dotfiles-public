@@ -141,8 +141,6 @@ alias gc="git commit"
 # TMUX aliases
 alias trename="tmux rename-session"
 
-# alias emacs="emacs -nw"
-
 alias ls="ls -G"
 alias ll="ls -lG"
 
@@ -151,6 +149,7 @@ alias gogh="bash -c  \"\$(wget -qO- https://git.io/vQgMr)\""
 export PATH=$PATH:"$HOME"/.local/bin
 export PATH=$PATH:"$HOME"/dotfiles-public/bin
 export PATH=$PATH:"$HOME"/.emacs.d/bin
+# export PATH="/home/linuxbrew/.linuxbrew/opt/node@18/bin:$PATH"
 
 eval "$(zoxide init zsh)"
 
@@ -161,4 +160,3 @@ export NVM_DIR="$HOME/.nvm"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-export PATH="/home/linuxbrew/.linuxbrew/opt/node@18/bin:$PATH"
