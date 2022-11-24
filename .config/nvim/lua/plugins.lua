@@ -20,6 +20,7 @@ return packer.startup(function(use)
   use 'nanotech/jellybeans.vim'
   use 'shaunsingh/nord.nvim'
   use 'kvrohit/rasmus.nvim'
+  use { 'lalitmee/cobalt2.nvim', requires = 'tjdevries/colorbuddy.nvim' }
 
   use 'mbbill/undotree' -- tree of changes
 
