@@ -637,9 +637,9 @@ schemes:
       background: '#2e3440'
       foreground: '#d8dee9'
       dim_foreground: '#a5abb6'
-    cursor:
-      text: '#2e3440'
-      cursor: '#d8dee9'
+    # cursor:
+    #   text: '#2e3440'
+    #   cursor: '#d8dee9'
     vi_mode_cursor:
       text: '#2e3440'
       cursor: '#d8dee9'
