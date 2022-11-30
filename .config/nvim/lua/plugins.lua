@@ -47,6 +47,7 @@ return packer.startup(function(use)
 
   -- Telescope
   use 'nvim-telescope/telescope.nvim'
+  use { 'nvim-telescope/telescope-ui-select.nvim' }
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   use 'ThePrimeagen/harpoon'
@@ -57,8 +58,8 @@ return packer.startup(function(use)
   use 'lewis6991/gitsigns.nvim'
 
   use 'nvim-treesitter/nvim-treesitter'
-  -- use 'nvim-treesitter/nvim-treesitter-textobjects'
-  -- use 'RRethy/nvim-treesitter-textsubjects'
+  use 'nvim-treesitter/nvim-treesitter-textobjects'
+  use 'RRethy/nvim-treesitter-textsubjects'
 
   use 'akinsho/toggleterm.nvim'
 
