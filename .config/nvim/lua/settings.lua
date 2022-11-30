@@ -5,6 +5,7 @@ g.rasmus_italic_comments = true
 g.rasmus_italic_keywords = true
 g.rasmus_bold_booleans = true
 g.rasmus_bold_functions = true
+g.rasmus_transparent = true
 
 g.mapleader = " "
 
