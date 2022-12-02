@@ -17,10 +17,9 @@ return packer.startup(function(use)
   use 'rebelot/kanagawa.nvim'
   use 'ishan9299/nvim-solarized-lua'
   use 'ellisonleao/gruvbox.nvim'
-  use 'nanotech/jellybeans.vim'
   use 'shaunsingh/nord.nvim'
+  use 'projekt0n/github-nvim-theme'
   use 'kvrohit/rasmus.nvim'
-  use { 'lalitmee/cobalt2.nvim', requires = 'tjdevries/colorbuddy.nvim' }
 
   use 'mbbill/undotree' -- tree of changes
 
