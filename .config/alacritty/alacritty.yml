@@ -1,15 +1,15 @@
 font:
   normal:
-    family: MonoLisa Custom
+    family: MonoLisaCustom Nerd Font
     style: Medium
   italic:
-    family: MonoLisa Custom
+    family: MonoLisaCustom Nerd Font
     style: Medium Italic
   bold:
-    family: MonoLisa Custom
+    family: MonoLisaCustom Nerd Font
     style: Bold
   bold_italic:
-    family: MonoLisa Custom
+    family: MonoLisaCustom Nerd Font
     style: Bold Italic
   # size: 18 # recording
   size: 12
