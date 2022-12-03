@@ -36,7 +36,7 @@ env:
 window:
   title: Terminal
   dynamic_padding: false
-  opacity: 0.95
+  opacity: 0.975
   decorations_theme_variant: light
 
 draw_bold_text_with_bright_colors: true
