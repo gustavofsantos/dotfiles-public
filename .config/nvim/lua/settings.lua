@@ -16,6 +16,8 @@ cmd [[let g:python_highlight_all = 1]]
 cmd [[let g:spacegray_underline_search = 1]]
 cmd [[let g:spacegray_use_italics = 1]]
 
+cmd [[let test#strategy = "neovim"]]
+
 cmd [[
 let g:switch_custom_definitions =
     \ [

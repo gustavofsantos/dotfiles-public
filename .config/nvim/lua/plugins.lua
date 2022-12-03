@@ -56,6 +56,7 @@ return packer.startup(function(use)
   use 'kyazdani42/nvim-tree.lua'
   use 'nvim-lualine/lualine.nvim'
   use 'lewis6991/gitsigns.nvim'
+  use 'vim-test/vim-test'
 
   use 'nvim-treesitter/nvim-treesitter'
   use 'nvim-treesitter/nvim-treesitter-textobjects'

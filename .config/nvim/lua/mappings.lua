@@ -22,6 +22,12 @@ nmap("cv", "\"+p")
 vmap("cv", "\"+p")
 nmap("cV", "\"+P")
 
+-- vim-test
+nmap("<leader>t", ":TestNearest<CR>")
+nmap("<leader>T", ":TestFile<CR>")
+nmap("<leader>a", ":TestSuite<CR>")
+nmap("<leader>l", ":TestLast<CR>")
+nmap("<leader>g", ":TestVisit<CR>")
 
 nnoremap("dgh", ":diffget //2<CR>") -- vimdiff get from left
 nnoremap("dgl", ":diffget //3<CR>") -- vimdiff get from right
@@ -34,6 +40,7 @@ nnoremap("<C-t>", "<Cmd>exe v:count1 . \"ToggleTerm\"<CR>") -- toggle terminal
 inoremap("<C-t>", "<Esc><Cmd>exe v:count1 . \"ToggleTerm\"<CR>") -- toggle terminal
 nnoremap("<C-d>", "<C-d>zz")
 nnoremap("<C-u>", "<C-u>zz")
+
 
 -- Move lines
 nnoremap("<A-j>", ":m .+1<CR>==")
