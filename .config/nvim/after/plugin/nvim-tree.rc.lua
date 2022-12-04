@@ -1,10 +1,27 @@
 local status, nvimtree = pcall(require, 'nvim-tree')
 if (not status) then return end
 
+local gwidth = vim.api.nvim_list_uis()[1].width
+local gheight = vim.api.nvim_list_uis()[1].height
+local width = 60
+local height = 20
+
 nvimtree.setup {
   respect_buf_cwd = true,
   view = {
-    width = 36,
+    -- width = 36,
+    float = {
+      enable = true,
+      quit_on_focus_loss = true,
+      open_win_config = {
+        relative = "editor",
+        -- border = "rounded",
+        width = width,
+        height = height,
+        row = (gheight - height) * 0.4,
+        col = (gwidth - width) * 0.5,
+      },
+    }
   },
   actions = {
     open_file = {
