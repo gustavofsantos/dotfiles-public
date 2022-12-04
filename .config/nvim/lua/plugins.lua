@@ -52,18 +52,17 @@ return packer.startup(function(use)
 
   use 'ThePrimeagen/harpoon'
 
-  -- IDE like view
-  use 'kyazdani42/nvim-tree.lua'
-  use 'nvim-lualine/lualine.nvim'
-  use 'lewis6991/gitsigns.nvim'
-  use 'vim-test/vim-test'
-
   use 'nvim-treesitter/nvim-treesitter'
   use 'nvim-treesitter/nvim-treesitter-textobjects'
   use 'RRethy/nvim-treesitter-textsubjects'
 
+  -- IDE like view
+  use 'kyazdani42/nvim-tree.lua'
+  use 'nvim-lualine/lualine.nvim'
+  use 'lewis6991/gitsigns.nvim'
+  use { 'akinsho/bufferline.nvim', tag = "v3.*" }
+  use 'vim-test/vim-test'
   use 'akinsho/toggleterm.nvim'
-
   use 'folke/trouble.nvim'
   use 'windwp/nvim-ts-autotag'
   use 'windwp/nvim-autopairs'
