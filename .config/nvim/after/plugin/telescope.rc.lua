@@ -7,9 +7,9 @@ telescope.setup {
   },
   pickers = {
     find_files = {
-      disable_devicons = true
+      disable_devicons = false
     },
-    disable_devicons = true
+    disable_devicons = false
   },
   extensions = {
     fzf = {
