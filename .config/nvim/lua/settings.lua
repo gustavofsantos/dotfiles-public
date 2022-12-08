@@ -7,6 +7,11 @@ g.rasmus_bold_booleans = true
 g.rasmus_bold_functions = true
 g.rasmus_transparent = true
 
+vim.g.mellow_italic_keywords = true
+vim.g.mellow_italic_functions = true
+g.mellow_bold_variables = true
+g.mellow_transparent = true
+
 g.mapleader = " "
 
 cmd [[let g:sonokai_enable_italic = 1]]
@@ -18,6 +23,7 @@ cmd [[let g:spacegray_use_italics = 1]]
 cmd [[let g:gruvbox_material_background = 'hard']]
 cmd [[let g:sneak#label = 1]]
 cmd [[let g:sneak#use_ic_scs = 1]]
+
 
 cmd [[let test#strategy = "neovim"]]
 
@@ -41,6 +47,7 @@ cmd [[colorscheme poimandres]]
 -- cmd [[colorscheme rasmus]]
 -- cmd [[colorscheme solarized-flat]]
 -- cmd [[colorscheme nord]]
+-- cmd [[colorscheme mellow]]
 cmd [[set noerrorbells]]
 cmd [[set tabstop=2 softtabstop=2]]
 cmd [[set shiftwidth=2]]

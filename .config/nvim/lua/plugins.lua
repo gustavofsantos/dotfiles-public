@@ -20,6 +20,7 @@ return packer.startup(function(use)
   use 'shaunsingh/nord.nvim'
   use 'projekt0n/github-nvim-theme'
   use 'kvrohit/rasmus.nvim'
+  use 'kvrohit/mellow.nvim'
   use 'olivercederborg/poimandres.nvim'
 
   use 'mbbill/undotree' -- tree of changes

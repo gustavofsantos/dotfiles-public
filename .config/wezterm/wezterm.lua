@@ -22,4 +22,37 @@ return {
   tab_bar_at_bottom = true,
   hide_tab_bar_if_only_one_tab = true,
   tab_max_width = 999999,
+
+  leader = { key = "a", mods = "CTRL" },
+
+  keys = {
+    {
+      key = "s",
+      mods = "LEADER",
+      action = wezterm.action {
+        SplitHorizontal = { domain = "CurrentPaneDomain" }
+      }
+    },
+    {
+      key = "S",
+      mods = "LEADER",
+      action = wezterm.action {
+        SplitVertical = { domain = "CurrentPaneDomain" }
+      }
+    },
+    {
+      key = "c",
+      mods = "LEADER",
+      action = wezterm.action {
+        SpawnTab = "CurrentPaneDomain"
+      }
+    },
+    {
+      key = "Tab",
+      mods = "LEADER",
+      action = wezterm.action {
+        ActivateTabRelative = 1
+      }
+    },
+  }
 }
