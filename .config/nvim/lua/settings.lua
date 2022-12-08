@@ -15,6 +15,9 @@ cmd [[let g:sonokai_better_performance = 1]]
 cmd [[let g:python_highlight_all = 1]]
 cmd [[let g:spacegray_underline_search = 1]]
 cmd [[let g:spacegray_use_italics = 1]]
+cmd [[let g:gruvbox_material_background = 'hard']]
+cmd [[let g:sneak#label = 1]]
+cmd [[let g:sneak#use_ic_scs = 1]]
 
 cmd [[let test#strategy = "neovim"]]
 
@@ -33,8 +36,8 @@ cmd [[set termguicolors]]
 cmd [[set background=dark]]
 -- cmd [[colorscheme kanagawa]]
 -- cmd [[colorscheme jellybeans]]
--- cmd [[colorscheme gruvbox]]
-cmd [[colorscheme rasmus]]
+cmd [[colorscheme gruvbox]]
+-- cmd [[colorscheme rasmus]]
 -- cmd [[colorscheme solarized-flat]]
 -- cmd [[colorscheme nord]]
 cmd [[set noerrorbells]]
@@ -88,10 +91,6 @@ cmd [[set mouse=nv]]
 
 cmd [[set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)]]
 
-cmd [[let g:gruvbox_material_background = 'hard']]
-
-cmd [[let g:sneak#label = 1]]
-cmd [[let g:sneak#use_ic_scs = 1]]
 
 
 cmd [[
