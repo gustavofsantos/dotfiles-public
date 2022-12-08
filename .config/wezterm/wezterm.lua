@@ -48,6 +48,36 @@ return {
       }
     },
     {
+      key = "1",
+      mods = "LEADER",
+      action = wezterm.action { ActivateTab = 0 }
+    },
+    {
+      key = "2",
+      mods = "LEADER",
+      action = wezterm.action { ActivateTab = 1 }
+    },
+    {
+      key = "3",
+      mods = "LEADER",
+      action = wezterm.action { ActivateTab = 2 }
+    },
+    {
+      key = "4",
+      mods = "LEADER",
+      action = wezterm.action { ActivateTab = 3 }
+    },
+    {
+      key = "5",
+      mods = "LEADER",
+      action = wezterm.action { ActivateTab = 4 }
+    },
+    {
+      key = "6",
+      mods = "LEADER",
+      action = wezterm.action { ActivateTab = 5 }
+    },
+    {
       key = "Tab",
       mods = "LEADER",
       action = wezterm.action {
