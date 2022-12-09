@@ -10,7 +10,7 @@
 
 [commit]
   gpgsign = true
-  template = ~/dotfiles-public/gitmessage
+  template = ~/gitmessage
 
 [github]
   user = gustavofsantos
