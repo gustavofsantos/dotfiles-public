@@ -1,9 +1,0 @@
-[Unit]
-Description=Notify todo
-
-[Timer]
-Unit=notify-journal-todo.service
-OnUnitActiveSec=1min
-
-[Install]
-WantedBy=timers.target
