@@ -1,6 +1,5 @@
-. "$HOME/.cargo/env"
-
 if [ -e /home/gustavo/.nix-profile/etc/profile.d/nix.sh ]; then . /home/gustavo/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+if [ -e /home/gustavo/.cargo/env ]; then . /home/gustavo/.cargo/env;  fi
 
 # Loggi aliases
 alias lggt="npm run test -- --bail --coverage=false --watchAll=false"
