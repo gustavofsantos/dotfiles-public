@@ -5,8 +5,8 @@
 .config/.gsd-keyboard.settings-ported
 .config/1Password/
 .config/BraveSoftware/
-".config/Docker Desktop/"
-".config/MongoDB Compass/"
+.config/Docker Desktop/
+.config/MongoDB Compass/
 .config/btop/
 .config/chromium/
 .config/coc/
