@@ -47,6 +47,7 @@
 .config/vlc/
 .docker/
 .emacs.d/
+.gitconfig.local
 .gnupg/
 .hex/
 .lesshst
