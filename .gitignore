@@ -1,6 +1,7 @@
 .luarc.json
 .bash_history
 .bash_logout
+.bin/
 .cache/
 .config/.gsd-keyboard.settings-ported
 .config/1Password/
@@ -31,6 +32,7 @@
 .config/monitors.xml~
 .config/nautilus/
 .config/nextjs-nodejs/
+.config/nvim/plugin/packer_compiled.lua
 .config/omf/
 .config/pop-shell/
 .config/pop-system-updater/

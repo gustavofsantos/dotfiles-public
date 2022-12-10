@@ -16,11 +16,9 @@ return packer.startup(function(use)
   -- colorscheme
   use 'rebelot/kanagawa.nvim'
   use 'ishan9299/nvim-solarized-lua'
-  use 'ellisonleao/gruvbox.nvim'
-  use 'shaunsingh/nord.nvim'
-  use 'projekt0n/github-nvim-theme'
   use 'kvrohit/rasmus.nvim'
   use 'kvrohit/mellow.nvim'
+  use 'nyoom-engineering/oxocarbon.nvim'
   use 'olivercederborg/poimandres.nvim'
 
   use 'mbbill/undotree' -- tree of changes

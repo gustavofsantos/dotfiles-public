@@ -149,6 +149,7 @@ alias ll="ls -lG"
 alias gogh="bash -c  \"\$(wget -qO- https://git.io/vQgMr)\""
 
 export PATH=$PATH:"$HOME"/.local/bin
+export PATH=$PATH:"$HOME"/.bin
 export PATH=$PATH:"$HOME"/dotfiles-public/bin
 export PATH=$PATH:"$HOME"/.emacs.d/bin
 # export PATH="/home/linuxbrew/.linuxbrew/opt/node@18/bin:$PATH"
