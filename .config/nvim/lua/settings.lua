@@ -40,10 +40,10 @@ let g:switch_custom_definitions =
 
 cmd [[set termguicolors]]
 cmd [[set background=dark]]
--- cmd [[colorscheme kanagawa]]
+cmd [[colorscheme kanagawa]]
 -- cmd [[colorscheme jellybeans]]
 -- cmd [[colorscheme gruvbox]]
-cmd [[colorscheme poimandres]]
+-- cmd [[colorscheme poimandres]]
 -- cmd [[colorscheme rasmus]]
 -- cmd [[colorscheme solarized-flat]]
 -- cmd [[colorscheme nord]]
