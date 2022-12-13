@@ -1,6 +1,8 @@
 .luarc.json
 .bash_history
 .bash_logout
+.nvmrc
+.npmrc
 .bin/
 .cache/
 .config/.gsd-keyboard.settings-ported
