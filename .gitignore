@@ -8,10 +8,12 @@
 .config/.gsd-keyboard.settings-ported
 .config/1Password/
 .config/BraveSoftware/
+.config/btop/btop.log
 .config/Docker Desktop/
 .config/MongoDB Compass/
 .config/chromium/
 .config/coc/
+.config/configstore/
 .config/dconf/
 .config/enchant/
 .config/evolution/
