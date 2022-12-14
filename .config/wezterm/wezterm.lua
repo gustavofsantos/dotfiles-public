@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 
 return {
   -- color_scheme = "Poimandres", -- or "Poimandres Storm"
-  color_scheme = "kanagawabones",
+  color_scheme = "tokyonight",
 
   -- font
   font = wezterm.font("MonoLisaCustom Nerd Font", { weight = "Regular" }),
