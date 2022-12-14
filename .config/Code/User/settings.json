@@ -1133,5 +1133,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "workbench.iconTheme": "eq-material-theme-icons-ocean",
-  "git.autofetch": true
+  "git.autofetch": true,
+  "playwright.reuseBrowser": true
 }
