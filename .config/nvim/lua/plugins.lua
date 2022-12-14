@@ -31,7 +31,7 @@ return packer.startup(function(use)
   use 'pantharshit00/vim-prisma' -- Prisma files colorscheme
   use 'udalov/kotlin-vim' -- Kotlin highlight
   use 'elixir-editors/vim-elixir' -- Elixir highlighting
-  use 'numirias/semshi' -- Python enhanced syntax
+  -- use 'numirias/semshi' -- Python enhanced syntax
   use 'norcalli/nvim-colorizer.lua' -- Display colors
 
   use 'tpope/vim-surround'
@@ -68,7 +68,10 @@ return packer.startup(function(use)
   use 'gbprod/yanky.nvim'
   use 'MunifTanjim/prettier.nvim'
   use 'neovim/nvim-lspconfig'
-  use 'williamboman/mason.nvim'
+  use {
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim'
+  }
   use 'jose-elias-alvarez/null-ls.nvim'
 
   -- Completion

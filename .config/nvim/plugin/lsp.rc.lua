@@ -35,6 +35,20 @@ protocol.CompletionItemKind = {
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+require("mason-lspconfig").setup({
+    ensure_installed = {
+      "sumneko_lua",
+      "rust_analyzer",
+      "eslint",
+      "gopls",
+      "tsserver",
+      "marksman",
+      "pyright",
+      "tailwindcss",
+      "yamlls"
+    }
+})
+
 local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
