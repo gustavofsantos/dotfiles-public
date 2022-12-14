@@ -70,6 +70,7 @@
 .osh-update
 .pki/
 .profile
+.pyenv/
 .python_history
 .rustup/
 .sdirs
