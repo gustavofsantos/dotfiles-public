@@ -3,6 +3,7 @@
 .bash_logout
 .nvmrc
 .npmrc
+.ansible/
 .bin/
 .cache/
 .cargo/
@@ -101,3 +102,5 @@ notes/
 org/
 roam/
 styles/
+loggi
+install.sh
