@@ -5,6 +5,7 @@
 .npmrc
 .bin/
 .cache/
+.cargo/
 .config/.gsd-keyboard.settings-ported
 .config/1Password/
 .config/BraveSoftware/
@@ -70,6 +71,7 @@
 .pki/
 .profile
 .python_history
+.rustup/
 .sdirs
 .shell.pre-oh-my-zsh
 .ssh/
