@@ -68,6 +68,7 @@
 .nvm/
 .oh-my-bash/
 .oh-my-zsh/
+.opt/
 .osh-update
 .pki/
 .profile
