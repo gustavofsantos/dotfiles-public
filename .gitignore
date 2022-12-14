@@ -31,6 +31,8 @@
 .config/htop/
 .config/ibus/
 .config/lazygit/
+.config/JetBrains/
+.config/menus/
 .config/microsoft-edge-dev/
 .config/mimeapps.list
 .config/monitors.xml
@@ -55,10 +57,12 @@
 .docker/
 .emacs.d/
 .gitconfig.local
+.gnome/
 .gnupg/
 .hex/
 .lesshst
 .local/
+.java/
 .mix/
 .mongodb/
 .mozilla/
