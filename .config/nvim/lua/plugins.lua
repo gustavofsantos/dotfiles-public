@@ -18,7 +18,8 @@ return packer.startup(function(use)
   use 'ishan9299/nvim-solarized-lua'
   use 'kvrohit/rasmus.nvim'
   use 'kvrohit/mellow.nvim'
-  use 'nyoom-engineering/oxocarbon.nvim'
+  use 'ray-x/aurora'
+  use 'folke/tokyonight.nvim'
   use 'olivercederborg/poimandres.nvim'
 
   use 'mbbill/undotree' -- tree of changes

@@ -4,7 +4,7 @@ if (not status) then return end
 local gwidth = vim.api.nvim_list_uis()[1].width
 local gheight = vim.api.nvim_list_uis()[1].height
 local width = 80
-local height = 20
+local height = 30
 
 nvimtree.setup {
   respect_buf_cwd = true,
