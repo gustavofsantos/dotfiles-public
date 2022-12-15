@@ -18,7 +18,7 @@ return packer.startup(function(use)
   use 'ishan9299/nvim-solarized-lua'
   use 'kvrohit/rasmus.nvim'
   use 'kvrohit/mellow.nvim'
-  use 'ray-x/aurora'
+  use { 'EdenEast/nightfox.nvim', tag = "v2.0.0" }
   use 'folke/tokyonight.nvim'
   use 'olivercederborg/poimandres.nvim'
 
