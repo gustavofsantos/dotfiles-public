@@ -2,5 +2,9 @@ local status, gitsigns = pcall(require, 'gitsigns')
 if (not status) then return end
 
 gitsigns.setup {
-  numhl = true
+  signcolumn = true,
+  numhl = false,
+  attach_to_untracked = false,
+  current_line_blame = true,
+  current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d>',
 }
