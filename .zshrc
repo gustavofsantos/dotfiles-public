@@ -160,6 +160,11 @@ if [[ $(uname -n) = "loggi" ]]; then
   export PATH="$HOME/.pyenv/bin:$PATH"
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
+
+
+  export POETRY_VERSION=1.1.8
+  export POETRY_HOME="/opt/poetry"
+  export PATH="$POETRY_HOME/bin:$PATH"
 fi
 
 export NVM_DIR="$HOME/.nvm"
