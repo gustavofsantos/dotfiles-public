@@ -6,7 +6,17 @@ local keymap = vim.keymap.set
 local saga_status, saga = pcall(require, 'lspsaga')
 
 if (saga_status) then
-  saga.init_lsp_saga()
+  saga.init_lsp_saga({
+    code_action_lightbulb = {
+      enable = false,
+      enable_in_insert = false,
+      cache_code_action = true,
+      sign = true,
+      update_time = 150,
+      sign_priority = 20,
+      virtual_text = true,
+    }
+  })
 
   -- Lsp finder find the symbol definition implement reference
   -- if there is no implement it will hide
