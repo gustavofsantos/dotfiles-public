@@ -110,11 +110,11 @@ inoremap("<silent><expr><TAB>", "pumvisible() ? \"\\<C-n>\" : \"\\<TAB>\"")
 inoremap("<expr><S-TAB>", "pumvisible() ? \"\\<C-p>\" : \"\\<C-h>\"")
 -- Format current buffer
 nnoremap("<leader>F", ":lua vim.lsp.buf.formatting()<CR>")
--- Open code action
-nnoremap("<leader>ca", ":lua vim.lsp.buf.code_action()<CR>")
--- Rename current symbol
-nnoremap("<leader>rn", ":lua vim.lsp.buf.rename()<CR>")
-nnoremap("gD", ":lua vim.lsp.buf.declaration()<CR>")
-nnoremap("gd", ":lua vim.lsp.buf.definition()<CR>")
-nnoremap("gr", ":lua vim.lsp.buf.references()<CR>")
-nnoremap("K", ":lua vim.lsp.buf.hover()<CR>")
+-- -- Open code action
+-- nnoremap("<leader>ca", ":lua vim.lsp.buf.code_action()<CR>")
+-- -- Rename current symbol
+-- nnoremap("<leader>rn", ":lua vim.lsp.buf.rename()<CR>")
+-- nnoremap("gD", ":lua vim.lsp.buf.declaration()<CR>")
+-- nnoremap("gd", ":lua vim.lsp.buf.definition()<CR>")
+-- nnoremap("gr", ":lua vim.lsp.buf.references()<CR>")
+-- nnoremap("K", ":lua vim.lsp.buf.hover()<CR>")

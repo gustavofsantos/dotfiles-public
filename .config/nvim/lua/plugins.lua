@@ -69,6 +69,7 @@ return packer.startup(function(use)
   use 'gbprod/yanky.nvim'
   use 'MunifTanjim/prettier.nvim'
   use 'neovim/nvim-lspconfig'
+  use 'glepnir/lspsaga.nvim'
   use {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim'
