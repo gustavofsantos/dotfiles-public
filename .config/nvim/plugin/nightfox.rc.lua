@@ -8,10 +8,11 @@ nightfox.setup {
     styles = {
       comments = "italic",
       functions = "italic",
-      -- conditionals = "italic",
+      conditionals = "italic",
       constants = "italic,bold",
       variables = "italic",
       numbers = "bold",
+      keywords = "italic",
       types = "italic"
     }
   }
