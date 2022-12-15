@@ -3,12 +3,16 @@ if (not status) then return end
 
 nightfox.setup {
   options = {
-    transparent = true,
+    dim_inactive = true,
+    transparent = false,
     styles = {
       comments = "italic",
-      keywords = "italic",
       functions = "italic",
-      constants = "bold"
+      -- conditionals = "italic",
+      constants = "italic,bold",
+      variables = "italic",
+      numbers = "bold",
+      types = "italic"
     }
   }
 }
