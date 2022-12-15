@@ -54,6 +54,8 @@
 .config/vivaldi-snapshot/
 .config/vivaldi/
 .config/vlc/
+.config/cef_user_data/
+.config/pypoetry/
 .docker/
 .emacs.d/
 .gitconfig.local
