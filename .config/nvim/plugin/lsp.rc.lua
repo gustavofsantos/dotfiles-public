@@ -114,9 +114,15 @@ local lsp_flags = {
   debounce_text_changes = 300,
 }
 
+lspconfig.denols.setup {
+  on_attach = on_attach,
+  root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+}
+
 lspconfig.tsserver.setup {
   filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact" },
   on_attach = on_attach,
+  root_dir = lspconfig.util.root_pattern("package.json"),
   flags = lsp_flags,
   capabilities = capabilities
 }
