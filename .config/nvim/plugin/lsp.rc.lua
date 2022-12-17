@@ -52,6 +52,12 @@ if (saga_status) then
   keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
 end
 
+-- Diagnostic keymaps
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']e', vim.diagnostic.goto_next)
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
+
 protocol.CompletionItemKind = {
   '', -- Text
   '', -- Method

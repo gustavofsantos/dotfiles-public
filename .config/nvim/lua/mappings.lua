@@ -63,22 +63,14 @@ nnoremap("<leader>nw", ":vsp ~/notes/loggi/worklog.md<CR>")
 nnoremap("<leader><leader>", "<C-^>")
 nnoremap("<F5>", ":UndotreeToggle<CR>")
 
--- code insights
-nnoremap("<leader>ft", ":TroubleToggle<CR>")
-
 -- switch
 nnoremap("<leader>ss", ":Switch<CR>")
 
 -- copy buffer path to clipboard
 nnoremap("<leader>cbp", "<cmd>let @+ = expand(\"%\")<CR>")
 
--- Harpoon
-nnoremap("<leader>m", ":lua require('harpoon.mark').add_file()<CR>") -- mark file with harpoon
-nnoremap("<leader>fm", ":Telescope harpoon marks<CR>") -- find marks
-
 -- Git
-nnoremap("<leader>gs", ":tab G<CR>")
-nnoremap("<leader>gb", ":Telescope git_branches theme=ivy<CR>")
+nnoremap("<leader>gs", ":tab Git<CR>")
 vnoremap("<leader>b",
   ":<C-U>!git blame <C-R>=expand(\"%:p\") <CR> | sed -n <C-R>=line(\"'<\") <CR>,<C-R>=line(\"'>\") <CR>p <CR>")
 
@@ -99,11 +91,3 @@ inoremap("<silent><expr><TAB>", "pumvisible() ? \"\\<C-n>\" : \"\\<TAB>\"")
 inoremap("<expr><S-TAB>", "pumvisible() ? \"\\<C-p>\" : \"\\<C-h>\"")
 -- Format current buffer
 nnoremap("<leader>F", ":lua vim.lsp.buf.formatting()<CR>")
--- -- Open code action
--- nnoremap("<leader>ca", ":lua vim.lsp.buf.code_action()<CR>")
--- -- Rename current symbol
--- nnoremap("<leader>rn", ":lua vim.lsp.buf.rename()<CR>")
--- nnoremap("gD", ":lua vim.lsp.buf.declaration()<CR>")
--- nnoremap("gd", ":lua vim.lsp.buf.definition()<CR>")
--- nnoremap("gr", ":lua vim.lsp.buf.references()<CR>")
--- nnoremap("K", ":lua vim.lsp.buf.hover()<CR>")
