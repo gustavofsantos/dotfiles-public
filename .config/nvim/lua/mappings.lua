@@ -61,17 +61,6 @@ nnoremap("<leader>nl", ":vsp ~/notes/loggi/work-notes.md<CR>")
 nnoremap("<leader>nw", ":vsp ~/notes/loggi/worklog.md<CR>")
 
 nnoremap("<leader><leader>", "<C-^>")
--- find non git-ignored files inside the current dir
-nnoremap("<leader>ff", ":Telescope find_files theme=ivy<CR>")
--- find files using git source
-nnoremap("<leader>fg", ":Telescope git_files theme=ivy<CR>")
-nnoremap("<leader>fe", ":Telescope oldfiles theme=ivy<CR>")
-nnoremap("<leader>fb", ":Telescope buffers theme=ivy<CR>")
-nnoremap("<leader>fy", ":Telescope yank_history theme=ivy<CR>")
-nnoremap("<leader>fl", ":Telescope live_grep theme=ivy<CR>")
-nnoremap("<leader>fj", ":Telescope jumplist theme=ivy<CR>")
-nnoremap("<F3>", ":Telescope grep_string theme=ivy<CR>")
-vnoremap("<F3>", "\"zy:Telescope grep_string default_text=<C-r>z<cr>")
 nnoremap("<F5>", ":UndotreeToggle<CR>")
 
 -- code insights
