@@ -44,6 +44,7 @@ return packer.startup(function(use)
   -- Git
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
+  use 'lewis6991/gitsigns.nvim'
 
   -- Telescope
   use 'nvim-telescope/telescope.nvim'
@@ -59,22 +60,24 @@ return packer.startup(function(use)
   -- IDE like view
   use 'kyazdani42/nvim-tree.lua'
   use 'nvim-lualine/lualine.nvim'
-  use 'lewis6991/gitsigns.nvim'
   use { 'akinsho/bufferline.nvim', tag = "v3.*" }
-  use 'vim-test/vim-test'
+  -- use 'vim-test/vim-test'
   use 'akinsho/toggleterm.nvim'
   use 'folke/trouble.nvim'
   use 'windwp/nvim-ts-autotag'
   use 'windwp/nvim-autopairs'
-  use 'gbprod/yanky.nvim'
-  use 'MunifTanjim/prettier.nvim'
+  -- use 'gbprod/yanky.nvim'
+  -- use 'MunifTanjim/prettier.nvim'
   use 'neovim/nvim-lspconfig'
   use 'glepnir/lspsaga.nvim'
   use {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim'
   }
-  use 'jose-elias-alvarez/null-ls.nvim'
+  -- LSP updates
+  use 'j-hui/fidget.nvim'
+
+  -- use 'jose-elias-alvarez/null-ls.nvim'
 
   -- Completion
   use 'onsails/lspkind-nvim'
