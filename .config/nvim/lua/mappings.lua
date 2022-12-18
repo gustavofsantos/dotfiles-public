@@ -75,19 +75,11 @@ vnoremap("<leader>b",
   ":<C-U>!git blame <C-R>=expand(\"%:p\") <CR> | sed -n <C-R>=line(\"'<\") <CR>,<C-R>=line(\"'>\") <CR>p <CR>")
 
 -- Window
--- nnoremap("<leader>o", ":only<CR>")
--- nnoremap("<C-h>", "<C-w>h")
--- nnoremap("<C-j>", "<C-w>j")
--- nnoremap("<C-k>", "<C-w>k")
--- nnoremap("<C-l>", "<C-w>l")
 nnoremap("<leader>ws", ":vsplit<CR>")
 nnoremap("<leader>wS", ":split<CR>")
--- nnoremap("<leader>=", "<C-w>=")
 tnoremap("<Esc>", "<C-\\><C-n>")
 
 -- Editing
 
-inoremap("<silent><expr><TAB>", "pumvisible() ? \"\\<C-n>\" : \"\\<TAB>\"")
-inoremap("<expr><S-TAB>", "pumvisible() ? \"\\<C-p>\" : \"\\<C-h>\"")
--- Format current buffer
-nnoremap("<leader>F", ":lua vim.lsp.buf.formatting()<CR>")
+-- inoremap("<silent><expr><TAB>", "pumvisible() ? \"\\<C-n>\" : \"\\<TAB>\"")
+-- inoremap("<expr><S-TAB>", "pumvisible() ? \"\\<C-p>\" : \"\\<C-h>\"")
