@@ -3,7 +3,7 @@ local wezterm = require("wezterm")
 return {
   -- color_scheme = "Poimandres", -- or "Poimandres Storm"
   -- color_scheme = "nightfox",
-  color_scheme = "dawnfox",
+  color_scheme = "dawnfox", -- nightfox, dayfox, duskfox, nordfox, terafox
 
   -- font
   font = wezterm.font("MonoLisaCustom Nerd Font", { weight = "Regular" }),
