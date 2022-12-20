@@ -34,4 +34,11 @@ end
 local has_diffview, diffview = pcall(require, 'diffview')
 if (has_diffview) then
   diffview.setup {}
+
+  vim.keymap.set("n", "<leader>gvo", ":DiffviewOpen")
 end
+
+-- Git
+vim.keymap.set("n", "<leader>gs", ":tab Git<CR>")
+vim.keymap.set("n", "<leader>b",
+  ":<C-U>!git blame <C-R>=expand(\"%:p\") <CR> | sed -n <C-R>=line(\"'<\") <CR>,<C-R>=line(\"'>\") <CR>p <CR>")

@@ -21,13 +21,8 @@ vmap("cp", "\"+y")
 nmap("cv", "\"+p")
 vmap("cv", "\"+p")
 nmap("cV", "\"+P")
-
--- vim-test
-nmap("<leader>t", ":TestNearest<CR>")
-nmap("<leader>T", ":TestFile<CR>")
-nmap("<leader>a", ":TestSuite<CR>")
-nmap("<leader>l", ":TestLast<CR>")
-nmap("<leader>g", ":TestVisit<CR>")
+-- copy buffer path to clipboard
+nnoremap("<leader>cbp", "<cmd>let @+ = expand(\"%\")<CR>")
 
 nnoremap("dgh", ":diffget //2<CR>") -- vimdiff get from left
 nnoremap("dgl", ":diffget //3<CR>") -- vimdiff get from right
@@ -65,14 +60,6 @@ nnoremap("<F5>", ":UndotreeToggle<CR>")
 
 -- switch
 nnoremap("<leader>ss", ":Switch<CR>")
-
--- copy buffer path to clipboard
-nnoremap("<leader>cbp", "<cmd>let @+ = expand(\"%\")<CR>")
-
--- Git
-nnoremap("<leader>gs", ":tab Git<CR>")
-vnoremap("<leader>b",
-  ":<C-U>!git blame <C-R>=expand(\"%:p\") <CR> | sed -n <C-R>=line(\"'<\") <CR>,<C-R>=line(\"'>\") <CR>p <CR>")
 
 -- Window
 nnoremap("<leader>ws", ":vsplit<CR>")
