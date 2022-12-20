@@ -204,3 +204,16 @@ if has_treesitter then
     },
   }
 end
+
+local has_null_ls, null_ls = pcall(require, "null-ls")
+if has_null_ls then
+  null_ls.setup {
+    debounce = 300,
+    sources = {
+      null_ls.builtins.diagnostics.eslint,
+      null_ls.builtins.diagnostics.fish,
+      null_ls.builtins.code_actions.gitsigns,
+      null_ls.builtins.formatting.prettier
+    }
+  }
+end
