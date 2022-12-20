@@ -158,6 +158,7 @@ if (has_diffview) then
 
   vim.keymap.set("n", "<leader>gvo", ":DiffviewOpen<CR>")
   vim.keymap.set("n", "<leader>gvc", ":DiffviewClose<CR>")
+  vim.keymap.set("n", "<leader>gvr", ":DiffviewRefresh<CR>")
   vim.keymap.set("n", "<leader>gvh", ":DiffviewFileHistory %<CR>")
 end
 
