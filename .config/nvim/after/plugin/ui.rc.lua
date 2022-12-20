@@ -63,7 +63,7 @@ end
 -- Setup toggle term
 local has_toggleterm, toggleterm = pcall(require, "toggleterm")
 if (has_toggleterm) then
- toggleterm.setup {
+  toggleterm.setup {
     -- direction = 'tab',
     size = 28,
     winbar = {
@@ -72,5 +72,11 @@ if (has_toggleterm) then
         return term.name
       end
     },
-  } 
+  }
+end
+
+-- setup trouble
+local has_trouble, trouble = pcall(require, "trouble")
+if (has_trouble) then
+  trouble.setup {}
 end
