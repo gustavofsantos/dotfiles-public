@@ -59,3 +59,18 @@ if (has_lualine) then
     extensions = { 'quickfix', 'nvim-tree', 'toggleterm' }
   })
 end
+
+-- Setup toggle term
+local has_toggleterm, toggleterm = pcall(require, "toggleterm")
+if (has_toggleterm) then
+ toggleterm.setup {
+    -- direction = 'tab',
+    size = 28,
+    winbar = {
+      enabled = true,
+      name_formatter = function(term) --  term: Terminal
+        return term.name
+      end
+    },
+  } 
+end
