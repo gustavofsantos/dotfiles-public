@@ -112,3 +112,6 @@ roam/
 styles/
 loggi
 install.sh
+
+*.mkv
+*.mp4
