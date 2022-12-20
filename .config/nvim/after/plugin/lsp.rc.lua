@@ -3,7 +3,6 @@ if (has_mason) then
   mason.setup {}
 end
 
-
 local has_mason_lspconfig, mason_lspconfig = pcall(require, "mason-lspconfig")
 if (has_mason_lspconfig) then
   mason_lspconfig.setup({
