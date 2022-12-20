@@ -217,3 +217,9 @@ if has_null_ls then
     }
   }
 end
+
+if (has_luasnip) then
+  require("luasnip.loaders.from_vscode").lazy_load {
+    paths = { "~/.config/nvim/snippets" }
+  }
+end
