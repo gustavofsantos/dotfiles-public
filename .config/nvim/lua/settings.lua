@@ -45,7 +45,7 @@ cmd [[set background=dark]]
 -- cmd [[colorscheme kanagawa]]
 -- cmd [[colorscheme tokyonight-storm]]
 -- cmd [[colorscheme nightfox]]
-cmd [[colorscheme terafox]] -- nightfox, nordfox, duskfox, dawnfox, terafox
+cmd [[colorscheme dayfox]] -- nightfox, nordfox, dayfox, duskfox, dawnfox, terafox
 -- cmd [[colorscheme gruvbox]]
 -- cmd [[colorscheme rasmus]]
 -- cmd [[colorscheme mellow]]
