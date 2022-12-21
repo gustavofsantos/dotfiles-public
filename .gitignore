@@ -96,6 +96,7 @@
 .yarnrc
 .z
 .zcompdump*
+.zoom/
 .zsh_history
 Code/
 Downloads/
