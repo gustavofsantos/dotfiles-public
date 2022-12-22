@@ -8,6 +8,7 @@ echo ">> Installing ASDF"
 
 # Install asdf plugins
 echo ">> Installing ASDF plugins"
+asdf plugin add neovim
 asdf plugin add nodejs
 asdf plugin add exa
 asdf plugin add fzf
