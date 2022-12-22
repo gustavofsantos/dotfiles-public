@@ -95,11 +95,6 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 export EDITOR='nvim'
 
-alias bashconfig="nvim ~/.bashrc"
-alias dotfiles="nvim ~/dotfiles-public/README.md"
-alias vimrc="nvim ~/.vimrc"
-alias alacritty_config="nvim ~/.config/alacritty/alacritty.yml"
-
 alias v="nvim"
 alias vim="nvim"
 alias jest="npx jest"
@@ -131,20 +126,17 @@ alias lw_show_urls="docker-compose exec loggi_web_app bash -c 'python manage.py 
 
 # -----
 
-# Code Metrics
-alias drstrange="npx eslint -c ~/dotfiles/complexity-eslint.config.js"
-
 # Git aliases
 alias g="git"
-alias gs="git status"
-alias ga="git add"
-alias gc="git commit"
 
 # TMUX aliases
 alias trename="tmux rename-session"
 
-alias ls="ls -G"
-alias ll="ls -lG"
+alias ..="cd .."
+
+alias ll="ls -lhF --color"
+alias la="ls -lahF --color"
+alias lsd="ls -lhF --color | grep --color=never '^d'"
 
 alias gogh="bash -c  \"\$(wget -qO- https://git.io/vQgMr)\""
 
