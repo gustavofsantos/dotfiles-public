@@ -5,3 +5,4 @@ golang 1.19.4
 jq 1.6
 neovim stable
 ripgrep 13.0.0
+zoxide 0.8.3
