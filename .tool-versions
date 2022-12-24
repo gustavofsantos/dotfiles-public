@@ -1,4 +1,4 @@
-nodejs lts
+nodejs 18.12.1
 exa 0.10.1
 fzf 0.35.1
 golang 1.19.4
