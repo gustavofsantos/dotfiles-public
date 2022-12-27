@@ -19,7 +19,7 @@ if (has_gitsigns) then
     signcolumn = true,
     numhl = false,
     attach_to_untracked = false,
-    current_line_blame = true,
+    current_line_blame = false,
     current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d>',
     signs = {
       add = { text = '+' },
