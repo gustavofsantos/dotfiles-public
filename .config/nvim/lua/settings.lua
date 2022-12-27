@@ -42,7 +42,8 @@ let g:switch_custom_definitions =
 
 cmd [[set termguicolors]]
 cmd [[set background=dark]]
-cmd [[colorscheme nightfox]] -- nightfox, nordfox, duskfox, dawnfox, terafox
+-- cmd [[colorscheme nightfox]] -- nightfox, nordfox, duskfox, dawnfox, terafox
+cmd [[colorscheme kanagawa]]
 cmd [[set noerrorbells]]
 cmd [[set tabstop=2 softtabstop=2]]
 cmd [[set shiftwidth=2]]
@@ -75,7 +76,7 @@ cmd [[set scrolloff=3]]
 cmd [[set splitright]]
 cmd [[set ignorecase smartcase]]
 cmd [[set splitbelow]]
-cmd [[set list listchars=tab:»·,trail:·,nbsp:·,eol:¬]]
+cmd [[set list listchars=tab:»·,trail:·,nbsp:·,eol:↵]]
 cmd [[set updatetime=300]]
 cmd [[set shortmess+=c]]
 cmd [[set clipboard+=unnamedplus]]
