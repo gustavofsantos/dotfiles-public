@@ -14,6 +14,12 @@ if has_kanagawa then
   kanagawa.setup {
     dimInactive = true,
     globalStatus = true,
+    commentStyle = { italic = true },
+    functionStyle = { italic = true, bold = true },
+    keywordStyle = { italic = true},
+    statementStyle = { bold = true },
+    typeStyle = { italic = true },
+    variablebuiltinStyle = { italic = true},
   }
 end
 
