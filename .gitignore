@@ -9,6 +9,7 @@
 .cache/
 .cargo/
 .config/.gsd-keyboard.settings-ported
+.config/QtProject.conf
 .config/1Password/
 .config/BraveSoftware/
 .config/btop/btop.log
