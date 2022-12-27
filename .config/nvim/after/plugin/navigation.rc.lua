@@ -17,6 +17,8 @@ if (has_telescope) then
       help_tags = { theme = "ivy" },
       git_branches = { theme = "ivy" },
       current_buffer_fuzzy_find = { theme = "ivy" },
+      lsp_document_symbols = { theme = "ivy" },
+      lsp_dynamic_workspace_symbols = { theme = "ivy" },
       -- disable_devicons = false
     },
     extensions = {
