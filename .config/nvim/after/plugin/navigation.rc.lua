@@ -4,6 +4,7 @@ if (has_telescope) then
   telescope.setup {
     defaults = {
       dynamic_preview_title = true,
+      prompt_prefix = "🔍 ",
       theme = "ivy"
     },
     pickers = {
@@ -50,7 +51,7 @@ if (has_telescope) then
   vim.keymap.set('n', '<leader>fl', require('telescope.builtin').live_grep, { desc = '[F]ind by [L]ive grep' })
   vim.keymap.set('n', '<leader>ft', require('telescope.builtin').diagnostics, { desc = '[F]ind [T]roubles' })
   vim.keymap.set('n', '<leader>f?', require('telescope.builtin').help_tags, { desc = '[F]ind [?]help' })
-  vim.keymap.set('n', '<leader>fgc', require('telescope.builtin').git_bcommits, { desc = '[F]ind [G]it [C]ommits' })
+  vim.keymap.set('n', '<leader>fc', require('telescope.builtin').git_bcommits, { desc = '[F]ind git [C]ommits' })
   vim.keymap.set('n', '<leader>gb', require('telescope.builtin').git_branches, { desc = '[G]it checkout [B]ranch' })
   vim.keymap.set('n', '<leader>/', require('telescope.builtin').current_buffer_fuzzy_find, { desc = 'Fuzzily search in current buffer]' })
   vim.keymap.set('n', '<F3>', require('telescope.builtin').grep_string, { desc = 'Find string' })
