@@ -35,7 +35,7 @@ local has_nightfox, nightfox = pcall(require, "nightfox")
 if has_nightfox then
   nightfox.setup {
     options = {
-      dim_inactive = true,
+      dim_inactive = false,
       transparent = false,
       styles = {
         comments = "italic",
@@ -45,7 +45,7 @@ if has_nightfox then
         variables = "italic",
         numbers = "bold",
         keywords = "italic",
-        types = "italic"
+        types = "italic,bold"
       }
     }
   }
