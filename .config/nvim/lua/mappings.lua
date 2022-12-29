@@ -62,8 +62,8 @@ nnoremap("<F5>", ":UndotreeToggle<CR>")
 nnoremap("<leader>ss", ":Switch<CR>")
 
 -- Window
-nnoremap("<leader>ws", ":vsplit<CR>")
-nnoremap("<leader>wS", ":split<CR>")
+nnoremap("<C-w>s", ":vsplit<CR>")
+nnoremap("<C-w>S", ":split<CR>")
 tnoremap("<Esc>", "<C-\\><C-n>")
 
 -- Editing

@@ -71,7 +71,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gh zoxide brew docker)
+plugins=(git gh zoxide asdf docker)
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
@@ -94,11 +94,6 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 export EDITOR='nvim'
-
-alias bashconfig="nvim ~/.bashrc"
-alias dotfiles="nvim ~/dotfiles-public/README.md"
-alias vimrc="nvim ~/.vimrc"
-alias alacritty_config="nvim ~/.config/alacritty/alacritty.yml"
 
 alias v="nvim"
 alias vim="nvim"
@@ -131,20 +126,17 @@ alias lw_show_urls="docker-compose exec loggi_web_app bash -c 'python manage.py 
 
 # -----
 
-# Code Metrics
-alias drstrange="npx eslint -c ~/dotfiles/complexity-eslint.config.js"
-
 # Git aliases
 alias g="git"
-alias gs="git status"
-alias ga="git add"
-alias gc="git commit"
 
 # TMUX aliases
 alias trename="tmux rename-session"
 
-alias ls="ls -G"
-alias ll="ls -lG"
+alias ..="cd .."
+
+alias ll="ls -lhF --color"
+alias la="ls -lahF --color"
+alias lsd="ls -lhF --color | grep --color=never '^d'"
 
 alias gogh="bash -c  \"\$(wget -qO- https://git.io/vQgMr)\""
 
@@ -167,9 +159,9 @@ if [[ $(uname -n) = "loggi" ]]; then
   export PATH="$POETRY_HOME/bin:$PATH"
 fi
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"

@@ -12,13 +12,13 @@
   "Todo": {
     "prefix": "todo",
     "body": [
-      "- TODO $0"
+      "- [ ] $0"
     ]
   },
   "Done": {
     "prefix": "done",
     "body": [
-      "- DONE $0"
+      "- [x] $0"
     ]
   }
 }

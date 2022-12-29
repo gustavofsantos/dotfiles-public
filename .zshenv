@@ -1,5 +1,6 @@
 if [ -e /home/gustavo/.nix-profile/etc/profile.d/nix.sh ]; then . /home/gustavo/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 if [ -e /home/gustavo/.cargo/env ]; then . /home/gustavo/.cargo/env;  fi
+if [ -e /home/gustavo/.asdf/asdf.sh ]; then . /home/gustavo/.asdf/asdf.sh; fi
 
 # Loggi aliases
 alias lggt="npm run test -- --bail --coverage=false --watchAll=false"
