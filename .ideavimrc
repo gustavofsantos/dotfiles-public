@@ -41,13 +41,13 @@ map <leader>s <Plug>(easymotion-s)
 map <leader>e <Plug>(easymotion-f)
 
 " project mappings
-map <leader>pt :NERDTree<CR>
-map <leader>pf <Action>(GotoFile)
+map <C-b> :NERDTree<CR>
+map <leader>ff <Action>(GotoFile)
 map <leader>pa <Action>(GotoAction)
 map <leader>py <Action>(GotoSymbol)
-map <leader>ps <Action>(SearchEverywhere)
-map <leader>pe <Action>(RecentFiles)
-map <leader>pel <Action>(RecentLocations)
+map <leader>fl <Action>(SearchEverywhere)
+map <leader>fe <Action>(RecentFiles)
+map <leader>fee <Action>(RecentLocations)
 
 """ File mappings ---------------------------
 " -- Open move panel
@@ -55,27 +55,21 @@ map <leader>fm <Action>(Move)
 
 " -- Code navigation mappings
 " Go to symbol implementation
-map <leader>cd <Action>(GotoImplementation)
+map <leader>gd <Action>(GotoImplementation)
 " Show intent box
 map <leader>ci <Action>(ShowIntentionActions)
 
 " -- Window and tab mappings
-" Split window vertically
-map <leader>w/ <Action>(SplitVertically)
-" Split window horizontally
-map <leader>w- <Action>(SplitHorizontally)
-" Unsplit window
-map <leader>wsu <Action>(Unsplit)
 " Close a window
-map <leader>wq <Action>(CloseContent)
+map <C-q> <Action>(CloseContent)
 
 " Git mappings
-map <leader>gc <Action>(CheckinProject)
+map <leader>gs <Action>(CheckinProject)
 map <leader>gl <Action>(Vcs.History)
 map <leader>gfl <Action>(Vcs.ShowTabbedFileHistory)
 
 " Refactoring mappings
-map <leader>rr <Action>(RenameElement)
+map <leader>rn <Action>(RenameElement)
 map <leader>rf <Action>(RenameFile)
 " Open "Refactor This" popup
 map <leader>rt <Action>(Refactorings.QuickListPopupAction)
