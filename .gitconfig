@@ -81,7 +81,7 @@
   dft           = difftool
   undo          = reset --soft HEAD~1
   tags          = tag -l
-  amend         = commit --amend --reuse-message=HEAD
+  amend         = commit --amend --reuse-message=HEAD --no-verify
   contributors  = shortlog --summary --numbered
 
 [init]
