@@ -23,6 +23,7 @@
 .config/evolution/
 .config/gcolor3/
 .config/gedit/
+.config/gh/hosts.yml
 .config/gnome-control-center/
 .config/gnome-initial-setup-done
 .config/google-chrome-beta/
