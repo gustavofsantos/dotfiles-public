@@ -92,6 +92,7 @@
 .ssh/
 .sudo_as_admin_successful
 .tmp/
+.tea/
 .tmux/
 .vale.ini
 .var/
