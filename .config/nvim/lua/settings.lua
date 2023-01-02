@@ -119,7 +119,7 @@ cmd [[command! Reload :luafile ~/.config/nvim/init.lua<CR>]]
 
 -- Run the current test file
 cmd [[command! LWT :lua require('toggleterm').exec("lwt " .. string.gsub(vim.fn.expand("%"), "loggi/", ""))]]
-cmd [[command! LGGT :lua require('toggleterm').exec("lggt " .. vim.fn.expand("%"))]]
+cmd [[command! LGGT :lua require('toggleterm').exec("lggt " .. vim.fn.expand("%:p:h:t") .. "/" .. vim.fn.expand("%:t"))]]
 
 cmd [[
 autocmd TermEnter term://*toggleterm#*
