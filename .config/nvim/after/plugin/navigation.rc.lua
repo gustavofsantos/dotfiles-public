@@ -51,6 +51,7 @@ if (has_telescope) then
   vim.keymap.set('n', '<leader>fe', require('telescope.builtin').oldfiles, { desc = '[F]ind r[e]cently opened files' })
   vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, { desc = '[F]ind open [B]uffer' })
   vim.keymap.set('n', '<leader>fj', require('telescope.builtin').jumplist, { desc = '[F]ind [J]umps' })
+  vim.keymap.set('n', '<leader>fo', require('telescope.builtin').loclist, { desc = '[F]ind l[o]cation list' })
   vim.keymap.set('n', '<leader>fl', require('telescope.builtin').live_grep, { desc = '[F]ind by [L]ive grep' })
   vim.keymap.set('n', '<leader>ft', require('telescope.builtin').diagnostics, { desc = '[F]ind [T]roubles' })
   vim.keymap.set('n', '<leader>f?', require('telescope.builtin').help_tags, { desc = '[F]ind [?]help' })
