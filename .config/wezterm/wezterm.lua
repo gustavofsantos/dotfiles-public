@@ -10,7 +10,6 @@ end
 
 return {
   -- color_scheme = "Poimandres", -- or "Poimandres Storm"
-  -- color_scheme = "nightfox",
   -- color_scheme = "dayfox", -- nightfox, dayfox, duskfox, nordfox, terafox
   color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
 
