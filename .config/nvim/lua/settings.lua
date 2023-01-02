@@ -120,6 +120,9 @@ cmd [[command! Tasks :tabnew | :e ~/Obsidian/Inbox.md]]
 cmd [[command! Journal :lua vim.cmd(string.format("tabnew ~/notes/journal/%s.md", os.date("%Y-%m-%d")))<CR>]]
 cmd [[command! Format :lua vim.lsp.buf.formatting()<CR>]]
 cmd [[command! Reload :luafile ~/.config/nvim/init.lua<CR>]]
+cmd [[command! Todo :lua require('telescope.builtin').grep_string({ cwd = '~/notes', search = '- [ ]' })<CR>]]
+cmd [[command! Doing :lua require('telescope.builtin').grep_string({ cwd = '~/notes', search = '- [-]' })<CR>]]
+cmd [[command! Done :lua require('telescope.builtin').grep_string({ cwd = '~/notes', search = '- [x]' })<CR>]]
 
 -- Run the current test file
 cmd [[command! LWT :lua require('toggleterm').exec("lwt " .. string.gsub(vim.fn.expand("%"), "loggi/", ""))]]
