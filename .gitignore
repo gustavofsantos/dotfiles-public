@@ -49,6 +49,7 @@
 .config/pop-system-updater/
 .config/pulse/
 .config/qalculate/
+.config/syncthing/
 .config/tmux/
 .config/totem/
 .config/touchegg/
