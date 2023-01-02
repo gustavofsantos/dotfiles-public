@@ -31,6 +31,7 @@
 .config/google-chrome/
 .config/gtk-3.0/
 .config/gtk-4.0/
+.config/helix/runtime/
 .config/htop/
 .config/ibus/
 .config/lazygit/
@@ -89,6 +90,7 @@
 .shell.pre-oh-my-zsh
 .ssh/
 .sudo_as_admin_successful
+.tmp/
 .tmux/
 .vale.ini
 .var/
