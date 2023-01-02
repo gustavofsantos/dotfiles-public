@@ -12,6 +12,8 @@ if (has_telescope) then
       git_files = { theme = "ivy" },
       oldfiles = { theme = "ivy" },
       buffers = { theme = "ivy" },
+      jumplist = { theme = "ivy" },
+      loclist = { theme = "ivy" },
       live_grep = { theme = "ivy" },
       grep_string = { theme = "ivy" },
       diagnostics = { theme = "ivy" },
@@ -48,6 +50,7 @@ if (has_telescope) then
   vim.keymap.set('n', '<leader>fg', require('telescope.builtin').git_files, { desc = '[F]ind [G]it file'})
   vim.keymap.set('n', '<leader>fe', require('telescope.builtin').oldfiles, { desc = '[F]ind r[e]cently opened files' })
   vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, { desc = '[F]ind open [B]uffer' })
+  vim.keymap.set('n', '<leader>fj', require('telescope.builtin').jumplist, { desc = '[F]ind [J]umps' })
   vim.keymap.set('n', '<leader>fl', require('telescope.builtin').live_grep, { desc = '[F]ind by [L]ive grep' })
   vim.keymap.set('n', '<leader>ft', require('telescope.builtin').diagnostics, { desc = '[F]ind [T]roubles' })
   vim.keymap.set('n', '<leader>f?', require('telescope.builtin').help_tags, { desc = '[F]ind [?]help' })
