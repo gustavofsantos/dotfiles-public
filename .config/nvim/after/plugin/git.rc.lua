@@ -35,6 +35,8 @@ if (has_gitsigns) then
   vim.keymap.set('n', '<leader>ghr', ':Gitsigns reset_hunk<CR>', { desc = 'Git reset hunk' })
   vim.keymap.set('v', '<leader>ghr', ':Gitsigns reset_hunk<CR>', { desc = 'Git reset hunk' })
   vim.keymap.set('n', '<leader>ghp', '<cmd>Gitsigns preview_hunk<CR>', { desc = 'Git preview hunk' })
+  vim.keymap.set('n', 'gj', ':Gitsigns next_hunk<CR>', { desc = 'Jump to next hunk' })
+  vim.keymap.set('n', 'gk', ':Gitsigns prev_hunk<CR>', { desc = 'Jump to previous hunk' })
 end
 
 local has_diffview, diffview = pcall(require, 'diffview')
