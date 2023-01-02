@@ -1,4 +1,4 @@
-theme = "night_owl"
+theme = "catppuccin_mocha"
 
 [editor]
 line-number = "relative"
