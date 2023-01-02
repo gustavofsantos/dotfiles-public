@@ -153,7 +153,8 @@ if (has_lspconfig and has_cmp_lsp) then
     'prismals',
     'purescriptls',
     'tailwindcss',
-    'svelte'
+    'svelte',
+    'marksman'
   }
   for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
