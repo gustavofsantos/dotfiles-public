@@ -7,10 +7,12 @@ g.rasmus_bold_booleans = true
 g.rasmus_bold_functions = true
 g.rasmus_transparent = true
 
-vim.g.mellow_italic_keywords = true
-vim.g.mellow_italic_functions = true
-g.mellow_bold_variables = true
-g.mellow_transparent = true
+g.mellow_italic_comments = true
+g.mellow_italic_keywords = true
+g.mellow_italic_functions = true
+g.mellow_italic_variables = true
+g.mellow_bold_booleans = true
+g.mellow_transparent = false
 
 g.mapleader = " "
 
@@ -42,8 +44,8 @@ let g:switch_custom_definitions =
 
 cmd [[set termguicolors]]
 cmd [[set background=dark]]
-cmd [[colorscheme duskfox]] -- nightfox, nordfox, duskfox, dawnfox, terafox
--- cmd [[colorscheme kanagawa]]
+cmd [[colorscheme nightfox]] -- nightfox, nordfox, duskfox, dawnfox, terafox
+-- cmd [[colorscheme mellow]]
 cmd [[set noerrorbells]]
 cmd [[set tabstop=2 softtabstop=2]]
 cmd [[set shiftwidth=2]]
