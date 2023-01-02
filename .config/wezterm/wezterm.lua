@@ -1,14 +1,22 @@
 local wezterm = require("wezterm")
 
+function scheme_for_appearance(appearance)
+  if appearance:find "Dark" then
+    return "nightfox"
+  else
+    return "dayfox"
+  end
+end
+
 return {
   -- color_scheme = "Poimandres", -- or "Poimandres Storm"
   -- color_scheme = "nightfox",
-  color_scheme = "duskfox", -- nightfox, dayfox, duskfox, nordfox, terafox
+  -- color_scheme = "dayfox", -- nightfox, dayfox, duskfox, nordfox, terafox
+  color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
 
   -- font
   font = wezterm.font("MonoLisaCustom Nerd Font", { weight = "Regular" }),
   font_size = 11,
-  -- line_height = 1.7,
 
   window_background_opacity = 0.98,
 
