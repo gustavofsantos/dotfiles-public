@@ -15,7 +15,7 @@ return packer.startup(function(use)
 
   -- colorscheme
   use 'rebelot/kanagawa.nvim'
-  use 'ishan9299/nvim-solarized-lua'
+  use { "catppuccin/nvim", as = "catppuccin" }
   use 'kvrohit/rasmus.nvim'
   use 'kvrohit/mellow.nvim'
   use { 'EdenEast/nightfox.nvim', tag = "v2.0.0" }

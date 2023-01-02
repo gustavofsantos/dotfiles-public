@@ -81,3 +81,40 @@ if has_tundra then
     },
   }
 end
+
+local has_catppuccin, catppuccin = pcall(require, 'catppuccin')
+if has_catppuccin then
+  catppuccin.setup {
+    flavour = "mocha", -- latte, frappe, macchiato, mocha
+    background = { -- :h background
+        light = "latte",
+        dark = "mocha",
+    },
+    transparent_background = false,
+    dim_inactive = {
+        enabled = true,
+        shade = "dark",
+        percentage = 0.15,
+    },
+    styles = {
+        comments = { "italic" },
+        conditionals = { "italic" },
+        loops = {},
+        functions = { "italic" },
+        keywords = { "italic" },
+        strings = {},
+        variables = { "italic" },
+        numbers = {},
+        booleans = { "bold" },
+        properties = { "italic" },
+        types = { "bold" },
+        operators = {},
+    },
+    integrations = {
+        cmp = true,
+        gitsigns = true,
+        nvimtree = true,
+        telescope = true,
+    },
+  }
+end
