@@ -26,6 +26,9 @@
   config = default
   default = current
 
+[pull]
+  rebase = true
+
 [diff]
   tool = difftastic
 
