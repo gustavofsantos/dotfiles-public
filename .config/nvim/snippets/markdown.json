@@ -9,6 +9,16 @@
       "$0"
     ]
   },
+  "Journal": {
+    "prefix": "journal",
+    "body": [
+      "## Tarefas",
+      "$0",
+      "",
+      "## Notas",
+      ""
+    ]
+  },
   "Todo": {
     "prefix": "todo",
     "body": [
