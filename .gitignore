@@ -21,6 +21,7 @@
 .config/dconf/
 .config/enchant/
 .config/evolution/
+.config/exercism/
 .config/gcolor3/
 .config/gedit/
 .config/gh/hosts.yml
