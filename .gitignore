@@ -2,6 +2,8 @@
 .kube/
 .minikube/
 kubectl
+.config/systemd/user/default.*
+.config/systemd/user/timers.*
 .asdf/
 .bash_history
 .bash_logout
