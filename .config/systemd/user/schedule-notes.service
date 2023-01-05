@@ -1,0 +1,9 @@
+[Unit]
+Description=Notify based on journal notes
+
+[Service]
+Type=simple
+ExecStart=/home/gustavo/.bin/notes
+
+[Install]
+WantedBy=default.target
