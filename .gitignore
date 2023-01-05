@@ -54,7 +54,6 @@ kubectl
 .config/pulse/
 .config/qalculate/
 .config/syncthing/
-.config/tmux/
 .config/totem/
 .config/touchegg/
 .config/user-dirs.dirs
