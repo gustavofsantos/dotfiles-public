@@ -1,4 +1,7 @@
 .luarc.json
+.kube/
+.minikube/
+kubectl
 .asdf/
 .bash_history
 .bash_logout
