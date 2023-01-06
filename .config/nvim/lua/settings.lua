@@ -47,7 +47,7 @@ let g:switch_custom_definitions =
 cmd [[set termguicolors]]
 cmd [[set background=dark]]
 -- cmd [[colorscheme nightfox]] -- nightfox, nordfox, duskfox, dawnfox, terafox
-cmd [[colorscheme rasmus]]
+cmd [[colorscheme mellow]]
 -- cmd [[colorscheme catppuccin]]
 cmd [[set noerrorbells]]
 cmd [[set tabstop=2 softtabstop=2]]
