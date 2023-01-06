@@ -3,9 +3,10 @@ local cmd = vim.cmd
 
 g.rasmus_italic_comments = true
 g.rasmus_italic_keywords = true
+g.rasmus_italic_functions = true
 g.rasmus_bold_booleans = true
 g.rasmus_bold_functions = true
-g.rasmus_transparent = true
+g.rasmus_transparent = false
 
 g.mellow_italic_comments = true
 g.mellow_italic_keywords = true
@@ -46,8 +47,8 @@ let g:switch_custom_definitions =
 cmd [[set termguicolors]]
 cmd [[set background=dark]]
 -- cmd [[colorscheme nightfox]] -- nightfox, nordfox, duskfox, dawnfox, terafox
--- cmd [[colorscheme mellow]]
-cmd [[colorscheme catppuccin]]
+cmd [[colorscheme rasmus]]
+-- cmd [[colorscheme catppuccin]]
 cmd [[set noerrorbells]]
 cmd [[set tabstop=2 softtabstop=2]]
 cmd [[set shiftwidth=2]]
