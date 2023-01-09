@@ -15,12 +15,17 @@ if (has_mason_lspconfig) then
       "sumneko_lua",
       "rust_analyzer",
       "eslint",
+      "svelte",
+      "rust_analyzer",
       "gopls",
+      "dotls",
+      "dockerls",
       "denols",
       "tsserver",
       "marksman",
       "pyright",
       "tailwindcss",
+      "jsonls",
       "yamlls"
     }
   })
@@ -156,6 +161,7 @@ if (has_lspconfig and has_cmp_lsp) then
     'dotls',
     'prismals',
     'purescriptls',
+    'rust_analyzer',
     'tailwindcss',
     'svelte',
     'marksman'
