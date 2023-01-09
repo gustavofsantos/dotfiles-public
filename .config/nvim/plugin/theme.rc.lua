@@ -26,8 +26,9 @@ end
 local has_gruvbox, gruvbox = pcall(require, "gruvbox")
 if has_gruvbox then
   gruvbox.setup({
-    contrast = "hard",
+    contrast = "",
     dim_inactive = true,
+    invert_signs = true,
   })
 end
 

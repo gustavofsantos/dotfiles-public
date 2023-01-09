@@ -61,11 +61,12 @@ cursor:
 
 import:
   # - ~/.config/alacritty/themes/catppuccin-mocchiato.yml
-  - ~/.config/alacritty/themes/catppuccin-mocha.yml
+  # - ~/.config/alacritty/themes/catppuccin-mocha.yml
   # - ~/.config/alacritty/themes/catppuccin-frappe.yml
   # - ~/.config/alacritty/themes/catppuccin-latte.yml
   # - ~/.config/alacritty/themes/mellow.yml
   # - ~/.config/alacritty/themes/rasmus.yml
+  - ~/.config/alacritty/themes/gruvbox.yml
 
 #schemes:
 #  rose_pine: &rose_pine
@@ -495,31 +496,6 @@ import:
 #      magenta: '0x6c71c4'
 #      cyan:    '0x93a1a1'
 #      white:   '0xfdf6e3'
-
-#  gruvbox_material: &gruvbox_material
-#    primary:
-#      background: '0x282828'
-#      foreground: '0xdfbf8e'
-
-#    normal:
-#      black:   '0x665c54'
-#      red:     '0xea6962'
-#      green:   '0xa9b665'
-#      yellow:  '0xe78a4e'
-#      blue:    '0x7daea3'
-#      magenta: '0xd3869b'
-#      cyan:    '0x89b482'
-#      white:   '0xdfbf8e'
-
-#    bright:
-#      black:   '0x928374'
-#      red:     '0xea6962'
-#      green:   '0xa9b665'
-#      yellow:  '0xe3a84e'
-#      blue:    '0x7daea3'
-#      magenta: '0xd3869b'
-#      cyan:    '0x89b482'
-#      white:   '0xdfbf8e'
 
 #  monokai_pro: &monokai_pro
 #    # Default colors
