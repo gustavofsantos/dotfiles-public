@@ -104,7 +104,7 @@ if has_catppuccin then
         keywords = { "italic" },
         strings = {},
         variables = { "italic" },
-        numbers = {},
+        numbers = { "bold" },
         booleans = { "bold" },
         properties = { "italic" },
         types = { "bold" },
