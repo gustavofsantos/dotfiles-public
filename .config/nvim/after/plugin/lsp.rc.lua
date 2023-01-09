@@ -1,3 +1,7 @@
+vim.diagnostic.config({
+  virtual_text = false
+})
+
 local has_mason, mason = pcall(require, 'mason')
 if (has_mason) then
   mason.setup {}
