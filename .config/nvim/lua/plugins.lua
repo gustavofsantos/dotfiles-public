@@ -22,6 +22,7 @@ return packer.startup(function(use)
   use 'folke/tokyonight.nvim'
   use 'olivercederborg/poimandres.nvim'
   use 'ellisonleao/gruvbox.nvim'
+  use 'sainnhe/gruvbox-material'
 
   use 'mbbill/undotree' -- tree of changes
 
