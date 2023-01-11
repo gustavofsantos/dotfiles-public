@@ -32,7 +32,7 @@ if (has_lualine) then
     options = {
       icons_enabled = true,
       theme = 'auto',
-      component_separators = { left = '', right = '' },
+      component_separators = { left = '', right = '' },
       section_separators = { left = '', right = '' },
       always_divide_middle = true,
       globalstatus = false,
@@ -43,9 +43,10 @@ if (has_lualine) then
       }
     },
     sections = {
-      lualine_a = { 'mode' },
-      lualine_b = {},
+      lualine_a = { },
+      lualine_b = {  },
       lualine_c = {
+        'branch',
         {
           'filename',
           file_status = true,
@@ -53,7 +54,15 @@ if (has_lualine) then
         }
       },
       lualine_x = { 'diagnostics' },
-      lualine_y = { 'branch' },
+      lualine_y = { 'diff' },
+      lualine_z = {}
+    },
+    inactive_sections = {
+      lualine_a = {},
+      lualine_b = {},
+      lualine_c = {'filename'},
+      lualine_x = {},
+      lualine_y = {},
       lualine_z = {}
     },
     extensions = { 'quickfix', 'nvim-tree', 'toggleterm' }

@@ -140,4 +140,3 @@ if has_onedarkpro then
     }
   }
 end
-
