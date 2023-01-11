@@ -19,10 +19,8 @@ return packer.startup(function(use)
   use 'kvrohit/rasmus.nvim'
   use 'kvrohit/mellow.nvim'
   use { 'EdenEast/nightfox.nvim', tag = "v2.0.0" }
-  use 'folke/tokyonight.nvim'
-  use 'olivercederborg/poimandres.nvim'
-  use 'ellisonleao/gruvbox.nvim'
   use 'sainnhe/gruvbox-material'
+  use "olimorris/onedarkpro.nvim"
 
   use 'mbbill/undotree' -- tree of changes
 

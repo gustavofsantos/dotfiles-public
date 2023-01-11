@@ -36,7 +36,7 @@ window:
   title: Terminal
   dynamic_padding: false
   opacity: 0.975
-  decorations_theme_variant: light
+  decorations_theme_variant: dark
 
 draw_bold_text_with_bright_colors: true
 
@@ -66,7 +66,9 @@ import:
   # - ~/.config/alacritty/themes/catppuccin-latte.yml
   # - ~/.config/alacritty/themes/mellow.yml
   # - ~/.config/alacritty/themes/rasmus.yml
-  - ~/.config/alacritty/themes/gruvbox.yml
+  # - ~/.config/alacritty/themes/gruvbox.yml
+  # - ~/.config/alacritty/themes/juliana.yml
+  - ~/.config/alacritty/themes/onedark.yml
 
 #schemes:
 #  rose_pine: &rose_pine
