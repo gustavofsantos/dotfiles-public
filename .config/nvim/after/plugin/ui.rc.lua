@@ -7,12 +7,14 @@ if (has_bufferline) then
       always_show_bufferline = false,
       show_buffer_close_icons = false,
       show_close_icon = false,
+      max_name_length = 25,
       color_icons = true,
       diagnostics = "nvim_lsp",
       indicator = {
         icon = '▎', -- this should be omitted if indicator style is not 'icon'
-        style = 'icon',
+        style = 'none', -- icon
       },
+      buffer_close_icon = '',
       -- offsets = {
       --   {
       --     filetype = "NvimTree",
