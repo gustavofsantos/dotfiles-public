@@ -45,24 +45,36 @@ if (has_lualine) then
       }
     },
     sections = {
-      lualine_a = { },
-      lualine_b = {  },
-      lualine_c = {
+      lualine_a = {
+        { 'mode', separator = { left = '' }, right_padding = 2 },
+      },
+      lualine_b = {
         'branch',
+        'diff',
+      },
+      lualine_c = {
         {
           'filename',
           file_status = true,
-          path = 0
+          path = 1
         }
       },
-      lualine_x = { 'diagnostics' },
-      lualine_y = { 'diff' },
+      lualine_x = {},
+      lualine_y = {
+        { 'diagnostics', separator = { right = '' }, left_padding = 2 },
+      },
       lualine_z = {}
     },
     inactive_sections = {
       lualine_a = {},
-      lualine_b = {},
-      lualine_c = {'filename'},
+      lualine_b = {
+        {
+          'filename',
+          file_status = true,
+          path = 1
+        }
+      },
+      lualine_c = {},
       lualine_x = {},
       lualine_y = {},
       lualine_z = {}

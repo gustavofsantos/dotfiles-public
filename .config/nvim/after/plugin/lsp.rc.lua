@@ -151,7 +151,7 @@ if (has_lspconfig and has_cmp_lsp) then
   }
 
   local servers = {
-    'pyright',
+    -- 'pyright',
     'dockerls',
     'html',
     'jsonls',
