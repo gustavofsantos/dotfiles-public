@@ -21,6 +21,7 @@ return packer.startup(function(use)
   use { 'EdenEast/nightfox.nvim', tag = 'v2.0.0' }
   use 'sainnhe/gruvbox-material'
   use 'olimorris/onedarkpro.nvim'
+  use 'shaunsingh/nord.nvim'
 
   use 'mbbill/undotree' -- tree of changes
 

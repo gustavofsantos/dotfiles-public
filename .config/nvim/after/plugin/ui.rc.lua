@@ -34,8 +34,8 @@ if (has_lualine) then
     options = {
       icons_enabled = true,
       theme = 'auto',
-      component_separators = { left = '', right = '' },
-      section_separators = { left = '', right = '' },
+      component_separators = { left = '', right = '' },
+      section_separators = { left = '', right = '' },
       always_divide_middle = true,
       globalstatus = false,
       refresh = {
@@ -45,23 +45,22 @@ if (has_lualine) then
       }
     },
     sections = {
-      lualine_a = {
-        { 'mode', separator = { left = '' }, right_padding = 2 },
-      },
+      lualine_a = {},
       lualine_b = {
-        'branch',
-        'diff',
       },
       lualine_c = {
         {
           'filename',
           file_status = true,
           path = 1
-        }
+        },
       },
-      lualine_x = {},
+      lualine_x = {
+        'diagnostics',
+      },
       lualine_y = {
-        { 'diagnostics', separator = { right = '' }, left_padding = 2 },
+        'branch',
+        'diff',
       },
       lualine_z = {}
     },
@@ -88,7 +87,7 @@ local has_toggleterm, toggleterm = pcall(require, "toggleterm")
 if (has_toggleterm) then
   toggleterm.setup {
     -- direction = 'tab',
-    size = 28,
+    size = 32,
     winbar = {
       enabled = true,
       name_formatter = function(term) --  term: Terminal
