@@ -18,3 +18,4 @@ asdf plugin add zoxide
 asdf plugin add ripgrep
 asdf plugin-add jq https://github.com/AZMCode/asdf-jq.git
 asdf plugin-add tmux https://github.com/aphecetche/asdf-tmux.git
+asdf plugin-add java https://github.com/halcyon/asdf-java.git
