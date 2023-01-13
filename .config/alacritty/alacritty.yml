@@ -61,14 +61,14 @@ cursor:
 
 import:
   # - ~/.config/alacritty/themes/catppuccin-mocchiato.yml
-  # - ~/.config/alacritty/themes/catppuccin-mocha.yml
+  - ~/.config/alacritty/themes/catppuccin-mocha.yml
   # - ~/.config/alacritty/themes/catppuccin-frappe.yml
   # - ~/.config/alacritty/themes/catppuccin-latte.yml
   # - ~/.config/alacritty/themes/mellow.yml
   # - ~/.config/alacritty/themes/rasmus.yml
   # - ~/.config/alacritty/themes/gruvbox.yml
   # - ~/.config/alacritty/themes/juliana.yml
-  - ~/.config/alacritty/themes/onedark.yml
+  # - ~/.config/alacritty/themes/onedark.yml
 
 #schemes:
 #  rose_pine: &rose_pine

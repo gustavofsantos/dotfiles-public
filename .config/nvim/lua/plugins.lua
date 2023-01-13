@@ -15,16 +15,16 @@ return packer.startup(function(use)
 
   -- colorscheme
   use 'rebelot/kanagawa.nvim'
-  use { "catppuccin/nvim", as = "catppuccin" }
+  use { 'catppuccin/nvim', as = 'catppuccin' }
   use 'kvrohit/rasmus.nvim'
   use 'kvrohit/mellow.nvim'
-  use { 'EdenEast/nightfox.nvim', tag = "v2.0.0" }
+  use { 'EdenEast/nightfox.nvim', tag = 'v2.0.0' }
   use 'sainnhe/gruvbox-material'
-  use "olimorris/onedarkpro.nvim"
+  use 'olimorris/onedarkpro.nvim'
 
   use 'mbbill/undotree' -- tree of changes
 
-  -- use 'sheerun/vim-polyglot'
+  use 'sheerun/vim-polyglot'
   use 'yuezk/vim-js' -- JavaScript highlight
   use 'HerringtonDarkholme/yats.vim' -- TypeScript highlight
   use 'maxmellon/vim-jsx-pretty' -- JSX highlight

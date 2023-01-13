@@ -54,8 +54,8 @@ let g:switch_custom_definitions =
 cmd [[set termguicolors]]
 cmd [[set background=dark]]
 -- cmd [[colorscheme nightfox]] -- nightfox, nordfox, duskfox, dawnfox, terafox
-cmd [[colorscheme onedark]]
--- cmd [[colorscheme catppuccin]]
+-- cmd [[colorscheme onedark]]
+cmd [[colorscheme catppuccin]]
 -- cmd [[colorscheme gruvbox-material]]
 cmd [[set noerrorbells]]
 cmd [[set tabstop=2 softtabstop=2]]
