@@ -9,3 +9,8 @@ export DENO_INSTALL="/home/gustavo/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
 export PATH="$SCRIPTS_PATH:$PATH"
+
+
+# Added by Toolbox App
+export PATH="$PATH:/home/gustavo/.local/share/JetBrains/Toolbox/scripts"
+
