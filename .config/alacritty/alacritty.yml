@@ -1,17 +1,17 @@
 font:
   normal:
-    family: MonoLisaCustom Nerd Font
+    family: MonoLisa Nerd Font
     style: Regular
   italic:
-    family: MonoLisaCustom Nerd Font
+    family: MonoLisa Nerd Font
     style: Regular Italic
   bold:
-    family: MonoLisaCustom Nerd Font
-    style: Bold
+    family: MonoLisa Nerd Font
+    style: Semibold
   bold_italic:
-    family: MonoLisaCustom Nerd Font
-    style: Bold Italic
-  size: 11.0
+    family: MonoLisa Nerd Font
+    style: Semibold Italic
+  size: 12.0
 
 # font:
 #   normal:
@@ -58,4 +58,4 @@ cursor:
     blinking: Always
 
 import:
-  - ~/.config/alacritty/themes/nord.yml
+  - ~/.config/alacritty/themes/nightfox.yml

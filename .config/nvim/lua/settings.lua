@@ -53,12 +53,7 @@ let g:switch_custom_definitions =
 
 cmd [[set termguicolors]]
 cmd [[set background=dark]]
--- cmd [[colorscheme nightfox]] -- nightfox, nordfox, duskfox, dawnfox, terafox
--- cmd [[colorscheme onedark]]
--- cmd [[colorscheme catppuccin]]
--- cmd [[colorscheme nordic]]
--- cmd [[colorscheme gruvbox-material]]
-cmd [[colorscheme nord]]
+cmd [[colorscheme nightfox]] -- nightfox, nordfox, duskfox, dawnfox, terafox
 cmd [[set noerrorbells]]
 cmd [[set tabstop=2 softtabstop=2]]
 cmd [[set shiftwidth=2]]
@@ -86,7 +81,7 @@ cmd [[set nohlsearch]]
 -- cmd [[set relativenumber]]
 cmd [[set tags=./tags,.git/tags]]
 cmd [[set showtabline=2]]
-cmd [[set winwidth=100]]
+-- cmd [[set winwidth=100]]
 cmd [[set scrolloff=3]]
 cmd [[set splitright]]
 cmd [[set ignorecase smartcase]]

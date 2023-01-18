@@ -85,19 +85,19 @@ if (has_nvimtree) then
   nvimtree.setup {
     respect_buf_cwd = true,
     view = {
-      -- width = 36,
-      float = {
-        enable = true,
-        quit_on_focus_loss = true,
-        open_win_config = {
-          relative = "editor",
-          -- border = "rounded",
-          width = width,
-          height = height,
-          row = (gheight - height) * 0.4,
-          col = (gwidth - width) * 0.5,
-        },
-      }
+      width = 36,
+      -- float = {
+      --   enable = true,
+      --   quit_on_focus_loss = true,
+      --   open_win_config = {
+      --     relative = "editor",
+      --     -- border = "rounded",
+      --     width = width,
+      --     height = height,
+      --     row = (gheight - height) * 0.4,
+      --     col = (gwidth - width) * 0.5,
+      --   },
+      -- }
     },
     actions = {
       open_file = {
