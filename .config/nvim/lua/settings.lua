@@ -53,7 +53,8 @@ let g:switch_custom_definitions =
 
 cmd [[set termguicolors]]
 cmd [[set background=dark]]
-cmd [[colorscheme nightfox]] -- nightfox, nordfox, duskfox, dawnfox, terafox
+-- cmd [[colorscheme nightfox]] -- nightfox, nordfox, duskfox, dawnfox, terafox
+cmd [[colorscheme kanagawa]] -- nightfox, nordfox, duskfox, dawnfox, terafox
 cmd [[set noerrorbells]]
 cmd [[set tabstop=2 softtabstop=2]]
 cmd [[set shiftwidth=2]]
@@ -70,6 +71,7 @@ cmd [[set undofile]]
 cmd [[set incsearch]]
 cmd [[set switchbuf=useopen]]
 cmd [[set cmdheight=1]]
+cmd [[set colorcolumn=80,120]]
 cmd [[set hidden]]
 cmd [[set foldmethod=expr]]
 cmd [[set foldexpr=nvim_treesitter#foldexpr()]]
@@ -77,7 +79,7 @@ cmd [[set nofoldenable]]
 cmd [[set encoding=utf-8]]
 cmd [[set nohlsearch]]
 -- cmd [[set nu]]
--- cmd [[set number]]
+cmd [[set number]]
 -- cmd [[set relativenumber]]
 cmd [[set tags=./tags,.git/tags]]
 cmd [[set showtabline=2]]

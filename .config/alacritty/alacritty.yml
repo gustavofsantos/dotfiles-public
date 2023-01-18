@@ -13,22 +13,6 @@ font:
     style: Semibold Italic
   size: 12.0
 
-# font:
-#   normal:
-#     family: OperatorMono Nerd Font
-#     style: Medium
-#   italic:
-#     family: OperatorMono Nerd Font
-#     style: Medium Italic
-#   bold:
-#     family: OperatorMono Nerd Font
-#     style: Bold
-#   bold_italic:
-#     family: OperatorMono Nerd Font
-#     style: Bold Italic
-#   # size: 18 # recording
-#   size: 13
-
 env:
   TERM: xterm-256color
 
@@ -36,8 +20,8 @@ window:
   dynamic_padding: false
   dynamic_title: true
   opacity: 0.975
-  decorations: none
-  # decorations_theme_variant: dark
+  # decorations: none
+  decorations_theme_variant: dark
 
 draw_bold_text_with_bright_colors: true
 
@@ -58,4 +42,4 @@ cursor:
     blinking: Always
 
 import:
-  - ~/.config/alacritty/themes/nightfox.yml
+  - ~/.config/alacritty/themes/kanagawa.yml
