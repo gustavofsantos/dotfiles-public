@@ -24,7 +24,7 @@ if has_kanagawa then
     commentStyle = { italic = true },
     functionStyle = { italic = true, bold = true },
     keywordStyle = { italic = true},
-    statementStyle = { bold = true },
+    statementStyle = { italic = true, bold = true },
     typeStyle = { italic = true },
     variablebuiltinStyle = { italic = true},
   }
