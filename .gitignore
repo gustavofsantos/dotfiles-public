@@ -2,6 +2,7 @@
 .kube/
 .minikube/
 kubectl
+.android/
 .config/systemd/user/default.*
 .config/systemd/user/timers.*
 .asdf/
@@ -20,6 +21,7 @@ kubectl
 .config/btop/btop.log
 .config/Docker Desktop/
 .config/MongoDB Compass/
+.config/autostart/
 .config/chromium/
 .config/coc/
 .config/configstore/
@@ -32,6 +34,7 @@ kubectl
 .config/gh/hosts.yml
 .config/gnome-control-center/
 .config/gnome-initial-setup-done
+.config/Google/
 .config/google-chrome-beta/
 .config/google-chrome-unstable/
 .config/google-chrome/
@@ -111,6 +114,7 @@ kubectl
 .zcompdump*
 .zoom/
 .zsh_history
+Android/
 Code/
 exercism/
 Documents/
