@@ -19,7 +19,7 @@ return packer.startup(function(use)
   use 'kvrohit/rasmus.nvim'
   use 'kvrohit/mellow.nvim'
   use { 'EdenEast/nightfox.nvim', tag = 'v2.0.0' }
-  use 'sainnhe/gruvbox-material'
+  use 'folke/tokyonight.nvim'
   use 'olimorris/onedarkpro.nvim'
   use 'shaunsingh/nord.nvim'
 

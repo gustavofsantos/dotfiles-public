@@ -63,7 +63,10 @@ local has_tokyonight, tokyonight = pcall(require, "tokyonight")
 if has_tokyonight then
   tokyonight.setup {
     styles = {
-      functions = { bold = true }
+      comments = { italic = true },
+      keywords = { italic = true },
+      functions = { italic = true },
+      variables = { bold = true },
     },
     dim_inactive = true,
     lualine_bold = true

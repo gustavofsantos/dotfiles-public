@@ -1,0 +1,10 @@
+[Unit]
+Description=Sync notes with GitHub
+
+[Service]
+Type=simple
+WorkingDirectory=/home/gustavo/notes
+ExecStart=/bin/bash -c "git add --all && git commit -m 'sync notes via systemd' && git push"
+
+[Install]
+WantedBy=default.target
