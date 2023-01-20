@@ -110,6 +110,8 @@ if has_treesitter then
       "help",
       "lua",
       "json",
+      "proto",
+      "toml",
       "http",
       "norg",
       "javascript",
