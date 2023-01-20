@@ -136,3 +136,4 @@ install.sh
 
 *.mkv
 *.mp4
+.config/nushell/
