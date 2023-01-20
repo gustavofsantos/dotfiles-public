@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 
 function scheme_for_appearance(appearance)
   if appearance:find "Dark" then
-    return "duskfox"
+    return "carbonfox"
   else
     return "dayfox"
   end
@@ -14,7 +14,7 @@ return {
 
   -- font
   font = wezterm.font("MonoLisa Nerd Font", { weight = "Regular" }),
-  font_size = 11,
+  font_size = 12.0,
 
   window_background_opacity = 0.98,
 
