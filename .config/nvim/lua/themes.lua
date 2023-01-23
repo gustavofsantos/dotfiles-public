@@ -99,7 +99,7 @@ if has_catppuccin then
     flavour = "mocha", -- latte, frappe, macchiato, mocha
     background = { -- :h background
         light = "latte",
-        dark = "mocha",
+        dark = "macchiato",
     },
     transparent_background = false,
     dim_inactive = {

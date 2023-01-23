@@ -42,4 +42,4 @@ cursor:
     blinking: Always
 
 import:
-  - ~/.config/alacritty/themes/carbonfox.yml
+  - ~/.config/alacritty/themes/catppuccin-macchiato.yml
