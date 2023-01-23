@@ -8,7 +8,7 @@ if (has_telescope) then
       theme = "ivy"
     },
     pickers = {
-      find_files = { theme = "ivy" },
+      find_files = { theme = "ivy", previewer = false, hidden = true },
       git_files = { theme = "ivy" },
       oldfiles = { theme = "ivy" },
       buffers = { theme = "ivy" },
