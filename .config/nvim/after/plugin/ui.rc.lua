@@ -49,6 +49,8 @@ if (has_lualine) then
       lualine_b = {
       },
       lualine_c = {
+        'branch',
+        'diff',
         {
           'filename',
           file_status = true,
@@ -57,11 +59,9 @@ if (has_lualine) then
       },
       lualine_x = {
         'diagnostics',
+        'location',
       },
-      lualine_y = {
-        'branch',
-        'diff',
-      },
+      lualine_y = {},
       lualine_z = {}
     },
     inactive_sections = {
