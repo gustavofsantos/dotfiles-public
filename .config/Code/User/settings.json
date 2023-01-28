@@ -1,12 +1,12 @@
 {
   "workbench.startupEditor": "none",
-  "workbench.colorTheme": "CodeSandbox",
+  "workbench.colorTheme": "Night Owl",
   "workbench.editor.showTabs": true,
   "workbench.editor.tabSizing": "fit",
   "workbench.tree.indent": 16,
   "editor.fontFamily": "'MonoLisa Nerd Font'",
-  "editor.fontSize": 14,
-  "editor.lineHeight": 28,
+  "editor.fontSize": 16,
+  "editor.lineHeight": 30,
   "editor.fontWeight": "400",
   "editor.minimap.enabled": false,
   "editor.tabSize": 2,
@@ -1252,5 +1252,8 @@
   },
   "workbench.iconTheme": "eq-material-theme-icons-ocean",
   "git.autofetch": true,
-  "playwright.reuseBrowser": true
+  "playwright.reuseBrowser": true,
+  "[python]": {
+    "editor.formatOnType": true
+  }
 }

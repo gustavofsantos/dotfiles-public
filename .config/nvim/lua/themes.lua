@@ -110,11 +110,11 @@ if has_catppuccin then
     styles = {
         comments = { "italic" },
         conditionals = { "italic" },
-        loops = {},
+        loops = { "italic" },
         functions = { "italic" },
         keywords = { "italic" },
         strings = {},
-        variables = { "italic" },
+        variables = {},
         numbers = { "bold" },
         booleans = { "bold" },
         properties = { "italic" },
