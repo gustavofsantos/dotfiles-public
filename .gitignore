@@ -1,6 +1,7 @@
 .luarc.json
 .kube/
 .minikube/
+.hasura/
 kubectl
 .android/
 .config/systemd/user/default.*
