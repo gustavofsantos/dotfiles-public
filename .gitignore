@@ -20,6 +20,7 @@ kubectl
 .config/BraveSoftware/
 .config/btop/btop.log
 .config/Docker Desktop/
+.config/HTTPie/
 .config/MongoDB Compass/
 .config/autostart/
 .config/chromium/
