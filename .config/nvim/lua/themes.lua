@@ -96,9 +96,9 @@ end
 local has_catppuccin, catppuccin = pcall(require, 'catppuccin')
 if has_catppuccin then
   catppuccin.setup {
-    flavour = "mocha", -- latte, frappe, macchiato, mocha
+    flavour = "macchiato", -- latte, frappe, macchiato, mocha
     background = { -- :h background
-        light = "mocha",
+        light = "macchiato",
         dark = "frappe",
     },
     transparent_background = false,
