@@ -64,11 +64,11 @@ if (has_cmp and has_lspkind and has_luasnip) then
         with_text = true,
         mode = 'symbol', -- show only symbol annotations
         -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-        maxwidth = 60,
+        maxwidth = 70,
         menu = {
           luasnip = "[snip]",
           buffer = "[buf]",
-          nvim_lsp = "[LSP]",
+          nvim_lsp = "[lsp]",
           nvim_lua = "[api]",
           path = "[path]",
         }
