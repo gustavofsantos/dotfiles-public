@@ -4,6 +4,7 @@
 .hasura/
 kubectl
 .android/
+.logseq/
 .config/systemd/user/default.*
 .config/systemd/user/timers.*
 .asdf/
