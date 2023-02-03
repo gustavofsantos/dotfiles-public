@@ -33,8 +33,8 @@ inoremap("<C-s>", "<Esc>:w<CR>") -- save buffer
 nnoremap("<C-s>", ":w<CR>") -- save buffer
 nnoremap("<C-t>", "<Cmd>exe v:count1 . \"ToggleTerm\"<CR>") -- toggle terminal
 inoremap("<C-t>", "<Esc><Cmd>exe v:count1 . \"ToggleTerm\"<CR>") -- toggle terminal
-nnoremap("<C-d>", "<C-d>zz")
-nnoremap("<C-u>", "<C-u>zz")
+-- nnoremap("<C-d>", "<C-d>zz")
+-- nnoremap("<C-u>", "<C-u>zz")
 
 
 -- Move lines
