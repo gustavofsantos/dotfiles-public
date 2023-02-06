@@ -53,8 +53,8 @@ let g:switch_custom_definitions =
 
 cmd [[set termguicolors]]
 cmd [[set background=dark]]
--- cmd [[colorscheme carbonfox]] -- nightfox, nordfox, duskfox, dawnfox, terafox
-cmd [[colorscheme tokyonight]]
+-- cmd [[colorscheme nightfox]] -- nightfox, nordfox, duskfox, dawnfox, terafox
+cmd [[colorscheme catppuccin]]
 cmd [[set noerrorbells]]
 cmd [[set tabstop=2 softtabstop=2]]
 cmd [[set shiftwidth=2]]
@@ -123,10 +123,10 @@ cmd [[command! Qall qall]]
 cmd [[command! QA qall]]
 cmd [[command! E e]]
 cmd [[command! W w]]
+cmd [[command! Reload :luafile ~/.config/nvim/init.lua<CR>]]
+cmd [[command! Format :!npx prettier -w %<CR>]]
 cmd [[command! Worklog :tabnew | :e ~/notes/loggi/worklog.md]]
 cmd [[command! Journal :lua vim.cmd(string.format("tabnew ~/notes/journal/%s.md", os.date("%Y-%m-%d")))<CR>]]
-cmd [[command! Format :lua vim.lsp.buf.formatting()<CR>]]
-cmd [[command! Reload :luafile ~/.config/nvim/init.lua<CR>]]
 cmd [[command! Todo :lua require('telescope.builtin').grep_string({ cwd = '~/notes', search = '- [ ]' })<CR>]]
 cmd [[command! Doing :lua require('telescope.builtin').grep_string({ cwd = '~/notes', search = '- [-]' })<CR>]]
 cmd [[command! Done :lua require('telescope.builtin').grep_string({ cwd = '~/notes', search = '- [x]' })<CR>]]
