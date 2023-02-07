@@ -1,3 +1,4 @@
+local toggleterm = require "toggleterm"
 vim.g.nord_contrast = true
 vim.g.nord_borders = true
 vim.g.nord_disable_background = false
@@ -97,12 +98,12 @@ end
 local has_catppuccin, catppuccin = pcall(require, 'catppuccin')
 if has_catppuccin then
   catppuccin.setup {
-    flavour = "macchiato", -- latte, frappe, macchiato, mocha
+    flavour = "mocha", -- latte, frappe, macchiato, mocha
     background = { -- :h background
-        light = "macchiato",
-        dark = "frappe",
+        light = "frappe",
+        dark = "mocha",
     },
-    transparent_background = false,
+    transparent_background = true,
     dim_inactive = {
         enabled = false,
         shade = "dark",
@@ -123,11 +124,41 @@ if has_catppuccin then
         operators = {},
     },
     integrations = {
-        cmp = true,
-        gitsigns = true,
-        nvimtree = true,
-        telescope = true,
+      cmp = true,
+      gitsigns = true,
+      nvimtree = {
+        enabled = true,
+        show_root = false,
+        transparent_panel = false,
+      },
+      telescope = true,
+      native_lsp = {
+        enabled = true,
+        virtual_text = {
+          errors = { "italic" },
+          hints = { "italic" },
+          warnings = { "italic" },
+          information = { "italic" },
+        },
+        underlines = {
+          errors = { "underline" },
+          hints = { "underline" },
+          warnings = { "underline" },
+          information = { "underline" },
+        },
+      },
+      toggleterm = {
+        transparent_panel = false,
+        transparent_background = false
+      }
     },
+    highlight_overrides = {
+      mocha = function (cp)
+        return {
+          ["@include"] = { style = { "italic" } },
+        }
+      end
+    }
   }
 end
 

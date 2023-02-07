@@ -19,7 +19,7 @@ env:
 window:
   dynamic_padding: false
   dynamic_title: true
-  # opacity: 0.975
+  opacity: 0.975
   # decorations: none
   decorations_theme_variant: dark
 
@@ -42,4 +42,4 @@ cursor:
     blinking: Always
 
 import:
-  - ~/.config/alacritty/themes/catppuccin-macchiato.yml
+  - ~/.config/alacritty/themes/catppuccin-mocha.yml
