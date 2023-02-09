@@ -103,7 +103,7 @@ if has_catppuccin then
         light = "frappe",
         dark = "mocha",
     },
-    transparent_background = true,
+    transparent_background = false,
     dim_inactive = {
         enabled = false,
         shade = "dark",
@@ -152,10 +152,66 @@ if has_catppuccin then
         transparent_background = false
       }
     },
+    color_overrides = {
+      mocha = {
+        base = "#011627", -- default bg
+        mantle = "#001122", -- darker bg
+        crust = "#000C1D", -- darkest bg
+
+        surface2 = "#637777", -- default comment
+        surface1 = "#4B6174", -- darker comment
+        surface0 = "#04111F", -- darkest comment
+
+        -- overlay2 = "#001122", -- popup fg, symbols
+        overlay1 = "#8BADC1", -- conceal color
+        overlay0 = "#102034", -- fold color
+
+        subtext1 = "#8BADC1", -- indicator
+        subtext0 = "#8BADC1", -- float title
+
+        text = "#D7DBE0", -- text fg
+        lavender = "#B4BEFE", -- cursor line number
+        blue = "#82AAFF", -- diff changed
+        sapphire = "#74C7EC", -- constructor
+        sky = "#7FDBCA", -- operator
+        teal = "#CAECE6", -- hint
+        green = "#C5E478", -- diff add
+        yellow = "#FAF39F", -- warning
+        peach = "#F78C6C", -- number
+        maroon = "#EBA0AC", -- lighter red
+        red = "#F38BA8", -- error
+        mauve = "#C792EA", -- tag
+        pink = "#F5C2E7", -- pink or #BAEBE2
+        flamingo = "#F2CDCD", -- target word
+        rosewater = "#F5E0DC", -- winbar
+      }
+    },
     highlight_overrides = {
       mocha = function (cp)
         return {
-          ["@include"] = { style = { "italic" } },
+          -- ["@operator"] = { fg = cp.surface1 },
+          ["@punctuation.delimiter"] = { fg = cp.surface1 },
+          ["@punctuation.bracket"] = { fg = cp.surface1 },
+          ["@punctuation.special"] = { fg = cp.surface1 },
+
+          ["@string"] = { fg = "#ECC48D" },
+          ["@boolean"] = { link = "Boolean" },
+          ["@number"] = { link = "Number" },
+          ["@float"] = { link = "Number" },
+
+          ["@field"] = { fg = cp.text },
+          ["@property"] = { fg = cp.teal },
+
+          ["@include"] = { fg = cp.surface1, style = { "italic" } },
+
+          ["@constructor"] = { fg = cp.sky },
+          ["@parameter"] = { fg = cp.text },
+
+          ["@method.call"] = { fg = cp.blue },
+
+          ["@tag"] = { fg = cp.teal },
+          ["@tag.attribute"] = { fg = cp.green },
+          ["@tag.delimiter"] = { fg = cp.sky },
         }
       end
     }
