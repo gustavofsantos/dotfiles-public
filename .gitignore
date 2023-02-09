@@ -3,6 +3,7 @@
 .minikube/
 .hasura/
 kubectl
+.dotnet/
 .android/
 .logseq/
 .config/systemd/user/default.*
