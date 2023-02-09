@@ -1,6 +1,6 @@
 {
   "workbench.startupEditor": "none",
-  "workbench.colorTheme": "Tokyo Night",
+  "workbench.colorTheme": "Night Owl",
   "workbench.editor.showTabs": true,
   "workbench.editor.tabSizing": "fit",
   "workbench.tree.indent": 16,
@@ -70,12 +70,8 @@
   "vim.hlsearch": true,
   "vim.normalModeKeyBindings": [
     {
-      "before": [
-        ":W"
-      ],
-      "after": [
-        ":w"
-      ]
+      "before": [":W"],
+      "after": [":w"]
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
@@ -86,209 +82,106 @@
     },
     {
       "title": "Find file",
-      "before": [
-        "<C-p>"
-      ],
-      "commands": [
-        "workbench.action.quickOpen"
-      ]
+      "before": ["<C-p>"],
+      "commands": ["workbench.action.quickOpen"]
     },
     {
       "title": "Toggle explorer",
-      "before": [
-        "<C-b>"
-      ],
-      "commands": [
-        "workbench.action.toggleSidebarVisibility"
-      ]
+      "before": ["<C-b>"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
     },
     {
       "title": "Close current editor",
-      "before": [
-        "<C-q>"
-      ],
-      "commands": [
-        "workbench.action.closeActiveEditor"
-      ]
+      "before": ["<C-q>"],
+      "commands": ["workbench.action.closeActiveEditor"]
     },
     {
       "title": "Workspace symbols",
-      "before": [
-        "<leader>",
-        "F"
-      ],
-      "commands": [
-        "workbench.action.showAllSymbols"
-      ]
+      "before": ["<leader>", "F"],
+      "commands": ["workbench.action.showAllSymbols"]
     },
     {
       "title": "Comment line",
-      "before": [
-        "<leader>",
-        "/"
-      ],
-      "commands": [
-        "editor.action.commentLine"
-      ]
+      "before": ["<leader>", "/"],
+      "commands": ["editor.action.commentLine"]
     },
     {
       "title": "Quick fix",
-      "before": [
-        "<leader>",
-        "."
-      ],
-      "commands": [
-        "editor.action.quickFix"
-      ]
+      "before": ["<leader>", "."],
+      "commands": ["editor.action.quickFix"]
     },
     {
       "title": "Rename",
-      "before": [
-        "<leader>",
-        "r"
-      ],
-      "commands": [
-        "editor.action.rename"
-      ]
+      "before": ["<leader>", "r"],
+      "commands": ["editor.action.rename"]
     },
     {
       "title": "Close all editors",
-      "before": [
-        "<leader>",
-        "C"
-      ],
-      "commands": [
-        "workbench.action.closeAllEditors"
-      ]
+      "before": ["<leader>", "C"],
+      "commands": ["workbench.action.closeAllEditors"]
     },
     {
       "title": "Toggle terminal",
-      "before": [
-        "<C-t>"
-      ],
-      "commands": [
-        "workbench.action.terminal.toggleTerminal"
-      ]
+      "before": ["<C-t>"],
+      "commands": ["workbench.action.terminal.toggleTerminal"]
     },
     {
       "title": "Move to panel right",
-      "before": [
-        "<leader>",
-        "l"
-      ],
-      "commands": [
-        "workbench.action.focusRightGroup"
-      ]
+      "before": ["<leader>", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
     },
     {
       "title": "Move to panel left",
-      "before": [
-        "<leader>",
-        "h"
-      ],
-      "commands": [
-        "workbench.action.focusLeftGroup"
-      ]
+      "before": ["<leader>", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
     },
     {
       "title": "Move to panel above",
-      "before": [
-        "<leader>",
-        "k"
-      ],
-      "commands": [
-        "workbench.action.focusAboveGroup"
-      ]
+      "before": ["<leader>", "k"],
+      "commands": ["workbench.action.focusAboveGroup"]
     },
     {
       "title": "Move to panel below",
-      "before": [
-        "<leader>",
-        "j"
-      ],
-      "commands": [
-        "workbench.action.focusBelowGroup"
-      ]
+      "before": ["<leader>", "j"],
+      "commands": ["workbench.action.focusBelowGroup"]
     },
     // WINDOW
     {
       "title": "Split editor",
-      "before": [
-        "<leader>",
-        "w",
-        "s"
-      ],
-      "commands": [
-        "workbench.action.splitEditor"
-      ]
+      "before": ["<leader>", "w", "s"],
+      "commands": ["workbench.action.splitEditor"]
     },
     {
       "title": "Split editor horizontal",
-      "before": [
-        "<leader>",
-        "w",
-        "S"
-      ],
-      "commands": [
-        "workbench.action.splitEditorOrthogonal"
-      ]
+      "before": ["<leader>", "w", "S"],
+      "commands": ["workbench.action.splitEditorOrthogonal"]
     },
     // BUFFER
     {
       "title": "Previous file",
-      "before": [
-        "<leader>",
-        "b",
-        "b"
-      ],
-      "commands": [
-        "editor.action.previousMatchFindAction"
-      ]
+      "before": ["<leader>", "b", "b"],
+      "commands": ["editor.action.previousMatchFindAction"]
     },
     {
       "title": "Format file",
-      "before": [
-        "<leader>",
-        "b",
-        "f"
-      ],
-      "commands": [
-        "editor.action.formatDocument"
-      ]
+      "before": ["<leader>", "b", "f"],
+      "commands": ["editor.action.formatDocument"]
     },
     // GIT
     {
       "title": "Checkout branch",
-      "before": [
-        "<leader>",
-        "g",
-        "b"
-      ],
-      "commands": [
-        "git.checkout"
-      ]
+      "before": ["<leader>", "g", "b"],
+      "commands": ["git.checkout"]
     },
     {
       "title": "Git: open diff",
-      "before": [
-        "<leader>",
-        "g",
-        "d"
-      ],
-      "commands": [
-        "git.timeline.openDiff"
-      ]
+      "before": ["<leader>", "g", "d"],
+      "commands": ["git.timeline.openDiff"]
     },
     {
       "title": "Git: rebase",
-      "before": [
-        "<leader>",
-        "g",
-        "r"
-      ],
-      "commands": [
-        "git.rebase"
-      ]
+      "before": ["<leader>", "g", "r"],
+      "commands": ["git.rebase"]
     }
   ],
   "workbench.colorCustomizations": {
@@ -597,9 +490,7 @@
       "textMateRules": [
         {
           "name": "Symbols",
-          "scope": [
-            "meta.brace.round.js"
-          ],
+          "scope": ["meta.brace.round.js"],
           "settings": {
             "foreground": "#8EACE380"
           }
@@ -883,10 +774,7 @@
           }
         },
         {
-          "scope": [
-            "keyword.operator.new.js",
-            "storage.modifier.async.js"
-          ],
+          "scope": ["keyword.operator.new.js", "storage.modifier.async.js"],
           "settings": {
             "foreground": "#cb4b16"
           }
@@ -1051,9 +939,7 @@
           }
         },
         {
-          "scope": [
-            "entity.name.function.js"
-          ],
+          "scope": ["entity.name.function.js"],
           "settings": {
             "foreground": "#FFFFFF"
           }
@@ -1179,10 +1065,7 @@
           }
         },
         {
-          "scope": [
-            "storage.modifier.async.ts",
-            "storage.modifier.ts"
-          ],
+          "scope": ["storage.modifier.async.ts", "storage.modifier.ts"],
           "settings": {
             "foreground": "#F1A5AB"
           }
@@ -1235,9 +1118,7 @@
           }
         },
         {
-          "scope": [
-            "keyword.operator.comparison.js"
-          ],
+          "scope": ["keyword.operator.comparison.js"],
           "settings": {
             "foreground": "#FFE2A9"
           }
