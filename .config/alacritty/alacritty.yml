@@ -11,7 +11,7 @@ font:
   bold_italic:
     family: MonoLisa Nerd Font
     style: Semibold Italic
-  size: 11.0
+  size: 12.0
 
 env:
   TERM: xterm-256color
@@ -42,4 +42,4 @@ cursor:
     blinking: Always
 
 import:
-  - ~/.config/alacritty/themes/catppuccin-mocha.yml
+  - ~/.config/alacritty/themes/nightowl.yml
