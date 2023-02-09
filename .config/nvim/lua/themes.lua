@@ -179,7 +179,7 @@ if has_catppuccin then
         yellow = "#FAF39F", -- warning
         peach = "#F78C6C", -- number
         maroon = "#EBA0AC", -- lighter red
-        red = "#F38BA8", -- error
+        red = "#FF5874", -- error
         mauve = "#C792EA", -- tag
         pink = "#F5C2E7", -- pink or #BAEBE2
         flamingo = "#F2CDCD", -- target word
@@ -193,9 +193,10 @@ if has_catppuccin then
           ["@punctuation.delimiter"] = { fg = cp.surface1 },
           ["@punctuation.bracket"] = { fg = cp.surface1 },
           ["@punctuation.special"] = { fg = cp.surface1 },
+          ["@symbol"] = { fg = cp.surface1 },
 
           ["@string"] = { fg = "#ECC48D" },
-          ["@boolean"] = { link = "Boolean" },
+          ["@boolean"] = { fg = cp.red },
           ["@number"] = { link = "Number" },
           ["@float"] = { link = "Number" },
 
@@ -212,6 +213,8 @@ if has_catppuccin then
           ["@tag"] = { fg = cp.teal },
           ["@tag.attribute"] = { fg = cp.green },
           ["@tag.delimiter"] = { fg = cp.sky },
+
+          ["@constructor.lua"] = { fg = cp.surface1 },
         }
       end
     }
