@@ -1,11 +1,13 @@
 local wezterm = require("wezterm")
 
 function scheme_for_appearance(appearance)
-  if appearance:find "Dark" then
-    return "Catppuccin Frappe"
-  else
-    return "Catppuccin Latte"
-  end
+  return "NightOwl"
+
+  -- if appearance:find "Dark" then
+  --   return "Catppuccin Frappe"
+  -- else
+  --   return "Catppuccin Latte"
+  -- end
 end
 
 return {
@@ -14,7 +16,7 @@ return {
 
   -- font
   font = wezterm.font("MonoLisa Nerd Font", { weight = "Regular" }),
-  font_size = 12.0,
+  font_size = 10.0,
 
   window_background_opacity = 0.98,
 
