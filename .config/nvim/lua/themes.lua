@@ -194,8 +194,8 @@ if has_catppuccin then
           MatchParen = { fg = "#929AA3", bg = cp.surface1 },
 
           -- ["@operator"] = { fg = "#D8DBE0" },
-          ["@punctuation.delimiter"] = { fg = "#475260" },
-          ["@punctuation.bracket"] = { fg = "#929AA3" },
+          ["@punctuation.delimiter"] = { fg = "#475260", },
+          ["@punctuation.bracket"] = { fg = "#506379", },
           ["@punctuation.special"] = { fg = cp.surface2 },
           ["@symbol"] = { fg = cp.surface1 },
 
@@ -206,6 +206,8 @@ if has_catppuccin then
 
           ["@field"] = { fg = cp.text },
           ["@property"] = { fg = cp.teal },
+
+          ["@keyword.export"] = { fg = cp.mauve, style = { "italic" } },
 
           ["@conditional.ternary"] = { style = {} },
 
@@ -218,7 +220,7 @@ if has_catppuccin then
           ["@tag.attribute"] = { fg = cp.green },
           ["@tag.delimiter"] = { fg = cp.sky },
 
-          ["@include"] = { fg = cp.surface1, style = { "italic" } },
+          ["@include"] = { fg = cp.subtext1, style = { "italic" } },
           ["@import_identifier"] = { fg = cp.surface2 },
           ["@import_path"] = { fg = cp.surface2 },
 
