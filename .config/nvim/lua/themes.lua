@@ -192,6 +192,7 @@ if has_catppuccin then
           LineNr = { fg = "#506379" },
           CursorLineNr = { fg = "#CAE3FD" },
           MatchParen = { fg = "#929AA3", bg = cp.surface1 },
+          Folded = { bg = "#041F34" },
 
           -- ["@operator"] = { fg = "#D8DBE0" },
           ["@punctuation.delimiter"] = { fg = "#475260", },
@@ -219,6 +220,9 @@ if has_catppuccin then
           ["@tag"] = { fg = cp.teal },
           ["@tag.attribute"] = { fg = cp.green },
           ["@tag.delimiter"] = { fg = cp.sky },
+          ["@tag.tsx"] = { fg = cp.teal },
+          ["@tag.attribute.tsx"] = { fg = cp.green },
+          ["@tag.delimiter.tsx"] = { fg = cp.sky },
 
           ["@include"] = { fg = cp.subtext1, style = { "italic" } },
           ["@import_identifier"] = { fg = cp.surface2 },
