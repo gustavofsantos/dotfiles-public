@@ -59,7 +59,7 @@ local on_attach = function(_, bufnr)
   nmap('<leader>q', vim.diagnostic.setloclist)
 
   nmap('gd', vim.lsp.buf.definition, '[G]o to [D]efinition')
-  nmap('gr', require('telescope.builtin').lsp_references, '[G]o to [R]eferences')
+  nmap('gr', vim.lsp.buf.references, '[G]o to [R]eferences')
   nmap('gI', vim.lsp.buf.implementation, '[G]o to [I]mplementation')
 
   nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
@@ -71,13 +71,13 @@ local on_attach = function(_, bufnr)
   nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
   -- Create a command `:Format` local to the LSP buffer
-  vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-    if vim.lsp.buf.format then
-      vim.lsp.buf.format()
-    elseif vim.lsp.buf.formatting then
-      vim.lsp.buf.formatting()
-    end
-  end, { desc = 'Format current buffer with LSP' })
+  -- vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
+  --   if vim.lsp.buf.format then
+  --     vim.lsp.buf.format()
+  --   elseif vim.lsp.buf.formatting then
+  --     vim.lsp.buf.formatting()
+  --   end
+  -- end, { desc = 'Format current buffer with LSP' })
 end
 
 local lsp_flags = {
