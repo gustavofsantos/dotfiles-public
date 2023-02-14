@@ -118,6 +118,11 @@ if has_catppuccin then
           CursorLineNr = { fg = "#CAE3FD" },
           MatchParen = { fg = "#929AA3", bg = cp.surface1 },
           Folded = { bg = "#041F34" },
+          TabLine = { fg = "#506379", bg = cp.crust },
+          TabLineFill = { bg = cp.crust },
+          TabLineSel = { fg = "#CAE3FD" , bg = cp.base },
+          Visual = { bg = "#041F34", style = {} },
+          VisualNOS = { bg = "#041F34", style = {} },
 
           -- ["@operator"] = { fg = "#D8DBE0" },
           ["@punctuation.delimiter"] = { fg = "#475260", },
