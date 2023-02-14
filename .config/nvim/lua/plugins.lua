@@ -18,10 +18,6 @@ return packer.startup(function(use)
   use { 'catppuccin/nvim', as = 'catppuccin' }
   use 'kvrohit/rasmus.nvim'
   use 'kvrohit/mellow.nvim'
-  use { 'EdenEast/nightfox.nvim', tag = 'v2.0.0' }
-  use 'folke/tokyonight.nvim'
-  use 'olimorris/onedarkpro.nvim'
-  use 'shaunsingh/nord.nvim'
 
   use 'mbbill/undotree' -- tree of changes
 
@@ -34,7 +30,7 @@ return packer.startup(function(use)
   use 'udalov/kotlin-vim' -- Kotlin highlight
   use 'elixir-editors/vim-elixir' -- Elixir highlighting
   -- use 'numirias/semshi' -- Python enhanced syntax
-  use 'norcalli/nvim-colorizer.lua' -- Display colors
+  -- use 'norcalli/nvim-colorizer.lua' -- Display colors
 
   use 'tpope/vim-surround'
   use 'tpope/vim-repeat'
@@ -64,16 +60,11 @@ return packer.startup(function(use)
   -- IDE like view
   use 'kyazdani42/nvim-tree.lua'
   use 'nvim-lualine/lualine.nvim'
-  use { 'akinsho/bufferline.nvim', tag = "v3.*" }
-  -- use 'vim-test/vim-test'
+  -- use { 'akinsho/bufferline.nvim', tag = "v3.*" }
   use 'akinsho/toggleterm.nvim'
-  use 'folke/trouble.nvim'
   use 'windwp/nvim-ts-autotag'
   use 'windwp/nvim-autopairs'
-  -- use 'gbprod/yanky.nvim'
-  -- use 'MunifTanjim/prettier.nvim'
   use 'neovim/nvim-lspconfig'
-  use 'glepnir/lspsaga.nvim'
   use {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim'
