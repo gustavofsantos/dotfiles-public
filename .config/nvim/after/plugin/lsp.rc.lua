@@ -12,7 +12,7 @@ if (has_mason_lspconfig) then
   mason_lspconfig.setup({
     ensure_installed = {
       "bashls",
-      "sumneko_lua",
+      "lua_ls",
       "rust_analyzer",
       "eslint",
       "svelte",
@@ -136,7 +136,7 @@ if (has_lspconfig and has_cmp_lsp) then
     cmd = { vim.fn.stdpath("data") .. "/mason/packages/elixir-ls/language_server.sh" }
   }
 
-  lspconfig.sumneko_lua.setup {
+  lspconfig.lua_ls.setup {
     on_attach = on_attach,
     settings = {
       Lua = {
@@ -152,6 +152,7 @@ if (has_lspconfig and has_cmp_lsp) then
 
   local servers = {
     -- 'pyright',
+    'bashls',
     'dockerls',
     'html',
     'jsonls',
