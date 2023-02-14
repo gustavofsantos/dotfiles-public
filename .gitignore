@@ -2,6 +2,9 @@
 .kube/
 .minikube/
 .hasura/
+.config/Android Open Source Project/
+.emulator_console_auth_token
+.objectbox-build.properties
 kubectl
 .dotnet/
 .android/
