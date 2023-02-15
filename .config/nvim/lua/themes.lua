@@ -79,38 +79,6 @@ if has_catppuccin then
     },
     color_overrides = {
       mocha = {
-        base = "#151515", -- default bg
-        mantle = "#000000", -- darker bg
-        crust = "#000000", -- darkest bg
-
-        surface2 = "#6F6F6F", -- default comment
-        surface1 = "#6F6F6F", -- darker comment
-        surface0 = "#6F6F6F", -- darkest comment
-
-        -- overlay2 = "#001122", -- popup fg, symbols
-        overlay1 = "#8BADC1", -- conceal color
-        overlay0 = "#102034", -- fold color
-
-        subtext1 = "#8BADC1", -- indicator
-        subtext0 = "#8BADC1", -- float title
-
-        text = "#FFFFFF", -- text fg
-        lavender = "#B4BEFE", -- cursor line number
-        blue = "#82AAFF", -- diff changed
-        sapphire = "#74C7EC", -- constructor
-        sky = "#7FDBCA", -- operator
-        teal = "#CAECE6", -- hint
-        green = "#C5E478", -- diff add
-        yellow = "#FAF39F", -- warning
-        peach = "#F78C6C", -- number
-        maroon = "#EBA0AC", -- lighter red
-        red = "#FF5874", -- error
-        mauve = "#C792EA", -- tag
-        pink = "#F5C2E7", -- pink or #BAEBE2
-        flamingo = "#F2CDCD", -- target word
-        rosewater = "#F5E0DC", -- winbar
-      },
-      macchiato = {
         base = "#011627", -- default bg
         mantle = "#001122", -- darker bg
         crust = "#000C1D", -- darkest bg
@@ -141,6 +109,38 @@ if has_catppuccin then
         pink = "#F5C2E7", -- pink or #BAEBE2
         flamingo = "#F2CDCD", -- target word
         rosewater = "#F5E0DC", -- winbar
+      },
+      macchiato = {
+        base = "#151515", -- default bg
+        mantle = "#000000", -- darker bg
+        crust = "#000000", -- darkest bg
+
+        surface2 = "#6F6F6F", -- default comment
+        surface1 = "#6F6F6F", -- darker comment
+        surface0 = "#6F6F6F", -- darkest comment
+
+        -- overlay2 = "#001122", -- popup fg, symbols
+        overlay1 = "#8BADC1", -- conceal color
+        overlay0 = "#102034", -- fold color
+
+        subtext1 = "#8BADC1", -- indicator
+        subtext0 = "#8BADC1", -- float title
+
+        text = "#FFFFFF", -- text fg
+        lavender = "#B4BEFE", -- cursor line number
+        blue = "#82AAFF", -- diff changed
+        sapphire = "#74C7EC", -- constructor
+        sky = "#7FDBCA", -- operator
+        teal = "#CAECE6", -- hint
+        green = "#C5E478", -- diff add
+        yellow = "#FAF39F", -- warning
+        peach = "#F78C6C", -- number
+        maroon = "#EBA0AC", -- lighter red
+        red = "#FF5874", -- error
+        mauve = "#C792EA", -- tag
+        pink = "#F5C2E7", -- pink or #BAEBE2
+        flamingo = "#F2CDCD", -- target word
+        rosewater = "#000000", -- winbar
       }
     },
     highlight_overrides = {
