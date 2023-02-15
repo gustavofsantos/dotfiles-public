@@ -58,7 +58,7 @@ return packer.startup(function(use)
   use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
 
   -- IDE like view
-  use 'kyazdani42/nvim-tree.lua'
+  -- use 'kyazdani42/nvim-tree.lua'
   use 'nvim-lualine/lualine.nvim'
   -- use { 'akinsho/bufferline.nvim', tag = "v3.*" }
   use 'akinsho/toggleterm.nvim'

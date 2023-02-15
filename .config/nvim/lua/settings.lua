@@ -1,20 +1,6 @@
 local g = vim.g
 local cmd = vim.cmd
 
-g.rasmus_italic_comments = true
-g.rasmus_italic_keywords = true
-g.rasmus_italic_functions = true
-g.rasmus_bold_booleans = true
-g.rasmus_bold_functions = true
-g.rasmus_transparent = false
-
-g.mellow_italic_comments = true
-g.mellow_italic_keywords = true
-g.mellow_italic_functions = true
-g.mellow_italic_variables = true
-g.mellow_bold_booleans = true
-g.mellow_transparent = false
-
 g.mapleader = " "
 
 cmd [[let g:sonokai_enable_italic = 1]]
@@ -53,8 +39,7 @@ let g:switch_custom_definitions =
 
 cmd [[set termguicolors]]
 cmd [[set background=dark]]
--- cmd [[colorscheme nightfox]] -- nightfox, nordfox, duskfox, dawnfox, terafox
-cmd [[colorscheme catppuccin]]
+cmd [[colorscheme mellow]]
 cmd [[set noerrorbells]]
 cmd [[set tabstop=2 softtabstop=2]]
 cmd [[set shiftwidth=2]]
