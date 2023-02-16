@@ -3,23 +3,9 @@ local cmd = vim.cmd
 
 g.mapleader = " "
 
-cmd [[let g:sonokai_enable_italic = 1]]
-cmd [[let g:sonokai_style = 'atlantis']]
-cmd [[let g:sonokai_better_performance = 1]]
-cmd [[let g:python_highlight_all = 1]]
-cmd [[let g:spacegray_underline_search = 1]]
-cmd [[let g:spacegray_use_italics = 1]]
-
-cmd [[let g:gruvbox_material_foreground = 'original']]
-cmd [[let g:gruvbox_material_background = 'medium']]
-cmd [[let g:gruvbox_material_better_performance = 1]]
-cmd [[let g:gruvbox_material_disable_italic_comment = 0]]
-cmd [[let g:gruvbox_material_enable_bold = 1]]
-cmd [[let g:gruvbox_material_enable_italic = 1]]
 
 cmd [[let g:sneak#label = 1]]
 cmd [[let g:sneak#use_ic_scs = 1]]
-
 
 cmd [[let test#strategy = "neovim"]]
 
@@ -39,7 +25,7 @@ let g:switch_custom_definitions =
 
 cmd [[set termguicolors]]
 cmd [[set background=dark]]
-cmd [[colorscheme mellow]]
+cmd [[colorscheme catppuccin]]
 cmd [[set noerrorbells]]
 cmd [[set tabstop=2 softtabstop=2]]
 cmd [[set shiftwidth=2]]

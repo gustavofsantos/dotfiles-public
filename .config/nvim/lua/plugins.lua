@@ -16,8 +16,8 @@ return packer.startup(function(use)
   -- colorscheme
   use 'rebelot/kanagawa.nvim'
   use { 'catppuccin/nvim', as = 'catppuccin' }
-  use 'kvrohit/rasmus.nvim'
   use 'kvrohit/mellow.nvim'
+  use 'Yazeed1s/oh-lucy.nvim'
 
   use 'mbbill/undotree' -- tree of changes
 

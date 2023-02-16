@@ -19,6 +19,13 @@ vim.g.mellow_italic_variables = false
 vim.g.mellow_bold_booleans = true
 vim.g.mellow_transparent = false
 
+vim.g.oh_lucy_italic_comments = true
+vim.g.oh_lucy_italic_keywords = true
+vim.g.oh_lucy_italic_booleans = false
+vim.g.oh_lucy_italic_functions = true
+vim.g.oh_lucy_italic_variables = false
+vim.g.oh_lucy_transparent_background = false
+
 local has_kanagawa, kanagawa = pcall(require, 'kanagawa')
 if has_kanagawa then
   kanagawa.setup {
@@ -181,15 +188,17 @@ if has_catppuccin then
           ["@float"] = { link = "Number" },
 
           ["@type"] = { fg = cp.text },
+          ["@namespace"] = { fg = cp.text },
           ["@field"] = { fg = cp.text },
           ["@property"] = { fg = cp.teal },
           ["@function"] = { fg = cp.blue },
+          ["@function.builtin"] = { fg = cp.green },
 
           ["@keyword.export"] = { fg = cp.mauve, style = { "italic" } },
 
           ["@conditional.ternary"] = { style = {} },
 
-          ["@constructor"] = { fg = cp.sky },
+          ["@constructor"] = { fg = cp.teal },
           ["@parameter"] = { fg = cp.text },
 
           ["@method"] = { fg = cp.blue },
