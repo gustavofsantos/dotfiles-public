@@ -216,6 +216,8 @@ if has_catppuccin then
           ["@import_path"] = { fg = cp.surface2 },
 
           ["@constructor.lua"] = { fg = cp.surface1 },
+
+          ["@field.yaml"] = { fg = cp.sky }
         }
       end,
       macchiato = function (cp)
