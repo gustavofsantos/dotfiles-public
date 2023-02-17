@@ -173,7 +173,7 @@ if has_catppuccin then
           TabLine = { fg = "#506379", bg = cp.crust },
           TabLineFill = { bg = cp.crust },
           TabLineSel = { fg = "#CAE3FD" , bg = cp.base },
-          Visual = { bg = "#041F34", style = {} },
+          Visual = { fg = cp.text, bg = cp.surface2, style = {} },
           VisualNOS = { bg = "#041F34", style = {} },
 
           -- ["@operator"] = { fg = "#D8DBE0" },
