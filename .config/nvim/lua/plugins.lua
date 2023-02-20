@@ -30,7 +30,7 @@ return packer.startup(function(use)
   use 'udalov/kotlin-vim' -- Kotlin highlight
   use 'elixir-editors/vim-elixir' -- Elixir highlighting
   -- use 'numirias/semshi' -- Python enhanced syntax
-  -- use 'norcalli/nvim-colorizer.lua' -- Display colors
+  use 'norcalli/nvim-colorizer.lua' -- Display colors
 
   use 'tpope/vim-surround'
   use 'tpope/vim-repeat'
