@@ -185,3 +185,5 @@ bar {
         status_command i3status
 }
 
+exec "setxkbmap -layout us -variant altgr-intl"
+exec "xmodmap ~/.Xmodmap"
