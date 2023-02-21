@@ -183,6 +183,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        font pango:MonoLisa Nerd Font 8
 }
 
 exec "setxkbmap -layout us -variant altgr-intl"
