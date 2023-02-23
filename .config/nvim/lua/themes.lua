@@ -171,6 +171,7 @@ if has_catppuccin then
           MatchParen = { fg = "#929AA3", bg = cp.surface1 },
           Folded = { bg = "#041F34" },
           TabLine = { fg = "#506379", bg = cp.crust },
+          VertSplit = { fg = cp.surface2, bg = cp.crust },
           TabLineFill = { bg = cp.crust },
           TabLineSel = { fg = "#CAE3FD" , bg = cp.base },
           Visual = { fg = cp.text, bg = cp.surface2, style = {} },

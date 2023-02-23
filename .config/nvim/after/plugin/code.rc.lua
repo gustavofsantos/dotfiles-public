@@ -126,6 +126,7 @@ if has_treesitter then
       "toml",
       "http",
       "norg",
+      "rust",
       "javascript",
       "jsdoc",
       "typescript",
