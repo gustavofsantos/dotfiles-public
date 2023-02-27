@@ -63,6 +63,7 @@ kubectl
 .config/monitors.xml~
 .config/nautilus/
 .config/nextjs-nodejs/
+.config/ngrok/
 .config/nvim/plugin/packer_compiled.lua
 .config/omf/
 .config/pop-shell/
