@@ -26,6 +26,42 @@ vim.g.oh_lucy_italic_functions = true
 vim.g.oh_lucy_italic_variables = false
 vim.g.oh_lucy_transparent_background = false
 
+local has_gruvbox, gruvbox = pcall(require, 'gruvbox')
+if has_gruvbox then
+  gruvbox.setup({
+    undercurl = true,
+    underline = true,
+    bold = true,
+    italic = true,
+    strikethrough = true,
+    invert_selection = false,
+    invert_signs = false,
+    invert_tabline = false,
+    invert_intend_guides = false,
+    inverse = true, -- invert background for search, diffs, statuslines and errors
+    contrast = "", -- can be "hard", "soft" or empty string
+    palette_overrides = {},
+    overrides = {
+      SignColumn = { bg = "#282828" },
+      LineNr = { bg = "#282828" },
+      CursorLineNr = { bg = "#282828" },
+      ColorColumn = { bg = "#1d2021" },
+      TabLine = { fg = "#928374", bg = "#1d2021" },
+      TabLineFill = { fg = "#928374", bg = "#1d2021" },
+      TabLineSel = { fg = "#fbf1c7" , bg = "#282828" },
+      Operator = { italic = false },
+      String = { italic = false },
+      ["@boolean"] = { fg = "#d3869b", bold = true },
+      ["@function.call"] = { fg = "#b8bb26", italic = true },
+      ["@conditional"] = { fg = "#fb4934", italic = true },
+      ["@keyword"] = { fg = "#fb4934", italic = true },
+      ["@punctuation.special"] = { fg = "#3c3836" },
+    },
+    dim_inactive = false,
+    transparent_mode = false,
+  })
+end
+
 local has_kanagawa, kanagawa = pcall(require, 'kanagawa')
 if has_kanagawa then
   kanagawa.setup {

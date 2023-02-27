@@ -27,7 +27,7 @@ if (has_cmp and has_lspkind and has_luasnip) then
       debounce = 300,
     },
     completion = {
-      autocomplete = false
+      autocomplete = true
     },
     snippet = {
       expand = function(args)

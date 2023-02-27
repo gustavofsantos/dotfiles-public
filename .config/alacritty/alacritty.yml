@@ -42,4 +42,4 @@ cursor:
     blinking: Always
 
 import:
-  - ~/.config/alacritty/themes/nightowl.yml
+  - ~/.config/alacritty/themes/gruvbox.yml

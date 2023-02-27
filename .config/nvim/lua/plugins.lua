@@ -12,6 +12,7 @@ return packer.startup(function(use)
   use 'rktjmp/lush.nvim'
   use 'nvim-lua/plenary.nvim'
   use 'kyazdani42/nvim-web-devicons'
+  use 'ellisonleao/gruvbox.nvim'
 
   -- colorscheme
   use 'rebelot/kanagawa.nvim'
