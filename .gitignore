@@ -1,4 +1,6 @@
 Podcasts/
+.config/geary/
+.config/goa-1.0/
 .newsboat/cache.db
 .newsboat/history.cmdline
 .luarc.json
