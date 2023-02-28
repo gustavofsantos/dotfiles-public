@@ -10,6 +10,8 @@ Podcasts/
 .objectbox-build.properties
 kubectl
 .dotnet/
+.nix-defexpr/
+.nix-profile
 .android/
 .logseq/
 .config/systemd/user/default.*
