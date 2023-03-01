@@ -26,6 +26,11 @@ vim.g.oh_lucy_italic_functions = true
 vim.g.oh_lucy_italic_variables = false
 vim.g.oh_lucy_transparent_background = false
 
+local has_monokai_pro, monokai_pro = pcall(require, 'monokai-pro')
+if has_monokai_pro then
+  monokai_pro.setup({})
+end
+
 local has_gruvbox, gruvbox = pcall(require, 'gruvbox')
 if has_gruvbox then
   gruvbox.setup({
@@ -46,9 +51,12 @@ if has_gruvbox then
       LineNr = { bg = "#282828" },
       CursorLineNr = { bg = "#282828" },
       ColorColumn = { bg = "#1d2021" },
+      Folded = { bg = "#32302f" },
       TabLine = { fg = "#928374", bg = "#1d2021" },
       TabLineFill = { fg = "#928374", bg = "#1d2021" },
-      TabLineSel = { fg = "#fbf1c7" , bg = "#282828" },
+      TabLineSel = { fg = "#EAD9B1" , bg = "#282828" },
+      Visual = { fg = "#EAD9B1", bg = "#3c3836" },
+      VisualNOS = { fg = "#EAD9B1", bg =  "#3c3836" },
       Operator = { italic = false },
       String = { italic = false },
       ["@boolean"] = { fg = "#d3869b", bold = true },

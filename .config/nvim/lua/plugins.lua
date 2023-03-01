@@ -12,20 +12,21 @@ return packer.startup(function(use)
   use 'rktjmp/lush.nvim'
   use 'nvim-lua/plenary.nvim'
   use 'kyazdani42/nvim-web-devicons'
-  use 'ellisonleao/gruvbox.nvim'
 
   -- colorscheme
   use 'rebelot/kanagawa.nvim'
   use { 'catppuccin/nvim', as = 'catppuccin' }
+  use 'ellisonleao/gruvbox.nvim'
+  use 'loctvl842/monokai-pro.nvim'
   use 'kvrohit/mellow.nvim'
   use 'Yazeed1s/oh-lucy.nvim'
 
   use 'mbbill/undotree' -- tree of changes
 
-  use 'sheerun/vim-polyglot'
-  use 'yuezk/vim-js' -- JavaScript highlight
+  -- use 'sheerun/vim-polyglot'
+  -- use 'yuezk/vim-js' -- JavaScript highlight
   use 'HerringtonDarkholme/yats.vim' -- TypeScript highlight
-  use 'maxmellon/vim-jsx-pretty' -- JSX highlight
+  -- use 'maxmellon/vim-jsx-pretty' -- JSX highlight
   use 'mustache/vim-mustache-handlebars' -- handlebars highlight
   use 'pantharshit00/vim-prisma' -- Prisma files colorscheme
   use 'udalov/kotlin-vim' -- Kotlin highlight
@@ -61,7 +62,7 @@ return packer.startup(function(use)
   -- IDE like view
   -- use 'kyazdani42/nvim-tree.lua'
   use 'nvim-lualine/lualine.nvim'
-  -- use { 'akinsho/bufferline.nvim', tag = "v3.*" }
+  use { 'akinsho/bufferline.nvim', tag = "v3.*" }
   use 'mfussenegger/nvim-dap'
   use 'akinsho/toggleterm.nvim'
   use 'windwp/nvim-ts-autotag'
