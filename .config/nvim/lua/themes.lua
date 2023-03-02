@@ -90,9 +90,9 @@ end
 local has_catppuccin, catppuccin = pcall(require, 'catppuccin')
 if has_catppuccin then
   catppuccin.setup {
-    flavour = "mocha", -- latte, frappe, macchiato, mocha
+    flavour = "latte", -- latte, frappe, macchiato, mocha
     background = { -- :h background
-        light = "frappe",
+        light = "latte",
         dark = "mocha",
     },
     transparent_background = false,
@@ -145,6 +145,36 @@ if has_catppuccin then
       }
     },
     color_overrides = {
+      latte = {
+        rosewater = "#FFAB91",
+        flamingo = "#FFAB91",
+        pink = "#673AB7",
+        mauve = "#673AB7",
+        red = "#EF5350",
+        maroon = "#FFAB91",
+        peach = "#FF6F00",
+        yellow = "#E2C12F",
+        green = "#66BB6A",
+        teal = "#4DB5BD",
+        sky = "#26C6DA",
+        sapphire = "#005478",
+        blue = "#42A5F5",
+        lavender = "#673AB7",
+
+        text = "#37474F",
+        subtext1 = "#263238",
+        subtext0 = "#90A4AE",
+        overlay2 = "#7C7F93",
+        overlay1 = "#8C8FA1",
+        overlay0 = "#9CA0B0",
+        surface2 = "#ACB0BE",
+        surface1 = "#BCC0CC",
+        surface0 = "#CCD0DA",
+
+        base = "#FFFFFF",
+        mantle = "#FAFAFA",
+        crust = "#ECEFF1",
+      },
       mocha = {
         base = "#011627", -- default bg
         mantle = "#001122", -- darker bg
@@ -211,6 +241,51 @@ if has_catppuccin then
       }
     },
     highlight_overrides = {
+      latte = function (cp)
+        return {
+          TabLineFill = { fg = cp.subtext0, bg = cp.crust },
+          TabLineSel = { fg = cp.text, bg = cp.base },
+          StatusLine = { fg = cp.base, bg = cp.text },
+          StatusLineNC = { fg = cp.crust, bg = cp.subtext0 },
+
+          -- gitsigns.nvim
+          GitSignsAdd = { fg = cp.green },
+          GitSignsChange = { fg = cp.blue },
+          GitSignsDelete = { fg = cp.red },
+
+          ["@include"] = { fg = cp.lavender, style = {"italic"}},
+          ["@boolean"] = { fg = cp.flamingo, style = { "bold" }},
+          ["@string"] = { fg = cp.green },
+          ["@variable"] = { fg = cp.text },
+          ["@parameter"] = { fg = cp.text },
+          ["@function"] = { fg = cp.subtext1 },
+          ["@function.call"] = { fg = cp.subtext1, style = {"italic"} },
+          ["@constant"] = { fg = cp.subtext1, style = { "bold" }},
+          ["@constant.builtin"] = { fg = cp.flamingo, style = { "bold" }},
+          ["@keyword"] = { fg = cp.lavender, style = { "italic" }},
+          ["@keyword.return"] = { fg = cp.lavender, style = { "italic" }},
+          ["@keyword.operator"] = { fg = cp.lavender, style = { "italic" }},
+          ["@variable.builtin"] = { fg = cp.lavender, style = { "italic" }},
+          ["@property"] = { fg = cp.text },
+          ["@constructor"] = { fg = cp.text, style = { "italic", "bold" }},
+          ["@method"] = { fg = cp.subtext1, style = { "italic" }},
+          ["@method.call"] = { fg = cp.text, style = { "italic" }},
+          ["@comment"] = { fg = cp.subtext0, style = {"italic"}},
+          ["@operator"] = { fg = cp.subtext0 },
+          ["@conditional"] = { fg = cp.lavender },
+          ["@type"] = { fg = cp.subtext1, style = { "bold" }},
+          ["@tag"] = { fg = cp.subtext1 },
+          ["@tag.delimiter"] = { fg = cp.subtext0 },
+          ["@tag.attribute"] = { fg = cp.text, style = { "italic" }},
+          ["@punctuation.delimiter"] = { fg = cp.subtext0, },
+          ["@punctuation.bracket"] = { fg = cp.subtext0 },
+          ["@punctuation.special"] = { fg = cp.subtext0 },
+
+          ["@field.yaml"] = { fg = cp.text, style = { "bold" }},
+          ["@string.yaml"] = { fg = cp.flamingo, style = { "italic" }},
+          ["@boolean.yaml"] = { fg = cp.lavender, style = {}}
+        }
+      end,
       mocha = function (cp)
         return {
           LineNr = { fg = "#506379" },

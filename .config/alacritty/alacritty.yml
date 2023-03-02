@@ -1,16 +1,16 @@
 font:
   normal:
     family: MonoLisa Nerd Font
-    style: Regular
+    style: Medium
   italic:
     family: MonoLisa Nerd Font
-    style: Regular Italic
+    style: Medium Italic
   bold:
     family: MonoLisa Nerd Font
-    style: Semibold
+    style: Bold
   bold_italic:
     family: MonoLisa Nerd Font
-    style: Semibold Italic
+    style: Bold Italic
   size: 10.0
 
 env:
@@ -22,6 +22,9 @@ window:
   opacity: 0.985
   # decorations: none
   decorations_theme_variant: dark
+  padding:
+    x: 8
+    y: 8
 
 draw_bold_text_with_bright_colors: true
 
@@ -42,4 +45,5 @@ cursor:
     blinking: Always
 
 import:
-  - ~/.config/alacritty/themes/gruvbox.yml
+  # - ~/.config/alacritty/themes/gruvbox.yml
+  - ~/.config/alacritty/themes/catppuccin-latte.yml
