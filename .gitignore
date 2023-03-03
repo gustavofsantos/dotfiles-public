@@ -153,3 +153,4 @@ install.sh
 *.mkv
 *.mp4
 .config/nushell/
+.config/microsoft-edge/
