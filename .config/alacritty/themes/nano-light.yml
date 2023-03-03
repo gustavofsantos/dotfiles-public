@@ -55,12 +55,12 @@ colors:
     # Bright colors
     bright:
         black: "#000000" # surface2
-        red: "#FFCDD2" # red
-        green: "#C8E6C9" # green
-        yellow: "#FFF9C4" # yellow
-        blue: "#BBDEFB" # blue
-        magenta: "#E1BEE7" # pink
-        cyan: "#B2EBF2" # teal
+        red: "#EF5350"
+        green: "#66BB6A"
+        yellow: "#E2C12F"
+        blue: "#42A5F5"
+        magenta: "#AB47BC"
+        cyan: "#26C6DA"
         white: "#FFFFFF" # subtext0
 
     # Dim colors

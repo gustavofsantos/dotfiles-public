@@ -2,58 +2,58 @@
 name = 'NanoLight'
 
 [colors]
-foreground = "#D7DBE0"
+foreground = "#37474F"
 background = "#FFFFFF"
-cursor_bg = "#FAF39F"
-cursor_border = "#FAF39F"
-cursor_fg = "#011627"
-selection_bg = "#637777"
-selection_fg = "#D7DBE0"
-scrollbar_thumb = "#475260"
-split = "#102a44"
-ansi = ["#000C1D", "#F78C6C", "#C5E478", "#7FDBCA", "#C792EA", "#ECC48D","#FF5874", "#CAECE6"]
-brights = ["#001122", "#F78C6C", "#C5E478", "#7FDBCA", "#C792EA", "#ECC48D","#FF5874", "#CAECE6"]
+cursor_bg = "#37474F"
+cursor_border = "#37474F"
+cursor_fg = "#FFFFFF"
+selection_bg = "#ECEFF1"
+selection_fg = "#37474F"
+scrollbar_thumb = "#37474F"
+split = "#90A4AE"
+ansi = ["#000000", "#42A5F5", "#66BB6A", "#26C6DA", "#AB47BC", "#E2C12F","#EF5350", "#FFFFFF"]
+brights = ["#000000", "#42A5F5", "#66BB6A", "#26C6DA", "#AB47BC", "#E2C12F","#EF5350", "#FFFFFF"]
 
 [colors.tab_bar]
-background = "#001122"
-inactive_tab_edge = "#001122"
-inactive_tab_edge_hover = "#000C1D"
+background = "#ECEFF1"
+inactive_tab_edge = "#37474F"
+inactive_tab_edge_hover = "#263238"
 
 [colors.tab_bar.active_tab]
-bg_color = "#15283F"
-fg_color = "#CAE3FD"
+bg_color = "#37474F"
+fg_color = "#FFFFFF"
 intensity = "Normal"
 italic = false
 strikethrough = false
 underline = "None"
 
 [colors.tab_bar.inactive_tab]
-bg_color = "#001122"
-fg_color = "#637777"
+bg_color = "#ECEFF1"
+fg_color = "#37474F"
 intensity = "Normal"
 italic = false
 strikethrough = false
 underline = "None"
 
 [colors.tab_bar.inactive_tab_hover]
-bg_color = "#001122"
-fg_color = "#637777"
+bg_color = "#ECEFF1"
+fg_color = "#37474F"
 intensity = "Normal"
 italic = false
 strikethrough = false
 underline = "None"
 
 [colors.tab_bar.new_tab]
-bg_color = "#001122"
-fg_color = "#637777"
+bg_color = "#ECEFF1"
+fg_color = "#37474F"
 intensity = "Normal"
 italic = false
 strikethrough = false
 underline = "None"
 
 [colors.tab_bar.new_tab_hover]
-bg_color = "#001122"
-fg_color = "#637777"
+bg_color = "#ECEFF1"
+fg_color = "#37474F"
 intensity = "Normal"
 italic = false
 strikethrough = false
