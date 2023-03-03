@@ -118,6 +118,8 @@ if has_treesitter then
   treesitter.setup {
     -- A list of parser names, or "all"
     ensure_installed = {
+      "gitcommit",
+      "git_rebase",
       "go",
       "help",
       "lua",
@@ -126,6 +128,7 @@ if has_treesitter then
       "toml",
       "http",
       "norg",
+      "org",
       "rust",
       "javascript",
       "jsdoc",
@@ -262,6 +265,11 @@ if has_treesitter then
 
     vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
     vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+  end
+
+  local has_headlines, headlines = pcall(require, 'headlines')
+  if has_headlines then
+    headlines.setup()
   end
 end
 
