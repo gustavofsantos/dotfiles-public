@@ -31,6 +31,20 @@ if has_monokai_pro then
   monokai_pro.setup({})
 end
 
+local has_onenord, onenord = pcall(require, 'onenord')
+if has_onenord then
+	require('onenord').setup({
+		styles = {
+    		comments = "italic",
+    		strings = "NONE",
+    		keywords = "italic",
+    		functions = "italic",
+    		variables = "NONE",
+    		diagnostics = "underline",
+		},
+	})
+end
+
 local has_gruvbox, gruvbox = pcall(require, 'gruvbox')
 if has_gruvbox then
   gruvbox.setup({
