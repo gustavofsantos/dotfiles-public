@@ -8,12 +8,12 @@ colors:
         bright_foreground: "#37474F" # text
 
     # Cursor colors
-    cursor:
-        text: "#FFFFFF"
-        cursor: "#37474F"
-    vi_mode_cursor:
-        text: "#FFFFFF"
-        cursor: "#37474F"
+    # cursor:
+    #     text: "#FFFFFF"
+    #     cursor: "#37474F"
+    # vi_mode_cursor:
+    #     text: "#FFFFFF"
+    #     cursor: "#37474F"
 
     # Search colors
     search:
@@ -31,10 +31,10 @@ colors:
     hints:
         start:
             foreground: "#303446" # base
-            background: "#E5C890" # yellow
+            background: "#FFF9C4" # yellow
         end:
             foreground: "#303446" # base
-            background: "#A5ADCE" # subtext0
+            background: "#E1BEE7" # subtext0
 
     # Selection colors
     selection:
@@ -43,36 +43,36 @@ colors:
 
     # Normal colors
     normal:
-        black: "#37474F" # surface1
-        red: "#FF6F00" # red
-        green: "#90A4AE" # green
-        yellow: "#90A4AE" # yellow
-        blue: "#263238" # blue
-        magenta: "#FFAB91" # pink
-        cyan: "#37474F" # teal
-        white: "#FFFFFF" # subtext1
+        black: "#000000"
+        red: "#EF5350"
+        green: "#66BB6A"
+        yellow: "#E2C12F"
+        blue: "#42A5F5"
+        magenta: "#AB47BC"
+        cyan: "#26C6DA"
+        white: "#FFFFFF"
 
     # Bright colors
     bright:
-        black: "#434C5E" # surface2
-        red: "#FF6F00" # red
-        green: "#90A4AE" # green
-        yellow: "#90A4AE" # yellow
-        blue: "#263238" # blue
-        magenta: "#FFAB91" # pink
-        cyan: "#37474F" # teal
+        black: "#000000" # surface2
+        red: "#FFCDD2" # red
+        green: "#C8E6C9" # green
+        yellow: "#FFF9C4" # yellow
+        blue: "#BBDEFB" # blue
+        magenta: "#E1BEE7" # pink
+        cyan: "#B2EBF2" # teal
         white: "#FFFFFF" # subtext0
 
     # Dim colors
     dim:
-        black: "#434C5E" # surface2
-        red: "#FF6F00" # red
-        green: "#90A4AE" # green
-        yellow: "#90A4AE" # yellow
-        blue: "#263238" # blue
-        magenta: "#FFAB91" # pink
-        cyan: "#37474F" # teal
-        white: "#FFFFFF" # subtext0
+        black: "#000000"
+        red: "#EF5350"
+        green: "#66BB6A"
+        yellow: "#E2C12F"
+        blue: "#42A5F5"
+        magenta: "#AB47BC"
+        cyan: "#26C6DA"
+        white: "#FFFFFF"
 
     indexed_colors:
         - { index: 16, color: "#EF9F76" }
