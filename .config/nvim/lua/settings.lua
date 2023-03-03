@@ -24,8 +24,8 @@ let g:switch_custom_definitions =
 ]]
 
 cmd [[set termguicolors]]
-cmd [[set background=light]]
-cmd [[colorscheme catppuccin]]
+cmd [[set background=dark]]
+cmd [[colorscheme onenord]]
 cmd [[set noerrorbells]]
 cmd [[set tabstop=2 softtabstop=2]]
 cmd [[set shiftwidth=2]]

@@ -18,8 +18,7 @@ return packer.startup(function(use)
   use { 'catppuccin/nvim', as = 'catppuccin' }
   use 'ellisonleao/gruvbox.nvim'
   use 'loctvl842/monokai-pro.nvim'
-  use 'kvrohit/mellow.nvim'
-  use 'Yazeed1s/oh-lucy.nvim'
+  use 'rmehri01/onenord.nvim'
 
   use 'mbbill/undotree' -- tree of changes
 
