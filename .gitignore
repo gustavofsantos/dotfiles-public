@@ -154,3 +154,4 @@ install.sh
 *.mp4
 .config/nushell/
 .config/microsoft-edge/
+.config/emacs/
