@@ -31,18 +31,22 @@ if has_monokai_pro then
   monokai_pro.setup({})
 end
 
-local has_onenord, onenord = pcall(require, 'onenord')
+local has_onenord, _ = pcall(require, 'onenord')
 if has_onenord then
-	require('onenord').setup({
-		styles = {
-    		comments = "italic",
-    		strings = "NONE",
-    		keywords = "italic",
-    		functions = "italic",
-    		variables = "NONE",
-    		diagnostics = "underline",
-		},
-	})
+  local colors = require("onenord.colors").load()
+  require('onenord').setup({
+    styles = {
+      comments = "italic",
+      strings = "NONE",
+      keywords = "italic",
+      functions = "italic",
+      variables = "NONE",
+      diagnostics = "underline",
+    },
+    custom_highlights = {
+      Headline = { bg = colors.highlight_dark }
+    },
+  })
 end
 
 local has_gruvbox, gruvbox = pcall(require, 'gruvbox')

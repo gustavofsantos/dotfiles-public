@@ -120,6 +120,7 @@ if has_treesitter then
     ensure_installed = {
       "gitcommit",
       "git_rebase",
+      "bash",
       "go",
       "help",
       "lua",
@@ -130,6 +131,7 @@ if has_treesitter then
       "norg",
       "org",
       "rust",
+      "markdown",
       "javascript",
       "jsdoc",
       "typescript",
