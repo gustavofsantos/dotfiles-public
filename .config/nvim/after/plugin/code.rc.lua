@@ -269,10 +269,10 @@ if has_treesitter then
     vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
   end
 
-  local has_headlines, headlines = pcall(require, 'headlines')
-  if has_headlines then
-    headlines.setup()
-  end
+  -- local has_headlines, headlines = pcall(require, 'headlines')
+  -- if has_headlines then
+  --   headlines.setup()
+  -- end
 end
 
 local has_null_ls, null_ls = pcall(require, "null-ls")

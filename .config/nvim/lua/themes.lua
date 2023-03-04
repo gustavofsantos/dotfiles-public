@@ -44,7 +44,7 @@ if has_onenord then
       diagnostics = "underline",
     },
     custom_highlights = {
-      Headline = { bg = colors.highlight_dark }
+      -- Headline = { bg = colors.highlight_dark }
     },
   })
 end
