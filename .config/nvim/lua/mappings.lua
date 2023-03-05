@@ -35,6 +35,7 @@ nnoremap("<C-t>", "<Cmd>exe v:count1 . \"ToggleTerm\"<CR>") -- toggle terminal
 inoremap("<C-t>", "<Esc><Cmd>exe v:count1 . \"ToggleTerm\"<CR>") -- toggle terminal
 -- nnoremap("<C-d>", "<C-d>zz")
 -- nnoremap("<C-u>", "<C-u>zz")
+nnoremap("<C-x><C-d>", ":put =strftime('%Y-%m-%d %H:%M')<CR>")
 
 
 -- Move lines
