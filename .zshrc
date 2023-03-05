@@ -101,6 +101,8 @@ alias jest="npx jest"
 alias prisma="npx prisma"
 alias rt="npm run test"
 
+alias journal="nvim ~/notes/journal/$(date +%Y-%m-%d).md"
+
 alias emacs="emacsclient -c -a 'emacs'"
 alias em="emacs -nw"
 
