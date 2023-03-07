@@ -55,6 +55,7 @@ nnoremap("<leader>nj", ":Journal<CR>")
 nnoremap("<leader>nd", ":vsp ~/notes/debug_notes.md<CR>")
 nnoremap("<leader>nl", ":vsp ~/notes/loggi/work-notes.md<CR>")
 nnoremap("<leader>nw", ":vsp ~/notes/loggi/worklog.md<CR>")
+nnoremap("<leader>X", ":Note<CR>")
 
 nnoremap("<leader><leader>", "<C-^>")
 nnoremap("<F5>", ":UndotreeToggle<CR>")
