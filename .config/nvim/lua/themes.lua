@@ -44,6 +44,8 @@ if has_onenord then
       diagnostics = "underline",
     },
     custom_highlights = {
+      TabLine = { bg = colors.active },
+      TabLineFill = { bg = colors.active },
       -- Headline = { bg = colors.highlight_dark }
     },
   })
