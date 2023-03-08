@@ -46,4 +46,4 @@ cursor:
 
 import:
   # - ~/.config/alacritty/themes/gruvbox.yml
-  - ~/.config/alacritty/themes/nano-light.yml
+  - ~/.config/alacritty/themes/nord.yml
