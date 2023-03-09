@@ -53,7 +53,7 @@ cmd [[set nohlsearch]]
 -- cmd [[set number]]
 -- cmd [[set relativenumber]]
 cmd [[set tags=./tags,.git/tags]]
-cmd [[set showtabline=2]]
+cmd [[set showtabline=1]]
 -- cmd [[set winwidth=100]]
 cmd [[set scrolloff=5]]
 cmd [[set splitright]]
@@ -79,8 +79,6 @@ cmd [[set guifont=MonoLisaCustom\ Nerd\ Font:h12]]
 cmd [[set mouse=nv]]
 
 cmd [[set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)]]
-
-
 
 cmd [[
 if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
