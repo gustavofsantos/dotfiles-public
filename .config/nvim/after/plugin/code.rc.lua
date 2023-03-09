@@ -24,10 +24,10 @@ local has_luasnip, luasnip = pcall(require, 'luasnip')
 if (has_cmp and has_lspkind and has_luasnip) then
   cmp.setup({
     performance = {
-      debounce = 500,
+      debounce = 300,
     },
     completion = {
-      -- autocomplete = true
+      autocomplete = false
     },
     snippet = {
       expand = function(args)

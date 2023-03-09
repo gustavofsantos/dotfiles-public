@@ -43,6 +43,13 @@ local has_diffview, diffview = pcall(require, 'diffview')
 if (has_diffview) then
   local actions = require("diffview.actions")
   diffview.setup {
+    view = {
+      merge_tool = {
+        layout = "diff3_mixed",
+        disable_diagnostics = true,
+        winbar_info = true,
+      }
+    },
     keymaps = {
       disable_defaults = false, -- Disable the default keymaps
       view = {
