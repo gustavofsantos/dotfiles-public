@@ -11,6 +11,7 @@ return packer.startup(function(use)
   -- utilities
   use 'rktjmp/lush.nvim'
   use 'nvim-lua/plenary.nvim'
+  use 'nvim-lua/popup.nvim'
   use 'kyazdani42/nvim-web-devicons'
 
   -- colorscheme
@@ -24,7 +25,7 @@ return packer.startup(function(use)
 
   -- use 'sheerun/vim-polyglot'
   -- use 'yuezk/vim-js' -- JavaScript highlight
-  use 'HerringtonDarkholme/yats.vim' -- TypeScript highlight
+  -- use 'HerringtonDarkholme/yats.vim' -- TypeScript highlight
   -- use 'maxmellon/vim-jsx-pretty' -- JSX highlight
   use 'mustache/vim-mustache-handlebars' -- handlebars highlight
   use 'pantharshit00/vim-prisma' -- Prisma files colorscheme
@@ -45,7 +46,8 @@ return packer.startup(function(use)
   use 'lewis6991/gitsigns.nvim'
   use 'sindrets/diffview.nvim'
 
-
+  -- Note taking
+  use 'oberblastmeister/neuron.nvim'
 
   -- Telescope
   use 'nvim-telescope/telescope.nvim'
@@ -63,18 +65,18 @@ return packer.startup(function(use)
 
   -- IDE like view
   -- use 'kyazdani42/nvim-tree.lua'
-  use {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v2.x",
-    requires = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons",
-      "MunifTanjim/nui.nvim",
-    }
-  }
+  -- use {
+  --   "nvim-neo-tree/neo-tree.nvim",
+  --   branch = "v2.x",
+  --   requires = {
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-tree/nvim-web-devicons",
+  --     "MunifTanjim/nui.nvim",
+  --   }
+  -- }
   use 'nvim-lualine/lualine.nvim'
-  use { 'akinsho/bufferline.nvim', tag = "v3.*" }
-  use 'mfussenegger/nvim-dap'
+  -- use { 'akinsho/bufferline.nvim', tag = "v3.*" }
+  -- use 'mfussenegger/nvim-dap'
   use 'akinsho/toggleterm.nvim'
   use 'windwp/nvim-ts-autotag'
   use 'windwp/nvim-autopairs'

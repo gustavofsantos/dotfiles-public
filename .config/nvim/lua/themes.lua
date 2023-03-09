@@ -47,6 +47,11 @@ if has_onenord then
       TabLine = { bg = colors.active },
       TabLineFill = { bg = colors.active },
       -- Headline = { bg = colors.highlight_dark }
+
+      ['@punctuation.bracket'] = { fg = colors.gray },
+      ["@punctuation.delimiter"] = { fg = colors.gray, },
+      ["@punctuation.special"] = { fg = colors.gray },
+      ["keyword.return"] = { fg = colors.purple, }
     },
   })
 end
