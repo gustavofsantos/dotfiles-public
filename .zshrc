@@ -171,4 +171,6 @@ fi
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-add-zsh-hook -Uz chpwd(){ source <(tea -Eds) }  #tea
+# add-zsh-hook -Uz chpwd(){ source <(tea -Eds) }  #tea
+
+eval "$(starship init zsh)"

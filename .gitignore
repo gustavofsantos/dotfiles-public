@@ -155,3 +155,4 @@ install.sh
 .config/nushell/
 .config/microsoft-edge/
 .config/emacs/
+.otp/
