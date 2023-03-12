@@ -156,3 +156,6 @@ install.sh
 .config/microsoft-edge/
 .config/emacs/
 .otp/
+.steam/
+.steampath
+.steampid
