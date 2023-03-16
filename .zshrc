@@ -101,8 +101,6 @@ alias jest="npx jest"
 alias prisma="npx prisma"
 alias rt="npm run test"
 
-alias journal="nvim ~/notes/journal/$(date +%Y-%m-%d).md"
-
 alias emacs="emacsclient -c -a 'emacs'"
 alias em="emacs -nw"
 
@@ -175,6 +173,9 @@ export SDKMAN_DIR="$HOME/.sdkman"
 ## functions
 function note () {
   nvim ~/notes/z/$(date +%Y%m%d%H%M%S).md
+}
+function journal () {
+  nvim ~/notes/journal/$(date +%Y-%m-%d).md
 }
 
 eval "$(starship init zsh)"
