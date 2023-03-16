@@ -86,7 +86,7 @@ end
 local has_toggleterm, toggleterm = pcall(require, "toggleterm")
 if (has_toggleterm) then
   toggleterm.setup {
-    -- direction = 'tab',
+    direction = 'float',
     size = 32,
     winbar = {
       enabled = true,

@@ -64,18 +64,9 @@ return packer.startup(function(use)
   use 'lukas-reineke/headlines.nvim'
 
   -- IDE like view
-  -- use 'kyazdani42/nvim-tree.lua'
-  -- use {
-  --   "nvim-neo-tree/neo-tree.nvim",
-  --   branch = "v2.x",
-  --   requires = {
-  --     "nvim-lua/plenary.nvim",
-  --     "nvim-tree/nvim-web-devicons",
-  --     "MunifTanjim/nui.nvim",
-  --   }
-  -- }
+  use 'kyazdani42/nvim-tree.lua'
   use 'nvim-lualine/lualine.nvim'
-  -- use { 'akinsho/bufferline.nvim', tag = "v3.*" }
+  use { 'akinsho/bufferline.nvim', tag = "v3.*" }
   -- use 'mfussenegger/nvim-dap'
   use 'akinsho/toggleterm.nvim'
   use 'windwp/nvim-ts-autotag'

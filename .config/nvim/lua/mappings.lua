@@ -26,7 +26,7 @@ nnoremap("<leader>cbp", "<cmd>let @+ = expand(\"%\")<CR>")
 
 nnoremap("dgh", ":diffget //2<CR>") -- vimdiff get from left
 nnoremap("dgl", ":diffget //3<CR>") -- vimdiff get from right
-nnoremap("<C-b>", ":Neotree toggle current reveal_force_cwd<CR>") -- toggle file explorer
+nnoremap("<C-b>", ":NvimTreeToggle<CR>") -- toggle file explorer
 nnoremap("<C-q>", ":q<CR>") -- close current buffer
 inoremap("<C-q>", ":q<CR>") -- close current buffer
 inoremap("<C-s>", "<Esc>:w<CR>") -- save buffer
