@@ -1,7 +1,7 @@
 local wezterm = require("wezterm")
 
 function scheme_for_appearance(appearance)
-  return "NightOwl"
+  return "nord"
 
   -- if appearance:find "Dark" then
   --   return "Catppuccin Frappe"
