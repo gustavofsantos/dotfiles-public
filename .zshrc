@@ -102,7 +102,6 @@ alias prisma="npx prisma"
 alias rt="npm run test"
 
 alias journal="nvim ~/notes/journal/$(date +%Y-%m-%d).md"
-alias note="nvim ~/notes/z/$(date +%Y%m%d%H%M%S).md"
 
 alias emacs="emacsclient -c -a 'emacs'"
 alias em="emacs -nw"
@@ -172,5 +171,10 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # add-zsh-hook -Uz chpwd(){ source <(tea -Eds) }  #tea
+
+## functions
+function note () {
+  nvim ~/notes/z/$(date +%Y%m%d%H%M%S).md
+}
 
 eval "$(starship init zsh)"
