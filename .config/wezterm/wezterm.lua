@@ -1,13 +1,11 @@
 local wezterm = require("wezterm")
 
-function scheme_for_appearance(appearance)
-  return "nord"
-
-  -- if appearance:find "Dark" then
-  --   return "Catppuccin Frappe"
-  -- else
-  --   return "Catppuccin Latte"
-  -- end
+local function scheme_for_appearance(appearance)
+  if appearance:find "Dark" then
+    return "nord"
+  else
+    return "nord"
+  end
 end
 
 return {
@@ -28,12 +26,12 @@ return {
   },
 
   -- tab bar
-  use_fancy_tab_bar = false,
-  tab_bar_at_bottom = true,
+  use_fancy_tab_bar = true,
+  tab_bar_at_bottom = false,
   hide_tab_bar_if_only_one_tab = true,
   tab_max_width = 999999,
 
-  leader = { key = "a", mods = "CTRL" },
+  leader = { key = "k", mods = "CTRL" },
 
   keys = {
     {
