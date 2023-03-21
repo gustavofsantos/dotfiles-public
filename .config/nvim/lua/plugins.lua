@@ -46,9 +46,6 @@ return packer.startup(function(use)
   use 'lewis6991/gitsigns.nvim'
   use 'sindrets/diffview.nvim'
 
-  -- Note taking
-  use 'oberblastmeister/neuron.nvim'
-
   -- Telescope
   use 'nvim-telescope/telescope.nvim'
   use { 'nvim-telescope/telescope-ui-select.nvim' }
@@ -61,12 +58,12 @@ return packer.startup(function(use)
   use 'RRethy/nvim-treesitter-textsubjects'
   use 'nvim-treesitter/playground'
   use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
-  use 'lukas-reineke/headlines.nvim'
 
   -- IDE like view
+  use 'VonHeikemen/lsp-zero.nvim'
   use 'kyazdani42/nvim-tree.lua'
-  use 'nvim-lualine/lualine.nvim'
-  use { 'akinsho/bufferline.nvim', tag = "v3.*" }
+  -- use 'nvim-lualine/lualine.nvim'
+  -- use { 'akinsho/bufferline.nvim', tag = "v3.*" }
   -- use 'mfussenegger/nvim-dap'
   use 'akinsho/toggleterm.nvim'
   use 'windwp/nvim-ts-autotag'
@@ -78,8 +75,6 @@ return packer.startup(function(use)
   }
   -- LSP updates
   use 'j-hui/fidget.nvim'
-
-  -- use 'jose-elias-alvarez/null-ls.nvim'
 
   -- Completion
   use 'onsails/lspkind-nvim'
