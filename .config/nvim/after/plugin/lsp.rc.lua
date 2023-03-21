@@ -1,177 +1,92 @@
 vim.diagnostic.config({
-  virtual_text = false
+  virtual_text = true,
 })
 
-local has_mason, mason = pcall(require, 'mason')
-if (has_mason) then
-  mason.setup {}
-end
+local has_lsp, _ = pcall(require, 'lsp-zero')
+if has_lsp then
+  local lsp = require('lsp-zero')
+  lsp.preset("recommended")
 
-local has_mason_lspconfig, mason_lspconfig = pcall(require, "mason-lspconfig")
-if (has_mason_lspconfig) then
-  mason_lspconfig.setup({
-    ensure_installed = {
-      "bashls",
-      "lua_ls",
-      "rust_analyzer",
-      "eslint",
-      "svelte",
-      "rust_analyzer",
-      "gopls",
-      "dotls",
-      "dockerls",
-      "denols",
-      "tsserver",
-      "marksman",
-      "pyright",
-      "tailwindcss",
-      "jsonls",
-      "yamlls"
-    }
+  lsp.ensure_installed({
+    'tsserver',
+    'rust_analyzer',
+    'jsonls',
+    'yamlls',
+    'marksman',
+    'eslint',
+    'dockerls',
+    'tailwindcss',
   })
-end
 
-local has_fidget, fidget = pcall(require, 'fidget')
-if (has_fidget) then
-  fidget.setup()
-end
-
-
-local on_attach = function(_, bufnr)
-  -- Enable completion triggered by <c-x><c-o>
-  -- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-  local nmap = function(keys, func, desc)
-    if desc then
-      desc = 'LSP: ' .. desc
-    end
-
-    vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
-  end
-
-  nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-  nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
-
-  -- Diagnostic keymaps
-  nmap('[e', vim.diagnostic.goto_prev)
-  nmap(']e', vim.diagnostic.goto_next)
-  nmap('<leader>e', vim.diagnostic.open_float)
-  nmap('<leader>q', vim.diagnostic.setloclist)
-
-  nmap('gd', vim.lsp.buf.definition, '[G]o to [D]efinition')
-  nmap('gr', vim.lsp.buf.references, '[G]o to [R]eferences')
-  nmap('gI', vim.lsp.buf.implementation, '[G]o to [I]mplementation')
-
-  nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
-  nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
-  nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
-
-  -- See `:help K` for why this keymap
-  nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-  nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
-
-  -- Create a command `:Format` local to the LSP buffer
-  -- vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-  --   if vim.lsp.buf.format then
-  --     vim.lsp.buf.format()
-  --   elseif vim.lsp.buf.formatting then
-  --     vim.lsp.buf.formatting()
-  --   end
-  -- end, { desc = 'Format current buffer with LSP' })
-end
-
-local lsp_flags = {
-  -- This is the default in Nvim 0.7+
-  debounce_text_changes = 300,
-}
-
-local has_lspconfig, lspconfig = pcall(require, 'lspconfig')
-local has_cmp_lsp, cmp_lsp = pcall(require, 'cmp_nvim_lsp')
-if (has_lspconfig and has_cmp_lsp) then
-  local protocol = require('vim.lsp.protocol')
-  protocol.CompletionItemKind = {
-    '', -- Text
-    '', -- Method
-    '', -- Function
-    '', -- Constructor
-    '', -- Field
-    '', -- Variable
-    '', -- Class
-    'ﰮ', -- Interface
-    '', -- Module
-    '', -- Property
-    '', -- Unit
-    '', -- Value
-    '', -- Enum
-    '', -- Keyword
-    '﬌', -- Snippet
-    '', -- Color
-    '', -- File
-    '', -- Reference
-    '', -- Folder
-    '', -- EnumMember
-    '', -- Constant
-    '', -- Struct
-    '', -- Event
-    'ﬦ', -- Operator
-    '', -- TypeParameter
-  }
-
-  local capabilities = cmp_lsp.default_capabilities()
-
-  lspconfig.denols.setup {
-    on_attach = on_attach,
-    root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
-  }
-
-  lspconfig.tsserver.setup {
-    filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact" },
-    on_attach = on_attach,
-    root_dir = lspconfig.util.root_pattern("package.json"),
-    flags = lsp_flags,
-    capabilities = capabilities
-  }
-
-  lspconfig.elixirls.setup {
-    cmd = { vim.fn.stdpath("data") .. "/mason/packages/elixir-ls/language_server.sh" }
-  }
-
-  lspconfig.lua_ls.setup {
-    on_attach = on_attach,
+  -- Fix Undefined global 'vim'
+  lsp.configure('lua-language-server', {
     settings = {
       Lua = {
         diagnostics = {
           globals = { 'vim' }
-        },
-        workspace = {
-          library = vim.api.nvim_get_runtime_file("", true)
         }
       }
     }
-  }
+  })
 
-  local servers = {
-    -- 'pyright',
-    'bashls',
-    'dockerls',
-    'html',
-    'jsonls',
-    'eslint',
-    'yamlls',
-    'gopls',
-    'dotls',
-    'prismals',
-    'purescriptls',
-    'rust_analyzer',
-    'tailwindcss',
-    'svelte',
-    'marksman'
-  }
-  for _, lsp in ipairs(servers) do
-    lspconfig[lsp].setup {
-      on_attach = on_attach,
-      flags = lsp_flags,
-      capabilities = capabilities
+  local cmp = require('cmp')
+  local cmp_select = {behavior = cmp.SelectBehavior.Select}
+  local cmp_mappings = lsp.defaults.cmp_mappings({
+    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+    ["<C-Space>"] = cmp.mapping.complete(),
+  })
+
+  cmp_mappings['<Tab>'] = nil
+  cmp_mappings['<S-Tab>'] = nil
+
+  lsp.setup_nvim_cmp({
+    mapping = cmp_mappings
+  })
+
+  lsp.set_preferences({
+    suggest_lsp_servers = false,
+    sign_icons = {
+      error = 'E',
+      warn = 'W',
+      hint = 'H',
+      info = 'I'
     }
-  end
+  })
+
+
+  lsp.on_attach(function(_, bufnr)
+    local opts = {buffer = bufnr, remap = false}
+
+    vim.keymap.set('n', '<leader>rn', function() vim.lsp.buf.rename() end, opts)
+    vim.keymap.set('n', '<leader>ca', function() vim.lsp.buf.code_action() end, opts)
+
+    -- Diagnostic keymaps
+    vim.keymap.set('n', '[e', function() vim.diagnostic.goto_prev() end, opts)
+    vim.keymap.set('n', ']e', function() vim.diagnostic.goto_next() end, opts)
+    vim.keymap.set('n', '<leader>e', function() vim.diagnostic.open_float() end, opts)
+    vim.keymap.set('n', '<leader>q', function() vim.diagnostic.setloclist() end, opts)
+
+    vim.keymap.set('n', 'gd', function() vim.lsp.buf.definition() end, opts)
+    vim.keymap.set('n', 'gr', function() vim.lsp.buf.references() end, opts)
+    vim.keymap.set('n', 'gI', function() vim.lsp.buf.implementation() end, opts)
+
+    vim.keymap.set('n', '<leader>D', function() vim.lsp.buf.type_definition() end, opts)
+    vim.keymap.set('n', '<leader>ds', function() require('telescope.builtin').lsp_document_symbols() end, opts)
+    vim.keymap.set('n', '<leader>ws', function() require('telescope.builtin').lsp_dynamic_workspace_symbols() end, opts)
+
+    vim.keymap.set('n', 'K', function() vim.lsp.buf.hover() end, opts)
+    vim.keymap.set('n', '<C-k>', function() vim.lsp.buf.signature_help() end, opts)
+  end)
+
+  lsp.setup()
+end
+
+
+local has_fidget, fidget = pcall(require, 'fidget')
+if (has_fidget) then
+  fidget.setup()
 end
