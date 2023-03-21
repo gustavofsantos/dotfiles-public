@@ -26,6 +26,7 @@ if (has_telescope) then
       lsp_document_symbols = { theme = "ivy" },
       lsp_workspace_symbols = { theme = "ivy" },
       lsp_dynamic_workspace_symbols = { theme = "ivy" },
+      keymaps = { theme = "ivy" }
       -- disable_devicons = false
     },
     extensions = {
@@ -55,6 +56,7 @@ if (has_telescope) then
   vim.keymap.set('n', '<leader>fo', require('telescope.builtin').loclist, { desc = '[F]ind l[o]cation list' })
   vim.keymap.set('n', '<leader>fl', require('telescope.builtin').live_grep, { desc = '[F]ind by [L]ive grep' })
   vim.keymap.set('n', '<leader>ft', require('telescope.builtin').diagnostics, { desc = '[F]ind [T]roubles' })
+  vim.keymap.set('n', '<leader>fk', require('telescope.builtin').keymaps, { desc = '[F]ind [K]eymaps' })
   vim.keymap.set('n', '<leader>fh', require('telescope.builtin').search_history, { desc = '[F]ind search [H]istory' })
   vim.keymap.set('n', '<leader>f?', require('telescope.builtin').help_tags, { desc = '[F]ind [?]help' })
   vim.keymap.set('n', '<leader>fc', require('telescope.builtin').git_bcommits, { desc = '[F]ind git [C]ommits' })
