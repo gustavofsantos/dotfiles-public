@@ -1,17 +1,17 @@
 font:
   normal:
     family: MonoLisa Nerd Font
-    style: Medium
+    style: Regular
   italic:
     family: MonoLisa Nerd Font
-    style: Medium Italic
+    style: Regular Italic
   bold:
     family: MonoLisa Nerd Font
     style: Bold
   bold_italic:
     family: MonoLisa Nerd Font
     style: Bold Italic
-  size: 12.0
+  size: 9.0
 
 env:
   TERM: xterm-256color
