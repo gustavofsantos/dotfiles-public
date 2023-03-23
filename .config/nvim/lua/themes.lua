@@ -297,6 +297,7 @@ if has_catppuccin then
           ["@punctuation.special"] = { fg = cp.surface2 },
           ["@symbol"] = { fg = cp.surface1 },
 
+          ["@comment"] = { fg = cp.surface2, style = { "italic" } },
           ["@string"] = { fg = "#ECC48D" },
           ["@boolean"] = { fg = cp.red, style = { "bold" } },
           ["@number"] = { link = "Number" },

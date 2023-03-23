@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 
 local function scheme_for_appearance(appearance)
   if appearance:find "Dark" then
-    return "Kanagawa (Gogh)"
+    return "NightOwl"
   else
     return "nord"
   end
@@ -28,8 +28,8 @@ return {
   },
 
   -- tab bar
-  use_fancy_tab_bar = true,
-  tab_bar_at_bottom = false,
+  use_fancy_tab_bar = false,
+  tab_bar_at_bottom = true,
   hide_tab_bar_if_only_one_tab = true,
   tab_max_width = 999999,
 
@@ -118,9 +118,12 @@ return {
     {
       key = "Tab",
       mods = "LEADER",
-      action = wezterm.action {
-        ActivateTabRelative = 1
-      }
+      action = wezterm.action { ActivateTabRelative = 1 }
+    },
+    {
+      key = "n",
+      mods = "LEADER",
+      action = wezterm.action.ToggleFullScreen,
     },
   }
 }
