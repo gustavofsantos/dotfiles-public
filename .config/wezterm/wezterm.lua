@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 
 local function scheme_for_appearance(appearance)
   if appearance:find "Dark" then
-    return "nord"
+    return "Kanagawa (Gogh)"
   else
     return "nord"
   end
@@ -17,6 +17,8 @@ return {
   font_size = 12.0,
 
   window_background_opacity = 0.98,
+
+  line_height = 1.2,
 
   window_padding = {
     left = 0,

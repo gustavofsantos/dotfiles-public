@@ -20,6 +20,9 @@ return packer.startup(function(use)
   use 'ellisonleao/gruvbox.nvim'
   use 'loctvl842/monokai-pro.nvim'
   use 'rmehri01/onenord.nvim'
+  use 'cocopon/iceberg.vim'
+  use 'andersevenrud/nordic.nvim'
+  use 'olimorris/onedarkpro.nvim'
 
   use 'mbbill/undotree' -- tree of changes
 

@@ -31,6 +31,13 @@ if has_monokai_pro then
   monokai_pro.setup({})
 end
 
+local has_poimandres, _ = pcall(require, 'poimandres')
+if has_poimandres then
+  require('poimandres').setup({
+    dim_nc_background = true,
+  })
+end
+
 local has_onenord, _ = pcall(require, 'onenord')
 if has_onenord then
   local colors = require("onenord.colors").load()
@@ -51,7 +58,9 @@ if has_onenord then
       ['@punctuation.bracket'] = { fg = colors.gray },
       ["@punctuation.delimiter"] = { fg = colors.gray, },
       ["@punctuation.special"] = { fg = colors.gray },
-      ["keyword.return"] = { fg = colors.purple, }
+      ["@property"] = { style = "italic" },
+      ["@tag.attribute"] = { style = "italic" },
+      ["keyword.return"] = { fg = colors.purple, style = "italic" }
     },
   })
 end
