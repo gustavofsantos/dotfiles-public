@@ -177,5 +177,3 @@ function note () {
 function journal () {
   nvim ~/notes/journal/$(date +%Y-%m-%d).md
 }
-
-eval "$(starship init zsh)"

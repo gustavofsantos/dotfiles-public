@@ -290,6 +290,7 @@ if has_catppuccin then
           TabLineSel = { fg = "#CAE3FD" , bg = cp.base },
           Visual = { fg = cp.text, bg = cp.surface2, style = {} },
           VisualNOS = { bg = "#041F34", style = {} },
+          Comment = { fg = cp.surface2, style = { "italic" } },
 
           -- ["@operator"] = { fg = "#D8DBE0" },
           ["@punctuation.delimiter"] = { fg = "#475260", },
