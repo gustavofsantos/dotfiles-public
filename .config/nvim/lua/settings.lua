@@ -8,6 +8,7 @@ cmd [[let g:sneak#label = 1]]
 cmd [[let g:sneak#use_ic_scs = 1]]
 
 cmd [[let test#strategy = "neovim"]]
+cmd [[let test#javascript#playwright#options = "--headed"]]
 
 cmd [[
 let g:switch_custom_definitions =
@@ -25,7 +26,7 @@ let g:switch_custom_definitions =
 
 cmd [[set termguicolors]]
 cmd [[set background=dark]]
-cmd [[colorscheme catppuccin]]
+cmd [[colorscheme kanagawa]]
 cmd [[set noerrorbells]]
 cmd [[set tabstop=2 softtabstop=2]]
 cmd [[set shiftwidth=2]]
@@ -64,7 +65,7 @@ cmd [[set updatetime=100]]
 -- cmd [[set shortmess+=c]]
 cmd [[set clipboard+=unnamedplus]]
 cmd [[set wildmenu]]
-cmd [[set signcolumn=yes]]
+cmd [[set signcolumn=no]]
 cmd [[set pumheight=10]]
 cmd [[set grepprg=ag]]
 cmd [[set wildmode=list:longest,full]]
@@ -104,6 +105,7 @@ cmd [[command! Done :lua require('telescope.builtin').grep_string({ cwd = '~/not
 -- Run the current test file
 cmd [[command! LWT :lua require('toggleterm').exec("lwt " .. string.gsub(vim.fn.expand("%"), "loggi/", ""))]]
 cmd [[command! LGGT :lua require('toggleterm').exec("lggt " .. vim.fn.expand("%:p:h:t") .. "/" .. vim.fn.expand("%:t"))]]
+cmd [[command! PlaywrightDebug :lua require('toggleterm').exec("npx playwright test " .. vim.fn.expand("%:t") .. " --debug" )]]
 
 cmd [[
 autocmd TermEnter term://*toggleterm#*

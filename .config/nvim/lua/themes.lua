@@ -68,7 +68,7 @@ end
 local has_kanagawa, kanagawa = pcall(require, 'kanagawa')
 if has_kanagawa then
   kanagawa.setup {
-    dimInactive = true,
+    dimInactive = false,
     globalStatus = true,
     commentStyle = { italic = true },
     functionStyle = { italic = true, bold = true },

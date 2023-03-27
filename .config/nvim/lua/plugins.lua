@@ -65,7 +65,8 @@ return packer.startup(function(use)
   -- IDE like view
   use 'VonHeikemen/lsp-zero.nvim'
   use 'kyazdani42/nvim-tree.lua'
-  -- use 'nvim-lualine/lualine.nvim'
+  use 'vim-test/vim-test'
+  use 'nvim-lualine/lualine.nvim'
   -- use { 'akinsho/bufferline.nvim', tag = "v3.*" }
   -- use 'mfussenegger/nvim-dap'
   use 'akinsho/toggleterm.nvim'
