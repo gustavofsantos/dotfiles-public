@@ -82,6 +82,11 @@ if has_lsp then
     vim.keymap.set('n', '<C-k>', function() vim.lsp.buf.signature_help() end, opts)
   end)
 
+
+  require("luasnip.loaders.from_vscode").lazy_load {
+    paths = { "~/.config/nvim/snippets" }
+  }
+
   lsp.setup()
 end
 

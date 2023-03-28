@@ -92,5 +92,5 @@ return packer.startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'
 
   -- Snippets
-  use 'L3MON4D3/LuaSnip'
+  use {'L3MON4D3/LuaSnip', tag = '1.2.1'}
 end)
