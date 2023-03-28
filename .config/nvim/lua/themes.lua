@@ -31,12 +31,21 @@ if has_monokai_pro then
   monokai_pro.setup({})
 end
 
-local has_poimandres, _ = pcall(require, 'poimandres')
-if has_poimandres then
-  require('poimandres').setup({
-    dim_nc_background = true,
-  })
+local has_solarized, solarized = pcall(require, 'solarized')
+if has_solarized then
+  solarized:setup {
+    config = {
+      theme = 'vim',
+      transparent = false
+    },
+    highlights = function(colors, darken, lighten, blend)
+      return {
+        ["@variable"] = colors.base00
+      }
+    end
+  }
 end
+
 
 local has_onenord, _ = pcall(require, 'onenord')
 if has_onenord then

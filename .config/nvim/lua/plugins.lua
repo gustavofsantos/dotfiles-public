@@ -23,6 +23,7 @@ return packer.startup(function(use)
   use 'cocopon/iceberg.vim'
   use 'andersevenrud/nordic.nvim'
   use 'olimorris/onedarkpro.nvim'
+  use 'maxmx03/solarized.nvim'
 
   use 'mbbill/undotree' -- tree of changes
 

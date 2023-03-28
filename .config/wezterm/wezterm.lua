@@ -2,9 +2,9 @@ local wezterm = require("wezterm")
 
 local function scheme_for_appearance(appearance)
   if appearance:find "Dark" then
-    return "Mellow"
+    return "Solarized (dark) (terminal.sexy)"
   else
-    return "nord"
+    return "Solarized (light) (terminal.sexy)"
   end
 end
 
