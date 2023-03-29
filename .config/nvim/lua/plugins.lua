@@ -16,14 +16,14 @@ return packer.startup(function(use)
 
   -- colorscheme
   use 'rebelot/kanagawa.nvim'
-  use { 'catppuccin/nvim', as = 'catppuccin' }
-  use 'ellisonleao/gruvbox.nvim'
+  use { 'catppuccin/nvim', as = 'catppuccin', tag = 'v1.1.0' }
   use 'loctvl842/monokai-pro.nvim'
   use 'rmehri01/onenord.nvim'
   use 'cocopon/iceberg.vim'
   use 'andersevenrud/nordic.nvim'
   use 'olimorris/onedarkpro.nvim'
   use 'maxmx03/solarized.nvim'
+  use { 'projekt0n/github-nvim-theme', tag = 'v0.0.7' }
 
   use 'mbbill/undotree' -- tree of changes
 
@@ -47,8 +47,8 @@ return packer.startup(function(use)
   -- Git
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
-  use 'lewis6991/gitsigns.nvim'
-  use 'sindrets/diffview.nvim'
+  use {'lewis6991/gitsigns.nvim', tag = 'v0.6'}
+  use {'sindrets/diffview.nvim', commit = '5803535'}
 
   -- Telescope
   use 'nvim-telescope/telescope.nvim'
@@ -79,7 +79,7 @@ return packer.startup(function(use)
     'williamboman/mason-lspconfig.nvim'
   }
   -- LSP updates
-  use 'j-hui/fidget.nvim'
+  use {'j-hui/fidget.nvim', commit = '0ba1e16'}
 
   -- Completion
   use 'onsails/lspkind-nvim'
