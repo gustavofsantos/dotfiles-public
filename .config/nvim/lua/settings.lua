@@ -3,7 +3,6 @@ local cmd = vim.cmd
 
 g.mapleader = " "
 
-
 cmd [[let g:sneak#label = 1]]
 cmd [[let g:sneak#use_ic_scs = 1]]
 
@@ -25,8 +24,8 @@ let g:switch_custom_definitions =
 ]]
 
 cmd [[set termguicolors]]
-cmd [[set background=dark]]
-cmd [[colorscheme solarized]]
+cmd [[set background=light]]
+cmd [[colorscheme github_light]]
 cmd [[set noerrorbells]]
 cmd [[set tabstop=2 softtabstop=2]]
 cmd [[set shiftwidth=2]]
@@ -41,6 +40,7 @@ cmd [[set nobackup]]
 cmd [[set undodir=~/.config/vim/undodir]]
 cmd [[set undofile]]
 cmd [[set incsearch]]
+cmd [[set autoread]]
 cmd [[set switchbuf=useopen]]
 cmd [[set cmdheight=1]]
 -- cmd [[set colorcolumn=80,100]]
@@ -50,7 +50,6 @@ cmd [[set hidden]]
 cmd [[set nofoldenable]]
 cmd [[set encoding=utf-8]]
 cmd [[set nohlsearch]]
--- cmd [[set nu]]
 cmd [[set number]]
 cmd [[set relativenumber]]
 cmd [[set tags=./tags,.git/tags]]
@@ -62,7 +61,6 @@ cmd [[set ignorecase smartcase]]
 cmd [[set splitbelow]]
 -- cmd [[set list listchars=tab:»·,trail:·,nbsp:·]]
 cmd [[set updatetime=100]]
--- cmd [[set shortmess+=c]]
 cmd [[set clipboard+=unnamedplus]]
 cmd [[set wildmenu]]
 cmd [[set signcolumn=no]]
@@ -105,6 +103,7 @@ cmd [[command! Done :lua require('telescope.builtin').grep_string({ cwd = '~/not
 -- Run the current test file
 cmd [[command! LWT :lua require('toggleterm').exec("lwt " .. string.gsub(vim.fn.expand("%"), "loggi/", ""))]]
 cmd [[command! LGGT :lua require('toggleterm').exec("lggt " .. vim.fn.expand("%:p:h:t") .. "/" .. vim.fn.expand("%:t"))]]
+-- cmd [[command! LGGT :lua require('harpoon.term').sendCommand(1, "lggt " .. vim.fn.expand("%:p:h:t") .. "/" .. vim.fn.expand("%:t") .. "<CR>")]]
 cmd [[command! PlaywrightDebug :lua require('toggleterm').exec("npx playwright test " .. vim.fn.expand("%:t") .. " --debug" )]]
 
 cmd [[
