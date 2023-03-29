@@ -85,6 +85,7 @@
   side-by-side = true
 
 [alias]
+  aa            = add --all
   c             = commit
   co            = checkout
   s             = status --short
@@ -93,7 +94,6 @@
   dw            = diff --color-words
   l             = log --pretty=default
   lg            = log --color --graph --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)' --abbrev-commit --branches
-  ; lbeyond       = log --color --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)' \$\(git --no-pager tag -l '*/beyond' | tail --lines=2 | sed -u -e ':a\; N\; \$!ba\; s/\n/\.\. /g'\)
   rh            = reset --hard
   dft           = difftool
   undo          = reset --soft HEAD~1

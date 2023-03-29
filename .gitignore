@@ -121,7 +121,6 @@ kubectl
 .tmux/
 .vale.ini
 .var/
-.vim/
 .viminfo
 .vscode/
 .wget-hsts
