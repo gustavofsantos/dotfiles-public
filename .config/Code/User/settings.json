@@ -1,7 +1,7 @@
 {
   "workbench.startupEditor": "none",
-  "workbench.colorTheme": "Night Owl",
-  "workbench.editor.showTabs": true,
+  "workbench.colorTheme": "GitHub Dark",
+  "workbench.editor.showTabs": false,
   "workbench.editor.tabSizing": "fit",
   "workbench.tree.indent": 16,
   "editor.fontFamily": "'MonoLisa Nerd Font', 'Operator Mono Book'",
@@ -10,7 +10,7 @@
   "editor.fontWeight": "400",
   "editor.minimap.enabled": false,
   "editor.tabSize": 2,
-  "editor.lineNumbers": "on",
+  "editor.lineNumbers": "relative",
   "editor.folding": true,
   // "editor.glyphMargin": false,
   "editor.guides.indentation": false,
@@ -82,7 +82,7 @@
     },
     {
       "title": "Find file",
-      "before": ["<C-p>"],
+      "before": ["<leader>", "f", "f"],
       "commands": ["workbench.action.quickOpen"]
     },
     {
@@ -101,24 +101,14 @@
       "commands": ["workbench.action.showAllSymbols"]
     },
     {
-      "title": "Comment line",
-      "before": ["<leader>", "/"],
-      "commands": ["editor.action.commentLine"]
-    },
-    {
       "title": "Quick fix",
       "before": ["<leader>", "."],
       "commands": ["editor.action.quickFix"]
     },
     {
       "title": "Rename",
-      "before": ["<leader>", "r"],
+      "before": ["<leader>", "r", "n"],
       "commands": ["editor.action.rename"]
-    },
-    {
-      "title": "Close all editors",
-      "before": ["<leader>", "C"],
-      "commands": ["workbench.action.closeAllEditors"]
     },
     {
       "title": "Toggle terminal",
@@ -127,33 +117,33 @@
     },
     {
       "title": "Move to panel right",
-      "before": ["<leader>", "l"],
+      "before": ["<C-w>", "l"],
       "commands": ["workbench.action.focusRightGroup"]
     },
     {
       "title": "Move to panel left",
-      "before": ["<leader>", "h"],
+      "before": ["<C-w>", "h"],
       "commands": ["workbench.action.focusLeftGroup"]
     },
     {
       "title": "Move to panel above",
-      "before": ["<leader>", "k"],
+      "before": ["<C-w>", "k"],
       "commands": ["workbench.action.focusAboveGroup"]
     },
     {
       "title": "Move to panel below",
-      "before": ["<leader>", "j"],
+      "before": ["<C-w>", "j"],
       "commands": ["workbench.action.focusBelowGroup"]
     },
     // WINDOW
     {
       "title": "Split editor",
-      "before": ["<leader>", "w", "s"],
+      "before": ["<C-w>", "s"],
       "commands": ["workbench.action.splitEditor"]
     },
     {
       "title": "Split editor horizontal",
-      "before": ["<leader>", "w", "S"],
+      "before": ["<C-w>", "S"],
       "commands": ["workbench.action.splitEditorOrthogonal"]
     },
     // BUFFER
@@ -162,27 +152,12 @@
       "before": ["<leader>", "b", "b"],
       "commands": ["editor.action.previousMatchFindAction"]
     },
-    {
-      "title": "Format file",
-      "before": ["<leader>", "b", "f"],
-      "commands": ["editor.action.formatDocument"]
-    },
     // GIT
     {
       "title": "Checkout branch",
       "before": ["<leader>", "g", "b"],
       "commands": ["git.checkout"]
     },
-    {
-      "title": "Git: open diff",
-      "before": ["<leader>", "g", "d"],
-      "commands": ["git.timeline.openDiff"]
-    },
-    {
-      "title": "Git: rebase",
-      "before": ["<leader>", "g", "r"],
-      "commands": ["git.rebase"]
-    }
   ],
   "workbench.colorCustomizations": {
     "[Night Owl]": {
@@ -1137,5 +1112,7 @@
   "[python]": {
     "editor.formatOnType": true
   },
-  "git.confirmSync": false
+  "git.confirmSync": false,
+  "editor.inlineSuggest.enabled": true,
+  "thunder-client.customLocation": "$HOME/thunder-client"
 }
