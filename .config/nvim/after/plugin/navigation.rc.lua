@@ -76,6 +76,10 @@ if (has_harpoon) then
   vim.keymap.set("n", "<leader>]m", require('harpoon.ui').nav_next, { desc = "Next [M]ark" })
   vim.keymap.set("n", "<leader>[m", require('harpoon.ui').nav_prev, { desc = "Previous [M]ark" })
   vim.keymap.set("n", "<leader>fm", require("harpoon.ui").toggle_quick_menu, { desc = "[F]ind [M]arks" }) -- find marks
+  vim.keymap.set('n', '<leader>f1', function() require('harpoon.ui').nav_file(1) end, { desc = 'First file mark'})
+  vim.keymap.set('n', '<leader>f2', function() require('harpoon.ui').nav_file(2) end, { desc = 'Second file mark'})
+  vim.keymap.set('n', '<leader>f3', function() require('harpoon.ui').nav_file(3) end, { desc = 'Third file mark'})
+  vim.keymap.set('n', '<leader>f4', function() require('harpoon.ui').nav_file(4) end, { desc = 'Fourth file mark'})
 end
 
 -- Setup tree view

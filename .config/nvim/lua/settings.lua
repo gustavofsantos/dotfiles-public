@@ -24,8 +24,8 @@ let g:switch_custom_definitions =
 ]]
 
 cmd [[set termguicolors]]
-cmd [[set background=light]]
-cmd [[colorscheme github_light]]
+cmd [[set background=dark]]
+cmd [[colorscheme github_dark]]
 cmd [[set noerrorbells]]
 cmd [[set tabstop=2 softtabstop=2]]
 cmd [[set shiftwidth=2]]
