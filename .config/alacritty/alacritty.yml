@@ -45,5 +45,4 @@ cursor:
     blinking: Always
 
 import:
-  # - ~/.config/alacritty/themes/gruvbox.yml
-  - ~/.config/alacritty/themes/onenord.yml
+  - ~/.config/alacritty/themes/github_dark.yml
