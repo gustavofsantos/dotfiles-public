@@ -1,7 +1,12 @@
-local g = vim.g
 local cmd = vim.cmd
 
-g.mapleader = " "
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+-- NetRW settings
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25
 
 cmd [[let g:sneak#label = 1]]
 cmd [[let g:sneak#use_ic_scs = 1]]

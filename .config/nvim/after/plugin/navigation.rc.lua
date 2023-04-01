@@ -1,3 +1,4 @@
+
 -- Setup telescope
 local has_telescope, telescope = pcall(require, "telescope")
 if (has_telescope) then

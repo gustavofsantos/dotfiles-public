@@ -1,7 +1,3 @@
-vim.diagnostic.config({
-  virtual_text = true,
-})
-
 local has_lsp, _ = pcall(require, 'lsp-zero')
 if has_lsp then
   local lsp = require('lsp-zero')
@@ -88,6 +84,11 @@ if has_lsp then
   }
 
   lsp.setup()
+
+  vim.diagnostic.config({
+    virtual_text = true,
+  })
+
 end
 
 
