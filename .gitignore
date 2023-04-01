@@ -163,3 +163,6 @@ java_error_in_pycharm_.hprof
 .config/Insomnia/
 .th-client/
 .config/eog/
+thunder-client
+.config/github-copilot
+.config/nvim/pack/
