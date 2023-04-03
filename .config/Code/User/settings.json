@@ -157,7 +157,7 @@
       "title": "Checkout branch",
       "before": ["<leader>", "g", "b"],
       "commands": ["git.checkout"]
-    },
+    }
   ],
   "workbench.colorCustomizations": {
     "[Night Owl]": {
