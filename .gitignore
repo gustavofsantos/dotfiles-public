@@ -167,3 +167,5 @@ thunder-client
 .config/github-copilot
 .config/nvim/pack/
 .config/create-next-app-nodejs/
+Desktop
+.vim/

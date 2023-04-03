@@ -82,6 +82,7 @@ return packer.startup(function(use)
   use {'j-hui/fidget.nvim', commit = '0ba1e16'}
 
   -- Completion
+  use 'github/copilot.vim'
   use 'onsails/lspkind-nvim'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-nvim-lua'
