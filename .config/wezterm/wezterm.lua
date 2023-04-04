@@ -2,9 +2,9 @@ local wezterm = require("wezterm")
 
 local function scheme_for_appearance(appearance)
   if appearance:find "Dark" then
-    return "GithubDark"
+    return "Catppuccin Macchiato"
   else
-    return "GithubLight"
+    return "Catppuccin Latte"
   end
 end
 
@@ -13,8 +13,8 @@ return {
   color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
 
   -- font
-  font = wezterm.font("MonoLisa Nerd Font", { weight = "Regular" }),
-  font_size = 12.0,
+  font = wezterm.font("MonoLisa Nerd Font", { weight = "Medium" }),
+  font_size = 11.0,
 
   window_background_opacity = 0.98,
 

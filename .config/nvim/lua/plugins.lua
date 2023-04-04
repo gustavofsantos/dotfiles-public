@@ -68,7 +68,7 @@ return packer.startup(function(use)
   use 'kyazdani42/nvim-tree.lua'
   use 'vim-test/vim-test'
   use 'nvim-lualine/lualine.nvim'
-  -- use { 'akinsho/bufferline.nvim', tag = "v3.*" }
+  use { 'akinsho/bufferline.nvim', tag = "v3.*" }
   -- use 'mfussenegger/nvim-dap'
   use 'akinsho/toggleterm.nvim'
   use 'windwp/nvim-ts-autotag'

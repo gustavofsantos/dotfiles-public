@@ -91,7 +91,7 @@ end
 local has_catppuccin, catppuccin = pcall(require, 'catppuccin')
 if has_catppuccin then
   catppuccin.setup {
-    flavour = "mocha", -- latte, frappe, macchiato, mocha
+    flavour = "macchiato", -- latte, frappe, macchiato, mocha
     background = { -- :h background
         light = "latte",
         dark = "mocha",
@@ -208,38 +208,6 @@ if has_catppuccin then
         flamingo = "#F2CDCD", -- target word
         rosewater = "#F5E0DC", -- winbar
       },
-      macchiato = {
-        base = "#151515", -- default bg
-        mantle = "#000000", -- darker bg
-        crust = "#000000", -- darkest bg
-
-        surface2 = "#6F6F6F", -- default comment
-        surface1 = "#6F6F6F", -- darker comment
-        surface0 = "#6F6F6F", -- darkest comment
-
-        -- overlay2 = "#001122", -- popup fg, symbols
-        overlay1 = "#8BADC1", -- conceal color
-        overlay0 = "#1D2633", -- fold color
-
-        subtext1 = "#8BADC1", -- indicator
-        subtext0 = "#8BADC1", -- float title
-
-        text = "#FFFFFF", -- text fg
-        lavender = "#B4BEFE", -- cursor line number
-        blue = "#7AD9FB", -- diff changed
-        sapphire = "#A390FF", -- constructor
-        sky = "#B3E8B4", -- operator
-        teal = "#6F6F6F", -- hint
-        green = "#CDF861", -- diff add
-        yellow = "#EFFFA5", -- warning
-        peach = "#7AD9FB", -- number
-        maroon = "#E88E73", -- lighter red
-        red = "#E88E73", -- error
-        mauve = "#A390FF", -- tag
-        pink = "#F5C2E7", -- pink or #BAEBE2
-        flamingo = "#F2CDCD", -- target word
-        rosewater = "#000000", -- winbar
-      }
     },
     highlight_overrides = {
       latte = function (cp)
@@ -346,58 +314,6 @@ if has_catppuccin then
           ["@field.yaml"] = { fg = cp.sky }
         }
       end,
-      macchiato = function (cp)
-        return {
-          LineNr = { fg = "#858585" },
-          CursorLineNr = { fg = "#C6C6C6" },
-          MatchParen = { fg = "#929AA3", bg = cp.surface1 },
-          Folded = { bg = "#041F34" },
-          TabLine = { fg = "#E5E5E5", bg = "#000000" },
-          TabLineFill = { fg = "#506379", bg = cp.crust },
-          TabLineSel = { fg = cp.text , bg = cp.base },
-          Visual = { bg = "#252526", style = {} },
-          VisualNOS = { bg = "#252526", style = {} },
-          Number = { fg = "#7AD9FB" },
-
-          ["@operator"] = { fg = cp.sky },
-          ["@punctuation.delimiter"] = { fg = "#86897A", },
-          ["@punctuation.bracket"] = { fg = "#86897A", },
-          ["@punctuation.special"] = { fg = "#86897A" },
-          ["@symbol"] = { fg = "#86897A" },
-
-          ["@string"] = { fg = "#BFD084" },
-          ["@boolean"] = { link = "Number" },
-          ["@number"] = { link = "Number" },
-          ["@float"] = { link = "Number" },
-          ["@constant.builtin"] = { link = "Number" },
-
-          ["@type"] = { fg = cp.text },
-          ["@field"] = { fg = cp.text },
-          ["@property"] = { fg = cp.text },
-          ["@function"] = { fg = cp.text },
-
-          ["@keyword.export"] = { fg = cp.mauve, style = { "italic" } },
-
-          ["@conditional.ternary"] = { style = {} },
-
-          ["@constructor"] = { fg = cp.sky },
-          ["@parameter"] = { fg = cp.text },
-
-          ["@method"] = { fg = cp.green },
-          ["@method.call"] = { fg = cp.green },
-
-          ["@tag"] = { fg = cp.mauve },
-          ["@tag.attribute"] = { fg = "#CABEFF" },
-          ["@tag.delimiter"] = { fg = "#475260" },
-          ["@tag.tsx"] = { fg = cp.mauve  },
-          ["@tag.attribute.tsx"] = { fg = "#CABEFF" },
-          ["@tag.delimiter.tsx"] = { fg = "#475260" },
-
-          ["@include"] = { fg = cp.mauve, style = { "italic" } },
-
-          ["@constructor.lua"] = { fg = cp.surface1 },
-        }
-      end
     }
   }
 end

@@ -45,4 +45,4 @@ cursor:
     blinking: Always
 
 import:
-  - ~/.config/alacritty/themes/github_dark.yml
+  - ~/.config/alacritty/themes/onedark.yml

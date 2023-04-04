@@ -27,8 +27,8 @@ nnoremap("<leader>cbp", "<cmd>let @+ = expand(\"%\")<CR>")
 nnoremap("dgh", ":diffget //2<CR>") -- vimdiff get from left
 nnoremap("dgl", ":diffget //3<CR>") -- vimdiff get from right
 nnoremap("<C-b>", ":NvimTreeToggle<CR>") -- toggle file explorer
-nnoremap("<C-q>", ":q<CR>") -- close current buffer
-inoremap("<C-q>", ":q<CR>") -- close current buffer
+nnoremap("<C-q>", ":bdelete<CR>") -- close current buffer
+inoremap("<C-q>", ":bdelete<CR>") -- close current buffer
 inoremap("<C-s>", "<Esc>:w<CR>") -- save buffer
 nnoremap("<C-s>", ":w<CR>") -- save buffer
 nnoremap("<C-t>", "<Cmd>exe v:count1 . \"ToggleTerm\"<CR>") -- toggle terminal

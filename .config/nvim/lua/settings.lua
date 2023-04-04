@@ -29,8 +29,8 @@ let g:switch_custom_definitions =
 ]]
 
 cmd [[set termguicolors]]
-cmd [[set background=dark]]
-cmd [[colorscheme github_dark]]
+cmd [[set background=light]]
+cmd [[colorscheme catppuccin]]
 cmd [[set noerrorbells]]
 cmd [[set tabstop=2 softtabstop=2]]
 cmd [[set shiftwidth=2]]
@@ -73,7 +73,7 @@ cmd [[set pumheight=10]]
 cmd [[set grepprg=ag]]
 cmd [[set wildmode=list:longest,full]]
 -- Nvim global statusline
--- cmd [[set laststatus=3]]
+cmd [[set laststatus=3]]
 
 cmd [[set backupdir=~/.tmp]]
 cmd [[set directory=~/.tmp]]

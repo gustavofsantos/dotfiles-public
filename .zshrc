@@ -176,3 +176,10 @@ function note () {
 function journal () {
   nvim ~/notes/journal/$(date +%Y-%m-%d).md
 }
+
+# pnpm
+export PNPM_HOME="/home/gustavo/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+
+eval "$(starship init zsh)"

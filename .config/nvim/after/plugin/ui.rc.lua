@@ -2,7 +2,7 @@ local has_bufferline, bufferline = pcall(require, 'bufferline')
 if (has_bufferline) then
   bufferline.setup({
     options = {
-      mode = "tabs",
+      mode = "buffers",
       -- separator_style = 'thin',
       always_show_bufferline = false,
       show_buffer_close_icons = false,
@@ -15,14 +15,14 @@ if (has_bufferline) then
         style = 'none', -- icon
       },
       buffer_close_icon = '',
-      -- offsets = {
-      --   {
-      --     filetype = "NvimTree",
-      --     text = "File Explorer",
-      --     highlight = "Directory",
-      --     text_align = "left"
-      --   }
-      -- }
+      offsets = {
+        {
+          filetype = "NvimTree",
+          text = "File Explorer",
+          highlight = "Directory",
+          text_align = "left"
+        }
+      }
     },
   })
 end
@@ -37,7 +37,7 @@ if (has_lualine) then
       component_separators = { left = '', right = '' },
       section_separators = { left = '', right = '' },
       always_divide_middle = true,
-      globalstatus = false,
+      globalstatus = true,
       refresh = {
         statusline = 1000,
         tabline = 1000,
@@ -86,8 +86,8 @@ end
 local has_toggleterm, toggleterm = pcall(require, "toggleterm")
 if (has_toggleterm) then
   toggleterm.setup {
-    direction = 'float',
-    size = 32,
+    direction = 'horizontal',
+    size = 20,
     winbar = {
       enabled = true,
       name_formatter = function(term) --  term: Terminal
