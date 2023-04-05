@@ -69,7 +69,7 @@ return packer.startup(function(use)
   use 'vim-test/vim-test'
   use 'nvim-lualine/lualine.nvim'
   use { 'akinsho/bufferline.nvim', tag = "v3.*" }
-  -- use 'mfussenegger/nvim-dap'
+  use {'folke/trouble.nvim', tag = "v2.2.1"}
   use 'akinsho/toggleterm.nvim'
   use 'windwp/nvim-ts-autotag'
   use 'windwp/nvim-autopairs'

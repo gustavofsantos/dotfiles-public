@@ -177,13 +177,13 @@ if has_catppuccin then
         crust = "#ECEFF1",
       },
       mocha = {
-        base = "#011627", -- default bg
-        mantle = "#001122", -- darker bg
-        crust = "#000C1D", -- darkest bg
+        base = "#111113", -- default bg
+        mantle = "#0F0F11", -- darker bg
+        crust = "#001122", -- darkest bg
 
         surface2 = "#637777", -- default comment
-        surface1 = "#4B6174", -- darker comment
-        surface0 = "#04111F", -- darkest comment
+        surface1 = "#637777", -- darker comment
+        surface0 = "#637777", -- darkest comment
 
         -- overlay2 = "#001122", -- popup fg, symbols
         overlay1 = "#8BADC1", -- conceal color
@@ -192,15 +192,15 @@ if has_catppuccin then
         subtext1 = "#8BADC1", -- indicator
         subtext0 = "#8BADC1", -- float title
 
-        text = "#D7DBE0", -- text fg
+        text = "#fefce8", -- text fg
         lavender = "#B4BEFE", -- cursor line number
         blue = "#82AAFF", -- diff changed
         sapphire = "#74C7EC", -- constructor
-        sky = "#7FDBCA", -- operator
+        sky = "#7fdbca", -- operator
         teal = "#CAECE6", -- hint
-        green = "#C5E478", -- diff add
+        green = "#addb67", -- diff add
         yellow = "#FAF39F", -- warning
-        peach = "#F78C6C", -- number
+        peach = "#ffcb8b", -- number
         maroon = "#EBA0AC", -- lighter red
         red = "#FF5874", -- error
         mauve = "#C792EA", -- tag
@@ -288,7 +288,10 @@ if has_catppuccin then
           ["@function"] = { fg = cp.blue },
           ["@function.builtin"] = { fg = cp.green },
 
-          ["@keyword.export"] = { fg = cp.mauve, style = { "italic" } },
+          ["@keyword"] = { fg = cp.sky, style = { "italic" }},
+          ["@keyword.return"] = { fg = cp.sky, style = { "italic" }},
+          ["@keyword.operator"] = { fg = cp.sky, style = { "italic" }},
+          ["@keyword.export"] = { fg = cp.sky, style = { "italic" } },
 
           ["@conditional.ternary"] = { style = {} },
 
@@ -298,14 +301,14 @@ if has_catppuccin then
           ["@method"] = { fg = cp.blue },
           ["@method.call"] = { fg = cp.blue },
 
-          ["@tag"] = { fg = cp.teal },
+          ["@tag"] = { fg = cp.peach },
           ["@tag.attribute"] = { fg = cp.green },
-          ["@tag.delimiter"] = { fg = cp.sky },
+          ["@tag.delimiter"] = { fg = cp.rosewater },
           ["@tag.tsx"] = { fg = cp.teal },
           ["@tag.attribute.tsx"] = { fg = cp.green },
           ["@tag.delimiter.tsx"] = { fg = cp.sky },
 
-          ["@include"] = { fg = cp.subtext1, style = { "italic" } },
+          ["@include"] = { fg = cp.sky, style = { "italic" } },
           ["@import_identifier"] = { fg = cp.surface2 },
           ["@import_path"] = { fg = cp.surface2 },
 

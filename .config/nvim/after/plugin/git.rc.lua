@@ -18,7 +18,7 @@ if (has_gitsigns) then
   gitsigns.setup {
     signcolumn = false,
     numhl = true,
-    linehl= true,
+    linehl= false,
     attach_to_untracked = false,
     current_line_blame = false,
     current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d>',

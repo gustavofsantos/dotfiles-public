@@ -68,7 +68,3 @@ nnoremap("<C-w>s", ":vsplit<CR>")
 nnoremap("<C-w>S", ":split<CR>")
 tnoremap("<Esc>", "<C-\\><C-n>")
 
--- Editing
-
--- inoremap("<silent><expr><TAB>", "pumvisible() ? \"\\<C-n>\" : \"\\<TAB>\"")
--- inoremap("<expr><S-TAB>", "pumvisible() ? \"\\<C-p>\" : \"\\<C-h>\"")

@@ -2,8 +2,8 @@ local has_bufferline, bufferline = pcall(require, 'bufferline')
 if (has_bufferline) then
   bufferline.setup({
     options = {
-      mode = "buffers",
-      -- separator_style = 'thin',
+      mode = "tabs",
+      separator_style = 'thin',
       always_show_bufferline = false,
       show_buffer_close_icons = false,
       show_close_icon = false,
