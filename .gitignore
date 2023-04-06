@@ -169,3 +169,7 @@ thunder-client
 .config/create-next-app-nodejs/
 Desktop
 .vim/
+.config/xdg-terminals.list
+.config/GNOME-xdg-terminals.list
+.config/dleyna-renderer-service.conf
+cv_debug.log
