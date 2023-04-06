@@ -45,4 +45,4 @@ cursor:
     blinking: Always
 
 import:
-  - ~/.config/alacritty/themes/onedark.yml
+  - ~/.config/alacritty/themes/kanagawa.yml
