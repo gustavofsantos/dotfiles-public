@@ -1,6 +1,6 @@
 {
   "workbench.startupEditor": "none",
-  "workbench.colorTheme": "Aeon",
+  "workbench.colorTheme": "Default Dark+ Experimental",
   "workbench.editor.showTabs": false,
   "workbench.editor.tabSizing": "fit",
   "workbench.tree.indent": 16,
@@ -1114,5 +1114,7 @@
   },
   "git.confirmSync": false,
   "editor.inlineSuggest.enabled": true,
-  "thunder-client.customLocation": "$HOME/thunder-client"
+  "thunder-client.customLocation": "$HOME/thunder-client",
+  "redhat.telemetry.enabled": false,
+  "diffEditor.ignoreTrimWhitespace": false
 }
