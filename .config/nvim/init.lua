@@ -1,5 +1,0 @@
-require("globals")
-require("plugins")
-require("themes")
-require("settings")
-require("mappings")

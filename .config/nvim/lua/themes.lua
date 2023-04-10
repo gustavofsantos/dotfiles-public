@@ -1,36 +1,3 @@
-vim.g.nord_contrast = true
-vim.g.nord_borders = true
-vim.g.nord_disable_background = false
-vim.g.nord_italic = true
-vim.g.nord_uniform_diff_background = true
-vim.g.nord_bold = true
-
-vim.g.rasmus_italic_comments = true
-vim.g.rasmus_italic_keywords = true
-vim.g.rasmus_italic_functions = true
-vim.g.rasmus_bold_booleans = true
-vim.g.rasmus_bold_functions = true
-vim.g.rasmus_transparent = false
-
-vim.g.mellow_italic_comments = true
-vim.g.mellow_italic_keywords = true
-vim.g.mellow_italic_functions = true
-vim.g.mellow_italic_variables = false
-vim.g.mellow_bold_booleans = true
-vim.g.mellow_transparent = false
-
-vim.g.oh_lucy_italic_comments = true
-vim.g.oh_lucy_italic_keywords = true
-vim.g.oh_lucy_italic_booleans = false
-vim.g.oh_lucy_italic_functions = true
-vim.g.oh_lucy_italic_variables = false
-vim.g.oh_lucy_transparent_background = false
-
-local has_monokai_pro, monokai_pro = pcall(require, 'monokai-pro')
-if has_monokai_pro then
-  monokai_pro.setup({})
-end
-
 local has_solarized, solarized = pcall(require, 'solarized')
 if has_solarized then
   solarized:setup {
@@ -46,33 +13,6 @@ if has_solarized then
   }
 end
 
-
-local has_onenord, _ = pcall(require, 'onenord')
-if has_onenord then
-  local colors = require("onenord.colors").load()
-  require('onenord').setup({
-    styles = {
-      comments = "italic",
-      strings = "NONE",
-      keywords = "italic",
-      functions = "italic",
-      variables = "NONE",
-      diagnostics = "underline",
-    },
-    custom_highlights = {
-      TabLine = { bg = colors.active },
-      TabLineFill = { bg = colors.active },
-      -- Headline = { bg = colors.highlight_dark }
-
-      ['@punctuation.bracket'] = { fg = colors.gray },
-      ["@punctuation.delimiter"] = { fg = colors.gray, },
-      ["@punctuation.special"] = { fg = colors.gray },
-      ["@property"] = { style = "italic" },
-      ["@tag.attribute"] = { style = "italic" },
-      ["keyword.return"] = { fg = colors.purple, style = "italic" }
-    },
-  })
-end
 
 local has_kanagawa, kanagawa = pcall(require, 'kanagawa')
 if has_kanagawa then

@@ -23,7 +23,6 @@ if has_treesitter then
       "git_rebase",
       "bash",
       "go",
-      "help",
       "lua",
       "json",
       "proto",
@@ -166,13 +165,6 @@ if has_treesitter then
     })
 
 
-    vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
-    vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
   end
-
-  -- local has_headlines, headlines = pcall(require, 'headlines')
-  -- if has_headlines then
-  --   headlines.setup()
-  -- end
 end
 

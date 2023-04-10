@@ -1,0 +1,52 @@
+{
+  "coc.preferences.hoverTarget": "float",
+  "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "scss",
+    "markdown",
+    "Markdown",
+    "javascript",
+    "javascript.jsx",
+    "javascriptreact",
+    "ruby",
+    "eruby",
+    "svelte",
+    "typescript",
+    "typescriptreact",
+    "yaml"
+  ],
+  "coc.preferences.formatOnType": false,
+  "diagnostic.refreshOnInsertMode": true,
+  "suggest.floatEnable": true,
+  "suggest.noselect": false,
+  "suggest.acceptSuggestionOnCommitCharacter": true,
+  "suggest.enablePreview": true,
+  "suggest.enablePreselect": true,
+  "diagnostic.enableSign": false,
+  "tsserver.formatOnType": false,
+  "prettier.requireConfig": true,
+  "prettier.disableSuccessMessage": true,
+  "eslint.autoFixOnSave": true,
+	"eslint.probe": [
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+		"html",
+		"vue",
+		"markdown",
+		"svelte"
+	],
+	"eslint.options": {
+		"ignorePath": ".gitignore"
+	},
+	"eslint.lintTask.options": ["--ignore-path", ".gitignore", "."],
+	"eslint.validate": ["svelte"],
+  "languageserver": {
+    "lua": {
+      "command": "lua-lsp",
+      "filetypes": ["lua"]
+    }
+  }
+}

@@ -2,9 +2,9 @@ local wezterm = require("wezterm")
 
 local function scheme_for_appearance(appearance)
   if appearance:find "Dark" then
-    return "Kanagawa"
+    return "ModusVivendi"
   else
-    return "GithubLight"
+    return "ModusOperandi"
   end
 end
 
