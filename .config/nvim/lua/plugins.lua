@@ -17,9 +17,7 @@ return packer.startup(function(use)
   -- colorscheme
   use 'rebelot/kanagawa.nvim'
   use { 'catppuccin/nvim', as = 'catppuccin', tag = 'v1.1.0' }
-  use 'loctvl842/monokai-pro.nvim'
   use 'rmehri01/onenord.nvim'
-  use 'cocopon/iceberg.vim'
   use 'andersevenrud/nordic.nvim'
   use 'olimorris/onedarkpro.nvim'
   use 'maxmx03/solarized.nvim'
@@ -35,7 +33,6 @@ return packer.startup(function(use)
   use 'pantharshit00/vim-prisma' -- Prisma files colorscheme
   use 'udalov/kotlin-vim' -- Kotlin highlight
   use 'elixir-editors/vim-elixir' -- Elixir highlighting
-  -- use 'numirias/semshi' -- Python enhanced syntax
   use 'norcalli/nvim-colorizer.lua' -- Display colors
 
   use 'tpope/vim-surround'
@@ -71,8 +68,8 @@ return packer.startup(function(use)
   use { 'akinsho/bufferline.nvim', tag = "v3.*" }
   use {'folke/trouble.nvim', tag = "v2.2.1"}
   use 'akinsho/toggleterm.nvim'
-  use 'windwp/nvim-ts-autotag'
-  use 'windwp/nvim-autopairs'
+  -- use 'windwp/nvim-ts-autotag'
+  -- use 'windwp/nvim-autopairs'
   use 'neovim/nvim-lspconfig'
   use {
     'williamboman/mason.nvim',

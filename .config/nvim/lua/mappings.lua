@@ -33,10 +33,14 @@ inoremap("<C-s>", "<Esc>:w<CR>") -- save buffer
 nnoremap("<C-s>", ":w<CR>") -- save buffer
 nnoremap("<C-t>", "<Cmd>exe v:count1 . \"ToggleTerm\"<CR>") -- toggle terminal
 inoremap("<C-t>", "<Esc><Cmd>exe v:count1 . \"ToggleTerm\"<CR>") -- toggle terminal
--- nnoremap("<C-d>", "<C-d>zz")
--- nnoremap("<C-u>", "<C-u>zz")
 nnoremap("<C-x><C-d>", ":put =strftime('%Y-%m-%d %H:%M')<CR>")
-
+nnoremap("<C-p>", ":Telescope git_files<CR>") -- find files
+nnoremap("<C-k><C-e>", ":Telescope oldfiles<CR>") -- find recent files
+nnoremap("<C-k><C-b>", ":Telescope buffers<CR>") -- find buffers
+nnoremap("<C-f>", ":Telescope current_buffer_fuzzy_find<CR>") -- find in current buffer
+nnoremap("<C-k><C-f>", ":Telescope live_grep<CR>") -- find in all files
+nnoremap("<C-k><C-d>", ":Telescope diagnostics<CR>") -- find diagnostics
+nnoremap("<C-k><C-g>", ":Git<CR>") -- find diagnostics
 
 -- Move lines
 nnoremap("<A-j>", ":m .+1<CR>==")

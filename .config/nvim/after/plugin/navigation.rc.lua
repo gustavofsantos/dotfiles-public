@@ -50,7 +50,6 @@ if (has_telescope) then
   vim.keymap.set('n', '<leader>fr', require('telescope.builtin').resume, { desc = 'Find Resumed search'})
   vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = 'Find File'})
   vim.keymap.set('n', '<leader>fg', require('telescope.builtin').git_files, { desc = 'Find Git file'})
-  vim.keymap.set('n', '<C-p>', require('telescope.builtin').git_files, { desc = 'Find Git file'})
   vim.keymap.set('n', '<leader>fe', require('telescope.builtin').oldfiles, { desc = 'Find recently opened files' })
   vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, { desc = 'Find open Buffer' })
   vim.keymap.set('n', '<leader>fj', require('telescope.builtin').jumplist, { desc = 'Find Jumps' })
