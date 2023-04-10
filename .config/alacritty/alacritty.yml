@@ -11,7 +11,7 @@ font:
   bold_italic:
     family: MonoLisa Nerd Font
     style: Bold Italic
-  size: 10.0
+  size: 11.0
 
 env:
   TERM: xterm-256color
@@ -23,8 +23,8 @@ window:
   # decorations: none
   decorations_theme_variant: dark
   padding:
-    x: 8
-    y: 8
+    x: 0
+    y: 0
 
 draw_bold_text_with_bright_colors: true
 
