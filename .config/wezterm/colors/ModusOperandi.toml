@@ -10,3 +10,48 @@ selection_fg = "#000000"
 
 ansi = ["#000000","#a60000","#005e00","#813e00","#0031a9","#721045","#00538b","#bfbfbf"]
 brights = ["#595959","#972500","#315b00","#70480f","#2544bb","#5317ac","#005a5f","#ffffff"]
+
+[colors.tab_bar]
+background = "#bbbbbb"
+inactive_tab_edge = "#bbbbbb"
+inactive_tab_edge_hover = "#bfbfbf"
+
+[colors.tab_bar.active_tab]
+bg_color = "#ffffff"
+fg_color = "#000000"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.inactive_tab]
+bg_color = "#bbbbbb"
+fg_color = "#000000"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.inactive_tab_hover]
+bg_color = "#bbbbbb"
+fg_color = "#000000"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.new_tab]
+bg_color = "#bbbbbb"
+fg_color = "#000000"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.new_tab_hover]
+bg_color = "#bbbbbb"
+fg_color = "#000000"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
