@@ -6,7 +6,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 
 Plug 'rebelot/kanagawa.nvim'
-Plug 'ishan9299/nvim-solarized-lua'
+Plug 'lifepillar/vim-solarized8'
 Plug 'ishan9299/modus-theme-vim'
 Plug 'AhmedAbdulrahman/vim-aylin'
 
@@ -24,7 +24,6 @@ Plug 'kevinhwang91/nvim-ufo'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
-Plug 'folke/trouble.nvim', { 'tag': 'v2.2.1' }
 Plug 'akinsho/toggleterm.nvim'
 Plug 'L3MON4D3/LuaSnip'
 
@@ -121,7 +120,7 @@ command! W w
 command! Wq wq
 command! WQ wq
 command! Reload :source ~/.config/nvim/init.vim<CR>
-command! Format :terminal npx prettier -w %<CR>
+command! Format :terminal npx prettier -w %:p<CR>
 command! Worklog :tabnew | :e ~/notes/loggi/worklog.md
 if has('nvim')
   command! Config :e ~/.config/nvim/init.vim<CR>
@@ -131,6 +130,7 @@ if has('nvim')
   command! Doing :lua require('telescope.builtin').grep_string({ cwd = '~/notes', search = '- [-]' })<CR>
   command! Done :lua require('telescope.builtin').grep_string({ cwd = '~/notes', search = '- [x]' })<CR>
   command! LWT :lua require('toggleterm').exec("lwt " .. string.gsub(vim.fn.expand("%"), "loggi/", ""))
+  command! Lggt :terminal lggt %:p<CR>
   command! LGGT :lua require('toggleterm').exec("lggt " .. vim.fn.expand("%:p:h:t") .. "/" .. vim.fn.expand("%:t"))
   command! PlaywrightDebug :lua require('toggleterm').exec("npx playwright test " .. vim.fn.expand("%:t") .. " --debug" )
   autocmd TermEnter term://*toggleterm#*

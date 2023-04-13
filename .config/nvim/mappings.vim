@@ -25,6 +25,14 @@ nmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
 nmap <leader>ac  <Plug>(coc-codeaction-cursor)
 nmap <leader>as  <Plug>(coc-codeaction-source)
 nmap <leader>qf  <Plug>(coc-fix-current)
+nnoremap <leader>ft :CocDiagnostics<CR>
+" Search workspace symbols
+nnoremap <silent><nowait> <leader>ws  :<C-u>CocList -I symbols<cr>
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
 
 nnoremap zR :lua require('ufo').openAllFolds()<CR>
 nnoremap zM :lua require('ufo').closeAllFolds()<CR>
@@ -77,7 +85,6 @@ nnoremap <leader>fj :lua require('telescope.builtin').jumplist()<CR>
 nnoremap <leader>fo :lua require('telescope.builtin').loclist()<CR>
 nnoremap <leader>fl :lua require('telescope.builtin').live_grep()<CR>
 nnoremap <leader>fs :lua require('telescope.builtin').lsp_document_symbols()<CR>
-nnoremap <leader>ft :lua require('telescope.builtin').diagnostics()<CR>
 nnoremap <leader>fk :lua require('telescope.builtin').keymaps()<CR>
 nnoremap <leader>fh :lua require('telescope.builtin').search_history()<CR>
 nnoremap <leader>f? :lua require('telescope.builtin').help_tags()<CR>
@@ -108,5 +115,3 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 " move tabs
 nnoremap <A-h> :-tabmove<CR>
 nnoremap <A-l> :+tabmove<CR>
-
-

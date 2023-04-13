@@ -37,7 +37,7 @@ if (has_lualine) then
       component_separators = { left = '', right = '' },
       section_separators = { left = '', right = '' },
       always_divide_middle = true,
-      globalstatus = true,
+      globalstatus = false,
       refresh = {
         statusline = 1000,
         tabline = 1000,
@@ -60,6 +60,7 @@ if (has_lualine) then
       lualine_x = {
         'diagnostics',
         'location',
+        'filetype'
       },
       lualine_y = {},
       lualine_z = {}
@@ -96,13 +97,6 @@ if (has_toggleterm) then
     },
   }
 end
-
--- setup trouble
-local has_trouble, trouble = pcall(require, "trouble")
-if (has_trouble) then
-  trouble.setup {}
-end
-
 
 local has_colorizer, colorizer = pcall(require, 'colorizer')
 if (has_colorizer) then
