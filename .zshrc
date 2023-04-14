@@ -167,10 +167,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
 # add-zsh-hook -Uz chpwd(){ source <(tea -Eds) }  #tea
 
 ## functions
@@ -181,9 +177,43 @@ function journal () {
   nvim ~/notes/journal/$(date +%Y-%m-%d).md
 }
 
+function beyond_last_tags_prod() {
+  git --no-pager tag --list 'beyond/prod-2023[0-9][0-9][0-9][0-9].[0-9][0-9]' | tail -n 2 | sed -u -e ':a; N; $!ba; s/\n/\.\./g'
+}
+
+function beyond_ui_log_deploy() {
+  git --no-pager log --pretty=format:"%h%x09%an%x09%ad%x09%s" $(beyond_last_tags_prod) -- .
+}
+
+function beyond_ui_log_pretty_md() {
+  git --no-pager log --pretty=format:"%s" $(beyond_last_tags_prod) -- . | sd '^(.+)\s\(#([0-9]+)\)$' '[$1](https://github.com/loggi/ui/pulls/$2)'
+}
+
+function print_beyond_deploy_info() {
+cat << EOF
+
+Ação: Deploy Beyond UI
+Workflow: <replace here>
+Tag: https://github.com/loggi/ui/releases/tag/$(git describe --tags `git rev-list --tags --max-count=1` | sed 's/\//%2F/g')
+Diff: https://github.com/loggi/ui/compare/$(beyond_last_tags_prod)
+
+Pull requests:
+$(beyond_ui_log_pretty_md)
+
+Descrição:
+- 
+
+cc @dev-beyond
+EOF
+}
+
 # pnpm
 export PNPM_HOME="/home/gustavo/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
 eval "$(starship init zsh)"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
