@@ -125,5 +125,10 @@ return {
       mods = "LEADER",
       action = wezterm.action.ToggleFullScreen,
     },
+    {
+      key = "z",
+      mods = "LEADER",
+      action = wezterm.action.TogglePaneZoomState,
+    }
   }
 }

@@ -10,6 +10,8 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'ishan9299/modus-theme-vim'
 Plug 'AhmedAbdulrahman/vim-aylin'
 
+Plug 'jxnblk/vim-mdx-js'
+
 Plug 'lewis6991/gitsigns.nvim', { 'tag': 'v0.6' }
 Plug 'sindrets/diffview.nvim'
 Plug 'nvim-telescope/telescope.nvim'
