@@ -186,7 +186,7 @@ function beyond_ui_log_deploy() {
 }
 
 function beyond_ui_log_pretty_md() {
-  git --no-pager log --pretty=format:"%s" $(beyond_last_tags_prod) -- . | sd '^(.+)\s\(#([0-9]+)\)$' '[$1](https://github.com/loggi/ui/pulls/$2)'
+  git --no-pager log --pretty=format:"%s" $(beyond_last_tags_prod) -- . | sd '^(.+)\s\(#([0-9]+)\)$' '[$1](https://github.com/loggi/ui/pull/$2)'
 }
 
 function print_beyond_deploy_info() {
