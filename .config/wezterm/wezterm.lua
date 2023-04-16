@@ -121,6 +121,23 @@ return {
       action = wezterm.action { ActivateTabRelative = 1 }
     },
     {
+      key = "s",
+      mods = "LEADER",
+      action = wezterm.action.ShowTabNavigator,
+    },
+    {
+      key = "e",
+      mods = "LEADER",
+      action = wezterm.action.PromptInputLine {
+        description = "New tab name",
+        action = wezterm.action_callback(function(window, pane, line)
+          if line then
+            window:active_tab():set_title(line)
+          end
+        end)
+      }
+    },
+    {
       key = "n",
       mods = "LEADER",
       action = wezterm.action.ToggleFullScreen,

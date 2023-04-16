@@ -64,8 +64,8 @@ let g:switch_custom_definitions =
     \ ]
 
 set termguicolors
-set background=light
-colorscheme modus-operandi
+set background=dark
+colorscheme modus-vivendi
 set noerrorbells
 set tabstop=2 softtabstop=2
 set shiftwidth=2
