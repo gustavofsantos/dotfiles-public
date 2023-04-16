@@ -21,10 +21,10 @@ return {
   line_height = 1.2,
 
   window_padding = {
-    left = 0,
-    right = 0,
-    top = 0,
-    bottom = 0,
+    left = 16,
+    right = 16,
+    top = 16,
+    bottom = 16,
   },
 
   -- tab bar

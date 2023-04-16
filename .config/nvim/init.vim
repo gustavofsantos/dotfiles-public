@@ -87,8 +87,8 @@ set hidden
 set nofoldenable
 set encoding=utf-8
 set nohlsearch
-set number
-set relativenumber
+" set number
+" set relativenumber
 set tags=./tags,.git/tags
 set showtabline=1
 set scrolloff=5
