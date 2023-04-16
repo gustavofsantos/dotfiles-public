@@ -173,3 +173,6 @@ Desktop
 .config/GNOME-xdg-terminals.list
 .config/dleyna-renderer-service.conf
 cv_debug.log
+.redhat/
+.config/cni/
+.config/obsidian/
