@@ -2,11 +2,26 @@ local wezterm = require("wezterm")
 
 local function scheme_for_appearance(appearance)
   if appearance:find "Dark" then
-    return "ModusVivendi"
+    return "arctic"
   else
     return "ModusOperandi"
   end
 end
+
+wezterm.on('update-right-status', function(window, pane)
+  -- "Wed Mar 3 08:14"
+  local date = wezterm.strftime '%b %-d %H:%M '
+
+  local bat = ''
+  for _, b in ipairs(wezterm.battery_info()) do
+    bat = '󱐋 ' .. string.format('%.0f%%', b.state_of_charge * 100)
+  end
+
+  window:set_right_status(wezterm.format {
+    { Text = date .. ' | ' .. bat },
+    { Foreground = { Color = "#d4d4d4" } },
+  })
+end)
 
 return {
   force_reverse_video_cursor = true,
@@ -14,23 +29,23 @@ return {
 
   -- font
   font = wezterm.font("MonoLisa Nerd Font", { weight = "Medium" }),
-  font_size = 11.0,
+  font_size = 12,
 
-  window_background_opacity = 0.98,
+  window_background_opacity = 0.975,
 
   line_height = 1.2,
 
   window_padding = {
-    left = 16,
-    right = 16,
-    top = 16,
-    bottom = 16,
+    left = 4,
+    right = 4,
+    top = 4,
+    bottom = 4,
   },
 
   -- tab bar
   use_fancy_tab_bar = false,
   tab_bar_at_bottom = true,
-  hide_tab_bar_if_only_one_tab = true,
+  hide_tab_bar_if_only_one_tab = false,
   tab_max_width = 999999,
 
   leader = { key = "k", mods = "CTRL" },
@@ -121,7 +136,7 @@ return {
       action = wezterm.action { ActivateTabRelative = 1 }
     },
     {
-      key = "s",
+      key = "w",
       mods = "LEADER",
       action = wezterm.action.ShowTabNavigator,
     },

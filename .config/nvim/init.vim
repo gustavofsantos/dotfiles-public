@@ -4,11 +4,13 @@ Plug 'kevinhwang91/promise-async'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'rktjmp/lush.nvim'
 
+Plug 'rockyzhang24/arctic.nvim'
 Plug 'rebelot/kanagawa.nvim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'ishan9299/modus-theme-vim'
-Plug 'AhmedAbdulrahman/vim-aylin'
+Plug 'shaunsingh/nord.nvim'
 
 Plug 'jxnblk/vim-mdx-js'
 
@@ -65,7 +67,7 @@ let g:switch_custom_definitions =
 
 set termguicolors
 set background=dark
-colorscheme modus-vivendi
+colorscheme arctic
 set noerrorbells
 set tabstop=2 softtabstop=2
 set shiftwidth=2
@@ -87,8 +89,8 @@ set hidden
 set nofoldenable
 set encoding=utf-8
 set nohlsearch
-" set number
-" set relativenumber
+set number
+set relativenumber
 set tags=./tags,.git/tags
 set showtabline=1
 set scrolloff=5

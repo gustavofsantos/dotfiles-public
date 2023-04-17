@@ -127,6 +127,8 @@ alias lw_migrate="docker-compose exec loggi_web_app bash -c './manage.py migrate
 alias lw_test_urls="docker-compose exec loggi_web_app bash -c 'python manage.py validate_urls && printf \"\n✅ All right with unitary tests for URLs\n\n\" && exit 0 || printf \"\n⚠️  Problem with tests for URLs.\nPlease check the messages above to fix the problem with the tests.\nGood reading: https://loggidev.atlassian.net/wiki/spaces/SI/pages/1351418174/Testing+URI+on+Loggi-web\n\n\" && exit 1'"
 alias lw_show_urls="docker-compose exec loggi_web_app bash -c 'python manage.py show_urls'"
 
+alias wez="flatpak run org.wezfurlong.wezterm"
+
 # -----
 
 # Git aliases
