@@ -176,3 +176,4 @@ cv_debug.log
 .redhat/
 .config/cni/
 .config/obsidian/
+.tldr/
