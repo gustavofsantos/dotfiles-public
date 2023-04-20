@@ -177,3 +177,5 @@ cv_debug.log
 .config/cni/
 .config/obsidian/
 .tldr/
+.sdkman/
+.m2/
