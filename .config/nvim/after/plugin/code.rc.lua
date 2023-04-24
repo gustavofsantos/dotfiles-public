@@ -31,6 +31,7 @@ if has_treesitter then
       "norg",
       "org",
       "rust",
+      "haskell",
       "markdown",
       "javascript",
       "jsdoc",
