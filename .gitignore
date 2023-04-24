@@ -180,3 +180,4 @@ cv_debug.log
 .sdkman/
 .m2/
 neovide_backtraces.log
+.config/ghc
