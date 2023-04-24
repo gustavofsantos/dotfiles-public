@@ -11,6 +11,7 @@ end
 wezterm.on('update-right-status', function(window, pane)
   -- "Wed Mar 3 08:14"
   local date = wezterm.strftime '%b %-d %H:%M '
+  local workspace_name = window:active_workspace()
 
   local bat = ''
   for _, b in ipairs(wezterm.battery_info()) do
@@ -18,7 +19,7 @@ wezterm.on('update-right-status', function(window, pane)
   end
 
   window:set_right_status(wezterm.format {
-    { Text = date .. ' | ' .. bat },
+    { Text = '[' .. workspace_name .. '] ' .. date .. ' | ' .. bat },
     { Foreground = { Color = "#d4d4d4" } },
   })
 end)
@@ -176,6 +177,37 @@ return {
       key = "z",
       mods = "LEADER",
       action = wezterm.action.TogglePaneZoomState,
-    }
+    },
+    { 
+      key = 'l',
+      mods = 'LEADER',
+      action = wezterm.action.ShowLauncherArgs {
+        flags = 'FUZZY|WORKSPACES',
+      },
+    },
+    {
+      key = 'W',
+      mods = 'LEADER',
+      action = wezterm.action.PromptInputLine {
+        description = wezterm.format {
+          { Attribute = { Intensity = 'Bold' } },
+          { Foreground = { AnsiColor = 'Fuchsia' } },
+          { Text = 'Enter name for new workspace' },
+        },
+        action = wezterm.action_callback(function(window, pane, line)
+          -- line will be `nil` if they hit escape without entering anything
+          -- An empty string if they just hit enter
+          -- Or the actual line of text they wrote
+          if line then
+            window:perform_action(
+              wezterm.action.SwitchToWorkspace {
+                name = line,
+              },
+              pane
+            )
+          end
+        end),
+      },
+    },
   }
 }
