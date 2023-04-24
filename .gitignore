@@ -179,3 +179,4 @@ cv_debug.log
 .tldr/
 .sdkman/
 .m2/
+neovide_backtraces.log
