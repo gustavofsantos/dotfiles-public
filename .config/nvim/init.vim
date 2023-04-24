@@ -30,6 +30,7 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
 Plug 'akinsho/toggleterm.nvim'
 Plug 'L3MON4D3/LuaSnip'
+Plug 'Olical/conjure'
 
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
