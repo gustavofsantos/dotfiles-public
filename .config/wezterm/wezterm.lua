@@ -23,6 +23,20 @@ wezterm.on('update-right-status', function(window, pane)
   })
 end)
 
+wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+  local pane_title = tab.active_pane.title
+  local index = tonumber(tab.tab_index) + 1
+  local is_zoomed = tab.active_pane.is_zoomed
+  local format = {}
+
+  if is_zoomed then
+    table.insert(format, { Text = ' ' .. index .. ': Z ' .. pane_title .. ' ' })
+  else
+    table.insert(format, { Text = ' ' .. index .. ': ' .. pane_title .. ' ' })
+  end
+  return format
+end)
+
 return {
   force_reverse_video_cursor = true,
   color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
