@@ -4,6 +4,10 @@ function basename(s)
   return string.gsub(s, '(.*[/\\])(.*)', '%2')
 end
 
+local function isempty(s)
+  return s == nil or s == ''
+end
+
 function scheme_for_appearance(appearance)
   if appearance:find "Dark" then
     return "MonokaiPro"
@@ -36,13 +40,13 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   local format = {}
 
   if is_zoomed then
-    if tab_title then
+    if not isempty(tab_title) then
       table.insert(format, { Text = ' ' .. index .. ': Z ' .. tab_title .. ' ' })
     else
       table.insert(format, { Text = ' ' .. index .. ' Z ' })
     end
   else
-    if tab_title then
+    if not isempty(tab_title) then
       table.insert(format, { Text = ' ' .. index .. ': ' .. tab_title .. ' ' })
     else
       table.insert(format, { Text = ' ' .. index .. ' ' })
@@ -57,7 +61,7 @@ return {
 
   -- font
   font = wezterm.font("MonoLisa Nerd Font", { weight = "Medium" }),
-  font_size = 12,
+  font_size = 13,
 
   window_background_opacity = 0.975,
 
