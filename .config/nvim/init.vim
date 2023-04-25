@@ -11,6 +11,7 @@ Plug 'rebelot/kanagawa.nvim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'ishan9299/modus-theme-vim'
 Plug 'shaunsingh/nord.nvim'
+Plug 'loctvl842/monokai-pro.nvim'
 
 Plug 'jxnblk/vim-mdx-js'
 
@@ -68,7 +69,8 @@ let g:switch_custom_definitions =
 
 set termguicolors
 set background=dark
-colorscheme arctic
+" colorscheme arctic
+colorscheme monokai-pro
 set noerrorbells
 set tabstop=2 softtabstop=2
 set shiftwidth=2
@@ -103,7 +105,7 @@ set updatetime=100
 set clipboard+=unnamedplus
 set wildmenu
 set completeopt=menuone,noinsert,noselect
-set signcolumn=no
+set signcolumn=yes
 set pumheight=10
 set grepprg=ag
 set wildmode=list:longest,full

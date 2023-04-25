@@ -13,6 +13,29 @@ if has_solarized then
   }
 end
 
+local has_monokai_pro, _ = pcall(require, 'monokai-pro')
+if has_monokai_pro then
+  require('monokai-pro').setup({
+    devicons = true,
+    styles = {
+      comment = { italic = true },
+      keyword = { italic = true }, -- any other keyword
+      type = { bold = true }, -- (preferred) int, long, char, etc
+      storageclass = { italic = true }, -- static, register, volatile, etc
+      structure = { italic = true }, -- struct, union, enum, etc
+      parameter = { }, -- parameter pass in function
+      annotation = { italic = true },
+      tag_attribute = { italic = true }, -- attribute of tag in reactjs
+    },
+    filter = "pro", -- classic | octagon | pro | machine | ristretto | spectrum
+    -- Enable this will disable filter option
+    day_night = {
+      enable = true, -- turn off by default
+      day_filter = "pro", -- classic | octagon | pro | machine | ristretto | spectrum
+      night_filter = "spectrum", -- classic | octagon | pro | machine | ristretto | spectrum
+    },
+  })
+end
 
 local has_kanagawa, kanagawa = pcall(require, 'kanagawa')
 if has_kanagawa then

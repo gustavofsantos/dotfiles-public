@@ -1,8 +1,12 @@
 local wezterm = require("wezterm")
 
-local function scheme_for_appearance(appearance)
+function basename(s)
+  return string.gsub(s, '(.*[/\\])(.*)', '%2')
+end
+
+function scheme_for_appearance(appearance)
   if appearance:find "Dark" then
-    return "arctic"
+    return "MonokaiPro"
   else
     return "ModusOperandi"
   end
@@ -25,16 +29,24 @@ wezterm.on('update-right-status', function(window, pane)
 end)
 
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-  local pane_title = tab.active_pane.title
+  local pane_title = basename(tab.active_pane.foreground_process_name)
   local tab_title = tab.tab_title
   local index = tonumber(tab.tab_index) + 1
   local is_zoomed = tab.active_pane.is_zoomed
   local format = {}
 
   if is_zoomed then
-    table.insert(format, { Text = ' ' .. index .. ': Z ' .. (tab_title and tab_title or pane_title) .. ' ' })
+    if tab_title then
+      table.insert(format, { Text = ' ' .. index .. ': Z ' .. tab_title .. ' ' })
+    else
+      table.insert(format, { Text = ' ' .. index .. ' Z ' })
+    end
   else
-    table.insert(format, { Text = ' ' .. index .. ': ' .. (tab_title and tab_title or pane_title) .. ' ' })
+    if tab_title then
+      table.insert(format, { Text = ' ' .. index .. ': ' .. tab_title .. ' ' })
+    else
+      table.insert(format, { Text = ' ' .. index .. ' ' })
+    end
   end
   return format
 end)
@@ -52,10 +64,10 @@ return {
   line_height = 1.2,
 
   window_padding = {
-    left = 4,
-    right = 4,
-    top = 4,
-    bottom = 4,
+    left = 0,
+    right = 0,
+    top = 0,
+    bottom = 0,
   },
 
   -- tab bar
@@ -167,6 +179,11 @@ return {
           end
         end)
       }
+    },
+    {
+      key = "o",
+      mods = "LEADER",
+      action = wezterm.action.RotatePanes 'Clockwise'
     },
     {
       key = "n",
