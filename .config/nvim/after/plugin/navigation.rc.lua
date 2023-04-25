@@ -57,7 +57,7 @@ if (has_nvimtree) then
   nvimtree.setup {
     respect_buf_cwd = true,
     view = {
-      width = 36,
+      width = 44,
     },
     actions = {
       open_file = {
