@@ -10,7 +10,7 @@ end
 
 function scheme_for_appearance(appearance)
   if appearance:find "Dark" then
-    return "MonokaiProClassic"
+    return "MonokaiProSpectrum"
   else
     return "ModusOperandi"
   end
@@ -29,6 +29,7 @@ wezterm.on('update-right-status', function(window, pane)
   window:set_right_status(wezterm.format {
     { Text = '[' .. workspace_name .. '] ' .. date .. ' | ' .. bat },
     { Foreground = { Color = "#d4d4d4" } },
+    { Background = { Color = "#363537" } }
   })
 end)
 

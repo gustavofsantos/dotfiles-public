@@ -1,0 +1,77 @@
+# Monokai Pro (Spectrum)
+[colors]
+foreground = "#f7f1ff"
+background = "#222222"
+# cursor_bg = "#bbbbbb"
+# cursor_border = "#bbbbbb"
+# cursor_fg = "#fcfcfa"
+selection_bg = "#fce566"
+selection_fg = "#222222"
+split = "#69676c"
+
+ansi = [
+  "#222222",
+  "#fc618d",
+  "#7bd88f",
+  "#fce566",
+  "#5ad4e6",
+  "#948ae3",
+  "#fd9353",
+  "#f7f1ff"
+]
+brights = [
+  "#363537",
+  "#fc618d",
+  "#7bd88f",
+  "#fce566",
+  "#5ad4e6",
+  "#948ae3",
+  "#fd9353",
+  "#f7f1ff"
+]
+
+[colors.tab_bar]
+background = "#222222"
+foreground = "#f7f1ff"
+inactive_tab_edge = "#222222"
+inactive_tab_edge_hover = "#222222"
+
+[colors.tab_bar.active_tab]
+bg_color = "#363537"
+fg_color = "#fce566"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.inactive_tab]
+bg_color = "#363537"
+fg_color = "#bab6c0"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.inactive_tab_hover]
+bg_color = "#363537"
+fg_color = "#bab6c0"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.new_tab]
+bg_color = "#363537"
+fg_color = "#bab6c0"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.new_tab_hover]
+bg_color = "#363537"
+fg_color = "#bab6c0"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
