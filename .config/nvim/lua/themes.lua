@@ -16,6 +16,7 @@ end
 local has_monokai_pro, _ = pcall(require, 'monokai-pro')
 if has_monokai_pro then
   require('monokai-pro').setup({
+    transparent_background = true,
     devicons = true,
     styles = {
       comment = { italic = true },

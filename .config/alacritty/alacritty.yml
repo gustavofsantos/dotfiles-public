@@ -19,7 +19,7 @@ env:
 window:
   dynamic_padding: true
   dynamic_title: true
-  opacity: 0.985
+  opacity: 0.9
   decorations: none
   decorations_theme_variant: dark
   padding:
