@@ -46,6 +46,9 @@ nnoremap <leader>f2 :lua require('harpoon.ui').nav_file(2)<CR>
 nnoremap <leader>f3 :lua require('harpoon.ui').nav_file(3)<CR>
 nnoremap <leader>f4 :lua require('harpoon.ui').nav_file(4)<CR>
 
+nnoremap ]h :Gitsigns next_hunk<CR>
+nnoremap [h :Gitsigns prev_hunk<CR>
+
 tnoremap <Esc> <C-\\><C-n>
 nnoremap <leader><leader> <C-^>
 nnoremap <leader>ss :Switch<CR>
