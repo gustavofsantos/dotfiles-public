@@ -182,3 +182,4 @@ cv_debug.log
 neovide_backtraces.log
 .config/ghc
 .config/nvtop
+.config/forge
