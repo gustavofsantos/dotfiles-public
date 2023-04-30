@@ -181,3 +181,4 @@ cv_debug.log
 .m2/
 neovide_backtraces.log
 .config/ghc
+.config/nvtop
