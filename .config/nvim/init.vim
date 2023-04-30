@@ -46,6 +46,8 @@ Plug 'github/copilot.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
+source ~/.config/nvim/lua/themes.lua
+
 let mapleader = " "
 let maplocalleader = " "
 

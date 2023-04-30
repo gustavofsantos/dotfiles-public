@@ -31,10 +31,23 @@ if has_monokai_pro then
     filter = "pro", -- classic | octagon | pro | machine | ristretto | spectrum
     -- Enable this will disable filter option
     day_night = {
-      enable = true, -- turn off by default
+      enable = false, -- turn off by default
       day_filter = "pro", -- classic | octagon | pro | machine | ristretto | spectrum
       night_filter = "spectrum", -- classic | octagon | pro | machine | ristretto | spectrum
     },
+    background_clear = {
+      -- "float_win",
+      "toggleterm",
+      "telescope",
+      "which-key",
+      "renamer"
+    },-- "float_win", "toggleterm", "telescope", "which-key", "renamer", "neo-tree"
+    plugins = {
+      bufferline = {
+        underline_selected = false,
+        underline_visible = false,
+      },
+    }
   })
 end
 
