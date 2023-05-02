@@ -2,9 +2,9 @@
 [colors]
 foreground = "#f7f1ff"
 background = "#222222"
-# cursor_bg = "#bbbbbb"
-# cursor_border = "#bbbbbb"
-# cursor_fg = "#fcfcfa"
+cursor_bg = "#fce566"
+cursor_border = "#fce566"
+cursor_fg = "#222222"
 selection_bg = "#fce566"
 selection_fg = "#222222"
 split = "#69676c"

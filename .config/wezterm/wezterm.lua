@@ -10,7 +10,7 @@ end
 
 function scheme_for_appearance(appearance)
   if appearance:find "Dark" then
-    return "MonokaiProSpectrum"
+    return "MonokaiPro"
   else
     return "ModusOperandi"
   end
@@ -62,7 +62,7 @@ return {
 
   -- font
   font = wezterm.font("MonoLisa Nerd Font", { weight = "Medium" }),
-  font_size = 12,
+  font_size = 11,
 
   window_background_opacity = 0.975,
 
