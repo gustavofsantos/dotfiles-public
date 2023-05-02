@@ -114,6 +114,8 @@ alias lw_format="lw_diff | ~/loggi/web/ops/black.sh fix"
 alias lw_lint="lw_diff | flake8 --config=loggi/.flake8 --diff && ~/loggi/web/ops/black.sh check"
 alias lw_lint_watch="lw_diff_files | SHELL=/bin/bash entr -s 'flake8 --config=loggi/.flake8 --diff && ~/loggi/web/ops/black.sh check'"
 alias lw_auth="sh ~/dotfiles/bash_scripts/lw_auth.sh"
+alias dev_beyond="devcontainer --workspace-folder /opt/loggi/ui exec bash -c 'cd targets/beyond && npm start'"
+alias dev_beyond_test_watch="devcontainer --workspace-folder /opt/loggi/ui exec bash -c 'cd targets/beyond && npm run test -- --bail --coverage=false'"
 
 alias ui_review="gh pr list -S 'is:pr is:open user-review-requested:@me label:beyond-conversao' | fzf --preview 'gh pr view {1}' --preview-window down | awk '{print $1}' | xargs gh pr checkout"
 
@@ -180,6 +182,12 @@ function journal () {
   nvim ~/notes/journal/$(date +%Y-%m-%d).md
 }
 
+
+# alias dev_beyond_test="devcontainer --workspace-folder /opt/loggi/ui exec bash -c 'cd targets/beyond && npm run test -- --bail --coverage=false --watchAll=false'"
+function dev_beyond_test() {
+  devcontainer exec --workspace-folder /opt/loggi/ui -- bash -c 'cd targets/beyond && npm run test -- --bail --coverage=false --watchAll=false $0'
+}
+
 function beyond_last_tags_prod() {
   git --no-pager tag --list 'beyond/prod-2023[0-9][0-9][0-9][0-9].[0-9][0-9]' | tail -n 2 | sed -u -e ':a; N; $!ba; s/\n/\.\./g'
 }
@@ -205,6 +213,9 @@ $(beyond_ui_log_pretty_md)
 
 Descrição:
 - 
+
+- https://loggi.sentry.io/issues/?project=5917828&query=is%3Aunresolved+release%3A$(git describe --tags `git rev-list --tags --max-count=1` | sed 's/\//-/g')&referrer=issue-list&statsPeriod=14d
+- https://grafana.loggi.com/d/TZgxLo8nz/beyond-health?orgId=1
 
 cc @dev-beyond
 EOF
