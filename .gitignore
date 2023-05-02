@@ -185,3 +185,4 @@ neovide_backtraces.log
 .config/forge
 .xsel.log
 .config/tmux/plugins
+.config/Logseq/
