@@ -20,6 +20,7 @@ Plug 'sindrets/diffview.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-ui-select.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'run': 'make' }
+Plug 'fannheyward/telescope-coc.nvim'
 Plug 'ThePrimeagen/harpoon'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'

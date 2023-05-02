@@ -9,12 +9,12 @@ endfunction
 nmap Q <Nop>
 
 nmap <silent> K :call ShowDocumentation()<CR>
-nmap [g <Plug>(coc-diagnostic-prev)
-nmap ]g <Plug>(coc-diagnostic-next)
+nmap [e <Plug>(coc-diagnostic-prev)
+nmap ]e <Plug>(coc-diagnostic-next)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gr :Telescope coc references<CR>
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>cl  <Plug>(coc-codelens-action)
 xmap <leader>a  <Plug>(coc-codeaction-selected)
@@ -25,7 +25,7 @@ nmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
 nmap <leader>ac  <Plug>(coc-codeaction-cursor)
 nmap <leader>as  <Plug>(coc-codeaction-source)
 nmap <leader>qf  <Plug>(coc-fix-current)
-nnoremap <leader>ft :CocDiagnostics<CR>
+nnoremap <leader>ft :Telescope coc diagnostics<CR>
 " Search workspace symbols
 nnoremap <silent><nowait> <leader>ws  :<C-u>CocList -I symbols<cr>
 if has('nvim')
@@ -40,7 +40,7 @@ nnoremap zM :lua require('ufo').closeAllFolds()<CR>
 nnoremap <leader>am :lua require('harpoon.mark').add_file()<CR>
 nnoremap <leader>]m :lua require('harpoon.ui').nav_next()<CR>
 nnoremap <leader>[m :lua require('harpoon.ui').nav_prev()<CR>
-nnoremap <leader>fm :lua require("harpoon.ui").toggle_quick_menu()<CR>
+" nnoremap <leader>fm :lua require("harpoon.ui").toggle_quick_menu()<CR>
 nnoremap <leader>f1 :lua require('harpoon.ui').nav_file(1)<CR>
 nnoremap <leader>f2 :lua require('harpoon.ui').nav_file(2)<CR>
 nnoremap <leader>f3 :lua require('harpoon.ui').nav_file(3)<CR>
@@ -49,7 +49,7 @@ nnoremap <leader>f4 :lua require('harpoon.ui').nav_file(4)<CR>
 nnoremap ]h :Gitsigns next_hunk<CR>
 nnoremap [h :Gitsigns prev_hunk<CR>
 
-tnoremap <Esc> <C-\\><C-n>
+tnoremap <Esc> <C-\><C-n>
 nnoremap <leader><leader> <C-^>
 nnoremap <leader>ss :Switch<CR>
 nnoremap <leader>dj :Journal<CR>
@@ -63,10 +63,7 @@ nnoremap <C-b> :NvimTreeToggle<CR>
 
 " Delete buffer
 nnoremap <C-q> :bdelete<CR>
-
-" Save all modified buffers
-nnoremap <C-s> :wall<CR>
-inoremap <C-s> <Esc>:wall<CR>
+nnoremap <leader>q :bdelete<CR>
 
 nnoremap <C-t> :exe v:count1 . "ToggleTerm"<CR>
 inoremap <C-t> <Esc>:exe v:count1 . "ToggleTerm"<CR>
@@ -84,6 +81,7 @@ nnoremap <leader>ff :lua require('telescope.builtin').find_files()<CR>
 nnoremap <leader>fg :lua require('telescope.builtin').git_files()<CR>
 nnoremap <leader>fe :lua require('telescope.builtin').oldfiles()<CR>
 nnoremap <leader>fb :lua require('telescope.builtin').buffers()<CR>
+nnoremap <leader>fm :Telescope harpoon marks<CR>
 nnoremap <leader>fj :lua require('telescope.builtin').jumplist()<CR>
 nnoremap <leader>fo :lua require('telescope.builtin').loclist()<CR>
 nnoremap <leader>fl :lua require('telescope.builtin').live_grep()<CR>
@@ -104,8 +102,10 @@ nnoremap <leader>hr :Gitsigns reset_hunk<CR>
 " split vertically
 nnoremap <C-w>s :vsplit<CR>
 nnoremap <C-w><C-s> :vsplit<CR>
+nnoremap <leader>ws :vsplit<CR>
 " split horizontally
 nnoremap <C-w>S :split<CR>
+nnoremap <leader>wS :split<CR>
 
 " move lines
 nnoremap <A-j> :m .+1<CR>==
