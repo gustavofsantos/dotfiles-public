@@ -11,20 +11,24 @@ font:
   bold_italic:
     family: MonoLisa Nerd Font
     style: Bold Italic
-  size: 11.0
+  size: 10.0
+  offset:
+    x: 0
+    y: 0
 
 env:
   TERM: xterm-256color
 
 window:
-  dynamic_padding: true
+  dynamic_padding: false
   dynamic_title: true
-  opacity: 0.95
+  opacity: 0.985
   decorations: none
   decorations_theme_variant: dark
+  resize_increments: true
   padding:
-    x: 4
-    y: 4
+    x: 0
+    y: 0
 
 draw_bold_text_with_bright_colors: true
 
@@ -45,4 +49,5 @@ cursor:
     blinking: Always
 
 import:
-  - ~/.config/alacritty/themes/monokai_pro.yml
+  - ~/.alacritty.local.yml
+  - ~/.config/alacritty/themes/monokai_pro_spectrum.yml
