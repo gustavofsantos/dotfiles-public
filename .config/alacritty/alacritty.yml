@@ -50,4 +50,4 @@ cursor:
 
 import:
   - ~/.alacritty.local.yml
-  - ~/.config/alacritty/themes/monokai_pro_spectrum.yml
+  - ~/.config/alacritty/themes/kanagawa.yml

@@ -77,12 +77,34 @@ if (has_nvimtree) then
       }
     },
     renderer = {
+      root_folder_modifier = ":t",
       highlight_git = true,
       icons = {
         show = {
-          file = true,
-          folder = true
-        }
+          file = false,
+          folder = false
+        },
+        glyphs = {
+          default = "",
+          symlink = "",
+          bookmark = "",
+          git = {
+            unstaged = "",
+            staged = "",
+            unmerged = "",
+            renamed = "",
+            deleted = "",
+            untracked = "",
+            ignored = "",
+          },
+          folder = {
+            default = "",
+            open = "",
+            symlink = "",
+            arrow_closed = "", -- arrow when folder is closed
+            arrow_open = "", -- arrow when folder is open
+          },
+        },
       },
       special_files = { "package.json", "Makefile", "README.md", "readme.md" },
     },

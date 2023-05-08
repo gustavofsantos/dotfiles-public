@@ -51,9 +51,9 @@ if has_monokai_pro then
   })
 end
 
-local has_kanagawa, kanagawa = pcall(require, 'kanagawa')
+local has_kanagawa, _ = pcall(require, 'kanagawa')
 if has_kanagawa then
-  kanagawa.setup {
+  require('kanagawa').setup {
     dimInactive = false,
     globalStatus = true,
     commentStyle = { italic = true },
@@ -62,6 +62,22 @@ if has_kanagawa then
     statementStyle = { italic = true, bold = true },
     typeStyle = { italic = true },
     variablebuiltinStyle = { italic = true},
+    colors = {
+      theme = {
+        all = {
+          ui = {
+            bg_gutter = "none",
+            -- bg = "#0f111a",
+          },
+        },
+      },
+    },
+    overrides = function (colors)
+      return {
+        StatusLine = { fg = colors.palette.fujiGray, bg = colors.theme.ui.bg },
+        StatusLineNC = { fg = colors.palette.fujiGray, bg = colors.theme.ui.bg },
+      }
+    end
   }
 end
 
