@@ -53,6 +53,10 @@ end
 
 local has_kanagawa, _ = pcall(require, 'kanagawa')
 if has_kanagawa then
+  local DARK_BLUE = "#0f111a"
+  local PINK = "#af73c8"
+  local RED = "#EF4444"
+  local GRAY = "#b2b2b2"
   require('kanagawa').setup {
     dimInactive = false,
     globalStatus = true,
@@ -67,7 +71,7 @@ if has_kanagawa then
         all = {
           ui = {
             bg_gutter = "none",
-            -- bg = "#0f111a",
+            bg = DARK_BLUE,
           },
         },
       },
@@ -76,6 +80,20 @@ if has_kanagawa then
       return {
         StatusLine = { fg = colors.palette.fujiGray, bg = colors.theme.ui.bg },
         StatusLineNC = { fg = colors.palette.fujiGray, bg = colors.theme.ui.bg },
+
+        NvimTreeGitDirty = { fg = PINK },
+        NvimTreeGitStaged = { fg = PINK },
+        NvimTreeGitMerge = { fg = PINK },
+        NvimTreeGitRenamed = { fg = PINK },
+        NvimTreeGitNew = { fg = PINK },
+        NvimTreeGitDeleted = { fg = PINK },
+        NvimTreeFolderName = { fg = GRAY },
+        NvimTreeOpenedFolderName = { fg = GRAY },
+        NvimTreeRootFolder = { fg = GRAY, italic = true },
+        NvimTreeSpecialFile = { underline = true, italic = true, fg = GRAY },
+        NvimTreeNormalFloat = { bg = DARK_BLUE },
+        NvimTreeCursorLine = { bg = DARK_BLUE },
+        NvimTreeIndentMarker = { fg = GRAY },
       }
     end
   }

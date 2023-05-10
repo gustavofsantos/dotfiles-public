@@ -1,6 +1,6 @@
 colors:
   primary:
-    background: '0x1f1f28'
+    background: '0x0f111a'
     foreground: '0xdcd7ba'
 
   normal:
