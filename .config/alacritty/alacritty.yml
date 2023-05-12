@@ -50,4 +50,4 @@ cursor:
 
 import:
   - ~/.alacritty.local.yml
-  - ~/.config/alacritty/themes/kanagawa.yml
+  - ~/.config/alacritty/themes/nordic_onedark.yml
