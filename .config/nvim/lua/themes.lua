@@ -13,6 +13,16 @@ if has_solarized then
   }
 end
 
+local has_nordic, _ = pcall(require, 'nordic')
+if has_nordic then
+  require('nordic').setup({
+    theme = 'onedark',
+    telescope = {
+      style = 'flat'
+    }
+  })
+end
+
 local has_monokai_pro, _ = pcall(require, 'monokai-pro')
 if has_monokai_pro then
   require('monokai-pro').setup({

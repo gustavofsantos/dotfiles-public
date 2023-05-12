@@ -10,7 +10,7 @@ Plug 'rockyzhang24/arctic.nvim'
 Plug 'rebelot/kanagawa.nvim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'ishan9299/modus-theme-vim'
-Plug 'shaunsingh/nord.nvim'
+Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }
 Plug 'loctvl842/monokai-pro.nvim'
 
 Plug 'jxnblk/vim-mdx-js'
@@ -73,7 +73,8 @@ let g:switch_custom_definitions =
 set termguicolors
 set background=dark
 " colorscheme arctic
-colorscheme kanagawa
+" colorscheme kanagawa
+colorscheme nordic
 set noerrorbells
 set tabstop=2 softtabstop=2
 set shiftwidth=2

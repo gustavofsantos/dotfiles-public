@@ -4,8 +4,9 @@ if (has_bufferline) then
     options = {
       mode = "tabs",
       separator_style = 'thin',
-      always_show_bufferline = false,
+      always_show_bufferline = true,
       show_buffer_close_icons = false,
+      highlight_inactive_file_icons = false,
       show_close_icon = false,
       max_name_length = 25,
       color_icons = true,
