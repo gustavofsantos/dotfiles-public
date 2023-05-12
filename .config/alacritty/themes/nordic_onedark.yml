@@ -1,0 +1,30 @@
+colors:
+  primary:
+    background: '#1E222A'
+    foreground: '#ABB2BF'
+
+  # Normal colors
+  normal:
+    black:   '#191C24'
+    red:     '#BF616A'
+    green:   '#A3BE8C'
+    yellow:  '#EBCB8B'
+    blue:    '#81A1C1'
+    magenta: '#B48EAD'
+    cyan:    '#8FBCBB' 
+    white:   '#ABB2BF'
+
+  # Bright colors
+  bright:
+    black:   '#3B4252'
+    red:     '#D06F79'
+    green:   '#B1D196'
+    yellow:  '#F0D399'
+    blue:    '#88C0D0'
+    magenta: '#C895BF'
+    cyan:    '#93CCDC'
+    white:   '#E5E9F0'
+
+  selection:
+    text: "#2E3440" # base
+    background: "#D8DEE9" # rosewater
