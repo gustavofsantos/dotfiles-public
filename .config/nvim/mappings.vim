@@ -69,7 +69,7 @@ nnoremap <C-t> :exe v:count1 . "ToggleTerm"<CR>
 inoremap <C-t> <Esc>:exe v:count1 . "ToggleTerm"<CR>
 tnoremap <C-t> <C-\><C-n>:ToggleTerm<CR>
 
-nnoremap <C-p> :Telescope git_files<CR>
+nnoremap <C-p> :Telescope find_files<CR>
 nnoremap <C-f> :Telescope current_buffer_fuzzy_find<CR>
 nnoremap <C-k><C-e> :Telescope oldfiles<CR>
 nnoremap <C-k><C-b> :Telescope buffers<CR>
