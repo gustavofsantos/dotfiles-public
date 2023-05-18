@@ -186,3 +186,7 @@ neovide_backtraces.log
 .xsel.log
 .config/tmux/plugins
 .config/Logseq/
+.eclipse/
+.sonarlint/
+.swt/
+.themes/

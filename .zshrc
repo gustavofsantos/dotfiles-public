@@ -110,7 +110,7 @@ alias lglt="git diff --relative --name-only HEAD | grep -E '.jsx?$' | xargs ./..
 alias bui_commit="lglt && git commit"
 alias lw_diff="git diff -U0 master...HEAD '*.py'"
 alias lw_diff_files="git diff --name-only master...HEAD '*.py'"
-alias lw_format="lw_diff | ~/loggi/web/ops/black.sh fix"
+alias lw_format="docker-compose exec loggi_web_app bash -c 'cd .. && ./ops/black.sh fix'"
 alias lw_lint="lw_diff | flake8 --config=loggi/.flake8 --diff && ~/loggi/web/ops/black.sh check"
 alias lw_lint_watch="lw_diff_files | SHELL=/bin/bash entr -s 'flake8 --config=loggi/.flake8 --diff && ~/loggi/web/ops/black.sh check'"
 alias lw_auth="sh ~/dotfiles/bash_scripts/lw_auth.sh"
@@ -226,7 +226,7 @@ export PNPM_HOME="/home/gustavo/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
-# eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
