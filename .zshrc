@@ -94,33 +94,6 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 export EDITOR='nvim'
 
-alias v="nvim"
-alias vim="nvim"
-alias jest="npx jest"
-alias prisma="npx prisma"
-alias rt="npm run test"
-
-alias emacs="emacsclient -c -a 'emacs'"
-alias em="emacs -nw"
-
-alias wez="flatpak run org.wezfurlong.wezterm"
-
-# -----
-
-# Git aliases
-alias g="git"
-
-# TMUX aliases
-alias trename="tmux rename-session"
-
-alias ..="cd .."
-
-alias ll="ls -lhF --color"
-alias la="ls -lahF --color"
-alias lsd="ls -lhF --color | grep --color=never '^d'"
-
-alias gogh="bash -c  \"\$(wget -qO- https://git.io/vQgMr)\""
-
 export PATH=$PATH:"$HOME"/.local/bin
 export PATH=$PATH:"$HOME"/.bin
 export PATH=$PATH:"$HOME"/bin

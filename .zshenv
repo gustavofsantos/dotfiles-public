@@ -20,6 +20,7 @@ alias gogh="bash -c  \"\$(wget -qO- https://git.io/vQgMr)\""
 
 # Loggi aliases
 alias lwt="docker-compose exec -e DJANGO_SETTINGS_MODULE=settings.test loggi_web_app pytest -vv"
+alias lwt_tmux="tmux new-window -d -n '' lwt "
 alias lggt="npm run test -- --bail --coverage=false --watchAll=false"
 alias lggw="npm run test -- --bail --coverage=false"
 alias lglt="git diff --relative --name-only HEAD | grep -E '.jsx?$' | xargs ./../../node_modules/.bin/eslint --fix"
