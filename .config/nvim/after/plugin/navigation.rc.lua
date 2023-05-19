@@ -5,7 +5,13 @@ if (has_telescope) then
     defaults = {
       dynamic_preview_title = true,
       prompt_prefix = "> ",
-      theme = "ivy"
+      theme = "ivy",
+      file_ignore_patterns = {
+        "%.git/",
+        "node_modules/",
+        "coverage/",
+        "__pycache__/",
+      }
     },
     pickers = {
       find_files = { theme = "ivy", previewer = false, hidden = true },
