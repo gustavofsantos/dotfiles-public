@@ -37,6 +37,7 @@ Plug 'Olical/conjure'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
 Plug 'AndrewRadev/switch.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-fugitive'
@@ -141,6 +142,7 @@ if has('nvim')
   command! Doing :lua require('telescope.builtin').grep_string({ cwd = '~/notes', search = '- [-]' })<CR>
   command! Done :lua require('telescope.builtin').grep_string({ cwd = '~/notes', search = '- [x]' })<CR>
   command! LWT :lua require('toggleterm').exec("lwt " .. string.gsub(vim.fn.expand("%"), "loggi/", ""))
+  " command! LWT :lua vim.cmd("!tmux new-window -d -n '' 'lwt " .. string.gsub(vim.fn.expand("%"), "loggi/", "") .. "'; read")
   command! LGGT :lua require('toggleterm').exec("lggt " .. vim.fn.expand("%:p:h:t") .. "/" .. vim.fn.expand("%:t"))
   command! LGGW :lua require('toggleterm').exec("lggw " .. vim.fn.expand("%:p:h:t") .. "/" .. vim.fn.expand("%:t"))
   command! PlaywrightDebug :lua require('toggleterm').exec("npx playwright test " .. vim.fn.expand("%:t") .. " --debug" )
