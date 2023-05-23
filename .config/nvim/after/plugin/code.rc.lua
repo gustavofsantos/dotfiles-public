@@ -74,6 +74,7 @@ if has_treesitter then
           ['if'] = '@function.inner',
           ['ac'] = '@class.outer',
           ['ic'] = '@class.inner',
+          ['aC'] = '@function.call'
         },
       },
       move = {
