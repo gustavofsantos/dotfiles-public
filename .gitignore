@@ -190,3 +190,6 @@ neovide_backtraces.log
 .sonarlint/
 .swt/
 .themes/
+.config/skypeforlinux/
+local-docker-compose.yml
+local.dockerfile
