@@ -88,8 +88,8 @@ end
 local has_toggleterm, toggleterm = pcall(require, "toggleterm")
 if (has_toggleterm) then
   toggleterm.setup {
-    direction = 'horizontal',
-    size = 20,
+    direction = 'vertical',
+    size = 80,
     winbar = {
       enabled = true,
       name_formatter = function(term) --  term: Terminal
