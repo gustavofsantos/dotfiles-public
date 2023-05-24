@@ -174,6 +174,7 @@ export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
 eval "$(starship init zsh)"
+eval "$(direnv hook zsh)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"

@@ -1,17 +1,30 @@
 font:
   normal:
-    family: OperatorMono Nerd Font
-    style: Book
+    family: MonoLisa Nerd Font
+    style: Regular
   italic:
-    family: OperatorMono Nerd Font
-    style: Book Italic
+    family: MonoLisa Nerd Font
+    style: Regular Italic
   bold:
-    family: OperatorMono Nerd Font
-    style: Medium
+    family: MonoLisa Nerd Font
+    style: Bold
   bold_italic:
-    family: OperatorMono Nerd Font
-    style: Medium Italic
-  size: 10
+    family: MonoLisa Nerd Font
+    style: Bold Italic
+  size: 8.5
+  # normal:
+  #   family: MonoLisa Nerd Font
+  #   style: Regular
+  # italic:
+  #   family: MonoLisa Nerd Font
+  #   style: Regular Italic
+  # bold:
+  #   family: MonoLisa Nerd Font
+  #   style: Bold
+  # bold_italic:
+  #   family: MonoLisa Nerd Font
+  #   style: Bold Italic
+  # size: 9.5
   offset:
     x: 0
     y: 0
