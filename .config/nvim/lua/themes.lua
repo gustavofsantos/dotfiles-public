@@ -8,11 +8,33 @@ if has_nordic then
     },
     override = {
       Keyword = { italic = true },
+
+      BufferlineFill = { bg = palette.grey0 },
+			BufferlineBackground = { bg = palette.gray0 },
+			BufferlineSeparator = { bg = palette.gray0, fg = palette.gray0 },
+			BufferlineSeparatorVisible = { fg = palette.gray4 },
+			BufferLineBufferSelected = { fg = palette.white2, bold = true, italic = false },
+			BufferLineBufferVisible = { bg = palette.gray0, fg = palette.gray4 },
+
+      NvimTreeGitDirty = { fg = palette.magenta.base },
+      NvimTreeGitStaged = { fg = palette.magenta.base },
+      NvimTreeGitMerge = { fg = palette.magenta.base },
+      NvimTreeGitRenamed = { fg = palette.magenta.base },
+      NvimTreeGitNew = { fg = palette.magenta.base },
+      NvimTreeGitDeleted = { fg = palette.magenta.base },
+      NvimTreeFolderName = { fg = palette.gray3 },
+      NvimTreeOpenedFolderName = { fg = palette.gray3 },
+      NvimTreeRootFolder = { fg = palette.gray3, italic = true },
+      NvimTreeSpecialFile = { underline = true, italic = true, fg = palette.gray3 },
+      NvimTreeNormalFloat = { bg = palette.gray0 },
+      NvimTreeCursorLine = { bg = palette.gray0 },
+      NvimTreeIndentMarker = { fg = palette.gray3 },
+
       ['@keyword'] = { italic = true },
       ['@keyword.function'] = { italic = true },
       ['@keyword.return'] = { italic = true },
-      ['@punctuation.bracket'] = { fg = palette.grey4 },
-      ['@tag.delimiter'] = { fg = palette.grey4 },
+      ['@punctuation.bracket'] = { fg = palette.gray4 },
+      ['@tag.delimiter'] = { fg = palette.gray4 },
       ['@tag.attribute'] = { italic = true },
     }
   })

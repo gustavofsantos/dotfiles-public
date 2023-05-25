@@ -6,9 +6,11 @@ if (has_bufferline) then
       separator_style = 'thin',
       always_show_bufferline = true,
       show_buffer_close_icons = false,
+      show_buffer_icons = false,
+      show_buffer_default_icon = false,
       highlight_inactive_file_icons = false,
       show_close_icon = false,
-      max_name_length = 25,
+      -- max_name_length = 25,
       color_icons = true,
       diagnostics = "nvim_lsp",
       indicator = {
