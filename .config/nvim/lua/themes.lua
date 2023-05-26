@@ -42,8 +42,6 @@ end
 
 local has_kanagawa, _ = pcall(require, 'kanagawa')
 if has_kanagawa then
-  local DARK_BLUE = "#0f111a"
-  local PINK = "#af73c8"
   local RED = "#EF4444"
   local GRAY = "#b2b2b2"
   require('kanagawa').setup {
@@ -60,7 +58,6 @@ if has_kanagawa then
         all = {
           ui = {
             bg_gutter = "none",
-            bg = DARK_BLUE,
           },
         },
       },
@@ -70,19 +67,29 @@ if has_kanagawa then
         StatusLine = { fg = colors.palette.fujiGray, bg = colors.theme.ui.bg },
         StatusLineNC = { fg = colors.palette.fujiGray, bg = colors.theme.ui.bg },
 
-        NvimTreeGitDirty = { fg = PINK },
-        NvimTreeGitStaged = { fg = PINK },
-        NvimTreeGitMerge = { fg = PINK },
-        NvimTreeGitRenamed = { fg = PINK },
-        NvimTreeGitNew = { fg = PINK },
-        NvimTreeGitDeleted = { fg = PINK },
+        BufferlineFill = { bg = colors.palette.sumiInk0 },
+        BufferlineBackground = { bg = colors.palette.sumiInk0 },
+        BufferLineBufferSelected = { bold = true, italic = false },
+
+        NvimTreeGitDirty = { fg = colors.palette.oniViolet },
+        NvimTreeGitStaged = { fg = colors.palette.oniViolet },
+        NvimTreeGitMerge = { fg = colors.palette.oniViolet },
+        NvimTreeGitRenamed = { fg = colors.palette.oniViolet },
+        NvimTreeGitNew = { fg = colors.palette.oniViolet },
+        NvimTreeGitDeleted = { fg = colors.palette.oniViolet },
         NvimTreeFolderName = { fg = GRAY },
         NvimTreeOpenedFolderName = { fg = GRAY },
         NvimTreeRootFolder = { fg = GRAY, italic = true },
         NvimTreeSpecialFile = { underline = true, italic = true, fg = GRAY },
-        NvimTreeNormalFloat = { bg = DARK_BLUE },
-        NvimTreeCursorLine = { bg = DARK_BLUE },
+        -- NvimTreeNormalFloat = { bg = DARK_BLUE },
+        -- NvimTreeCursorLine = { bg = DARK_BLUE },
         NvimTreeIndentMarker = { fg = GRAY },
+
+        ['@type'] = { italic = false, bold = true },
+        ['@tag'] = { italic = false },
+        ['@tag.delimiter'] = { fg = colors.palette.sumiInk6 },
+        ['@tag.attribute'] = { italic = true },
+        ['@punctuation.bracket'] = { fg = colors.palette.sumiInk6 },
       }
     end
   }
