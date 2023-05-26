@@ -42,8 +42,6 @@ end
 
 local has_kanagawa, _ = pcall(require, 'kanagawa')
 if has_kanagawa then
-  local RED = "#EF4444"
-  local GRAY = "#b2b2b2"
   require('kanagawa').setup {
     dimInactive = false,
     globalStatus = true,
@@ -77,13 +75,13 @@ if has_kanagawa then
         NvimTreeGitRenamed = { fg = colors.palette.oniViolet },
         NvimTreeGitNew = { fg = colors.palette.oniViolet },
         NvimTreeGitDeleted = { fg = colors.palette.oniViolet },
-        NvimTreeFolderName = { fg = GRAY },
-        NvimTreeOpenedFolderName = { fg = GRAY },
-        NvimTreeRootFolder = { fg = GRAY, italic = true },
-        NvimTreeSpecialFile = { underline = true, italic = true, fg = GRAY },
-        -- NvimTreeNormalFloat = { bg = DARK_BLUE },
-        -- NvimTreeCursorLine = { bg = DARK_BLUE },
-        NvimTreeIndentMarker = { fg = GRAY },
+        NvimTreeFolderName = { fg = colors.palette.fujiGray },
+        NvimTreeOpenedFolderName = { fg = colors.palette.fujiGray },
+        NvimTreeRootFolder = { fg = colors.palette.fujiGray, italic = true },
+        NvimTreeSpecialFile = { underline = true, italic = true, fg = colors.palette.fujiGray },
+        NvimTreeNormalFloat = { bg = colors.theme.ui.bg },
+        NvimTreeCursorLine = { bg = colors.palette.sumiInk5 },
+        NvimTreeIndentMarker = { fg = colors.palette.fujiGray },
 
         ['@type'] = { italic = false, bold = true },
         ['@tag'] = { italic = false },
