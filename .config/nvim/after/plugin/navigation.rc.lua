@@ -76,6 +76,12 @@ if (has_nvimtree) then
     respect_buf_cwd = true,
     view = {
       width = 44,
+      float = {
+        enable = true,
+        open_win_config = {
+          width = 60,
+        },
+      },
     },
     actions = {
       open_file = {
