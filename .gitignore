@@ -148,7 +148,6 @@ roam/
 styles/
 loggi
 install.sh
-
 *.mkv
 *.mp4
 .config/nushell/
@@ -193,3 +192,5 @@ neovide_backtraces.log
 .config/skypeforlinux/
 local-docker-compose.yml
 local.dockerfile
+.config/nix/
+.devenv/
