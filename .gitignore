@@ -194,3 +194,6 @@ local-docker-compose.yml
 local.dockerfile
 .config/nix/
 .devenv/
+.config/Supernotes/
+.config/appimagelauncher.cfg
+Applications/
