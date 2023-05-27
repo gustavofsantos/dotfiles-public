@@ -37,7 +37,7 @@ window:
   dynamic_title: true
   # opacity: 0.985
   decorations: full
-  decorations_theme_variant: dark
+  decorations_theme_variant: Dark
   resize_increments: true
   padding:
     x: 0
