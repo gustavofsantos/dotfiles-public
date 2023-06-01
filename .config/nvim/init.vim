@@ -142,8 +142,8 @@ if has('nvim')
   command! Done :lua require('telescope.builtin').grep_string({ cwd = '~/notes', search = '- DONE' })<CR>
   command! LWT :lua require('toggleterm').exec("lwt " .. string.gsub(vim.fn.expand("%"), "loggi/", ""))
   " command! LWT :lua vim.cmd("!tmux new-window -d -n '' 'lwt " .. string.gsub(vim.fn.expand("%"), "loggi/", "") .. "'; read")
-  command! LGGT :lua require('toggleterm').exec("lggt " .. vim.fn.expand("%:p:h:t") .. "/" .. vim.fn.expand("%:t"))
-  command! LGGW :lua require('toggleterm').exec("lggw " .. vim.fn.expand("%:p:h:t") .. "/" .. vim.fn.expand("%:t"))
+  command! LGGT :lua require('toggleterm').exec("lggt " .. vim.fn.expand("%"))
+  command! LGGW :lua require('toggleterm').exec("lggw " .. vim.fn.expand("%"))
   command! PlaywrightDebug :lua require('toggleterm').exec("npx playwright test " .. vim.fn.expand("%:t") .. " --debug" )
   autocmd TermEnter term://*toggleterm#*
         \ tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>

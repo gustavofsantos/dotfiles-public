@@ -65,6 +65,8 @@ nnoremap <C-b> :NvimTreeToggle<CR>
 nnoremap <C-q> :bdelete<CR>
 nnoremap <leader>q :bdelete<CR>
 
+nnoremap <leader>tw :!tmux neww -n "󰙨" "lggw %"<CR>
+
 nnoremap <C-t> :exe v:count1 . "ToggleTerm"<CR>
 inoremap <C-t> <Esc>:exe v:count1 . "ToggleTerm"<CR>
 tnoremap <C-t> <C-\><C-n>:ToggleTerm<CR>

@@ -10,7 +10,7 @@ end
 
 function scheme_for_appearance(appearance)
   if appearance:find "Dark" then
-    return "MonokaiPro"
+    return "Kanagawa"
   else
     return "ModusOperandi"
   end
@@ -62,7 +62,7 @@ return {
 
   -- font
   font = wezterm.font("MonoLisa Nerd Font", { weight = "Medium" }),
-  font_size = 11,
+  font_size = 9.5,
 
   window_background_opacity = 0.975,
 
@@ -78,7 +78,7 @@ return {
   -- tab bar
   use_fancy_tab_bar = false,
   tab_bar_at_bottom = true,
-  hide_tab_bar_if_only_one_tab = false,
+  hide_tab_bar_if_only_one_tab = true,
   tab_max_width = 999999,
 
   leader = { key = "k", mods = "CTRL" },
