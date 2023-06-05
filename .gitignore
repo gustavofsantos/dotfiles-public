@@ -197,3 +197,5 @@ local.dockerfile
 .config/Supernotes/
 .config/appimagelauncher.cfg
 Applications/
+.config/Raspberry Pi/
+.config/sqlitebrowser/
