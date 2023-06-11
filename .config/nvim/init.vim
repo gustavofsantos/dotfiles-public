@@ -11,7 +11,6 @@ Plug 'rebelot/kanagawa.nvim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'ishan9299/modus-theme-vim'
 Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }
-Plug 'loctvl842/monokai-pro.nvim'
 
 Plug 'jxnblk/vim-mdx-js'
 
@@ -32,7 +31,6 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
 Plug 'akinsho/toggleterm.nvim'
 Plug 'L3MON4D3/LuaSnip'
-Plug 'Olical/conjure'
 
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
