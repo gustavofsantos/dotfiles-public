@@ -133,6 +133,8 @@ command! LWT :lua require('toggleterm').exec("lwt " .. string.gsub(vim.fn.expand
 " command! LWT :lua vim.cmd("!tmux new-window -d -n '' 'lwt " .. string.gsub(vim.fn.expand("%"), "loggi/", "") .. "'; read")
 command! LGGT :lua require('toggleterm').exec("lggt " .. vim.fn.expand("%"))
 command! LGGW :lua require('toggleterm').exec("lggw " .. vim.fn.expand("%"))
+command! LGGTX :!tmux neww -n "󰙨" "lggt %"
+command! LGGWX :!tmux neww -n "󰙨" "lggw %"
 command! PlaywrightDebug :lua require('toggleterm').exec("npx playwright test " .. vim.fn.expand("%:t") .. " --debug" )
 autocmd TermEnter term://*toggleterm#*
       \ tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
