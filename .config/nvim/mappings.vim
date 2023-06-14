@@ -80,6 +80,7 @@ nnoremap <leader>fj :lua require('telescope.builtin').jumplist()<CR>
 nnoremap <leader>fo :lua require('telescope.builtin').loclist()<CR>
 nnoremap <leader>fl :lua require('telescope.builtin').live_grep()<CR>
 nnoremap <leader>fs :lua require('telescope.builtin').lsp_document_symbols()<cr>
+" nnoremap gr :lua require('telescope.builtin').lsp_references()<cr>
 nnoremap <leader>fk :lua require('telescope.builtin').keymaps()<CR>
 nnoremap <leader>fh :lua require('telescope.builtin').search_history()<CR>
 nnoremap <leader>f? :lua require('telescope.builtin').help_tags()<CR>
