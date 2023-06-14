@@ -1,14 +1,11 @@
 call plug#begin()
 " Neovim plugins
-Plug 'kevinhwang91/promise-async'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'rktjmp/lush.nvim'
 
 Plug 'rockyzhang24/arctic.nvim'
 Plug 'rebelot/kanagawa.nvim'
-Plug 'lifepillar/vim-solarized8'
 Plug 'ishan9299/modus-theme-vim'
 Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }
 Plug 'rmehri01/onenord.nvim'
@@ -20,7 +17,6 @@ Plug 'sindrets/diffview.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-ui-select.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'run': 'make' }
-Plug 'fannheyward/telescope-coc.nvim'
 Plug 'ThePrimeagen/harpoon'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
@@ -36,15 +32,12 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-dispatch'
-Plug 'AndrewRadev/switch.vim'
-Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'AndrewRadev/switch.vim'
+Plug 'justinmk/vim-sneak'
 Plug 'vim-test/vim-test'
 Plug 'github/copilot.vim'
-
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 source ~/.config/nvim/lua/themes.lua
