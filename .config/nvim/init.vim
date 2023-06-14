@@ -11,6 +11,7 @@ Plug 'rebelot/kanagawa.nvim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'ishan9299/modus-theme-vim'
 Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }
+Plug 'rmehri01/onenord.nvim'
 
 Plug 'jxnblk/vim-mdx-js'
 
@@ -71,9 +72,9 @@ let g:switch_custom_definitions =
 
 set termguicolors
 set background=dark
-colorscheme kanagawa
+" colorscheme kanagawa
 " colorscheme modus-operandi
-" colorscheme nordic
+colorscheme nordic
 set noerrorbells
 set tabstop=2 softtabstop=2
 set shiftwidth=2
@@ -168,4 +169,3 @@ augroup filetype_jsx
 augroup END
 
 source ~/.config/nvim/mappings.vim
-" lua require('mappings')
