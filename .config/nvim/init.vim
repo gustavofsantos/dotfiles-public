@@ -4,40 +4,59 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 
+" UI
 Plug 'rockyzhang24/arctic.nvim'
 Plug 'rebelot/kanagawa.nvim'
 Plug 'ishan9299/modus-theme-vim'
 Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }
 Plug 'rmehri01/onenord.nvim'
-
 Plug 'jxnblk/vim-mdx-js'
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
+Plug 'nvim-lualine/lualine.nvim'
 
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'lewis6991/gitsigns.nvim', { 'tag': 'v0.6' }
 Plug 'sindrets/diffview.nvim'
+
+" Navigation
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-ui-select.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'run': 'make' }
 Plug 'ThePrimeagen/harpoon'
+Plug 'kyazdani42/nvim-tree.lua'
+Plug 'akinsho/toggleterm.nvim'
+Plug 'mbbill/undotree'
+
+" Code editing
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'RRethy/nvim-treesitter-textsubjects'
 Plug 'nvim-treesitter/playground'
 Plug 'kevinhwang91/nvim-ufo'
-Plug 'kyazdani42/nvim-tree.lua'
-Plug 'nvim-lualine/lualine.nvim'
-Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
-Plug 'akinsho/toggleterm.nvim'
-Plug 'L3MON4D3/LuaSnip'
-
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
 Plug 'AndrewRadev/switch.vim'
 Plug 'justinmk/vim-sneak'
+
+" Running tests
 Plug 'vim-test/vim-test'
+
+" LSP
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v2.x'}
 Plug 'github/copilot.vim'
+
 call plug#end()
 
 source ~/.config/nvim/lua/themes.lua
