@@ -1,31 +1,5 @@
 nmap Q <Nop>
 
-" nmap <silent> K :call ShowDocumentation()<CR>
-" nmap [e <Plug>(coc-diagnostic-prev)
-" nmap ]e <Plug>(coc-diagnostic-next)
-" nmap <silent> gd <Plug>(coc-definition)
-" nmap <silent> gy <Plug>(coc-type-definition)
-" nmap <silent> gi <Plug>(coc-implementation)
-" nmap <silent> gr :Telescope coc references<CR>
-" nmap <leader>rn <Plug>(coc-rename)
-" nmap <leader>cl  <Plug>(coc-codelens-action)
-" xmap <leader>a  <Plug>(coc-codeaction-selected)
-" nmap <leader>a  <Plug>(coc-codeaction-selected)
-" nmap <silent> <leader>re <Plug>(coc-codeaction-refactor)
-" xmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
-" nmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
-" nmap <leader>ac  <Plug>(coc-codeaction-cursor)
-" nmap <leader>as  <Plug>(coc-codeaction-source)
-" nmap <leader>qf  <Plug>(coc-fix-current)
-" nnoremap <leader>ft :Telescope coc diagnostics<CR>
-" " Search workspace symbols
-" nnoremap <silent><nowait> <leader>ws  :<C-u>CocList -I symbols<cr>
-" if has('nvim')
-"   inoremap <silent><expr> <c-space> coc#refresh()
-" else
-"   inoremap <silent><expr> <c-@> coc#refresh()
-" endif
-
 nnoremap zR :lua require('ufo').openAllFolds()<CR>
 nnoremap zM :lua require('ufo').closeAllFolds()<CR>
 
@@ -59,9 +33,9 @@ nnoremap <leader>q :bdelete<CR>
 
 nnoremap <leader>tw :!tmux neww -n "󰙨" "lggw %"<CR>
 
-nnoremap <C-t> :exe v:count1 . "ToggleTerm"<CR>
-inoremap <C-t> <Esc>:exe v:count1 . "ToggleTerm"<CR>
-tnoremap <C-t> <C-\><C-n>:ToggleTerm<CR>
+nnoremap <A-t> :exe v:count1 . "ToggleTerm"<CR>
+inoremap <A-t> <Esc>:exe v:count1 . "ToggleTerm"<CR>
+tnoremap <A-t> <C-\><C-n>:ToggleTerm<CR>
 
 nnoremap <C-p> :Telescope find_files<CR>
 nnoremap <C-f> :Telescope current_buffer_fuzzy_find<CR>
