@@ -18,6 +18,15 @@ if (has_lsp) then
 
   lsp.on_attach(function(client, bufnr)
     lsp.default_keymaps(client, bufnr)
+
+    vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>')
+    vim.keymap.set('n', '<leader>K', '<cmd>Lspsaga hover_doc ++keep<CR>')
+    vim.keymap.set('n', '<leader>o', '<cmd>Lspsaga outline<CR>')
+    vim.keymap.set('n', '<leader>rn', '<cmd>Lspsaga rename<CR>')
+    vim.keymap.set('n', '<leader>Rn', '<cmd>Lspsaga rename ++project<CR>')
+    vim.keymap.set({'n', 'v'}, '<leader>ca', '<cmd>Lspsaga code_action<CR>')
+    vim.keymap.set('n', 'gp', '<cmd>Lspsaga peek_definition<CR>')
+    vim.keymap.set('n', 'gd', '<cmd>Lspsaga goto_definition<CR>')
   end)
 
   require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
@@ -46,5 +55,16 @@ if (has_cmp) then
       ['<C-b>'] = cmp_action.luasnip_jump_backward(),
     }
   })
+end
 
+local has_lspsaga, _ = pcall(require, 'lspsaga')
+if has_lspsaga then
+  require('lspsaga').setup({
+    ui = {
+      title = true
+    },
+    symbol_in_winbar = {
+      enable = false,
+    }
+  })
 end

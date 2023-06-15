@@ -55,6 +55,7 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'L3MON4D3/LuaSnip', {'tag': 'v1.*', 'do': 'make install_jsregexp'}
 Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v2.x'}
+Plug 'glepnir/lspsaga.nvim', {'tag': 'v0.2.9'}
 Plug 'github/copilot.vim'
 
 call plug#end()
