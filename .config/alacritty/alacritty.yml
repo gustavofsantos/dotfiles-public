@@ -38,7 +38,6 @@ window:
   # opacity: 0.985
   decorations: full
   decorations_theme_variant: Dark
-  resize_increments: true
   padding:
     x: 0
     y: 0
@@ -63,6 +62,7 @@ cursor:
 
 import:
   - ~/.alacritty.local.yml
-  - ~/.config/alacritty/themes/kanagawa.yml
+  # - ~/.config/alacritty/themes/kanagawa.yml
+  - ~/.config/alacritty/themes/nordic.yml
   # - ~/.config/alacritty/themes/modus_operandi.yml
   # - ~/.config/alacritty/themes/modus_vivendi.yml
