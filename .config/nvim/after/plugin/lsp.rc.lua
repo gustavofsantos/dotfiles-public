@@ -19,11 +19,20 @@ if (has_lsp) then
   lsp.on_attach(function(client, bufnr)
     lsp.default_keymaps(client, bufnr)
 
+    vim.keymap.set('n', 'gh', '<cmd>Lspsaga lsp_finder<CR>')
+
+    -- hover documentation
     vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>')
     vim.keymap.set('n', '<leader>K', '<cmd>Lspsaga hover_doc ++keep<CR>')
+
+    -- toggle outline
     vim.keymap.set('n', '<leader>o', '<cmd>Lspsaga outline<CR>')
+
+    -- rename
     vim.keymap.set('n', '<leader>rn', '<cmd>Lspsaga rename<CR>')
     vim.keymap.set('n', '<leader>Rn', '<cmd>Lspsaga rename ++project<CR>')
+
+    -- code actions
     vim.keymap.set({'n', 'v'}, '<leader>ca', '<cmd>Lspsaga code_action<CR>')
     vim.keymap.set('n', 'gp', '<cmd>Lspsaga peek_definition<CR>')
     vim.keymap.set('n', 'gd', '<cmd>Lspsaga goto_definition<CR>')
