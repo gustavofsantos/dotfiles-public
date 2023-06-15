@@ -40,6 +40,17 @@ if (has_lsp) then
 
   require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
+  lsp.set_server_config({
+    capabilities = {
+      textDocument = {
+        foldingRange = {
+          dynamicRegistration = false,
+          lineFoldingOnly = true
+        }
+      }
+    }
+  })
+
   lsp.setup()
 end
 
