@@ -56,6 +56,7 @@ Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'L3MON4D3/LuaSnip', {'tag': 'v1.*', 'do': 'make install_jsregexp'}
 Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v2.x'}
 Plug 'glepnir/lspsaga.nvim', {'tag': 'v0.2.9'}
+Plug 'onsails/lspkind.nvim'
 Plug 'github/copilot.vim'
 
 call plug#end()
@@ -111,6 +112,7 @@ set encoding=utf-8
 set nohlsearch
 set number
 set relativenumber
+set colorcolumn=80,100
 set tags=./tags,.git/tags
 set showtabline=1
 set scrolloff=5
