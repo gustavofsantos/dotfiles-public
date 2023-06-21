@@ -140,11 +140,11 @@ function beyond_last_tags_prod() {
 }
 
 function beyond_ui_log_deploy() {
-  git --no-pager log --pretty=format:"%h%x09%an%x09%ad%x09%s" $(beyond_last_tags_prod) -- .
+  git --no-pager log --pretty=format:"%h%x09%an%x09%ad%x09%s" $1 -- .
 }
 
 function beyond_ui_log_pretty_md() {
-  git --no-pager log --pretty=format:"%s" $(beyond_last_tags_prod) -- . | sd '^(.+)\s\(#([0-9]+)\)$' '[$1](https://github.com/loggi/ui/pull/$2)'
+  git --no-pager log --pretty=format:"%s" $1 -- . | sd '^(.+)\s\(#([0-9]+)\)$' '[$1](https://github.com/loggi/ui/pull/$2)'
 }
 
 function print_beyond_deploy_info() {
@@ -153,7 +153,7 @@ cat << EOF
 Ação: Deploy Beyond UI
 Workflow: <replace here>
 Tag: https://github.com/loggi/ui/releases/tag/$(git describe --tags `git rev-list --tags --max-count=1` | sed 's/\//%2F/g')
-Diff: https://github.com/loggi/ui/compare/$(beyond_last_tags_prod)
+Diff: https://github.com/loggi/ui/compare/$1
 
 Pull requests:
 $(beyond_ui_log_pretty_md)
