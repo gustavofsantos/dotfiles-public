@@ -33,11 +33,11 @@ env:
   TERM: xterm-256color
 
 window:
-  dynamic_padding: false
-  dynamic_title: true
-  opacity: 0.95
   decorations: full
   decorations_theme_variant: Dark
+  dynamic_padding: false
+  dynamic_title: true
+  opacity: 0.9
   padding:
     x: 0
     y: 0
@@ -49,20 +49,22 @@ mouse:
   save_to_clipboard: true
 
 key_bindings:
-  - { key: F11, action: ToggleFullscreen }
+  - { action: ToggleFullscreen , key: F11}
+
 
 mouse_bindings:
-  - { mouse: Middle, action: PasteSelection }
+  - { action: PasteSelection , mouse: Middle}
+
 
 cursor:
   # Cursor style
   style:
-    shape: Block
     blinking: Always
+    shape: Block
 
 import:
   - ~/.alacritty.local.yml
-  # - ~/.config/alacritty/themes/kanagawa.yml
-  - ~/.config/alacritty/themes/nordic.yml
+  - ~/.config/alacritty/themes/kanagawa.yml
+  # - ~/.config/alacritty/themes/nordic.yml
   # - ~/.config/alacritty/themes/modus_operandi.yml
   # - ~/.config/alacritty/themes/modus_vivendi.yml

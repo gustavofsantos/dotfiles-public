@@ -88,9 +88,9 @@ let g:switch_custom_definitions =
 
 set termguicolors
 set background=dark
-" colorscheme kanagawa
+colorscheme kanagawa
 " colorscheme modus-operandi
-colorscheme nordic
+" colorscheme nordic
 set noerrorbells
 set tabstop=2 softtabstop=2
 set shiftwidth=2
