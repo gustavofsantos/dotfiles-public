@@ -1,8 +1,9 @@
 nmap Q <Nop>
 
+" goodies
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
-
+nnoremap <C-q> :q<CR>
 imap <C-e> <C-o>$
 imap <C-a> <C-o>^
 
@@ -30,11 +31,13 @@ nnoremap <leader>tu :terminal lggt %<CR>
 nnoremap <leader>tw :terminal lwt %<CR>
 nnoremap <leader>tn :TestNearest<CR>
 
+" execute current file as a script
+nnoremap <leader>x :!%:p<CR>
+
 " Toggle nvim tree
 nnoremap <C-b> :NvimTreeToggle<CR>
+nnoremap <leader>b :Telescope file_browser path=%:p:h select_buffer=true<CR>
 
-" Delete buffer
-nnoremap <C-q> :bdelete<CR>
 nnoremap <leader>q :bdelete<CR>
 
 nnoremap <leader>tw :!tmux neww -n "󰙨" "lggw %"<CR>

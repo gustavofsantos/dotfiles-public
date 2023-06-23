@@ -9,6 +9,7 @@ Plug 'rockyzhang24/arctic.nvim'
 Plug 'rebelot/kanagawa.nvim'
 Plug 'ishan9299/modus-theme-vim'
 Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }
+Plug 'oxfist/night-owl.nvim'
 Plug 'rmehri01/onenord.nvim'
 Plug 'jxnblk/vim-mdx-js'
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
@@ -24,6 +25,7 @@ Plug 'sindrets/diffview.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-ui-select.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'run': 'make' }
+Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'ThePrimeagen/harpoon'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'akinsho/toggleterm.nvim'

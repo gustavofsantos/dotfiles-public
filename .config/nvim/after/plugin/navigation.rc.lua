@@ -53,6 +53,11 @@ if (has_telescope) then
         theme = "ivy",
         prefer_locations = true
       },
+      file_browser = {
+        theme = "ivy",
+        cwd_to_path = true,
+        hijack_netrw = true,
+      },
       ["ui-select"] = {
         require("telescope.themes").get_dropdown {
         }
@@ -62,6 +67,7 @@ if (has_telescope) then
 
   telescope.load_extension('harpoon')
   telescope.load_extension('ui-select')
+  telescope.load_extension('file_browser')
 
   -- find non git-ignored files inside the current dir
   vim.keymap.set('n', '<F3>', require('telescope.builtin').grep_string, { desc = 'Find string' })

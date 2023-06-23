@@ -101,6 +101,9 @@ if has_lspsaga then
     ui = {
       title = true
     },
+    lightbulb = {
+      enable = false,
+    },
     symbol_in_winbar = {
       enable = false,
     }
