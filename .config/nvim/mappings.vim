@@ -6,6 +6,8 @@ imap <C-s> <esc>:w<CR>
 nnoremap <C-q> :q<CR>
 imap <C-e> <C-o>$
 imap <C-a> <C-o>^
+inoremap <C-c> <Esc>:wq<CR>
+nnoremap <C-c> :wq<CR>
 
 nnoremap zR :lua require('ufo').openAllFolds()<CR>
 nnoremap zM :lua require('ufo').closeAllFolds()<CR>
