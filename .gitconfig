@@ -18,6 +18,7 @@
   tags          = tag -l
   amend         = commit --amend --reuse-message=HEAD --no-verify
   contributors  = shortlog --summary --numbered
+  export        = archive --format=zip --output=repo.zip HEAD
 
 [gpg]
   format = ssh
