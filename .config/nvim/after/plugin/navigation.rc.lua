@@ -49,12 +49,11 @@ if (has_telescope) then
         override_file_sorter = true, -- override the file sorter
         case_mode = "smart_case", -- or "ignore_case" or "respect_case"
       },
-      coc = {
-        theme = "ivy",
-        prefer_locations = true
-      },
       file_browser = {
-        theme = "ivy",
+        theme = "dropdown",
+        respect_gitignore = false,
+        hidden = true,
+        previewer = false,
         cwd_to_path = true,
         hijack_netrw = true,
       },
