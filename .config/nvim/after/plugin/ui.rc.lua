@@ -52,8 +52,8 @@ if (has_lualine) then
       lualine_b = {
       },
       lualine_c = {
-        'branch',
-        'diff',
+        -- 'branch',
+        -- 'diff',
         {
           'filename',
           file_status = true,
