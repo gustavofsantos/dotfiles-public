@@ -4,15 +4,16 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 
-" UI
+" Themes
 Plug 'rockyzhang24/arctic.nvim'
 Plug 'rebelot/kanagawa.nvim'
 Plug 'ishan9299/modus-theme-vim'
 Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }
 Plug 'oxfist/night-owl.nvim'
 Plug 'rmehri01/onenord.nvim'
+
 Plug 'jxnblk/vim-mdx-js'
-Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
+" Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
 Plug 'nvim-lualine/lualine.nvim'
 
 " Git
@@ -88,9 +89,8 @@ let g:switch_custom_definitions =
 
 set termguicolors
 set background=dark
-colorscheme kanagawa
-" colorscheme modus-operandi
-" colorscheme nordic
+" colorscheme kanagawa
+colorscheme nordic
 set noerrorbells
 set tabstop=2 softtabstop=2
 set shiftwidth=2

@@ -64,7 +64,7 @@ cursor:
 
 import:
   - ~/.alacritty.local.yml
-  - ~/.config/alacritty/themes/kanagawa.yml
-  # - ~/.config/alacritty/themes/nordic.yml
+  # - ~/.config/alacritty/themes/kanagawa.yml
+  - ~/.config/alacritty/themes/nordic.yml
   # - ~/.config/alacritty/themes/modus_operandi.yml
   # - ~/.config/alacritty/themes/modus_vivendi.yml
