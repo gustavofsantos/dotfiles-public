@@ -7,9 +7,9 @@ Plug 'kyazdani42/nvim-web-devicons'
 " Themes
 Plug 'rockyzhang24/arctic.nvim'
 Plug 'rebelot/kanagawa.nvim'
+Plug 'kvrohit/rasmus.nvim'
 Plug 'ishan9299/modus-theme-vim'
 Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }
-Plug 'oxfist/night-owl.nvim'
 Plug 'rmehri01/onenord.nvim'
 
 Plug 'jxnblk/vim-mdx-js'
@@ -28,8 +28,8 @@ Plug 'nvim-telescope/telescope-ui-select.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'run': 'make' }
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'ThePrimeagen/harpoon'
-Plug 'kyazdani42/nvim-tree.lua'
-Plug 'akinsho/toggleterm.nvim'
+" Plug 'kyazdani42/nvim-tree.lua'
+" Plug 'akinsho/toggleterm.nvim'
 Plug 'mbbill/undotree'
 
 " Code editing
@@ -47,7 +47,7 @@ Plug 'justinmk/vim-sneak'
 " Running tests
 Plug 'vim-test/vim-test'
 
-" LSP
+" LSP & autocomplete
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
 Plug 'williamboman/mason-lspconfig.nvim'
@@ -95,6 +95,7 @@ set noerrorbells
 set tabstop=2 softtabstop=2
 set shiftwidth=2
 set expandtab
+set winwidth=80
 set smartindent
 set vb
 set nowrap
@@ -122,6 +123,7 @@ set laststatus=2
 set splitright
 set ignorecase smartcase
 set splitbelow
+set t_ti= t_te=
 set updatetime=100
 set clipboard+=unnamedplus
 set wildmenu
