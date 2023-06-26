@@ -7,14 +7,12 @@ Plug 'kyazdani42/nvim-web-devicons'
 " Themes
 Plug 'rockyzhang24/arctic.nvim'
 Plug 'rebelot/kanagawa.nvim'
-Plug 'kvrohit/rasmus.nvim'
 Plug 'ishan9299/modus-theme-vim'
 Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }
-Plug 'rmehri01/onenord.nvim'
 
 Plug 'jxnblk/vim-mdx-js'
 " Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
-Plug 'nvim-lualine/lualine.nvim'
+" Plug 'nvim-lualine/lualine.nvim'
 
 " Git
 Plug 'tpope/vim-fugitive'
