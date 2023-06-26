@@ -57,6 +57,8 @@ let maplocalleader = " "
 let g:sneak#label = 1
 let g:sneak#use_ic_scs = 1
 
+let g:modus_dim_inactive_window = 0
+
 let test#strategy = "neovim"
 let test#javascript#playwright#options = "--headed"
 
@@ -75,7 +77,8 @@ let g:switch_custom_definitions =
 set termguicolors
 set background=dark
 " colorscheme kanagawa
-colorscheme nordic
+" colorscheme nordic
+colorscheme modus-vivendi
 set noerrorbells
 set tabstop=2 softtabstop=2
 set shiftwidth=2
