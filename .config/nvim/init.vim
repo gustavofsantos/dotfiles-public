@@ -11,8 +11,6 @@ Plug 'ishan9299/modus-theme-vim'
 Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }
 
 Plug 'jxnblk/vim-mdx-js'
-" Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
-" Plug 'nvim-lualine/lualine.nvim'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -25,9 +23,8 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-ui-select.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'run': 'make' }
 Plug 'nvim-telescope/telescope-file-browser.nvim'
+Plug 'fannheyward/telescope-coc.nvim'
 Plug 'ThePrimeagen/harpoon'
-" Plug 'kyazdani42/nvim-tree.lua'
-" Plug 'akinsho/toggleterm.nvim'
 Plug 'mbbill/undotree'
 
 " Code editing
@@ -39,6 +36,7 @@ Plug 'kevinhwang91/nvim-ufo'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
 Plug 'AndrewRadev/switch.vim'
 Plug 'justinmk/vim-sneak'
 
@@ -46,18 +44,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'vim-test/vim-test'
 
 " LSP & autocomplete
-Plug 'neovim/nvim-lspconfig'
-Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
-Plug 'williamboman/mason-lspconfig.nvim'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'saadparwaiz1/cmp_luasnip'
-Plug 'L3MON4D3/LuaSnip', {'tag': 'v1.*', 'do': 'make install_jsregexp'}
-Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v2.x'}
-Plug 'glepnir/lspsaga.nvim', {'tag': 'v0.2.9'}
-Plug 'onsails/lspkind.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'github/copilot.vim'
 
 call plug#end()
