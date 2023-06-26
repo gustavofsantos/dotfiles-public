@@ -21,8 +21,6 @@ nnoremap <leader>f2 :lua require('harpoon.ui').nav_file(2)<CR>
 nnoremap <leader>f3 :lua require('harpoon.ui').nav_file(3)<CR>
 nnoremap <leader>f4 :lua require('harpoon.ui').nav_file(4)<CR>
 
-nnoremap ]h :Gitsigns next_hunk<CR>
-nnoremap [h :Gitsigns prev_hunk<CR>
 
 tnoremap <Esc> <C-\><C-n>
 nnoremap <leader><leader> <C-^>
@@ -37,7 +35,8 @@ nnoremap <leader>tn :TestNearest<CR>
 nnoremap <leader>x :!%:p<CR>
 
 " Toggle nvim tree
-nnoremap <C-b> :NvimTreeToggle<CR>
+" nnoremap <C-b> :NvimTreeToggle<CR>
+nnoremap <C-b> :Telescope file_browser path=%:p:h select_buffer=true<CR>
 nnoremap <leader>b :Telescope file_browser path=%:p:h select_buffer=true<CR>
 
 nnoremap <leader>q :bdelete<CR>
@@ -53,7 +52,7 @@ nnoremap <C-f> :Telescope current_buffer_fuzzy_find<CR>
 nnoremap <C-k><C-e> :Telescope oldfiles<CR>
 nnoremap <C-k><C-b> :Telescope buffers<CR>
 nnoremap <C-k><C-f> :Telescope live_grep<CR>
-nnoremap <C-k><C-g> :Git<CR>
+" nnoremap <C-k><C-g> :Git<CR>
 
 nnoremap <leader>fr :lua require('telescope.builtin').resume()<CR>
 nnoremap <leader>ff :lua require('telescope.builtin').find_files()<CR>
@@ -73,11 +72,13 @@ nnoremap <leader>fc :lua require('telescope.builtin').git_bcommits()<CR>
 nnoremap <leader>gb :lua require('telescope.builtin').git_branches()<CR>
 nnoremap <leader>/  :lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>
 
-nnoremap <leader>hn :Gitsigns next_hunk<CR>
-nnoremap <leader>hp :Gitsigns prev_hunk<CR>
+nnoremap ]h :Gitsigns next_hunk<CR>
+nnoremap [h :Gitsigns prev_hunk<CR>
 nnoremap <leader>hv :Gitsigns preview_hunk<CR>
 nnoremap <leader>hs :Gitsigns stage_hunk<CR>
 nnoremap <leader>hr :Gitsigns reset_hunk<CR>
+nnoremap <leader>gs :Git<CR>
+vnoremap <leader>b :<C-U>!git blame <C-R>=expand(\"%:p\") <CR> | sed -n <C-R>=line(\"'<\") <CR>,<C-R>=line(\"'>\") <CR>p <CR>
 
 " split vertically
 nnoremap <C-w>s :vsplit<CR>

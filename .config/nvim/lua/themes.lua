@@ -2,7 +2,6 @@ local has_nordic, _ = pcall(require, 'nordic')
 if has_nordic then
   local palette = require('nordic.colors')
   require('nordic').setup({
-    -- theme = 'onedark',
     telescope = {
       style = 'flat'
     },
