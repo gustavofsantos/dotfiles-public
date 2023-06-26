@@ -7,6 +7,8 @@ if has_nordic then
     },
     override = {
       Keyword = { italic = true },
+      StatusLine = { fg = palette.white2, bg = palette.gray3},
+      StatusLineNC = { fg = palette.gray4, bg = palette.black },
 
       BufferlineFill = { bg = palette.grey0 },
 			BufferlineBackground = { bg = palette.gray0 },
