@@ -139,7 +139,7 @@ function beyond_last_tags_prod() {
   git --no-pager tag --list 'beyond/prod-2023[0-9][0-9][0-9][0-9].[0-9][0-9]' | tail -n 2 | sed -u -e ':a; N; $!ba; s/\n/\.\./g'
 }
 
-function beyond_ui_log_deploy() {
+function git_local_log() {
   git --no-pager log --pretty=format:"%h%x09%an%x09%ad%x09%s" $1 -- .
 }
 
