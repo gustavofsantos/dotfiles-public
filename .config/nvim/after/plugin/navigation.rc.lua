@@ -50,7 +50,7 @@ if (has_telescope) then
         case_mode = "smart_case", -- or "ignore_case" or "respect_case"
       },
       file_browser = {
-        theme = "dropdown",
+        theme = "ivy",
         respect_gitignore = false,
         hidden = true,
         previewer = false,

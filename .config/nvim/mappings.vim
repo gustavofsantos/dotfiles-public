@@ -77,7 +77,7 @@ nnoremap [h :Gitsigns prev_hunk<CR>
 nnoremap <leader>hv :Gitsigns preview_hunk<CR>
 nnoremap <leader>hs :Gitsigns stage_hunk<CR>
 nnoremap <leader>hr :Gitsigns reset_hunk<CR>
-nnoremap <leader>gs :Git<CR>
+" nnoremap <leader>gs :Git<CR>
 vnoremap <leader>b :<C-U>!git blame <C-R>=expand(\"%:p\") <CR> \| sed -n <C-R>=line(\"'<\") <CR>,<C-R>=line(\"'>\") <CR>p <CR>
 
 " split vertically
