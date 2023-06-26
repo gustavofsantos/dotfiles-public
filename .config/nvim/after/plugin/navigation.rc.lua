@@ -49,6 +49,10 @@ if (has_telescope) then
         override_file_sorter = true, -- override the file sorter
         case_mode = "smart_case", -- or "ignore_case" or "respect_case"
       },
+      coc = {
+        theme = "ivy",
+        prefer_locations = true
+      },
       file_browser = {
         theme = "ivy",
         respect_gitignore = false,
@@ -67,6 +71,7 @@ if (has_telescope) then
   telescope.load_extension('harpoon')
   telescope.load_extension('ui-select')
   telescope.load_extension('file_browser')
+  telescope.load_extension('coc')
 
   -- find non git-ignored files inside the current dir
   vim.keymap.set('n', '<F3>', require('telescope.builtin').grep_string, { desc = 'Find string' })

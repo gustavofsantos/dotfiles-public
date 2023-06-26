@@ -149,13 +149,15 @@ command! Note :lua vim.cmd(string.format("tabnew ~/notes/z/%s.md", os.date("%Y%m
 command! Todo :lua require('telescope.builtin').grep_string({ cwd = '~/notes', search = '- TODO' })<CR>
 command! Doing :lua require('telescope.builtin').grep_string({ cwd = '~/notes', search = '- DOING' })<CR>
 command! Done :lua require('telescope.builtin').grep_string({ cwd = '~/notes', search = '- DONE' })<CR>
-command! LWT :lua require('toggleterm').exec("lwt " .. string.gsub(vim.fn.expand("%"), "loggi/", ""))
+" command! LWT :lua require('toggleterm').exec("lwt " .. string.gsub(vim.fn.expand("%"), "loggi/", ""))
 " command! LWT :lua vim.cmd("!tmux new-window -d -n '' 'lwt " .. string.gsub(vim.fn.expand("%"), "loggi/", "") .. "'; read")
-command! LGGT :lua require('toggleterm').exec("lggt " .. vim.fn.expand("%"))
-command! LGGW :lua require('toggleterm').exec("lggw " .. vim.fn.expand("%"))
-command! LWTX :lua io.popen("tmux neww -n '󰙨' '" .. "lwt " .. string.gsub(vim.fn.expand("%"), "loggi/", "") .. " && read'")
-command! LGGTX :!tmux neww -n "󰙨" "lggt % && read"
-command! LGGWX :!tmux neww -n "󰙨" "lggw %"
+" command! LGGT :lua require('toggleterm').exec("lggt " .. vim.fn.expand("%"))
+" command! LGGW :lua require('toggleterm').exec("lggw " .. vim.fn.expand("%"))
+command! LGGT :!lggt %<CR>
+command! LGGW :!lggw %<CR>
+command! LWTX :lua io.popen("tmux neww -n '󰙨' '" .. "lwt " .. string.gsub(vim.fn.expand("%"), "loggi/", "") .. " & while [ : ]; do sleep 1; done'")
+command! LGGTX :!tmux neww -n "󰙨" "lggt % & while [ : ]; do sleep 1; done"
+command! LGGWX :!tmux neww -n "󰙨" "lggw % & while [ : ]; do sleep 1; done"
 command! PlaywrightDebug :lua require('toggleterm').exec("npx playwright test " .. vim.fn.expand("%:t") .. " --debug" )
 autocmd TermEnter term://*toggleterm#*
       \ tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
