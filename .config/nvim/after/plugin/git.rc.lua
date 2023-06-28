@@ -164,7 +164,3 @@ if (has_diffview) then
   vim.keymap.set("n", "<leader>gvh", ":DiffviewFileHistory %<CR>")
 end
 
--- Git
-vim.keymap.set("n", "<leader>gs", ":Git<CR>")
-vim.keymap.set("v", "<leader>b",
-  ":<C-U>!git blame <C-R>=expand(\"%:p\") <CR> | sed -n <C-R>=line(\"'<\") <CR>,<C-R>=line(\"'>\") <CR>p <CR>")

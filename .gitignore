@@ -199,3 +199,5 @@ local.dockerfile
 Applications/
 .config/Raspberry Pi/
 .config/sqlitebrowser/
+.audacity-data
+Music/

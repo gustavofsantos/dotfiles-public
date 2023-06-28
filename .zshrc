@@ -139,12 +139,16 @@ function beyond_last_tags_prod() {
   git --no-pager tag --list 'beyond/prod-2023[0-9][0-9][0-9][0-9].[0-9][0-9]' | tail -n 2 | sed -u -e ':a; N; $!ba; s/\n/\.\./g'
 }
 
-function beyond_ui_log_deploy() {
-  git --no-pager log --pretty=format:"%h%x09%an%x09%ad%x09%s" $(beyond_last_tags_prod) -- .
+function git_local_log() {
+  git --no-pager log --pretty=format:"%h%x09%an%x09%ad%x09%s" $1 -- .
 }
 
 function beyond_ui_log_pretty_md() {
-  git --no-pager log --pretty=format:"%s" $(beyond_last_tags_prod) -- . | sd '^(.+)\s\(#([0-9]+)\)$' '[$1](https://github.com/loggi/ui/pull/$2)'
+  git --no-pager log --pretty=format:"%s" $1 -- . | sd '^(.+)\s\(#([0-9]+)\)$' '[$1](https://github.com/loggi/ui/pull/$2)'
+}
+
+function loggi_web_log_pretty_md() {
+  git --no-pager log --pretty=format:"%s<%an>" $1 -- . | sd '^(.+)\s\(#([0-9]+)\)<(.+)>$' '* [$1 ($3)](https://github.com/loggi/loggi-web/pull/$2)'
 }
 
 function print_beyond_deploy_info() {
@@ -153,7 +157,7 @@ cat << EOF
 Ação: Deploy Beyond UI
 Workflow: <replace here>
 Tag: https://github.com/loggi/ui/releases/tag/$(git describe --tags `git rev-list --tags --max-count=1` | sed 's/\//%2F/g')
-Diff: https://github.com/loggi/ui/compare/$(beyond_last_tags_prod)
+Diff: https://github.com/loggi/ui/compare/$1
 
 Pull requests:
 $(beyond_ui_log_pretty_md)
@@ -168,6 +172,23 @@ cc @dev-beyond
 EOF
 }
 
+# Example:
+# print_beyond_loggi_web_deploy_info prod-20230627.10/beyond prod-20230621.11/beyond..prod-20230627.10/beyond
+function print_beyond_loggi_web_deploy_info() {
+cat << EOF
+
+Ação: Deploy Beyond - Loggi Web
+Workflow: <replace here>
+Tag: https://github.com/loggi/loggi-web/releases/tag/$(echo $1 | sed 's/\//%2F/g')
+
+Pull requests:
+$(loggi_web_log_pretty_md $2)
+
+Monitoramento:
+* [Sentry Beyond](https://loggi.sentry.io/issues/?project=14082&query=is%3Aunresolved+app_type%3Abeyond+release%3A$(echo $1 | sed 's/\//-/g')&referrer=issue-list&statsPeriod=14d)
+* [Grafana Beyond](https://grafana.loggi.com/d/TZgxLo8nz/beyond-health?orgId=1)
+EOF
+}
 # pnpm
 export PNPM_HOME="/home/gustavo/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"

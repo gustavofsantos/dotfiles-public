@@ -1,50 +1,52 @@
 call plug#begin()
 " Neovim plugins
-Plug 'kevinhwang91/promise-async'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'rktjmp/lush.nvim'
 
+" Themes
 Plug 'rockyzhang24/arctic.nvim'
 Plug 'rebelot/kanagawa.nvim'
-Plug 'lifepillar/vim-solarized8'
 Plug 'ishan9299/modus-theme-vim'
 Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }
-Plug 'rmehri01/onenord.nvim'
 
 Plug 'jxnblk/vim-mdx-js'
 
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'lewis6991/gitsigns.nvim', { 'tag': 'v0.6' }
 Plug 'sindrets/diffview.nvim'
+
+" Navigation
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-ui-select.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'run': 'make' }
+Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'fannheyward/telescope-coc.nvim'
 Plug 'ThePrimeagen/harpoon'
+Plug 'mbbill/undotree'
+
+" Code editing
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'RRethy/nvim-treesitter-textsubjects'
 Plug 'nvim-treesitter/playground'
 Plug 'kevinhwang91/nvim-ufo'
-Plug 'kyazdani42/nvim-tree.lua'
-Plug 'nvim-lualine/lualine.nvim'
-Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
-Plug 'akinsho/toggleterm.nvim'
-Plug 'L3MON4D3/LuaSnip'
-
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'AndrewRadev/switch.vim'
 Plug 'justinmk/vim-sneak'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
+
+" Running tests
 Plug 'vim-test/vim-test'
+
+" LSP & autocomplete
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'github/copilot.vim'
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 source ~/.config/nvim/lua/themes.lua
@@ -54,6 +56,8 @@ let maplocalleader = " "
 
 let g:sneak#label = 1
 let g:sneak#use_ic_scs = 1
+
+let g:modus_dim_inactive_window = 0
 
 let test#strategy = "neovim"
 let test#javascript#playwright#options = "--headed"
@@ -73,12 +77,13 @@ let g:switch_custom_definitions =
 set termguicolors
 set background=dark
 " colorscheme kanagawa
-" colorscheme modus-operandi
-colorscheme nordic
+" colorscheme nordic
+colorscheme modus-vivendi
 set noerrorbells
 set tabstop=2 softtabstop=2
 set shiftwidth=2
 set expandtab
+set winwidth=80
 set smartindent
 set vb
 set nowrap
@@ -98,6 +103,7 @@ set encoding=utf-8
 set nohlsearch
 set number
 set relativenumber
+set colorcolumn=80,100
 set tags=./tags,.git/tags
 set showtabline=1
 set scrolloff=5
@@ -105,6 +111,7 @@ set laststatus=2
 set splitright
 set ignorecase smartcase
 set splitbelow
+set t_ti= t_te=
 set updatetime=100
 set clipboard+=unnamedplus
 set wildmenu

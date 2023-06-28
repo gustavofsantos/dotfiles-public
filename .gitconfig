@@ -2,6 +2,37 @@
   name = Gustavo Santos
   signingKey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN6jpSle2MDWM6pTPtTFBrArA9uaNoXsH2+EV6a5rV/o
 
+[alias]
+  aa            = add --all
+  b             = branch
+  c             = commit
+  co            = checkout
+  st            = status
+  s             = status --short
+  d             = diff
+  ds            = diff --staged
+  dw            = diff --color-words
+  dh1           = diff HEAD~1
+  ; l             = log --pretty=default
+  lg            = log --color --graph --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)' --abbrev-commit --branches
+  rh            = reset --hard
+  dft           = difftool
+  undo          = reset --soft HEAD~1
+  tags          = tag -l
+  amend         = commit --amend --reuse-message=HEAD --no-verify
+  contributors  = shortlog --summary --numbered
+  export        = archive --format=zip --output=repo.zip HEAD
+
+  h             = !git head
+  hp            = "!. ~/.githelpers && show_git_head"
+  r             = !GIT_NO_PAGER=1 git l -30
+  ra            = !git r --all
+  l             = "!. ~/.githelpers && pretty_git_log"
+  la            = !git l --all
+  b             = "!. ~/.githelpers && pretty_git_branch"
+  bs            = "!. ~/.githelpers && pretty_git_branch_sorted"
+  ski           = !git stash --keep-index
+
 [gpg]
   format = ssh
 
@@ -83,23 +114,6 @@
   dark = true
   line-numbers = true
   side-by-side = true
-
-[alias]
-  aa            = add --all
-  c             = commit
-  co            = checkout
-  s             = status --short
-  d             = diff
-  ds            = diff --staged
-  dw            = diff --color-words
-  l             = log --pretty=default
-  lg            = log --color --graph --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)' --abbrev-commit --branches
-  rh            = reset --hard
-  dft           = difftool
-  undo          = reset --soft HEAD~1
-  tags          = tag -l
-  amend         = commit --amend --reuse-message=HEAD --no-verify
-  contributors  = shortlog --summary --numbered
 
 [init]
   defaultBranch = main
