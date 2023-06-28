@@ -1,10 +1,10 @@
 font:
   normal:
     family: MonoLisa Nerd Font
-    style: Regular
+    style: Medium
   italic:
     family: MonoLisa Nerd Font
-    style: Regular Italic
+    style: Medium Italic
   bold:
     family: MonoLisa Nerd Font
     style: Bold
@@ -13,17 +13,17 @@ font:
     style: Bold Italic
   size: 10.5
   # normal:
-  #   family: MonoLisa Nerd Font
-  #   style: Regular
+  #   family: OperatorMono Nerd Font
+  #   style: Book
   # italic:
-  #   family: MonoLisa Nerd Font
-  #   style: Regular Italic
+  #   family: OperatorMono Nerd Font
+  #   style: Book Italic
   # bold:
-  #   family: MonoLisa Nerd Font
-  #   style: Bold
+  #   family: OperatorMono Nerd Font
+  #   style: Medium
   # bold_italic:
-  #   family: MonoLisa Nerd Font
-  #   style: Bold Italic
+  #   family: OperatorMono Nerd Font
+  #   style: Medium Italic
   # size: 9.5
   offset:
     x: 0
@@ -64,7 +64,7 @@ cursor:
 
 import:
   - ~/.alacritty.local.yml
-  - ~/.config/alacritty/themes/kanagawa.yml
-  # - ~/.config/alacritty/themes/nordic.yml
+  # - ~/.config/alacritty/themes/kanagawa.yml
+  - ~/.config/alacritty/themes/nordic.yml
   # - ~/.config/alacritty/themes/modus_operandi.yml
   # - ~/.config/alacritty/themes/modus_vivendi.yml

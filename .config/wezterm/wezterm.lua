@@ -10,7 +10,7 @@ end
 
 function scheme_for_appearance(appearance)
   if appearance:find "Dark" then
-    return "Kanagawa"
+    return "nordic"
   else
     return "ModusOperandi"
   end

@@ -1,3 +1,27 @@
+"
+"                         ███████████████████████████
+"                         ███████▀▀▀░░░░░░░▀▀▀███████
+"                         ████▀░░░░░░░░░░░░░░░░░▀████
+"                         ███│░░░░░░░░░░░░░░░░░░░│███
+"                         ██▌│░░░░░░░░░░░░░░░░░░░│▐██
+"                         ██░└┐░░░░░░░░░░░░░░░░░┌┘░██
+"                         ██░░└┐░░░░░░░░░░░░░░░┌┘░░██
+"                         ██░░┌┘▄▄▄▄▄░░░░░▄▄▄▄▄└┐░░██
+"                         ██▌░│██████▌░░░▐██████│░▐██
+"                         ███░│▐███▀▀░░▄░░▀▀███▌│░███
+"                         ██▀─┘░░░░░░░▐█▌░░░░░░░└─▀██
+"                         ██▄░░░▄▄▄▓░░▀█▀░░▓▄▄▄░░░▄██
+"                         ████▄─┘██▌░░░░░░░▐██└─▄████
+"                         █████░░▐█─┬┬┬┬┬┬┬─█▌░░█████
+"                         ████▌░░░▀┬┼┼┼┼┼┼┼┬▀░░░▐████
+"                         █████▄░░░└┴┴┴┴┴┴┴┘░░░▄█████
+"                         ███████▄░░░░░░░░░░░▄███████
+"                         ██████████▄▄▄▄▄▄▄██████████
+"                         ███████████████████████████
+"
+"   You are about to experience a potent dosage of Vim. Watch your steps.
+"
+
 call plug#begin()
 " Neovim plugins
 Plug 'nvim-lua/plenary.nvim'
@@ -76,8 +100,8 @@ let g:switch_custom_definitions =
 
 set termguicolors
 set background=dark
-colorscheme kanagawa
-" colorscheme nordic
+" colorscheme kanagawa
+colorscheme nordic
 " colorscheme modus-vivendi
 set noerrorbells
 set tabstop=2 softtabstop=2
