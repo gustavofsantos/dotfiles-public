@@ -156,8 +156,8 @@ command! Done :lua require('telescope.builtin').grep_string({ cwd = '~/notes', s
 command! LGGT :!lggt %<CR>
 command! LGGW :!lggw %<CR>
 command! LWTX :lua io.popen("tmux neww -n '󰙨' '" .. "lwt " .. string.gsub(vim.fn.expand("%"), "loggi/", "") .. " & while [ : ]; do sleep 1; done'")
-command! LGGTX :!tmux neww -n "󰙨" "lggt % & while [ : ]; do sleep 1; done"
-command! LGGWX :!tmux neww -n "󰙨" "lggw % & while [ : ]; do sleep 1; done"
+command! LGGTX :silent !tmux neww -d -n "󰙨" "lggt % && aplay ~/Music/success.wav || aplay ~/Music/fail.wav & read"
+command! LGGWX :silent !tmux neww -d -n "󰙨" "lggw % & while [ : ]; do sleep 1; done"
 command! PlaywrightDebug :lua require('toggleterm').exec("npx playwright test " .. vim.fn.expand("%:t") .. " --debug" )
 autocmd TermEnter term://*toggleterm#*
       \ tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
