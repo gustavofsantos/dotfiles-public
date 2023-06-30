@@ -39,8 +39,8 @@ Plug 'jxnblk/vim-mdx-js'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'christoomey/vim-conflicted'
 Plug 'lewis6991/gitsigns.nvim', { 'tag': 'v0.6' }
-Plug 'sindrets/diffview.nvim'
 
 " Navigation
 Plug 'nvim-telescope/telescope.nvim'
@@ -98,9 +98,26 @@ let g:switch_custom_definitions =
     \   }
     \ ]
 
+let g:coc_global_extensions = [
+  \ 'coc-css',
+  \ 'coc-json',
+  \ 'coc-tsserver',
+  \ 'coc-tailwindcss',
+  \ 'coc-svelte',
+  \ 'coc-html',
+  \ 'coc-yaml',
+  \ 'coc-vimlsp',
+  \ 'coc-svg',
+  \ 'coc-actions',
+  \ 'coc-lists',
+  \ 'coc-json',
+  \ 'coc-yank',
+  \ 'coc-highlight',
+  \ ]
+
 set termguicolors
 set background=dark
-" colorscheme kanagawa
+" colorscheme kanagawa-wave
 colorscheme nordic
 " colorscheme modus-vivendi
 set noerrorbells

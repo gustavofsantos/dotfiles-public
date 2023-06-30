@@ -1,11 +1,15 @@
 local has_nordic, _ = pcall(require, 'nordic')
 if has_nordic then
   local palette = require('nordic.colors')
+  local bg = "#151515"
   require('nordic').setup({
     telescope = {
       style = 'flat'
     },
     override = {
+      -- Normal = { bg = bg },
+      -- NormalNC = { bg = bg },
+      -- NormalSB = { bg = bg },
       Keyword = { italic = true },
       StatusLine = { fg = palette.white2, bg = palette.gray3},
       StatusLineNC = { fg = palette.gray4, bg = palette.black },
@@ -43,6 +47,20 @@ end
 
 local has_kanagawa, _ = pcall(require, 'kanagawa')
 if has_kanagawa then
+  local fg_color = "#fafafa"
+  local bg_color = "#151515"
+  local cursor_line_color = "#1c1c1c"
+  local statusline_bg = "#dddddd"
+  local statuslinenc_bg = "#000000"
+  local sumiInk0 = "#151515"
+  local sumiInk1 = "#1b1b13"
+  local sumiInk2 = "#222227"
+  local sumiInk3 = "#232338"
+  local sumiInk4 = "#353541"
+  local sumiInk5 = "#47475b"
+  local sumiInk6 = "#54546D"
+  local springViolet2 = "#9CABCA"
+
   require('kanagawa').setup {
     dimInactive = false,
     globalStatus = true,
@@ -59,12 +77,39 @@ if has_kanagawa then
             bg_gutter = "none",
           },
         },
+        wave = {
+          ui = {
+            bg_dim = "#1c1c1c",
+            bg_gutter = "none",
+
+            bg_m3 = sumiInk0,
+            bg_m2 = sumiInk1,
+            bg_m1 = sumiInk2,
+            bg = "#151515",
+            bg_p1 = sumiInk4,
+            bg_p2 = sumiInk5,
+
+            fg = "#e8e8d3",
+            fg_dim = "#d0d0d0",
+
+            special = "#b0b8c0",
+          },
+          syn = {
+          }
+        }
       },
     },
     overrides = function (colors)
       return {
-        StatusLine = { fg = colors.palette.fujiGray, bg = colors.theme.ui.bg },
-        StatusLineNC = { fg = colors.palette.fujiGray, bg = colors.theme.ui.bg },
+        -- Normal = { bg = bg_color },
+        -- NormalNC = { bg = bg_color },
+        CursorLine = { bg = "#3F3F3F" },
+        CursorColumn = { bg = colors.theme.ui.bg },
+        ColorColumn = { bg = "#000000" },
+        WinSeparator = { fg = colors.theme.ui.bg_m3, bg = "#000000" },
+        StatusLine = { fg = colors.theme.ui.bg_dim, bg = colors.theme.ui.fg_dim },
+        StatusLineNC = { fg = colors.theme.ui.fg_dim, bg = colors.theme.ui.bg_dim },
+        StringDelimiter = { fg = colors.palette.autumnGreen },
 
         BufferlineFill = { bg = colors.palette.sumiInk0 },
         BufferlineBackground = { bg = colors.palette.sumiInk0 },
