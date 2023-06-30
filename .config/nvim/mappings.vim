@@ -120,6 +120,11 @@ nnoremap <C-w><C-s> :vsplit<CR>
 " split horizontally
 nnoremap <C-w>S :split<CR>
 nnoremap <leader>wS :split<CR>
+" move splits
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " move lines
 nnoremap <A-j> :m .+1<CR>==
@@ -141,8 +146,7 @@ command! W w
 command! Wq wq
 command! WQ wq
 command! Reload :source ~/.config/nvim/init.vim<CR>
-command! Format :terminal npx prettier -w %:p<CR>
-command! Worklog :tabnew | :e ~/notes/loggi/worklog.md
+command! Worklog :vsp | :e ~/notes/worklog.md
 command! Config :e ~/.config/nvim/init.vim<CR>
 command! Journal :lua vim.cmd(string.format("tabnew ~/notes/journal/%s.md", os.date("%Y-%m-%d")))<CR>
 command! Note :lua vim.cmd(string.format("tabnew ~/notes/z/%s.md", os.date("%Y%m%d%H%M%S")))<CR>
@@ -156,7 +160,7 @@ command! Done :lua require('telescope.builtin').grep_string({ cwd = '~/notes', s
 command! LGGT :!lggt %<CR>
 command! LGGW :!lggw %<CR>
 command! LWTX :lua io.popen("tmux neww -n '󰙨' '" .. "lwt " .. string.gsub(vim.fn.expand("%"), "loggi/", "") .. " & while [ : ]; do sleep 1; done'")
-command! LGGTX :silent !tmux neww -d -n "󰙨" "lggt % && echo 'Success' | espeak || aplay ~/Music/fail.wav & read"
+command! LGGTX :silent !tmux neww -d -n "󰙨" "lggt % && echo 'Success' | espeak || echo 'Fail' | espeak & read"
 command! LGGWX :silent !tmux neww -d -n "󰙨" "lggw % & while [ : ]; do sleep 1; done"
 command! PlaywrightDebug :lua require('toggleterm').exec("npx playwright test " .. vim.fn.expand("%:t") .. " --debug" )
 autocmd TermEnter term://*toggleterm#*
