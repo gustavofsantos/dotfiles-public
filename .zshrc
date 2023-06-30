@@ -144,29 +144,32 @@ function git_local_log() {
 }
 
 function beyond_ui_log_pretty_md() {
-  git --no-pager log --pretty=format:"%s" $1 -- . | sd '^(.+)\s\(#([0-9]+)\)$' '[$1](https://github.com/loggi/ui/pull/$2)'
+  git --no-pager log --pretty=format:"%s<%an>" $1 -- . | sd '^(.+)\s\(#([0-9]+)\)<(.+)>$' '* $3 [$1](https://github.com/loggi/ui/pull/$2)'
 }
 
 function loggi_web_log_pretty_md() {
   git --no-pager log --pretty=format:"%s<%an>" $1 -- . | sd '^(.+)\s\(#([0-9]+)\)<(.+)>$' '* [$1 ($3)](https://github.com/loggi/loggi-web/pull/$2)'
 }
 
+# How to use it
+# print_beyond_deploy_info beyond/prod-20230628.01..beyond/prod-20230629.04
 function print_beyond_deploy_info() {
+  TAG=$(echo $1 | awk -F '\\.\\.' '{ print $2 }')
 cat << EOF
 
 Ação: Deploy Beyond UI
 Workflow: <replace here>
-Tag: https://github.com/loggi/ui/releases/tag/$(git describe --tags `git rev-list --tags --max-count=1` | sed 's/\//%2F/g')
+Tag: https://github.com/loggi/ui/releases/tag/$(echo $TAG | sed 's/\//%2F/g')
 Diff: https://github.com/loggi/ui/compare/$1
 
 Pull requests:
-$(beyond_ui_log_pretty_md)
+$(beyond_ui_log_pretty_md $1)
 
 Descrição:
 - 
 
-- https://loggi.sentry.io/issues/?project=5917828&query=is%3Aunresolved+release%3A$(git describe --tags `git rev-list --tags --max-count=1` | sed 's/\//-/g')&referrer=issue-list&statsPeriod=14d
-- https://grafana.loggi.com/d/TZgxLo8nz/beyond-health?orgId=1
+* https://loggi.sentry.io/issues/?project=5917828&query=is%3Aunresolved+release%3A$(echo $TAG | sed 's/\//-/g')&referrer=issue-list&statsPeriod=14d
+* https://grafana.loggi.com/d/TZgxLo8nz/beyond-health?orgId=1
 
 cc @dev-beyond
 EOF
