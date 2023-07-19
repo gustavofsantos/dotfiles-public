@@ -11,7 +11,7 @@ font:
   bold_italic:
     family: MonoLisa Nerd Font
     style: Bold Italic
-  size: 10.5
+  size: 8.0
   # normal:
   #   family: OperatorMono Nerd Font
   #   style: Book
@@ -37,7 +37,7 @@ window:
   decorations_theme_variant: Dark
   dynamic_padding: false
   dynamic_title: true
-  opacity: 0.9
+  opacity: 0.985
   padding:
     x: 0
     y: 0
@@ -66,6 +66,7 @@ import:
   - ~/.alacritty.local.yml
   # - ~/.config/alacritty/themes/kanagawa.yml
   # - ~/.config/alacritty/themes/kanagawa_dragon.yml
-  - ~/.config/alacritty/themes/nordic.yml
+  # - ~/.config/alacritty/themes/nordic.yml
   # - ~/.config/alacritty/themes/modus_operandi.yml
   # - ~/.config/alacritty/themes/modus_vivendi.yml
+  - ~/.config/alacritty/themes/github_light.yml

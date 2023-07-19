@@ -32,6 +32,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'rockyzhang24/arctic.nvim'
 Plug 'rebelot/kanagawa.nvim'
 Plug 'ishan9299/modus-theme-vim'
+Plug 'projekt0n/github-nvim-theme'
 Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }
 
 Plug 'jxnblk/vim-mdx-js'
@@ -116,9 +117,10 @@ let g:coc_global_extensions = [
   \ ]
 
 set termguicolors
-set background=dark
-" colorscheme kanagawa-wave
-colorscheme nordic
+set background=light
+" colorscheme kanagawa
+colorscheme github_light
+" colorscheme nordic
 " colorscheme modus-vivendi
 set noerrorbells
 set tabstop=2 softtabstop=2

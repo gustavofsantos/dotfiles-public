@@ -12,9 +12,6 @@ nnoremap <C-q> :q<CR>
 imap <C-e> <C-o>$
 " go to the beginning of the line
 imap <C-a> <C-o>^
-" save and close the current buffer
-inoremap <C-c> <Esc>:wq<CR>
-nnoremap <C-c> :wq<CR>
 
 " lsp
 nmap <silent> K :call ShowDocumentation()<CR>

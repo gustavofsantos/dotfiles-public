@@ -76,26 +76,6 @@ if has_kanagawa then
           ui = {
             bg_gutter = "none",
           },
-        },
-        wave = {
-          ui = {
-            bg_dim = "#1c1c1c",
-            bg_gutter = "none",
-
-            bg_m3 = sumiInk0,
-            bg_m2 = sumiInk1,
-            bg_m1 = sumiInk2,
-            bg = "#151515",
-            bg_p1 = sumiInk4,
-            bg_p2 = sumiInk5,
-
-            fg = "#e8e8d3",
-            fg_dim = "#d0d0d0",
-
-            special = "#b0b8c0",
-          },
-          syn = {
-          }
         }
       },
     },
@@ -103,17 +83,6 @@ if has_kanagawa then
       return {
         -- Normal = { bg = bg_color },
         -- NormalNC = { bg = bg_color },
-        CursorLine = { bg = "#3F3F3F" },
-        CursorColumn = { bg = colors.theme.ui.bg },
-        ColorColumn = { bg = "#000000" },
-        WinSeparator = { fg = colors.theme.ui.bg_m3, bg = "#000000" },
-        StatusLine = { fg = colors.theme.ui.bg_dim, bg = colors.theme.ui.fg_dim },
-        StatusLineNC = { fg = colors.theme.ui.fg_dim, bg = colors.theme.ui.bg_dim },
-        StringDelimiter = { fg = colors.palette.autumnGreen },
-
-        BufferlineFill = { bg = colors.palette.sumiInk0 },
-        BufferlineBackground = { bg = colors.palette.sumiInk0 },
-        BufferLineBufferSelected = { bold = true, italic = false },
 
         NvimTreeGitDirty = { fg = colors.palette.oniViolet },
         NvimTreeGitStaged = { fg = colors.palette.oniViolet },
@@ -137,4 +106,26 @@ if has_kanagawa then
       }
     end
   }
+end
+
+local has_github_themes, _ = pcall(require, 'github-theme')
+if has_github_themes then
+  require('github-theme').setup({
+    options = {
+      hide_end_of_buffer = false,
+      hide_nc_statusline = false,
+      styles = {
+        comments = 'italic',
+        functions = 'italic',
+        keywords = 'italic',
+        variables = 'NONE',
+        conditionals = 'NONE',
+        constants = 'bold',
+        numbers = 'bold',
+        operators = 'NONE',
+        strings = 'NONE',
+        types = 'bold',
+      },
+    }
+  })
 end
