@@ -65,7 +65,7 @@
   rebase = true
 
 [diff]
-  tool = difftastic
+  ; tool = difftastic
   colorMoved = default
 
 [difftool]
@@ -75,7 +75,7 @@
   cmd = difft "$LOCAL" "$REMOTE"
 
 [pager]
-  difftool = true
+  ; difftool = true
 
 [rerere]
   enabled = true

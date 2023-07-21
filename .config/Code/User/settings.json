@@ -1,7 +1,7 @@
 {
   "workbench.startupEditor": "none",
   "workbench.colorTheme": "Night Owl",
-  "workbench.editor.showTabs": false,
+  "workbench.editor.showTabs": true,
   "workbench.editor.tabSizing": "fit",
   "workbench.tree.indent": 16,
   "editor.fontFamily": "'MonoLisa Nerd Font', 'Operator Mono Book'",

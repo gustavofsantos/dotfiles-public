@@ -56,6 +56,7 @@ Plug 'mbbill/undotree'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-treesitter/playground'
+Plug 'folke/flash.nvim'
 Plug 'kevinhwang91/promise-async'
 Plug 'kevinhwang91/nvim-ufo'
 Plug 'tpope/vim-surround'
@@ -64,6 +65,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'AndrewRadev/switch.vim'
 Plug 'justinmk/vim-sneak'
+
+Plug 'epwalsh/obsidian.nvim'
 
 " Running tests
 Plug 'vim-test/vim-test'
@@ -107,6 +110,7 @@ let g:coc_global_extensions = [
   \ 'coc-svelte',
   \ 'coc-html',
   \ 'coc-yaml',
+  \ 'coc-ltex',
   \ 'coc-vimlsp',
   \ 'coc-svg',
   \ 'coc-actions',
@@ -117,9 +121,9 @@ let g:coc_global_extensions = [
   \ ]
 
 set termguicolors
-set background=light
+set background=dark
 " colorscheme kanagawa
-colorscheme github_light
+colorscheme github_dark_dimmed
 " colorscheme nordic
 " colorscheme modus-vivendi
 set noerrorbells
