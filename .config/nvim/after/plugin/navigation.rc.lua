@@ -4,20 +4,27 @@ if (has_telescope) then
   telescope.setup {
     defaults = {
       dynamic_preview_title = true,
-      prompt_prefix = "> ",
-      theme = "ivy",
+      prompt_position = "top",
+      prompt_prefix = " ",
+      selection_caret = " ",
+      sorting_strategy = "ascending",
+      -- theme = "ivy",
       file_ignore_patterns = {
         "%.git/",
         "node_modules/",
         "coverage/",
         "__pycache__/",
-      }
+      },
+      layout_config = {
+        preview_width = 0.5,
+        prompt_position = "top",
+      },
     },
     pickers = {
-      find_files = { theme = "ivy", previewer = false, hidden = true },
-      git_files = { theme = "ivy", previewer = false },
-      search_history = { theme = "ivy" },
-      oldfiles = { theme = "ivy" },
+      find_files = { previewer = true, hidden = true },
+      git_files = { previewer = true },
+      -- search_history = { theme = "ivy" },
+      -- oldfiles = { theme = "ivy" },
       buffers = { 
         -- theme = "ivy",
         mappings = {
@@ -29,8 +36,8 @@ if (has_telescope) then
       jumplist = { theme = "ivy" },
       loclist = { theme = "ivy" },
       -- live_grep = { theme = "ivy" },
-      grep_string = { theme = "ivy" },
-      diagnostics = { theme = "ivy" },
+      -- grep_string = { theme = "ivy" },
+      -- diagnostics = { theme = "ivy" },
       help_tags = { theme = "ivy" },
       git_bcommits = { theme = "ivy" },
       git_branches = { theme = "ivy" },
