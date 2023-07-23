@@ -21,12 +21,23 @@ if (has_telescope) then
       },
     },
     pickers = {
-      find_files = { previewer = true, hidden = true },
-      git_files = { previewer = true },
+      find_files = {
+        previewer = true,
+        hidden = true,
+        prompt_prefix = " ",
+      },
+      git_files = { 
+        previewer = true,
+        prompt_prefix = " ",
+      },
       -- search_history = { theme = "ivy" },
       -- oldfiles = { theme = "ivy" },
+      commands = {
+        prompt_prefix = " ",
+      },
       buffers = { 
         -- theme = "ivy",
+        prompt_prefix = "﬘ ",
         mappings = {
           i = {
             ["<c-d>"] = require("telescope.actions").delete_buffer,
