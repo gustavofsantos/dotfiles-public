@@ -19,7 +19,7 @@ if (has_telescope) then
       search_history = { theme = "ivy" },
       oldfiles = { theme = "ivy" },
       buffers = { 
-        theme = "ivy",
+        -- theme = "ivy",
         mappings = {
           i = {
             ["<c-d>"] = require("telescope.actions").delete_buffer,
@@ -28,7 +28,7 @@ if (has_telescope) then
       },
       jumplist = { theme = "ivy" },
       loclist = { theme = "ivy" },
-      live_grep = { theme = "ivy" },
+      -- live_grep = { theme = "ivy" },
       grep_string = { theme = "ivy" },
       diagnostics = { theme = "ivy" },
       help_tags = { theme = "ivy" },
@@ -79,9 +79,9 @@ if (has_telescope) then
 end
 
 -- Setup tree view
-local has_nvimtree, nvimtree = pcall(require, 'nvim-tree')
+local has_nvimtree, _ = pcall(require, 'nvim-tree')
 if (has_nvimtree) then
-  nvimtree.setup {
+  require('nvim-tree').setup {
     respect_buf_cwd = true,
     view = {
       width = 44,
