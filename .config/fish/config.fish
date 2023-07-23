@@ -36,6 +36,3 @@ alias lw_show_urls "docker-compose exec loggi_web_app bash -c 'python manage.py 
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
-
-# Load homebrew
-eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
