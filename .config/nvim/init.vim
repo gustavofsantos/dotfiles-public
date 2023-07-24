@@ -15,6 +15,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'christoomey/vim-conflicted'
 Plug 'lewis6991/gitsigns.nvim', { 'tag': 'v0.6' }
+Plug 'sindrets/diffview.nvim', { 'commit': 'e91110d' }
 
 " Navigation
 Plug 'nvim-telescope/telescope.nvim'

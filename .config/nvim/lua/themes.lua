@@ -70,6 +70,7 @@ if has_kanagawa then
     statementStyle = { italic = true, bold = true },
     typeStyle = { italic = true },
     variablebuiltinStyle = { italic = true},
+    transparent = true,
     colors = {
       theme = {
         all = {
