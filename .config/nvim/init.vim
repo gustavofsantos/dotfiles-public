@@ -1,27 +1,3 @@
-"
-"                         ███████████████████████████
-"                         ███████▀▀▀░░░░░░░▀▀▀███████
-"                         ████▀░░░░░░░░░░░░░░░░░▀████
-"                         ███│░░░░░░░░░░░░░░░░░░░│███
-"                         ██▌│░░░░░░░░░░░░░░░░░░░│▐██
-"                         ██░└┐░░░░░░░░░░░░░░░░░┌┘░██
-"                         ██░░└┐░░░░░░░░░░░░░░░┌┘░░██
-"                         ██░░┌┘▄▄▄▄▄░░░░░▄▄▄▄▄└┐░░██
-"                         ██▌░│██████▌░░░▐██████│░▐██
-"                         ███░│▐███▀▀░░▄░░▀▀███▌│░███
-"                         ██▀─┘░░░░░░░▐█▌░░░░░░░└─▀██
-"                         ██▄░░░▄▄▄▓░░▀█▀░░▓▄▄▄░░░▄██
-"                         ████▄─┘██▌░░░░░░░▐██└─▄████
-"                         █████░░▐█─┬┬┬┬┬┬┬─█▌░░█████
-"                         ████▌░░░▀┬┼┼┼┼┼┼┼┬▀░░░▐████
-"                         █████▄░░░└┴┴┴┴┴┴┴┘░░░▄█████
-"                         ███████▄░░░░░░░░░░░▄███████
-"                         ██████████▄▄▄▄▄▄▄██████████
-"                         ███████████████████████████
-"
-"   You are about to experience a potent dosage of Vim. Watch your steps.
-"
-
 call plug#begin()
 " Neovim plugins
 Plug 'nvim-lua/plenary.nvim'
@@ -31,11 +7,8 @@ Plug 'kyazdani42/nvim-web-devicons'
 " Themes
 Plug 'rockyzhang24/arctic.nvim'
 Plug 'rebelot/kanagawa.nvim'
-Plug 'ishan9299/modus-theme-vim'
 Plug 'projekt0n/github-nvim-theme'
 Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }
-
-Plug 'jxnblk/vim-mdx-js'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -51,6 +24,7 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'fannheyward/telescope-coc.nvim'
 Plug 'ThePrimeagen/harpoon'
 Plug 'mbbill/undotree'
+Plug 'nvim-tree/nvim-tree.lua'
 
 " Code editing
 Plug 'nvim-treesitter/nvim-treesitter'
@@ -122,8 +96,8 @@ let g:coc_global_extensions = [
 
 set termguicolors
 set background=dark
-" colorscheme kanagawa
-colorscheme github_dark_dimmed
+colorscheme kanagawa
+" colorscheme github_dark_dimmed
 " colorscheme nordic
 " colorscheme modus-vivendi
 set noerrorbells

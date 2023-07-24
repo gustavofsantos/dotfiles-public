@@ -66,9 +66,9 @@ nnoremap <leader>tn :TestNearest<CR>
 nnoremap <leader>x :!%:p<CR>
 
 " Toggle nvim tree
-" nnoremap <C-b> :NvimTreeToggle<CR>
-nnoremap <C-b> :Telescope file_browser path=%:p:h select_buffer=true<CR>
-nnoremap <leader>b :Telescope file_browser path=%:p:h select_buffer=true<CR>
+nnoremap <C-b> :NvimTreeToggle<CR>
+" nnoremap <C-b> :Telescope file_browser path=%:p:h select_buffer=true<CR>
+" nnoremap <leader>b :Telescope file_browser path=%:p:h select_buffer=true<CR>
 
 nnoremap <leader>q :bdelete<CR>
 

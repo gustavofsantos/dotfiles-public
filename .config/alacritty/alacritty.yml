@@ -11,7 +11,7 @@ font:
   bold_italic:
     family: MonoLisa Nerd Font
     style: Bold Italic
-  size: 8.0
+  size: 10.0
   # normal:
   #   family: OperatorMono Nerd Font
   #   style: Book
@@ -64,10 +64,10 @@ cursor:
 
 import:
   - ~/.alacritty.local.yml
-  # - ~/.config/alacritty/themes/kanagawa.yml
+  - ~/.config/alacritty/themes/kanagawa.yml
   # - ~/.config/alacritty/themes/kanagawa_dragon.yml
   # - ~/.config/alacritty/themes/nordic.yml
   # - ~/.config/alacritty/themes/modus_operandi.yml
   # - ~/.config/alacritty/themes/modus_vivendi.yml
   # - ~/.config/alacritty/themes/github_light.yml
-  - ~/.config/alacritty/themes/github_dark_default.yml
+  # - ~/.config/alacritty/themes/github_dark_default.yml

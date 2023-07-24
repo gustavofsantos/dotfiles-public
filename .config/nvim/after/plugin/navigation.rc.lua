@@ -4,22 +4,40 @@ if (has_telescope) then
   telescope.setup {
     defaults = {
       dynamic_preview_title = true,
-      prompt_prefix = "> ",
-      theme = "ivy",
+      prompt_position = "top",
+      prompt_prefix = " ",
+      selection_caret = " ",
+      sorting_strategy = "ascending",
+      -- theme = "ivy",
       file_ignore_patterns = {
         "%.git/",
         "node_modules/",
         "coverage/",
         "__pycache__/",
-      }
+      },
+      layout_config = {
+        preview_width = 0.5,
+        prompt_position = "top",
+      },
     },
     pickers = {
-      find_files = { theme = "ivy", previewer = false, hidden = true },
-      git_files = { theme = "ivy", previewer = false },
-      search_history = { theme = "ivy" },
-      oldfiles = { theme = "ivy" },
+      find_files = {
+        previewer = true,
+        hidden = true,
+        prompt_prefix = " ",
+      },
+      git_files = { 
+        previewer = true,
+        prompt_prefix = " ",
+      },
+      -- search_history = { theme = "ivy" },
+      -- oldfiles = { theme = "ivy" },
+      commands = {
+        prompt_prefix = " ",
+      },
       buffers = { 
-        theme = "ivy",
+        -- theme = "ivy",
+        prompt_prefix = "﬘ ",
         mappings = {
           i = {
             ["<c-d>"] = require("telescope.actions").delete_buffer,
@@ -28,9 +46,9 @@ if (has_telescope) then
       },
       jumplist = { theme = "ivy" },
       loclist = { theme = "ivy" },
-      live_grep = { theme = "ivy" },
-      grep_string = { theme = "ivy" },
-      diagnostics = { theme = "ivy" },
+      -- live_grep = { theme = "ivy" },
+      -- grep_string = { theme = "ivy" },
+      -- diagnostics = { theme = "ivy" },
       help_tags = { theme = "ivy" },
       git_bcommits = { theme = "ivy" },
       git_branches = { theme = "ivy" },
@@ -79,9 +97,9 @@ if (has_telescope) then
 end
 
 -- Setup tree view
-local has_nvimtree, nvimtree = pcall(require, 'nvim-tree')
+local has_nvimtree, _ = pcall(require, 'nvim-tree')
 if (has_nvimtree) then
-  nvimtree.setup {
+  require('nvim-tree').setup {
     respect_buf_cwd = true,
     view = {
       width = 44,
