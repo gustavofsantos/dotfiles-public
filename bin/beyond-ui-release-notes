@@ -9,7 +9,7 @@ Tag: https://github.com/loggi/ui/releases/tag/$(echo $TAG | sed 's/\//%2F/g')
 Diff: https://github.com/loggi/ui/compare/$1
 
 Pull requests:
-$(list-prs $1)
+$(list-prs $1 loggi/ui)
 
 Descrição:
 - 

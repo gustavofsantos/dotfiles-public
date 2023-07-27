@@ -8,7 +8,7 @@ Workflow: <replace here>
 Tag: https://github.com/loggi/loggi-web/releases/tag/$(echo $TAG | sed 's/\//%2F/g')
 
 Pull requests:
-$(list-prs $1)
+$(list-prs $1 loggi/loggi-web)
 
 Monitoramento:
 * [Sentry Beyond](https://loggi.sentry.io/issues/?project=14082&query=is%3Aunresolved+app_type%3Abeyond+release%3A$(echo $TAG | sed 's/\//-/g')&referrer=issue-list&statsPeriod=14d)

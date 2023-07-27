@@ -1,5 +1,7 @@
 #!/bin/sh
 
 # Example of usage:
-# list-prs master..feature1
-git --no-pager log --pretty=format:"%s<%an>" $1 -- . | sd '^(.+)\s\(#([0-9]+)\)<(.+)>$' '* $3 [$1](https://github.com/loggi/ui/pull/$2)'
+# list-prs master..feature1 loggi/ui
+git --no-pager log --pretty=format:"%s<%an>" $1 -- . \
+  | sd '^(.+)\s\(#([0-9]+)\)<(.+)>$' '* $3 [$1](https://github.com/:REPO/pull/$2)' \
+  | sd ':REPO' "$2"

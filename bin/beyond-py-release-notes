@@ -13,7 +13,7 @@ Workflow: <replace here>
 Tag: https://github.com/loggi/py/releases/tag/beyond/$(echo $TAG | sed 's/\//%2F/g')
 
 Pull requests:
-$(list-prs $1)
+$(list-prs $1 loggi/py)
 
 Monitoramento:
 * [Sentry Beyond-Py](https://loggi.sentry.io/issues/?environment=production&project=4504600486150144&query=is%3Aunresolved+release%3Aprod-20230725.01&referrer=issue-list&statsPeriod=1h)
