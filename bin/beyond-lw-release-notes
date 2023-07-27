@@ -1,0 +1,16 @@
+#!/bin/sh
+TAG=$(echo $1 | awk -F '\\.\\.' '{ print $2 }')
+
+cat << EOF
+
+Ação: Deploy Beyond - Loggi Web
+Workflow: <replace here>
+Tag: https://github.com/loggi/loggi-web/releases/tag/$(echo $TAG | sed 's/\//%2F/g')
+
+Pull requests:
+$(list-prs $1)
+
+Monitoramento:
+* [Sentry Beyond](https://loggi.sentry.io/issues/?project=14082&query=is%3Aunresolved+app_type%3Abeyond+release%3A$(echo $TAG | sed 's/\//-/g')&referrer=issue-list&statsPeriod=14d)
+* [Grafana Beyond](https://grafana.loggi.com/d/TZgxLo8nz/beyond-health?orgId=1)
+EOF
