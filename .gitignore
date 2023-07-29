@@ -223,3 +223,4 @@ Music/
 .zhistory
 .zshrc.pre-oh-my-zsh
 Templates/
+.config/Electron/
