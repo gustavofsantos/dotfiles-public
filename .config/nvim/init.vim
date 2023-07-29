@@ -30,7 +30,6 @@ Plug 'christoomey/vim-tmux-runner'
 
 " Code editing
 Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-treesitter/playground'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
