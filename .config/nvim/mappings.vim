@@ -9,6 +9,7 @@ nnoremap <C-q> :q<CR>
 imap <C-e> <C-o>$
 " go to the beginning of the line
 imap <C-a> <C-o>^
+map <C-c> <Esc>
 
 noremap <ESC> :noh<CR><ESC>
 
