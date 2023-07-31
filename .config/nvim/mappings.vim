@@ -152,6 +152,7 @@ command! Done :lua require('telescope.builtin').grep_string({ cwd = '~/notes', s
 " command! LWT :lua vim.cmd("!tmux new-window -d -n '' 'lwt " .. string.gsub(vim.fn.expand("%"), "loggi/", "") .. "'; read")
 " command! LGGT :lua require('toggleterm').exec("lggt " .. vim.fn.expand("%"))
 " command! LGGW :lua require('toggleterm').exec("lggw " .. vim.fn.expand("%"))
+command! BPY :!docker run -v /opt/loggi/py/apps/beyond/src/beyond_app:/opt/loggi/beyond/src/beyond_app beyond-py bash -c 'poetry run py.test --disable-warnings -vv --ds beyond_app.settings.development -k %:t src/beyond_app'<CR>
 command! LGGT :!lggt %<CR>
 command! LGGW :!lggw %<CR>
 command! LWTX :lua io.popen("tmux neww -n '󰙨' '" .. "lwt " .. string.gsub(vim.fn.expand("%"), "loggi/", "") .. " & while [ : ]; do sleep 1; done'")
