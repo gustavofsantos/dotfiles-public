@@ -224,3 +224,4 @@ Music/
 .zshrc.pre-oh-my-zsh
 Templates/
 .config/Electron/
+.config/poetry
