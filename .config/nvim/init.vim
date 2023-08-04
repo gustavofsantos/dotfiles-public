@@ -3,6 +3,7 @@ call plug#begin()
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kassio/neoterm'
 
 " Themes
 Plug 'rockyzhang24/arctic.nvim'
@@ -25,23 +26,17 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'fannheyward/telescope-coc.nvim'
 Plug 'ThePrimeagen/harpoon'
 Plug 'mbbill/undotree'
-Plug 'nvim-tree/nvim-tree.lua'
 
 " Code editing
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-treesitter/playground'
-Plug 'folke/flash.nvim'
-Plug 'kevinhwang91/promise-async'
-Plug 'kevinhwang91/nvim-ufo'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'AndrewRadev/switch.vim'
 Plug 'justinmk/vim-sneak'
-
-Plug 'epwalsh/obsidian.nvim'
 
 " Running tests
 Plug 'vim-test/vim-test'
@@ -78,20 +73,14 @@ let g:switch_custom_definitions =
     \ ]
 
 let g:coc_global_extensions = [
-  \ 'coc-css',
   \ 'coc-json',
   \ 'coc-tsserver',
   \ 'coc-tailwindcss',
   \ 'coc-svelte',
-  \ 'coc-html',
   \ 'coc-yaml',
-  \ 'coc-ltex',
   \ 'coc-vimlsp',
-  \ 'coc-svg',
   \ 'coc-actions',
   \ 'coc-lists',
-  \ 'coc-json',
-  \ 'coc-yank',
   \ 'coc-highlight',
   \ ]
 

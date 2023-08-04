@@ -40,8 +40,7 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
-nnoremap zR :lua require('ufo').openAllFolds()<CR>
-nnoremap zM :lua require('ufo').closeAllFolds()<CR>
+map <C-c> <Esc>
 
 nnoremap <leader>am :lua require('harpoon.mark').add_file()<CR>
 nnoremap <leader>]m :lua require('harpoon.ui').nav_next()<CR>
@@ -68,20 +67,10 @@ nnoremap <leader>tn :TestNearest<CR>
 " execute current file as a script
 nnoremap <leader>run :!%:p<CR>
 
-nnoremap <leader>q :bdelete<CR>
-
 nnoremap <leader>tw :!tmux neww -n "󰙨" "lggw %"<CR>
-
-nnoremap <A-t> :exe v:count1 . "ToggleTerm"<CR>
-inoremap <A-t> <Esc>:exe v:count1 . "ToggleTerm"<CR>
-tnoremap <A-t> <C-\><C-n>:ToggleTerm<CR>
 
 nnoremap <C-p> :Telescope find_files<CR>
 nnoremap <C-f> :Telescope current_buffer_fuzzy_find<CR>
-nnoremap <C-k><C-e> :Telescope oldfiles<CR>
-nnoremap <C-k><C-b> :Telescope buffers<CR>
-nnoremap <C-k><C-f> :Telescope live_grep<CR>
-" nnoremap <C-k><C-g> :Git<CR>
 
 nnoremap <leader>fr :lua require('telescope.builtin').resume()<CR>
 nnoremap <leader>ff :lua require('telescope.builtin').find_files()<CR>
@@ -103,10 +92,11 @@ nnoremap <leader>/  :lua require('telescope.builtin').current_buffer_fuzzy_find(
 
 nnoremap ]h :Gitsigns next_hunk<CR>
 nnoremap [h :Gitsigns prev_hunk<CR>
+nnoremap gH :Gitsigns preview_hunk<CR>
 nnoremap <leader>hv :Gitsigns preview_hunk<CR>
 nnoremap <leader>hs :Gitsigns stage_hunk<CR>
 nnoremap <leader>hr :Gitsigns reset_hunk<CR>
-" nnoremap <leader>gs :Git<CR>
+nnoremap <leader>gs :Git<CR>
 vnoremap <leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 
 " split vertically
@@ -159,14 +149,18 @@ command! LWTX :lua io.popen("tmux neww -n '󰙨' '" .. "lwt " .. string.gsub(vim
 command! LGGTX :silent !tmux neww -d -n "󰙨" "lggt % && echo 'Success' | espeak || echo 'Fail' | espeak & read"
 command! LGGWX :silent !tmux neww -d -n "󰙨" "lggw % & while [ : ]; do sleep 1; done"
 command! PlaywrightDebug :lua require('toggleterm').exec("npx playwright test " .. vim.fn.expand("%:t") .. " --debug" )
-autocmd TermEnter term://*toggleterm#*
-      \ tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
-
 
 augroup highlight_yank
     autocmd!
     au TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=500})
 augroup END
+
+" Loggi's py monorepo
+nnoremap <leader>pi :!bash -c "py-isort %:p"<CR>
+nnoremap <leader>pic :!bash -c "py-isort-check %:p"<CR>
+nnoremap <leader>pb :!bash -c "py-black %:p"<CR>
+nnoremap <leader>pbc :!bash -c "py-black-check %:p"<CR>
+nnoremap <leader>pt :T bash -c "py-test-file %:t && echo 'Success' \| espeak \|\| echo 'Fail' \| espeak"<CR>
 
 " match ExtraWhitespace /\s\+$/
 " autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
