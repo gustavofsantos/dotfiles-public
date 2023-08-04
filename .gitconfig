@@ -48,7 +48,6 @@
 
 [core]
   editor = nvim
-  pager = delta
 
 [merge]
   conflictstyle = diff3
@@ -83,9 +82,6 @@
 [branch]
   autosetuprebase = always
 
-[interactive]
-  diffFilter = delta --color-only
-
 [color]
   diff = auto
   status = auto
@@ -109,11 +105,6 @@
   added = yellow
   changed = green
   untracked = blue
-
-[delta]
-  dark = true
-  line-numbers = true
-  side-by-side = true
 
 [init]
   defaultBranch = main

@@ -1,0 +1,564 @@
+diff --git a/.config/fish/conf.d/asdf.fish b/.config/fish/conf.d/asdf.fish
+new file mode 100644
+index 0000000..aa24984
+--- /dev/null
++++ b/.config/fish/conf.d/asdf.fish
+@@ -0,0 +1,11 @@
++if test -n "$ASDF_DATA_DIR" -a -d "$ASDF_DATA_DIR"
++    source $ASDF_DATA_DIR/asdf.fish
++else if test -f ~/.asdf/asdf.fish
++    source ~/.asdf/asdf.fish
++else if test -f /usr/local/opt/asdf/asdf.fish
++    source /usr/local/opt/asdf/asdf.fish
++else if test -f /opt/homebrew/opt/asdf/asdf.fish
++    source /opt/homebrew/opt/asdf/asdf.fish
++else if test -f /opt/homebrew/opt/asdf/libexec/asdf.fish
++    source /opt/homebrew/opt/asdf/libexec/asdf.fish
++end
+diff --git a/.config/fish/conf.d/nix-env.fish b/.config/fish/conf.d/nix-env.fish
+new file mode 100644
+index 0000000..22d7b31
+--- /dev/null
++++ b/.config/fish/conf.d/nix-env.fish
+@@ -0,0 +1,138 @@
++# Setup Nix
++
++# We need to distinguish between single-user and multi-user installs.
++# This is difficult because there's no official way to do this.
++# We could look for the presence of /nix/var/nix/daemon-socket/socket but this will fail if the
++# daemon hasn't started yet. /nix/var/nix/daemon-socket will exist if the daemon has ever run, but
++# I don't think there's any protection against accidentally running `nix-daemon` as a user.
++# We also can't just look for /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh because
++# older single-user installs used the default profile instead of a per-user profile.
++# We can still check for it first, because all multi-user installs should have it, and so if it's
++# not present that's a pretty big indicator that this is a single-user install. If it does exist,
++# we still need to verify the install type. To that end we'll look for a root owner and sticky bit
++# on /nix/store. Multi-user installs set both, single-user installs don't. It's certainly possible
++# someone could do a single-user install as root and then manually set the sticky bit but that
++# would be extremely unusual.
++
++set -l nix_profile_path /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
++set -l single_user_profile_path ~/.nix-profile/etc/profile.d/nix.sh
++if test -e $nix_profile_path
++  # The path exists. Double-check that this is a multi-user install.
++  # We can't just check for ~/.nix-profile/… because this may be a single-user install running as
++  # the wrong user.
++
++  # stat is not portable. Splitting the output of ls -nd is reliable on most platforms.
++  set -l owner (string split -n ' ' (command ls -nd /nix/store 2>/dev/null))[3]
++  if not test -k /nix/store -a $owner -eq 0
++    # /nix/store is either not owned by root or not sticky. Assume single-user.
++    set nix_profile_path $single_user_profile_path
++  end
++else
++  # The path doesn't exist. Assume single-user
++  set nix_profile_path $single_user_profile_path
++end
++
++if test -e $nix_profile_path
++  # Source the nix setup script
++  # We're going to run the regular Nix profile under bash and then print out a few variables
++  for line in (command env -u BASH_ENV bash -c '. "$0"; for name in PATH "${!NIX_@}"; do printf "%s=%s\0" "$name" "${!name}"; done' $nix_profile_path | string split0)
++    set -xg (string split -m 1 = $line)
++  end
++
++  # Insert Nix's fish share directories into fish's special variables.
++  # nixpkgs-installed fish tries to set these up already if NIX_PROFILES is defined, which won't
++  # be the case when sourcing $__fish_data_dir/share/config.fish normally, but might be for a
++  # recursive invocation. To guard against that, we'll only insert paths that don't already exit.
++  # Furthermore, for the vendor_conf.d sourcing, we'll use the pre-existing presence of a path in
++  # $fish_function_path to determine whether we want to source the relevant vendor_conf.d folder.
++
++  # To start, let's locally define NIX_PROFILES if it doesn't already exist.
++  set -al NIX_PROFILES
++  if test (count $NIX_PROFILES) -eq 0
++    set -a NIX_PROFILES $HOME/.nix-profile
++  end
++  # Replicate the logic from nixpkgs version of $__fish_data_dir/__fish_build_paths.fish.
++  set -l __nix_profile_paths (string split ' ' -- $NIX_PROFILES)[-1..1]
++  set -l __extra_completionsdir \
++    $__nix_profile_paths/etc/fish/completions \
++    $__nix_profile_paths/share/fish/vendor_completions.d
++  set -l __extra_functionsdir \
++    $__nix_profile_paths/etc/fish/functions \
++    $__nix_profile_paths/share/fish/vendor_functions.d
++  set -l __extra_confdir \
++    $__nix_profile_paths/etc/fish/conf.d \
++    $__nix_profile_paths/share/fish/vendor_conf.d \
++
++  ### Configure fish_function_path ###
++  # Remove any of our extra paths that may already exist.
++  # Record the equivalent __extra_confdir path for any function path that exists.
++  set -l existing_conf_paths
++  for path in $__extra_functionsdir
++    if set -l idx (contains --index -- $path $fish_function_path)
++      set -e fish_function_path[$idx]
++      set -a existing_conf_paths $__extra_confdir[(contains --index -- $path $__extra_functionsdir)]
++    end
++  end
++  # Insert the paths before $__fish_data_dir.
++  if set -l idx (contains --index -- $__fish_data_dir/functions $fish_function_path)
++    # Fish has no way to simply insert into the middle of an array.
++    set -l new_path $fish_function_path[1..$idx]
++    set -e new_path[$idx]
++    set -a new_path $__extra_functionsdir
++    set fish_function_path $new_path $fish_function_path[$idx..-1]
++  else
++    set -a fish_function_path $__extra_functionsdir
++  end
++
++  ### Configure fish_complete_path ###
++  # Remove any of our extra paths that may already exist.
++  for path in $__extra_completionsdir
++    if set -l idx (contains --index -- $path $fish_complete_path)
++      set -e fish_complete_path[$idx]
++    end
++  end
++  # Insert the paths before $__fish_data_dir.
++  if set -l idx (contains --index -- $__fish_data_dir/completions $fish_complete_path)
++    set -l new_path $fish_complete_path[1..$idx]
++    set -e new_path[$idx]
++    set -a new_path $__extra_completionsdir
++    set fish_complete_path $new_path $fish_complete_path[$idx..-1]
++  else
++    set -a fish_complete_path $__extra_completionsdir
++  end
++
++  ### Source conf directories ###
++  # The built-in directories were already sourced during shell initialization.
++  # Any __extra_confdir that came from $__fish_data_dir/__fish_build_paths.fish was also sourced.
++  # As explained above, we're using the presence of pre-existing paths in $fish_function_path as a
++  # signal that the corresponding conf dir has also already been sourced.
++  # In order to simulate this, we'll run through the same algorithm as found in
++  # $__fish_data_dir/config.fish except we'll avoid sourcing the file if it comes from an
++  # already-sourced location.
++  # Caveats:
++  # * Files will be sourced in a different order than we'd ideally do (because we're coming in
++  #   after the fact to source them).
++  # * If there are existing extra conf paths, files in them may have been sourced that should have
++  #   been suppressed by paths we're inserting in front.
++  # * Similarly any files in $__fish_data_dir/vendor_conf.d that should have been suppressed won't
++  #   have been.
++  set -l sourcelist
++  for file in $__fish_config_dir/conf.d/*.fish $__fish_sysconf_dir/conf.d/*.fish
++    # We know these paths were sourced already. Just record them.
++    set -l basename (string replace -r '^.*/' '' -- $file)
++    contains -- $basename $sourcelist
++    or set -a sourcelist $basename
++  end
++  for root in $__extra_confdir
++    for file in $root/*.fish
++      set -l basename (string replace -r '^.*/' '' -- $file)
++      contains -- $basename $sourcelist
++      and continue
++      set -a sourcelist $basename
++      contains -- $root $existing_conf_paths
++      and continue # this is a pre-existing path, it will have been sourced already
++      [ -f $file -a -r $file ]
++      and source $file
++    end
++  end
++end
+diff --git a/.config/nvim/after/plugin/code.rc.lua b/.config/nvim/after/plugin/code.rc.lua
+index aa71cc9..a7ec6d9 100644
+--- a/.config/nvim/after/plugin/code.rc.lua
++++ b/.config/nvim/after/plugin/code.rc.lua
+@@ -3,17 +3,6 @@ vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decr
+ vim.o.foldlevelstart = 99
+ vim.o.foldenable = true
+ 
+-
+-local has_autopairs, autopairs = pcall(require, "nvim-autopairs")
+-if (has_autopairs) then
+-  autopairs.setup {}
+-end
+-
+-local has_comment, comment = pcall(require, 'Comment')
+-if (has_comment) then
+-  comment.setup {}
+-end
+-
+ local has_treesitter, treesitter = pcall(require, 'nvim-treesitter.configs')
+ if has_treesitter then
+   treesitter.setup {
+@@ -41,6 +30,7 @@ if has_treesitter then
+       "css",
+       "eex",
+       "heex",
++      "svelte",
+     },
+     highlight = {
+       enable = true,
+@@ -71,7 +61,6 @@ if has_treesitter then
+           ['if'] = '@function.inner',
+           ['ac'] = '@class.outer',
+           ['ic'] = '@class.inner',
+-          ['aC'] = '@function.call'
+         },
+       },
+       move = {
+@@ -113,57 +102,6 @@ if has_treesitter then
+     autotag = {
+       enable = true
+     },
+-    textsubjects = {
+-      enable = true,
+-      prev_selection = ',', -- (Optional) keymap to select the previous selection
+-      keymaps = {
+-        ['.'] = 'textsubjects-smart',
+-        [';'] = 'textsubjects-container-outer',
+-        ['i;'] = 'textsubjects-container-inner',
+-      },
+-    },
+   }
+-
+-  local has_ufo, ufo = pcall(require, 'ufo')
+-  if has_ufo then
+-    local handler = function(virtText, lnum, endLnum, width, truncate)
+-      local newVirtText = {}
+-      local suffix = ('  %d '):format(endLnum - lnum)
+-      local sufWidth = vim.fn.strdisplaywidth(suffix)
+-      local targetWidth = width - sufWidth
+-      local curWidth = 0
+-      for _, chunk in ipairs(virtText) do
+-        local chunkText = chunk[1]
+-        local chunkWidth = vim.fn.strdisplaywidth(chunkText)
+-        if targetWidth > curWidth + chunkWidth then
+-          table.insert(newVirtText, chunk)
+-        else
+-          chunkText = truncate(chunkText, targetWidth - curWidth)
+-          local hlGroup = chunk[2]
+-          table.insert(newVirtText, {chunkText, hlGroup})
+-          chunkWidth = vim.fn.strdisplaywidth(chunkText)
+-          -- str width returned from truncate() may less than 2nd argument, need padding
+-          if curWidth + chunkWidth < targetWidth then
+-            suffix = suffix .. (' '):rep(targetWidth - curWidth - chunkWidth)
+-          end
+-          break
+-        end
+-        curWidth = curWidth + chunkWidth
+-      end
+-      table.insert(newVirtText, {suffix, 'MoreMsg'})
+-      return newVirtText
+-    end
+-
+-    ufo.setup({
+-      open_fold_hl_timeout = 500,
+-      close_fold_kinds = {'imports', 'comment'},
+-      fold_virt_text_handler = handler,
+-      provider_selector = function(bufnr, filetype, buftype)
+-        return {'treesitter', 'indent'}
+-      end
+-    })
+-
+-
+-  end
+ end
+ 
+diff --git a/.config/nvim/after/plugin/navigation.rc.lua b/.config/nvim/after/plugin/navigation.rc.lua
+index bde4231..d38f046 100644
+--- a/.config/nvim/after/plugin/navigation.rc.lua
++++ b/.config/nvim/after/plugin/navigation.rc.lua
+@@ -16,27 +16,31 @@ if (has_telescope) then
+         "__pycache__/",
+       },
+       layout_config = {
++        vertical = { width = 0.25 },
+         preview_width = 0.5,
+         prompt_position = "top",
+       },
++      borderchars = {
++        prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
++        results = { " " },
++        preview = { " " },
++      },
+     },
+     pickers = {
+       find_files = {
+         previewer = true,
+         hidden = true,
++        theme = "dropdown",
+         prompt_prefix = " ",
+       },
+       git_files = { 
+         previewer = true,
+         prompt_prefix = " ",
+       },
+-      -- search_history = { theme = "ivy" },
+-      -- oldfiles = { theme = "ivy" },
+       commands = {
+         prompt_prefix = " ",
+       },
+       buffers = { 
+-        -- theme = "ivy",
+         prompt_prefix = "﬘ ",
+         mappings = {
+           i = {
+@@ -44,21 +48,6 @@ if (has_telescope) then
+           }
+         }
+       },
+-      jumplist = { theme = "ivy" },
+-      loclist = { theme = "ivy" },
+-      -- live_grep = { theme = "ivy" },
+-      -- grep_string = { theme = "ivy" },
+-      -- diagnostics = { theme = "ivy" },
+-      help_tags = { theme = "ivy" },
+-      git_bcommits = { theme = "ivy" },
+-      git_branches = { theme = "ivy" },
+-      current_buffer_fuzzy_find = { theme = "ivy" },
+-      lsp_references = { theme = "ivy "},
+-      lsp_document_symbols = { theme = "ivy" },
+-      lsp_workspace_symbols = { theme = "ivy" },
+-      lsp_dynamic_workspace_symbols = { theme = "ivy" },
+-      keymaps = { theme = "ivy" }
+-      -- disable_devicons = false
+     },
+     extensions = {
+       fzf = {
+@@ -67,12 +56,7 @@ if (has_telescope) then
+         override_file_sorter = true, -- override the file sorter
+         case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+       },
+-      coc = {
+-        theme = "ivy",
+-        prefer_locations = true
+-      },
+       file_browser = {
+-        theme = "ivy",
+         respect_gitignore = false,
+         hidden = true,
+         previewer = false,
+@@ -80,16 +64,12 @@ if (has_telescope) then
+         hijack_netrw = true,
+       },
+       ["ui-select"] = {
+-        require("telescope.themes").get_dropdown {
+-        }
++        require("telescope.themes").get_dropdown({})
+       }
+     },
+   }
+ 
+   telescope.load_extension('harpoon')
+-  telescope.load_extension('ui-select')
+-  telescope.load_extension('file_browser')
+-  telescope.load_extension('coc')
+ 
+   -- find non git-ignored files inside the current dir
+   vim.keymap.set('n', '<F3>', require('telescope.builtin').grep_string, { desc = 'Find string' })
+diff --git a/.config/nvim/lua/themes.lua b/.config/nvim/lua/themes.lua
+index 9b840be..a7b1b74 100644
+--- a/.config/nvim/lua/themes.lua
++++ b/.config/nvim/lua/themes.lua
+@@ -1,7 +1,6 @@
+ local has_nordic, _ = pcall(require, 'nordic')
+ if has_nordic then
+   local palette = require('nordic.colors')
+-  local bg = "#151515"
+   require('nordic').setup({
+     telescope = {
+       style = 'flat'
+@@ -47,20 +46,6 @@ end
+ 
+ local has_kanagawa, _ = pcall(require, 'kanagawa')
+ if has_kanagawa then
+-  local fg_color = "#fafafa"
+-  local bg_color = "#151515"
+-  local cursor_line_color = "#1c1c1c"
+-  local statusline_bg = "#dddddd"
+-  local statuslinenc_bg = "#000000"
+-  local sumiInk0 = "#151515"
+-  local sumiInk1 = "#1b1b13"
+-  local sumiInk2 = "#222227"
+-  local sumiInk3 = "#232338"
+-  local sumiInk4 = "#353541"
+-  local sumiInk5 = "#47475b"
+-  local sumiInk6 = "#54546D"
+-  local springViolet2 = "#9CABCA"
+-
+   require('kanagawa').setup {
+     dimInactive = false,
+     globalStatus = true,
+@@ -70,7 +55,7 @@ if has_kanagawa then
+     statementStyle = { italic = true, bold = true },
+     typeStyle = { italic = true },
+     variablebuiltinStyle = { italic = true},
+-    transparent = true,
++    transparent = false,
+     colors = {
+       theme = {
+         all = {
+@@ -99,6 +84,14 @@ if has_kanagawa then
+         NvimTreeCursorLine = { bg = colors.palette.sumiInk5 },
+         NvimTreeIndentMarker = { fg = colors.palette.fujiGray },
+ 
++        TelescopeTitle = { fg = colors.theme.ui.special, bold = true },
++        TelescopePromptNormal = { bg = colors.theme.ui.bg_p1 },
++        TelescopePromptBorder = { fg = colors.theme.ui.bg_p1, bg = colors.theme.ui.bg_p1 },
++        TelescopeResultsNormal = { fg = colors.theme.ui.fg_dim, bg = colors.theme.ui.bg_m1 },
++        TelescopeResultsBorder = { fg = colors.theme.ui.bg_m1, bg = colors.theme.ui.bg_m1 },
++        TelescopePreviewNormal = { bg = colors.theme.ui.bg_dim },
++        TelescopePreviewBorder = { bg = colors.theme.ui.bg_dim, fg = colors.theme.ui.bg_dim },
++
+         ['@type'] = { italic = false, bold = true },
+         ['@tag'] = { italic = false },
+         ['@tag.delimiter'] = { fg = colors.palette.sumiInk6 },
+diff --git a/.config/tmux/tmux.conf b/.config/tmux/tmux.conf
+index c1c5b3f..2a2dfbf 100644
+--- a/.config/tmux/tmux.conf
++++ b/.config/tmux/tmux.conf
+@@ -85,6 +85,11 @@ set -g message-command-style bg=default,fg=yellow
+ set-option -g pane-border-style fg=colour235 #base02
+ set-option -g pane-active-border-style fg=colour136,bg=colour235
+ 
++bind-key -r u run-shell "~/bin/tmux-sessionizer ~/loggi/ui/targets/beyond"
++bind-key -r i run-shell "~/bin/tmux-sessionizer ~/loggi/beyond-qa"
++bind-key -r o run-shell "~/bin/tmux-sessionizer ~/loggi/web"
++bind-key -r p run-shell "~/bin/tmux-sessionizer ~/loggi/py"
++
+ set -g @plugin 'tmux-plugins/tmux-yank'
+ set -g @plugin 'tmux-plugins/tpm'
+ 
+diff --git a/.gitconfig b/.gitconfig
+index 548350a..5699447 100644
+--- a/.gitconfig
++++ b/.gitconfig
+@@ -48,7 +48,6 @@
+ 
+ [core]
+   editor = nvim
+-  pager = delta
+ 
+ [merge]
+   conflictstyle = diff3
+@@ -83,9 +82,6 @@
+ [branch]
+   autosetuprebase = always
+ 
+-[interactive]
+-  diffFilter = delta --color-only
+-
+ [color]
+   diff = auto
+   status = auto
+@@ -110,11 +106,6 @@
+   changed = green
+   untracked = blue
+ 
+-[delta]
+-  dark = true
+-  line-numbers = true
+-  side-by-side = true
+-
+ [init]
+   defaultBranch = main
+ 
+diff --git a/README.md b/README.md
+index 0d1d6d9..2caa9d5 100644
+--- a/README.md
++++ b/README.md
+@@ -23,3 +23,15 @@ I must set my user for each machine.
+ [user]
+     email = <email>
+ ```
++
++### Installing fish dependencies with fisher
++
++#### ASDF
++
++```sh
++# install asdf
++git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.0
++
++# install fisher plugin
++fisher install rstacruz/fish-asdf
++```
+diff --git a/bin/py-black b/bin/py-black
+new file mode 100755
+index 0000000..8d8828c
+--- /dev/null
++++ b/bin/py-black
+@@ -0,0 +1,5 @@
++#!/bin/bash
++FILE=$(echo $1 | sed 's/\/opt\/loggi\/py\/apps\/beyond\///g')
++
++docker run -v /opt/loggi/py/apps/beyond/src/beyond_app:/opt/loggi/beyond/src/beyond_app \
++  beyond-py bash -c "poetry run black $FILE"
+diff --git a/bin/py-black-check b/bin/py-black-check
+new file mode 100755
+index 0000000..aff256c
+--- /dev/null
++++ b/bin/py-black-check
+@@ -0,0 +1,5 @@
++#!/bin/bash
++FILE=$(echo $1 | sed 's/\/opt\/loggi\/py\/apps\/beyond\///g')
++
++docker run -v /opt/loggi/py/apps/beyond/src/beyond_app:/opt/loggi/beyond/src/beyond_app \
++  beyond-py bash -c "poetry run black --check $FILE"
+diff --git a/bin/py-compile-proto.sh b/bin/py-compile-proto.sh
+new file mode 100755
+index 0000000..2ff2904
+--- /dev/null
++++ b/bin/py-compile-proto.sh
+@@ -0,0 +1,6 @@
++#!/bin/bash
++
++docker run -it \
++  -v /opt/loggi/py/apps/beyond/src/beyond_app:/opt/loggi/beyond/src/beyond_app \
++  -v /opt/loggi/py/apps/beyond/src/proto:/opt/loggi/beyond/src/proto beyond-py \
++  bash -c 'poetry run python ../../libs/buildproto.py /loggi/beyond/src/proto'
+diff --git a/bin/py-flake b/bin/py-flake
+new file mode 100755
+index 0000000..07e6c1a
+--- /dev/null
++++ b/bin/py-flake
+@@ -0,0 +1,5 @@
++#!/bin/bash
++FILE=$(echo $1 | sed 's/\/opt\/loggi\/py\/apps\/beyond\///g')
++
++docker run -v /opt/loggi/py/apps/beyond/src/beyond_app:/opt/loggi/beyond/src/beyond_app \
++  beyond-py bash -c "poetry run flake8 $FILE"
+diff --git a/bin/py-isort b/bin/py-isort
+new file mode 100755
+index 0000000..06c1bae
+--- /dev/null
++++ b/bin/py-isort
+@@ -0,0 +1,5 @@
++#!/bin/bash
++FILE=$(echo $1 | sed 's/\/opt\/loggi\/py\/apps\/beyond\///g')
++
++docker run -v /opt/loggi/py/apps/beyond/src/beyond_app:/opt/loggi/beyond/src/beyond_app \
++  beyond-py bash -c "poetry run isort --profile black $FILE"
+diff --git a/bin/py-isort-check b/bin/py-isort-check
+new file mode 100755
+index 0000000..12525fa
+--- /dev/null
++++ b/bin/py-isort-check
+@@ -0,0 +1,5 @@
++#!/bin/bash
++FILE=$(echo $1 | sed 's/\/opt\/loggi\/py\/apps\/beyond\///g')
++
++docker run -v /opt/loggi/py/apps/beyond/src/beyond_app:/opt/loggi/beyond/src/beyond_app \
++  beyond-py bash -c "poetry run isort --profile black --check $FILE"
+diff --git a/bin/py-test b/bin/py-test
+new file mode 100755
+index 0000000..0a80e09
+--- /dev/null
++++ b/bin/py-test
+@@ -0,0 +1,4 @@
++#!/bin/bash
++
++docker run -it -v /opt/loggi/py/apps/beyond/src/beyond_app:/opt/loggi/beyond/src/beyond_app beyond-py \
++  bash -c "poetry run py.test --disable-warnings -vv --ds beyond_app.settings.development src/beyond_app"
+diff --git a/bin/py-test-file b/bin/py-test-file
+new file mode 100755
+index 0000000..256ef0a
+--- /dev/null
++++ b/bin/py-test-file
+@@ -0,0 +1,5 @@
++#!/bin/bash
++FILE=$1
++
++docker run -it -v /opt/loggi/py/apps/beyond/src/beyond_app:/opt/loggi/beyond/src/beyond_app beyond-py \
++  bash -c "poetry run py.test --disable-warnings -vv --ds beyond_app.settings.development -k $FILE src/beyond_app"

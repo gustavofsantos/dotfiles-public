@@ -16,27 +16,31 @@ if (has_telescope) then
         "__pycache__/",
       },
       layout_config = {
+        vertical = { width = 0.25 },
         preview_width = 0.5,
         prompt_position = "top",
+      },
+      borderchars = {
+        prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
+        results = { " " },
+        preview = { " " },
       },
     },
     pickers = {
       find_files = {
         previewer = true,
         hidden = true,
+        theme = "dropdown",
         prompt_prefix = " ",
       },
       git_files = { 
         previewer = true,
         prompt_prefix = " ",
       },
-      -- search_history = { theme = "ivy" },
-      -- oldfiles = { theme = "ivy" },
       commands = {
         prompt_prefix = " ",
       },
       buffers = { 
-        -- theme = "ivy",
         prompt_prefix = "﬘ ",
         mappings = {
           i = {
@@ -44,21 +48,6 @@ if (has_telescope) then
           }
         }
       },
-      jumplist = { theme = "ivy" },
-      loclist = { theme = "ivy" },
-      -- live_grep = { theme = "ivy" },
-      -- grep_string = { theme = "ivy" },
-      -- diagnostics = { theme = "ivy" },
-      help_tags = { theme = "ivy" },
-      git_bcommits = { theme = "ivy" },
-      git_branches = { theme = "ivy" },
-      current_buffer_fuzzy_find = { theme = "ivy" },
-      lsp_references = { theme = "ivy "},
-      lsp_document_symbols = { theme = "ivy" },
-      lsp_workspace_symbols = { theme = "ivy" },
-      lsp_dynamic_workspace_symbols = { theme = "ivy" },
-      keymaps = { theme = "ivy" }
-      -- disable_devicons = false
     },
     extensions = {
       fzf = {
@@ -67,12 +56,7 @@ if (has_telescope) then
         override_file_sorter = true, -- override the file sorter
         case_mode = "smart_case", -- or "ignore_case" or "respect_case"
       },
-      coc = {
-        theme = "ivy",
-        prefer_locations = true
-      },
       file_browser = {
-        theme = "ivy",
         respect_gitignore = false,
         hidden = true,
         previewer = false,
@@ -80,16 +64,12 @@ if (has_telescope) then
         hijack_netrw = true,
       },
       ["ui-select"] = {
-        require("telescope.themes").get_dropdown {
-        }
+        require("telescope.themes").get_dropdown({})
       }
     },
   }
 
   telescope.load_extension('harpoon')
-  telescope.load_extension('ui-select')
-  telescope.load_extension('file_browser')
-  telescope.load_extension('coc')
 
   -- find non git-ignored files inside the current dir
   vim.keymap.set('n', '<F3>', require('telescope.builtin').grep_string, { desc = 'Find string' })

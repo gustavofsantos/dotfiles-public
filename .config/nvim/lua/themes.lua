@@ -1,7 +1,6 @@
 local has_nordic, _ = pcall(require, 'nordic')
 if has_nordic then
   local palette = require('nordic.colors')
-  local bg = "#151515"
   require('nordic').setup({
     telescope = {
       style = 'flat'
@@ -47,20 +46,6 @@ end
 
 local has_kanagawa, _ = pcall(require, 'kanagawa')
 if has_kanagawa then
-  local fg_color = "#fafafa"
-  local bg_color = "#151515"
-  local cursor_line_color = "#1c1c1c"
-  local statusline_bg = "#dddddd"
-  local statuslinenc_bg = "#000000"
-  local sumiInk0 = "#151515"
-  local sumiInk1 = "#1b1b13"
-  local sumiInk2 = "#222227"
-  local sumiInk3 = "#232338"
-  local sumiInk4 = "#353541"
-  local sumiInk5 = "#47475b"
-  local sumiInk6 = "#54546D"
-  local springViolet2 = "#9CABCA"
-
   require('kanagawa').setup {
     dimInactive = false,
     globalStatus = true,
@@ -70,7 +55,7 @@ if has_kanagawa then
     statementStyle = { italic = true, bold = true },
     typeStyle = { italic = true },
     variablebuiltinStyle = { italic = true},
-    transparent = true,
+    transparent = false,
     colors = {
       theme = {
         all = {
@@ -98,6 +83,14 @@ if has_kanagawa then
         NvimTreeNormalFloat = { bg = colors.theme.ui.bg },
         NvimTreeCursorLine = { bg = colors.palette.sumiInk5 },
         NvimTreeIndentMarker = { fg = colors.palette.fujiGray },
+
+        TelescopeTitle = { fg = colors.theme.ui.special, bold = true },
+        TelescopePromptNormal = { bg = colors.theme.ui.bg_p1 },
+        TelescopePromptBorder = { fg = colors.theme.ui.bg_p1, bg = colors.theme.ui.bg_p1 },
+        TelescopeResultsNormal = { fg = colors.theme.ui.fg_dim, bg = colors.theme.ui.bg_m1 },
+        TelescopeResultsBorder = { fg = colors.theme.ui.bg_m1, bg = colors.theme.ui.bg_m1 },
+        TelescopePreviewNormal = { bg = colors.theme.ui.bg_dim },
+        TelescopePreviewBorder = { bg = colors.theme.ui.bg_dim, fg = colors.theme.ui.bg_dim },
 
         ['@type'] = { italic = false, bold = true },
         ['@tag'] = { italic = false },

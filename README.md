@@ -23,3 +23,15 @@ I must set my user for each machine.
 [user]
     email = <email>
 ```
+
+### Installing fish dependencies with fisher
+
+#### ASDF
+
+```sh
+# install asdf
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.0
+
+# install fisher plugin
+fisher install rstacruz/fish-asdf
+```
