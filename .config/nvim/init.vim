@@ -75,6 +75,7 @@ let g:switch_custom_definitions =
 let g:coc_global_extensions = [
   \ 'coc-json',
   \ 'coc-tsserver',
+  \ 'coc-pyright',
   \ 'coc-tailwindcss',
   \ 'coc-svelte',
   \ 'coc-yaml',

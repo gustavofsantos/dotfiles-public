@@ -1,8 +1,5 @@
 nmap Q <Nop>
 
-" goodies
-" ---
-
 " save current buffer
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
@@ -71,6 +68,7 @@ nnoremap <leader>tw :!tmux neww -n "󰙨" "lggw %"<CR>
 
 nnoremap <C-p> :Telescope find_files<CR>
 nnoremap <C-f> :Telescope current_buffer_fuzzy_find<CR>
+nnoremap <C-b> :Telescope file_browser<CR>
 
 nnoremap <leader>fr :lua require('telescope.builtin').resume()<CR>
 nnoremap <leader>ff :lua require('telescope.builtin').find_files()<CR>
