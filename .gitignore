@@ -225,3 +225,5 @@ Music/
 Templates/
 .config/Electron/
 .config/poetry
+.conda/
+anaconda3/
