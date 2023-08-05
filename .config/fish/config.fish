@@ -35,3 +35,11 @@ alias lw_show_urls "docker-compose exec loggi_web_app bash -c 'python manage.py 
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /home/gustavo/anaconda3/bin/conda
+    eval /home/gustavo/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+end
+# <<< conda initialize <<<
+
