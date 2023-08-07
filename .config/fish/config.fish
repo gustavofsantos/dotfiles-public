@@ -3,6 +3,7 @@ set fish_greeting ""
 set -gx EDITOR nvim
 
 set -gx PATH ~/.local/bin $PATH
+set -gx PATH ~/bin $PATH
 
 set -g theme_display_jobs_verbose yes
 
