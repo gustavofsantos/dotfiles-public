@@ -227,3 +227,4 @@ Templates/
 .config/poetry
 .conda/
 anaconda3/
+.ipython/
