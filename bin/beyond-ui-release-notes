@@ -1,4 +1,8 @@
 #!/bin/sh
+# 
+# How to use it
+# beyond-ui-release-notes beyond/prod-20230727.04..beyond/prod-20230804.01
+
 TAG=$(echo $1 | awk -F '\\.\\.' '{ print $2 }')
 
 cat << EOF
