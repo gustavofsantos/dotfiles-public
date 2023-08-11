@@ -1,0 +1,10 @@
+#!/bin/bash
+files=$(git diff --cached --name-only --diff-filter=ACM)
+
+for file in $files; do
+  if [[ $file =~ \.py$ ]]; then
+    echo "Formatting $file"
+    py-isort $file
+    py-black $file
+  fi
+done
