@@ -17,7 +17,6 @@ if (has_telescope) then
       },
       layout_config = {
         vertical = { width = 0.25 },
-        preview_width = 0.5,
         prompt_position = "top",
       },
       borderchars = {
@@ -61,7 +60,6 @@ if (has_telescope) then
         hidden = true,
         previewer = false,
         cwd_to_path = true,
-        hijack_netrw = true,
       },
       coc = {
         prefer_locations = true
