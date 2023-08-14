@@ -10,6 +10,7 @@ Plug 'rockyzhang24/arctic.nvim'
 Plug 'rebelot/kanagawa.nvim'
 Plug 'projekt0n/github-nvim-theme'
 Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }
+Plug 'rose-pine/neovim', { 'as': 'rose-pine' }
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -89,7 +90,8 @@ set termguicolors
 set background=dark
 " colorscheme kanagawa
 " colorscheme github_dark_dimmed
-colorscheme nordic
+" colorscheme nordic
+colorscheme rose-pine
 " colorscheme modus-vivendi
 set noerrorbells
 set tabstop=2 softtabstop=2
