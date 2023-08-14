@@ -29,7 +29,7 @@ if (has_telescope) then
       find_files = {
         previewer = true,
         hidden = true,
-        theme = "dropdown",
+        -- theme = "dropdown",
         prompt_prefix = " ",
       },
       git_files = { 
