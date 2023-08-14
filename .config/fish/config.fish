@@ -19,7 +19,8 @@ alias emacs "emacsclient -c -a 'emacs'"
 alias em "emacs -nw"
 
 # Loggi aliases
-alias lggt "npm run test -- --coverage=false"
+alias lggt "npm run test -- --bail --maxWorkers=2 --watchAll=false --coverage=false"
+alias lggw "npm run test -- --bail --maxWorkers=2 --coverage=false"
 alias lglt "npx eslint (git diff --relative --name-only HEAD | grep -E '\.jsx?\$' | xargs)"
 alias ui_review="gh pr list -S 'is:pr is:open user-review-requested:@me label:beyond-conversao' | fzf --preview 'gh pr view {1}' --preview-window down | awk '{print $1}' | xargs gh pr checkout"
 alias lwt "docker-compose exec -e DJANGO_SETTINGS_MODULE=settings.test loggi_web_app pytest -vv"
