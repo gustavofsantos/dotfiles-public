@@ -39,6 +39,9 @@ if (has_telescope) then
       commands = {
         prompt_prefix = " ",
       },
+      current_buffer_fuzzy_find = {
+        theme = "ivy",
+      },
       buffers = { 
         prompt_prefix = "﬘ ",
         mappings = {
@@ -56,10 +59,13 @@ if (has_telescope) then
         case_mode = "smart_case", -- or "ignore_case" or "respect_case"
       },
       file_browser = {
+        theme = "ivy",
         respect_gitignore = false,
         hidden = true,
-        previewer = false,
+        previewer = true,
         cwd_to_path = true,
+        hijack_netrw = true,
+        display_stat = { date = false, size = true, mode = false },
       },
       coc = {
         prefer_locations = true

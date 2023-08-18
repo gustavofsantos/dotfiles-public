@@ -14,6 +14,7 @@ alias jest "npx jest"
 alias prisma "npx prisma"
 alias rt "npm run test"
 alias g="git"
+alias zl="zellij"
 
 alias emacs "emacsclient -c -a 'emacs'"
 alias em "emacs -nw"
@@ -45,3 +46,4 @@ if test -f /home/gustavo/anaconda3/bin/conda
 end
 # <<< conda initialize <<<
 
+zoxide init fish | source
