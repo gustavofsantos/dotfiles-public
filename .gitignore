@@ -228,3 +228,4 @@ Templates/
 .conda/
 anaconda3/
 .ipython/
+.config/fragments/

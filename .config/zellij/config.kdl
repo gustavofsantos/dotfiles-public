@@ -207,38 +207,51 @@ pane_frames false
 // Once these themes are defined, one of them should to be selected in the "theme" section of this file
 //
 themes {
-    nord {
-        fg "#D8DEE9"
-        bg "#2E3440"
-        black "#3B4252"
-        red "#BF616A"
-        green "#A3BE8C"
-        yellow "#EBCB8B"
-        blue "#81A1C1"
-        magenta "#B48EAD"
-        cyan "#88C0D0"
-        white "#E5E9F0"
-        orange "#D08770"
-    }
-    kanagawa {
-        fg "#dcd7ba"
-        bg "#1f1f28"
-        black "#090618"
-        red "#c34043"
-        green "#76946a"
-        yellow "#c0a36e"
-        blue "#7e9cd8"
-        magenta "#957fb8"
-        cyan "#6a9589"
-        white "#c8c093"
-        orange "#ffa066"
-    }
+  nord {
+    fg "#D8DEE9"
+    bg "#2E3440"
+    black "#3B4252"
+    red "#BF616A"
+    green "#A3BE8C"
+    yellow "#EBCB8B"
+    blue "#81A1C1"
+    magenta "#B48EAD"
+    cyan "#88C0D0"
+    white "#E5E9F0"
+    orange "#D08770"
+  }
+  nordic {
+    fg "#242933"
+    bg "#D8DEE9"
+    black "#191C24"
+    red "#BF616A"
+    green "#A3BE8C"
+    yellow "#EBCB8B"
+    blue "#81A1C1"
+    magenta "#B48EAD"
+    cyan "#8FBCBB" 
+    white  "#D8DEE9"
+    orange "#D08770"
+  }
+  kanagawa {
+    fg "#dcd7ba"
+    bg "#1f1f28"
+    black "#090618"
+    red "#c34043"
+    green "#76946a"
+    yellow "#c0a36e"
+    blue "#7e9cd8"
+    magenta "#957fb8"
+    cyan "#6a9589"
+    white "#c8c093"
+    orange "#ffa066"
+  }
 }
 
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "kanagawa"
+theme "nord"
 
 // The name of the default layout to load on startup
 // Default: "default"

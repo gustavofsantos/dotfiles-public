@@ -30,7 +30,7 @@
   l             = "!. ~/.githelpers && pretty_git_log"
   la            = !git l --all
   b             = "!. ~/.githelpers && pretty_git_branch"
-  bs            = "!. ~/.githelpers && pretty_git_branch_sorted"
+  bs            = !git checkout $(git branch | fzf)
   ski           = !git stash --keep-index
 
 [gpg]
