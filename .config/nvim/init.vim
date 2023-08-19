@@ -90,9 +90,9 @@ let g:coc_global_extensions = [
 
 set termguicolors
 set background=dark
-" colorscheme kanagawa
+colorscheme kanagawa
 " colorscheme github_dark_dimmed
-colorscheme nordic
+" colorscheme nordic
 " colorscheme rose-pine
 " colorscheme modus-vivendi
 set noerrorbells
