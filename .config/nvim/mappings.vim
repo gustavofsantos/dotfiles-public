@@ -25,8 +25,10 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <silent> <leader>re <Plug>(coc-codeaction-refactor)
 xmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
 nmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
-nmap <leader>ac  <Plug>(coc-codeaction-cursor)
-nmap <leader>as  <Plug>(coc-codeaction-source)
+nmap <leader>ac  <cmd>Telescope coc code_actions<CR>
+" nmap <leader>ac  <Plug>(coc-codeaction-cursor)
+nmap <leader>as  <cmd>Telescope coc file_code_actions<CR>
+" nmap <leader>as  <Plug>(coc-codeaction-source)
 nmap <leader>qf  <Plug>(coc-fix-current)
 nnoremap <leader>ft :Telescope coc diagnostics<CR>
 " Search workspace symbols
@@ -73,9 +75,10 @@ nnoremap <C-b> :Telescope file_browser path=%:p:h select_buffer=true<CR>
 nnoremap <leader>fr :lua require('telescope.builtin').resume()<CR>
 nnoremap <leader>ff :lua require('telescope.builtin').find_files()<CR>
 nnoremap <leader>fg :lua require('telescope.builtin').git_files()<CR>
-nnoremap <leader>fe :lua require('telescope.builtin').oldfiles()<CR>
+" nnoremap <leader>fe :lua require('telescope.builtin').oldfiles()<CR>
+nnoremap <leader>fe <cmd>Telescope coc mru<CR>
 nnoremap <leader>fb :lua require('telescope.builtin').buffers()<CR>
-nnoremap <leader>fm :Telescope harpoon marks<CR>
+nnoremap <leader>fm :lua require('harpoon.ui').toggle_quick_menu()<CR>
 nnoremap <leader>fj :lua require('telescope.builtin').jumplist()<CR>
 nnoremap <leader>fo :lua require('telescope.builtin').loclist()<CR>
 nnoremap <leader>fl :lua require('telescope.builtin').live_grep()<CR>

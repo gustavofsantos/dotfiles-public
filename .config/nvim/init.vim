@@ -3,7 +3,7 @@ call plug#begin()
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'kassio/neoterm'
+Plug 'akinsho/toggleterm.nvim'
 
 " Themes
 Plug 'rockyzhang24/arctic.nvim'
@@ -27,6 +27,8 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'fannheyward/telescope-coc.nvim'
 Plug 'ThePrimeagen/harpoon'
 Plug 'mbbill/undotree'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-runner'
 
 " Code editing
 Plug 'nvim-treesitter/nvim-treesitter'
@@ -58,7 +60,7 @@ let g:sneak#use_ic_scs = 1
 
 let g:modus_dim_inactive_window = 0
 
-let test#strategy = "neovim"
+let test#strategy = "vtr"
 let test#javascript#playwright#options = "--headed"
 
 let g:switch_custom_definitions =
