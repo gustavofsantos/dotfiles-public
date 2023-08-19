@@ -10,7 +10,7 @@ end
 
 function scheme_for_appearance(appearance)
   if appearance:find "Dark" then
-    return "nordic"
+    return "Kanagawa"
   else
     return "ModusOperandi"
   end
@@ -62,7 +62,7 @@ return {
 
   -- font
   font = wezterm.font("MonoLisa Nerd Font", { weight = "Medium" }),
-  font_size = 9.5,
+  font_size = 10,
 
   window_background_opacity = 0.975,
 
@@ -162,6 +162,16 @@ return {
       key = "6",
       mods = "LEADER",
       action = wezterm.action { ActivateTab = 5 }
+    },
+    {
+      key = "7",
+      mods = "LEADER",
+      action = wezterm.action { ActivateTab = 6 }
+    },
+    {
+      key = "8",
+      mods = "LEADER",
+      action = wezterm.action { ActivateTab = 7 }
     },
     {
       key = "Tab",
