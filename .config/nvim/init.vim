@@ -48,6 +48,8 @@ Plug 'vim-test/vim-test'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'github/copilot.vim'
 
+Plug 'windwp/nvim-projectconfig'
+
 call plug#end()
 
 source ~/.config/nvim/lua/themes.lua
@@ -62,6 +64,8 @@ let g:modus_dim_inactive_window = 0
 
 let test#strategy = "vtr"
 let test#javascript#playwright#options = "--headed"
+
+source ~/.config/nvim/lua/project.lua
 
 let g:switch_custom_definitions =
     \ [
