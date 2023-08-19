@@ -62,11 +62,11 @@ return {
 
   -- font
   font = wezterm.font("MonoLisa Nerd Font", { weight = "Medium" }),
-  font_size = 10,
+  font_size = 11,
 
   window_background_opacity = 0.975,
 
-  line_height = 1.2,
+  -- line_height = 1.2,
 
   window_padding = {
     left = 0,
