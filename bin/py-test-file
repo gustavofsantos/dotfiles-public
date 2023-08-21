@@ -1,5 +1,5 @@
 #!/bin/bash
-FILE=$1
+FILE=$(echo $1 | sed 's/\/opt\/loggi\/py\/apps\/beyond\///g')
 
 docker run -it -v /opt/loggi/py/apps/beyond/src/beyond_app:/opt/loggi/beyond/src/beyond_app beyond-py \
-  bash -c "poetry run py.test --disable-warnings -vv --ds beyond_app.settings.development -k $FILE src/beyond_app"
+  bash -c "poetry run py.test --disable-warnings -vv --ds beyond_app.settings.development $FILE"
