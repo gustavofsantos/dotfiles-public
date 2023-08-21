@@ -1,13 +1,15 @@
-function! VagrantTransform(cmd) abort
-  " let vagrant_project = get(matchlist(s:cat('Vagrantfile'), '\vconfig\.vm.synced_folder ["''].+[''"], ["''](.+)[''"]'), 1)
-  " print the `cmd` to the terminal
-  echo a:cmd
-  return 'blah'
+function! EscapeTransform(cmd)
+    return shellescape(a:cmd)
 endfunction
 
-let g:test#custom_transformations = {'vagrant': function('VagrantTransform')}
+function! EscapeSingleQuotes(cmd)
+    let escaped = substitute(a:cmd, "'", "\\'", "g")
+    return substitute(escaped, '-- ', '', '')
+endfunction
 
-let g:test#transformation = 'vagrant'
+let g:test#custom_transformations = {'escape': function('EscapeSingleQuotes')}
+
+let g:test#transformation = 'escape'
 let g:test#strategy = 'neovim'
 let g:test#javascript#runner = 'jest'
 let g:test#javascript#jest#executable = 'lggt'
