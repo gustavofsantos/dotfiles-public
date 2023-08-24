@@ -4,6 +4,11 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -65,12 +70,15 @@ COMPLETION_WAITING_DOTS="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+zinit ice lucid wait'0'
+zinit light joshskidmore/zsh-fzf-history-search
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gh zoxide asdf docker zsh-fzf-history-search)
+plugins=(git gh zoxide asdf docker)
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
@@ -110,7 +118,7 @@ if [[ $(uname -n) = "loggi" ]]; then
   eval "$(pyenv virtualenv-init -)"
 
 
-  export POETRY_VERSION=1.1.8
+  export POETRY_VERSION=1.2.2
   export POETRY_HOME="/opt/poetry"
   export PATH="$POETRY_HOME/bin:$PATH"
 fi
@@ -118,8 +126,6 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# add-zsh-hook -Uz chpwd(){ source <(tea -Eds) }  #tea
 
 ## functions
 function note () {
@@ -129,75 +135,12 @@ function journal () {
   nvim ~/notes/journal/$(date +%Y-%m-%d).md
 }
 
-
-# alias dev_beyond_test="devcontainer --workspace-folder /opt/loggi/ui exec bash -c 'cd targets/beyond && npm run test -- --bail --coverage=false --watchAll=false'"
-function dev_beyond_test() {
-  devcontainer exec --workspace-folder /opt/loggi/ui -- bash -c 'cd targets/beyond && npm run test -- --bail --coverage=false --watchAll=false $0'
-}
-
-function beyond_last_tags_prod() {
-  git --no-pager tag --list 'beyond/prod-2023[0-9][0-9][0-9][0-9].[0-9][0-9]' | tail -n 2 | sed -u -e ':a; N; $!ba; s/\n/\.\./g'
-}
-
-function git_local_log() {
-  git --no-pager log --pretty=format:"%h%x09%an%x09%ad%x09%s" $1 -- .
-}
-
-function beyond_ui_log_pretty_md() {
-  git --no-pager log --pretty=format:"%s<%an>" $1 -- . | sd '^(.+)\s\(#([0-9]+)\)<(.+)>$' '* $3 [$1](https://github.com/loggi/ui/pull/$2)'
-}
-
-function loggi_web_log_pretty_md() {
-  git --no-pager log --pretty=format:"%s<%an>" $1 -- . | sd '^(.+)\s\(#([0-9]+)\)<(.+)>$' '* [$1 ($3)](https://github.com/loggi/loggi-web/pull/$2)'
-}
-
-# How to use it
-# print_beyond_deploy_info beyond/prod-20230628.01..beyond/prod-20230629.04
-function print_beyond_deploy_info() {
-  TAG=$(echo $1 | awk -F '\\.\\.' '{ print $2 }')
-cat << EOF
-
-Ação: Deploy Beyond UI
-Workflow: <replace here>
-Tag: https://github.com/loggi/ui/releases/tag/$(echo $TAG | sed 's/\//%2F/g')
-Diff: https://github.com/loggi/ui/compare/$1
-
-Pull requests:
-$(beyond_ui_log_pretty_md $1)
-
-Descrição:
-- 
-
-* https://loggi.sentry.io/issues/?project=5917828&query=is%3Aunresolved+release%3A$(echo $TAG | sed 's/\//-/g')&referrer=issue-list&statsPeriod=14d
-* https://grafana.loggi.com/d/TZgxLo8nz/beyond-health?orgId=1
-
-cc @dev-beyond
-EOF
-}
-
-# Example:
-# print_beyond_loggi_web_deploy_info prod-20230627.10/beyond prod-20230621.11/beyond..prod-20230627.10/beyond
-function print_beyond_loggi_web_deploy_info() {
-cat << EOF
-
-Ação: Deploy Beyond - Loggi Web
-Workflow: <replace here>
-Tag: https://github.com/loggi/loggi-web/releases/tag/$(echo $1 | sed 's/\//%2F/g')
-
-Pull requests:
-$(loggi_web_log_pretty_md $2)
-
-Monitoramento:
-* [Sentry Beyond](https://loggi.sentry.io/issues/?project=14082&query=is%3Aunresolved+app_type%3Abeyond+release%3A$(echo $1 | sed 's/\//-/g')&referrer=issue-list&statsPeriod=14d)
-* [Grafana Beyond](https://grafana.loggi.com/d/TZgxLo8nz/beyond-health?orgId=1)
-EOF
-}
 # pnpm
 export PNPM_HOME="/home/gustavo/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 eval "$(direnv hook zsh)"
 
 export PATH="/root/.local/bin:$PATH"

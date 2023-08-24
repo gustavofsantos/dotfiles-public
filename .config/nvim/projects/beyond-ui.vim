@@ -10,7 +10,6 @@ endfunction
 let g:test#custom_transformations = {'escape': function('EscapeSingleQuotes')}
 
 let g:test#transformation = 'escape'
-let g:test#strategy = 'neovim'
 let g:test#javascript#runner = 'jest'
 let g:test#javascript#jest#executable = 'lggt'
 
