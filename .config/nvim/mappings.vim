@@ -53,6 +53,8 @@ nnoremap <leader>f4 :lua require('harpoon.ui').nav_file(4)<CR>
 " git conflict mappings
 nnoremap gj <cmd>diffget //3<CR>
 nnoremap gf <cmd>diffget //2<CR>
+autocmd FileType gitcommit    nnoremap <buffer> <C-c> :wq<CR>
+autocmd FileType gitcommit    inoremap <buffer> <C-c> <esc>:wq<CR>
 
 tnoremap <Esc> <C-\><C-n>
 nnoremap <leader><leader> <C-^>
