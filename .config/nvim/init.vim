@@ -118,8 +118,9 @@ set autoread
 set switchbuf=useopen
 set cmdheight=1
 set hidden
-set nofoldenable
 set encoding=utf-8
+" set nofoldenable
+set foldmethod=indent
 set nohlsearch
 set number
 set relativenumber
@@ -157,5 +158,7 @@ endif
 if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
   let g:coc_global_extensions += ['coc-eslint']
 endif
+
+" autocmd BufReadPost,FileReadPost * normal zR
 
 source ~/.config/nvim/mappings.vim
