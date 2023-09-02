@@ -229,3 +229,5 @@ Templates/
 anaconda3/
 .ipython/
 .config/fragments/
+./pgadmin
+.pgadmin/
