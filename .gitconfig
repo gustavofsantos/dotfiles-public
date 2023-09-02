@@ -22,6 +22,7 @@
   amend         = commit --amend --reuse-message=HEAD --no-verify
   contributors  = shortlog --summary --numbered
   export        = archive --format=zip --output=repo.zip HEAD
+  conflicted    = !nvim +Conflicted
 
   h             = !git head
   hp            = "!. ~/.githelpers && show_git_head"
