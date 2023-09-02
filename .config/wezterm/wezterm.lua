@@ -8,14 +8,6 @@ local function isempty(s)
   return s == nil or s == ''
 end
 
-function scheme_for_appearance(appearance)
-  if appearance:find "Dark" then
-    return "nordic"
-  else
-    return "ModusOperandi"
-  end
-end
-
 wezterm.on('update-right-status', function(window, pane)
   -- "Wed Mar 3 08:14"
   local date = wezterm.strftime '%b %-d %H:%M '
@@ -58,11 +50,11 @@ end)
 
 return {
   force_reverse_video_cursor = true,
-  color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
+  color_scheme = "Kanagawa",
 
   -- font
-  font = wezterm.font("MonoLisa Nerd Font", { weight = "Medium" }),
-  font_size = 11,
+  font = wezterm.font("MonoLisa Nerd Font", { weight = "Regular" }),
+  font_size = 12,
 
   window_background_opacity = 0.975,
 
@@ -81,165 +73,165 @@ return {
   hide_tab_bar_if_only_one_tab = true,
   tab_max_width = 999999,
 
-  leader = { key = "k", mods = "CTRL" },
+  -- leader = { key = "k", mods = "CTRL" },
 
-  keys = {
-    {
-      key = "s",
-      mods = "LEADER",
-      action = wezterm.action {
-        SplitHorizontal = { domain = "CurrentPaneDomain" }
-      }
-    },
-    {
-      key = "S",
-      mods = "LEADER",
-      action = wezterm.action {
-        SplitVertical = { domain = "CurrentPaneDomain" }
-      }
-    },
-    {
-      key = "c",
-      mods = "LEADER",
-      action = wezterm.action {
-        SpawnTab = "CurrentPaneDomain"
-      }
-    },
-    {
-      key = "h",
-      mods = "LEADER",
-      action = wezterm.action {
-        ActivatePaneDirection = "Left"
-      }
-    },
-    {
-      key = "j",
-      mods = "LEADER",
-      action = wezterm.action {
-        ActivatePaneDirection = "Down"
-      }
-    },
-    {
-      key = "k",
-      mods = "LEADER",
-      action = wezterm.action {
-        ActivatePaneDirection = "Up"
-      }
-    },
-    {
-      key = "l",
-      mods = "LEADER",
-      action = wezterm.action {
-        ActivatePaneDirection = "Right"
-      }
-    },
-    {
-      key = "1",
-      mods = "LEADER",
-      action = wezterm.action { ActivateTab = 0 }
-    },
-    {
-      key = "2",
-      mods = "LEADER",
-      action = wezterm.action { ActivateTab = 1 }
-    },
-    {
-      key = "3",
-      mods = "LEADER",
-      action = wezterm.action { ActivateTab = 2 }
-    },
-    {
-      key = "4",
-      mods = "LEADER",
-      action = wezterm.action { ActivateTab = 3 }
-    },
-    {
-      key = "5",
-      mods = "LEADER",
-      action = wezterm.action { ActivateTab = 4 }
-    },
-    {
-      key = "6",
-      mods = "LEADER",
-      action = wezterm.action { ActivateTab = 5 }
-    },
-    {
-      key = "7",
-      mods = "LEADER",
-      action = wezterm.action { ActivateTab = 6 }
-    },
-    {
-      key = "8",
-      mods = "LEADER",
-      action = wezterm.action { ActivateTab = 7 }
-    },
-    {
-      key = "Tab",
-      mods = "LEADER",
-      action = wezterm.action { ActivateTabRelative = 1 }
-    },
-    {
-      key = "w",
-      mods = "LEADER",
-      action = wezterm.action.ShowTabNavigator,
-    },
-    {
-      key = "e",
-      mods = "LEADER",
-      action = wezterm.action.PromptInputLine {
-        description = "New tab name",
-        action = wezterm.action_callback(function(window, pane, line)
-          if line then
-            window:active_tab():set_title(line)
-          end
-        end)
-      }
-    },
-    {
-      key = "o",
-      mods = "LEADER",
-      action = wezterm.action.RotatePanes 'Clockwise'
-    },
-    {
-      key = "n",
-      mods = "LEADER",
-      action = wezterm.action.ToggleFullScreen,
-    },
-    {
-      key = "z",
-      mods = "LEADER",
-      action = wezterm.action.TogglePaneZoomState,
-    },
-    { 
-      key = 'l',
-      mods = 'LEADER',
-      action = wezterm.action.ShowLauncherArgs {
-        flags = 'FUZZY|WORKSPACES',
-      },
-    },
-    {
-      key = 'W',
-      mods = 'LEADER',
-      action = wezterm.action.PromptInputLine {
-        description = wezterm.format {
-          { Attribute = { Intensity = 'Bold' } },
-          { Foreground = { AnsiColor = 'Fuchsia' } },
-          { Text = 'Enter name for new workspace' },
-        },
-        action = wezterm.action_callback(function(window, pane, line)
-          -- line will be `nil` if they hit escape without entering anything
-          -- An empty string if they just hit enter
-          -- Or the actual line of text they wrote
-          if line then
-            window:perform_action(
-              wezterm.action.SwitchToWorkspace {
-                name = line,
-              },
-              pane
-            )
-          end
-        end),
-      },
-    },
-  }
+  -- keys = {
+  --   {
+  --     key = "s",
+  --     mods = "LEADER",
+  --     action = wezterm.action {
+  --       SplitHorizontal = { domain = "CurrentPaneDomain" }
+  --     }
+  --   },
+  --   {
+  --     key = "S",
+  --     mods = "LEADER",
+  --     action = wezterm.action {
+  --       SplitVertical = { domain = "CurrentPaneDomain" }
+  --     }
+  --   },
+  --   {
+  --     key = "c",
+  --     mods = "LEADER",
+  --     action = wezterm.action {
+  --       SpawnTab = "CurrentPaneDomain"
+  --     }
+  --   },
+  --   {
+  --     key = "h",
+  --     mods = "LEADER",
+  --     action = wezterm.action {
+  --       ActivatePaneDirection = "Left"
+  --     }
+  --   },
+  --   {
+  --     key = "j",
+  --     mods = "LEADER",
+  --     action = wezterm.action {
+  --       ActivatePaneDirection = "Down"
+  --     }
+  --   },
+  --   {
+  --     key = "k",
+  --     mods = "LEADER",
+  --     action = wezterm.action {
+  --       ActivatePaneDirection = "Up"
+  --     }
+  --   },
+  --   {
+  --     key = "l",
+  --     mods = "LEADER",
+  --     action = wezterm.action {
+  --       ActivatePaneDirection = "Right"
+  --     }
+  --   },
+  --   {
+  --     key = "1",
+  --     mods = "LEADER",
+  --     action = wezterm.action { ActivateTab = 0 }
+  --   },
+  --   {
+  --     key = "2",
+  --     mods = "LEADER",
+  --     action = wezterm.action { ActivateTab = 1 }
+  --   },
+  --   {
+  --     key = "3",
+  --     mods = "LEADER",
+  --     action = wezterm.action { ActivateTab = 2 }
+  --   },
+  --   {
+  --     key = "4",
+  --     mods = "LEADER",
+  --     action = wezterm.action { ActivateTab = 3 }
+  --   },
+  --   {
+  --     key = "5",
+  --     mods = "LEADER",
+  --     action = wezterm.action { ActivateTab = 4 }
+  --   },
+  --   {
+  --     key = "6",
+  --     mods = "LEADER",
+  --     action = wezterm.action { ActivateTab = 5 }
+  --   },
+  --   {
+  --     key = "7",
+  --     mods = "LEADER",
+  --     action = wezterm.action { ActivateTab = 6 }
+  --   },
+  --   {
+  --     key = "8",
+  --     mods = "LEADER",
+  --     action = wezterm.action { ActivateTab = 7 }
+  --   },
+  --   {
+  --     key = "Tab",
+  --     mods = "LEADER",
+  --     action = wezterm.action { ActivateTabRelative = 1 }
+  --   },
+  --   {
+  --     key = "w",
+  --     mods = "LEADER",
+  --     action = wezterm.action.ShowTabNavigator,
+  --   },
+  --   {
+  --     key = "e",
+  --     mods = "LEADER",
+  --     action = wezterm.action.PromptInputLine {
+  --       description = "New tab name",
+  --       action = wezterm.action_callback(function(window, pane, line)
+  --         if line then
+  --           window:active_tab():set_title(line)
+  --         end
+  --       end)
+  --     }
+  --   },
+  --   {
+  --     key = "o",
+  --     mods = "LEADER",
+  --     action = wezterm.action.RotatePanes 'Clockwise'
+  --   },
+  --   {
+  --     key = "n",
+  --     mods = "LEADER",
+  --     action = wezterm.action.ToggleFullScreen,
+  --   },
+  --   {
+  --     key = "z",
+  --     mods = "LEADER",
+  --     action = wezterm.action.TogglePaneZoomState,
+  --   },
+  --   { 
+  --     key = 'l',
+  --     mods = 'LEADER',
+  --     action = wezterm.action.ShowLauncherArgs {
+  --       flags = 'FUZZY|WORKSPACES',
+  --     },
+  --   },
+  --   {
+  --     key = 'W',
+  --     mods = 'LEADER',
+  --     action = wezterm.action.PromptInputLine {
+  --       description = wezterm.format {
+  --         { Attribute = { Intensity = 'Bold' } },
+  --         { Foreground = { AnsiColor = 'Fuchsia' } },
+  --         { Text = 'Enter name for new workspace' },
+  --       },
+  --       action = wezterm.action_callback(function(window, pane, line)
+  --         -- line will be `nil` if they hit escape without entering anything
+  --         -- An empty string if they just hit enter
+  --         -- Or the actual line of text they wrote
+  --         if line then
+  --           window:perform_action(
+  --             wezterm.action.SwitchToWorkspace {
+  --               name = line,
+  --             },
+  --             pane
+  --           )
+  --         end
+  --       end),
+  --     },
+  --   },
+  -- }
 }
