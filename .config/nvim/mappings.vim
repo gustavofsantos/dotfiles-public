@@ -10,6 +10,8 @@ imap <C-e> <C-o>$
 " go to the beginning of the line
 imap <C-a> <C-o>^
 
+noremap <ESC> :noh<CR><ESC>
+
 " lsp
 nmap [e <Plug>(coc-diagnostic-prev)
 nmap ]e <Plug>(coc-diagnostic-next)
@@ -131,6 +133,8 @@ command! E e
 command! W w
 command! Wq wq
 command! WQ wq
+command! Wa wa
+command! WA wa
 command! Reload :source ~/.config/nvim/init.vim<CR>
 command! Worklog :vsp | :e ~/notes/worklog.md
 command! Config :e ~/.config/nvim/init.vim<CR>

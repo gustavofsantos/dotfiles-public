@@ -9,14 +9,21 @@ endfunction
 
 let g:test#custom_transformations = {'escape': function('EscapeSingleQuotes')}
 
-let g:test#transformation = 'escape'
-let g:test#javascript#runner = 'jest'
-let g:test#javascript#jest#executable = 'lggt'
+" let g:test#transformation = 'escape'
+" let g:test#javascript#runner = 'jest'
+" let g:test#javascript#jest#executable = 'lggt'
 
-function! TestNearestPlaywright()
-    let test#javascript#runner = 'playwright'
-    let test#javascript#jest#executable = 'cat $(.env.local .env.test.local) npx playwright test'
-    TestNearest
-endfunction
+augroup SetVimTestGlobalVariablesForJest
+    autocmd!
+    autocmd BufEnter,BufRead,BufNewFile *.test.js let g:test#transformation = 'escape'
+    autocmd BufEnter,BufRead,BufNewFile *.test.js let g:test#javascript#runner = 'jest'
+    autocmd BufEnter,BufRead,BufNewFile *.test.js let g:test#javascript#jest#executable = 'lggt'
+augroup END
+
+augroup SetVimTestGlobalVariablesForPlaywright
+    autocmd!
+    autocmd BufEnter,BufRead,BufNewFile *.spec.js let g:test#javascript#runner = 'playwright'
+    autocmd BufEnter,BufRead,BufNewFile *.spec.js let g:test#javascript#playwright#executable = 'env $(cat .env.local .env.test.local | grep -v ^#) npx playwright test'
+augroup END
 
 echo "loading beyond-ui.vim"

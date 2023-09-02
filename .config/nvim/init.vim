@@ -106,7 +106,7 @@ set expandtab
 set winwidth=80
 set smartindent
 set vb
-set nowrap
+" set nowrap
 set smartcase
 set noswapfile
 set cursorline
@@ -118,10 +118,9 @@ set autoread
 set switchbuf=useopen
 set cmdheight=1
 set hidden
+set hlsearch
 set encoding=utf-8
-" set nofoldenable
 set foldmethod=indent
-set nohlsearch
 set number
 set relativenumber
 set colorcolumn=80,100
@@ -146,6 +145,7 @@ set directory=~/.tmp
 set guioptions-=T
 set mouse=nv
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+set statusline+=%{ConflictedVersion()}
 if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -158,7 +158,5 @@ endif
 if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
   let g:coc_global_extensions += ['coc-eslint']
 endif
-
-" autocmd BufReadPost,FileReadPost * normal zR
 
 source ~/.config/nvim/mappings.vim
