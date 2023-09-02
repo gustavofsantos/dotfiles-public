@@ -94,7 +94,7 @@ nnoremap <leader>/  :lua require('telescope.builtin').current_buffer_fuzzy_find(
 nnoremap ]h :Gitsigns next_hunk<CR>
 nnoremap [h :Gitsigns prev_hunk<CR>
 nnoremap gH :Gitsigns preview_hunk<CR>
-nnoremap <leader>hv :Gitsigns preview_hunk<CR>
+nnoremap <leader>hp :Gitsigns preview_hunk<CR>
 nnoremap <leader>hs :Gitsigns stage_hunk<CR>
 nnoremap <leader>hr :Gitsigns reset_hunk<CR>
 nnoremap <leader>gs :Git<CR>

@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# This script is used to compare two git branches and generate a report
+# of the differences between them.
+#
+# Example of usage:
+# gcompare master..feature/branch loggi/py
+# https://github.com/loggi/py/compare/master...feature/branch
+
+DIFF_BRANCHES=$1
+REPO=$2
+
+if [ -z "$DIFF_BRANCHES" ]; then
+    echo "You must provide the branches to compare"
+    exit 1
+fi
+
+if [ -z "$REPO" ]; then
+    echo "You must provide the repository to compare"
+    exit 1
+fi
+
+echo "https://github.com/$REPO/compare/$DIFF_BRANCHES"
+
