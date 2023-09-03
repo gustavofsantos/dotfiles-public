@@ -93,9 +93,6 @@ let g:coc_global_extensions = [
 set termguicolors
 set background=dark
 colorscheme kanagawa
-" colorscheme github_dark_dimmed
-" colorscheme nordic
-" colorscheme modus-vivendi
 set noerrorbells
 set tabstop=2 softtabstop=2
 set shiftwidth=2
@@ -103,7 +100,7 @@ set expandtab
 set winwidth=80
 set smartindent
 set vb
-" set nowrap
+set nowrap
 set smartcase
 set noswapfile
 set cursorline
