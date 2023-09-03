@@ -44,6 +44,7 @@ Plug 'vim-test/vim-test'
 
 " LSP & autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'williamboman/mason.nvim'
 Plug 'github/copilot.vim'
 
 Plug 'windwp/nvim-projectconfig'
