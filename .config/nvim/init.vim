@@ -6,11 +6,9 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/toggleterm.nvim'
 
 " Themes
-Plug 'rockyzhang24/arctic.nvim'
 Plug 'rebelot/kanagawa.nvim'
-Plug 'projekt0n/github-nvim-theme'
 Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }
-Plug 'rose-pine/neovim', { 'as': 'rose-pine' }
+Plug 'shaunsingh/solarized.nvim'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -22,7 +20,7 @@ Plug 'sindrets/diffview.nvim', { 'commit': 'e91110d' }
 " Navigation
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-ui-select.nvim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'run': 'make' }
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'fannheyward/telescope-coc.nvim'
 Plug 'ThePrimeagen/harpoon'
@@ -97,7 +95,6 @@ set background=dark
 colorscheme kanagawa
 " colorscheme github_dark_dimmed
 " colorscheme nordic
-" colorscheme rose-pine
 " colorscheme modus-vivendi
 set noerrorbells
 set tabstop=2 softtabstop=2

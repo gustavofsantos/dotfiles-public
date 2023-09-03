@@ -8,15 +8,16 @@ if (has_telescope) then
       prompt_prefix = " ",
       selection_caret = " ",
       sorting_strategy = "ascending",
-      -- theme = "ivy",
       file_ignore_patterns = {
         "%.git/",
         "node_modules/",
         "coverage/",
         "__pycache__/",
       },
+      layout_strategy = "bottom_pane",
       layout_config = {
         vertical = { width = 0.25 },
+        height = 0.4, 
         prompt_position = "top",
       },
       borderchars = {
@@ -29,20 +30,22 @@ if (has_telescope) then
       find_files = {
         previewer = true,
         hidden = true,
-        -- theme = "dropdown",
-        prompt_prefix = " ",
+        prompt_prefix = "≈ ",
       },
       git_files = { 
         previewer = true,
         prompt_prefix = " ",
+        theme = "ivy",
       },
       commands = {
         prompt_prefix = " ",
+        theme = "ivy",
       },
       current_buffer_fuzzy_find = {
         theme = "ivy",
       },
       buffers = { 
+        theme = "ivy",
         prompt_prefix = "﬘ ",
         mappings = {
           i = {
@@ -59,7 +62,6 @@ if (has_telescope) then
         case_mode = "smart_case", -- or "ignore_case" or "respect_case"
       },
       file_browser = {
-        theme = "ivy",
         respect_gitignore = false,
         hidden = true,
         previewer = true,
@@ -68,7 +70,7 @@ if (has_telescope) then
         display_stat = { date = false, size = true, mode = false },
       },
       coc = {
-        prefer_locations = true
+        prefer_locations = true,
       },
       ["ui-select"] = {
         require("telescope.themes").get_dropdown({})
@@ -76,6 +78,7 @@ if (has_telescope) then
     },
   }
 
+  -- telescope.load_extension('fzf')
   telescope.load_extension('harpoon')
   telescope.load_extension('ui-select')
   telescope.load_extension('file_browser')

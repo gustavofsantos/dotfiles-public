@@ -53,7 +53,7 @@ return {
   color_scheme = "Kanagawa",
 
   -- font
-  font = wezterm.font("MonoLisa Nerd Font", { weight = "Regular" }),
+  font = wezterm.font("MonoLisa", { weight = "Regular" }),
   font_size = 12,
 
   window_background_opacity = 0.975,

@@ -55,6 +55,8 @@
   "prettier.requireConfig": true,
   "prettier.disableSuccessMessage": true,
   "eslint.autoFixOnSave": true,
+  "coc.source.buffer.priority": 1,
+  "coc.source.file.priority": 10,
 	"eslint.probe": [
 		"javascript",
 		"javascriptreact",

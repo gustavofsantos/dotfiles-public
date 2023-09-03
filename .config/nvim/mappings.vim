@@ -20,6 +20,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr :Telescope coc references<CR>
+nmap <leader>fs :Telescope coc document_symbols<CR>
 nmap <leader>rn <Plug>(coc-rename)
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
@@ -84,7 +85,6 @@ nnoremap <leader>fm :lua require('harpoon.ui').toggle_quick_menu()<CR>
 nnoremap <leader>fj :lua require('telescope.builtin').jumplist()<CR>
 nnoremap <leader>fo :lua require('telescope.builtin').loclist()<CR>
 nnoremap <leader>fl :lua require('telescope.builtin').live_grep()<CR>
-nnoremap <leader>fs :lua require('telescope.builtin').lsp_document_symbols()<cr>
 " nnoremap gr :lua require('telescope.builtin').lsp_references()<cr>
 nnoremap <leader>fk :lua require('telescope.builtin').keymaps()<CR>
 nnoremap <leader>fh :lua require('telescope.builtin').search_history()<CR>
