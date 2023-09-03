@@ -78,6 +78,7 @@ let g:switch_custom_definitions =
     \   }
     \ ]
 
+let g:coc_node_path = '/home/gustavo/.nvm/versions/node/v18.16.0/bin/node'
 let g:coc_global_extensions = [
   \ 'coc-json',
   \ 'coc-tsserver',
