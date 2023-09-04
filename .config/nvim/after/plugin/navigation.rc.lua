@@ -11,7 +11,7 @@ if (has_telescope) then
       file_ignore_patterns = {
         "%.git/",
         "node_modules/",
-        "coverage/",
+        -- "coverage/",
         "__pycache__/",
       },
       layout_strategy = "bottom_pane",
