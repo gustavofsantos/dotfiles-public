@@ -140,8 +140,8 @@ export PNPM_HOME="/home/gustavo/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
-# eval "$(starship init zsh)"
-eval "$(direnv hook zsh)"
+eval "$(starship init zsh)"
+# eval "$(direnv hook zsh)"
 
 export PATH="/root/.local/bin:$PATH"
 

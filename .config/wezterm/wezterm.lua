@@ -50,10 +50,10 @@ end)
 
 return {
   force_reverse_video_cursor = true,
-  color_scheme = "Kanagawa",
+  color_scheme = "nordic",
 
   -- font
-  font = wezterm.font("MonoLisa", { weight = "Regular" }),
+  font = wezterm.font("MonoLisa Nerd Font", { weight = "Regular" }),
   font_size = 12,
 
   window_background_opacity = 0.975,
