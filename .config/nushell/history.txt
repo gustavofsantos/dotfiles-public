@@ -1,0 +1,56 @@
+ls
+git ls
+git lg
+git log | delta
+git diff HEAD~1 | delta
+ls
+cd notes/
+ls
+ls | where type = file
+ls | where type == file
+ls | where type == file | sort-by size
+pamac --help
+pamac info nushell
+git status
+cd ..
+git status
+vim
+nvim
+pamac update
+git status
+git ls
+ls
+dir
+la
+git s
+git status
+git branch --merged
+git branch --merged | lines
+git log --pretty=%h»¦«%aN»¦«%s»¦«%aD | lines
+sys
+sys | get host
+sys | table
+$nu.env-path
+nvim
+nvim $nu.env-path
+nvim
+git status
+cd .config/
+ls
+cd nushell/
+ls
+cd
+vim $nu.config-path
+nvim $nu.config-path
+pamac search atuin
+pamac install atuin
+atuin
+cd .config/nushell/
+ls
+mkdir plugins
+cd
+atuin init nu | save ~/.config/nushell/plugins/atuin.nu
+git status
+nvim $nu.config-path
+atuin
+git s
