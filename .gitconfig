@@ -111,6 +111,9 @@
 [init]
   defaultBranch = main
 
+[delta]
+    side-by-side = true
+
 [include]
   path = ~/.gitconfig.local
   path = ~/themes.gitconfig
