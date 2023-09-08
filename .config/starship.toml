@@ -3,6 +3,16 @@
 [username]
 disabled = true
 
+[battery]
+full_symbol = '🔋 '
+charging_symbol = '⚡️ '
+discharging_symbol = '💀 '
+
+[jobs]
+symbol = '⭘ '
+number_threshold = 4
+symbol_threshold = 1
+
 [git_branch]
 disabled = false
 
@@ -16,7 +26,10 @@ disabled = true
 disabled = true
 
 [git_status]
-disabled = true
+disabled = false
+ahead = '↑ ${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '↓ ${count}'
 
 [kubernetes]
 format = 'on [⛵ ($user on )($cluster in )$context \($namespace\)](dimmed green) '
