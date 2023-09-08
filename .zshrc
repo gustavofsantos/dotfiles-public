@@ -72,6 +72,7 @@ COMPLETION_WAITING_DOTS="true"
 
 zinit ice lucid wait'0'
 zinit light joshskidmore/zsh-fzf-history-search
+zinit load atuinsh/atuin
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/

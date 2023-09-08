@@ -51,6 +51,7 @@ end)
 return {
   force_reverse_video_cursor = true,
   color_scheme = "nordic",
+  default_prog = { "nu" },
 
   -- font
   font = wezterm.font("MonoLisa Nerd Font", { weight = "Regular" }),
