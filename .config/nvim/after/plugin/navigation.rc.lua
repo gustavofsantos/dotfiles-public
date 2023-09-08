@@ -69,17 +69,14 @@ if (has_telescope) then
         hijack_netrw = true,
         display_stat = { date = false, size = true, mode = false },
       },
-      coc = {
-        prefer_locations = true,
-      },
       ["ui-select"] = {
         require("telescope.themes").get_dropdown({})
       }
     },
   }
 
-  -- telescope.load_extension('fzf')
   telescope.load_extension('harpoon')
+  telescope.load_extension("file_browser")
 
   -- find non git-ignored files inside the current dir
   vim.keymap.set('n', '<F3>', require('telescope.builtin').grep_string, { desc = 'Find string' })

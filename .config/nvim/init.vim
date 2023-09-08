@@ -22,7 +22,6 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-ui-select.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope-file-browser.nvim'
-Plug 'fannheyward/telescope-coc.nvim'
 Plug 'ThePrimeagen/harpoon'
 Plug 'mbbill/undotree'
 Plug 'christoomey/vim-tmux-navigator'
