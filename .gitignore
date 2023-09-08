@@ -232,3 +232,5 @@ anaconda3/
 .config/fragments/
 ./pgadmin
 .pgadmin/
+.config/Code - OSS/
+.vscode-oss/
