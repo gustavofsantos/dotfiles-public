@@ -11,7 +11,7 @@ font:
   bold_italic:
     family: MonoLisa Nerd Font
     style: Bold Italic
-  size: 11
+  size: 10
   # normal:
   #   family: OperatorMono Nerd Font
   #   style: Book
