@@ -13,30 +13,6 @@ map <C-c> <Esc>
 
 noremap <ESC> :noh<CR><ESC>
 
-" lsp
-nmap [e <Plug>(coc-diagnostic-prev)
-nmap ]e <Plug>(coc-diagnostic-next)
-nmap <silent> K :call ShowDocumentation()<CR>
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr :Telescope coc references<CR>
-nmap <leader>fs :Telescope coc document_symbols<CR>
-nmap <leader>rn <Plug>(coc-rename)
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>o <cmd>CocOutline<CR>
-nmap <silent> <leader>re <Plug>(coc-codeaction-refactor)
-xmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
-nmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
-nmap <leader>ac  <cmd>Telescope coc code_actions<CR>
-nmap <leader>as  <cmd>Telescope coc file_code_actions<CR>
-nmap <leader>qf  <Plug>(coc-fix-current)
-nnoremap <leader>ft :Telescope coc diagnostics<CR>
-" Search workspace symbols
-nnoremap <silent><nowait> <leader>ws  :<C-u>CocList -I symbols<cr>
-inoremap <silent><expr> <c-space> coc#refresh()
-
 map <C-c> <Esc>
 
 nnoremap <leader>am :lua require('harpoon.mark').add_file()<CR>
@@ -79,8 +55,7 @@ nnoremap <leader>tl :TestLast<CR>
 nnoremap <leader>fr :lua require('telescope.builtin').resume()<CR>
 nnoremap <leader>ff :lua require('telescope.builtin').find_files()<CR>
 nnoremap <leader>fg :lua require('telescope.builtin').git_files()<CR>
-" nnoremap <leader>fe :lua require('telescope.builtin').oldfiles()<CR>
-nnoremap <leader>fe <cmd>Telescope coc mru<CR>
+nnoremap <leader>fe :lua require('telescope.builtin').oldfiles()<CR>
 nnoremap <leader>fb :lua require('telescope.builtin').buffers()<CR>
 nnoremap <leader>fm :lua require('harpoon.ui').toggle_quick_menu()<CR>
 nnoremap <leader>fj :lua require('telescope.builtin').jumplist()<CR>

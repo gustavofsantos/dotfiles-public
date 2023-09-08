@@ -43,8 +43,13 @@ Plug 'justinmk/vim-sneak'
 Plug 'vim-test/vim-test'
 
 " LSP & autocomplete
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neovim/nvim-lspconfig' 
 Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v2.x'}
 Plug 'github/copilot.vim'
 
 Plug 'windwp/nvim-projectconfig'
