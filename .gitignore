@@ -151,6 +151,7 @@ install.sh
 *.mkv
 *.mp4
 # .config/nushell/
+.config/nushell/history.txt
 .config/microsoft-edge/
 .config/emacs/
 .otp/
