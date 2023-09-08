@@ -55,3 +55,5 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
+
+require("formatter").setup()

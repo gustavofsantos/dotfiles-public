@@ -50,6 +50,7 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v2.x'}
+Plug 'mhartington/formatter.nvim'
 Plug 'github/copilot.vim'
 
 Plug 'windwp/nvim-projectconfig'
@@ -82,20 +83,6 @@ let g:switch_custom_definitions =
     \     '^\(.*\)\[x\]\(.*\)$': '\1\[ \]\2',
     \   }
     \ ]
-
-let g:coc_node_path = '/home/gustavo/.nvm/versions/node/v18.16.0/bin/node'
-let g:coc_global_extensions = [
-  \ 'coc-json',
-  \ 'coc-tsserver',
-  \ 'coc-pyright',
-  \ 'coc-tailwindcss',
-  \ 'coc-svelte',
-  \ 'coc-yaml',
-  \ 'coc-vimlsp',
-  \ 'coc-actions',
-  \ 'coc-lists',
-  \ 'coc-highlight',
-  \ ]
 
 set termguicolors
 set background=dark
