@@ -235,3 +235,4 @@ anaconda3/
 .config/Code - OSS/
 .vscode-oss/
 .anydesk/
+.fzf/
