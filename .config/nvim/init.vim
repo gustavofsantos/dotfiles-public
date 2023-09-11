@@ -1,3 +1,18 @@
+let g:ale_disable_lsp = 1
+" let g:ale_linters_explicit = 1
+" let b:ale_fixers = {'javascript': ['prettier'], 'javascriptreact': ['prettier']}
+" let b:ale_linters = {'javascript': ['eslint'], 'javascriptreact': ['eslint']}
+let g:ale_fix_on_save = 1
+let g:ale_completion_enabled = 0
+let g:ale_completion_autoimport = 0
+let g:ale_use_neovim_diagnostics_api = 1
+
+let g:sneak#label = 1
+let g:sneak#use_ic_scs = 1
+
+let g:modus_dim_inactive_window = 0
+
+
 call plug#begin()
 " Neovim plugins
 Plug 'nvim-lua/plenary.nvim'
@@ -49,7 +64,8 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v2.x'}
-Plug 'mhartington/formatter.nvim'
+Plug 'dense-analysis/ale'
+Plug 'folke/trouble.nvim'
 Plug 'github/copilot.vim'
 
 Plug 'windwp/nvim-projectconfig'
@@ -61,10 +77,6 @@ source ~/.config/nvim/lua/themes.lua
 let mapleader = " "
 let maplocalleader = " "
 
-let g:sneak#label = 1
-let g:sneak#use_ic_scs = 1
-
-let g:modus_dim_inactive_window = 0
 
 let test#strategy = "vtr"
 let test#javascript#playwright#options = "--headed"
@@ -136,14 +148,6 @@ set statusline+=%{ConflictedVersion()}
 if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-endif
-
-if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
-  let g:coc_global_extensions += ['coc-prettier']
-endif
-
-if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
-  let g:coc_global_extensions += ['coc-eslint']
 endif
 
 source ~/.config/nvim/mappings.vim
