@@ -25,12 +25,15 @@ Plug 'rebelot/kanagawa.nvim'
 Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }
 Plug 'shaunsingh/solarized.nvim'
 
+" UI
+Plug 'MunifTanjim/nui.nvim'
+Plug 'folke/noice.nvim'
+
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'christoomey/vim-conflicted'
 Plug 'lewis6991/gitsigns.nvim', { 'tag': 'v0.6' }
-Plug 'sindrets/diffview.nvim', { 'commit': 'e91110d' }
 
 " Navigation
 Plug 'nvim-telescope/telescope.nvim'
@@ -97,7 +100,7 @@ let g:switch_custom_definitions =
 
 set termguicolors
 set background=dark
-colorscheme nordic
+colorscheme kanagawa
 set noerrorbells
 set tabstop=2 softtabstop=2
 set shiftwidth=2

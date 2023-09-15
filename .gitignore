@@ -234,3 +234,5 @@ anaconda3/
 .pgadmin/
 .config/Code - OSS/
 .vscode-oss/
+.anydesk/
+.fzf/
