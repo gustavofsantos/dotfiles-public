@@ -68,8 +68,12 @@ if has_kanagawa then
     },
     overrides = function (colors)
       return {
-        -- Normal = { bg = bg_color },
-        -- NormalNC = { bg = bg_color },
+        Normal = { bg = colors.palette.sumiInk0 },
+        -- NormalNC = { bg = bg_color }
+        
+        StatusLine = { bg = colors.palette.sumiInk4 },
+        StatusLineNC = { bg = colors.palette.sumiInk2 },
+        ColorColumn = { bg = colors.palette.sumiInk2 },
 
         NvimTreeGitDirty = { fg = colors.palette.oniViolet },
         NvimTreeGitStaged = { fg = colors.palette.oniViolet },
