@@ -96,7 +96,7 @@ let g:coc_global_extensions = [
   \ ]
 
 set termguicolors
-set background=light
+set background=dark
 colorscheme kanagawa
 set noerrorbells
 set tabstop=2 softtabstop=2
