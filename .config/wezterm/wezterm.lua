@@ -1,6 +1,6 @@
 local wezterm = require("wezterm")
 
-function basename(s)
+local function basename(s)
   return string.gsub(s, '(.*[/\\])(.*)', '%2')
 end
 
@@ -54,7 +54,7 @@ return {
 
   -- font
   font = wezterm.font("MonoLisa Nerd Font", { weight = "Regular" }),
-  font_size = 10.5,
+  font_size = 12.0,
 
   window_background_opacity = 0.975,
 
