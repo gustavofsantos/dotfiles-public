@@ -89,3 +89,12 @@ require("conform").setup({
         lsp_fallback = true,
     },
 })
+
+require("lint").linters_by_ft = {
+    markdown = { "vale" },
+    python = { "ruff" },
+    javascript = { "eslint" },
+    javascriptreact = { "eslint" },
+    typescript = { "eslint" },
+    typescriptreact = { "eslint" },
+}

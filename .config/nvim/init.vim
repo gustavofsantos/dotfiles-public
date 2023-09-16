@@ -68,6 +68,7 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v2.x'}
 Plug 'stevearc/conform.nvim'
+Plug 'mfussenegger/nvim-lint'
 Plug 'folke/trouble.nvim'
 Plug 'github/copilot.vim'
 
