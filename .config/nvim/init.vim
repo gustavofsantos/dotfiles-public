@@ -67,7 +67,7 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v2.x'}
-Plug 'dense-analysis/ale'
+Plug 'stevearc/conform.nvim'
 Plug 'folke/trouble.nvim'
 Plug 'github/copilot.vim'
 
