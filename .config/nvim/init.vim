@@ -135,7 +135,7 @@ set updatetime=100
 set clipboard+=unnamedplus
 set wildmenu
 set completeopt=menuone,noinsert,noselect
-set signcolumn=yes
+set signcolumn=no
 set pumheight=10
 set grepprg=ag
 set wildmode=list:longest,full
