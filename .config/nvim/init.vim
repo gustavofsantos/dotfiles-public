@@ -1,17 +1,23 @@
-let g:ale_disable_lsp = 1
-" let g:ale_linters_explicit = 1
-" let b:ale_fixers = {'javascript': ['prettier'], 'javascriptreact': ['prettier']}
-" let b:ale_linters = {'javascript': ['eslint'], 'javascriptreact': ['eslint']}
-let g:ale_fix_on_save = 1
-let g:ale_completion_enabled = 0
-let g:ale_completion_autoimport = 0
-let g:ale_use_neovim_diagnostics_api = 1
+let mapleader = " "
+let maplocalleader = " "
 
 let g:sneak#label = 1
 let g:sneak#use_ic_scs = 1
 
-let g:modus_dim_inactive_window = 0
+let test#strategy = "vtr"
+let test#javascript#playwright#options = "--headed"
 
+let g:switch_custom_definitions =
+    \ [
+    \   {
+    \     '^\(.*\)TODO\(.*\)$': '\1DOING\2',
+    \     '^\(.*\)DOING\(.*\)$': '\1DONE\2',
+    \     '^\(.*\)DONE\(.*\)$': '\1TODO\2',
+    \     '^\(.*\)\[ \]\(.*\)$': '\1\[-\]\2',
+    \     '^\(.*\)\[-\]\(.*\)$': '\1\[x\]\2',
+    \     '^\(.*\)\[x\]\(.*\)$': '\1\[ \]\2',
+    \   }
+    \ ]
 
 call plug#begin()
 " Neovim plugins
@@ -24,6 +30,7 @@ Plug 'akinsho/toggleterm.nvim'
 Plug 'rebelot/kanagawa.nvim'
 Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }
 Plug 'shaunsingh/solarized.nvim'
+Plug 'projekt0n/caret.nvim'
 
 " UI
 Plug 'MunifTanjim/nui.nvim'
@@ -78,27 +85,7 @@ Plug 'windwp/nvim-projectconfig'
 call plug#end()
 
 source ~/.config/nvim/lua/themes.lua
-
-let mapleader = " "
-let maplocalleader = " "
-
-
-let test#strategy = "vtr"
-let test#javascript#playwright#options = "--headed"
-
 source ~/.config/nvim/lua/project.lua
-
-let g:switch_custom_definitions =
-    \ [
-    \   {
-    \     '^\(.*\)TODO\(.*\)$': '\1DOING\2',
-    \     '^\(.*\)DOING\(.*\)$': '\1DONE\2',
-    \     '^\(.*\)DONE\(.*\)$': '\1TODO\2',
-    \     '^\(.*\)\[ \]\(.*\)$': '\1\[-\]\2',
-    \     '^\(.*\)\[-\]\(.*\)$': '\1\[x\]\2',
-    \     '^\(.*\)\[x\]\(.*\)$': '\1\[ \]\2',
-    \   }
-    \ ]
 
 set termguicolors
 set background=dark
