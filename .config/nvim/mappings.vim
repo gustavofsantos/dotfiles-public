@@ -48,9 +48,13 @@ nnoremap <C-p> :Telescope find_files<CR>
 nnoremap <C-f> :Telescope current_buffer_fuzzy_find<CR>
 nnoremap <C-b> :Telescope file_browser path=%:p:h select_buffer=true<CR>
 
-nnoremap <leader>tn :TestNearest<CR>
-nnoremap <leader>tf :TestFile<CR>
-nnoremap <leader>tl :TestLast<CR>
+" nnoremap <leader>tn :TestNearest<CR>
+" nnoremap <leader>tf :TestFile<CR>
+" nnoremap <leader>tl :TestLast<CR>
+nnoremap <leader>tn :lua require("neotest").run.run()<CR>
+nnoremap <leader>tf :lua require("neotest").run.run(vim.fn.expand("%"))<CR>
+nnoremap <leader>tl :lua require("neotest").run.run_last()<CR>
+nnoremap <leader>ts :Neotest summary<CR>
 
 nnoremap <leader>fr :lua require('telescope.builtin').resume()<CR>
 nnoremap <leader>ff :lua require('telescope.builtin').find_files()<CR>

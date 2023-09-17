@@ -106,3 +106,32 @@ require("nvim-treesitter.configs").setup({
         enable = true,
     },
 })
+
+local has_neotest, _ = pcall(require, "neotest")
+
+if has_neotest then
+    require("neotest").setup({
+        adapters = {
+            require("neotest-python")({
+                dap = { justMyCode = false },
+                pytest_discovery = true,
+            }),
+            require("neotest-jest")({
+                jestCommand = "npm test -- ",
+            }),
+            require("neotest-vitest"),
+            require("neotest-playwright").adapter({
+                options = {
+                    preset = "headed",
+                    enable_dynamic_test_discovery = true,
+                },
+            }),
+        },
+        consumers = {
+            playwright = require("neotest-playwright.consumers").consumers,
+        },
+        icons = {
+            running_animated = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" },
+        },
+    })
+end
