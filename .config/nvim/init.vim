@@ -73,6 +73,7 @@ Plug 'thenbe/neotest-playwright'
 Plug 'nvim-neotest/neotest-python'
 
 " LSP & autocomplete
+Plug 'folke/neodev.nvim'
 Plug 'neovim/nvim-lspconfig' 
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
@@ -81,6 +82,7 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'rafamadriz/friendly-snippets'
 Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v2.x'}
+Plug 'mfussenegger/nvim-dap'
 Plug 'stevearc/conform.nvim'
 Plug 'mfussenegger/nvim-lint'
 Plug 'folke/trouble.nvim'

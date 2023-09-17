@@ -2,6 +2,12 @@ vim.diagnostic.config({
     virtual_text = true,
 })
 
+local has_neodev, neodev = pcall(require, "neodev")
+if not has_neodev then
+    return
+end
+neodev.setup()
+
 local has_lsp, lsp = pcall(require, "lsp-zero")
 if not has_lsp then
     return
