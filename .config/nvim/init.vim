@@ -83,6 +83,7 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'rafamadriz/friendly-snippets'
 Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v2.x'}
 Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
 Plug 'stevearc/conform.nvim'
 Plug 'mfussenegger/nvim-lint'
 Plug 'folke/trouble.nvim'

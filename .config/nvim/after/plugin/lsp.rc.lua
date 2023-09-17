@@ -6,7 +6,9 @@ local has_neodev, neodev = pcall(require, "neodev")
 if not has_neodev then
     return
 end
-neodev.setup()
+neodev.setup({
+    library = { plugins = { "neotest", "nvim-dap-ui" }, types = true },
+})
 
 local has_lsp, lsp = pcall(require, "lsp-zero")
 if not has_lsp then
