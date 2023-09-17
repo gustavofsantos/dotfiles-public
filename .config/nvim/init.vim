@@ -66,11 +66,11 @@ Plug 'justinmk/vim-sneak'
 
 " Running tests
 Plug 'vim-test/vim-test'
-Plug 'nvim-neotest/neotest'
-Plug 'nvim-neotest/neotest-jest'
-Plug 'marilari88/neotest-vitest'
-Plug 'thenbe/neotest-playwright'
-Plug 'nvim-neotest/neotest-python'
+" Plug 'nvim-neotest/neotest'
+" Plug 'nvim-neotest/neotest-jest'
+" Plug 'marilari88/neotest-vitest'
+" Plug 'thenbe/neotest-playwright'
+" Plug 'nvim-neotest/neotest-python'
 
 " LSP & autocomplete
 Plug 'folke/neodev.nvim'
