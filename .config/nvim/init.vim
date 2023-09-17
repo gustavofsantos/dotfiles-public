@@ -25,6 +25,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/toggleterm.nvim'
+Plug 'antoinemadec/FixCursorHold.nvim'
 
 " Themes
 Plug 'rebelot/kanagawa.nvim'
@@ -65,6 +66,11 @@ Plug 'justinmk/vim-sneak'
 
 " Running tests
 Plug 'vim-test/vim-test'
+Plug 'nvim-neotest/neotest'
+Plug 'nvim-neotest/neotest-jest'
+Plug 'marilari88/neotest-vitest'
+Plug 'thenbe/neotest-playwright'
+Plug 'nvim-neotest/neotest-python'
 
 " LSP & autocomplete
 Plug 'neovim/nvim-lspconfig' 
@@ -127,7 +133,7 @@ set updatetime=100
 set clipboard+=unnamedplus
 set wildmenu
 set completeopt=menuone,noinsert,noselect
-set signcolumn=no
+set signcolumn=yes
 set pumheight=10
 set grepprg=ag
 set wildmode=list:longest,full
