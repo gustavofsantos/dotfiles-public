@@ -11,6 +11,7 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
     "tsserver",
+    "ruff",
 })
 
 lsp.nvim_workspace()
@@ -78,11 +79,30 @@ end)
 
 lsp.setup()
 
+local cmp = require("cmp")
+
+cmp.setup({
+    sources = {
+        { name = "nvim_lsp" },
+        { name = "luasnip" },
+    },
+    snippet = {
+        expand = function(args)
+            require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
+        end,
+    },
+})
+
+require("luasnip.loaders.from_vscode").lazy_load()
+
 require("conform").setup({
     formatters_by_ft = {
         lua = { "stylua" },
         python = { "isort", "black" },
         javascript = { { "prettierd", "prettier" } },
+        typescript = { { "prettierd", "prettier" } },
+        javascriptreact = { { "prettierd", "prettier" } },
+        typescriptreact = { { "prettierd", "prettier" } },
     },
     format_on_save = {
         timeout_ms = 500,
@@ -98,3 +118,9 @@ require("lint").linters_by_ft = {
     typescript = { "eslint" },
     typescriptreact = { "eslint" },
 }
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+    callback = function()
+        require("lint").try_lint()
+    end,
+})
