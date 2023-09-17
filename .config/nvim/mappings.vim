@@ -37,7 +37,6 @@ nnoremap <leader>dj :Journal<CR>
 nnoremap <leader>nn :Note<CR>
 nnoremap <leader>tu :terminal lggt %<CR>
 nnoremap <leader>tw :terminal lwt %<CR>
-nnoremap <leader>tn :TestNearest<CR>
 
 " execute current file as a script
 nnoremap <leader>run :!%:p<CR>
@@ -48,13 +47,14 @@ nnoremap <C-p> :Telescope find_files<CR>
 nnoremap <C-f> :Telescope current_buffer_fuzzy_find<CR>
 nnoremap <C-b> :Telescope file_browser path=%:p:h select_buffer=true<CR>
 
-" nnoremap <leader>tn :TestNearest<CR>
-" nnoremap <leader>tf :TestFile<CR>
-" nnoremap <leader>tl :TestLast<CR>
-nnoremap <leader>tn :lua require("neotest").run.run()<CR>
-nnoremap <leader>tf :lua require("neotest").run.run(vim.fn.expand("%"))<CR>
-nnoremap <leader>tl :lua require("neotest").run.run_last()<CR>
-nnoremap <leader>ts :lua require("neotest").summary.toggle()<CR>
+nnoremap <leader>tn :TestNearest<CR>
+nnoremap <leader>tf :TestFile<CR>
+nnoremap <leader>tl :TestLast<CR>
+nnoremap <leader>tv :TestVisit<CR>
+" nnoremap <leader>tn :lua require("neotest").run.run()<CR>
+" nnoremap <leader>tf :lua require("neotest").run.run(vim.fn.expand("%"))<CR>
+" nnoremap <leader>tl :lua require("neotest").run.run_last()<CR>
+" nnoremap <leader>ts :lua require("neotest").summary.toggle()<CR>
 
 nnoremap <leader>fr :lua require('telescope.builtin').resume()<CR>
 nnoremap <leader>ff :lua require('telescope.builtin').find_files()<CR>
