@@ -15,6 +15,8 @@ noremap <ESC> :noh<CR><ESC>
 
 map <C-c> <Esc>
 
+nnoremap <C-t> :ToggleTerm<CR>
+
 nnoremap <leader>am :lua require('harpoon.mark').add_file()<CR>
 nnoremap <leader>]m :lua require('harpoon.ui').nav_next()<CR>
 nnoremap <leader>[m :lua require('harpoon.ui').nav_prev()<CR>
