@@ -38,7 +38,6 @@ Plug 'MunifTanjim/nui.nvim'
 Plug 'folke/noice.nvim'
 
 " Git
-Plug 'NeogitOrg/neogit'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'christoomey/vim-conflicted'
