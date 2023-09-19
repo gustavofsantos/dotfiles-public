@@ -5,7 +5,7 @@ let g:sneak#label = 1
 let g:sneak#use_ic_scs = 1
 
 let test#strategy = "vtr"
-let test#javascript#playwright#options = "--headed"
+let test#javascript#playwright#options = "--headed --retries 0"
 
 let g:switch_custom_definitions =
     \ [
@@ -38,6 +38,7 @@ Plug 'MunifTanjim/nui.nvim'
 Plug 'folke/noice.nvim'
 
 " Git
+Plug 'NeogitOrg/neogit'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'christoomey/vim-conflicted'
