@@ -1,3 +1,4 @@
+---@diagnostic disable: inject-field
 vim.diagnostic.config({
   virtual_text = true,
 })
@@ -97,35 +98,66 @@ cmp.setup({
   },
   snippet = {
     expand = function(args)
-      require("luasnip").lsp_expand(args.body)       -- For `luasnip` users.
+      require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
 })
 
 require("luasnip.loaders.from_vscode").lazy_load()
 
-require("conform").setup({
-  formatters_by_ft = {
-    lua = { "stylua" },
-    python = { "isort", "black" },
-    javascript = { { "prettierd", "prettier" } },
-    typescript = { { "prettierd", "prettier" } },
-    javascriptreact = { { "prettierd", "prettier" } },
-    typescriptreact = { { "prettierd", "prettier" } },
-  },
-})
+local has_conform, conform = pcall(require, "conform")
+if has_conform then
+  require("conform").setup({
+    formatters_by_ft = {
+      lua = { "stylua" },
+      python = { "isort", "black" },
+      javascript = { { "prettierd", "prettier" } },
+      typescript = { { "prettierd", "prettier" } },
+      javascriptreact = { { "prettierd", "prettier" } },
+      typescriptreact = { { "prettierd", "prettier" } },
+    },
+    format_on_save = function(bufnr)
+      -- Disable with a global or buffer-local variable
+      if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+        return
+      end
+      return { timeout_ms = 500, lsp_fallback = true }
+    end,
+  })
 
-require("lint").linters_by_ft = {
-  markdown = { "vale" },
-  python = { "ruff" },
-  javascript = { "eslint" },
-  javascriptreact = { "eslint" },
-  typescript = { "eslint" },
-  typescriptreact = { "eslint" },
-}
+  vim.api.nvim_create_user_command("FormatDisable", function(args)
+    if args.bang then
+      -- FormatDisable! will disable formatting just for this buffer
+      vim.b.disable_autoformat = true
+    else
+      vim.g.disable_autoformat = true
+    end
+  end, {
+    desc = "Disable autoformat-on-save",
+    bang = true,
+  })
+  vim.api.nvim_create_user_command("FormatEnable", function()
+    vim.b.disable_autoformat = false
+    vim.g.disable_autoformat = false
+  end, {
+    desc = "Re-enable autoformat-on-save",
+  })
+end
 
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-  callback = function()
-    require("lint").try_lint()
-  end,
-})
+local has_lint, lint = pcall(require, "lint")
+if has_lint then
+  require("lint").linters_by_ft = {
+    markdown = { "vale" },
+    python = { "ruff" },
+    javascript = { "eslint_d" },
+    javascriptreact = { "eslint_d" },
+    typescript = { "eslint_d" },
+    typescriptreact = { "eslint_d" },
+  }
+
+  vim.api.nvim_create_user_command("Lint", function()
+    lint.try_lint()
+  end, {
+    desc = "Lint current buffer",
+  })
+end
