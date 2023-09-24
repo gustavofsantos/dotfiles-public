@@ -1,6 +1,6 @@
 {
   "workbench.colorTheme": "Default Dark Modern",
-  "workbench.editor.showTabs": true,
+  "workbench.editor.showTabs": false,
   "workbench.editor.tabSizing": "fit",
   "workbench.tree.indent": 16,
   "editor.fontFamily": "'MonoLisa Nerd Font', 'Operator Mono Book'",
@@ -69,10 +69,19 @@
   "vim.highlightedyank.duration": 250,
   "vim.handleKeys": {
     "<C-a>": false,
-    "<C-f>": false
+    "<C-f>": false,
+    "<C-p>": false
   },
   "vim.normalModeKeyBindings": [
     // Regular remappings
+    {
+      "before": ["<c-w>", "s"],
+      "commands": ["workbench.action.splitEditor"]
+    },
+    {
+      "before": ["<c-w>", "S"],
+      "commands": ["workbench.action.splitEditorDown"]
+    },
     {
       "before": [
         "<c-h>"
@@ -125,6 +134,11 @@
         "workbench.action.toggleAuxiliaryBar",
       ]
     },
+    {
+      // list open files
+      "before": ["<leader>", "f", "e"],
+      "commands": [ "workbench.action.openRecent" ]
+    },
     // LSP key bindings
     {
       "before": [
@@ -135,51 +149,32 @@
       ]
     },
     {
-      "before": [
-        "g",
-        "d"
-      ],
-      "commands": [
-        "editor.action.revealDefinition"
-      ]
+      "before": ["g","d"],
+      "commands": ["editor.action.revealDefinition"]
     },
     {
-      "before": [
-        "<leader>",
-        "c",
-        "a"
-      ],
-      "commands": [
-        "editor.action.quickFix"
-      ]
+      "before": ["<leader>", "f", "s"],
+      "commands": ["workbench.action.showAllSymbols"]
     },
     {
-      "before": [
-        "leader",
-        "r",
-        "n"
-      ],
-      "commands": [
-        "editor.action.rename"
-      ]
+      "before": ["<leader>","x","x"],
+      "commands": ["workbench.actions.view.problems"],
     },
     {
-      "before": [
-        "[",
-        "d"
-      ],
-      "commands": [
-        "editor.action.marker.prev"
-      ]
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"]
     },
     {
-      "before": [
-        "]",
-        "d"
-      ],
-      "commands": [
-        "editor.action.marker.next"
-      ]
+      "before": ["leader","r","n"],
+      "commands": ["editor.action.rename"]
+    },
+    {
+      "before": ["[","d"],
+      "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["]","d"],
+      "commands": ["editor.action.marker.next"]
     },
   ],
   "workbench.colorCustomizations": {
