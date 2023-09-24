@@ -1,22 +1,10 @@
 nmap Q <Nop>
 
-" save current buffer
-map <C-s> <esc>:w<CR>
-imap <C-s> <esc>:w<CR>
-" close current buffer
+nnoremap <C-s> <esc>:w<CR>
+nnoremap <C-c> <Esc>
 nnoremap <C-q> :q<CR>
-" go to the end of the line
-imap <C-e> <C-o>$
-" go to the beginning of the line
-imap <C-a> <C-o>^
-map <C-c> <Esc>
-
 noremap <ESC> :noh<CR><ESC>
-
-map <C-c> <Esc>
-
 nnoremap <C-t> :ToggleTerm<CR>
-
 nnoremap <leader>am :lua require('harpoon.mark').add_file()<CR>
 nnoremap <leader>]m :lua require('harpoon.ui').nav_next()<CR>
 nnoremap <leader>[m :lua require('harpoon.ui').nav_prev()<CR>
@@ -29,8 +17,6 @@ nnoremap <leader>f4 :lua require('harpoon.ui').nav_file(4)<CR>
 " git conflict mappings
 nnoremap gj <cmd>diffget //3<CR>
 nnoremap gf <cmd>diffget //2<CR>
-autocmd FileType gitcommit    nnoremap <buffer> <C-c> :wq<CR>
-autocmd FileType gitcommit    inoremap <buffer> <C-c> <esc>:wq<CR>
 
 tnoremap <Esc> <C-\><C-n>
 nnoremap <leader><leader> <C-^>
@@ -105,8 +91,6 @@ nnoremap <C-l> <C-w>l
 " move lines
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 

@@ -20,12 +20,14 @@ let g:switch_custom_definitions =
     \ ]
 
 call plug#begin()
-" Neovim plugins
+
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/toggleterm.nvim'
 Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-sleuth'
 
 " Themes
 Plug 'rebelot/kanagawa.nvim'
@@ -66,11 +68,6 @@ Plug 'justinmk/vim-sneak'
 
 " Running tests
 Plug 'vim-test/vim-test'
-" Plug 'nvim-neotest/neotest'
-" Plug 'nvim-neotest/neotest-jest'
-" Plug 'marilari88/neotest-vitest'
-" Plug 'thenbe/neotest-playwright'
-" Plug 'nvim-neotest/neotest-python'
 
 " LSP & autocomplete
 Plug 'folke/neodev.nvim'
@@ -82,8 +79,6 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'rafamadriz/friendly-snippets'
 Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v2.x'}
-Plug 'mfussenegger/nvim-dap'
-Plug 'rcarriga/nvim-dap-ui'
 Plug 'stevearc/conform.nvim'
 Plug 'mfussenegger/nvim-lint'
 Plug 'folke/trouble.nvim'
@@ -98,7 +93,7 @@ source ~/.config/nvim/lua/project.lua
 
 set termguicolors
 set background=dark
-colorscheme kanagawa
+colorscheme nordic
 set noerrorbells
 set tabstop=2 softtabstop=2
 set shiftwidth=2
