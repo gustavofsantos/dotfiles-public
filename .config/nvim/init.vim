@@ -34,6 +34,7 @@ Plug 'rebelot/kanagawa.nvim'
 Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }
 Plug 'shaunsingh/solarized.nvim'
 Plug 'projekt0n/caret.nvim'
+Plug 'oxfist/night-owl.nvim'
 
 " UI
 Plug 'MunifTanjim/nui.nvim'
