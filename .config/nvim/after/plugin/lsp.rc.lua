@@ -111,10 +111,10 @@ if has_conform then
     formatters_by_ft = {
       lua = { "stylua" },
       python = { "isort", "black" },
-      javascript = { { "prettierd", "prettier" } },
-      typescript = { { "prettierd", "prettier" } },
-      javascriptreact = { { "prettierd", "prettier" } },
-      typescriptreact = { { "prettierd", "prettier" } },
+      javascript = { { "prettierd", "prettier" }, { "eslint_d", "eslint" } },
+      typescript = { { "prettierd", "prettier" }, { "eslint_d", "eslint" } },
+      javascriptreact = { { "prettierd", "prettier" }, { "eslint_d", "eslint" } },
+      typescriptreact = { { "prettierd", "prettier" }, { "eslint_d", "eslint" } },
     },
     format_on_save = function(bufnr)
       -- Disable with a global or buffer-local variable
@@ -148,7 +148,7 @@ local has_lint, lint = pcall(require, "lint")
 if has_lint then
   require("lint").linters_by_ft = {
     markdown = { "vale" },
-    python = { "ruff" },
+    python = { "flake8", "ruff" },
     javascript = { "eslint_d" },
     javascriptreact = { "eslint_d" },
     typescript = { "eslint_d" },
