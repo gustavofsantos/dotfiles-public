@@ -646,7 +646,7 @@
   "redhat.telemetry.enabled": false,
   "diffEditor.ignoreTrimWhitespace": false,
   "github.copilot.enable": {
-    "*": false,
+    "*": true,
     "plaintext": true,
     "markdown": false,
     "scminput": false
