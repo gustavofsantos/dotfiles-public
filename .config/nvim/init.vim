@@ -34,7 +34,6 @@ Plug 'rebelot/kanagawa.nvim'
 Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }
 Plug 'shaunsingh/solarized.nvim'
 Plug 'projekt0n/caret.nvim'
-Plug 'oxfist/night-owl.nvim'
 
 " UI
 Plug 'MunifTanjim/nui.nvim'
@@ -69,10 +68,13 @@ Plug 'justinmk/vim-sneak'
 
 " Running tests
 Plug 'vim-test/vim-test'
+Plug 'nvim-neotest/neotest'
+Plug 'nvim-neotest/neotest-vim-test'
 
 " LSP & autocomplete
 Plug 'folke/neodev.nvim'
 Plug 'neovim/nvim-lspconfig' 
+Plug 'nvimdev/lspsaga.nvim'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'hrsh7th/nvim-cmp'

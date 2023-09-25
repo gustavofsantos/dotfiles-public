@@ -161,3 +161,12 @@ if has_lint then
     desc = "Lint current buffer",
   })
 end
+
+local has_lspsaga, lspsaga = pcall(require, "lspsaga")
+if has_lspsaga then
+  lspsaga.setup({
+    lightbulb = {
+      enabled = true,
+    },
+  })
+end
