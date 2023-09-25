@@ -16,6 +16,8 @@ if not has_lsp then
   return
 end
 
+local has_lspsaga, _ = pcall(require, "lspsaga")
+
 lsp.preset("recommended")
 
 lsp.ensure_installed({
@@ -56,32 +58,77 @@ lsp.on_attach(function(client, bufnr)
   local opts = { buffer = bufnr, remap = false }
 
   vim.keymap.set("n", "K", function()
-    vim.lsp.buf.hover()
+    if has_lspsaga then
+      vim.cmd("Lspsaga hover_doc")
+    else
+      vim.lsp.buf.hover()
+    end
   end, opts)
+
   vim.keymap.set("n", "gd", function()
     vim.lsp.buf.definition()
   end, opts)
+
+  vim.keymap.set("n", "gD", function()
+    if has_lspsaga then
+      vim.cmd("Lspsaga peek_definition")
+    else
+      vim.lsp.buf.definition()
+    end
+  end, opts)
+
   vim.keymap.set("n", "gr", function()
     require("telescope.builtin").lsp_references()
   end, opts)
+
+  vim.keymap.set("n", "gF", function()
+    if has_lspsaga then
+      vim.cmd("Lspsaga finder")
+    end
+  end)
+
   vim.keymap.set("n", "<leader>ca", function()
-    vim.lsp.buf.code_action()
+    if has_lspsaga then
+      vim.cmd("Lspsaga code_action")
+    else
+      vim.lsp.buf.code_action()
+    end
   end, opts)
+
   vim.keymap.set("n", "<leader>rn", function()
-    vim.lsp.buf.rename()
+    if has_lspsaga then
+      vim.cmd("Lspsaga rename")
+    else
+      vim.lsp.buf.rename()
+    end
   end, opts)
+
   vim.keymap.set("n", "<leader>fs", function()
     vim.lsp.buf.workspace_symbol()
   end, opts)
+
   vim.keymap.set("n", "<leader>vd", function()
-    vim.diagnostic.open_float()
+    if has_lspsaga then
+      vim.cmd("Lspsaga show_cursor_diagnostics")
+    else
+      vim.diagnostic.open_float()
+    end
   end, opts)
+
+  vim.keymap.set("n", "gx", function()
+    if has_lspsaga then
+      vim.cmd("Lspsaga show_workspace_diagnostics ++normal")
+    end
+  end, opts)
+
   vim.keymap.set("n", "[d", function()
     vim.diagnostic.goto_next()
   end, opts)
+
   vim.keymap.set("n", "]d", function()
     vim.diagnostic.goto_prev()
   end, opts)
+
   vim.keymap.set("n", "gs", function()
     vim.lsp.buf.signature_help()
   end, opts)
@@ -162,11 +209,16 @@ if has_lint then
   })
 end
 
-local has_lspsaga, lspsaga = pcall(require, "lspsaga")
 if has_lspsaga then
-  lspsaga.setup({
+  require("lspsaga").setup({
     lightbulb = {
-      enabled = true,
+      enable = true,
+    },
+    beacon = {
+      enable = true,
+    },
+    symbol_in_winbar = {
+      enable = false,
     },
   })
 end
