@@ -1,4 +1,3 @@
----@diagnostic disable: inject-field
 vim.diagnostic.config({
     virtual_text = true,
 })
@@ -33,6 +32,7 @@ if has_mason_lspconfig then
             "jsonls",
             "svelte",
             "vimls",
+            "bashls",
         },
     })
 
@@ -57,7 +57,7 @@ end
 
 local has_conform, conform = pcall(require, "conform")
 if has_conform then
-    require("conform").setup({
+    conform.setup({
         formatters_by_ft = {
             lua = { "stylua" },
             python = { "isort", "black" },
@@ -96,7 +96,7 @@ end
 
 local has_lint, lint = pcall(require, "lint")
 if has_lint then
-    require("lint").linters_by_ft = {
+    lint.linters_by_ft = {
         markdown = { "vale" },
         python = { "flake8", "ruff" },
         javascript = { "eslint_d" },
@@ -111,3 +111,19 @@ if has_lint then
         desc = "Lint current buffer",
     })
 end
+
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+vim.api.nvim_create_autocmd("LspAttach", {
+    group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+    callback = function(ev)
+        local opts = { buffer = ev.buf }
+
+        vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+        vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+        vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+        vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+        vim.keymap.set("n", "gr", vim.lsp.buf.rename, opts)
+        vim.keymap.set("n", "gR", vim.lsp.buf.references, opts)
+    end,
+})
