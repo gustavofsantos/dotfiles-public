@@ -1,7 +1,17 @@
 vim.o.foldcolumn = "0" -- '0' is not bad
-vim.o.foldlevel = 99   -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
+
+local has_mini_move, mini_move = pcall(require, "mini.move")
+if has_mini_move then
+    mini_move.setup()
+end
+
+local has_mini_splitjoin, mini_splitjoin = pcall(require, "mini.splitjoin")
+if has_mini_splitjoin then
+    mini_splitjoin.setup()
+end
 
 local has_treesitter, treesitter = pcall(require, "nvim-treesitter.configs")
 if not has_treesitter then
@@ -101,8 +111,8 @@ treesitter.setup({
     },
 })
 
-require("nvim-treesitter.configs").setup({
-    autotag = {
-        enable = true,
-    },
-})
+-- require("nvim-treesitter.configs").setup({
+--     autotag = {
+--         enable = true,
+--     },
+-- })

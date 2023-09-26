@@ -88,16 +88,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" move lines
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
-
-" move tabs
-nnoremap <A-h> :-tabmove<CR>
-nnoremap <A-l> :+tabmove<CR>
-
 command! Q q
 command! Qall qall
 command! QA qall
@@ -151,11 +141,3 @@ augroup filetype_jsx
     autocmd!
     autocmd FileType javascript set filetype=javascriptreact
 augroup END
-
-function! ShowDocumentation()
-  if CocAction('hasProvider', 'hover')
-    call CocActionAsync('doHover')
-  else
-    call feedkeys('K', 'in')
-  endif
-endfunction

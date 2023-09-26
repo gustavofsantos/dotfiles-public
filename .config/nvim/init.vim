@@ -61,6 +61,8 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-sleuth'
 Plug 'AndrewRadev/switch.vim'
 Plug 'justinmk/vim-sneak'
+Plug 'echasnovski/mini.move'
+Plug 'echasnovski/mini.splitjoin'
 
 " Running tests
 Plug 'vim-test/vim-test'
@@ -120,7 +122,7 @@ set ignorecase smartcase
 set splitbelow
 " set t_ti= t_te=
 set updatetime=100
-" set clipboard+=unnamedplus
+set clipboard+=unnamedplus
 set wildmenu
 " set completeopt=menuone,noinsert,noselect
 set signcolumn=yes
