@@ -28,19 +28,12 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/toggleterm.nvim'
-Plug 'antoinemadec/FixCursorHold.nvim'
-Plug 'tpope/vim-rhubarb'
-Plug 'tpope/vim-sleuth'
 
 " Themes
 Plug 'rebelot/kanagawa.nvim'
 Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }
 Plug 'shaunsingh/solarized.nvim'
 Plug 'projekt0n/caret.nvim'
-
-" UI
-Plug 'MunifTanjim/nui.nvim'
-Plug 'folke/noice.nvim'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -51,7 +44,6 @@ Plug 'lewis6991/gitsigns.nvim', { 'tag': 'v0.6' }
 " Navigation
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-ui-select.nvim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'ThePrimeagen/harpoon'
 Plug 'mbbill/undotree'
@@ -66,29 +58,23 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-sleuth'
 Plug 'AndrewRadev/switch.vim'
 Plug 'justinmk/vim-sneak'
 
 " Running tests
 Plug 'vim-test/vim-test'
-Plug 'nvim-neotest/neotest'
-Plug 'nvim-neotest/neotest-vim-test'
 
 " LSP & autocomplete
 Plug 'folke/neodev.nvim'
 Plug 'neovim/nvim-lspconfig' 
-Plug 'nvimdev/lspsaga.nvim'
+Plug 'echasnovski/mini.completion', { 'branch': 'stable' }
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'L3MON4D3/LuaSnip'
-Plug 'rafamadriz/friendly-snippets'
-Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v2.x'}
-Plug 'stevearc/conform.nvim'
-Plug 'mfussenegger/nvim-lint'
 Plug 'folke/trouble.nvim'
 Plug 'github/copilot.vim'
+Plug 'stevearc/conform.nvim'
+Plug 'mfussenegger/nvim-lint'
 
 Plug 'windwp/nvim-projectconfig'
 
@@ -100,11 +86,11 @@ source ~/.config/nvim/lua/project.lua
 set termguicolors
 set background=dark
 colorscheme nordic
-set noerrorbells
-set tabstop=2 softtabstop=2
-set shiftwidth=2
-set expandtab
-set winwidth=80
+" set noerrorbells
+" set tabstop=2 softtabstop=2
+" set shiftwidth=2
+" set expandtab
+" set winwidth=80
 set smartindent
 set vb
 set nowrap
@@ -115,7 +101,7 @@ set nobackup
 set undodir=~/.config/vim/undodir
 set undofile
 set incsearch
-set autoread
+" set autoread
 set switchbuf=useopen
 set cmdheight=1
 set hidden
@@ -132,18 +118,18 @@ set laststatus=2
 set splitright
 set ignorecase smartcase
 set splitbelow
-set t_ti= t_te=
+" set t_ti= t_te=
 set updatetime=100
-set clipboard+=unnamedplus
+" set clipboard+=unnamedplus
 set wildmenu
-set completeopt=menuone,noinsert,noselect
+" set completeopt=menuone,noinsert,noselect
 set signcolumn=yes
 set pumheight=10
-set grepprg=ag
+" set grepprg=ag
 set wildmode=list:longest,full
 set backupdir=~/.tmp
 set directory=~/.tmp
-set guioptions-=T
+" set guioptions-=T
 set mouse=nv
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 set statusline+=%{ConflictedVersion()}

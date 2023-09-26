@@ -1,224 +1,113 @@
 ---@diagnostic disable: inject-field
 vim.diagnostic.config({
-  virtual_text = true,
+    virtual_text = true,
 })
 
 local has_neodev, neodev = pcall(require, "neodev")
-if not has_neodev then
-  return
-end
-neodev.setup({
-  library = { plugins = { "neotest", "nvim-dap-ui" }, types = true },
-})
-
-local has_lsp, lsp = pcall(require, "lsp-zero")
-if not has_lsp then
-  return
+if has_neodev then
+    neodev.setup({
+        library = { plugins = { "neotest", "nvim-dap-ui" }, types = true },
+    })
 end
 
-local has_lspsaga, _ = pcall(require, "lspsaga")
+local has_mini_completion, _ = pcall(require, "mini.completion")
+if has_mini_completion then
+    require("mini.completion").setup()
+end
 
-lsp.preset("recommended")
+local has_mason, mason = pcall(require, "mason")
+if has_mason then
+    mason.setup()
+end
 
-lsp.ensure_installed({
-  "lua_ls",
-  "tsserver",
-  "jsonls",
-})
+local has_mason_lspconfig, mason_lspconfig = pcall(require, "mason-lspconfig")
+if has_mason_lspconfig then
+    mason_lspconfig.setup({
+        ensure_installed = {
+            "lua_ls",
+            "tsserver",
+            "pyright",
+            "dockerls",
+            "docker_compose_language_service",
+            "eslint",
+            "jsonls",
+            "svelte",
+            "vimls",
+        },
+    })
 
-lsp.nvim_workspace()
-
-local cmp = require("cmp")
-local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local cmp_mappings = lsp.defaults.cmp_mappings({
-  ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
-  ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
-  ["<C-y>"] = cmp.mapping.confirm({ select = true }),
-  ["<C-Space>"] = cmp.mapping.complete(),
-})
-
-cmp_mappings["<Tab>"] = nil
-cmp_mappings["<S-Tab>"] = nil
-
-lsp.setup_nvim_cmp({
-  mapping = cmp_mappings,
-})
-
-lsp.set_preferences({
-  suggest_lsp_servers = false,
-  sign_icons = {
-    error = "E",
-    warn = "W",
-    hint = "H",
-    info = "I",
-  },
-})
-
-lsp.on_attach(function(client, bufnr)
-  local opts = { buffer = bufnr, remap = false }
-
-  vim.keymap.set("n", "K", function()
-    if has_lspsaga then
-      vim.cmd("Lspsaga hover_doc")
-    else
-      vim.lsp.buf.hover()
-    end
-  end, opts)
-
-  vim.keymap.set("n", "gd", function()
-    vim.lsp.buf.definition()
-  end, opts)
-
-  vim.keymap.set("n", "gD", function()
-    if has_lspsaga then
-      vim.cmd("Lspsaga peek_definition")
-    else
-      vim.lsp.buf.definition()
-    end
-  end, opts)
-
-  vim.keymap.set("n", "gr", function()
-    require("telescope.builtin").lsp_references()
-  end, opts)
-
-  vim.keymap.set("n", "gF", function()
-    if has_lspsaga then
-      vim.cmd("Lspsaga finder")
-    end
-  end)
-
-  vim.keymap.set("n", "<leader>ca", function()
-    if has_lspsaga then
-      vim.cmd("Lspsaga code_action")
-    else
-      vim.lsp.buf.code_action()
-    end
-  end, opts)
-
-  vim.keymap.set("n", "<leader>rn", function()
-    if has_lspsaga then
-      vim.cmd("Lspsaga rename")
-    else
-      vim.lsp.buf.rename()
-    end
-  end, opts)
-
-  vim.keymap.set("n", "<leader>fs", function()
-    vim.lsp.buf.workspace_symbol()
-  end, opts)
-
-  vim.keymap.set("n", "<leader>vd", function()
-    if has_lspsaga then
-      vim.cmd("Lspsaga show_cursor_diagnostics")
-    else
-      vim.diagnostic.open_float()
-    end
-  end, opts)
-
-  vim.keymap.set("n", "gx", function()
-    if has_lspsaga then
-      vim.cmd("Lspsaga show_workspace_diagnostics ++normal")
-    end
-  end, opts)
-
-  vim.keymap.set("n", "[d", function()
-    vim.diagnostic.goto_next()
-  end, opts)
-
-  vim.keymap.set("n", "]d", function()
-    vim.diagnostic.goto_prev()
-  end, opts)
-
-  vim.keymap.set("n", "gs", function()
-    vim.lsp.buf.signature_help()
-  end, opts)
-end)
-
-lsp.setup()
-
-local cmp = require("cmp")
-
-cmp.setup({
-  sources = {
-    { name = "nvim_lsp" },
-    { name = "luasnip" },
-  },
-  snippet = {
-    expand = function(args)
-      require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
-    end,
-  },
-})
-
-require("luasnip.loaders.from_vscode").lazy_load()
+    mason_lspconfig.setup_handlers({
+        function(server_name)
+            require("lspconfig")[server_name].setup({})
+        end,
+        ["lua_ls"] = function()
+            local lspconfig = require("lspconfig")
+            lspconfig.lua_ls.setup({
+                settings = {
+                    Lua = {
+                        diagnostics = {
+                            globals = { "vim" },
+                        },
+                    },
+                },
+            })
+        end,
+    })
+end
 
 local has_conform, conform = pcall(require, "conform")
 if has_conform then
-  require("conform").setup({
-    formatters_by_ft = {
-      lua = { "stylua" },
-      python = { "isort", "black" },
-      javascript = { { "prettierd", "prettier" }, { "eslint_d", "eslint" } },
-      typescript = { { "prettierd", "prettier" }, { "eslint_d", "eslint" } },
-      javascriptreact = { { "prettierd", "prettier" }, { "eslint_d", "eslint" } },
-      typescriptreact = { { "prettierd", "prettier" }, { "eslint_d", "eslint" } },
-    },
-    format_on_save = function(bufnr)
-      -- Disable with a global or buffer-local variable
-      if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
-        return
-      end
-      return { timeout_ms = 500, lsp_fallback = true }
-    end,
-  })
+    require("conform").setup({
+        formatters_by_ft = {
+            lua = { "stylua" },
+            python = { "isort", "black" },
+            javascript = { { "prettierd", "prettier" }, { "eslint_d", "eslint" } },
+            typescript = { { "prettierd", "prettier" }, { "eslint_d", "eslint" } },
+            javascriptreact = { { "prettierd", "prettier" }, { "eslint_d", "eslint" } },
+            typescriptreact = { { "prettierd", "prettier" }, { "eslint_d", "eslint" } },
+        },
+        format_on_save = function(bufnr)
+            -- Disable with a global or buffer-local variable
+            if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+                return
+            end
+            return { timeout_ms = 500, lsp_fallback = true }
+        end,
+    })
 
-  vim.api.nvim_create_user_command("FormatDisable", function(args)
-    if args.bang then
-      -- FormatDisable! will disable formatting just for this buffer
-      vim.b.disable_autoformat = true
-    else
-      vim.g.disable_autoformat = true
-    end
-  end, {
-    desc = "Disable autoformat-on-save",
-    bang = true,
-  })
-  vim.api.nvim_create_user_command("FormatEnable", function()
-    vim.b.disable_autoformat = false
-    vim.g.disable_autoformat = false
-  end, {
-    desc = "Re-enable autoformat-on-save",
-  })
+    vim.api.nvim_create_user_command("FormatDisable", function(args)
+        if args.bang then
+            -- FormatDisable! will disable formatting just for this buffer
+            vim.b.disable_autoformat = true
+        else
+            vim.g.disable_autoformat = true
+        end
+    end, {
+        desc = "Disable autoformat-on-save",
+        bang = true,
+    })
+    vim.api.nvim_create_user_command("FormatEnable", function()
+        vim.b.disable_autoformat = false
+        vim.g.disable_autoformat = false
+    end, {
+        desc = "Re-enable autoformat-on-save",
+    })
 end
 
 local has_lint, lint = pcall(require, "lint")
 if has_lint then
-  require("lint").linters_by_ft = {
-    markdown = { "vale" },
-    python = { "flake8", "ruff" },
-    javascript = { "eslint_d" },
-    javascriptreact = { "eslint_d" },
-    typescript = { "eslint_d" },
-    typescriptreact = { "eslint_d" },
-  }
+    require("lint").linters_by_ft = {
+        markdown = { "vale" },
+        python = { "flake8", "ruff" },
+        javascript = { "eslint_d" },
+        javascriptreact = { "eslint_d" },
+        typescript = { "eslint_d" },
+        typescriptreact = { "eslint_d" },
+    }
 
-  vim.api.nvim_create_user_command("Lint", function()
-    lint.try_lint()
-  end, {
-    desc = "Lint current buffer",
-  })
-end
-
-if has_lspsaga then
-  require("lspsaga").setup({
-    lightbulb = {
-      enable = true,
-    },
-    beacon = {
-      enable = true,
-    },
-    symbol_in_winbar = {
-      enable = false,
-    },
-  })
+    vim.api.nvim_create_user_command("Lint", function()
+        lint.try_lint()
+    end, {
+        desc = "Lint current buffer",
+    })
 end
