@@ -123,6 +123,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("UserLspConfig", {}),
     callback = function(ev)
         local opts = { buffer = ev.buf }
+        local telescope = require('telescope.builtin')
+        local telescope_themes = require('telescope.themes')
 
         vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
@@ -131,5 +133,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "gr", vim.lsp.buf.rename, opts)
         vim.keymap.set("n", "gR", vim.lsp.buf.references, opts)
         vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+        vim.keymap.set("n", "<leader>fs", function()
+            telescope.lsp_document_symbols(telescope_themes.get_dropdown())
+        end, opts)
     end,
 })
