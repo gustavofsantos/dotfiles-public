@@ -26,6 +26,7 @@ call plug#begin()
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'stevearc/dressing.nvim'
 Plug 'akinsho/toggleterm.nvim'
 
 " Themes

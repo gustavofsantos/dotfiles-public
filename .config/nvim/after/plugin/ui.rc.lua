@@ -12,3 +12,8 @@ if has_toggleterm then
         },
     })
 end
+
+local has_dressing, dressing = pcall(require, "dressing")
+if has_dressing then
+    dressing.setup()
+end
