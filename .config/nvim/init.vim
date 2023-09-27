@@ -87,7 +87,7 @@ set termguicolors
 set background=dark
 colorscheme nordic
 " set noerrorbells
-" set tabstop=2 softtabstop=2
+set tabstop=2 softtabstop=2
 " set shiftwidth=2
 " set expandtab
 " set winwidth=80

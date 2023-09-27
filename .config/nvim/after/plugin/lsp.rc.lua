@@ -33,6 +33,7 @@ if has_mason_lspconfig then
             "svelte",
             "vimls",
             "bashls",
+            "tailwindcss",
         },
     })
 
@@ -50,6 +51,12 @@ if has_mason_lspconfig then
                         },
                     },
                 },
+            })
+        end,
+        ["denols"] = function()
+            local lspconfig = require("lspconfig")
+            lspconfig.denols.setup({
+                root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
             })
         end,
     })
@@ -123,5 +130,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
         vim.keymap.set("n", "gr", vim.lsp.buf.rename, opts)
         vim.keymap.set("n", "gR", vim.lsp.buf.references, opts)
+        vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
     end,
 })
