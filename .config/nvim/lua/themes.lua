@@ -1,7 +1,7 @@
-local has_nordic, _ = pcall(require, "nordic")
+local has_nordic, nordic = pcall(require, "nordic")
 if has_nordic then
     local palette = require("nordic.colors")
-    require("nordic").setup({
+    nordic.setup({
         reduced_blue = true,
         telescope = {
             style = "flat",
@@ -45,9 +45,9 @@ if has_nordic then
     })
 end
 
-local has_kanagawa, _ = pcall(require, "kanagawa")
+local has_kanagawa, kanagawa = pcall(require, "kanagawa")
 if has_kanagawa then
-    require("kanagawa").setup({
+    kanagawa.setup({
         dimInactive = false,
         globalStatus = true,
         commentStyle = { italic = true },
@@ -104,27 +104,5 @@ if has_kanagawa then
                 ["@punctuation.bracket"] = { fg = colors.palette.sumiInk6 },
             }
         end,
-    })
-end
-
-local has_github_themes, _ = pcall(require, "github-theme")
-if has_github_themes then
-    require("github-theme").setup({
-        options = {
-            hide_end_of_buffer = false,
-            hide_nc_statusline = false,
-            styles = {
-                comments = "italic",
-                functions = "italic",
-                keywords = "italic",
-                variables = "NONE",
-                conditionals = "NONE",
-                constants = "bold",
-                numbers = "bold",
-                operators = "NONE",
-                strings = "NONE",
-                types = "bold",
-            },
-        },
     })
 end
