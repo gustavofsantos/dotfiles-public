@@ -15,5 +15,9 @@ end
 
 local has_dressing, dressing = pcall(require, "dressing")
 if has_dressing then
-    dressing.setup()
+    dressing.setup({
+        select = {
+            telescope = require('telescope.themes').get_cursor()
+        }
+    })
 end
