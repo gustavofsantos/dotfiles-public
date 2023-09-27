@@ -25,7 +25,6 @@ let g:switch_custom_definitions =
 call plug#begin()
 
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-lua/popup.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/toggleterm.nvim'
 
@@ -55,14 +54,13 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-treesitter/playground'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-sleuth'
 Plug 'AndrewRadev/switch.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'echasnovski/mini.move'
 Plug 'echasnovski/mini.splitjoin'
+Plug 'echasnovski/mini.bracketed'
 
 " Running tests
 Plug 'vim-test/vim-test'
@@ -94,7 +92,7 @@ colorscheme nordic
 " set expandtab
 " set winwidth=80
 set smartindent
-set vb
+" set vb
 set nowrap
 set smartcase
 set noswapfile

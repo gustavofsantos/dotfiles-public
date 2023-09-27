@@ -26,4 +26,7 @@ augroup SetVimTestGlobalVariablesForPlaywright
     autocmd BufEnter,BufRead,BufNewFile *.spec.js let g:test#javascript#playwright#executable = 'env $(cat .env.local .env.test.local | grep -v ^#) npx playwright test'
 augroup END
 
-echo "loading beyond-ui.vim"
+augroup filetype_jsx
+    autocmd!
+    autocmd FileType javascript set filetype=javascriptreact
+augroup END

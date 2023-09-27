@@ -13,6 +13,11 @@ if has_mini_splitjoin then
     mini_splitjoin.setup()
 end
 
+local has_mini_bracketed, mini_bracketed = pcall(require, "mini.bracketed")
+if has_mini_bracketed then
+    mini_bracketed.setup()
+end
+
 local has_treesitter, treesitter = pcall(require, "nvim-treesitter.configs")
 if has_treesitter then
     treesitter.setup({

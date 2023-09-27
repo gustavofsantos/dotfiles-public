@@ -53,7 +53,6 @@ nnoremap <leader>fm :lua require('harpoon.ui').toggle_quick_menu()<CR>
 nnoremap <leader>fj :lua require('telescope.builtin').jumplist()<CR>
 nnoremap <leader>fo :lua require('telescope.builtin').loclist()<CR>
 nnoremap <leader>fl :lua require('telescope.builtin').live_grep()<CR>
-" nnoremap gr :lua require('telescope.builtin').lsp_references()<cr>
 nnoremap <leader>fk :lua require('telescope.builtin').keymaps()<CR>
 nnoremap <leader>fh :lua require('telescope.builtin').search_history()<CR>
 nnoremap <leader>f? :lua require('telescope.builtin').help_tags()<CR>
@@ -122,22 +121,3 @@ augroup highlight_yank
     au TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=500})
 augroup END
 
-" Loggi's py monorepo
-nnoremap <leader>pi :!bash -c "py-isort %:p"<CR>
-nnoremap <leader>pic :!bash -c "py-isort-check %:p"<CR>
-nnoremap <leader>pb :!bash -c "py-black %:p"<CR>
-nnoremap <leader>pbc :!bash -c "py-black-check %:p"<CR>
-nnoremap <leader>pt :T bash -c "py-test-file %:t && echo 'Success' \| espeak \|\| echo 'Fail' \| espeak"<CR>
-
-" match ExtraWhitespace /\s\+$/
-" autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-" autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-" autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-" autocmd BufWinLeave * call clearmatches()
-" highlight! default link CmpItemKind CmpItemMenuDefault
-
-
-augroup filetype_jsx
-    autocmd!
-    autocmd FileType javascript set filetype=javascriptreact
-augroup END
