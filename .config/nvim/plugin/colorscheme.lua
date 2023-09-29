@@ -224,6 +224,8 @@ hi(0, "@tag.delimiter", { fg = colors.gray05, bold = true })
 hi(0, "@lsp.type.variable", { fg = colors.bright_magenta })
 hi(0, "@lsp.type.property", { fg = colors.fg })
 hi(0, "@lsp.type.parameter", { fg = colors.gray07 })
+hi(0, "@lsp.typemod.function.readonly", { fg = colors.bright_blue })
+hi(0, "@lsp.typemod.member.declaration", { fg = colors.fg })
 hi(0, "@lsp.mod.deprecated", { fg = colors.red })
 hi(0, "@lsp.mod.readonly", { fg = colors.fg })
 
