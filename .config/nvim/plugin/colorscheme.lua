@@ -231,92 +231,29 @@ hi(0, "@lsp.mod.readonly", { fg = colors.fg })
 
 -- JavaScript
 hi(0, "@variable.javascript", { fg = colors.fg })
-
-hi(0, "TSAnnotation", { fg = colors.green })                                              -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-hi(0, "TSAttribute", { fg = colors.fg })                                                  -- (unstable) TODO: docs
-hi(0, "TSBoolean", { fg = colors.cyan, bg = colors.none, bold = true, italic = false })   -- true or false
-hi(0, "TSCharacter", { fg = colors.cyan })                                                -- For characters.
-hi(0, "TSComment", { fg = colors.gray05, bg = colors.none, bold = false, italic = true }) -- For comment blocks.
-hi(0, "TSConditional", { fg = colors.blue, bold = false, italic = false })                -- For keywords related to conditionnals.
-hi(0, "TSConstant", { fg = colors.fg })                                                   -- For constants
-hi(0, "TSConstBuiltin", { fg = colors.cyan, italic = true })                              -- For constants that are built in the language: `nil` in Lua.
-hi(0, "TSConstMacro", { fg = colors.cyan })                                               -- For constants that are defined by macros: `NULL` in colors.
-hi(0, "TSConstructor", { fg = colors.gray07 })                                            -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-hi(0, "TSError", { fg = colors.red })                                                     -- For syntax/parser errors.
-hi(0, "TSException", { fg = colors.yellow })                                              -- For exception related keywords.
-hi(0, "TSField", { fg = colors.cyan })                                                    -- For fields.
-hi(0, "TSFloat", { fg = colors.cyan })                                                    -- For floats.
-hi(0, "TSFunction", { fg = colors.fg, bold = false, italic = true })                      -- For fuction (calls and definitions).
-hi(0, "TSFuncBuiltin", { fg = colors.fg, bold = false, italic = true })                   -- For builtin functions: `table.insert` in Lua.
-hi(0, "TSFuncMacro", { fg = colors.blue })                                                -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-hi(0, "TSInclude", { fg = colors.blue, italic = true })                                   -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-hi(0, "TSKeyword", { fg = colors.blue, bold = false, italic = false })                    -- For keywords that don't fall in previous categories.
-hi(0, "TSKeywordFunction", { fg = colors.blue, bold = false, italic = true })             -- For keywords used to define a fuction.
-hi(0, "TSKeywordOperator", { fg = colors.yellow })                                        -- For operators that are English words, e.g. `and`, `as`, `or`.
-hi(0, "TSKeywordReturn", { fg = colors.blue, bold = false, italic = false })              -- For the `return` and `yield` keywords.
-hi(0, "TSLabel", { fg = colors.cyan })                                                    -- For labels: `label:` in C and `:label:` in Lua.
-hi(0, "TSMethod", { fg = colors.bright_blue, bold = false, italic = true })               -- For method calls and definitions.
-hi(0, "TSNamespace", { fg = colors.blue })                                                -- For identifiers referring to modules and namespaces.
--- TSNone = {}, -- No highlighting. Don't change the values of this highlight group.
-hi(0, "TSNumber", { fg = colors.cyan })                                                   -- For all numbers
-hi(0, "TSOperator", { fg = colors.yellow })                                               -- For any operator: `+`, but also `->` and `*` in colors.
--- hi(0, "TSParameter", { fg = colors.fg })                                                       -- For parameters of a function.
--- hi(0, "TSParameterReference", { fg = colors.fg })                                              -- For references to parameters of a function.
-hi(0, "TSProperty", { fg = colors.blue })                                                      -- Same as `TSField`.
-hi(0, "TSPunctDelimiter", { fg = colors.gray05 })                                              -- For delimiters ie: `.`
-hi(0, "TSPunctBracket", { fg = colors.gray05 })                                                -- For brackets and parens.
-hi(0, "TSPunctSpecial", { fg = colors.green })                                                 -- For special punctutation that does not fall in the catagories before.
-hi(0, "TSRepeat", { fg = colors.blue, bold = false, italic = false })                          -- For keywords related to loops.
-hi(0, "TSString", { fg = colors.cyan })                                                        -- For strings.
-hi(0, "TSStringRegex", { fg = colors.green })                                                  -- For regexes.
-hi(0, "TSStringEscape", { fg = colors.cyan })                                                  -- For escape characters within a string.
-hi(0, "TSStringSpecial", { fg = colors.green })                                                -- For strings with special meaning that don't fit into the above categories.
-hi(0, "TSSymbol", { fg = colors.green })                                                       -- For identifiers referring to symbols or atoms.
-hi(0, "TSTag", { fg = colors.yellow })                                                         -- Tags like html tag names.
-hi(0, "TSTagAttribute", { fg = colors.fg, italic = true })                                     -- For html tag attributes.
-hi(0, "TSTagDelimiter", { fg = colors.gray05 })                                                -- Tag delimiter like `<` `>` `/`
-hi(0, "TSText", { fg = colors.fg })                                                            -- For strings considered text in a markup language.
-hi(0, "TSStrong", { fg = colors.bright_white, bold = true })                                   -- For text to be represented in bold.
-hi(0, "TSEmphasis", { fg = colors.bright_white, bold = true, italic = true })                  -- For text to be represented with emphasis.
-hi(0, "TSUnderline", { fg = colors.bright_white, bg = colors.none, underline = true })         -- For text to be represented with an underline.
-hi(0, "TSStrike", {})                                                                          -- For strikethrough text.
-hi(0, "TSTitle", { fg = colors.fg, bg = colors.none, bold = true })                            -- Text that is part of a title.
-hi(0, "TSLiteral", { fg = colors.fg })                                                         -- Literal text.
-hi(0, "TSURI", { fg = colors.cyan })                                                           -- Any URL like a link or email.
-hi(0, "TSMath", { fg = colors.blue })                                                          -- For LaTeX-like math environments.
-hi(0, "TSTextReference", { fg = colors.yellow })                                               -- For footnotes, text references, citations.
-hi(0, "TSEnvironment", { fg = colors.blue })                                                   -- For text environments of markup languages.
-hi(0, "TSEnvironmentName", { fg = colors.bright_blue })                                        -- For the name/the string indicating the type of text environment.
-hi(0, "TSNote", { fg = colors.blue, italic = true })                                           -- Text representation of an informational note.
-hi(0, "TSWarning", { fg = colors.yellow, italic = true })                                      -- Text representation of a warning note.
-hi(0, "TSDanger", { fg = colors.red, italic = true })                                          -- Text representation of a danger note.
-hi(0, "TSType", { fg = colors.fg })                                                            -- For types.
-hi(0, "TSTypeBuiltin", { fg = colors.blue })                                                   -- For builtin types.
-hi(0, "TSVariable", { fg = colors.fg, bold = false, italic = false })                          -- Any variable name that does not have another highlight.
-hi(0, "TSVariableBuiltin", { fg = colors.bright_yellow, bold = true, italic = false })         -- Variable names that are defined by the languages, like `this` or `self`.
 -- LSP
-hi(0, "LspReferenceText", { fg = colors.bg, bg = colors.magenta })                             -- used for highlighting "text" references
-hi(0, "LspReferenceRead", { fg = colors.bg, bg = colors.magenta })                             -- used for highlighting "read" references
-hi(0, "LspReferenceWrite", { fg = colors.bg, bg = colors.magenta })                            -- used for highlighting "write" references
+hi(0, "LspReferenceText", { fg = colors.bg, bg = colors.magenta })
+hi(0, "LspReferenceRead", { fg = colors.bg, bg = colors.magenta })
+hi(0, "LspReferenceWrite", { fg = colors.bg, bg = colors.magenta })
 -- Diagnostics
-hi(0, "DiagnosticError", { fg = colors.red })                                                  -- base highlight group for "Error"
-hi(0, "DiagnosticWarn", { fg = colors.yellow })                                                -- base highlight group for "Warning"
-hi(0, "DiagnosticInfo", { fg = colors.blue })                                                  -- base highlight group from "Information"
-hi(0, "DiagnosticHint", { fg = colors.cyan })                                                  -- base highlight group for "Hint"
-hi(0, "DiagnosticUnderlineError", { fg = colors.red, undercurl = true, sp = colors.red })      -- used to underline "Error" diagnostics.
-hi(0, "DiagnosticUnderlineWarn", { fg = colors.yellow, undercurl = true, sp = colors.yellow }) -- used to underline "Warning" diagnostics.
-hi(0, "DiagnosticUnderlineInfo", { fg = colors.blue, undercurl = true, sp = colors.blue })     -- used to underline "Information" diagnostics.
-hi(0, "DiagnosticUnderlineHint", { fg = colors.cyan, undercurl = true, sp = colors.cyan })     -- used to underline "Hint" diagnostics.
+hi(0, "DiagnosticError", { fg = colors.red })
+hi(0, "DiagnosticWarn", { fg = colors.yellow })
+hi(0, "DiagnosticInfo", { fg = colors.blue })
+hi(0, "DiagnosticHint", { fg = colors.cyan })
+hi(0, "DiagnosticUnderlineError", { fg = colors.red, undercurl = true, sp = colors.red })
+hi(0, "DiagnosticUnderlineWarn", { fg = colors.yellow, undercurl = true, sp = colors.yellow })
+hi(0, "DiagnosticUnderlineInfo", { fg = colors.blue, undercurl = true, sp = colors.blue })
+hi(0, "DiagnosticUnderlineHint", { fg = colors.cyan, undercurl = true, sp = colors.cyan })
 -- GitSigns
-hi(0, "GitSignsAdd", { fg = colors.bright_green })                                             -- diff mode: Added line |diff.txt|
-hi(0, "GitSignsAddNr", { fg = colors.bright_green })                                           -- diff mode: Added line |diff.txt|
-hi(0, "GitSignsAddLn", { fg = colors.bright_green })                                           -- diff mode: Added line |diff.txt|
-hi(0, "GitSignsChange", { fg = colors.teal })                                                  -- diff mode: Changed line |diff.txt|
-hi(0, "GitSignsChangeNr", { fg = colors.teal })                                                -- diff mode: Changed line |diff.txt|
-hi(0, "GitSignsChangeLn", { fg = colors.bright_yellow })                                       -- diff mode: Changed line |diff.txt|
-hi(0, "GitSignsDelete", { fg = colors.bright_old_red })                                        -- diff mode: Deleted line |diff.txt|
-hi(0, "GitSignsDeleteNr", { fg = colors.bright_old_red })                                      -- diff mode: Deleted line |diff.txt|
-hi(0, "GitSignsDeleteLn", { fg = colors.old_red })                                             -- diff mode: Deleted line |diff.txt|
+hi(0, "GitSignsAdd", { fg = colors.bright_green })
+hi(0, "GitSignsAddNr", { fg = colors.bright_green })
+hi(0, "GitSignsAddLn", { fg = colors.bright_green })
+hi(0, "GitSignsChange", { fg = colors.teal })
+hi(0, "GitSignsChangeNr", { fg = colors.teal })
+hi(0, "GitSignsChangeLn", { fg = colors.bright_yellow })
+hi(0, "GitSignsDelete", { fg = colors.bright_old_red })
+hi(0, "GitSignsDeleteNr", { fg = colors.bright_old_red })
+hi(0, "GitSignsDeleteLn", { fg = colors.old_red })
 -- Telescope
 hi(0, "TelescopeSelectionCaret", { fg = colors.gray10 })
 hi(0, "TelescopeBorder", { fg = colors.fg })
