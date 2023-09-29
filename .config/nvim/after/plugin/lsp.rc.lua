@@ -1,5 +1,5 @@
 vim.diagnostic.config({
-    virtual_text = true,
+    virtual_text = false,
 })
 
 local has_neodev, neodev = pcall(require, "neodev")
@@ -11,7 +11,9 @@ end
 
 local has_mini_completion, _ = pcall(require, "mini.completion")
 if has_mini_completion then
-    require("mini.completion").setup()
+    require("mini.completion").setup({
+        delay = { completion = 300, info = 100, signature = 50 },
+    })
 end
 
 local has_mason, mason = pcall(require, "mason")

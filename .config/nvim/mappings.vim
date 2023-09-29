@@ -4,7 +4,6 @@ nnoremap <C-s> <esc>:w<CR>
 nnoremap <C-c> <Esc>
 nnoremap <C-q> :q<CR>
 noremap <ESC> :noh<CR><ESC>
-nnoremap <C-t> :ToggleTerm<CR>
 nnoremap <leader>am :lua require('harpoon.mark').add_file()<CR>
 nnoremap <leader>]m :lua require('harpoon.ui').nav_next()<CR>
 nnoremap <leader>[m :lua require('harpoon.ui').nav_prev()<CR>

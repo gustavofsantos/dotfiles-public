@@ -2,6 +2,8 @@
 local has_toggleterm, toggleterm = pcall(require, "toggleterm")
 if has_toggleterm then
     toggleterm.setup({
+        open_mapping = [[<c-t>]],
+        terminal_mappings = true,
         direction = "horizontal",
         size = 20,
         winbar = {

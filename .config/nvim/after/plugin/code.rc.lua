@@ -1,5 +1,5 @@
 vim.o.foldcolumn = "0" -- '0' is not bad
-vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevel = 99   -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 
@@ -11,6 +11,23 @@ end
 local has_mini_splitjoin, mini_splitjoin = pcall(require, "mini.splitjoin")
 if has_mini_splitjoin then
     mini_splitjoin.setup()
+end
+
+local has_mini_hipatterns, mini_hipatterns = pcall(require, "mini.hipatterns")
+if has_mini_hipatterns then
+    local hipatterns = require('mini.hipatterns')
+    mini_hipatterns.setup({
+        highlighters = {
+            -- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
+            fixme     = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
+            hack      = { pattern = '%f[%w]()HACK()%f[%W]', group = 'MiniHipatternsHack' },
+            todo      = { pattern = '%f[%w]()TODO()%f[%W]', group = 'MiniHipatternsTodo' },
+            note      = { pattern = '%f[%w]()NOTE()%f[%W]', group = 'MiniHipatternsNote' },
+
+            -- Highlight hex color strings (`#rrggbb`) using that color
+            hex_color = hipatterns.gen_highlighter.hex_color(),
+        },
+    })
 end
 
 local has_mini_bracketed, mini_bracketed = pcall(require, "mini.bracketed")

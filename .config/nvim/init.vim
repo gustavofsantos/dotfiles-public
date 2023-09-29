@@ -7,6 +7,10 @@ let g:sneak#use_ic_scs = 1
 let test#strategy = "vtr"
 let test#javascript#playwright#options = "--headed --retries 0"
 
+let g:rasmus_italic_comments = 1
+let g:rasmus_italic_functions = 1
+let g:rasmus_bold_booleans = 1
+
 let g:switch_custom_definitions =
     \ [
     \   {
@@ -28,12 +32,11 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'stevearc/dressing.nvim'
 Plug 'akinsho/toggleterm.nvim'
+Plug 'echasnovski/mini.hipatterns'
 
 " Themes
 Plug 'rebelot/kanagawa.nvim'
 Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }
-Plug 'shaunsingh/solarized.nvim'
-Plug 'projekt0n/caret.nvim'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -86,7 +89,7 @@ source ~/.config/nvim/lua/project.lua
 
 set termguicolors
 set background=dark
-colorscheme nordic
+colorscheme kanagawa
 " set noerrorbells
 set tabstop=2 softtabstop=2
 " set shiftwidth=2
