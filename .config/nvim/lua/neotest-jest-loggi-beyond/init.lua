@@ -299,7 +299,7 @@ function adapter.build_spec(args)
     "--watchAll=false",
     "--maxWorkers=1",
     "--testLocationInResults",
-    "--verbose",
+    "--verbose=false",
     "--bail",
     "--silent",
     "--json",

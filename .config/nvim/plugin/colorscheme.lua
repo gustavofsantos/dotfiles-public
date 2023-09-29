@@ -267,6 +267,10 @@ hi(0, "Sneak", { fg = colors.pink, bg = colors.dark_pink })
 hi(0, "SneakScope", { bg = colors.gray04 })
 -- Mini
 hi(0, "MiniCompletionActiveParameter", { underline = true })
+-- Neotest
+hi(0, "NeotestFailed", { fg = colors.bright_old_red })
+hi(0, "NeotestPassed", { fg = colors.cyan })
+hi(0, "NeotestRunning", { fg = colors.blue })
 
 -- Terminal colors
 vim.g.terminal_color_0 = colors.black
