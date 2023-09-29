@@ -33,6 +33,8 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'stevearc/dressing.nvim'
 Plug 'akinsho/toggleterm.nvim'
 Plug 'echasnovski/mini.hipatterns'
+Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'nvim-neotest/neotest'
 
 " Themes
 Plug 'rebelot/kanagawa.nvim'
@@ -142,3 +144,4 @@ if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
 endif
 
 source ~/.config/nvim/mappings.vim
+source ~/.config/nvim/lua/testing.lua
