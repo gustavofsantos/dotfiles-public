@@ -2,34 +2,44 @@ vim.cmd("highlight clear")
 vim.g.colors_name = "gfs"
 
 local colors = {
-	bg = "#1a1a1a",
-	fg = "#cccccc",
+	bg = "#151515",
+	fg = "#e8e8d3",
 	-- Normal
-	black = "#333332",
+	black = "#1c1c1c",
 	red = "#ff968c",
-	green = "#61957f",
-	yellow = "#ffc591",
-	blue = "#8db4d4",
+	green = "#799d6a",
+	yellow = "#ffb964",
+	blue = "#8197bf",
 	magenta = "#de9bc8",
 	cyan = "#7bb099",
 	white = "#d1d1d1",
+	orange = "#cf6a4c",
+	teal = "#668799",
+	pink = "#f0a0c0",
+	old_red = "#40000a",
 	-- Bright
-	bright_black = "#4c4c4b",
+	bright_black = "#333333",
 	bright_red = "#ffafa5",
-	bright_green = "#7aae98",
-	bright_yellow = "#ffdeaa",
-	bright_blue = "#a6cded",
-	bright_magenta = "#f7b4e1",
+	bright_green = "#99ad6a",
+	bright_yellow = "#fad07a",
+	bright_blue = "#8fbfdc",
+	bright_magenta = "#c6b6ee",
 	bright_cyan = "#94c9b2",
 	bright_white = "#eaeaea",
+	bright_old_red = "#902020",
+	-- Dark
+	dark_pink = "#302028",
 	-- Grays
 	gray01 = "#222221",
 	gray02 = "#2a2a29",
-	gray03 = "#323231",
-	gray04 = "#3a3a39",
-	gray05 = "#6a6a69",
-	gray06 = "#767675",
-	gray07 = "#b6b6b5",
+	gray03 = "#384048",
+	gray04 = "#535d66",
+	gray05 = "#9098A0",
+	gray06 = "#a0a8b0",
+	gray07 = "#c7c7c7",
+	gray08 = "#605958",
+	gray09 = "#ccc5c4",
+	gray10 = "#404040",
 	-- Special
 	none = "NONE",
 }
@@ -46,17 +56,17 @@ hi(0, "ColorColumn", { fg = colors.none, bg = colors.gray01 })
 hi(0, "Conceal", { fg = colors.gray05 })
 hi(0, "Cursor", { fg = colors.cyan, bg = colors.none, reverse = true })
 hi(0, "CursorIM", { fg = colors.cyan, bg = colors.none, reverse = true })
-hi(0, "CursorLineNr", { fg = colors.gray07 })
+hi(0, "CursorLineNr", { fg = colors.gray09 })
 hi(0, "Directory", { fg = colors.blue, bg = colors.none, bold = true })
-hi(0, "DiffAdd", { fg = colors.bright_green, bg = colors.none, reverse = true })
-hi(0, "DiffChange", { fg = colors.bright_blue, bg = colors.none, reverse = true })
-hi(0, "DiffDelete", { fg = colors.bright_red, bg = colors.none, reverse = true })
+hi(0, "DiffAdd", { fg = colors.bg, bg = colors.green, reverse = false })
+hi(0, "DiffChange", { bg = colors.teal })
+hi(0, "DiffDelete", { fg = colors.fg, bg = colors.bright_old_red })
 hi(0, "DiffText", { fg = colors.fg, bg = colors.none, reverse = true })
-hi(0, "ErrorMsg", { fg = colors.red })
-hi(0, "Folded", { fg = colors.gray05, bg = colors.none, italic = true })
+hi(0, "ErrorMsg", { fg = colors.red, bg = colors.old_red })
+hi(0, "Folded", { fg = colors.gray05, bg = colors.gray03, italic = true })
 hi(0, "FoldColumn", { fg = colors.blue })
 hi(0, "IncSearch", { reverse = true })
-hi(0, "LineNr", { fg = colors.gray05 })
+hi(0, "LineNr", { fg = colors.gray08 })
 hi(0, "MatchParen", { fg = colors.yellow, bold = true })
 hi(0, "ModeMsg", { fg = colors.cyan, bold = true })
 hi(0, "MoreMsg", { fg = colors.cyan, bold = true })
@@ -82,8 +92,8 @@ hi(0, "TabLineFill", { fg = colors.gray05, bg = colors.gray01 })
 hi(0, "TablineSel", { fg = colors.bg, bg = colors.gray07 })
 hi(0, "Tabline", { fg = colors.gray05 })
 hi(0, "Title", { fg = colors.cyan, bg = colors.none, bold = true })
-hi(0, "Visual", { fg = colors.black, bg = colors.bright_yellow })
-hi(0, "VisualNOS", { fg = colors.none, bg = colors.gray03 })
+hi(0, "Visual", { bg = colors.gray10 })
+hi(0, "VisualNOS", { bg = colors.gray10 })
 hi(0, "WarningMsg", { fg = colors.yellow, bold = true })
 hi(0, "WildMenu", { fg = colors.bg, bg = colors.blue, bold = true })
 hi(0, "CursorColumn", { fg = colors.none, bg = colors.gray02 })
@@ -125,7 +135,7 @@ hi(0, "PreCondit", { fg = colors.cyan })
 hi(0, "Special", { fg = colors.gray05, bg = colors.none })
 hi(0, "SpecialChar", { fg = colors.cyan })
 hi(0, "Tag", { fg = colors.yellow })
-hi(0, "Delimiter", { fg = colors.gray06 })
+hi(0, "Delimiter", { fg = colors.teal })
 hi(0, "SpecialComment", { fg = colors.blue })
 hi(0, "Debug", { fg = colors.red })
 hi(0, "Underlined", { fg = colors.cyan, bg = colors.none, underline = true })
@@ -163,11 +173,11 @@ hi(0, "markdownCodeBlock", { fg = colors.fg, bg = colors.gray02 })
 hi(0, "markdownCodeDelimiter", { fg = colors.fg, bg = colors.gray02 })
 
 -- Treesitter
-hi(0, "@variable", { fg = colors.gray07, bg = colors.none })
-hi(0, "@field", { fg = colors.gray07, bg = colors.none })
+hi(0, "@variable", { fg = colors.bright_magenta, bg = colors.none })
+hi(0, "@field", { fg = colors.fg, bg = colors.none })
 hi(0, "@symbol", { fg = colors.gray06, bg = colors.none })
-hi(0, "@boolean", { fg = colors.fg, bg = colors.none, bold = true })
-hi(0, "@number", { fg = colors.fg, bg = colors.none })
+hi(0, "@boolean", { fg = colors.orange, bg = colors.none, bold = true })
+hi(0, "@number", { fg = colors.orange, bg = colors.none })
 hi(0, "@float", { fg = colors.fg, bg = colors.none })
 hi(0, "@constant", { fg = colors.fg, bg = colors.none, bold = true })
 hi(0, "@constant.builtin", { fg = colors.magenta, bg = colors.none, bold = true })
@@ -178,9 +188,9 @@ hi(0, "@string.regex", { fg = colors.bright_green, bg = colors.none })
 hi(0, "@string.escape", { fg = colors.bright_cyan, bg = colors.none })
 hi(0, "@string.special", { fg = colors.bright_green, bg = colors.none })
 hi(0, "@punctutation.delimiter", { fg = colors.gray07, bg = colors.none })
-hi(0, "@punctutation.braket", { fg = colors.gray07, bg = colors.none })
+hi(0, "@punctutation.bracket", { fg = colors.teal, bg = colors.none })
 hi(0, "@punctutation.special", { fg = colors.gray07, bg = colors.none })
-hi(0, "@operator", { fg = colors.gray06, bg = colors.none })
+hi(0, "@operator", { fg = colors.bright_blue, bg = colors.none })
 hi(0, "@define", { fg = colors.blue, bg = colors.none })
 hi(0, "@preproc", { fg = colors.blue, bg = colors.none })
 hi(0, "@error", { fg = colors.red, bg = colors.none })
@@ -211,9 +221,14 @@ hi(0, "@tag", { fg = colors.yellow })
 hi(0, "@tag.attribute", { fg = colors.fg, italic = true })
 hi(0, "@tag.delimiter", { fg = colors.gray05, bold = true })
 
-hi(0, "@lsp.type.variable", { fg = colors.fg })
+hi(0, "@lsp.type.variable", { fg = colors.bright_magenta })
+hi(0, "@lsp.type.property", { fg = colors.fg })
 hi(0, "@lsp.type.parameter", { fg = colors.gray07 })
 hi(0, "@lsp.mod.deprecated", { fg = colors.red })
+hi(0, "@lsp.mod.readonly", { fg = colors.fg })
+
+-- JavaScript
+hi(0, "@variable.javascript", { fg = colors.fg })
 
 hi(0, "TSAnnotation", { fg = colors.green })                                              -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
 hi(0, "TSAttribute", { fg = colors.fg })                                                  -- (unstable) TODO: docs
@@ -294,22 +309,22 @@ hi(0, "DiagnosticUnderlineHint", { fg = colors.cyan, undercurl = true, sp = colo
 hi(0, "GitSignsAdd", { fg = colors.bright_green })                                             -- diff mode: Added line |diff.txt|
 hi(0, "GitSignsAddNr", { fg = colors.bright_green })                                           -- diff mode: Added line |diff.txt|
 hi(0, "GitSignsAddLn", { fg = colors.bright_green })                                           -- diff mode: Added line |diff.txt|
-hi(0, "GitSignsChange", { fg = colors.bright_yellow })                                         -- diff mode: Changed line |diff.txt|
-hi(0, "GitSignsChangeNr", { fg = colors.bright_yellow })                                       -- diff mode: Changed line |diff.txt|
+hi(0, "GitSignsChange", { fg = colors.teal })                                                  -- diff mode: Changed line |diff.txt|
+hi(0, "GitSignsChangeNr", { fg = colors.teal })                                                -- diff mode: Changed line |diff.txt|
 hi(0, "GitSignsChangeLn", { fg = colors.bright_yellow })                                       -- diff mode: Changed line |diff.txt|
-hi(0, "GitSignsDelete", { fg = colors.bright_red })                                            -- diff mode: Deleted line |diff.txt|
-hi(0, "GitSignsDeleteNr", { fg = colors.bright_red })                                          -- diff mode: Deleted line |diff.txt|
-hi(0, "GitSignsDeleteLn", { fg = colors.bright_red })                                          -- diff mode: Deleted line |diff.txt|
+hi(0, "GitSignsDelete", { fg = colors.bright_old_red })                                        -- diff mode: Deleted line |diff.txt|
+hi(0, "GitSignsDeleteNr", { fg = colors.bright_old_red })                                      -- diff mode: Deleted line |diff.txt|
+hi(0, "GitSignsDeleteLn", { fg = colors.old_red })                                             -- diff mode: Deleted line |diff.txt|
 -- Telescope
-hi(0, "TelescopeSelectionCaret", { fg = colors.blue, bg = colors.gray01 })
-hi(0, "TelescopeBorder", { fg = colors.gray05 })
-hi(0, "TelescopePromptBorder", { fg = colors.blue })
+hi(0, "TelescopeSelectionCaret", { fg = colors.gray10 })
+hi(0, "TelescopeBorder", { fg = colors.fg })
+hi(0, "TelescopePromptBorder", { fg = colors.gray03 })
 hi(0, "TelescopeResultsBorder", { fg = colors.gray07 })
 hi(0, "TelescopePreviewBorder", { fg = colors.gray05 })
 hi(0, "TelescopeMatching", { fg = colors.yellow })
 hi(0, "TelescopePromptPrefix", { fg = colors.blue })
 -- Sneak
-hi(0, "Sneak", { fg = colors.bg, bg = colors.bright_green })
+hi(0, "Sneak", { fg = colors.pink, bg = colors.dark_pink })
 hi(0, "SneakScope", { bg = colors.gray04 })
 -- Mini
 hi(0, "MiniCompletionActiveParameter", { underline = true })
