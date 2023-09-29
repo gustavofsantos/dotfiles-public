@@ -183,8 +183,8 @@ hi(0, "@define", { fg = colors.blue, bg = colors.none })
 hi(0, "@preproc", { fg = colors.blue, bg = colors.none })
 hi(0, "@error", { fg = colors.red, bg = colors.none })
 
-hi(0, "@parameter", { fg = colors.gray07, bg = colors.none })
-hi(0, "@contructor", { fg = colors.gray07, bg = colors.none })
+hi(0, "@parameter", { fg = colors.gray06, bg = colors.none })
+hi(0, "@contructor", { fg = colors.fg, bg = colors.none })
 
 hi(0, "@keyword", { fg = colors.bright_magenta })
 hi(0, "@keyword.function", { fg = colors.bright_magenta })
@@ -202,39 +202,43 @@ hi(0, "@method.call", { fg = colors.bright_blue, italic = true })
 
 hi(0, "@text", { fg = colors.fg })
 
+hi(0, "@tag", { fg = colors.fg })
+hi(0, "@tag.attribute", { fg = colors.yellow, italic = true })
+hi(0, "@tag.delimiter", { fg = colors.gray06 })
+
 hi(0, "@lsp.type.variable", { fg = colors.fg })
 hi(0, "@lsp.mod.deprecated", { fg = colors.red })
 
-hi(0, "TSAnnotation", { fg = colors.green })                                                   -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-hi(0, "TSAttribute", { fg = colors.fg })                                                       -- (unstable) TODO: docs
-hi(0, "TSBoolean", { fg = colors.cyan, bg = colors.none, bold = true, italic = false })        -- true or false
-hi(0, "TSCharacter", { fg = colors.cyan })                                                     -- For characters.
-hi(0, "TSComment", { fg = colors.gray05, bg = colors.none, bold = false, italic = true })      -- For comment blocks.
-hi(0, "TSConditional", { fg = colors.blue, bold = false, italic = false })                     -- For keywords related to conditionnals.
-hi(0, "TSConstant", { fg = colors.fg })                                                        -- For constants
-hi(0, "TSConstBuiltin", { fg = colors.cyan, italic = true })                                   -- For constants that are built in the language: `nil` in Lua.
-hi(0, "TSConstMacro", { fg = colors.cyan })                                                    -- For constants that are defined by macros: `NULL` in colors.
-hi(0, "TSConstructor", { fg = colors.gray07 })                                                 -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-hi(0, "TSError", { fg = colors.red })                                                          -- For syntax/parser errors.
-hi(0, "TSException", { fg = colors.yellow })                                                   -- For exception related keywords.
-hi(0, "TSField", { fg = colors.cyan })                                                         -- For fields.
-hi(0, "TSFloat", { fg = colors.cyan })                                                         -- For floats.
-hi(0, "TSFunction", { fg = colors.fg, bold = false, italic = true })                           -- For fuction (calls and definitions).
-hi(0, "TSFuncBuiltin", { fg = colors.fg, bold = false, italic = true })                        -- For builtin functions: `table.insert` in Lua.
-hi(0, "TSFuncMacro", { fg = colors.blue })                                                     -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-hi(0, "TSInclude", { fg = colors.blue, italic = true })                                        -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-hi(0, "TSKeyword", { fg = colors.blue, bold = false, italic = false })                         -- For keywords that don't fall in previous categories.
-hi(0, "TSKeywordFunction", { fg = colors.blue, bold = false, italic = true })                  -- For keywords used to define a fuction.
-hi(0, "TSKeywordOperator", { fg = colors.yellow })                                             -- For operators that are English words, e.g. `and`, `as`, `or`.
-hi(0, "TSKeywordReturn", { fg = colors.blue, bold = false, italic = false })                   -- For the `return` and `yield` keywords.
-hi(0, "TSLabel", { fg = colors.cyan })                                                         -- For labels: `label:` in C and `:label:` in Lua.
-hi(0, "TSMethod", { fg = colors.bright_blue, bold = false, italic = true })                    -- For method calls and definitions.
-hi(0, "TSNamespace", { fg = colors.blue })                                                     -- For identifiers referring to modules and namespaces.
+hi(0, "TSAnnotation", { fg = colors.green })                                              -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+hi(0, "TSAttribute", { fg = colors.fg })                                                  -- (unstable) TODO: docs
+hi(0, "TSBoolean", { fg = colors.cyan, bg = colors.none, bold = true, italic = false })   -- true or false
+hi(0, "TSCharacter", { fg = colors.cyan })                                                -- For characters.
+hi(0, "TSComment", { fg = colors.gray05, bg = colors.none, bold = false, italic = true }) -- For comment blocks.
+hi(0, "TSConditional", { fg = colors.blue, bold = false, italic = false })                -- For keywords related to conditionnals.
+hi(0, "TSConstant", { fg = colors.fg })                                                   -- For constants
+hi(0, "TSConstBuiltin", { fg = colors.cyan, italic = true })                              -- For constants that are built in the language: `nil` in Lua.
+hi(0, "TSConstMacro", { fg = colors.cyan })                                               -- For constants that are defined by macros: `NULL` in colors.
+hi(0, "TSConstructor", { fg = colors.gray07 })                                            -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+hi(0, "TSError", { fg = colors.red })                                                     -- For syntax/parser errors.
+hi(0, "TSException", { fg = colors.yellow })                                              -- For exception related keywords.
+hi(0, "TSField", { fg = colors.cyan })                                                    -- For fields.
+hi(0, "TSFloat", { fg = colors.cyan })                                                    -- For floats.
+hi(0, "TSFunction", { fg = colors.fg, bold = false, italic = true })                      -- For fuction (calls and definitions).
+hi(0, "TSFuncBuiltin", { fg = colors.fg, bold = false, italic = true })                   -- For builtin functions: `table.insert` in Lua.
+hi(0, "TSFuncMacro", { fg = colors.blue })                                                -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
+hi(0, "TSInclude", { fg = colors.blue, italic = true })                                   -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+hi(0, "TSKeyword", { fg = colors.blue, bold = false, italic = false })                    -- For keywords that don't fall in previous categories.
+hi(0, "TSKeywordFunction", { fg = colors.blue, bold = false, italic = true })             -- For keywords used to define a fuction.
+hi(0, "TSKeywordOperator", { fg = colors.yellow })                                        -- For operators that are English words, e.g. `and`, `as`, `or`.
+hi(0, "TSKeywordReturn", { fg = colors.blue, bold = false, italic = false })              -- For the `return` and `yield` keywords.
+hi(0, "TSLabel", { fg = colors.cyan })                                                    -- For labels: `label:` in C and `:label:` in Lua.
+hi(0, "TSMethod", { fg = colors.bright_blue, bold = false, italic = true })               -- For method calls and definitions.
+hi(0, "TSNamespace", { fg = colors.blue })                                                -- For identifiers referring to modules and namespaces.
 -- TSNone = {}, -- No highlighting. Don't change the values of this highlight group.
-hi(0, "TSNumber", { fg = colors.cyan })                                                        -- For all numbers
-hi(0, "TSOperator", { fg = colors.yellow })                                                    -- For any operator: `+`, but also `->` and `*` in colors.
-hi(0, "TSParameter", { fg = colors.fg })                                                       -- For parameters of a function.
-hi(0, "TSParameterReference", { fg = colors.fg })                                              -- For references to parameters of a function.
+hi(0, "TSNumber", { fg = colors.cyan })                                                   -- For all numbers
+hi(0, "TSOperator", { fg = colors.yellow })                                               -- For any operator: `+`, but also `->` and `*` in colors.
+-- hi(0, "TSParameter", { fg = colors.fg })                                                       -- For parameters of a function.
+-- hi(0, "TSParameterReference", { fg = colors.fg })                                              -- For references to parameters of a function.
 hi(0, "TSProperty", { fg = colors.blue })                                                      -- Same as `TSField`.
 hi(0, "TSPunctDelimiter", { fg = colors.gray05 })                                              -- For delimiters ie: `.`
 hi(0, "TSPunctBracket", { fg = colors.gray05 })                                                -- For brackets and parens.
@@ -290,6 +294,19 @@ hi(0, "GitSignsChangeLn", { fg = colors.bright_yellow })                        
 hi(0, "GitSignsDelete", { fg = colors.bright_red })                                            -- diff mode: Deleted line |diff.txt|
 hi(0, "GitSignsDeleteNr", { fg = colors.bright_red })                                          -- diff mode: Deleted line |diff.txt|
 hi(0, "GitSignsDeleteLn", { fg = colors.bright_red })                                          -- diff mode: Deleted line |diff.txt|
+-- Telescope
+hi(0, "TelescopeSelectionCaret", { fg = colors.blue, bg = colors.gray01 })
+hi(0, "TelescopeBorder", { fg = colors.gray05 })
+hi(0, "TelescopePromptBorder", { fg = colors.blue })
+hi(0, "TelescopeResultsBorder", { fg = colors.gray07 })
+hi(0, "TelescopePreviewBorder", { fg = colors.gray05 })
+hi(0, "TelescopeMatching", { fg = colors.yellow })
+hi(0, "TelescopePromptPrefix", { fg = colors.blue })
+-- Sneak
+hi(0, "Sneak", { fg = colors.bg, bg = colors.bright_green })
+hi(0, "SneakScope", { bg = colors.gray04 })
+-- Mini
+hi(0, "MiniCompletionActiveParameter", { underline = true })
 
 -- Terminal colors
 vim.g.terminal_color_0 = colors.black
