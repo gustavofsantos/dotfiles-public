@@ -2,8 +2,8 @@ vim.cmd("highlight clear")
 vim.g.colors_name = "gfs"
 
 local colors = {
-	bg = "#1a1a19",
-	fg = "#d1d1d1",
+	bg = "#1a1a1a",
+	fg = "#cccccc",
 	-- Normal
 	black = "#333332",
 	red = "#ff968c",
