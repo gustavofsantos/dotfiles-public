@@ -1,5 +1,5 @@
 vim.diagnostic.config({
-    virtual_text = false,
+    virtual_text = true,
 })
 
 local has_neodev, neodev = pcall(require, "neodev")
@@ -125,8 +125,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("UserLspConfig", {}),
     callback = function(ev)
         local opts = { buffer = ev.buf }
-        local telescope = require('telescope.builtin')
-        local telescope_themes = require('telescope.themes')
+        local telescope = require("telescope.builtin")
+        local telescope_themes = require("telescope.themes")
         local dropdown = telescope_themes.get_dropdown()
 
         vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
