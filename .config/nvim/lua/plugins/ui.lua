@@ -1,4 +1,3 @@
--- Setup toggle term
 local has_toggleterm, toggleterm = pcall(require, "toggleterm")
 if has_toggleterm then
     toggleterm.setup({
