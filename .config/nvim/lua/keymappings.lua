@@ -11,10 +11,6 @@ vim.keymap.set('n', '<c-w><c-s>', '<cmd>vsplit<cr>')
 vim.keymap.set('n', '<c-w>S', '<cmd>split<cr>')
 vim.keymap.set('n', '<c-w><c-S>', '<cmd>split<cr>')
 
-vim.keymap.set('n', '<c-p>', require('telescope.builtin').find_files, { desc = "Find files" })
-vim.keymap.set('n', '<c-f>', require('telescope.builtin').current_buffer_fuzzy_find, { desc = "Search" })
-vim.keymap.set('n', '<c-b>', '<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>', { desc = "Browse files" })
-
 vim.keymap.set('n', '<leader>tn', require("neotest").run.run, { desc = "Test nearest" })
 vim.keymap.set('n', '<leader>tf', function() require("neotest").run.run(vim.fn.expand("%")) end, { desc = "Test file" })
 vim.keymap.set('n', '<leader>tl', require("neotest").run.run_last, { desc = "Test last" })
