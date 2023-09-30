@@ -9,7 +9,6 @@ vim.keymap.set('n', '<leader><leader>', '<c-^>')
 vim.keymap.set('n', '<c-w>s', '<cmd>vsplit<cr>')
 vim.keymap.set('n', '<c-w><c-s>', '<cmd>vsplit<cr>')
 vim.keymap.set('n', '<c-w>S', '<cmd>split<cr>')
-vim.keymap.set('n', '<c-w><c-S>', '<cmd>split<cr>')
 
 vim.keymap.set('n', '<leader>tn', require("neotest").run.run, { desc = "Test nearest" })
 vim.keymap.set('n', '<leader>tf', function() require("neotest").run.run(vim.fn.expand("%")) end, { desc = "Test file" })
