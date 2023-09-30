@@ -34,6 +34,14 @@ require("lazy").setup({
     'christoomey/vim-tmux-navigator',
     'christoomey/vim-tmux-runner',
     'christoomey/vim-conflicted',
+}, {
+    checker = {
+        enabled = true,
+        notify = false,
+    },
+    change_detection = {
+        notify = false,
+    },
 })
 
 require("settings")
