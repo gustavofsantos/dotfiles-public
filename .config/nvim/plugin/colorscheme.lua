@@ -1,47 +1,51 @@
+if vim.o.background ~= "dark" then
+    return
+end
+
 vim.cmd("highlight clear")
 vim.g.colors_name = "gfs"
 
 local colors = {
-	bg = "#151515",
-	fg = "#e8e8d3",
-	-- Normal
-	black = "#1c1c1c",
-	red = "#ff968c",
-	green = "#799d6a",
-	yellow = "#ffb964",
-	blue = "#8197bf",
-	magenta = "#de9bc8",
-	cyan = "#7bb099",
-	white = "#d1d1d1",
-	orange = "#cf6a4c",
-	teal = "#668799",
-	pink = "#f0a0c0",
-	old_red = "#40000a",
-	-- Bright
-	bright_black = "#333333",
-	bright_red = "#ffafa5",
-	bright_green = "#99ad6a",
-	bright_yellow = "#fad07a",
-	bright_blue = "#8fbfdc",
-	bright_magenta = "#c6b6ee",
-	bright_cyan = "#94c9b2",
-	bright_white = "#eaeaea",
-	bright_old_red = "#902020",
-	-- Dark
-	dark_pink = "#302028",
-	-- Grays
-	gray01 = "#222221",
-	gray02 = "#2a2a29",
-	gray03 = "#384048",
-	gray04 = "#535d66",
-	gray05 = "#9098A0",
-	gray06 = "#a0a8b0",
-	gray07 = "#c7c7c7",
-	gray08 = "#605958",
-	gray09 = "#ccc5c4",
-	gray10 = "#404040",
-	-- Special
-	none = "NONE",
+    bg = "#151515",
+    fg = "#e8e8d3",
+    -- Normal
+    black = "#1c1c1c",
+    red = "#ff968c",
+    green = "#799d6a",
+    yellow = "#ffb964",
+    blue = "#8197bf",
+    magenta = "#de9bc8",
+    cyan = "#7bb099",
+    white = "#d1d1d1",
+    orange = "#cf6a4c",
+    teal = "#668799",
+    pink = "#f0a0c0",
+    old_red = "#40000a",
+    -- Bright
+    bright_black = "#333333",
+    bright_red = "#ffafa5",
+    bright_green = "#99ad6a",
+    bright_yellow = "#fad07a",
+    bright_blue = "#8fbfdc",
+    bright_magenta = "#c6b6ee",
+    bright_cyan = "#94c9b2",
+    bright_white = "#eaeaea",
+    bright_old_red = "#902020",
+    -- Dark
+    dark_pink = "#302028",
+    -- Grays
+    gray01 = "#222221",
+    gray02 = "#2a2a29",
+    gray03 = "#384048",
+    gray04 = "#535d66",
+    gray05 = "#9098A0",
+    gray06 = "#a0a8b0",
+    gray07 = "#c7c7c7",
+    gray08 = "#605958",
+    gray09 = "#ccc5c4",
+    gray10 = "#404040",
+    -- Special
+    none = "NONE",
 }
 
 local hi = vim.api.nvim_set_hl
