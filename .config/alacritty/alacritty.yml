@@ -27,7 +27,7 @@ font:
   # size: 15
   offset:
     x: 0
-    y: 2
+    y: 0
 
 env:
   TERM: alacritty
