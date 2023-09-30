@@ -90,7 +90,7 @@ source ~/.config/nvim/lua/themes.lua
 source ~/.config/nvim/lua/project.lua
 
 set termguicolors
-set background=dark
+set background=light
 " set noerrorbells
 set tabstop=2 softtabstop=2
 " set shiftwidth=2
@@ -127,7 +127,7 @@ set splitbelow
 set updatetime=100
 set clipboard+=unnamedplus
 set wildmenu
-" set completeopt=menuone,noinsert,noselect
+set completeopt=menu,noinsert,preview
 set signcolumn=yes
 set pumheight=10
 " set grepprg=ag
@@ -136,7 +136,7 @@ set backupdir=~/.tmp
 set directory=~/.tmp
 " set guioptions-=T
 set mouse=nv
-set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+set statusline=<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 set statusline+=%{ConflictedVersion()}
 if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
