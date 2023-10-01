@@ -18,13 +18,20 @@ return {
                 changedelete = { text = "~" },
             },
         })
+
+        vim.keymap.set("n", "<leader>gs", "<cmd>Git<cr>")
+        vim.keymap.set(
+            "n",
+            "<leader>b",
+            ':<C-U>!git blame <C-R>=expand("%:p") <CR> \\| sed -n <C-R>=line("\'<") <CR>,<C-R>=line("\'>") <CR>p <CR>'
+        )
     end,
     keys = {
-        { "]h",         "<cmd>Gitsigns next_hunk<cr>" },
-        { "[h",         "<cmd>Gitsigns prev_hunk<cr>" },
-        { "gH",         "<cmd>Gitsigns preview_hunk<cr>" },
+        { "]h", "<cmd>Gitsigns next_hunk<cr>" },
+        { "[h", "<cmd>Gitsigns prev_hunk<cr>" },
+        { "gH", "<cmd>Gitsigns preview_hunk<cr>" },
         { "<leader>hp", "<cmd>Gitsigns preview_hunk<cr>" },
         { "<leader>hs", "<cmd>Gitsigns stage_hunk<cr>" },
-        { "<leader>hr", "<cmd>Gitsigns reset_hunk<cr>" }
-    }
+        { "<leader>hr", "<cmd>Gitsigns reset_hunk<cr>" },
+    },
 }

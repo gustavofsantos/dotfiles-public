@@ -3,7 +3,8 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
         "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim"
+        "williamboman/mason-lspconfig.nvim",
+        "folke/neodev.nvim",
     },
     config = function()
         local mason = require("mason")
@@ -26,6 +27,16 @@ return {
             },
         })
 
+        require("neodev").setup({
+            library = {
+                enabled = true,
+                plugins = true,
+                types = true,
+                runtime = true,
+            },
+            pathStrict = true,
+        })
+
         mason_lspconfig.setup_handlers({
             function(server_name)
                 require("lspconfig")[server_name].setup({})
@@ -33,6 +44,7 @@ return {
             ["lua_ls"] = function()
                 local lspconfig = require("lspconfig")
                 lspconfig.lua_ls.setup({
+                    before_init = require("neodev.lsp").before_init,
                     settings = {
                         Lua = {
                             diagnostics = {
@@ -75,5 +87,5 @@ return {
                 end, opts)
             end,
         })
-    end
+    end,
 }

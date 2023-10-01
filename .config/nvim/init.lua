@@ -25,15 +25,33 @@ require("lazy").setup({
     "justinmk/vim-sneak",
     "AndrewRadev/switch.vim",
 
-    { "echasnovski/mini.completion", lazy = false,      opts = {} },
-    { 'echasnovski/mini.move',       lazy = false,      opts = {} },
-    { 'echasnovski/mini.splitjoin',  lazy = false,      opts = {} },
-    { 'echasnovski/mini.bracketed',  event = "VeryLazy" },
-    { 'echasnovski/mini.hipatterns', event = "VeryLazy" },
+    { "echasnovski/mini.completion", event = "VeryLazy", opts = {} },
+    { "echasnovski/mini.move", lazy = false, opts = {} },
+    { "echasnovski/mini.splitjoin", lazy = false, opts = {} },
+    { "echasnovski/mini.bracketed", event = "VeryLazy" },
+    {
+        "echasnovski/mini.hipatterns",
+        event = "VeryLazy",
+        config = function()
+            local hipatterns = require("mini.hipatterns")
+            require("echasnovski/mini.hipatterns").setup({
+                highlighters = {
+                    -- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
+                    fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
+                    hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack" },
+                    todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
+                    note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
 
-    'christoomey/vim-tmux-navigator',
-    'christoomey/vim-tmux-runner',
-    'christoomey/vim-conflicted',
+                    -- Highlight hex color strings (`#rrggbb`) using that color
+                    hex_color = hipatterns.gen_highlighter.hex_color(),
+                },
+            })
+        end,
+    },
+
+    "christoomey/vim-tmux-navigator",
+    "christoomey/vim-tmux-runner",
+    "christoomey/vim-conflicted",
 }, {
     checker = {
         enabled = true,
