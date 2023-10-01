@@ -34,7 +34,7 @@ require("lazy").setup({
         event = "VeryLazy",
         config = function()
             local hipatterns = require("mini.hipatterns")
-            require("echasnovski/mini.hipatterns").setup({
+            hipatterns.setup({
                 highlighters = {
                     -- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
                     fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
