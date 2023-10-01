@@ -28,7 +28,7 @@ require("lazy").setup({
     { "echasnovski/mini.completion", event = "VeryLazy", opts = {} },
     { "echasnovski/mini.move", lazy = false, opts = {} },
     { "echasnovski/mini.splitjoin", lazy = false, opts = {} },
-    { "echasnovski/mini.bracketed", event = "VeryLazy" },
+    { "echasnovski/mini.bracketed", event = "VeryLazy", opts = {} },
     {
         "echasnovski/mini.hipatterns",
         event = "VeryLazy",

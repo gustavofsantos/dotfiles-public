@@ -12,5 +12,5 @@ return {
                 return term.name
             end,
         },
-    }
+    },
 }
