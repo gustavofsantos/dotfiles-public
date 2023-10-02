@@ -24,6 +24,7 @@ return {
                 "vimls",
                 "bashls",
                 "tailwindcss",
+                "marksman",
             },
         })
 
