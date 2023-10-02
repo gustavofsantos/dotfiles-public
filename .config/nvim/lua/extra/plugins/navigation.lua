@@ -7,6 +7,13 @@ return {
         "nvim-telescope/telescope-file-browser.nvim",
         "ThePrimeagen/harpoon",
         "stevearc/dressing.nvim",
+        {
+            "nvim-telescope/telescope-fzf-native.nvim",
+            build = "make",
+            config = function()
+                require("telescope").load_extension("fzf")
+            end,
+        },
     },
     config = function()
         local telescope = require("telescope")
@@ -80,9 +87,6 @@ return {
                     cwd_to_path = true,
                     hijack_netrw = true,
                     display_stat = { date = false, size = true, mode = false },
-                },
-                ["ui-select"] = {
-                    require("telescope.themes").get_dropdown({}),
                 },
             },
         })
