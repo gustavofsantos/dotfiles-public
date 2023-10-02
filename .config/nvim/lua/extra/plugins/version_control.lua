@@ -27,6 +27,7 @@ return {
         )
     end,
     keys = {
+        { "<leader>gs", "<cmd>Git<cr>" },
         { "]h", "<cmd>Gitsigns next_hunk<cr>" },
         { "[h", "<cmd>Gitsigns prev_hunk<cr>" },
         { "gH", "<cmd>Gitsigns preview_hunk<cr>" },
