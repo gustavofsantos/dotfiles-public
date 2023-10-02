@@ -26,6 +26,7 @@ require("lazy").setup({
     "christoomey/vim-tmux-navigator",
     "christoomey/vim-tmux-runner",
     "christoomey/vim-conflicted",
+    "github/copilot.vim",
 }, {
     checker = {
         enabled = true,
