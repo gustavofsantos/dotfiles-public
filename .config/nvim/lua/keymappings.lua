@@ -10,6 +10,8 @@ vim.keymap.set("n", "<c-w>s", "<cmd>vsplit<cr>")
 vim.keymap.set("n", "<c-w><c-s>", "<cmd>vsplit<cr>")
 vim.keymap.set("n", "<c-w>S", "<cmd>split<cr>")
 
+vim.keymap.set('n', '<leader>ss', "<cmd>Switch<CR>")
+
 vim.keymap.set("n", "<leader>xx", function()
     require("trouble").open()
 end)

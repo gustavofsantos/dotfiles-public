@@ -61,20 +61,42 @@ vim.cmd([[augroup highlight_yank
     au TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=500})
 augroup END]])
 
-vim.cmd([[command! Q q]])
-vim.cmd([[command! Qall qall]])
-vim.cmd([[command! QA qall]])
-vim.cmd([[command! E e]])
-vim.cmd([[command! W w]])
-vim.cmd([[command! Wq wq]])
-vim.cmd([[command! WQ wq]])
-vim.cmd([[command! Wa wa]])
-vim.cmd([[command! WA wa]])
--- vim.cmd([[command! Reload :source ~/.config/nvim/init.vim<CR>]])
--- vim.cmd([[command! Worklog :vsp | :e ~/notes/worklog.md]])
--- vim.cmd([[command! Config :e ~/.config/nvim/init.vim<CR>]])
--- vim.cmd([[command! Journal :lua vim.cmd(string.format("tabnew ~/notes/journal/%s.md", os.date("%Y-%m-%d")))<CR>]])
--- vim.cmd([[command! Note :lua vim.cmd(string.format("tabnew ~/notes/z/%s.md", os.date("%Y%m%d%H%M%S")))<CR>]])
--- vim.cmd([[command! Todo :lua require('telescope.builtin').grep_string({ cwd = '~/notes', search = '- TODO' })<CR>]])
--- vim.cmd([[command! Doing :lua require('telescope.builtin').grep_string({ cwd = '~/notes', search = '- DOING' })<CR>]])
--- vim.cmd([[command! Done :lua require('telescope.builtin').grep_string({ cwd = '~/notes', search = '- DONE' })<CR>]])
+vim.api.nvim_create_user_command("Q", function()
+    vim.cmd("q")
+end, { desc = "Quit" })
+vim.api.nvim_create_user_command("Qall", function()
+    vim.cmd("qall")
+end, { desc = "Quit all" })
+vim.api.nvim_create_user_command("QA", function()
+    vim.cmd("qa")
+end, { desc = "Quit all" })
+vim.api.nvim_create_user_command("E", function()
+    vim.cmd("e")
+end, { desc = "Edit file" })
+vim.api.nvim_create_user_command("W", function()
+    vim.cmd("w")
+end, { desc = "Write file" })
+vim.api.nvim_create_user_command("Wq", function()
+    vim.cmd("wq")
+end, { desc = "Write and quit" })
+vim.api.nvim_create_user_command("WQ", function()
+    vim.cmd("wq")
+end, { desc = "Write and quit" })
+vim.api.nvim_create_user_command("Wa", function()
+    vim.cmd("wa")
+end, { desc = "Write all" })
+vim.api.nvim_create_user_command("WA", function()
+    vim.cmd("wa")
+end, { desc = "Write all" })
+
+vim.api.nvim_create_user_command(
+    "Journal",
+    'lua vim.cmd(string.format("tabnew ~/notes/journal/%s.md", os.date("%Y-%m-%d")))<CR>',
+    { desc = "Open daily journal file", bang = true, nargs = 0 }
+)
+
+vim.api.nvim_create_user_command(
+    "Worklog",
+    ":vsp | :e ~/notes/worklog.md",
+    { desc = "Open worklog file", bang = true, nargs = 0 }
+)
