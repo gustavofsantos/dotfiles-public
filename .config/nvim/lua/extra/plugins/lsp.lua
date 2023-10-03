@@ -55,6 +55,12 @@ return {
                     },
                 })
             end,
+            ["tsserver"] = function()
+                local lspconfig = require("lspconfig")
+                lspconfig.tsserver.setup({
+                    root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
+                })
+            end,
             ["denols"] = function()
                 local lspconfig = require("lspconfig")
                 lspconfig.denols.setup({
@@ -68,8 +74,6 @@ return {
             callback = function(ev)
                 local opts = { buffer = ev.buf }
                 local telescope = require("telescope.builtin")
-                local telescope_themes = require("telescope.themes")
-                local dropdown = telescope_themes.get_dropdown()
 
                 vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
                 vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
@@ -77,14 +81,17 @@ return {
                 vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
                 vim.keymap.set("n", "gr", vim.lsp.buf.rename, opts)
                 vim.keymap.set("n", "gR", function()
-                    telescope.lsp_references(dropdown)
+                    telescope.lsp_references({
+                        include_declaration = false,
+                        show_line = false,
+                    })
                 end, opts)
                 vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
                 vim.keymap.set("n", "<leader>fs", function()
-                    telescope.lsp_document_symbols(dropdown)
+                    telescope.lsp_document_symbols()
                 end, opts)
                 vim.keymap.set("n", "<leader>fS", function()
-                    telescope.lsp_dynamic_workspace_symbols(dropdown)
+                    telescope.lsp_dynamic_workspace_symbols()
                 end, opts)
             end,
         })

@@ -63,6 +63,18 @@ return {
                     previewer = true,
                     theme = "dropdown",
                 },
+                lsp_references = {
+                    previewer = true,
+                    theme = "dropdown",
+                },
+                lsp_document_symbols = {
+                    previewer = true,
+                    theme = "dropdown",
+                },
+                lsp_dynamic_workspace_symbols = {
+                    previewer = true,
+                    theme = "dropdown",
+                },
                 buffers = {
                     previewer = false,
                     theme = "dropdown",
