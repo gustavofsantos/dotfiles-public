@@ -24,6 +24,7 @@
   export        = archive --format=zip --output=repo.zip HEAD
   su            = submodule update --init --recursive
   conflicted    = !nvim +Conflicted
+  dash		= !gh dash
 
   h             = !git head
   hp            = "!. ~/.githelpers && show_git_head"
