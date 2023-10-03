@@ -1,5 +1,5 @@
 return {
-    { "echasnovski/mini.completion", event = "VeryLazy", opts = {} },
+    { "echasnovski/mini.completion", event = "VeryLazy", enabled = false, opts = {} },
     { "echasnovski/mini.move", lazy = false, opts = {} },
     { "echasnovski/mini.splitjoin", lazy = false, opts = {} },
     { "echasnovski/mini.bracketed", event = "VeryLazy", opts = {} },
