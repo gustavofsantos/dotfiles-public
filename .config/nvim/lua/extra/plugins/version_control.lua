@@ -35,6 +35,8 @@ return {
             { "<leader>hp", "<cmd>Gitsigns preview_hunk<cr>" },
             { "<leader>hs", "<cmd>Gitsigns stage_hunk<cr>" },
             { "<leader>hr", "<cmd>Gitsigns reset_hunk<cr>" },
+            { "dgu", "<cmd>diffget //2<cr>" },
+            { "dgl", "<cmd>diffget //3<cr>" },
         },
     },
     {

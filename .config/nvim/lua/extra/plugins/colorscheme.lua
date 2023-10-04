@@ -26,6 +26,7 @@ return {
                 return {
                     -- Normal = { bg = colors.palette.sumiInk0 },
                     -- NormalNC = { bg = bg_color }
+                    Constant = { fg = colors.palette.fujiWhite },
 
                     StatusLine = { bg = colors.palette.sumiInk4 },
                     StatusLineNC = { bg = colors.palette.sumiInk2 },
