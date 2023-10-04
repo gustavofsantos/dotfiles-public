@@ -236,3 +236,4 @@ anaconda3/
 .vscode-oss/
 .anydesk/
 .fzf/
+.config/environment.d
