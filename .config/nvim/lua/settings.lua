@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
 vim.opt.termguicolors = true
 vim.opt.hidden = true
 vim.opt.encoding = "utf-8"
@@ -33,8 +34,7 @@ vim.opt.foldcolumn = "0"
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldmethod = "indent"
 vim.opt.wildmenu = true
 vim.opt.completeopt = "menu,noinsert,preview"
 vim.opt.pumheight = 12
@@ -92,41 +92,41 @@ vim.cmd([[augroup highlight_yank
 augroup END]])
 
 vim.api.nvim_create_user_command("Q", function()
-    vim.cmd("q")
+  vim.cmd("q")
 end, { desc = "Quit" })
 vim.api.nvim_create_user_command("Qall", function()
-    vim.cmd("qall")
+  vim.cmd("qall")
 end, { desc = "Quit all" })
 vim.api.nvim_create_user_command("QA", function()
-    vim.cmd("qa")
+  vim.cmd("qa")
 end, { desc = "Quit all" })
 vim.api.nvim_create_user_command("E", function()
-    vim.cmd("e")
+  vim.cmd("e")
 end, { desc = "Edit file" })
 vim.api.nvim_create_user_command("W", function()
-    vim.cmd("w")
+  vim.cmd("w")
 end, { desc = "Write file" })
 vim.api.nvim_create_user_command("Wq", function()
-    vim.cmd("wq")
+  vim.cmd("wq")
 end, { desc = "Write and quit" })
 vim.api.nvim_create_user_command("WQ", function()
-    vim.cmd("wq")
+  vim.cmd("wq")
 end, { desc = "Write and quit" })
 vim.api.nvim_create_user_command("Wa", function()
-    vim.cmd("wa")
+  vim.cmd("wa")
 end, { desc = "Write all" })
 vim.api.nvim_create_user_command("WA", function()
-    vim.cmd("wa")
+  vim.cmd("wa")
 end, { desc = "Write all" })
 
 vim.api.nvim_create_user_command(
-    "Journal",
-    'lua vim.cmd(string.format("tabnew ~/notes/journal/%s.md", os.date("%Y-%m-%d")))<CR>',
-    { desc = "Open daily journal file", bang = true, nargs = 0 }
+  "Journal",
+  'lua vim.cmd(string.format("tabnew ~/notes/journal/%s.md", os.date("%Y-%m-%d")))<CR>',
+  { desc = "Open daily journal file", bang = true, nargs = 0 }
 )
 
 vim.api.nvim_create_user_command(
-    "Worklog",
-    ":vsp | :e ~/notes/worklog.md",
-    { desc = "Open worklog file", bang = true, nargs = 0 }
+  "Worklog",
+  ":vsp | :e ~/notes/worklog.md",
+  { desc = "Open worklog file", bang = true, nargs = 0 }
 )
