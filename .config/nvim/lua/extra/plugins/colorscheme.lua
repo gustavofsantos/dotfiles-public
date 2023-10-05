@@ -3,7 +3,7 @@ return {
         "rebelot/kanagawa.nvim",
         lazy = false,
         priority = 1000,
-        enabled = false,
+        enabled = true,
         config = function()
             require("kanagawa").setup({
                 dimInactive = false,
@@ -73,6 +73,7 @@ return {
         dependencies = { "tjdevries/colorbuddy.nvim" },
         priority = 1000,
         lazy = false,
+        enabled = false,
         config = function()
             local n = require("neosolarized").setup({
                 comment_italics = true,
@@ -85,8 +86,12 @@ return {
 
             n.Group.new("Delimiter", n.colors.base00)
             n.Group.link("Operator", n.groups.Normal)
-            n.Group.new("@variable", n.colors.base1, n.colors.none)
+
+            n.Group.new("@include", n.colors.magenta)
+            n.Group.new("@boolean", n.colors.orange)
+            n.Group.new("@variable", n.colors.base1)
             n.Group.new("@keyword", n.colors.green, n.colors.none, n.styles.italic)
+            n.Group.new("@variable.builtin", n.colors.orange, n.colors.none, n.styles.bold)
             n.Group.link("@keyword.function", n.groups["@keyword"])
             n.Group.link("@punctuation.delimiter", n.groups.Delimiter)
             n.Group.link("@field", n.groups["@variable"])

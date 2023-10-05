@@ -11,29 +11,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.mapleader = " "
-
-vim.cmd([[
-let g:switch_custom_definitions =
-    \ [
-    \   {
-    \     '^\(.*\)TODO\(.*\)$': '\1DOING\2',
-    \     '^\(.*\)DOING\(.*\)$': '\1DONE\2',
-    \     '^\(.*\)DONE\(.*\)$': '\1TODO\2',
-    \     '^\(.*\)\[ \]\(.*\)$': '\1\[-\]\2',
-    \     '^\(.*\)\[-\]\(.*\)$': '\1\[x\]\2',
-    \     '^\(.*\)\[x\]\(.*\)$': '\1\[ \]\2',
-    \     'it': 'fit',
-    \     'fit': 'xit',
-    \     'xit': 'it',
-    \   }
-    \ ]
-]])
-
-vim.cmd([[
-let g:sneak#label = 1
-let g:sneak#use_ic_scs = 1
-]])
+require("settings")
+require("keymappings")
 
 require("lazy").setup({
     { import = "extra.plugins" },
@@ -45,8 +24,8 @@ require("lazy").setup({
     "mbbill/undotree",
     "justinmk/vim-sneak",
     "AndrewRadev/switch.vim",
-    "christoomey/vim-tmux-navigator",
-    "christoomey/vim-tmux-runner",
+    -- "christoomey/vim-tmux-navigator",
+    -- "christoomey/vim-tmux-runner",
     "christoomey/vim-conflicted",
     "github/copilot.vim",
 }, {
@@ -58,6 +37,3 @@ require("lazy").setup({
         notify = false,
     },
 })
-
-require("settings")
-require("keymappings")

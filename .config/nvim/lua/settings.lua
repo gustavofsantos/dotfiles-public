@@ -1,3 +1,5 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 vim.opt.termguicolors = true
 vim.opt.hidden = true
 vim.opt.encoding = "utf-8"
@@ -55,6 +57,28 @@ vim.opt.clipboard:append({ "unnamedplus" })
 
 vim.opt.undofile = true
 -- vim.opt.undodir = "~/.config/vim/undodir"
+--
+vim.cmd([[
+let g:switch_custom_definitions =
+    \ [
+    \   {
+    \     '^\(.*\)TODO\(.*\)$': '\1DOING\2',
+    \     '^\(.*\)DOING\(.*\)$': '\1DONE\2',
+    \     '^\(.*\)DONE\(.*\)$': '\1TODO\2',
+    \     '^\(.*\)\[ \]\(.*\)$': '\1\[-\]\2',
+    \     '^\(.*\)\[-\]\(.*\)$': '\1\[x\]\2',
+    \     '^\(.*\)\[x\]\(.*\)$': '\1\[ \]\2',
+    \     'it': 'fit',
+    \     'fit': 'xit',
+    \     'xit': 'it',
+    \   }
+    \ ]
+]])
+
+vim.cmd([[
+let g:sneak#label = 1
+let g:sneak#use_ic_scs = 1
+]])
 
 -- undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
