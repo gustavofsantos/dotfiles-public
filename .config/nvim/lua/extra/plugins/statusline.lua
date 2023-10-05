@@ -7,6 +7,7 @@ return {
 
     -- configure lualine with modified theme
     lualine.setup({
+      options = { section_separators = "", component_separators = "" },
       sections = {
         lualine_a = {},
         lualine_b = { "branch", "diagnostics" },

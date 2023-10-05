@@ -61,6 +61,7 @@ return {
             ["@tag.delimiter"] = { fg = colors.palette.sumiInk6 },
             ["@tag.attribute"] = { italic = true },
             ["@punctuation.bracket"] = { fg = colors.palette.sumiInk6 },
+            ["@conditional.ternary"] = { fg = colors.palette.oniViolet, italic = false },
           }
         end,
       })

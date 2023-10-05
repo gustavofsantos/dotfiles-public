@@ -1,7 +1,9 @@
+---@diagnostic disable: missing-fields
 return {
   "nvim-treesitter/nvim-treesitter",
   event = { "BufReadPre", "BufNewFile" },
   build = ":TSUpdate",
+  version = false,
   dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
   config = function()
     local treesitter = require("nvim-treesitter.configs")
@@ -34,8 +36,8 @@ return {
       },
       highlight = {
         enable = true,
-        use_languagetree = true,
-        additional_vim_regex_highlighting = { "markdown" },
+        -- use_languagetree = true,
+        -- additional_vim_regex_highlighting = { "markdown" },
       },
       indent = {
         enable = true,
@@ -45,8 +47,8 @@ return {
         keymaps = {
           init_selection = "<c-space>",
           node_incremental = "<c-space>",
-          scope_incremental = "<c-s>",
-          node_decremental = "<c-backspace>",
+          scope_incremental = false,
+          node_decremental = "<bs>",
         },
       },
       textobjects = {
