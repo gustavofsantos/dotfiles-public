@@ -1,10 +1,10 @@
 font:
   normal:
     family: MonoLisa Nerd Font
-    style: Regular
+    style: Medium
   italic:
     family: MonoLisa Nerd Font
-    style: Regular Italic
+    style: Medium Italic
   bold:
     family: MonoLisa Nerd Font
     style: Bold
