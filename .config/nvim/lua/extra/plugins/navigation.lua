@@ -6,7 +6,6 @@ return {
     "nvim-telescope/telescope-symbols.nvim",
     "nvim-telescope/telescope-file-browser.nvim",
     "ThePrimeagen/harpoon",
-    "stevearc/dressing.nvim",
     {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "make",
@@ -105,12 +104,6 @@ return {
 
     telescope.load_extension("harpoon")
     telescope.load_extension("file_browser")
-
-    require("dressing").setup({
-      select = {
-        telescope = require("telescope.themes").get_cursor(),
-      },
-    })
 
     vim.keymap.set("n", "<c-p>", require("telescope.builtin").find_files, { desc = "Find files" })
     vim.keymap.set("n", "<c-f>", require("telescope.builtin").current_buffer_fuzzy_find, { desc = "Search" })

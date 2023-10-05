@@ -5,10 +5,15 @@ return {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "folke/neodev.nvim",
+    "nvimdev/lspsaga.nvim",
   },
   config = function()
     local mason = require("mason")
     local mason_lspconfig = require("mason-lspconfig")
+    require("lspsaga").setup({
+      lightbulb = { enable = false },
+      symbol_in_winbar = { enable = false },
+    })
 
     mason.setup()
     mason_lspconfig.setup({
@@ -97,18 +102,20 @@ return {
         local opts = { buffer = ev.buf }
         local telescope = require("telescope.builtin")
 
+        vim.keymap.set("n", "gO", "<cmd>Lspsaga outline<cr>", opts)
+        vim.keymap.set("n", "gF", "<cmd>Lspsaga finder<cr>", opts)
         vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-        vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+        vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<cr>", opts)
         vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-        vim.keymap.set("n", "gr", vim.lsp.buf.rename, opts)
+        vim.keymap.set("n", "gr", "<cmd>Lspsaga rename<cr>", opts)
         vim.keymap.set("n", "gR", function()
           telescope.lsp_references({
             include_declaration = false,
             show_line = false,
           })
         end, opts)
-        vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+        vim.keymap.set({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<cr>", opts)
         vim.keymap.set("n", "<leader>fs", function()
           telescope.lsp_document_symbols()
         end, opts)

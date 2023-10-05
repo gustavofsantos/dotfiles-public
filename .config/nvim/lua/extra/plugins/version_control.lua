@@ -20,9 +20,8 @@ return {
         },
       })
 
-      vim.keymap.set("n", "<leader>gs", "<cmd>Git<cr>")
       vim.keymap.set(
-        "n",
+        "v",
         "<leader>b",
         ':<C-U>!git blame <C-R>=expand("%:p") <CR> \\| sed -n <C-R>=line("\'<") <CR>,<C-R>=line("\'>") <CR>p <CR>'
       )
