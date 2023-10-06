@@ -13,4 +13,7 @@ return {
       end,
     },
   },
+  keys = {
+    { "<leader>ts", "<cmd>TermSelect<cr>", desc = "Terminal switch" },
+  },
 }
