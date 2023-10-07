@@ -31,7 +31,12 @@ return {
         highlights = {},
       })
 
-      vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Cycle next tab" })
+      vim.keymap.set(
+        "n",
+        "<Tab>",
+        "<cmd>BufferLineCycleNext<cr>",
+        { noremap = true, silent = true, desc = "Cycle next tab" }
+      )
     end,
   },
   {

@@ -74,7 +74,6 @@ return {
     dependencies = { "tjdevries/colorbuddy.nvim" },
     priority = 1000,
     lazy = false,
-    enabled = true,
     config = function()
       local n = require("neosolarized").setup({
         comment_italics = true,
