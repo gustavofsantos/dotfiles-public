@@ -15,6 +15,26 @@ return {
     opts = {},
   },
   {
+    "akinsho/bufferline.nvim",
+    version = "*",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      local bufferline = require("bufferline")
+      bufferline.setup({
+        options = {
+          mode = "tabs",
+          separator_style = "slant",
+          always_show_bufferline = false,
+          show_buffer_close_icons = false,
+          show_close_icon = false,
+        },
+        highlights = {},
+      })
+
+      vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Cycle next tab" })
+    end,
+  },
+  {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
@@ -25,7 +45,7 @@ return {
       lualine.setup({
         options = { section_separators = "", component_separators = "" },
         sections = {
-          lualine_a = {},
+          lualine_a = { "mode" },
           lualine_b = { "branch", "diagnostics" },
           lualine_c = { "filename" },
           lualine_x = {

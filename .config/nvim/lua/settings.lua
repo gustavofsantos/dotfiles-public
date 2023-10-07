@@ -28,7 +28,7 @@ vim.opt.backspace = "start,eol,indent"
 vim.opt.wrap = false
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
-vim.opt.scrolloff = 4
+vim.opt.scrolloff = 8
 vim.opt.siso = 3
 vim.opt.foldcolumn = "0"
 vim.opt.foldlevel = 99
@@ -78,6 +78,12 @@ let g:switch_custom_definitions =
 vim.cmd([[
 let g:sneak#label = 1
 let g:sneak#use_ic_scs = 1
+]])
+
+-- Vim Test
+vim.cmd([[
+let test#strategy = "toggleterm"
+let test#javascript#playwright#options = "--headed --retries 0"
 ]])
 
 -- undercurl

@@ -57,8 +57,12 @@ return {
 
       cmp.setup({
         preselect = "None",
+        performance = {
+          debounce = 300,
+        },
         completion = {
           completeopt = "menu,menuone,noinsert",
+          keyword_length = 3,
         },
         snippet = {
           expand = function(args)

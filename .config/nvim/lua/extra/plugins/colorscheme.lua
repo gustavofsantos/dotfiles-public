@@ -81,15 +81,18 @@ return {
         background_set = true,
       })
 
+      n.Color.new("base04", "#001217")
+
+      n.Group.new("CursorLineNr", n.colors.yellow)
+      n.Group.new("Delimiter", n.colors.base00)
+      n.Group.new("Operator", n.colors.base0)
+
       n.Group.link("@lsp.type.parameter", n.groups["@variable"])
       n.Group.new("@lsp.type.function", n.colors.blue, n.colors.none, n.styles.italic)
       n.Group.new("@lsp.type.property", n.colors.base0, n.colors.none, n.styles.italic)
 
-      n.Group.new("Delimiter", n.colors.base00)
-      n.Group.link("Operator", n.groups.Normal)
-
       n.Group.new("@include", n.colors.magenta)
-      n.Group.new("@boolean", n.colors.orange)
+      n.Group.new("@boolean", n.colors.orange, n.colors.none, n.styles.bold)
       n.Group.new("@variable", n.colors.base1)
       n.Group.new("@keyword", n.colors.green, n.colors.none, n.styles.italic)
       n.Group.new("@variable.builtin", n.colors.orange, n.colors.none, n.styles.bold)
@@ -99,6 +102,28 @@ return {
       n.Group.link("@tag.delimiter", n.groups.Delimiter)
       n.Group.new("@parameter", n.colors.base1, n.colors.none, n.styles.italic)
       n.Group.link("@property", n.groups["@parameter"])
+
+      local cError = n.groups.Error.fg
+      local cInfo = n.groups.Information.fg
+      local cWarn = n.groups.Warning.fg
+      local cHint = n.groups.Hint.fg
+
+      n.Group.new("DiagnosticVirtualTextError", cError, cError:dark():dark():dark():dark(), n.styles.NONE)
+      n.Group.new("DiagnosticVirtualTextInfo", cInfo, cInfo:dark():dark():dark(), n.styles.NONE)
+      n.Group.new("DiagnosticVirtualTextWarn", cWarn, cWarn:dark():dark():dark(), n.styles.NONE)
+      n.Group.new("DiagnosticVirtualTextHint", cHint, cHint:dark():dark():dark(), n.styles.NONE)
+      n.Group.new("DiagnosticUnderlineError", n.colors.none, n.colors.none, n.styles.undercurl, cError)
+      n.Group.new("DiagnosticUnderlineWarn", n.colors.none, n.colors.none, n.styles.undercurl, cWarn)
+      n.Group.new("DiagnosticUnderlineInfo", n.colors.none, n.colors.none, n.styles.undercurl, cInfo)
+      n.Group.new("DiagnosticUnderlineHint", n.colors.none, n.colors.none, n.styles.undercurl, cHint)
+
+      n.Group.new("TelescopeTitle", n.colors.base0, n.colors.base03)
+      -- n.Group.new("TelescopePromptNormal", n.colors.base0, n.colors.base04)
+      n.Group.new("TelescopePromptBorder", n.colors.base01, n.colors.base03)
+      -- n.Group.new("TelescopeResultsNormal", n.colors.base01, n.colors.base04)
+      -- n.Group.new("TelescopeResultsBorder", n.colors.base01, n.colors.base04)
+      n.Group.new("TelescopePreviewNormal", n.colors.base01, n.colors.base02)
+      n.Group.new("TelescopePreviewBorder", n.colors.base01, n.colors.base02)
 
       vim.cmd([[colorscheme neosolarized]])
     end,
