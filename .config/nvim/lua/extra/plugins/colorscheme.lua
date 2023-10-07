@@ -3,7 +3,7 @@ return {
     "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
-    enabled = true,
+    enabled = false,
     config = function()
       require("kanagawa").setup({
         dimInactive = false,
@@ -74,7 +74,7 @@ return {
     dependencies = { "tjdevries/colorbuddy.nvim" },
     priority = 1000,
     lazy = false,
-    enabled = false,
+    enabled = true,
     config = function()
       local n = require("neosolarized").setup({
         comment_italics = true,
