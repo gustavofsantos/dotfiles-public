@@ -53,7 +53,7 @@ return {
     color_scheme = "NeoSolarizedDark",
 
     -- font
-    font = wezterm.font("MonoLisa Nerd Font", { weight = "Medium" }),
+    font = wezterm.font("MonoLisa", { weight = "Medium" }),
     font_size = 12.0,
 
     window_background_opacity = 0.975,

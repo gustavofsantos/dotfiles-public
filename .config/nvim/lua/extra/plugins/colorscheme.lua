@@ -81,26 +81,27 @@ return {
       })
 
       n.Color.new("base04", "#001217")
-
       n.Group.new("CursorLineNr", n.colors.yellow)
       n.Group.new("Delimiter", n.colors.base00)
       n.Group.new("Operator", n.colors.base0)
-
-      n.Group.link("@lsp.type.parameter", n.groups["@variable"])
-      n.Group.new("@lsp.type.function", n.colors.blue, n.colors.none, n.styles.italic)
-      n.Group.new("@lsp.type.property", n.colors.base0, n.colors.none, n.styles.italic)
 
       n.Group.new("@include", n.colors.magenta)
       n.Group.new("@boolean", n.colors.orange, n.colors.none, n.styles.bold)
       n.Group.new("@variable", n.colors.base1)
       n.Group.new("@keyword", n.colors.green, n.colors.none, n.styles.italic)
       n.Group.new("@variable.builtin", n.colors.orange, n.colors.none, n.styles.bold)
+      n.Group.new("@parameter", n.colors.base1, n.colors.none, n.styles.italic)
+      n.Group.link("@property", n.groups["@parameter"])
       n.Group.link("@keyword.function", n.groups["@keyword"])
       n.Group.link("@punctuation.delimiter", n.groups.Delimiter)
       n.Group.link("@field", n.groups["@variable"])
+
       n.Group.link("@tag.delimiter", n.groups.Delimiter)
-      n.Group.new("@parameter", n.colors.base1, n.colors.none, n.styles.italic)
-      n.Group.link("@property", n.groups["@parameter"])
+      n.Group.new("@tag.attribute", n.colors.blue, n.colors.none, n.styles.italic)
+
+      n.Group.link("@lsp.type.parameter", n.groups["@variable"])
+      n.Group.new("@lsp.type.function", n.colors.blue, n.colors.none, n.styles.italic)
+      n.Group.new("@lsp.type.property", n.colors.base0, n.colors.none, n.styles.italic)
 
       local cError = n.groups.Error.fg
       local cInfo = n.groups.Information.fg
