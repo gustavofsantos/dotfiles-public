@@ -23,7 +23,7 @@ augroup END
 augroup SetVimTestGlobalVariablesForPlaywright
     autocmd!
     autocmd BufEnter,BufRead,BufNewFile *.spec.js let g:test#javascript#runner = 'playwright'
-    autocmd BufEnter,BufRead,BufNewFile *.spec.js let g:test#javascript#playwright#executable = 'env $(cat .env.local .env.test.local | grep -v ^#) npx playwright test'
+    autocmd BufEnter,BufRead,BufNewFile *.spec.js let g:test#javascript#playwright#executable = 'env $(cat .env.local .env.test.local | grep -v ^\#) npx playwright test'
 augroup END
 
 augroup filetype_jsx

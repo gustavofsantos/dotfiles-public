@@ -13,29 +13,29 @@ return {
       delete_check_events = "TextChanged",
     },
     keys = {
-      {
-        "<tab>",
-        function()
-          return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
-        end,
-        expr = true,
-        silent = true,
-        mode = "i",
-      },
-      {
-        "<tab>",
-        function()
-          require("luasnip").jump(1)
-        end,
-        mode = "s",
-      },
-      {
-        "<s-tab>",
-        function()
-          require("luasnip").jump(-1)
-        end,
-        mode = { "i", "s" },
-      },
+      -- {
+      --   "<tab>",
+      --   function()
+      --     return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
+      --   end,
+      --   expr = true,
+      --   silent = true,
+      --   mode = "i",
+      -- },
+      -- {
+      --   "<tab>",
+      --   function()
+      --     require("luasnip").jump(1)
+      --   end,
+      --   mode = "s",
+      -- },
+      -- {
+      --   "<s-tab>",
+      --   function()
+      --     require("luasnip").jump(-1)
+      --   end,
+      --   mode = { "i", "s" },
+      -- },
     },
   },
   {
@@ -77,7 +77,7 @@ return {
           ["<C-y>"] = cmp.mapping.confirm({ select = true }),
         }),
         sources = cmp.config.sources({
-          { name = "luasnip" },
+          -- { name = "luasnip" },
           { name = "nvim_lsp" },
           { name = "buffer" },
           { name = "path" },

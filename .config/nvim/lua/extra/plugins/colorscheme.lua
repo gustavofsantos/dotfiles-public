@@ -83,7 +83,8 @@ return {
       n.Color.new("base04", "#001217")
       n.Group.new("CursorLineNr", n.colors.yellow)
       n.Group.new("Delimiter", n.colors.base00)
-      n.Group.new("Operator", n.colors.base0)
+      n.Group.new("Operator", n.colors.base0:dark())
+      n.Group.new("Search", n.colors.yellow, n.colors.yellow:dark():dark():dark())
 
       n.Group.new("@include", n.colors.magenta)
       n.Group.new("@boolean", n.colors.orange, n.colors.none, n.styles.bold)

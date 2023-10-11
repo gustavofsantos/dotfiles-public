@@ -52,7 +52,7 @@ return {
         sections = {
           lualine_a = { "mode" },
           lualine_b = { "branch", "diagnostics" },
-          lualine_c = { "filename" },
+          lualine_c = { { "filename", file_status = true, path = 1 } },
           lualine_x = {
             {
               lazy_status.updates,
@@ -65,7 +65,7 @@ return {
         inactive_sections = {
           lualine_a = {},
           lualine_b = {},
-          lualine_c = { "filename" },
+          lualine_c = { { "filename", file_status = true, path = 1 } },
           lualine_x = {},
           lualine_y = {},
           lualine_z = {},

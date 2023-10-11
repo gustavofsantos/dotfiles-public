@@ -1,0 +1,6 @@
+#!/bin/bash
+
+branch_name=$(git symbolic-ref --short HEAD)
+branch_name=${branch_name#g/}
+file_name="${branch_name^^}.md"
+nvim "/home/gustavo/notes/Loggi/$file_name"
