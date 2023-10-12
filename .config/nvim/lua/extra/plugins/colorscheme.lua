@@ -73,6 +73,7 @@ return {
     "svrana/neosolarized.nvim",
     dependencies = { "tjdevries/colorbuddy.nvim" },
     priority = 1000,
+    enabled = false,
     lazy = false,
     config = function()
       local n = require("neosolarized").setup({
@@ -127,6 +128,27 @@ return {
       n.Group.new("TelescopePreviewBorder", n.colors.base01, n.colors.base02)
 
       vim.cmd([[colorscheme neosolarized]])
+    end,
+  },
+  {
+    "ellisonleao/gruvbox.nvim",
+    priority = 1000,
+    config = function()
+      require("gruvbox").setup({
+        terminal_colors = true,
+        italic = {
+          strings = false,
+          emphasis = false,
+          comments = true,
+          operators = false,
+          folds = true,
+        },
+        contrast = "hard",
+        dim_inactive = false,
+        transparent_mode = false,
+      })
+
+      vim.cmd([[colorscheme gruvbox]])
     end,
   },
 }
