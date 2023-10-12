@@ -50,7 +50,7 @@ end)
 
 return {
     force_reverse_video_cursor = true,
-    color_scheme = "GruvboxDark",
+    color_scheme = "GruvboxDarkHard",
 
     -- font
     font = wezterm.font("MonoLisa", { weight = "Medium" }),

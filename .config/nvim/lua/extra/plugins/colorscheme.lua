@@ -134,6 +134,7 @@ return {
     "ellisonleao/gruvbox.nvim",
     priority = 1000,
     config = function()
+      local palette = require("gruvbox").palette
       require("gruvbox").setup({
         terminal_colors = true,
         italic = {
@@ -143,11 +144,15 @@ return {
           operators = false,
           folds = true,
         },
-        contrast = "hard",
+        contrast = "",
         dim_inactive = false,
         transparent_mode = false,
+        overrides = {
+          SignColumn = { bg = palette.dark0 },
+        },
       })
 
+      vim.o.background = "dark"
       vim.cmd([[colorscheme gruvbox]])
     end,
   },
