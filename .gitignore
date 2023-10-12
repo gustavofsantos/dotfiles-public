@@ -237,3 +237,5 @@ anaconda3/
 .anydesk/
 .fzf/
 .config/environment.d
+.config/background
+.config/gthumb
