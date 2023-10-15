@@ -50,8 +50,8 @@ return {
       lualine.setup({
         options = { section_separators = "", component_separators = "" },
         sections = {
-          lualine_a = { "mode" },
-          lualine_b = { "branch", "diagnostics" },
+          lualine_a = { "branch" },
+          lualine_b = { "diagnostics" },
           lualine_c = { { "filename", file_status = true, path = 1 } },
           lualine_x = {
             {

@@ -53,8 +53,8 @@ return {
     color_scheme = "GruvboxDarkHard",
 
     -- font
-    font = wezterm.font("MonoLisa", { weight = "Medium" }),
-    font_size = 12.0,
+    font = wezterm.font("MonoLisa", { weight = "Regular" }),
+    font_size = 11.0,
 
     window_background_opacity = 0.975,
 
