@@ -144,7 +144,9 @@ return {
     priority = 1000,
     enabled = false,
     config = function()
+      local bg = vim.o.background
       local palette = require("gruvbox").palette
+
       require("gruvbox").setup({
         terminal_colors = true,
         italic = {
@@ -159,10 +161,31 @@ return {
         transparent_mode = false,
         overrides = {
           SignColumn = { bg = palette.dark0 },
+          Function = { fg = palette.bright_green, italic = true, bold = false },
+          ["@property"] = {
+            fg = bg == "dark" and palette.bright_blue or palette.faded_blue,
+            italic = true,
+            bold = false,
+          },
+          ["@field"] = { link = "@property" },
+          ["@keyword"] = {
+            fg = bg == "dark" and palette.bright_purple or palette.faded_purple,
+            italic = true,
+            bold = false,
+          },
+          ["@boolean"] = {
+            fg = bg == "dark" and palette.bright_purple or palette.faded_purple,
+            italic = false,
+            bold = true,
+          },
+          ["@punctuation.delimiter"] = { fg = palette.gray },
+          ["@punctuation.bracket"] = { fg = palette.gray },
+          ["@tag.delimiter"] = { fg = palette.gray },
+          ["@lsp.type.parameter"] = { fg = palette.light1 },
+          ["@lsp.type.property"] = { link = "@property" },
         },
       })
 
-      vim.o.background = "dark"
       vim.cmd([[colorscheme gruvbox]])
     end,
   },
