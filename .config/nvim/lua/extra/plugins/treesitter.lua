@@ -21,6 +21,7 @@ return {
         "rust",
         "haskell",
         "markdown",
+        "markdown_inline",
         "javascript",
         "jsdoc",
         "typescript",

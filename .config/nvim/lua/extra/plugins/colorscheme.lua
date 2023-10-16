@@ -1,5 +1,14 @@
 return {
   {
+    "gustavofsantos/solarized.nvim",
+    priority = 1000,
+    config = function()
+      require("colorschemes.solarized").load()
+
+      vim.cmd([[colorscheme solarized]])
+    end,
+  },
+  {
     "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
@@ -133,6 +142,7 @@ return {
   {
     "ellisonleao/gruvbox.nvim",
     priority = 1000,
+    enabled = false,
     config = function()
       local palette = require("gruvbox").palette
       require("gruvbox").setup({
