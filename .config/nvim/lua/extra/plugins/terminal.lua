@@ -5,6 +5,8 @@ return {
     open_mapping = [[<c-t>]],
     terminal_mappings = true,
     direction = "horizontal",
+    shade_terminals = true,
+    shading_factor = -10,
     size = 24,
     winbar = {
       enabled = true,

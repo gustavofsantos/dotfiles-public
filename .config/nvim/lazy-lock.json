@@ -33,7 +33,7 @@
   "nvim-web-devicons": { "branch": "master", "commit": "3af745113ea537f58c4b1573b64a429fefad9e07" },
   "octo.nvim": { "branch": "master", "commit": "2fe8953461395161d15c648fd35042f0ad2c9288" },
   "plenary.nvim": { "branch": "master", "commit": "50012918b2fc8357b87cff2a7f7f0446e47da174" },
-  "solarized.nvim": { "branch": "main", "commit": "e1fc672ce93648369acb5b942001b745e1aae1a2" },
+  "solarized.nvim": { "branch": "main", "commit": "5cc2dda0de63333e776603746da1e65acd91cab2" },
   "switch.vim": { "branch": "main", "commit": "68d269301181835788dcdcb6d5bca337fb954395" },
   "telescope-file-browser.nvim": { "branch": "master", "commit": "6e51d0cd6447cf2525412220ff0a2885eef9039c" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "6c921ca12321edaa773e324ef64ea301a1d0da62" },
