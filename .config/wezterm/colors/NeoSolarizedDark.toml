@@ -1,11 +1,11 @@
 [colors]
-background = "#001217"
-foreground = "#708183"
+background = "#002b36"
+foreground = "#839496"
 
 cursor_bg = "#708183"
 
-selection_bg = "#fcf4dc"
-selection_fg = "#001e26"
+selection_bg = "#073642"
+selection_fg = "#93a1a1"
 
 [colors.tab_bar]
 background = "#073642"
@@ -18,8 +18,8 @@ bg_color = "#268bd2"
 fg_color = "#CAD3F5"
 bg_color = "#586e75"
 
-ansi = [ "#002b36", "#dc322f", "#859900", "#b58900", "#268bd2", "#d33682", "#2aa198", "#e9e2cb" ]
-brights = [ "#001e26", "#cb4b16", "#465a61", "#52676f", "#708183", "#6c71c4", "#81908f", "#fcf4dc" ]
+ansi = [ "#002b36", "#dc322f", "#859900", "#b58900", "#268bd2", "#d33682", "#2aa198", "#eee8d5" ]
+brights = [ "#073642", "#cb4b16", "#586e75", "#657b83", "#839496", "#6c71c4", "#93a1a1", "#fdf6e3" ]
 
 [metadata]
 name = 'NeoSolarizedDark'
