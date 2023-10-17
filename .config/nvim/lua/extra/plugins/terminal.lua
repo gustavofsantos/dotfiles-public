@@ -6,7 +6,7 @@ return {
     terminal_mappings = true,
     direction = "horizontal",
     shade_terminals = true,
-    shading_factor = -10,
+    shading_factor = vim.o.background == "dark" and -10 or -1,
     size = 24,
     winbar = {
       enabled = true,
