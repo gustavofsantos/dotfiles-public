@@ -57,7 +57,7 @@
 
 [pretty]
   default = format:"%C(yellow)%h %C(blue)%cs %C(reset)%s%C(red)%d %C(green)%an%C(reset), %C(cyan)%ar'"
-  deploy = format:"%h  %cs  %<(15,trunc)%an  %s"
+  deploy = format:"%h  %cs  %<(24,trunc)%an  %s"
 
 [push]
   config = default

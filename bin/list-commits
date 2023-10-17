@@ -2,4 +2,4 @@
 
 # Example of usage:
 # list-prs master..feature1
-git --no-pager log --pretty=format:"%C(auto,green)%<(10)%h%C(auto,reset) %C(auto,blue)%<(20)%an%C(auto,reset) %s" $1 -- .
+git --no-pager log --pretty=deploy $1 -- .
