@@ -39,6 +39,12 @@ return {
     },
   },
   {
+    "akinsho/git-conflict.nvim",
+    event = "VeryLazy",
+    version = "v1.2.2",
+    config = true,
+  },
+  {
     "pwntester/octo.nvim",
     event = "VeryLazy",
     requires = {

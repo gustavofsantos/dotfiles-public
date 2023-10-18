@@ -128,7 +128,7 @@ let g:sneak#use_ic_scs = 1
 -- Vim Test
 vim.cmd([[
 let test#strategy = "toggleterm"
-let test#javascript#playwright#options = "--headed --retries 0"
+let test#javascript#playwright#options = "--headed --retries 0 --workers 1"
 ]])
 
 -- undercurl
