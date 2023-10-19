@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.opt.termguicolors = true
-vim.opt.background = "dark"
+vim.opt.background = "light"
 vim.opt.hidden = true
 vim.opt.encoding = "utf-8"
 vim.opt.number = true
@@ -47,7 +47,7 @@ vim.opt.wildmode = "longest,full"
 vim.opt.updatetime = 100
 vim.opt.splitright = true
 vim.opt.splitbelow = true
-vim.opt.signcolumn = "no"
+vim.opt.signcolumn = "yes"
 vim.opt.cursorline = true
 vim.opt.swapfile = false
 vim.opt.showtabline = 1
