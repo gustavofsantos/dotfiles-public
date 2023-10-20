@@ -1,22 +1,31 @@
 return {
-  {
-    "gustavofsantos/solarized.nvim",
-    priority = 1000,
-    enabled = true,
-    config = function()
-      require("solarized").setup()
-      vim.cmd([[colorscheme solarized]])
-    end,
-  },
   -- {
-  --   dir = "~/Code/solarized.nvim",
+  --   "gustavofsantos/solarized.nvim",
   --   priority = 1000,
-  --   enabled = false,
-  --   opts = {},
+  --   enabled = true,
   --   config = function()
+  --     require("solarized").setup()
   --     vim.cmd([[colorscheme solarized]])
   --   end,
   -- },
+  {
+    dir = "~/Code/solarized.nvim",
+    priority = 1000,
+    enabled = true,
+    opts = {},
+    config = function()
+      vim.cmd([[colorscheme solarized]])
+    end,
+  },
+  {
+    dir = "~/Code/overnight.nvim",
+    priority = 1000,
+    enabled = false,
+    opts = {},
+    config = function()
+      vim.cmd([[colorscheme overnight]])
+    end,
+  },
   {
     "rebelot/kanagawa.nvim",
     lazy = false,
