@@ -6,7 +6,6 @@
 TAG=$(echo $1 | awk -F '\\.\\.' '{ print $2 }')
 
 cat << EOF
-
 Ação: Deploy Beyond UI
 Workflow: <replace here>
 Tag: https://github.com/loggi/ui/releases/tag/$(echo $TAG | sed 's/\//%2F/g')
@@ -16,10 +15,11 @@ Pull requests:
 $(list-prs $1 loggi/ui)
 
 Descrição:
-- 
+* 
 
+Monitoramento:
 * https://loggi.sentry.io/issues/?project=5917828&query=is%3Aunresolved+release%3A$(echo $TAG | sed 's/\//-/g')&referrer=issue-list&statsPeriod=14d
 * https://grafana.loggi.com/d/TZgxLo8nz/beyond-health?orgId=1
 
-cc @dev-beyond
+cc @dev-alem
 EOF
