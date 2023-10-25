@@ -19,5 +19,5 @@ Monitoramento:
 * [Sentry Beyond-Py](https://loggi.sentry.io/issues/?environment=production&project=4504600486150144&query=is%3Aunresolved+release%3Aprod-20230725.01&referrer=issue-list&statsPeriod=1h)
 * [Grafana Beyond](https://grafana.loggi.com/d/TZgxLo8nz/beyond-health?orgId=1)
 
-cc @beyond-squad-conversao 
+cc @dev-alem 
 EOF
