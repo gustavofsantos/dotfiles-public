@@ -46,6 +46,14 @@ return {
     config = true,
   },
   {
+    "2kabhishek/co-author.nvim",
+    dependencies = {
+      "stevearc/dressing.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    cmd = "GitCoAuthors",
+  },
+  {
     "pwntester/octo.nvim",
     event = "VeryLazy",
     requires = {
