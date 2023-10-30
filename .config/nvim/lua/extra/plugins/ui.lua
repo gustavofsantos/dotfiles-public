@@ -16,6 +16,7 @@ return {
   },
   {
     "akinsho/bufferline.nvim",
+    enabled = false,
     version = "*",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
@@ -23,10 +24,15 @@ return {
       bufferline.setup({
         options = {
           mode = "tabs",
-          separator_style = "slant",
+          themable = true,
+          separator_style = "thin",
           always_show_bufferline = false,
+          show_buffer_icons = false,
           show_buffer_close_icons = false,
           show_close_icon = false,
+          indicator = {
+            style = "none",
+          },
         },
         highlights = {},
       })
@@ -48,12 +54,17 @@ return {
 
       -- configure lualine with modified theme
       lualine.setup({
-        options = { section_separators = "", component_separators = "" },
+        options = {
+          theme = "solarized_dark",
+          section_separators = "",
+          component_separators = "",
+        },
         sections = {
-          lualine_a = { "branch" },
+          lualine_a = {},
           lualine_b = { "diagnostics" },
           lualine_c = { { "filename", file_status = true, path = 1 } },
           lualine_x = {
+            "diff",
             {
               lazy_status.updates,
               cond = lazy_status.has_updates,
