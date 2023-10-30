@@ -104,54 +104,131 @@ return {
 
     telescope.load_extension("harpoon")
     telescope.load_extension("file_browser")
+  end,
+  keys = {
+    {
+      "<leader>fr",
+      function()
+        require("telescope.builtin").resume()
+      end,
+      desc = "Resume search",
+    },
 
-    vim.keymap.set("n", "<c-p>", require("telescope.builtin").find_files, { desc = "Find files" })
-    vim.keymap.set("n", "<c-f>", require("telescope.builtin").current_buffer_fuzzy_find, { desc = "Search" })
-    vim.keymap.set(
-      "n",
+    {
+      "<F3>",
+      function()
+        require("telescope.builtin").grep_string()
+      end,
+      mode = { "n" },
+      desc = "Search",
+    },
+
+    {
+      "<F3>",
+      '"zy:Telescope grep_string default_text=<C-r>z<cr>',
+      mode = { "v" },
+      desc = "Search",
+    },
+
+    {
+      "<c-p>",
+      function()
+        require("telescope.builtin").find_files()
+      end,
+      desc = "Find files",
+    },
+
+    {
+      "<c-f>",
+      function()
+        require("telescope.builtin").current_buffer_fuzzy_find()
+      end,
+      desc = "Find in buffer",
+    },
+
+    {
+      "<leader>fe",
+      function()
+        require("telescope.builtin").oldfiles()
+      end,
+      desc = "Find recent files",
+    },
+
+    {
+      "<leader>fb",
+      function()
+        require("telescope.builtin").buffers()
+      end,
+      desc = "Find buffers",
+    },
+
+    {
+      "<leader>fg",
+      function()
+        require("telescope.builtin").git_files()
+      end,
+      desc = "Find git files",
+    },
+
+    {
+      "<leader>fl",
+      function()
+        require("telescope.builtin").live_grep()
+      end,
+      desc = "Live grep",
+    },
+
+    {
+      "<leader>fk",
+      function()
+        require("telescope.builtin").keymaps()
+      end,
+      desc = "Find keymaps",
+    },
+
+    {
+      "<leader>fh",
+      function()
+        require("telescope.builtin").search_history()
+      end,
+    },
+
+    {
       "<c-b>",
       "<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>",
-      { desc = "Browse files" }
-    )
+      desc = "Browse files",
+    },
 
-    vim.keymap.set("n", "<F3>", require("telescope.builtin").grep_string, { desc = "Search" })
-    vim.keymap.set("v", "<F3>", '"zy:Telescope grep_string default_text=<C-r>z<cr>', { desc = "Search" })
+    {
+      "<leader>fc",
+      function()
+        require("telescope.builtin").git_bcommits()
+      end,
+      desc = "Find commits in buffer",
+    },
 
-    vim.keymap.set("n", "<leader>fr", function()
-      require("telescope.builtin").resume()
-    end)
-    vim.keymap.set("n", "<leader>fg", function()
-      require("telescope.builtin").git_files()
-    end)
-    vim.keymap.set("n", "<leader>fe", function()
-      require("telescope.builtin").oldfiles()
-    end)
-    vim.keymap.set("n", "<leader>fb", function()
-      require("telescope.builtin").buffers()
-    end)
-    vim.keymap.set("n", "<leader>fm", function()
-      require("harpoon.ui").toggle_quick_menu()
-    end)
-    vim.keymap.set("n", "<leader>fl", function()
-      require("telescope.builtin").live_grep()
-    end)
-    vim.keymap.set("n", "<leader>fk", function()
-      require("telescope.builtin").keymaps()
-    end)
-    vim.keymap.set("n", "<leader>fh", function()
-      require("telescope.builtin").search_history()
-    end)
-    vim.keymap.set("n", "<leader>f?", function()
-      require("telescope.builtin").help_tags()
-    end)
-    vim.keymap.set("n", "<leader>fc", function()
-      require("telescope.builtin").git_bcommits()
-    end)
-    vim.keymap.set("n", "<leader>gb", function()
-      require("telescope.builtin").git_branches()
-    end)
-    vim.keymap.set("n", "<leader>/", function()
-      require("telescope.builtin").current_buffer_fuzzy_find()
-    end)
-  end,
+    {
+      "<leader>gb",
+      function()
+        require("telescope.builtin").git_branches()
+      end,
+      desc = "Checkout branch",
+    },
+
+    {
+      "<leader>f?",
+      function()
+        require("telescope.builtin").help_tags()
+      end,
+      desc = "Find help",
+    },
+
+    {
+      "<leader>fm",
+      function()
+        require("harpoon.ui").toggle_quick_menu()
+      end,
+      desc = "Harpoon menu",
+    },
+  },
 }
