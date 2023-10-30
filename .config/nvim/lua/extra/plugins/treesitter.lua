@@ -15,6 +15,7 @@ return {
         "bash",
         "go",
         "lua",
+        "http",
         "json",
         "proto",
         "toml",
