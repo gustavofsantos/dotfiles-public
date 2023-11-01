@@ -14,6 +14,29 @@ return {
     },
   },
   {
+    "tpope/vim-projectionist",
+    event = "BufRead",
+    config = function()
+      vim.g.projectionist_heuristics = {
+        ["*"] = {
+          ["*.js"] = {
+            alternate = {
+              "{dirname}/{basename}.test.js",
+            },
+            type = "source",
+          },
+          ["*.test.js"] = {
+            alternate = "{basename}.js",
+            type = "test",
+          },
+        },
+      }
+    end,
+    keys = {
+      { "ga", "<cmd>A<CR>", desc = "Alternate file" },
+    },
+  },
+  {
     "ThePrimeagen/refactoring.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
