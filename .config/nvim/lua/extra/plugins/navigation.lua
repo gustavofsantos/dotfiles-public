@@ -5,7 +5,6 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope-symbols.nvim",
     "nvim-telescope/telescope-file-browser.nvim",
-    "ThePrimeagen/harpoon",
     {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "make",
@@ -25,6 +24,7 @@ return {
         sorting_strategy = "ascending",
         file_ignore_patterns = {
           "%.git/",
+          ".git/",
           "node_modules/",
           -- "coverage/",
           "__pycache__/",
@@ -102,7 +102,6 @@ return {
       },
     })
 
-    telescope.load_extension("harpoon")
     telescope.load_extension("file_browser")
   end,
   keys = {
@@ -221,14 +220,6 @@ return {
         require("telescope.builtin").help_tags()
       end,
       desc = "Find help",
-    },
-
-    {
-      "<leader>fm",
-      function()
-        require("harpoon.ui").toggle_quick_menu()
-      end,
-      desc = "Harpoon menu",
     },
   },
 }
