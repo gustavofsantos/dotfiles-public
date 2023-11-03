@@ -40,3 +40,4 @@ alias dev_beyond_test_watch="devcontainer --workspace-folder /opt/loggi/ui exec 
 alias ui_review="gh pr list -S 'is:pr is:open user-review-requested:@me label:beyond-conversao' | fzf --preview 'gh pr view {1}' --preview-window down | awk '{print $1}' | xargs gh pr checkout"
 
 
+. "$HOME/.cargo/env"
