@@ -12,10 +12,4 @@ return {
     "yorickpeterse/nvim-pqf",
     config = true,
   },
-  {
-    "j-hui/fidget.nvim",
-    tag = "legacy",
-    event = "LspAttach",
-    opts = {},
-  },
 }

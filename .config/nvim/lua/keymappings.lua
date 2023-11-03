@@ -29,3 +29,4 @@ vim.keymap.set("n", "<leader>xl", function()
 end)
 
 vim.keymap.set("n", "<Tab>", "<cmd>tabnext<cr>", { noremap = true, silent = true, desc = "Cycle next tab" })
+vim.keymap.set("n", "<S-Tab>", "<cmd>tabprev<cr>", { noremap = true, silent = true, desc = "Cycle next tab" })
