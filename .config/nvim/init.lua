@@ -39,18 +39,6 @@ require("keymappings")
 
 require("lazy").setup({
   { import = "extra.plugins" },
-  "tpope/vim-sleuth",
-  "tpope/vim-fugitive",
-  "tpope/vim-rhubarb",
-  "tpope/vim-commentary",
-  "tpope/vim-surround",
-  "mbbill/undotree",
-  "justinmk/vim-sneak",
-  "AndrewRadev/switch.vim",
-  "christoomey/vim-tmux-navigator",
-  -- "christoomey/vim-tmux-runner",
-  "christoomey/vim-conflicted",
-  "github/copilot.vim",
 }, {
   checker = {
     enabled = true,

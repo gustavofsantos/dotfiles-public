@@ -1,4 +1,11 @@
 return {
+  "tpope/vim-sleuth",
+  "tpope/vim-commentary",
+  "tpope/vim-surround",
+  "mbbill/undotree",
+  "justinmk/vim-sneak",
+  "AndrewRadev/switch.vim",
+  "github/copilot.vim",
   {
     "cshuaimin/ssr.nvim",
     event = "VeryLazy",
