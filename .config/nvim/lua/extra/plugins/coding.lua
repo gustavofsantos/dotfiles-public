@@ -2,6 +2,7 @@ return {
   {
     "cshuaimin/ssr.nvim",
     event = "VeryLazy",
+    enabled = false,
     keys = {
       {
         "<leader>sR",
@@ -38,6 +39,7 @@ return {
   },
   {
     "ThePrimeagen/refactoring.nvim",
+    enabled = false,
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
@@ -60,6 +62,7 @@ return {
   {
     "folke/flash.nvim",
     event = "VeryLazy",
+    enabled = false,
     opts = {},
     keys = {
       {
