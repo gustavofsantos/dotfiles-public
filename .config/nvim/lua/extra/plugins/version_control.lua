@@ -15,12 +15,12 @@ return {
         current_line_blame = false,
         current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d>",
         signs = {
-          add = { text = "│" },
-          change = { text = "│" },
-          delete = { text = "│" },
-          topdelete = { text = "│" },
-          changedelete = { text = "│" },
-          untracked = { text = "┆" },
+          add = { text = "▌" },
+          change = { text = "▌" },
+          delete = { text = "▌" },
+          topdelete = { text = "▌" },
+          changedelete = { text = "▌" },
+          untracked = { text = "░" },
         },
       })
     end,

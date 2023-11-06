@@ -65,7 +65,8 @@ cursor:
 import:
   - ~/.alacritty.local.yml
   # - ~/.config/alacritty/themes/kanagawa.yml
-  - ~/.config/alacritty/themes/neosolarized_dark.yml
+  # - ~/.config/alacritty/themes/neosolarized_dark.yml
+  - ~/.config/alacritty/themes/jb_dark.yml
   # - ~/.config/alacritty/themes/xcad2k_dark.yml
   # - ~/.config/alacritty/themes/kanagawa_dragon.yml
   # - ~/.config/alacritty/themes/nordic.yml

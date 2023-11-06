@@ -11,10 +11,19 @@ return {
   {
     dir = "~/Code/solarized.nvim",
     priority = 1000,
-    enabled = true,
+    enabled = false,
     config = function()
       require("solarized").setup()
       vim.cmd([[colorscheme solarized]])
+    end,
+  },
+  {
+    dir = "~/Code/jb.nvim",
+    priority = 1000,
+    enabled = true,
+    config = function()
+      require("jb").setup()
+      vim.cmd([[colorscheme jb]])
     end,
   },
   {
