@@ -1,6 +1,6 @@
 {
   "workbench.colorTheme": "Overnight Slumber Italics",
-  "workbench.editor.showTabs": false,
+  "workbench.editor.showTabs": "multiple",
   "workbench.editor.tabSizing": "fit",
   "workbench.tree.indent": 16,
   "editor.fontFamily": "'MonoLisa Nerd Font', 'Operator Mono Book'",
