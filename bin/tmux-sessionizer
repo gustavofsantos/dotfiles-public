@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/loggi/ui/targets ~/loggi/web/loggi ~/loggi/ ~/Code -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(find ~/loggi/ui/targets ~/loggi/py/apps ~/loggi/web/loggi ~/loggi/ ~/Code -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 
 if [[ -z $selected ]]; then
