@@ -239,3 +239,7 @@ anaconda3/
 .config/environment.d
 .config/background
 .config/gthumb
+.bundle/
+.irb_history
+.rbenv
+.solargraph/
