@@ -30,6 +30,7 @@ return {
           "vimls",
           "bashls",
           "marksman",
+          "solargraph",
         },
       })
 

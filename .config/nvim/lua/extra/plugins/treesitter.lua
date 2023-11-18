@@ -20,6 +20,7 @@ return {
         "proto",
         "toml",
         "rust",
+        "ruby",
         "haskell",
         "markdown",
         "markdown_inline",
@@ -89,7 +90,7 @@ return {
         },
       },
       context_commentstring = {
-        enable = false,
+        enable = true,
       },
     })
 
