@@ -6,6 +6,7 @@ return {
   "justinmk/vim-sneak",
   "AndrewRadev/switch.vim",
   "github/copilot.vim",
+  "christoomey/vim-tmux-runner",
   {
     "cshuaimin/ssr.nvim",
     event = "VeryLazy",
