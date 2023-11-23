@@ -11,7 +11,7 @@ font:
   bold_italic:
     family: MonoLisa Nerd Font
     style: Bold Italic
-  size: 10
+  size: 9
   # normal:
   #   family: OperatorMono Nerd Font
   #   style: Book
@@ -42,28 +42,27 @@ window:
     x: 0
     y: 0
 
-draw_bold_text_with_bright_colors: true
+# draw_bold_text_with_bright_colors: true
 
 mouse:
-  hide_when_typing: true
+  # hide_when_typing: true
   save_to_clipboard: true
 
 key_bindings:
   - { action: ToggleFullscreen , key: F11}
 
-
 mouse_bindings:
   - { action: PasteSelection , mouse: Middle}
 
 
-cursor:
-  # Cursor style
-  style:
-    blinking: Always
-    shape: Block
+# cursor:
+#   # Cursor style
+#   style:
+#     blinking: Always
+#     shape: Block
 
 import:
-  - ~/.alacritty.local.yml
+  # - ~/.alacritty.local.yml
   # - ~/.config/alacritty/themes/kanagawa.yml
   - ~/.config/alacritty/themes/neosolarized_dark.yml
   # - ~/.config/alacritty/themes/jb_dark.yml
