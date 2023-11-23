@@ -37,6 +37,10 @@ pretty_git_branch_sorted() {
     git branch -v --color=always --format=${BRANCH_FORMAT} --sort=-committerdate $* | pretty_git_format
 }
 
+checkout_git_branch() {
+    git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/ | head -n 50 | fzf +m --preview="git checkout {1}"
+}
+
 pretty_git_format() {
     # Replace (2 years ago) with (2 years)
     sed -Ee 's/(^[^<]*) ago\)/\1)/' |

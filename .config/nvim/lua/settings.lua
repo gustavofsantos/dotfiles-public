@@ -54,6 +54,19 @@ vim.opt.showtabline = 1
 vim.opt.mouse = "nv"
 -- vim.opt.colorcolumn = "100"
 
+-- statusline settings
+local function get_git_branch()
+  local fd = io.popen("git rev-parse --abbrev-ref HEAD 2>/dev/null")
+  local branch = fd:read("*l")
+  fd:close()
+  return branch and #branch > 0 and " " .. branch or ""
+end
+vim.opt.statusline = [[%f]]
+vim.opt.statusline:append(" | ")
+vim.opt.statusline:append(get_git_branch())
+vim.opt.statusline:append(" %=")
+vim.opt.statusline:append("%{&ft}")
+
 vim.opt.path:append({ "**" })
 vim.opt.wildignore:append({ "*/node_modules/*" })
 vim.opt.formatoptions:append({ "r" })
@@ -127,7 +140,7 @@ let g:sneak#use_ic_scs = 1
 
 -- Vim Test
 vim.cmd([[
-let test#strategy = "toggleterm"
+let test#strategy = "vtr"
 let test#javascript#playwright#options = "--headed --retries 0 --workers 1"
 ]])
 
