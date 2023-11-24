@@ -54,7 +54,7 @@ return {
 
     -- font
     font = wezterm.font("MonoLisa", { weight = "Regular" }),
-    font_size = 11.0,
+    font_size = 10.0,
 
     window_background_opacity = 0.975,
 
