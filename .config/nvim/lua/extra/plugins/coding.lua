@@ -5,7 +5,6 @@ return {
   "mbbill/undotree",
   "justinmk/vim-sneak",
   "AndrewRadev/switch.vim",
-  "github/copilot.vim",
   "christoomey/vim-tmux-runner",
   {
     "cshuaimin/ssr.nvim",
@@ -44,6 +43,28 @@ return {
     keys = {
       { "ga", "<cmd>A<CR>", desc = "Alternate file" },
     },
+  },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({
+        filetypes = {
+          javascript = true,
+          typescript = true,
+          javascriptreact = true,
+          typescriptreact = true,
+          python = true,
+          lua = true,
+          shell = true,
+          markdown = true,
+          ["*"] = false,
+        },
+        suggestion = { enabled = false },
+        panel = { enabled = false },
+      })
+    end,
   },
   {
     "ThePrimeagen/refactoring.nvim",

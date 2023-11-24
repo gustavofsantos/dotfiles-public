@@ -12,31 +12,7 @@ return {
       history = true,
       delete_check_events = "TextChanged",
     },
-    keys = {
-      -- {
-      --   "<tab>",
-      --   function()
-      --     return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
-      --   end,
-      --   expr = true,
-      --   silent = true,
-      --   mode = "i",
-      -- },
-      -- {
-      --   "<tab>",
-      --   function()
-      --     require("luasnip").jump(1)
-      --   end,
-      --   mode = "s",
-      -- },
-      -- {
-      --   "<s-tab>",
-      --   function()
-      --     require("luasnip").jump(-1)
-      --   end,
-      --   mode = { "i", "s" },
-      -- },
-    },
+    keys = {},
   },
   {
     "hrsh7th/nvim-cmp",
@@ -78,17 +54,41 @@ return {
         }),
         sources = cmp.config.sources({
           -- { name = "luasnip" },
-          { name = "nvim_lsp" },
-          { name = "buffer" },
-          { name = "path" },
+          { name = "nvim_lsp", group_index = 1 },
+          {
+            name = "buffer",
+            group_index = 1,
+            option = {
+              get_bufnrs = function()
+                return vim.api.nvim_list_bufs()
+              end,
+            },
+          },
+          { name = "copilot", group_index = 2 },
+          { name = "path", group_index = 3 },
         }),
         formatting = {
           format = lspkind.cmp_format({
             mode = "symbol",
             maxwidth = 50,
+            symbol_map = { Copilot = "" },
           }),
         },
       })
+
+      cmp.setup.filetype("gitcommit", {
+        sources = cmp.config.sources({
+          { name = "git" }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
+        }, {
+          { name = "buffer" },
+        }),
+      })
+    end,
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    config = function()
+      require("copilot_cmp").setup()
     end,
   },
 }
