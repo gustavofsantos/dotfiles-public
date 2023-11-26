@@ -7,6 +7,7 @@ return {
       "williamboman/mason-lspconfig.nvim",
       "folke/neodev.nvim",
       "nvimdev/lspsaga.nvim",
+      "nvim-telescope/telescope.nvim",
     },
     config = function()
       local mason = require("mason")
@@ -112,7 +113,7 @@ return {
           vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
           vim.keymap.set("n", "gr", vim.lsp.buf.rename, opts)
           vim.keymap.set("n", "gR", vim.lsp.buf.references, opts)
-          vim.keymap.set({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<cr>", opts)
+          vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
           vim.keymap.set("n", "<leader>fs", function()
             telescope.lsp_document_symbols()
           end, opts)
