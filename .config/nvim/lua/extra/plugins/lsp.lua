@@ -6,16 +6,11 @@ return {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "folke/neodev.nvim",
-      "nvimdev/lspsaga.nvim",
       "nvim-telescope/telescope.nvim",
     },
     config = function()
       local mason = require("mason")
       local mason_lspconfig = require("mason-lspconfig")
-      require("lspsaga").setup({
-        lightbulb = { enable = false },
-        symbol_in_winbar = { enable = false },
-      })
 
       mason.setup()
       mason_lspconfig.setup({
@@ -105,8 +100,6 @@ return {
           local opts = { buffer = ev.buf }
           local telescope = require("telescope.builtin")
 
-          vim.keymap.set("n", "gO", "<cmd>Lspsaga outline<cr>", opts)
-          vim.keymap.set("n", "gF", "<cmd>Lspsaga finder<cr>", opts)
           vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
           vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
           vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
