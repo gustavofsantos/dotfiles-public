@@ -7,7 +7,6 @@ return {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-symbols.nvim",
       "nvim-telescope/telescope-file-browser.nvim",
-      "nvim-telescope/telescope-frecency.nvim",
       "xiyaowong/telescope-emoji.nvim",
       {
         "nvim-telescope/telescope-fzf-native.nvim",
@@ -107,7 +106,6 @@ return {
       })
 
       telescope.load_extension("file_browser")
-      telescope.load_extension("frecency")
       telescope.load_extension("emoji")
     end,
     keys = {
@@ -137,7 +135,9 @@ return {
 
       {
         "<c-p>",
-        "<Cmd>Telescope frecency workspace=CWD<CR>",
+        function()
+          require("telescope.builtin").find_files()
+        end,
         desc = "Find files",
       },
 
