@@ -61,8 +61,9 @@ return {
           markdown = true,
           ["*"] = false,
         },
-        suggestion = { enabled = false },
-        panel = { enabled = false },
+        suggestion = { enabled = false, auto_trigger = true },
+        panel = { enabled = false, auto_refresh = true },
+        copilot_node_command = vim.fn.expand("$HOME") .. "/.nvm/versions/node/v18.16.0/bin/node",
       })
     end,
   },

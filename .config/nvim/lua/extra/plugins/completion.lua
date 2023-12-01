@@ -54,18 +54,17 @@ return {
         }),
         sources = cmp.config.sources({
           -- { name = "luasnip" },
-          { name = "nvim_lsp", group_index = 1 },
+          { name = "copilot" },
+          { name = "nvim_lsp" },
           {
             name = "buffer",
-            group_index = 1,
             option = {
               get_bufnrs = function()
                 return vim.api.nvim_list_bufs()
               end,
             },
           },
-          { name = "copilot", group_index = 2 },
-          { name = "path", group_index = 3 },
+          { name = "path" },
         }),
         formatting = {
           format = lspkind.cmp_format({
