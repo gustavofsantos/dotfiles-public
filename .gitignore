@@ -243,3 +243,4 @@ anaconda3/
 .irb_history
 .rbenv
 .solargraph/
+.gem/

@@ -2,6 +2,8 @@
 if [ -e /home/gustavo/.cargo/env ]; then . /home/gustavo/.cargo/env;  fi
 if [ -e /home/gustavo/.asdf/asdf.sh ]; then . /home/gustavo/.asdf/asdf.sh; fi
 
+export GEM_HOME="$HOME/.gem"
+
 alias v="nvim"
 alias vim="nvim"
 alias jest="npx jest"

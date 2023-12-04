@@ -153,3 +153,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # Load rbenv if installed
 export PATH="${HOME}/.rbenv/bin:${PATH}"
 type -a rbenv > /dev/null && eval "$(rbenv init -)"
+
+export GEM_HOME="$HOME/.gem"
