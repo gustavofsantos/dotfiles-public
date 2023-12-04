@@ -5,6 +5,7 @@ return {
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
+      "b0o/schemastore.nvim",
       "folke/neodev.nvim",
       "nvim-telescope/telescope.nvim",
     },
@@ -22,6 +23,7 @@ return {
           "docker_compose_language_service",
           "eslint",
           "jsonls",
+          "yamlls",
           "svelte",
           "vimls",
           "bashls",
@@ -81,6 +83,29 @@ return {
                   includeInlayFunctionLikeReturnTypeHints = true,
                   includeInlayEnumMemberValueHints = true,
                 },
+              },
+            },
+          })
+        end,
+        ["jsonls"] = function()
+          require("lspconfig").jsonls.setup({
+            settings = {
+              json = {
+                schemas = require("schemastore").json.schemas(),
+                validate = { enable = true },
+              },
+            },
+          })
+        end,
+        ["yamlls"] = function()
+          require("lspconfig").yamlls.setup({
+            settings = {
+              yaml = {
+                schemaStore = {
+                  enable = false,
+                  url = "",
+                },
+                schemas = require("schemastore").yaml.schemas(),
               },
             },
           })
