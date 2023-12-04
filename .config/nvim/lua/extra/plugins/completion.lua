@@ -1,18 +1,7 @@
 ---@diagnostic disable: missing-fields
 return {
   {
-    "L3MON4D3/LuaSnip",
-    dependencies = {
-      "rafamadriz/friendly-snippets",
-      config = function()
-        require("luasnip.loaders.from_vscode").lazy_load()
-      end,
-    },
-    opts = {
-      history = true,
-      delete_check_events = "TextChanged",
-    },
-    keys = {},
+    "hrsh7th/vim-vsnip",
   },
   {
     "hrsh7th/nvim-cmp",
@@ -23,12 +12,11 @@ return {
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-cmdline",
       "hrsh7th/cmp-nvim-lsp",
-      "saadparwaiz1/cmp_luasnip",
+      "hrsh7th/cmp-vsnip",
       "onsails/lspkind.nvim",
     },
     config = function()
       local cmp = require("cmp")
-      local luasnip = require("luasnip")
       local lspkind = require("lspkind")
 
       cmp.setup({
@@ -42,8 +30,11 @@ return {
         },
         snippet = {
           expand = function(args)
-            luasnip.lsp_expand(args.body) -- For `luasnip` users.
+            vim.fn["vsnip#anonymous"](args.body)
           end,
+        },
+        window = {
+          completion = cmp.config.window.bordered(),
         },
         mapping = cmp.mapping.preset.insert({
           ["<C-b>"] = cmp.mapping.scroll_docs(-4),
@@ -53,9 +44,10 @@ return {
           ["<C-y>"] = cmp.mapping.confirm({ select = true }),
         }),
         sources = cmp.config.sources({
-          -- { name = "luasnip" },
           { name = "copilot" },
           { name = "nvim_lsp" },
+          { name = "vsnip" },
+        }, {
           {
             name = "buffer",
             option = {
@@ -80,6 +72,22 @@ return {
           { name = "git" }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
         }, {
           { name = "buffer" },
+        }),
+      })
+
+      cmp.setup.cmdline({ "/", "?" }, {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = "buffer" },
+        },
+      })
+
+      cmp.setup.cmdline(":", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = "path" },
+        }, {
+          { name = "cmdline" },
         }),
       })
     end,
