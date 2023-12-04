@@ -11,7 +11,7 @@ return {
   {
     dir = "~/Code/solarized.nvim",
     priority = 1000,
-    enabled = true,
+    enabled = false,
     config = function()
       require("solarized").setup()
       vim.cmd([[colorscheme solarized]])
@@ -107,8 +107,9 @@ return {
   },
   {
     "ellisonleao/gruvbox.nvim",
+    lazy = false,
     priority = 1000,
-    enabled = false,
+    enabled = true,
     config = function()
       local bg = vim.o.background
       local palette = require("gruvbox").palette
