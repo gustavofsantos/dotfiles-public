@@ -1,15 +1,21 @@
 return {
   "tpope/vim-sleuth",
-  "tpope/vim-surround",
   "mbbill/undotree",
   "justinmk/vim-sneak",
   "AndrewRadev/switch.vim",
   "christoomey/vim-tmux-runner",
-  "numToStr/Comment.nvim",
+  {
+    "numToStr/Comment.nvim",
+    event = "VeryLazy",
+    opts = {},
+  },
   {
     "cshuaimin/ssr.nvim",
     event = "VeryLazy",
-    enabled = false,
+    enabled = true,
+    config = function()
+      require("ssr").setup({})
+    end,
     keys = {
       {
         "<leader>sR",
@@ -20,6 +26,14 @@ return {
         desc = "Structural Replace",
       },
     },
+  },
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup()
+    end,
   },
   {
     "tpope/vim-projectionist",
