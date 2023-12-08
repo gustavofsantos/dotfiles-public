@@ -26,7 +26,6 @@ return {
         },
         completion = {
           completeopt = "menu,menuone,noinsert",
-          keyword_length = 3,
         },
         snippet = {
           expand = function(args)
@@ -70,7 +69,7 @@ return {
 
       cmp.setup.filetype("gitcommit", {
         sources = cmp.config.sources({
-          { name = "git" }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
+          { name = "git" },
         }, {
           { name = "buffer" },
         }),
