@@ -54,6 +54,19 @@ vim.opt.showtabline = 1
 vim.opt.mouse = "nv"
 -- vim.opt.colorcolumn = "100"
 
+-- neovide
+if vim.g.neovide then
+  vim.o.guifont = "MonoLisa Nerd Font:h9"
+  vim.g.transparency = 0.8
+  vim.g.neovide_floating_blur_amount_x = 2.0
+  vim.g.neovide_floating_blur_amount_y = 2.0
+  vim.g.neovide_floating_shadow = true
+  vim.g.neovide_floating_z_height = 10
+  vim.g.neovide_light_angle_degrees = 45
+  vim.g.neovide_light_radius = 5
+  vim.g.neovide_scroll_animation_length = 0.1
+end
+
 -- statusline settings
 local function get_git_branch()
   local fd = io.popen("git rev-parse --abbrev-ref HEAD 2>/dev/null")

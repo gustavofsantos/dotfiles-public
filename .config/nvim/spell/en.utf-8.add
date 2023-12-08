@@ -3,3 +3,4 @@ config
 lualine
 adds
 adds
+neovide
