@@ -4,8 +4,7 @@ return {
     force_reverse_video_cursor = true,
     color_scheme = "GruvboxDark",
 
-    -- font
-    font = wezterm.font("MonoLisa Nerd Font", { weight = "Regular" }),
+    font = wezterm.font("MonoLisa Nerd Font"),
     font_size = 10.0,
 
     window_padding = {
