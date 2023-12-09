@@ -245,13 +245,39 @@ themes {
     cyan "#6a9589"
     white "#c8c093"
     orange "#ffa066"
-  }
+  },
+gruvbox-light {
+    fg 124 111 100
+    bg 251 82 75
+    black 40 40 40
+    red 205 75 69
+    green 152 151 26
+    yellow 215 153 33
+    blue 69 133 136
+    magenta 177 98 134
+    cyan 104 157 106
+    white 213 196 161
+    orange 214 93 14
+}
+gruvbox-dark {
+    fg 213 196 161
+    bg 40 40 40
+    black 60 56 54
+    red 204 36 29
+    green 152 151 26
+    yellow 215 153 33
+    blue 69 133 136
+    magenta 177 98 134
+    cyan 104 157 106
+    white 251 241 199
+    orange 214 93 14
+}
 }
 
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "kanagawa"
+theme "gruvbox-dark"
 
 // The name of the default layout to load on startup
 // Default: "default"
@@ -261,7 +287,7 @@ theme "kanagawa"
 // Choose the mode that zellij uses when starting up.
 // Default: normal
 //
-// default_mode "locked"
+default_mode "locked"
 
 // Toggle enabling the mouse mode.
 // On certain configurations, or terminals this could
