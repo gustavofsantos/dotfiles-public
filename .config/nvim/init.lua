@@ -40,7 +40,6 @@ require("keymappings")
 require("lazy").setup({
   { import = "extra.plugins" },
 }, {
-  defaults = { lazy = true },
   checker = {
     enabled = false,
     notify = false,

@@ -51,6 +51,10 @@ return {
         typeStyle = { italic = true },
         variablebuiltinStyle = { italic = true },
         transparent = false,
+        background = {
+          dark = "wave",
+          light = "lotus"
+        },
         colors = {
           theme = {
             all = {
