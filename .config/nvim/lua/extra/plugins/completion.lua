@@ -1,8 +1,6 @@
 ---@diagnostic disable: missing-fields
 return {
-  {
-    "hrsh7th/vim-vsnip",
-  },
+  { "hrsh7th/vim-vsnip" },
   {
     "hrsh7th/nvim-cmp",
     event = { "InsertEnter", "CmdlineEnter" },
@@ -14,6 +12,7 @@ return {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-vsnip",
       "onsails/lspkind.nvim",
+      "zbirenbaum/copilot-cmp",
     },
     config = function()
       local cmp = require("cmp")
@@ -90,11 +89,7 @@ return {
           { name = "cmdline" },
         }),
       })
-    end,
-  },
-  {
-    "zbirenbaum/copilot-cmp",
-    config = function()
+
       require("copilot_cmp").setup()
     end,
   },
