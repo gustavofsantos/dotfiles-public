@@ -11,21 +11,20 @@ return {
   },
   {
     "cshuaimin/ssr.nvim",
+    dependencies = { "folke/which-key.nvim" },
     event = "VeryLazy",
     enabled = true,
     config = function()
       require("ssr").setup({})
+      local wk = require("which-key")
+
+      wk.register({
+        s = {
+          name = "Structural Replace",
+          R = { "<cmd>lua require('ssr').open()<CR>", "Replace" },
+        },
+      }, { prefix = "<leader>" })
     end,
-    keys = {
-      {
-        "<leader>sR",
-        function()
-          require("ssr").open()
-        end,
-        mode = { "n", "x" },
-        desc = "Structural Replace",
-      },
-    },
   },
   {
     "kylechui/nvim-surround",
@@ -38,6 +37,7 @@ return {
   {
     "tpope/vim-projectionist",
     event = "BufRead",
+    dependencies = { "folke/which-key.nvim" },
     config = function()
       vim.g.projectionist_heuristics = {
         ["*"] = {
@@ -53,10 +53,13 @@ return {
           },
         },
       }
+
+      local wk = require("which-key")
+
+      wk.register({
+        ga = { "<cmd>A<CR>", "Alternate file" },
+      })
     end,
-    keys = {
-      { "ga", "<cmd>A<CR>", desc = "Alternate file" },
-    },
   },
   {
     "zbirenbaum/copilot.lua",
@@ -91,17 +94,13 @@ return {
     event = "BufRead",
     config = function()
       require("refactoring").setup()
+      local wk = require("which-key")
+
+      wk.register({
+        ["<leader>r"] = { name = "+refactor" },
+        ["<leader>rr"] = { "<cmd>lua require('refactoring').select_refactor()<CR>", "Select refactor" },
+      })
     end,
-    keys = {
-      {
-        "<leader>rr",
-        function()
-          require("refactoring").select_refactor()
-        end,
-        mode = { "n", "x" },
-        desc = "Refactor",
-      },
-    },
   },
   {
     "folke/flash.nvim",

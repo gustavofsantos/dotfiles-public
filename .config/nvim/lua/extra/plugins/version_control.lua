@@ -1,8 +1,14 @@
 return {
-  "tpope/vim-fugitive",
-  "tpope/vim-rhubarb",
   {
-    "lewis6991/gitsigns.nvim",
+    "tpope/vim-fugitive",
+    dependencies = {
+      "tpope/vim-rhubarb",
+      "lewis6991/gitsigns.nvim",
+      "2kabhishek/co-author.nvim",
+      "folke/which-key.nvim",
+      "stevearc/dressing.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
     event = "BufRead",
     config = function()
       local gitsigns = require("gitsigns")
@@ -23,18 +29,40 @@ return {
           untracked = { text = "░" },
         },
       })
+
+      local wk = require("which-key")
+      wk.register({
+        g = {
+          name = "Git",
+          s = { "<cmd>Git<cr>", "Git status" },
+          b = { "<cmd>Git blame<cr>", "Git blame" },
+          c = { "<cmd>Git commit<cr>", "Git commit" },
+          d = { "<cmd>Git diff<cr>", "Git diff" },
+          D = { "<cmd>Git diff --cached<cr>", "Git diff staged" },
+          l = { "<cmd>Git log<cr>", "Git log" },
+          p = { "<cmd>Git push<cr>", "Git push" },
+          P = { "<cmd>Git pull<cr>", "Git pull" },
+          r = { "<cmd>Git reset<cr>", "Git reset" },
+          R = { "<cmd>Git restore<cr>", "Git restore" },
+          H = { "<cmd>Gitsigns preview_hunk<cr>", "Preview hunk" },
+          I = { "<cmd>GitCoAuthors<cr>", "Insert co-author" },
+        },
+        h = {
+          name = "Hunk",
+          s = { "<cmd>Gitsigns stage_hunk<cr>", "Stage hunk" },
+          r = { "<cmd>Gitsigns reset_hunk<cr>", "Reset hunk" },
+          p = { "<cmd>Gitsigns preview_hunk<cr>", "Preview hunk" },
+        },
+      }, {
+        prefix = "<leader>",
+      })
+
+      wk.register({
+        ["]h"] = { "<cmd>Gitsigns next_hunk<cr>", "Next hunk" },
+        ["[h"] = { "<cmd>Gitsigns prev_hunk<cr>", "Previous hunk" },
+        ["gH"] = { "<cmd>Gitsigns preview_hunk<cr>", "Preview hunk" },
+      })
     end,
-    keys = {
-      { "<leader>gs", "<cmd>Git<cr>", desc = "Git status" },
-      { "]h", "<cmd>Gitsigns next_hunk<cr>", desc = "Next hunk" },
-      { "[h", "<cmd>Gitsigns prev_hunk<cr>", desc = "Previous hunk" },
-      { "gH", "<cmd>Gitsigns preview_hunk<cr>", desc = "Preview hunk" },
-      { "<leader>hp", "<cmd>Gitsigns preview_hunk<cr>", desc = "Preview hunk" },
-      { "<leader>hs", "<cmd>Gitsigns stage_hunk<cr>", desc = "Stage hunk" },
-      { "<leader>hr", "<cmd>Gitsigns reset_hunk<cr>", desc = "Reset hunk" },
-      { "dgu", "<cmd>diffget //2<cr>", desc = "Diff get from upstream" },
-      { "dgl", "<cmd>diffget //3<cr>", desc = "Diff get from local" },
-    },
   },
   {
     "sindrets/diffview.nvim",
@@ -138,35 +166,18 @@ return {
     },
   },
   {
-    "2kabhishek/co-author.nvim",
-    dependencies = {
-      "stevearc/dressing.nvim",
-      "nvim-telescope/telescope.nvim",
-    },
-    cmd = "GitCoAuthors",
-  },
-  {
     "topaxi/gh-actions.nvim",
-    cmd = "GhActions",
-    keys = {
-      { "<leader>gh", "<cmd>GhActions<cr>", desc = "Open Github Actions" },
-    },
-    -- optional, you can also install and use `yq` instead.
-    build = "make",
-    dependencies = { "nvim-lua/plenary.nvim", "MunifTanjim/nui.nvim" },
-    opts = {},
-    config = function(_, opts)
-      require("gh-actions").setup(opts)
-    end,
-  },
-  {
-    "pwntester/octo.nvim",
     event = "VeryLazy",
-    requires = {
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim",
-      "nvim-tree/nvim-web-devicons",
-    },
-    opts = {},
+    build = "make",
+    dependencies = { "nvim-lua/plenary.nvim", "MunifTanjim/nui.nvim", "pwntester/octo.nvim" },
+    config = function()
+      require("gh-actions").setup()
+
+      local wk = require("which-key")
+      wk.register({
+        ["<leader>G"] = { name = "+github" },
+        ["<leader>GH"] = { "<cmd>GhActions<cr>", "GitHub Actions" },
+      })
+    end,
   },
 }

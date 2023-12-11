@@ -198,6 +198,7 @@ return {
         function()
           require("telescope.builtin").search_history()
         end,
+        desc = "Search history",
       },
 
       {

@@ -134,10 +134,10 @@ return {
           vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
           vim.keymap.set("n", "<leader>fs", function()
             telescope.lsp_document_symbols()
-          end, opts)
+          end, { buffer = ev.buf, desc = "Find document symbols" })
           vim.keymap.set("n", "<leader>fS", function()
             telescope.lsp_dynamic_workspace_symbols()
-          end, opts)
+          end, { buffer = ev.buf, desc = "Find workspace symbols" })
         end,
       })
 
