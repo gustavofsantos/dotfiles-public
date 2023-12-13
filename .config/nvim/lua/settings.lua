@@ -67,16 +67,7 @@ if vim.g.neovide then
   vim.g.neovide_scroll_animation_length = 0.1
 end
 
--- statusline settings
-local function get_git_branch()
-  local fd = io.popen("git rev-parse --abbrev-ref HEAD 2>/dev/null")
-  local branch = fd:read("*l")
-  fd:close()
-  return branch and #branch > 0 and " " .. branch or ""
-end
 vim.opt.statusline = [[%f]]
-vim.opt.statusline:append(" | ")
-vim.opt.statusline:append(get_git_branch())
 vim.opt.statusline:append(" %=")
 vim.opt.statusline:append("%{&ft}")
 
