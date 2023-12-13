@@ -75,6 +75,7 @@ return {
           python = true,
           lua = true,
           shell = true,
+          sh = true,
           markdown = true,
           ["*"] = false,
         },

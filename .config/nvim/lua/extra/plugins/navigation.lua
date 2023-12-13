@@ -216,14 +216,6 @@ return {
       },
 
       {
-        "<leader>gb",
-        function()
-          require("telescope.builtin").git_branches()
-        end,
-        desc = "Checkout branch",
-      },
-
-      {
         "<leader>f?",
         function()
           require("telescope.builtin").help_tags()

@@ -36,6 +36,7 @@ return {
           name = "Git",
           s = { "<cmd>Git<cr>", "Git status" },
           b = { "<cmd>Git blame<cr>", "Git blame" },
+          B = { "<cmd>lua require('telescope.builtin').git_branches()<CR>", "Checkout branch" },
           c = { "<cmd>Git commit<cr>", "Git commit" },
           d = { "<cmd>Git diff<cr>", "Git diff" },
           D = { "<cmd>Git diff --cached<cr>", "Git diff staged" },

@@ -18,6 +18,15 @@ return {
     end,
   },
   {
+    dir = "~/Code/jellybeans.nvim",
+    priority = 1000,
+    enabled = true,
+    config = function()
+      require("jellybeans").setup()
+      vim.cmd([[colorscheme jellybeans]])
+    end,
+  },
+  {
     dir = "~/Code/jb.nvim",
     priority = 1000,
     enabled = false,
@@ -39,7 +48,7 @@ return {
     "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
-    enabled = true,
+    enabled = false,
     config = function()
       require("kanagawa").setup({
         dimInactive = false,
@@ -53,7 +62,7 @@ return {
         transparent = false,
         background = {
           dark = "wave",
-          light = "lotus"
+          light = "lotus",
         },
         colors = {
           theme = {
