@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Fetches the address from the given CEP using the ViaCEP API and CURL
+POSTAL_CODE=$1
+
+curl -s "https://viacep.com.br/ws/$POSTAL_CODE/json/" | jq
+
