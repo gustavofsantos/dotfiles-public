@@ -99,8 +99,9 @@ return {
             hidden = true,
             previewer = true,
             cwd_to_path = true,
+            select_buffer = true,
             hijack_netrw = true,
-            display_stat = { date = false, size = true, mode = false },
+            display_stat = false,
           },
         },
       })
