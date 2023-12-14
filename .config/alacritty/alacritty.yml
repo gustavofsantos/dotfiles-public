@@ -48,12 +48,6 @@ mouse:
   # hide_when_typing: true
   save_to_clipboard: true
 
-key_bindings:
-  - { action: ToggleFullscreen , key: F11}
-
-mouse_bindings:
-  - { action: PasteSelection , mouse: Middle}
-
 
 # cursor:
 #   # Cursor style
