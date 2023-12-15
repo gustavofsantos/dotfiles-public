@@ -6,7 +6,7 @@ return {
 
     font = wezterm.font("MonoLisa Nerd Font"),
     -- font_size = 10.0,
-    font_size = 14.6,
+    font_size = 12.6,
     freetype_load_flags = "NO_HINTING",
     freetype_load_target = "Normal",
     front_end = "OpenGL",
