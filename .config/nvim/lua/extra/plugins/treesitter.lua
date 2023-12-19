@@ -31,6 +31,7 @@ return {
         "prisma",
         "python",
         "vim",
+        "vimdoc",
         "elixir",
         "css",
         "eex",

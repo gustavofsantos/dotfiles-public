@@ -7,7 +7,7 @@ return {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-symbols.nvim",
       "nvim-telescope/telescope-file-browser.nvim",
-      "xiyaowong/telescope-emoji.nvim",
+      "anuvyklack/hydra.nvim",
       {
         "nvim-telescope/telescope-fzf-native.nvim",
         build = "make",
@@ -107,17 +107,44 @@ return {
       })
 
       telescope.load_extension("file_browser")
-      telescope.load_extension("emoji")
+
+      local Hydra = require("hydra")
+
+      local hint = [[
+_r_: resume     _f_: files      _z_: buffer     _e_: recent
+_b_: buffers    _g_: git        _l_: live       _k_: keymaps
+_h_: history    _c_: commits    _?_: help
+^
+_q_: quit
+]]
+
+      Hydra({
+        name = "Find",
+        hint = hint,
+        mode = { "n" },
+        body = "<leader>f",
+        config = {
+          invoke_on_body = true,
+          hint = {
+            border = "rounded",
+          },
+        },
+        heads = {
+          { "r", "<cmd>Telescope resume<cr>", { silent = true, desc = "Resume search", exit = true } },
+          { "f", "<cmd>Telescope find_files<cr>", { silent = true, desc = "Find files", exit = true } },
+          { "e", "<cmd>Telescope oldfiles<cr>", { silent = true, desc = "Find recent files", exit = true } },
+          { "b", "<cmd>Telescope buffers<cr>", { silent = true, desc = "Find buffers", exit = true } },
+          { "g", "<cmd>Telescope git_files<cr>", { silent = true, desc = "Find git files", exit = true } },
+          { "l", "<cmd>Telescope live_grep<cr>", { silent = true, desc = "Live grep", exit = true } },
+          { "k", "<cmd>Telescope keymaps<cr>", { silent = true, desc = "Find keymaps", exit = true } },
+          { "h", "<cmd>Telescope search_history<cr>", { silent = true, desc = "Search history", exit = true } },
+          { "c", "<cmd>Telescope git_bcommits<cr>", { silent = true, desc = "Find commits in buffer", exit = true } },
+          { "?", "<cmd>Telescope help_tags<cr>", { silent = true, desc = "Find help", exit = true } },
+          { "q", nil, { exit = true, nowait = true, desc = "Exit" } },
+        },
+      })
     end,
     keys = {
-      {
-        "<leader>fr",
-        function()
-          require("telescope.builtin").resume()
-        end,
-        desc = "Resume search",
-      },
-
       {
         "<F3>",
         function()
@@ -151,77 +178,9 @@ return {
       },
 
       {
-        "<leader>fe",
-        function()
-          require("telescope.builtin").oldfiles()
-        end,
-        desc = "Find recent files",
-      },
-      {
-        "<leader>fE",
-        "<cmd>Telescope emoji<CR>",
-        desc = "Find emoji",
-      },
-      {
-        "<leader>fb",
-        function()
-          require("telescope.builtin").buffers()
-        end,
-        desc = "Find buffers",
-      },
-
-      {
-        "<leader>fg",
-        function()
-          require("telescope.builtin").git_files()
-        end,
-        desc = "Find git files",
-      },
-
-      {
-        "<leader>fl",
-        function()
-          require("telescope.builtin").live_grep()
-        end,
-        desc = "Live grep",
-      },
-
-      {
-        "<leader>fk",
-        function()
-          require("telescope.builtin").keymaps()
-        end,
-        desc = "Find keymaps",
-      },
-
-      {
-        "<leader>fh",
-        function()
-          require("telescope.builtin").search_history()
-        end,
-        desc = "Search history",
-      },
-
-      {
         "<c-b>",
         "<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>",
         desc = "Browse files",
-      },
-
-      {
-        "<leader>fc",
-        function()
-          require("telescope.builtin").git_bcommits()
-        end,
-        desc = "Find commits in buffer",
-      },
-
-      {
-        "<leader>f?",
-        function()
-          require("telescope.builtin").help_tags()
-        end,
-        desc = "Find help",
       },
     },
   },

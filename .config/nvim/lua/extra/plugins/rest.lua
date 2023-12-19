@@ -1,7 +1,7 @@
 return {
   {
     "rest-nvim/rest.nvim",
-    dependencies = { "nvim-lua/plenary.nvim", "folke/which-key.nvim" },
+    dependencies = { "nvim-lua/plenary.nvim" },
     event = "VeryLazy",
     opts = {
       result_split_horizontal = false,
@@ -41,14 +41,14 @@ return {
     },
     config = function(_, opts)
       require("rest-nvim").setup(opts)
-      local wk = require("which-key")
-
-      wk.register({
-        R = {
-          name = "+REST",
-          R = { "<Plug>RestNvim<CR>", "Run request" },
-        },
-      }, { prefix = "<leader>" })
+      -- local wk = require("which-key")
+      --
+      -- wk.register({
+      --   R = {
+      --     name = "+REST",
+      --     R = { "<Plug>RestNvim<CR>", "Run request" },
+      --   },
+      -- }, { prefix = "<leader>" })
     end,
   },
 }

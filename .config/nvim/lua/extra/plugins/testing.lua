@@ -2,24 +2,30 @@ return {
   {
     "vim-test/vim-test",
     dependencies = {
-      "folke/which-key.nvim",
+      "anuvyklack/hydra.nvim",
     },
-    enabled = true,
-    event = "VeryLazy",
     config = function()
-      local wk = require("which-key")
+      local Hydra = require("hydra")
 
-      wk.register({
-        ["t"] = {
-          name = "+test",
-          ["a"] = { "<cmd>TestSuite<cr>", "Test all" },
-          ["f"] = { "<cmd>TestFile<cr>", "Test file" },
-          ["l"] = { "<cmd>TestLast<cr>", "Test last" },
-          ["n"] = { "<cmd>TestNearest<cr>", "Test nearest" },
-          ["v"] = { "<cmd>TestVisit<cr>", "Open latest test" },
+      Hydra({
+        name = "Test",
+        hint = [[ Test ]],
+        mode = { "n" },
+        body = "<leader>t",
+        config = {
+          invoke_on_body = true,
+          hint = {
+            border = "rounded",
+          },
         },
-      }, {
-        prefix = "<leader>",
+        heads = {
+          { "a", "<cmd>TestSuite<cr>", { silent = true, exit = true, desc = "Test all" } },
+          { "f", "<cmd>TestFile<cr>", { silent = true, exit = true, desc = "Test file" } },
+          { "l", "<cmd>TestLast<cr>", { silent = true, exit = true, desc = "Test last" } },
+          { "n", "<cmd>TestNearest<cr>", { silent = true, exit = true, desc = "Test nearest" } },
+          { "v", "<cmd>TestVisit<cr>", { silent = true, exit = true, desc = "Open latest test" } },
+          { "q", nil, { exit = true, nowait = true, desc = "Exit" } },
+        },
       })
     end,
   },

@@ -200,3 +200,29 @@ vim.api.nvim_create_user_command(
   ":vsp | :e ~/notes/worklog.md",
   { desc = "Open worklog file", bang = true, nargs = 0 }
 )
+
+vim.api.nvim_create_user_command("TaskNotes", function()
+  -- Get the current git branch name
+  local branch_name = vim.fn.system("git branch --show-current 2> /dev/null | tr -d '\n'")
+
+  -- Extract the file name after the first slash, if any
+  local filename = vim.fn.match("(.*)/(.+)", branch_name) or branch_name
+
+  -- Transform the filename to uppercase
+  filename = vim.fn.toupper(filename)
+
+  -- Construct the file path
+  local file_path = vim.fn.expand("~/.notes/loggi/" .. filename .. ".md")
+
+  -- Check if the file exists and is writable
+  if vim.fn.filewritable(file_path) then
+    vim.cmd("e " .. file_path)
+  else
+    -- Create the new markdown file
+    vim.cmd("enew " .. file_path)
+
+    -- Write a header with the transformed filename
+    local content = "# " .. filename .. "\n\n"
+    vim.fn.setfile(file_path, content)
+  end
+end, { desc = "Open task notes", bang = true, nargs = 0 })
