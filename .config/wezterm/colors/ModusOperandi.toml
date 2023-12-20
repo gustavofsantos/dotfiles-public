@@ -17,8 +17,8 @@ inactive_tab_edge = "#bbbbbb"
 inactive_tab_edge_hover = "#bfbfbf"
 
 [colors.tab_bar.active_tab]
-bg_color = "#ffffff"
-fg_color = "#000000"
+bg_color = "#813e00"
+fg_color = "#ffffff"
 intensity = "Normal"
 italic = false
 strikethrough = false
