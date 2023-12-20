@@ -1,3 +1,5 @@
+local utils = require("utils")
+
 return {
   {
     "vim-test/vim-test",
@@ -7,23 +9,15 @@ return {
     config = function()
       local Hydra = require("hydra")
 
-      Hydra({
+      utils.setup_hydra(Hydra, {
         name = "Test",
-        hint = [[ Test ]],
-        mode = { "n" },
         body = "<leader>t",
-        config = {
-          invoke_on_body = true,
-          hint = {
-            border = "rounded",
-          },
-        },
         heads = {
-          { "a", "<cmd>TestSuite<cr>", { silent = true, exit = true, desc = "Test all" } },
-          { "f", "<cmd>TestFile<cr>", { silent = true, exit = true, desc = "Test file" } },
-          { "l", "<cmd>TestLast<cr>", { silent = true, exit = true, desc = "Test last" } },
-          { "n", "<cmd>TestNearest<cr>", { silent = true, exit = true, desc = "Test nearest" } },
-          { "v", "<cmd>TestVisit<cr>", { silent = true, exit = true, desc = "Open latest test" } },
+          { "a", "<cmd>TestSuite<cr>", { silent = true, exit = true, desc = "test all" } },
+          { "f", "<cmd>TestFile<cr>", { silent = true, exit = true, desc = "test file" } },
+          { "l", "<cmd>TestLast<cr>", { silent = true, exit = true, desc = "test last" } },
+          { "n", "<cmd>TestNearest<cr>", { silent = true, exit = true, desc = "test nearest" } },
+          { "v", "<cmd>TestVisit<cr>", { silent = true, exit = true, desc = "open latest" } },
           { "q", nil, { exit = true, nowait = true, desc = "Exit" } },
         },
       })

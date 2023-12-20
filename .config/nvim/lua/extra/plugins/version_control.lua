@@ -1,3 +1,5 @@
+local utils = require("utils")
+
 return {
   {
     "lewis6991/gitsigns.nvim",
@@ -33,25 +35,12 @@ return {
         },
       })
 
-      local hint = [[
-_J_: next hunk    _K_: prev hunk    _l_: file history _x_: close dv
-_s_: stage hunk   _u_: undo stage   _S_: state buf    _p_: preview hunk
-_d_: deleted
-^
-_<Enter>_: status _q_: quit
-]]
-
-      Hydra({
+      utils.setup_hydra(Hydra, {
         name = "Git",
-        hint = hint,
         mode = { "n", "x" },
-        body = "<leader>g",
+        body = "<leader><Enter>",
         config = {
           color = "pink",
-          invoke_on_body = true,
-          hint = {
-            type = "cmdline",
-          },
           on_key = function()
             vim.wait(50)
           end,
@@ -96,14 +85,11 @@ _<Enter>_: status _q_: quit
             end,
             { expr = true, desc = "prev hunk" },
           },
-          { "l", ":DiffviewFileHistory %<cr>", { silent = true, exit = true, desc = "history" } },
-          { "x", ":DiffviewClose<cr>", { silent = true, exit = true, desc = "close diffview" } },
-          { "s", ":Gitsigns stage_hunk<CR>", { silent = true, desc = "stage hunk" } },
+          { "s", gitsigns.stage_hunk, { silent = true, desc = "stage hunk" } },
           { "u", gitsigns.undo_stage_hunk, { desc = "undo last stage" } },
           { "S", gitsigns.stage_buffer, { desc = "stage buffer" } },
           { "p", gitsigns.preview_hunk, { desc = "preview hunk" } },
           { "d", gitsigns.toggle_deleted, { nowait = true, desc = "toggle deleted" } },
-          { "<Enter>", "<cmd>Git<CR>", { silent = true, nowait = true, exit = true, desc = "Lazygit" } },
           { "q", nil, { exit = true, nowait = true, desc = "exit" } },
         },
       })
@@ -119,91 +105,21 @@ _<Enter>_: status _q_: quit
     config = function()
       local Hydra = require("hydra")
 
-      Hydra({
-        name = "Git integration",
-        mode = "n",
-        body = "<leader>G",
-        config = {
-          invoke_on_body = true,
-          hint = { type = "cmdline" },
-        },
+      utils.setup_hydra(Hydra, {
+        name = "Git",
+        body = "<leader>g",
         heads = {
-          { "p", "<cmd>Git pull<cr>", { desc = "Pull changes", silent = true } },
-          { "P", "<cmd>Git push<cr>", { desc = "Push changes", silent = true } },
-          { "c", "<cmd>Git<cr>", { desc = "Commit", silent = true, exit = true } },
-          { "b", "<cmd>Git blame<cr>", { desc = "Show blame", silent = true, exit = true } },
-          { "I", "<cmd>GitCoAuthors<cr>", { desc = "Insert co-author", silent = true, exit = true } },
+          { "s", "<cmd>Git<cr>", { desc = "status", silent = true, exit = true } },
+          { "p", "<cmd>Git pull<cr>", { desc = "pull changes", silent = true } },
+          { "P", "<cmd>Git push<cr>", { desc = "push changes", silent = true } },
+          { "b", "<cmd>Git blame<cr>", { desc = "blame", silent = true, exit = true } },
+          { "I", "<cmd>GitCoAuthors<cr>", { desc = "co-authors", silent = true, exit = true } },
+          { "l", "<cmd>Git log %<cr>", { silent = true, exit = true, desc = "history" } },
           { "q", nil, { exit = true, desc = "exit" } },
         },
       })
     end,
   },
-  -- {
-  --   "tpope/vim-fugitive",
-  --   dependencies = {
-  --     "tpope/vim-rhubarb",
-  --     "2kabhishek/co-author.nvim",
-  --     "folke/which-key.nvim",
-  --     "stevearc/dressing.nvim",
-  --     "nvim-telescope/telescope.nvim",
-  --   },
-  --   event = "BufRead",
-  --   enabled = false,
-  --   config = function()
-  --     local gitsigns = require("gitsigns")
-  --
-  --     gitsigns.setup({
-  --       signcolumn = true,
-  --       numhl = false,
-  --       linehl = false,
-  --       attach_to_untracked = false,
-  --       current_line_blame = false,
-  --       current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d>",
-  --       signs = {
-  --         add = { text = "▌" },
-  --         change = { text = "▌" },
-  --         delete = { text = "▌" },
-  --         topdelete = { text = "▌" },
-  --         changedelete = { text = "▌" },
-  --         untracked = { text = "░" },
-  --       },
-  --     })
-  --
-  --     local wk = require("which-key")
-  --     wk.register({
-  --       g = {
-  --         name = "Git",
-  --         s = { "<cmd>Git<cr>", "Git status" },
-  --         b = { "<cmd>Git blame<cr>", "Git blame" },
-  --         B = { "<cmd>lua require('telescope.builtin').git_branches()<CR>", "Checkout branch" },
-  --         c = { "<cmd>Git commit<cr>", "Git commit" },
-  --         d = { "<cmd>Git diff<cr>", "Git diff" },
-  --         D = { "<cmd>Git diff --cached<cr>", "Git diff staged" },
-  --         l = { "<cmd>Git log<cr>", "Git log" },
-  --         p = { "<cmd>Git push<cr>", "Git push" },
-  --         P = { "<cmd>Git pull<cr>", "Git pull" },
-  --         r = { "<cmd>Git reset<cr>", "Git reset" },
-  --         R = { "<cmd>Git restore<cr>", "Git restore" },
-  --         H = { "<cmd>Gitsigns preview_hunk<cr>", "Preview hunk" },
-  --         I = { "<cmd>GitCoAuthors<cr>", "Insert co-author" },
-  --       },
-  --       h = {
-  --         name = "Hunk",
-  --         s = { "<cmd>Gitsigns stage_hunk<cr>", "Stage hunk" },
-  --         r = { "<cmd>Gitsigns reset_hunk<cr>", "Reset hunk" },
-  --         p = { "<cmd>Gitsigns preview_hunk<cr>", "Preview hunk" },
-  --       },
-  --     }, {
-  --       prefix = "<leader>",
-  --     })
-  --
-  --     wk.register({
-  --       ["]h"] = { "<cmd>Gitsigns next_hunk<cr>", "Next hunk" },
-  --       ["[h"] = { "<cmd>Gitsigns prev_hunk<cr>", "Previous hunk" },
-  --       ["gH"] = { "<cmd>Gitsigns preview_hunk<cr>", "Preview hunk" },
-  --     })
-  --   end,
-  -- },
   {
     "sindrets/diffview.nvim",
     event = "VeryLazy",

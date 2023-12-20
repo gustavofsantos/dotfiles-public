@@ -1,3 +1,5 @@
+local utils = require("utils")
+
 return {
   "christoomey/vim-tmux-navigator",
   {
@@ -110,25 +112,9 @@ return {
 
       local Hydra = require("hydra")
 
-      local hint = [[
-_r_: resume     _f_: files      _e_: recent     _b_: buffers
-_g_: git        _l_: live       _k_: keymaps    _c_: commits
-_h_: history    _?_: help
-^
-_q_: quit
-]]
-
-      Hydra({
+      utils.setup_hydra(Hydra, {
         name = "Find",
-        hint = hint,
-        mode = { "n" },
         body = "<leader>f",
-        config = {
-          invoke_on_body = true,
-          hint = {
-            type = "cmdline",
-          },
-        },
         heads = {
           { "r", "<cmd>Telescope resume<cr>", { silent = true, desc = "Resume search", exit = true } },
           { "f", "<cmd>Telescope find_files<cr>", { silent = true, desc = "Find files", exit = true } },
