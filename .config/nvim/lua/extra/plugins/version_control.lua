@@ -1,15 +1,17 @@
 return {
   {
-    "tpope/vim-fugitive",
+    "lewis6991/gitsigns.nvim",
     dependencies = {
-      "tpope/vim-rhubarb",
       "nvim-lua/plenary.nvim",
       "sindrets/diffview.nvim",
       "nvim-telescope/telescope.nvim",
-      "lewis6991/gitsigns.nvim",
       "anuvyklack/hydra.nvim",
     },
     event = "BufRead",
+    keys = {
+      { "]h", "<cmd>Gitsigns next_hunk<cr>", desc = "Next hunk" },
+      { "[h", "<cmd>Gitsigns prev_hunk<cr>", desc = "Previous hunk" },
+    },
     config = function()
       local gitsigns = require("gitsigns")
       local Hydra = require("hydra")
@@ -34,7 +36,7 @@ return {
       local hint = [[
 _J_: next hunk    _K_: prev hunk    _l_: file history _x_: close dv
 _s_: stage hunk   _u_: undo stage   _S_: state buf    _p_: preview hunk
-_d_: deleted      _b_: blame        _/_: base file
+_d_: deleted
 ^
 _<Enter>_: status _q_: quit
 ]]
@@ -48,7 +50,7 @@ _<Enter>_: status _q_: quit
           color = "pink",
           invoke_on_body = true,
           hint = {
-            border = "rounded",
+            type = "cmdline",
           },
           on_key = function()
             vim.wait(50)
@@ -101,17 +103,37 @@ _<Enter>_: status _q_: quit
           { "S", gitsigns.stage_buffer, { desc = "stage buffer" } },
           { "p", gitsigns.preview_hunk, { desc = "preview hunk" } },
           { "d", gitsigns.toggle_deleted, { nowait = true, desc = "toggle deleted" } },
-          { "b", "<cmd>Git blame<cr>", { desc = "Show blame" } },
-          { "/", gitsigns.show, { exit = true, desc = "show base file" } }, -- show the base of the file
-          {
-            "<Enter>",
-            "<cmd>Git<CR>",
-            -- function()
-            --   lazygit:toggle()
-            -- end,
-            { silent = true, nowait = true, exit = true, desc = "Lazygit" },
-          },
+          { "<Enter>", "<cmd>Git<CR>", { silent = true, nowait = true, exit = true, desc = "Lazygit" } },
           { "q", nil, { exit = true, nowait = true, desc = "exit" } },
+        },
+      })
+    end,
+  },
+
+  {
+    "tpope/vim-fugitive",
+    dependencies = {
+      "tpope/vim-rhubarb",
+      "2kabhishek/co-author.nvim",
+    },
+    config = function()
+      local Hydra = require("hydra")
+
+      Hydra({
+        name = "Git integration",
+        mode = "n",
+        body = "<leader>G",
+        config = {
+          invoke_on_body = true,
+          hint = { type = "cmdline" },
+        },
+        heads = {
+          { "p", "<cmd>Git pull<cr>", { desc = "Pull changes", silent = true } },
+          { "P", "<cmd>Git push<cr>", { desc = "Push changes", silent = true } },
+          { "c", "<cmd>Git<cr>", { desc = "Commit", silent = true, exit = true } },
+          { "b", "<cmd>Git blame<cr>", { desc = "Show blame", silent = true, exit = true } },
+          { "I", "<cmd>GitCoAuthors<cr>", { desc = "Insert co-author", silent = true, exit = true } },
+          { "q", nil, { exit = true, desc = "exit" } },
         },
       })
     end,
