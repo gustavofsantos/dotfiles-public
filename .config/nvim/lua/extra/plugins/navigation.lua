@@ -111,9 +111,9 @@ return {
       local Hydra = require("hydra")
 
       local hint = [[
-_r_: resume     _f_: files      _z_: buffer     _e_: recent
-_b_: buffers    _g_: git        _l_: live       _k_: keymaps
-_h_: history    _c_: commits    _?_: help
+_r_: resume     _f_: files      _e_: recent     _b_: buffers
+_g_: git        _l_: live       _k_: keymaps    _c_: commits
+_h_: history    _?_: help
 ^
 _q_: quit
 ]]
@@ -126,7 +126,7 @@ _q_: quit
         config = {
           invoke_on_body = true,
           hint = {
-            border = "rounded",
+            type = "cmdline",
           },
         },
         heads = {
