@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 
 return {
     force_reverse_video_cursor = true,
-    color_scheme = "Kanagawa",
+    color_scheme = "ModusVivendi",
 
     font = wezterm.font("MonoLisa Nerd Font"),
     -- font_size = 10.0,

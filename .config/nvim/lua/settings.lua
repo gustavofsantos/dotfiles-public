@@ -2,11 +2,11 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.opt.termguicolors = true
-vim.opt.background = "dark"
+vim.opt.background = "light"
 vim.opt.hidden = true
 vim.opt.encoding = "utf-8"
-vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.number = false
+vim.opt.relativenumber = false
 vim.opt.hidden = true
 vim.opt.ai = true
 vim.opt.si = true

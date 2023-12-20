@@ -48,7 +48,7 @@ return {
     "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
-    enabled = true,
+    enabled = false,
     config = function()
       require("kanagawa").setup({
         dimInactive = false,
@@ -167,6 +167,22 @@ return {
       })
 
       vim.cmd([[colorscheme gruvbox]])
+    end,
+  },
+  {
+    "miikanissi/modus-themes.nvim",
+    priority = 1000,
+    config = function()
+      require("modus-themes").setup({
+        styles = {
+          comments = { italic = true },
+          keywords = { italic = true },
+          functions = {},
+          variables = {},
+        },
+      })
+
+      vim.cmd([[colorscheme modus]])
     end,
   },
 }
