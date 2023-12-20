@@ -21,7 +21,7 @@ return {
       cmp.setup({
         preselect = "None",
         performance = {
-          debounce = 300,
+          debounce = 500,
         },
         completion = {
           completeopt = "menu,menuone,noinsert",
@@ -31,10 +31,10 @@ return {
             vim.fn["vsnip#anonymous"](args.body)
           end,
         },
-        window = {
-          completion = cmp.config.window.bordered(),
-          documentation = cmp.config.window.bordered(),
-        },
+        -- window = {
+        --   completion = cmp.config.window.bordered(),
+        --   documentation = cmp.config.window.bordered(),
+        -- },
         mapping = cmp.mapping.preset.insert({
           ["<C-b>"] = cmp.mapping.scroll_docs(-4),
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
