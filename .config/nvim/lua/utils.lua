@@ -46,7 +46,8 @@ local setup_hydra = function(H, opts)
     config = {
       invoke_on_body = true,
       hint = {
-        border = "rounded",
+        type = "cmdline",
+        -- border = "rounded",
       },
     },
   }))

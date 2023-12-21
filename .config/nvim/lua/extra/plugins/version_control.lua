@@ -102,6 +102,7 @@ return {
       "tpope/vim-rhubarb",
       "2kabhishek/co-author.nvim",
     },
+    event = "VeryLazy",
     config = function()
       local Hydra = require("hydra")
 
