@@ -1,13 +1,14 @@
-local utils = require("utils")
-
 return {
   {
     "lewis6991/gitsigns.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
+      "tpope/vim-fugitive",
+      "tpope/vim-rhubarb",
       "sindrets/diffview.nvim",
       "nvim-telescope/telescope.nvim",
-      "anuvyklack/hydra.nvim",
+      "2kabhishek/co-author.nvim",
+      "folke/which-key.nvim",
     },
     event = "BufRead",
     keys = {
@@ -16,7 +17,7 @@ return {
     },
     config = function()
       local gitsigns = require("gitsigns")
-      local Hydra = require("hydra")
+      local wk = require("which-key")
 
       gitsigns.setup({
         signcolumn = true,
@@ -35,88 +36,17 @@ return {
         },
       })
 
-      utils.setup_hydra(Hydra, {
-        name = "Git",
-        mode = { "n", "x" },
-        body = "<leader><Enter>",
-        config = {
-          color = "pink",
-          on_key = function()
-            vim.wait(50)
-          end,
-          on_enter = function()
-            vim.cmd("mkview")
-            vim.cmd("silent! %foldopen!")
-            gitsigns.toggle_linehl(true)
-          end,
-          on_exit = function()
-            local cursor_pos = vim.api.nvim_win_get_cursor(0)
-            vim.cmd("loadview")
-            vim.api.nvim_win_set_cursor(0, cursor_pos)
-            vim.cmd("normal zv")
-            gitsigns.toggle_linehl(false)
-            gitsigns.toggle_deleted(false)
-          end,
-        },
-        heads = {
-          {
-            "J",
-            function()
-              if vim.wo.diff then
-                return "]c"
-              end
-              vim.schedule(function()
-                gitsigns.next_hunk()
-              end)
-              return "<Ignore>"
-            end,
-            { expr = true, desc = "next hunk" },
-          },
-          {
-            "K",
-            function()
-              if vim.wo.diff then
-                return "[c"
-              end
-              vim.schedule(function()
-                gitsigns.prev_hunk()
-              end)
-              return "<Ignore>"
-            end,
-            { expr = true, desc = "prev hunk" },
-          },
-          { "s", gitsigns.stage_hunk, { silent = true, desc = "stage hunk" } },
-          { "u", gitsigns.undo_stage_hunk, { desc = "undo last stage" } },
-          { "S", gitsigns.stage_buffer, { desc = "stage buffer" } },
-          { "p", gitsigns.preview_hunk, { desc = "preview hunk" } },
-          { "d", gitsigns.toggle_deleted, { nowait = true, desc = "toggle deleted" } },
-          { "q", nil, { exit = true, nowait = true, desc = "exit" } },
-        },
-      })
-    end,
-  },
-
-  {
-    "tpope/vim-fugitive",
-    dependencies = {
-      "tpope/vim-rhubarb",
-      "2kabhishek/co-author.nvim",
-    },
-    event = "VeryLazy",
-    config = function()
-      local Hydra = require("hydra")
-
-      utils.setup_hydra(Hydra, {
-        name = "Git",
-        body = "<leader>g",
-        heads = {
-          { "s", "<cmd>Git<cr>", { desc = "status", silent = true, exit = true } },
-          { "p", "<cmd>Git pull<cr>", { desc = "pull changes", silent = true } },
-          { "P", "<cmd>Git push<cr>", { desc = "push changes", silent = true } },
-          { "b", "<cmd>Git blame<cr>", { desc = "blame", silent = true, exit = true } },
-          { "I", "<cmd>GitCoAuthors<cr>", { desc = "co-authors", silent = true, exit = true } },
-          { "l", "<cmd>Git log %<cr>", { silent = true, exit = true, desc = "history" } },
-          { "q", nil, { exit = true, desc = "exit" } },
+      wk.register({
+        ["<leader>g"] = {
+          name = "+git",
+          s = { "<cmd>Git<cr>", "Status" },
+          b = { "<cmd>Git blame<cr>", "Blame" },
+          l = { "<cmd>Git log %<cr>", "Buffer history" },
+          p = { "<cmd>Git pull<cr>", "Pull changes" },
+          P = { "<cmd>Git push<cr>", "Push changes" },
+          I = { "<cmd>GitCoAuthors<cr>", "Co-authors" },
+          T = { gitsigns.toggle_linehl, "Toggle highlight" },
+          S = { gitsigns.stage_hunk, "Stage hunk" },
         },
       })
     end,
@@ -221,20 +151,5 @@ return {
       { "<leader>dvo", "<cmd>DiffviewOpen<cr>", desc = "Open diff view" },
       { "<leader>dvc", "<cmd>DiffviewClose<cr>", desc = "Close diff view" },
     },
-  },
-  {
-    "topaxi/gh-actions.nvim",
-    event = "VeryLazy",
-    build = "make",
-    dependencies = { "nvim-lua/plenary.nvim", "MunifTanjim/nui.nvim", "pwntester/octo.nvim" },
-    config = function()
-      require("gh-actions").setup()
-
-      -- local wk = require("which-key")
-      -- wk.register({
-      --   ["<leader>G"] = { name = "+github" },
-      --   ["<leader>GH"] = { "<cmd>GhActions<cr>", "GitHub Actions" },
-      -- })
-    end,
   },
 }

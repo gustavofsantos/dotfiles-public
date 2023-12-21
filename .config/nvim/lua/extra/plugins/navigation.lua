@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 return {
   "christoomey/vim-tmux-navigator",
   {
@@ -9,7 +7,7 @@ return {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-symbols.nvim",
       "nvim-telescope/telescope-file-browser.nvim",
-      "anuvyklack/hydra.nvim",
+      "folke/which-key.nvim",
       {
         "nvim-telescope/telescope-fzf-native.nvim",
         build = "make",
@@ -110,23 +108,21 @@ return {
 
       telescope.load_extension("file_browser")
 
-      local Hydra = require("hydra")
+      local wk = require("which-key")
 
-      utils.setup_hydra(Hydra, {
-        name = "Find",
-        body = "<leader>f",
-        heads = {
-          { "r", "<cmd>Telescope resume<cr>", { silent = true, desc = "resumo", exit = true } },
-          { "f", "<cmd>Telescope find_files<cr>", { silent = true, desc = "files", exit = true } },
-          { "e", "<cmd>Telescope oldfiles<cr>", { silent = true, desc = "recent", exit = true } },
-          { "b", "<cmd>Telescope buffers<cr>", { silent = true, desc = "buffers", exit = true } },
-          { "g", "<cmd>Telescope git_files<cr>", { silent = true, desc = "git files", exit = true } },
-          { "l", "<cmd>Telescope live_grep<cr>", { silent = true, desc = "live grep", exit = true } },
-          { "k", "<cmd>Telescope keymaps<cr>", { silent = true, desc = "keymaps", exit = true } },
-          { "h", "<cmd>Telescope search_history<cr>", { silent = true, desc = "history", exit = true } },
-          { "c", "<cmd>Telescope git_bcommits<cr>", { silent = true, desc = "buf commits", exit = true } },
-          { "?", "<cmd>Telescope help_tags<cr>", { silent = true, desc = "help", exit = true } },
-          { "q", nil, { exit = true, nowait = true, desc = "exit" } },
+      wk.register({
+        ["<leader>f"] = {
+          name = "+find",
+          r = { "<cmd>Telescope resume<cr>", "resumo" },
+          f = { "<cmd>Telescope find_files<cr>", "files" },
+          e = { "<cmd>Telescope oldfiles<cr>", "recent" },
+          b = { "<cmd>Telescope buffers<cr>", "buffers" },
+          g = { "<cmd>Telescope git_files<cr>", "git files" },
+          l = { "<cmd>Telescope live_grep<cr>", "live grep" },
+          k = { "<cmd>Telescope keymaps<cr>", "keymaps" },
+          h = { "<cmd>Telescope search_history<cr>", "history" },
+          c = { "<cmd>Telescope git_bcommits<cr>", "buf commits" },
+          ["?"] = { "<cmd>Telescope help_tags<cr>", "help" },
         },
       })
     end,
