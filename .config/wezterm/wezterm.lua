@@ -11,6 +11,7 @@ return {
     freetype_load_target = "Normal",
     front_end = "OpenGL",
     line_height = 1.0,
+    harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 
     window_padding = {
         left = 0,
