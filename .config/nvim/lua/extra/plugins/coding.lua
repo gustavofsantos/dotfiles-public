@@ -1,8 +1,34 @@
 return {
   "tpope/vim-sleuth",
   "mbbill/undotree",
-  "justinmk/vim-sneak",
-  "AndrewRadev/switch.vim",
+  -- {
+  --   "justinmk/vim-sneak",
+  --   config = function()
+  --     vim.cmd([[let g:sneak#label = 1]])
+  --     vim.cmd([[let g:sneak#use_ic_scs = 1]])
+  --   end,
+  -- },
+  {
+    "AndrewRadev/switch.vim",
+    config = function()
+      vim.cmd([[
+let g:switch_custom_definitions =
+    \ [
+    \   {
+    \     '^\(.*\)TODO\(.*\)$': '\1DOING\2',
+    \     '^\(.*\)DOING\(.*\)$': '\1DONE\2',
+    \     '^\(.*\)DONE\(.*\)$': '\1TODO\2',
+    \     '^\(.*\)\[ \]\(.*\)$': '\1\[/\]\2',
+    \     '^\(.*\)\[/\]\(.*\)$': '\1\[x\]\2',
+    \     '^\(.*\)\[x\]\(.*\)$': '\1\[ \]\2',
+    \     'it': 'fit',
+    \     'fit': 'xit',
+    \     'xit': 'it',
+    \   }
+    \ ]
+]])
+    end,
+  },
   "christoomey/vim-tmux-runner",
   {
     "numToStr/Comment.nvim",

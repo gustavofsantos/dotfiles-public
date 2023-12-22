@@ -5,6 +5,9 @@ return {
       "folke/which-key.nvim",
     },
     config = function()
+      vim.cmd([[let test#strategy = "toggleterm"]])
+      vim.cmd([[let test#javascript#playwright#options = "--headed --retries 0 --workers 1"]])
+
       local wk = require("which-key")
       wk.register({
         ["<leader>t"] = {

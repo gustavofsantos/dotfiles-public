@@ -1,5 +1,13 @@
 local wezterm = require("wezterm")
 
+wezterm.on("update-right-status", function(window, pane)
+    local date = wezterm.strftime("%Y-%m-%d %H:%M:%S")
+
+    window:set_right_status(wezterm.format({
+        { Text = date },
+    }))
+end)
+
 return {
     force_reverse_video_cursor = true,
     color_scheme = "ModusOperandi",
@@ -22,7 +30,7 @@ return {
 
     use_fancy_tab_bar = false,
     tab_bar_at_bottom = true,
-    hide_tab_bar_if_only_one_tab = true,
+    hide_tab_bar_if_only_one_tab = false,
     tab_max_width = 999999,
 
     leader = { key = "a", mods = "CTRL" },
