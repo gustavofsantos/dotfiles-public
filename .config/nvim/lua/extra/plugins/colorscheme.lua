@@ -48,7 +48,7 @@ return {
     "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
-    enabled = false,
+    enabled = true,
     config = function()
       require("kanagawa").setup({
         dimInactive = false,
@@ -172,6 +172,7 @@ return {
   {
     "miikanissi/modus-themes.nvim",
     priority = 1000,
+    enabled = false,
     config = function()
       require("modus-themes").setup({
         styles = {
