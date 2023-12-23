@@ -7,13 +7,51 @@ return {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-symbols.nvim",
       "nvim-telescope/telescope-file-browser.nvim",
-      "folke/which-key.nvim",
       {
         "nvim-telescope/telescope-fzf-native.nvim",
         build = "make",
         config = function()
           require("telescope").load_extension("fzf")
         end,
+      },
+    },
+    keys = {
+      {
+        "<F3>",
+        function()
+          require("telescope.builtin").grep_string()
+        end,
+        mode = { "n" },
+        desc = "Search",
+      },
+
+      {
+        "<F3>",
+        '"zy:Telescope grep_string default_text=<C-r>z<cr>',
+        mode = { "v" },
+        desc = "Search",
+      },
+
+      {
+        "<c-p>",
+        function()
+          require("telescope.builtin").find_files()
+        end,
+        desc = "Find files",
+      },
+
+      {
+        "<c-f>",
+        function()
+          require("telescope.builtin").current_buffer_fuzzy_find()
+        end,
+        desc = "Find in buffer",
+      },
+
+      {
+        "<c-b>",
+        "<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>",
+        desc = "Browse files",
       },
     },
     config = function()
@@ -107,63 +145,6 @@ return {
       })
 
       telescope.load_extension("file_browser")
-
-      local wk = require("which-key")
-
-      wk.register({
-        ["<leader>f"] = {
-          name = "+find",
-          r = { "<cmd>Telescope resume<cr>", "resumo" },
-          f = { "<cmd>Telescope find_files<cr>", "files" },
-          e = { "<cmd>Telescope oldfiles<cr>", "recent" },
-          b = { "<cmd>Telescope buffers<cr>", "buffers" },
-          g = { "<cmd>Telescope git_files<cr>", "git files" },
-          l = { "<cmd>Telescope live_grep<cr>", "live grep" },
-          k = { "<cmd>Telescope keymaps<cr>", "keymaps" },
-          h = { "<cmd>Telescope search_history<cr>", "history" },
-          c = { "<cmd>Telescope git_bcommits<cr>", "buf commits" },
-          ["?"] = { "<cmd>Telescope help_tags<cr>", "help" },
-        },
-      })
     end,
-    keys = {
-      {
-        "<F3>",
-        function()
-          require("telescope.builtin").grep_string()
-        end,
-        mode = { "n" },
-        desc = "Search",
-      },
-
-      {
-        "<F3>",
-        '"zy:Telescope grep_string default_text=<C-r>z<cr>',
-        mode = { "v" },
-        desc = "Search",
-      },
-
-      {
-        "<c-p>",
-        function()
-          require("telescope.builtin").find_files()
-        end,
-        desc = "Find files",
-      },
-
-      {
-        "<c-f>",
-        function()
-          require("telescope.builtin").current_buffer_fuzzy_find()
-        end,
-        desc = "Find in buffer",
-      },
-
-      {
-        "<c-b>",
-        "<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>",
-        desc = "Browse files",
-      },
-    },
   },
 }

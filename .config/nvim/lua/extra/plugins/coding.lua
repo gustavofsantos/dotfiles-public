@@ -33,7 +33,9 @@ return {
     "m4xshen/hardtime.nvim",
     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
     event = "BufRead",
-    opts = {},
+    opts = {
+      restriction_mode = "hint",
+    },
   },
   {
     "numToStr/Comment.nvim",
@@ -117,7 +119,7 @@ return {
   {
     "folke/flash.nvim",
     event = "VeryLazy",
-    enabled = false,
+    enabled = true,
     opts = {},
     keys = {
       {

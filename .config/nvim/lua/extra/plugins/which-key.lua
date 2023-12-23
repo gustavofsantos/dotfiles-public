@@ -26,6 +26,23 @@ return {
         },
       })
 
+      -- Searching
+      wk.register({
+        ["<leader>f"] = {
+          name = "+find",
+          r = { "<cmd>Telescope resume<cr>", "resumo" },
+          f = { "<cmd>Telescope find_files<cr>", "files" },
+          e = { "<cmd>Telescope oldfiles<cr>", "recent" },
+          b = { "<cmd>Telescope buffers<cr>", "buffers" },
+          g = { "<cmd>Telescope git_files<cr>", "git files" },
+          l = { "<cmd>Telescope live_grep<cr>", "live grep" },
+          k = { "<cmd>Telescope keymaps<cr>", "keymaps" },
+          h = { "<cmd>Telescope search_history<cr>", "history" },
+          c = { "<cmd>Telescope git_bcommits<cr>", "buf commits" },
+          ["?"] = { "<cmd>Telescope help_tags<cr>", "help" },
+        },
+      })
+
       -- Coding
       wk.register({
         ["<leader>c"] = {
