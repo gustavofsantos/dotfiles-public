@@ -13,6 +13,7 @@ return {
       "hrsh7th/cmp-vsnip",
       "onsails/lspkind.nvim",
       "zbirenbaum/copilot-cmp",
+      "lukas-reineke/cmp-under-comparator",
     },
     config = function()
       local cmp = require("cmp")
@@ -22,6 +23,18 @@ return {
         preselect = "None",
         performance = {
           debounce = 500,
+        },
+        sorting = {
+          comparators = {
+            cmp.config.compare.offset,
+            cmp.config.compare.exact,
+            cmp.config.compare.score,
+            require("cmp-under-comparator").under,
+            cmp.config.compare.kind,
+            cmp.config.compare.sort_text,
+            cmp.config.compare.length,
+            cmp.config.compare.order,
+          },
         },
         completion = {
           completeopt = "menu,menuone,noinsert",
@@ -39,8 +52,8 @@ return {
           ["<C-y>"] = cmp.mapping.confirm({ select = true }),
         }),
         sources = cmp.config.sources({
-          { name = "copilot" },
           { name = "nvim_lsp" },
+          { name = "copilot" },
           { name = "vsnip" },
         }, {
           {
