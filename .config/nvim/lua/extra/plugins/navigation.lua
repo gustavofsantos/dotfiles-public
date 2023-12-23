@@ -34,17 +34,13 @@ return {
 
       {
         "<c-p>",
-        function()
-          require("telescope.builtin").find_files()
-        end,
+        "<cmd>Telescope find_files<cr>",
         desc = "Find files",
       },
 
       {
         "<c-f>",
-        function()
-          require("telescope.builtin").current_buffer_fuzzy_find()
-        end,
+        "<cmd>Telescope current_buffer_fuzzy_find<cr>",
         desc = "Find in buffer",
       },
 
