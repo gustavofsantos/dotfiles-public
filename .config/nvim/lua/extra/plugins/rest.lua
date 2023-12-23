@@ -39,16 +39,5 @@ return {
       custom_dynamic_variables = {},
       yank_dry_run = true,
     },
-    config = function(_, opts)
-      require("rest-nvim").setup(opts)
-      -- local wk = require("which-key")
-      --
-      -- wk.register({
-      --   R = {
-      --     name = "+REST",
-      --     R = { "<Plug>RestNvim<CR>", "Run request" },
-      --   },
-      -- }, { prefix = "<leader>" })
-    end,
   },
 }

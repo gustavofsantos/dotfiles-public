@@ -11,8 +11,7 @@ return {
   {
     "AndrewRadev/switch.vim",
     config = function()
-      vim.cmd([[
-let g:switch_custom_definitions =
+      vim.cmd([[let g:switch_custom_definitions =
     \ [
     \   {
     \     '^\(.*\)TODO\(.*\)$': '\1DOING\2',
@@ -30,6 +29,12 @@ let g:switch_custom_definitions =
     end,
   },
   "christoomey/vim-tmux-runner",
+  {
+    "m4xshen/hardtime.nvim",
+    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+    event = "BufRead",
+    opts = {},
+  },
   {
     "numToStr/Comment.nvim",
     event = "VeryLazy",
@@ -98,15 +103,16 @@ let g:switch_custom_definitions =
       "nvim-treesitter/nvim-treesitter",
     },
     event = "BufRead",
-    config = function()
-      require("refactoring").setup()
-      -- local wk = require("which-key")
-      --
-      -- wk.register({
-      --   ["<leader>r"] = { name = "+refactor" },
-      --   ["<leader>rr"] = { "<cmd>lua require('refactoring').select_refactor()<CR>", "Select refactor" },
-      -- })
-    end,
+    opts = {},
+  },
+  {
+    "folke/zen-mode.nvim",
+    event = "VeryLazy",
+    opts = {},
+  },
+  {
+    "folke/twilight.nvim",
+    opts = {},
   },
   {
     "folke/flash.nvim",

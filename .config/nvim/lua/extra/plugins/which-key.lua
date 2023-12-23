@@ -1,0 +1,65 @@
+return {
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    priority = 1,
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
+    dependencies = {
+      "ThePrimeagen/refactoring.nvim",
+    },
+    opts = {},
+    config = function()
+      local wk = require("which-key")
+
+      -- Testing
+      wk.register({
+        ["<leader>t"] = {
+          name = "+test",
+          a = { "<cmd>TestSuite<cr>", "Test all" },
+          f = { "<cmd>TestFile<cr>", "Test file" },
+          l = { "<cmd>TestLast<cr>", "Test last" },
+          n = { "<cmd>TestNearest<cr>", "Test nearest" },
+          v = { "<cmd>TestVisit<cr>", "Open latest" },
+        },
+      })
+
+      -- Coding
+      wk.register({
+        ["<leader>c"] = {
+          name = "+coding",
+          r = { "<cmd>lua require('refactoring').select_refactor()<CR>", "Select refactor" },
+          z = { "<cmd>ZenMode<cr>", "Zen mode" },
+          t = { "<cmd>Twilight<cr>", "Twilight" },
+        },
+      })
+
+      -- Git
+      local gitsigns = require("gitsigns")
+      wk.register({
+        ["<leader>g"] = {
+          name = "+git",
+          s = { "<cmd>Git<cr>", "Status" },
+          b = { "<cmd>Git blame<cr>", "Blame" },
+          l = { "<cmd>Git log %<cr>", "Buffer history" },
+          p = { "<cmd>Git pull<cr>", "Pull changes" },
+          P = { "<cmd>Git push<cr>", "Push changes" },
+          I = { "<cmd>GitCoAuthors<cr>", "Co-authors" },
+          D = { "<cmd>DiffviewOpen<cr>", "Open diff view" },
+          T = { gitsigns.toggle_linehl, "Toggle highlight" },
+          S = { gitsigns.stage_hunk, "Stage hunk" },
+        },
+      })
+
+      -- others
+      wk.register({
+        ["<leader>R"] = {
+          name = "+rest",
+          R = { "<Plug>RestNvim<CR>", "Run request" },
+        },
+      })
+    end,
+  },
+}

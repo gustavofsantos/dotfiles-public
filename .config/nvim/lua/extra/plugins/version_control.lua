@@ -8,7 +8,6 @@ return {
       "sindrets/diffview.nvim",
       "nvim-telescope/telescope.nvim",
       "2kabhishek/co-author.nvim",
-      "folke/which-key.nvim",
     },
     event = "BufRead",
     keys = {
@@ -17,8 +16,6 @@ return {
     },
     config = function()
       local gitsigns = require("gitsigns")
-      local wk = require("which-key")
-
       gitsigns.setup({
         signcolumn = true,
         numhl = false,
@@ -33,20 +30,6 @@ return {
           topdelete = { text = "▌" },
           changedelete = { text = "▌" },
           untracked = { text = "░" },
-        },
-      })
-
-      wk.register({
-        ["<leader>g"] = {
-          name = "+git",
-          s = { "<cmd>Git<cr>", "Status" },
-          b = { "<cmd>Git blame<cr>", "Blame" },
-          l = { "<cmd>Git log %<cr>", "Buffer history" },
-          p = { "<cmd>Git pull<cr>", "Pull changes" },
-          P = { "<cmd>Git push<cr>", "Push changes" },
-          I = { "<cmd>GitCoAuthors<cr>", "Co-authors" },
-          T = { gitsigns.toggle_linehl, "Toggle highlight" },
-          S = { gitsigns.stage_hunk, "Stage hunk" },
         },
       })
     end,
