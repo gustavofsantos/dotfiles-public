@@ -1,6 +1,7 @@
 # if [ -e /home/gustavo/.nix-profile/etc/profile.d/nix.sh ]; then . /home/gustavo/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 if [ -e /home/gustavo/.cargo/env ]; then . /home/gustavo/.cargo/env;  fi
 if [ -e /home/gustavo/.asdf/asdf.sh ]; then . /home/gustavo/.asdf/asdf.sh; fi
+if [ -e /home/linuxbrew/.linuxbrew/bin/brew ]; then eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"; fi
 
 export GEM_HOME="$HOME/.gem"
 
@@ -40,6 +41,3 @@ alias lw_show_urls="docker-compose exec loggi_web_app bash -c 'python manage.py 
 alias dev_beyond="devcontainer --workspace-folder /opt/loggi/ui exec bash -c 'cd targets/beyond && npm start'"
 alias dev_beyond_test_watch="devcontainer --workspace-folder /opt/loggi/ui exec bash -c 'cd targets/beyond && npm run test -- --bail --coverage=false'"
 alias ui_review="gh pr list -S 'is:pr is:open user-review-requested:@me label:beyond-conversao' | fzf --preview 'gh pr view {1}' --preview-window down | awk '{print $1}' | xargs gh pr checkout"
-
-
-. "$HOME/.cargo/env"
