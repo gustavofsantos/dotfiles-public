@@ -11,7 +11,7 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    enabled = true,
+    enabled = false,
     opts = {
       options = {
         section_separators = "",
