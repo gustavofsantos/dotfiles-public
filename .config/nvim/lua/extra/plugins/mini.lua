@@ -1,9 +1,9 @@
 return {
-  { "echasnovski/mini.move", lazy = false, opts = {} },
-  { "echasnovski/mini.bracketed", event = "VeryLazy", opts = {} },
+  { "echasnovski/mini.move", event = "BufRead", opts = {} },
+  { "echasnovski/mini.bracketed", event = "BufRead", opts = {} },
   {
     "echasnovski/mini.hipatterns",
-    event = "VeryLazy",
+    event = "BufRead",
     config = function()
       local hipatterns = require("mini.hipatterns")
       hipatterns.setup({

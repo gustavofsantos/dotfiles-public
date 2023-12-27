@@ -72,11 +72,11 @@ return {
             --     height = 0.4,
             prompt_position = "top",
           },
-          borderchars = {
-            prompt = { " ", " ", " ", " ", " ", " ", " ", " " },
-            results = { " " },
-            preview = { " " },
-          },
+          -- borderchars = {
+          --   prompt = { " ", " ", " ", " ", " ", " ", " ", " " },
+          --   results = { " " },
+          --   preview = { " " },
+          -- },
         },
         pickers = {
           find_files = {
