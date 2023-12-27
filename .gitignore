@@ -57,7 +57,6 @@ kubectl
 .config/helix/runtime/
 .config/htop/
 .config/ibus/
-.config/lazygit/
 .config/libreoffice/
 .config/JetBrains/
 .config/menus/

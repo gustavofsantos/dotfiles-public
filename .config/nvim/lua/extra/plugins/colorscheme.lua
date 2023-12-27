@@ -48,7 +48,7 @@ return {
     "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
-    enabled = false,
+    enabled = true,
     config = function()
       require("kanagawa").setup({
         dimInactive = false,
@@ -83,19 +83,7 @@ return {
             StatusLineNC = { bg = colors.palette.sumiInk2 },
             ColorColumn = { bg = colors.palette.sumiInk2 },
 
-            NvimTreeGitDirty = { fg = colors.palette.oniViolet },
-            NvimTreeGitStaged = { fg = colors.palette.oniViolet },
-            NvimTreeGitMerge = { fg = colors.palette.oniViolet },
-            NvimTreeGitRenamed = { fg = colors.palette.oniViolet },
-            NvimTreeGitNew = { fg = colors.palette.oniViolet },
-            NvimTreeGitDeleted = { fg = colors.palette.oniViolet },
-            NvimTreeFolderName = { fg = colors.palette.fujiGray },
-            NvimTreeOpenedFolderName = { fg = colors.palette.fujiGray },
-            NvimTreeRootFolder = { fg = colors.palette.fujiGray, italic = true },
-            NvimTreeSpecialFile = { underline = true, italic = true, fg = colors.palette.fujiGray },
-            NvimTreeNormalFloat = { bg = colors.theme.ui.bg },
-            NvimTreeCursorLine = { bg = colors.palette.sumiInk5 },
-            NvimTreeIndentMarker = { fg = colors.palette.fujiGray },
+            PmenuSel = { fg = "NONE", bg = colors.theme.diff.text },
 
             TelescopeTitle = { fg = colors.theme.ui.special, bold = true },
             TelescopePromptNormal = { bg = colors.theme.ui.bg_p1 },
@@ -122,7 +110,7 @@ return {
     "ellisonleao/gruvbox.nvim",
     lazy = false,
     priority = 1000,
-    enabled = true,
+    enabled = false,
     config = function()
       local bg = vim.o.background
       local palette = require("gruvbox").palette
