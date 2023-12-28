@@ -7,6 +7,7 @@ return {
   dependencies = {
     "nvim-treesitter/nvim-treesitter-textobjects",
     "nvim-treesitter/nvim-tree-docs",
+    "windwp/nvim-ts-autotag",
   },
   config = function()
     local treesitter = require("nvim-treesitter.configs")
@@ -101,6 +102,12 @@ return {
       },
       context_commentstring = {
         enable = true,
+      },
+      autotag = {
+        enable = true,
+        enable_rename = true,
+        enable_close = true,
+        enable_close_on_slash = true,
       },
       tree_docs = { enable = true },
     })
