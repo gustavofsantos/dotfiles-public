@@ -243,3 +243,4 @@ anaconda3/
 .rbenv
 .solargraph/
 .gem/
+.config/lazygit/state.yml

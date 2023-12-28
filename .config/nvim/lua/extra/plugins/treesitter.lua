@@ -4,7 +4,10 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   build = ":TSUpdate",
   version = false,
-  dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    "nvim-treesitter/nvim-tree-docs",
+  },
   config = function()
     local treesitter = require("nvim-treesitter.configs")
     treesitter.setup({
@@ -12,32 +15,25 @@ return {
       ensure_installed = {
         "gitcommit",
         "git_rebase",
-        "bash",
-        "go",
         "lua",
-        "http",
         "json",
-        "proto",
         "toml",
         "rust",
         "ruby",
-        "haskell",
         "markdown",
         "markdown_inline",
         "javascript",
         "jsdoc",
         "typescript",
         "tsx",
-        "prisma",
         "python",
         "vim",
         "vimdoc",
-        "elixir",
         "css",
-        "eex",
-        "heex",
-        "svelte",
       },
+
+      auto_install = true,
+
       highlight = {
         enable = true,
         -- use_languagetree = true,
@@ -75,6 +71,8 @@ return {
           goto_next_start = {
             ["]m"] = "@function.outer",
             ["]]"] = "@class.outer",
+            ["]o"] = { query = { "@loop.inner", "@loop.outer" } },
+            ["]s"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
           },
           goto_next_end = {
             ["]M"] = "@function.outer",
@@ -83,16 +81,28 @@ return {
           goto_previous_start = {
             ["[m"] = "@function.outer",
             ["[["] = "@class.outer",
+            ["[o"] = { query = { "@loop.inner", "@loop.outer" } },
+            ["[s"] = { query = "@scope", query_group = "locals", desc = "Previous scope" },
           },
           goto_previous_end = {
             ["[M"] = "@function.outer",
             ["[]"] = "@class.outer",
           },
         },
+        lsp_interop = {
+          enable = true,
+          border = "none",
+          floating_preview_opts = {},
+          peek_definition_code = {
+            ["<leader>df"] = "@function.outer",
+            ["<leader>dF"] = "@class.outer",
+          },
+        },
       },
       context_commentstring = {
         enable = true,
       },
+      tree_docs = { enable = true },
     })
 
     require("nvim-treesitter.configs").setup({
