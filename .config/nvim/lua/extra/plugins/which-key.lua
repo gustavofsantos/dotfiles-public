@@ -69,13 +69,14 @@ return {
           D = { "<cmd>DiffviewOpen<cr>", "Open diff view" },
           T = { gitsigns.toggle_linehl, "Toggle highlight" },
           S = { gitsigns.stage_hunk, "Stage hunk" },
+          R = { gitsigns.reset_hunk, "Reset hunk" },
           X = { "<cmd>DiffviewClose<cr>", "Close diffview" },
         },
       })
       wk.register({
         ["<leader>g"] = {
           b = {
-            ':<C-U>!git blame <C-R>=expand("%:p") <CR> \\| sed -n <C-R>=line("\'<") <CR>,<C-R>=line("\'>") <CR>p <CR>',
+            ':<C-U>!git blame <C-R>=expand("%:p") <CR> | sed -n <C-R>=line("\'<") <CR>,<C-R>=line("\'>") <CR>p <CR>',
             "Blame",
           },
           ["lf"] = { "<cmd>DiffviewFileHistory<cr>", "Selection history" },
