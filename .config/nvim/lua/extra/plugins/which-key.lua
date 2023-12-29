@@ -61,16 +61,28 @@ return {
           s = { "<cmd>Git<cr>", "Status" },
           b = { "<cmd>Git blame<cr>", "Blame" },
           -- l = { "<cmd>Git log %<cr>", "Buffer history" },
-          ["lf"] = { "<cmd>DiffviewFileHistory %<cr>", "File history" },
-          ["lo"] = { "<cmd>DiffviewFileHistory % --range=origin..HEAD<cr>", "File history (remote)" },
           p = { "<cmd>Git pull<cr>", "Pull changes" },
           P = { "<cmd>Git push<cr>", "Push changes" },
           I = { "<cmd>GitCoAuthors<cr>", "Co-authors" },
           D = { "<cmd>DiffviewOpen<cr>", "Open diff view" },
           T = { gitsigns.toggle_linehl, "Toggle highlight" },
-          S = { gitsigns.stage_hunk, "Stage hunk" },
-          R = { gitsigns.reset_hunk, "Reset hunk" },
           X = { "<cmd>DiffviewClose<cr>", "Close diffview" },
+        },
+      })
+      wk.register({
+        ["<leader>gf"] = {
+          name = "+log",
+          l = { "<cmd>DiffviewFileHistory %<cr>", "Log file history" },
+          o = { "<cmd>DiffviewFileHistory % --range=origin..HEAD<cr>", "Log file history (remote)" },
+          r = { gitsigns.reset_buffer, "Reset buffer" },
+        },
+      })
+      wk.register({
+        ["<leader>gh"] = {
+          name = "+hunk",
+          s = { gitsigns.stage_hunk, "Stage hunk" },
+          r = { gitsigns.reset_hunk, "Reset hunk" },
+          p = { gitsigns.preview_hunk, "Preview hunk" },
         },
       })
       wk.register({
