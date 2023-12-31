@@ -80,40 +80,40 @@ return {
         },
         pickers = {
           find_files = {
+            theme = "ivy",
             previewer = false,
             hidden = true,
-            theme = "dropdown",
           },
           oldfiles = {
             previewer = true,
-            theme = "dropdown",
+            theme = "ivy",
           },
           git_files = {
             previewer = true,
-            theme = "dropdown",
+            theme = "ivy",
           },
           commands = {
             theme = "ivy",
           },
           current_buffer_fuzzy_find = {
             previewer = true,
-            theme = "dropdown",
+            theme = "ivy",
           },
           lsp_references = {
             previewer = true,
-            theme = "dropdown",
+            theme = "ivy",
           },
           lsp_document_symbols = {
             previewer = true,
-            theme = "dropdown",
+            theme = "ivy",
           },
           lsp_dynamic_workspace_symbols = {
             previewer = true,
-            theme = "dropdown",
+            theme = "ivy",
           },
           buffers = {
             previewer = false,
-            theme = "dropdown",
+            theme = "ivy",
             mappings = {
               i = {
                 ["<c-d>"] = require("telescope.actions").delete_buffer,
@@ -129,9 +129,10 @@ return {
             case_mode = "smart_case", -- or "ignore_case" or "respect_case"
           },
           file_browser = {
+            theme = "ivy",
             respect_gitignore = false,
             hidden = true,
-            previewer = true,
+            previewer = false,
             cwd_to_path = true,
             select_buffer = true,
             hijack_netrw = true,
