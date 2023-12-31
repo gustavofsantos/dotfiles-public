@@ -11,14 +11,23 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    enabled = false,
+    enabled = true,
     opts = {
       options = {
         section_separators = "",
         component_separators = "",
       },
       sections = {
-        lualine_a = { "mode" },
+        lualine_a = {
+          {
+            "mode",
+            draw_empty = true,
+            padding = 0,
+            fmt = function()
+              return " "
+            end,
+          },
+        },
         lualine_b = {},
         lualine_c = { "branch", { "filename", path = 1 } },
         lualine_x = { "diff", "diagnostics", "progress", "filetype" },
