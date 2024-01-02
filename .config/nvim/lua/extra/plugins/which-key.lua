@@ -7,9 +7,6 @@ return {
       vim.o.timeout = true
       vim.o.timeoutlen = 300
     end,
-    dependencies = {
-      "ThePrimeagen/refactoring.nvim",
-    },
     opts = {},
     config = function()
       local wk = require("which-key")
