@@ -132,7 +132,7 @@ vim.cmd([[augroup highlight_yank
     au TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=500})
 augroup END]])
 
--- vim.cmd("autocmd VimEnter * lua local ok, err = pcall(vim.cmd, 'VtrAttachToPane 1')")
+vim.cmd("autocmd VimEnter * lua local ok, err = pcall(vim.cmd, 'VtrAttachToPane 1')")
 
 vim.api.nvim_create_user_command("Q", function()
   vim.cmd("q")
