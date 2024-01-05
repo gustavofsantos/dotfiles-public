@@ -158,6 +158,24 @@ return {
         },
       })
     end,
+    keys = {
+      {
+        "<leader>xx",
+        function()
+          require("telescope.builtin").diagnostics()
+        end,
+        mode = { "n" },
+        desc = "Workspace diagnostics",
+      },
+      {
+        "<leader>xd",
+        function()
+          require("telescope.builtin").diagnostics({ bufno = 0 })
+        end,
+        mode = { "n" },
+        desc = "Document diagnostics",
+      },
+    },
   },
   {
     "j-hui/fidget.nvim",

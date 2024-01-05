@@ -2,7 +2,6 @@ return {
   "mfussenegger/nvim-lint",
   dependencies = {
     "nvim-tree/nvim-web-devicons",
-    "folke/trouble.nvim",
   },
   config = function()
     local lint = require("lint")

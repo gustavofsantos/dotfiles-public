@@ -91,8 +91,8 @@ return {
           markdown = true,
           ["*"] = false,
         },
-        suggestion = { enabled = false, auto_trigger = true },
-        panel = { enabled = false, auto_refresh = true },
+        suggestion = { enabled = true, auto_trigger = true, debounce = 200 },
+        panel = { enabled = true, auto_refresh = true },
         copilot_node_command = vim.fn.expand("$HOME") .. "/.nvm/versions/node/v18.16.0/bin/node",
       })
     end,

@@ -111,6 +111,9 @@ return {
             previewer = true,
             theme = "ivy",
           },
+          diagnostics = {
+            theme = "ivy",
+          },
           buffers = {
             previewer = false,
             theme = "ivy",

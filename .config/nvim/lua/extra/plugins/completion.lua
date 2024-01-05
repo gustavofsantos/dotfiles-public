@@ -12,7 +12,7 @@ return {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-vsnip",
       "onsails/lspkind.nvim",
-      "zbirenbaum/copilot-cmp",
+      -- "zbirenbaum/copilot-cmp",
       "lukas-reineke/cmp-under-comparator",
     },
     config = function()
@@ -53,7 +53,6 @@ return {
         }),
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
-          -- { name = "copilot" },
           { name = "vsnip" },
         }, {
           {
@@ -127,7 +126,7 @@ return {
         }),
       })
 
-      require("copilot_cmp").setup()
+      -- require("copilot_cmp").setup()
     end,
   },
 }
