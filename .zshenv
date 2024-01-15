@@ -1,7 +1,7 @@
 # if [ -e /home/gustavo/.nix-profile/etc/profile.d/nix.sh ]; then . /home/gustavo/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 if [ -e /home/gustavo/.cargo/env ]; then . /home/gustavo/.cargo/env;  fi
 if [ -e /home/gustavo/.asdf/asdf.sh ]; then . /home/gustavo/.asdf/asdf.sh; fi
-if [ -e /home/linuxbrew/.linuxbrew/bin/brew ]; then eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"; fi
+# if [ -e /home/linuxbrew/.linuxbrew/bin/brew ]; then eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"; fi
 
 export GEM_HOME="$HOME/.gem"
 
@@ -20,6 +20,8 @@ alias ll="ls -lhF --color"
 alias la="ls -lahF --color"
 alias lsd="ls -lhF --color | grep --color=never '^d'"
 alias gogh="bash -c  \"\$(wget -qO- https://git.io/vQgMr)\""
+alias hm="home-manager"
+alias nxe="nix-env"
 
 # Loggi aliases
 alias lwt="docker-compose exec -e DJANGO_SETTINGS_MODULE=settings.test loggi_web_app pytest -vv"
