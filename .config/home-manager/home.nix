@@ -38,9 +38,13 @@
     # programming languages and environments
     pkgs.nodejs_21
     pkgs.ruby
+    pkgs.python311
+    pkgs.python311Packages.pip
+    pkgs.go
 
     # tools
     pkgs.btop
+    pkgs.ripgrep
     pkgs.lazygit
     pkgs.lazydocker
     pkgs.neovim
