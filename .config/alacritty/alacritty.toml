@@ -1,0 +1,38 @@
+import = ["/home/gustavo/.config/alacritty/themes/modus_operandi.yml"]
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 9
+
+[font.bold]
+family = "MonoLisa Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "MonoLisa Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "MonoLisa Nerd Font"
+style = "Regular Italic"
+
+[font.normal]
+family = "MonoLisa Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[window]
+decorations = "full"
+decorations_theme_variant = "Dark"
+dynamic_padding = false
+dynamic_title = true
+opacity = 0.985
+
+[window.padding]
+x = 0
+y = 0
