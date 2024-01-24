@@ -4,6 +4,7 @@ if [ -e /home/gustavo/.asdf/asdf.sh ]; then . /home/gustavo/.asdf/asdf.sh; fi
 # if [ -e /home/linuxbrew/.linuxbrew/bin/brew ]; then eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"; fi
 
 export GEM_HOME="$HOME/.gem"
+export ANDROID_HOME="$HOME/Android/Sdk"
 
 alias v="nvim"
 alias vim="nvim"

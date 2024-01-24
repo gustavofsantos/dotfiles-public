@@ -1,4 +1,5 @@
 Podcasts/
+.expo/
 .config/geary/
 .config/goa-1.0/
 .newsboat/cache.db
