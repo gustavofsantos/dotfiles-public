@@ -9,6 +9,17 @@ return {
     },
   },
   {
+    "b0o/incline.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("incline").setup({
+        hide = {
+          cursorline = true,
+        },
+      })
+    end,
+  },
+  {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     enabled = true,

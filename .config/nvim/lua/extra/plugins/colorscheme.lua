@@ -11,9 +11,10 @@ return {
   {
     dir = "~/Code/solarized.nvim",
     priority = 1000,
-    enabled = false,
+    enabled = true,
     config = function()
       require("solarized").setup()
+      vim.cmd([[set background=dark]])
       vim.cmd([[colorscheme solarized]])
     end,
   },
@@ -48,7 +49,7 @@ return {
     "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
-    enabled = true,
+    enabled = false,
     config = function()
       require("kanagawa").setup({
         dimInactive = false,
