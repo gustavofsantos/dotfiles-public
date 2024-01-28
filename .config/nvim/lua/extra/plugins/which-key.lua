@@ -27,6 +27,8 @@ return {
       wk.register({
         ["<leader>f"] = {
           name = "+find",
+          a = { require("harpoon.mark").add_file, "mark file" },
+          m = { require("harpoon.ui").toggle_quick_menu, "marks" },
           r = { "<cmd>Telescope resume<cr>", "resumo" },
           f = { "<cmd>Telescope find_files<cr>", "files" },
           e = { "<cmd>Telescope oldfiles<cr>", "recent" },

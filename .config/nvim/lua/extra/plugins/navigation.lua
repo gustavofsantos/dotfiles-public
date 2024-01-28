@@ -1,6 +1,45 @@
 return {
   "christoomey/vim-tmux-navigator",
   {
+    "ThePrimeagen/harpoon",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    event = "VeryLazy",
+    keys = {
+      {
+        "<M-1>",
+        function()
+          require("harpoon.ui").nav_file(1)
+        end,
+        mode = { "n" },
+        desc = "Navigate to file in slot 1",
+      },
+      {
+        "<M-2>",
+        function()
+          require("harpoon.ui").nav_file(2)
+        end,
+        mode = { "n" },
+        desc = "Navigate to file in slot 2",
+      },
+      {
+        "<M-3>",
+        function()
+          require("harpoon.ui").nav_file(3)
+        end,
+        mode = { "n" },
+        desc = "Navigate to file in slot 3",
+      },
+      {
+        "<M-4>",
+        function()
+          require("harpoon.ui").nav_file(4)
+        end,
+        mode = { "n" },
+        desc = "Navigate to file in slot 4",
+      },
+    },
+  },
+  {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.3",
     dependencies = {

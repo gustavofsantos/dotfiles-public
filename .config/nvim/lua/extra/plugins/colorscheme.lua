@@ -19,6 +19,16 @@ return {
     end,
   },
   {
+    dir = "~/Code/houston.nvim",
+    priority = 1000,
+    enabled = false,
+    opts = {},
+    config = function()
+      vim.cmd([[set background=dark]])
+      vim.cmd([[colorscheme houston]])
+    end,
+  },
+  {
     dir = "~/Code/jellybeans.nvim",
     priority = 1000,
     enabled = false,
