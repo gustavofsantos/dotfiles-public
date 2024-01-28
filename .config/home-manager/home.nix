@@ -34,7 +34,7 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    
+
     # programming languages and environments
     pkgs.nodejs_21
     pkgs.ruby
@@ -50,6 +50,7 @@
     pkgs.lazydocker
     pkgs.neovim
     pkgs.helix
+    pkgs.eza
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
