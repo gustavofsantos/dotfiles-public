@@ -1,10 +1,10 @@
-import = ["/home/gustavo/.config/alacritty/themes/modus_operandi.yml"]
+import = ["/home/gustavo/.config/alacritty/themes/solarized_dark.toml"]
 
 [env]
 TERM = "xterm-256color"
 
 [font]
-size = 9
+size = 10
 
 [font.bold]
 family = "MonoLisa Nerd Font"
@@ -31,7 +31,7 @@ decorations = "full"
 decorations_theme_variant = "Dark"
 dynamic_padding = false
 dynamic_title = true
-opacity = 0.985
+opacity = 1
 
 [window.padding]
 x = 0
