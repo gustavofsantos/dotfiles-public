@@ -14,7 +14,6 @@ return {
     enabled = true,
     config = function()
       require("solarized").setup()
-      vim.cmd([[set background=dark]])
       vim.cmd([[colorscheme solarized]])
     end,
   },
@@ -53,6 +52,15 @@ return {
     opts = {},
     config = function()
       vim.cmd([[colorscheme overnight]])
+    end,
+  },
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    enabled = false,
+    opts = {},
+    init = function()
+      vim.cmd([[colorscheme rose-pine]])
     end,
   },
   {
@@ -167,23 +175,6 @@ return {
       })
 
       vim.cmd([[colorscheme gruvbox]])
-    end,
-  },
-  {
-    "miikanissi/modus-themes.nvim",
-    priority = 1000,
-    enabled = false,
-    config = function()
-      require("modus-themes").setup({
-        styles = {
-          comments = { italic = true },
-          keywords = { italic = true },
-          functions = {},
-          variables = {},
-        },
-      })
-
-      vim.cmd([[colorscheme modus]])
     end,
   },
 }
