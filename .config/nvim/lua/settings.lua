@@ -14,7 +14,7 @@ vim.opt.hlsearch = true
 vim.opt.infercase = true
 vim.opt.showcmd = true
 vim.opt.cmdheight = 1
-vim.opt.laststatus = 3
+vim.opt.laststatus = 2
 vim.opt.expandtab = true
 vim.opt.smarttab = true
 vim.opt.cindent = true
@@ -67,9 +67,9 @@ if vim.g.neovide then
   vim.g.neovide_scroll_animation_length = 0.1
 end
 
-vim.opt.statusline = [[%f]]
-vim.opt.statusline:append(" %=")
-vim.opt.statusline:append("%{&ft}")
+-- vim.opt.statusline = [[%f]]
+-- vim.opt.statusline:append(" %=")
+-- vim.opt.statusline:append("%{&ft}")
 
 vim.opt.path:append({ "**" })
 vim.opt.wildignore:append({ "*/node_modules/*" })

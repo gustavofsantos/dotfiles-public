@@ -12,6 +12,7 @@ return {
     "b0o/incline.nvim",
     dependencies = { "nvim-web-devicons" },
     event = "VeryLazy",
+    enabled = false,
     config = function()
       require("incline").setup({
         hide = {
@@ -33,7 +34,7 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    enabled = true,
+    enabled = false,
     opts = {
       options = {
         section_separators = "",
