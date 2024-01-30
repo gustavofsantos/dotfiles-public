@@ -1,0 +1,17 @@
+#!/bin/bash
+
+readonly yaml_file="$HOME/.commands.yml"
+
+command_name=$(yq '.commands[] | select(.enabled != false) | .name' "$yaml_file" | fzf --preview="yq '.commands[] | select(.name == \"{}\") | .run' $yaml_file")
+
+command=$(yq '.commands[] | select(.name == '"$command_name"') | .run' "$yaml_file")
+should_execute=$(yq '.commands[] | select(.name == '"$command_name"') | .execute' "$yaml_file")
+
+command=$(echo "$command" | sed 's/^"\(.*\)"$/\1/')
+
+if [ "$should_execute" = "false" ]; then
+  exit 0
+fi
+
+bash -c "$command"
+

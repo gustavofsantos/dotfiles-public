@@ -1,0 +1,17 @@
+commands:
+  - name: "Find the largest 10 files in a directory"
+    run: "du -ah . | sort -hr | head -n 10"
+
+  - name: "Check if a file exists and is directory"
+    enabled: false
+    execute: false
+    run: "[[ -d <file> ]]"
+
+  - name: "Git: Rebase master into branch"
+    run: "git pull origin master --rebase"
+
+  - name: "Git: Rebase main into branch"
+    run: "git pull origin main --rebase"
+
+  - name: "Loggi: Create SSH key"
+    run: "ssh-keygen -t ed25519 -C \"gustavo.fernandes@loggi.com\""
