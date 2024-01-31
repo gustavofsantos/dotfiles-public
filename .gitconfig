@@ -26,6 +26,9 @@
   su            = submodule update --init --recursive
   conflicted    = !nvim +Conflicted
   dash		= !gh dash
+  w		= worktree
+  wa		= worktree add
+  wl		= worktree list --porcelain
 
   h             = !git head
   hp            = "!. ~/.githelpers && show_git_head"
