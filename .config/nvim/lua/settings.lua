@@ -67,9 +67,10 @@ if vim.g.neovide then
   vim.g.neovide_scroll_animation_length = 0.1
 end
 
--- vim.opt.statusline = [[%f]]
--- vim.opt.statusline:append(" %=")
--- vim.opt.statusline:append("%{&ft}")
+vim.opt.statusline = "%<%f"
+vim.opt.statusline:append("%{exists('g:loaded_fugitive')?' ':''}")
+vim.opt.statusline:append("%{exists('g:loaded_fugitive')?fugitive#statusline():''}")
+vim.opt.statusline:append("%h%m%r%=%-14.(%l,%c%V%) %P")
 
 vim.opt.path:append({ "**" })
 vim.opt.wildignore:append({ "*/node_modules/*" })

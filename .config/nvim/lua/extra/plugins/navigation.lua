@@ -45,6 +45,7 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-symbols.nvim",
+      "ThePrimeagen/git-worktree.nvim",
       {
         "nvim-telescope/telescope-fzf-native.nvim",
         build = "make",
@@ -182,7 +183,7 @@ return {
         },
       })
 
-      -- telescope.load_extension("file_browser")
+      telescope.load_extension("git_worktree")
     end,
   },
 }

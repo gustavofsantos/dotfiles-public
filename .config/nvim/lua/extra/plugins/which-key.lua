@@ -77,6 +77,13 @@ return {
         },
       })
       wk.register({
+        ["<leader>gw"] = {
+          name = "+worktree",
+          c = { "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>", "Create worktree" },
+          l = { "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", "List worktrees" },
+        },
+      })
+      wk.register({
         ["<leader>gh"] = {
           name = "+hunk",
           s = { gitsigns.stage_hunk, "Stage hunk" },
