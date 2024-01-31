@@ -79,7 +79,7 @@ zinit load atuinsh/atuin
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gh zoxide asdf docker)
+plugins=(gh zoxide asdf docker)
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
@@ -153,5 +153,3 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # Load rbenv if installed
 export PATH="${HOME}/.rbenv/bin:${PATH}"
 type -a rbenv > /dev/null && eval "$(rbenv init -)"
-
-export GEM_HOME="$HOME/.gem"

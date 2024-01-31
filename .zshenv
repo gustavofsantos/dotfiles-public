@@ -1,7 +1,5 @@
-# if [ -e /home/gustavo/.nix-profile/etc/profile.d/nix.sh ]; then . /home/gustavo/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 if [ -e /home/gustavo/.cargo/env ]; then . /home/gustavo/.cargo/env;  fi
 if [ -e /home/gustavo/.asdf/asdf.sh ]; then . /home/gustavo/.asdf/asdf.sh; fi
-# if [ -e /home/linuxbrew/.linuxbrew/bin/brew ]; then eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"; fi
 
 export GEM_HOME="$HOME/.gem"
 export ANDROID_HOME="$HOME/Android/Sdk"
