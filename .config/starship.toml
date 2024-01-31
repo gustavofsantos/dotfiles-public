@@ -8,6 +8,10 @@ full_symbol = '🔋 '
 charging_symbol = '⚡️ '
 discharging_symbol = '💀 '
 
+[directory]
+truncation_length = 5
+format = "$path$lock_symbol "
+
 [jobs]
 symbol = '⭘ '
 number_threshold = 4
