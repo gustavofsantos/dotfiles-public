@@ -23,6 +23,8 @@ alias lsd="ls -lhF --color | grep --color=never '^d'"
 alias gogh="bash -c  \"\$(wget -qO- https://git.io/vQgMr)\""
 alias hm="home-manager"
 alias nxe="nix-env"
+alias lz="eza"
+alias lza="eza --icons -1 -a -l --total-size"
 
 # Loggi aliases
 alias lwt="docker-compose exec -e DJANGO_SETTINGS_MODULE=settings.test loggi_web_app pytest -vv"
