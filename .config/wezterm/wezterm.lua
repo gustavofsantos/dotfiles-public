@@ -1,6 +1,4 @@
 local wezterm = require("wezterm")
-local colors = require("lua/rose-pine").colors()
-local window_frame = require("lua/rose-pine").window_frame()
 
 wezterm.on("update-right-status", function(window, pane)
     local date = wezterm.strftime("%Y-%m-%d %H:%M:%S")
@@ -35,9 +33,7 @@ end)
 
 return {
     force_reverse_video_cursor = true,
-    -- color_scheme = "Kanagawa",
-    colors = colors,
-    window_frame = window_frame,
+    color_scheme = "SolarizedDark",
 
     font = wezterm.font("MonoLisa Nerd Font"),
     -- font_size = 10.0,

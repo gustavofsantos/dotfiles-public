@@ -18,13 +18,49 @@ ansi = [
   "#2aa198",
   "#93a1a1"
 ]
-brights = [
-  "#002b36",
-  "#dc322f",
-  "#719e07",
-  "#b58900",
-  "#268bd2",
-  "#d33682",
-  "#2aa198",
-  "#93a1a1"
-]
+brights = [ "#073642", "#cb4b16", "#586e75", "#657b83", "#839496", "#6c71c4", "#93a1a1", "#fdf6e3" ]
+
+[colors.tab_bar]
+background = "#001217"
+inactive_tab_edge = "#001217"
+inactive_tab_edge_hover = "#001217"
+
+[colors.tab_bar.active_tab]
+bg_color = "#002b36"
+fg_color = "#839496"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.inactive_tab]
+bg_color = "#001217"
+fg_color = "#93a1a1"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.inactive_tab_hover]
+bg_color = "#001217"
+fg_color = "#93a1a1"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.new_tab]
+bg_color = "#001217"
+fg_color = "#93a1a1"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.new_tab_hover]
+bg_color = "#001217"
+fg_color = "#93a1a1"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
