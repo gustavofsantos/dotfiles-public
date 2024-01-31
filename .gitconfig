@@ -81,7 +81,7 @@
   cmd = difft "$LOCAL" "$REMOTE"
 
 [pager]
-  ; difftool = true
+  difftool = true
 
 [rerere]
   enabled = true
