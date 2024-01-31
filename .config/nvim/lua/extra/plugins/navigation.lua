@@ -45,7 +45,6 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-symbols.nvim",
-      "nvim-telescope/telescope-file-browser.nvim",
       {
         "nvim-telescope/telescope-fzf-native.nvim",
         build = "make",
@@ -85,7 +84,7 @@ return {
 
       {
         "<c-b>",
-        "<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>",
+        "<cmd>Ex<CR>",
         desc = "Browse files",
       },
     },
@@ -183,7 +182,7 @@ return {
         },
       })
 
-      telescope.load_extension("file_browser")
+      -- telescope.load_extension("file_browser")
     end,
   },
 }
