@@ -46,6 +46,7 @@
     # tools
     pkgs.btop
     pkgs.ripgrep
+    pkgs.wezterm
     pkgs.delta
     pkgs.lazygit
     pkgs.lazydocker
