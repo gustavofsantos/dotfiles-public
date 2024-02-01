@@ -33,16 +33,16 @@ end)
 
 return {
     force_reverse_video_cursor = true,
-    color_scheme = "SolarizedLight",
+    color_scheme = "SolarizedDark",
 
     font = wezterm.font("MonoLisa Nerd Font"),
     -- font_size = 10.0,
     font_size = 10.6,
     freetype_load_flags = "NO_HINTING",
     freetype_load_target = "Normal",
-    front_end = "OpenGL",
+    -- front_end = "OpenGL",
     line_height = 1.2,
-    harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
+    harfbuzz_features = { "calt=1", "clig=1", "liga=0" },
 
     window_padding = {
         left = 0,
@@ -185,11 +185,11 @@ return {
         --     mods = "LEADER",
         --     action = wezterm.action.ToggleFullScreen,
         --   },
-        --   {
-        --     key = "z",
-        --     mods = "LEADER",
-        --     action = wezterm.action.TogglePaneZoomState,
-        --   },
+        {
+            key = "z",
+            mods = "LEADER",
+            action = wezterm.action.TogglePaneZoomState,
+        },
         --   {
         --     key = 'l',
         --     mods = 'LEADER',
