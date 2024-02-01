@@ -4,10 +4,10 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
-[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-source "${ZINIT_HOME}/zinit.zsh"
+# ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+# [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+# [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+# source "${ZINIT_HOME}/zinit.zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -70,16 +70,15 @@ COMPLETION_WAITING_DOTS="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-zinit ice lucid wait'0'
-zinit light joshskidmore/zsh-fzf-history-search
-zinit load atuinsh/atuin
+# zinit ice lucid wait'0'
+# zinit light joshskidmore/zsh-fzf-history-search
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(gh zoxide asdf docker)
+plugins=(git gh zoxide docker)
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
@@ -109,9 +108,9 @@ export PATH=$PATH:"$HOME"/bin
 export PATH=$PATH:"$HOME"/dotfiles-public/bin
 export PATH=$PATH:"$HOME"/.emacs.d/bin
 export PATH=$PATH:"$HOME"/.config/emacs/bin
-# export PATH="/home/linuxbrew/.linuxbrew/opt/node@18/bin:$PATH"
 
 eval "$(zoxide init zsh)"
+# eval "$(starship init zsh)"
 
 if [[ $(uname -n) = "loggi" ]]; then
   export PATH="$HOME/.pyenv/bin:$PATH"
@@ -140,9 +139,6 @@ function journal () {
 export PNPM_HOME="/home/gustavo/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
-
-eval "$(starship init zsh)"
-# eval "$(direnv hook zsh)"
 
 export PATH="/root/.local/bin:$PATH"
 
