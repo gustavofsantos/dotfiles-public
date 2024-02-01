@@ -26,6 +26,7 @@
   su            = submodule update --init --recursive
   conflicted    = !nvim +Conflicted
   dash		= !gh dash
+  nuke		= !git clean -fd && git reset --hard
   w		= worktree
   wa		= worktree add
   wl		= worktree list --porcelain
