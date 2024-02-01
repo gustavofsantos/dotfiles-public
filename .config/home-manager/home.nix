@@ -54,6 +54,7 @@
     pkgs.helix
     pkgs.eza
     pkgs.yq
+    pkgs.yarn
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
