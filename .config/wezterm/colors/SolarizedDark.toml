@@ -1,11 +1,14 @@
+[metadata]
+name = 'SolarizedDark'
+
 [colors]
 foreground = "#839496"
 background = "#002b36"
-cursor_bg = "#93a1a1"
+cursor_bg = "#cb4b16"
 cursor_fg = "#002b36"
-cursor_border = "#93a1a1"
-selection_fg = "#93a1a1"
-selection_bg = "#002b36"
+cursor_border = "#cb4b16"
+selection_fg = "#002b36"
+selection_bg = "#839496"
 scrollbar_thumb = "#002b36"
 split = "#002b36"
 ansi = [

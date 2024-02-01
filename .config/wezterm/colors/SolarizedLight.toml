@@ -1,0 +1,38 @@
+[metadata]
+name = 'SolarizedLight'
+
+[colors]
+background = "#fcf4dc"
+foreground = "#002b36"
+
+cursor_bg = "#cb4b16"
+cursor_fg = "#002b36"
+cursor_border = "#cb4b16"
+
+selection_fg = "#002b36"
+selection_bg = "#839496"
+scrollbar_thumb = "#465a61"
+split = "#708183"
+
+ansi = [ "#002b36", "#dc322f", "#859900", "#b58900", "#268bd2", "#d33682", "#2aa198", "#e9e2cb" ]
+brights = [ "#001e26", "#cb4b16", "#465a61", "#52676f", "#708183", "#6c71c4", "#81908f", "#fcf4dc" ]
+
+[colors.tab_bar]
+background = "#708183"
+
+[colors.tab_bar.active_tab]
+fg_color = "#002b36"
+bg_color = "#e9e2cb"
+
+[colors.tab_bar.inactive_tab]
+fg_color = "#e9e2cb"
+bg_color = "#708183"
+
+[colors.tab_bar.new_tab]
+fg_color = "#e9e2cb"
+bg_color = "#708183"
+
+[colors.tab_bar.new_tab_hover]
+fg_color = "#e9e2cb"
+bg_color = "#708183"
+
