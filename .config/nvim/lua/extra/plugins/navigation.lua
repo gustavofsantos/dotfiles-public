@@ -85,7 +85,7 @@ return {
 
       {
         "<c-b>",
-        "<cmd>Ex<CR>",
+        "<cmd>echo 'use the native file manager'<CR>",
         desc = "Browse files",
       },
     },
