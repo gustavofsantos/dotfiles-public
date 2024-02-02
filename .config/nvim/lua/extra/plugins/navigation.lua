@@ -82,12 +82,6 @@ return {
         "<cmd>Telescope current_buffer_fuzzy_find<cr>",
         desc = "Find in buffer",
       },
-
-      {
-        "<c-b>",
-        "<cmd>echo 'use the native file manager'<CR>",
-        desc = "Browse files",
-      },
     },
     config = function()
       local telescope = require("telescope")
@@ -185,5 +179,37 @@ return {
 
       telescope.load_extension("git_worktree")
     end,
+  },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    },
+    config = function()
+      require("neo-tree").setup({
+        filesystem = {
+          filtered_items = {
+            hide_dotfiles = false,
+            hide_gitignored = true,
+          },
+          follow_current_file = {
+            enabled = true,
+            leave_dirs_open = true,
+          },
+        },
+        buffers = {
+          follow_current_file = {
+            enabled = true,
+            leave_dirs_open = false,
+          },
+        },
+      })
+    end,
+    keys = {
+      { "<C-b>", "<cmd>Neotree toggle<cr>", desc = "Toggle file tree" },
+    },
   },
 }
