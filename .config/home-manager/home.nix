@@ -54,6 +54,7 @@
     pkgs.helix
     pkgs.eza
     pkgs.yq
+    pkgs.fzf
     pkgs.yarn
     pkgs.tmux
   ];
