@@ -56,9 +56,13 @@
 
 [core]
   editor = nvim
+  pager = delta
 
 [merge]
   conflictstyle = diff3
+
+[interactive]
+    diffFilter = delta --color-only
 
 [pretty]
   default = format:"%C(yellow)%h %C(blue)%cs %C(reset)%s%C(red)%d %C(green)%an%C(reset), %C(cyan)%ar'"
