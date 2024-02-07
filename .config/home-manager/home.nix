@@ -51,6 +51,7 @@
     pkgs.lazygit
     pkgs.lazydocker
     pkgs.neovim
+    pkgs.neovide
     pkgs.helix
     pkgs.eza
     pkgs.yq
