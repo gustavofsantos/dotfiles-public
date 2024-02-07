@@ -15,11 +15,6 @@ return {
       wk.register({
         ["<leader>t"] = {
           name = "+test",
-          a = { "<cmd>TestSuite<cr>", "Test all" },
-          f = { "<cmd>TestFile<cr>", "Test file" },
-          l = { "<cmd>TestLast<cr>", "Test last" },
-          n = { "<cmd>TestNearest<cr>", "Test nearest" },
-          v = { "<cmd>TestVisit<cr>", "Open latest" },
         },
       })
 

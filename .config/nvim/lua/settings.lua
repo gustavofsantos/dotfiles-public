@@ -56,15 +56,28 @@ vim.opt.mouse = "nv"
 
 -- neovide
 if vim.g.neovide then
-  vim.o.guifont = "MonoLisa Nerd Font:h9"
-  vim.g.transparency = 0.8
+  vim.o.guifont = "MonoLisa Nerd Font:h10:#h-none"
+  vim.opt.linespace = 0
+
+  vim.g.neovide_theme = "auto"
+
+  vim.g.neovide_padding_top = 0
+  vim.g.neovide_padding_bottom = 0
+  vim.g.neovide_padding_right = 0
+  vim.g.neovide_padding_left = 0
+
+  vim.g.neovide_transparency = 0.95
   vim.g.neovide_floating_blur_amount_x = 2.0
   vim.g.neovide_floating_blur_amount_y = 2.0
   vim.g.neovide_floating_shadow = true
   vim.g.neovide_floating_z_height = 10
   vim.g.neovide_light_angle_degrees = 45
   vim.g.neovide_light_radius = 5
+
   vim.g.neovide_scroll_animation_length = 0.1
+  vim.g.neovide_cursor_animation_length = 0.1
+
+  vim.g.neovide_cursor_trail_size = 0.5
 end
 
 vim.opt.statusline = "%<%f"
