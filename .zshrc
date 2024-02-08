@@ -1,6 +1,3 @@
-eval "$(zoxide init zsh)"
-# eval "$(starship init zsh)"
-
 if [[ $(uname -n) = "loggi" ]]; then
   export PATH="$HOME/.pyenv/bin:$PATH"
   eval "$(pyenv init -)"
@@ -24,4 +21,6 @@ function journal () {
   nvim ~/notes/journal/$(date +%Y-%m-%d).md
 }
 
+eval "$(sheldon source)"
+eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
