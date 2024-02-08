@@ -5,8 +5,8 @@ vim.opt.termguicolors = true
 vim.opt.background = "dark"
 vim.opt.hidden = true
 vim.opt.encoding = "utf-8"
-vim.opt.number = false
-vim.opt.relativenumber = false
+vim.opt.number = true
+vim.opt.relativenumber = true
 vim.opt.hidden = true
 vim.opt.ai = true
 vim.opt.si = true
@@ -146,7 +146,7 @@ vim.cmd([[augroup highlight_yank
     au TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=500})
 augroup END]])
 
-vim.cmd("autocmd VimEnter * lua local ok, err = pcall(vim.cmd, 'VtrAttachToPane 1')")
+-- vim.cmd("autocmd VimEnter * lua local ok, err = pcall(vim.cmd, 'VtrAttachToPane 1')")
 
 vim.api.nvim_create_user_command("Q", function()
   vim.cmd("q")
