@@ -1,5 +1,11 @@
 { config, pkgs, ... }:
 
+let
+
+  pkgsUnstable = import <nixpkgs-unstable> {};
+
+in
+
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -48,6 +54,10 @@
     pkgs.ripgrep
     pkgs.wezterm
     pkgs.delta
+    pkgs.starship
+    pkgs.sheldon
+    pkgs.zsh
+    pkgsUnstable.zellij
     pkgs.lazygit
     pkgs.lazydocker
     pkgs.neovim
