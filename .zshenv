@@ -1,7 +1,19 @@
 if [ -e /home/gustavo/.cargo/env ]; then . /home/gustavo/.cargo/env;  fi
 
+export EDITOR='nvim'
+
 export GEM_HOME="$HOME/.gem"
 export ANDROID_HOME="$HOME/Android/Sdk"
+export PNPM_HOME="/home/gustavo/.local/share/pnpm"
+
+export PATH="$PNPM_HOME:$PATH"
+export PATH=$PATH:"$HOME"/.local/bin
+export PATH=$PATH:"$HOME"/.bin
+export PATH=$PATH:"$HOME"/bin
+export PATH=$PATH:"$HOME"/dotfiles-public/bin
+export PATH=$PATH:"$HOME"/.emacs.d/bin
+export PATH=$PATH:"$HOME"/.config/emacs/bin
+export PATH="/root/.local/bin:$PATH"
 
 alias v="nvim"
 alias vim="nvim"
@@ -22,6 +34,7 @@ alias hm="home-manager"
 alias nxe="nix-env"
 alias lz="eza"
 alias lza="eza --icons -1 -a -l --total-size"
+alias zj="zellij"
 
 # Loggi aliases
 alias lwt="docker-compose exec -e DJANGO_SETTINGS_MODULE=settings.test loggi_web_app pytest -vv"
