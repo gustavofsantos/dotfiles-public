@@ -53,8 +53,6 @@ return {
         ["<leader>g"] = {
           name = "+git",
           s = { "<cmd>Git<cr>", "Status" },
-          b = { "<cmd>Git blame<cr>", "Blame" },
-          -- l = { "<cmd>Git log %<cr>", "Buffer history" },
           p = { "<cmd>Git pull<cr>", "Pull changes" },
           P = { "<cmd>Git push<cr>", "Push changes" },
           I = { "<cmd>GitCoAuthors<cr>", "Co-authors" },
@@ -64,10 +62,11 @@ return {
         },
       })
       wk.register({
-        ["<leader>gf"] = {
-          name = "+log",
-          l = { "<cmd>DiffviewFileHistory %<cr>", "Log file history" },
-          o = { "<cmd>DiffviewFileHistory % --range=origin..HEAD<cr>", "Log file history (remote)" },
+        ["<leader>gb"] = {
+          name = "+buffer",
+          b = { "<cmd>Git blame<cr>", "Blame" },
+          l = { "<cmd>DiffviewFileHistory %<cr>", "Log" },
+          o = { "<cmd>DiffviewFileHistory % --range=origin..HEAD<cr>", "Log (remote)" },
           r = { gitsigns.reset_buffer, "Reset buffer" },
         },
       })
