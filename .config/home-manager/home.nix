@@ -57,6 +57,9 @@ in
     pkgs.starship
     pkgs.sheldon
     pkgs.zsh
+    pkgs.fd
+    pkgs.hyperfine
+    pkgs.httpie
     pkgsUnstable.zellij
     pkgs.lazygit
     pkgs.lazydocker
