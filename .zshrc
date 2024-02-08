@@ -1,4 +1,3 @@
-
 eval "$(zoxide init zsh)"
 # eval "$(starship init zsh)"
 
@@ -25,11 +24,4 @@ function journal () {
   nvim ~/notes/journal/$(date +%Y-%m-%d).md
 }
 
-# Load rbenv if installed
-export PATH="${HOME}/.rbenv/bin:${PATH}"
-type -a rbenv > /dev/null && eval "$(rbenv init -)"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
+eval "$(starship init zsh)"
