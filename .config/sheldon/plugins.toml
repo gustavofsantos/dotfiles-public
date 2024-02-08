@@ -17,6 +17,21 @@ shell = "zsh"
 [plugins.zsh-completions]
 github = 'zsh-users/zsh-completions'
 
+[plugins.zsh-autosuggestions]
+github = 'zsh-users/zsh-autosuggestions'
+use = ['{{ name }}.zsh']
+
+[plugins.zsh-syntax-highlighting]
+github = 'zsh-users/zsh-syntax-highlighting'
+
+[plugins.fzf-zsh]
+github = 'junegunn/fzf'
+dir = 'shell'
+use = [
+    'completion.zsh',
+    'key-bindings.zsh',
+]
+
 # For example:
 #
 # [plugins.base16]
