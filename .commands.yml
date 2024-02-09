@@ -15,3 +15,18 @@ commands:
 
   - name: "Loggi: Create SSH key"
     run: "ssh-keygen -t ed25519 -C \"gustavo.fernandes@loggi.com\""
+
+  - name: "Docker: kill all running containers"
+    run: "docker kill $(docker ps -q)"
+
+  - name: "Docker: delete all stopped containers"
+    run: "docker rm $(docker ps -a -q)"
+
+  - name: "Docker: delete all images"
+    run: "docker rmi $(docker images -q)"
+
+  - name: "Docker: delete unused containers"
+    run: "docker image prune"
+
+  - name: "Docker: delete unused containers and images"
+    run: "docker image prune -a"
