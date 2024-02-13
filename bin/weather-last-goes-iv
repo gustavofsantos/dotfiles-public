@@ -1,0 +1,11 @@
+#!/bin/sh
+
+INFRAREDS=$(curl --silent https://apisat.inmet.gov.br/datas/GOES/AS/IV)
+LAST_SIGLA=$(echo "$INFRAREDS" | jq -r '.[0].sigla')
+LAST_HOURS=$(curl --silent https://apisat.inmet.gov.br/horas/GOES/AS/IV/"$LAST_SIGLA")
+LAST_HOURS_SIGLA=$(echo "$LAST_HOURS" | jq -r '.[0].sigla')
+SATELITE_IMAGE_DATA=$(curl --silent https://apisat.inmet.gov.br/GOES/AS/IV/"$LAST_SIGLA"/"$LAST_HOURS_SIGLA")
+
+# save to jpg file from base64
+echo "$SATELITE_IMAGE_DATA" | jq -r '.base64' | tr -d \\n | base64 -d > /tmp/goes-iv-"$LAST_SIGLA"-"$LAST_HOURS_SIGLA".jpg
+# echo "$SATELITE_IMAGE_DATA" | jq -r '.base64' | tr -d \\n

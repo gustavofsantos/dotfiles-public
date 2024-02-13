@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# INMET - Curitiba PR
+GEOCODE=4106902
+
+RESPONSE=$(curl --silent https://apiprevmet3.inmet.gov.br/estacao/proxima/$GEOCODE)
+
+echo "$RESPONSE" \
+  | jq '.dados | "[TMP] \(.TEM_INS)°C [UMD] \(.UMD_INS)% [PRE] \(.PRE_INS)hPa [PTO] \(.PTO_INS)°C"'

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# INMET - Curitiba PR
+GEOCODE=4106902
+
+RESPONSE=$(curl --silent https://apiprevmet3.inmet.gov.br/avisos/getByGeocode/$GEOCODE)
+
+echo "$RESPONSE" | jq -r '.[-1] | "[\(.perigo)] \(.tipo)"'
