@@ -1,7 +1,7 @@
 return {
   {
     "vim-test/vim-test",
-    enabled = false,
+    enabled = true,
     config = function()
       vim.cmd([[let test#strategy = "toggleterm"]])
       vim.cmd([[let test#javascript#playwright#options = "--headed --retries 0 --workers 1"]])
@@ -40,7 +40,7 @@ return {
     },
   },
   "nvim-neotest/neotest",
-  enabled = true,
+  enabled = false,
   dependencies = {
     "nvim-lua/plenary.nvim",
     "antoinemadec/FixCursorHold.nvim",

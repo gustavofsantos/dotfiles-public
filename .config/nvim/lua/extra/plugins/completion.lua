@@ -3,7 +3,7 @@ return {
   { "hrsh7th/vim-vsnip" },
   {
     "hrsh7th/nvim-cmp",
-    event = { "InsertEnter", "CmdlineEnter" },
+    event = { "InsertEnter", "CmdlineEnter", "BufRead" },
     enabled = true,
     dependencies = {
       "hrsh7th/cmp-path",
