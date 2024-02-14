@@ -30,3 +30,9 @@ commands:
 
   - name: "Docker: delete unused containers and images"
     run: "docker image prune -a"
+
+  - name: "Weather: now"
+    run: "weather-now"
+
+  - name: "Weather: warnings"
+    run: "weather-warnings"
