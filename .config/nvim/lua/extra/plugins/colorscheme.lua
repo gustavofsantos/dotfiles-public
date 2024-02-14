@@ -76,7 +76,7 @@ return {
     "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
-    enabled = false,
+    enabled = true,
     config = function()
       require("kanagawa").setup({
         dimInactive = false,
@@ -139,7 +139,7 @@ return {
     "ellisonleao/gruvbox.nvim",
     lazy = false,
     priority = 1000,
-    enabled = true,
+    enabled = false,
     config = function()
       local bg = vim.o.background
       local palette = require("gruvbox").palette
