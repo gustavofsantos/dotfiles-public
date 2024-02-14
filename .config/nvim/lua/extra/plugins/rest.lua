@@ -2,6 +2,7 @@ return {
   {
     "rest-nvim/rest.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
+    enabled = false,
     event = "VeryLazy",
     opts = {
       result_split_horizontal = false,
