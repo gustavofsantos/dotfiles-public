@@ -246,3 +246,4 @@ anaconda3/
 .gem/
 .config/lazygit/state.yml
 .yarn/
+.config/com.gitbutler.app/
