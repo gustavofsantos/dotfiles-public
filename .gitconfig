@@ -150,5 +150,6 @@
 	signCommits = false
 [maintenance]
 	repo = /opt/loggi/front-core-ds/main
+	repo = /opt/loggi/ui
 [fetch]
 	writeCommitGraph = true
