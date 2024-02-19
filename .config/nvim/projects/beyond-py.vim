@@ -7,3 +7,5 @@ nnoremap <leader>pic :!bash -c "py-isort-check %:p"<CR>
 nnoremap <leader>pb :!bash -c "py-black %:p"<CR>
 nnoremap <leader>pbc :!bash -c "py-black-check %:p"<CR>
 nnoremap <leader>pt :T bash -c "py-test-file %:t && echo 'Success' \| espeak \|\| echo 'Fail' \| espeak"<CR>
+
+set colorcolumn=100
