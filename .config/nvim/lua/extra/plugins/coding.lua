@@ -23,6 +23,10 @@ return {
     \     'it': 'fit',
     \     'fit': 'xit',
     \     'xit': 'it',
+    \     'true': 'false',
+    \     'false': 'true',
+    \     'True': 'False',
+    \     'False': 'True',
     \   }
     \ ]
 ]])
