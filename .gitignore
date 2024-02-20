@@ -1,4 +1,5 @@
 Podcasts/
+.aws/
 .expo/
 .config/geary/
 .config/goa-1.0/
