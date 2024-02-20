@@ -59,8 +59,11 @@ return {
         },
         lualine_x = {
           "diff",
-          "progress",
-          "filetype",
+          {
+            "filetype",
+            colored = true, -- Displays filetype icon in color if set to true
+            icon_only = true, -- Display only an icon for filetype
+          },
         },
         lualine_y = {},
         lualine_z = {},
@@ -72,7 +75,13 @@ return {
           { "filename", path = 1 },
           { "diagnostics", sources = { "nvim_diagnostic", "nvim_workspace_diagnostic", "coc" } },
         },
-        lualine_x = { "filetype" },
+        lualine_x = {
+          {
+            "filetype",
+            colored = true, -- Displays filetype icon in color if set to true
+            icon_only = true, -- Display only an icon for filetype
+          },
+        },
         lualine_y = {},
         lualine_z = {},
       },

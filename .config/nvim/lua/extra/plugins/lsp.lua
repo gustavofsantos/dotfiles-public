@@ -5,6 +5,7 @@ return {
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
+      "dnlhc/glance.nvim",
       "b0o/schemastore.nvim",
       "folke/neodev.nvim",
       "nvim-telescope/telescope.nvim",
@@ -12,6 +13,39 @@ return {
     config = function()
       local mason = require("mason")
       local mason_lspconfig = require("mason-lspconfig")
+      local glance = require("glance")
+      local actions = glance.actions
+      glance.setup({
+        mappings = {
+          list = {
+            ["j"] = actions.next, -- Bring the cursor to the next item in the list
+            ["k"] = actions.previous, -- Bring the cursor to the previous item in the list
+            ["<Tab>"] = actions.next_location, -- Bring the cursor to the next location skipping groups in the list
+            ["<S-Tab>"] = actions.previous_location, -- Bring the cursor to the previous location skipping groups in the list
+            ["<C-u>"] = actions.preview_scroll_win(5),
+            ["<C-d>"] = actions.preview_scroll_win(-5),
+            ["s"] = actions.jump_vsplit,
+            ["S"] = actions.jump_split,
+            ["t"] = actions.jump_tab,
+            ["<CR>"] = actions.jump,
+            ["o"] = actions.jump,
+            ["l"] = actions.open_fold,
+            ["h"] = actions.close_fold,
+            ["<leader>l"] = actions.enter_win("preview"), -- Focus preview window
+            ["q"] = actions.close,
+            ["Q"] = actions.close,
+            ["<Esc>"] = actions.close,
+            ["<C-q>"] = actions.quickfix,
+            -- ['<Esc>'] = false -- disable a mapping
+          },
+          preview = {
+            ["Q"] = actions.close,
+            ["<Tab>"] = actions.next_location,
+            ["<S-Tab>"] = actions.previous_location,
+            ["<leader>l"] = actions.enter_win("list"), -- Focus list window
+          },
+        },
+      })
 
       mason.setup()
       mason_lspconfig.setup({
@@ -126,11 +160,11 @@ return {
 
           vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
           vim.keymap.set("n", "gT", telescope.treesitter, opts)
-          vim.keymap.set("n", "gd", telescope.lsp_definitions, opts)
+          vim.keymap.set("n", "gd", "<cmd>Glance definitions<cr>", opts)
           vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-          vim.keymap.set("n", "gi", telescope.lsp_implementations, opts)
+          vim.keymap.set("n", "gi", "<cmd>Glance implementations<cr>", opts)
           vim.keymap.set("n", "gr", vim.lsp.buf.rename, opts)
-          vim.keymap.set("n", "gR", telescope.lsp_references, opts)
+          vim.keymap.set("n", "gR", "<cmd>Glance references<cr>", opts)
           vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
           vim.keymap.set("n", "<leader>fs", function()
             telescope.lsp_document_symbols()
