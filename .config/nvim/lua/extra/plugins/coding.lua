@@ -96,7 +96,7 @@ return {
         },
         suggestion = { enabled = true, auto_trigger = true, debounce = 200 },
         panel = { enabled = true, auto_refresh = true },
-        copilot_node_command = vim.fn.expand("$HOME") .. "/.nvm/versions/node/v18.16.0/bin/node",
+        copilot_node_command = vim.fn.expand("$HOME") .. "/.nix-profile/bin/node",
       })
     end,
   },
