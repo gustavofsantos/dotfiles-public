@@ -45,7 +45,6 @@ in
     pkgs.nodejs_21
     pkgs.ruby
     pkgs.python311
-    pkgs.python311Packages.pip
     pkgs.go
     pkgs.zulu17
 
@@ -63,6 +62,11 @@ in
     pkgs.pyenv
     pkgs.poetry
     pkgs.poethepoet
+    pkgs.python311Packages.pip
+    pkgs.python311Packages.flake8
+    pkgs.python311Packages.pep8
+    pkgs.black
+    pkgs.isort
     pkgsUnstable.zellij
     pkgs.lazygit
     pkgs.lazydocker
