@@ -144,6 +144,18 @@ return {
             },
           })
         end,
+        ["pyright"] = function()
+          local lspconfig = require("lspconfig")
+          lspconfig.pyright.setup({
+            settings = {
+              python = {
+                analysis = {
+                  typeCheckingMode = "basic",
+                },
+              },
+            },
+          })
+        end,
         ["denols"] = function()
           local lspconfig = require("lspconfig")
           lspconfig.denols.setup({
