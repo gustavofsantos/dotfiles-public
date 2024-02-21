@@ -10,7 +10,13 @@ return {
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-cmdline",
       "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-vsnip",
+      {
+        "L3MON4D3/LuaSnip",
+        version = "v2.*",
+        build = "make install_jsregexp",
+        dependencies = { "rafamadriz/friendly-snippets" },
+      },
+      "saadparwaiz1/cmp_luasnip",
       "onsails/lspkind.nvim",
       -- "zbirenbaum/copilot-cmp",
       "lukas-reineke/cmp-under-comparator",
@@ -18,11 +24,12 @@ return {
     config = function()
       local cmp = require("cmp")
       local lspkind = require("lspkind")
+      local ls = require("luasnip")
 
       cmp.setup({
         preselect = "None",
         performance = {
-          debounce = 500,
+          debounce = 250,
         },
         sorting = {
           comparators = {
@@ -45,7 +52,7 @@ return {
         },
         snippet = {
           expand = function(args)
-            vim.fn["vsnip#anonymous"](args.body)
+            require("luasnip").lsp_expand(args.body)
           end,
         },
         mapping = cmp.mapping.preset.insert({
@@ -54,10 +61,28 @@ return {
           ["<C-Space>"] = cmp.mapping.complete(),
           ["<C-e>"] = cmp.mapping.abort(),
           ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+          ["<Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_next_item()
+            elseif ls.expand_or_jumpable() then
+              ls.expand_or_jump()
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
+          ["<S-Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_prev_item()
+            elseif ls.jumpable(-1) then
+              ls.jump(-1)
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
         }),
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
-          { name = "vsnip" },
+          { name = "luasnip" },
         }, {
           {
             name = "buffer",
@@ -72,35 +97,10 @@ return {
         formatting = {
           format = lspkind.cmp_format({
             mode = "text_symbol",
-            preset = "codicons",
+            preset = "default",
             maxwidth = 50,
             symbol_map = {
               Copilot = "",
-              Text = "󰉿",
-              Method = "󰆧",
-              Function = "󰊕",
-              Constructor = "",
-              Field = "󰜢",
-              Variable = "󰀫",
-              Class = "󰠱",
-              Interface = "",
-              Module = "",
-              Property = "󰜢",
-              Unit = "󰑭",
-              Value = "󰎠",
-              Enum = "",
-              Keyword = "󰌋",
-              Snippet = "",
-              Color = "󰏘",
-              File = "󰈙",
-              Reference = "󰈇",
-              Folder = "󰉋",
-              EnumMember = "",
-              Constant = "󰏿",
-              Struct = "󰙅",
-              Event = "",
-              Operator = "󰆕",
-              TypeParameter = "",
             },
           }),
         },
@@ -129,6 +129,8 @@ return {
           { name = "cmdline" },
         }),
       })
+
+      require("luasnip.loaders.from_vscode").lazy_load()
 
       -- require("copilot_cmp").setup()
     end,

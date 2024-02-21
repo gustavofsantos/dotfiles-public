@@ -61,7 +61,7 @@ return {
           "diff",
           {
             "filetype",
-            colored = true, -- Displays filetype icon in color if set to true
+            colored = false, -- Displays filetype icon in color if set to true
             icon_only = true, -- Display only an icon for filetype
           },
         },
@@ -78,7 +78,7 @@ return {
         lualine_x = {
           {
             "filetype",
-            colored = true, -- Displays filetype icon in color if set to true
+            colored = false, -- Displays filetype icon in color if set to true
             icon_only = true, -- Display only an icon for filetype
           },
         },
