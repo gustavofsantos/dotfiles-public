@@ -1,13 +1,6 @@
 return {
   "tpope/vim-sleuth",
   "mbbill/undotree",
-  -- {
-  --   "justinmk/vim-sneak",
-  --   config = function()
-  --     vim.cmd([[let g:sneak#label = 1]])
-  --     vim.cmd([[let g:sneak#use_ic_scs = 1]])
-  --   end,
-  -- },
   {
     "AndrewRadev/switch.vim",
     config = function()
@@ -140,30 +133,6 @@ return {
           require("flash").treesitter()
         end,
         desc = "Flash Treesitter",
-      },
-      {
-        "r",
-        mode = "o",
-        function()
-          require("flash").remote()
-        end,
-        desc = "Remote Flash",
-      },
-      {
-        "R",
-        mode = { "o", "x" },
-        function()
-          require("flash").treesitter_search()
-        end,
-        desc = "Treesitter Search",
-      },
-      {
-        "<c-s>",
-        mode = { "c" },
-        function()
-          require("flash").toggle()
-        end,
-        desc = "Toggle Flash Search",
       },
     },
   },
