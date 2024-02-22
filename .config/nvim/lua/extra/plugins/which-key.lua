@@ -18,6 +18,13 @@ return {
         },
       })
 
+      -- Problems
+      wk.register({
+        ["<leader>x"] = {
+          name = "+problems",
+        },
+      })
+
       -- Searching
       wk.register({
         ["<leader>f"] = {

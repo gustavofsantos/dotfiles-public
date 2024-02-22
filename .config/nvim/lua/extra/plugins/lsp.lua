@@ -11,6 +11,8 @@ return {
       "nvim-telescope/telescope.nvim",
     },
     config = function()
+      require("neodev").setup()
+
       local mason = require("mason")
       local mason_lspconfig = require("mason-lspconfig")
       local glance = require("glance")
@@ -70,7 +72,6 @@ return {
           require("lspconfig")[server_name].setup({})
         end,
         ["lua_ls"] = function()
-          require("neodev").setup()
           local lspconfig = require("lspconfig")
 
           lspconfig.lua_ls.setup({
@@ -200,7 +201,7 @@ return {
         },
         update_in_insert = false,
         float = {
-          source = "always", -- Or "if_many"
+          source = "if_many",
         },
       })
     end,
