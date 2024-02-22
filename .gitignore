@@ -248,3 +248,4 @@ anaconda3/
 .config/lazygit/state.yml
 .yarn/
 .config/com.gitbutler.app/
+.config/warp-terminal/
