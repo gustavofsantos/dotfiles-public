@@ -36,6 +36,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("settings")
 require("keymappings")
+require("notes")
 
 require("lazy").setup({
   { import = "extra.plugins" },
