@@ -41,7 +41,7 @@ return {
     freetype_load_flags = "NO_HINTING",
     freetype_load_target = "Normal",
     -- front_end = "OpenGL",
-    line_height = 1.2,
+    -- line_height = 1.2,
     harfbuzz_features = { "calt=1", "clig=1", "liga=0" },
     bold_brightens_ansi_colors = false,
 
