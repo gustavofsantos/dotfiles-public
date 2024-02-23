@@ -33,7 +33,7 @@ return {
   },
   {
     "nvim-lualine/lualine.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    dependencies = { "nvim-tree/nvim-web-devicons", "rmagatti/auto-session" },
     enabled = true,
     opts = {
       options = {
@@ -65,7 +65,9 @@ return {
             icon_only = true, -- Display only an icon for filetype
           },
         },
-        lualine_y = {},
+        lualine_y = {
+          require("auto-session.lib").current_session_name,
+        },
         lualine_z = {},
       },
       inactive_sections = {
