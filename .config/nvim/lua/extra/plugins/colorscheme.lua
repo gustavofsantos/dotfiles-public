@@ -73,6 +73,10 @@ return {
     end,
   },
   {
+    "metalelf0/jellybeans-nvim",
+    dependencies = { "rktjmp/lush.nvim" },
+  },
+  {
     "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
