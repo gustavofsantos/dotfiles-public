@@ -14,6 +14,7 @@ return {
           theme_conf = { border = true },
           previewer = false,
         },
+        pre_save_cmds = { "Neotree close" },
       })
 
       vim.keymap.set(
