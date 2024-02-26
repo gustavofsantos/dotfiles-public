@@ -194,7 +194,8 @@ return {
         filesystem = {
           filtered_items = {
             hide_dotfiles = false,
-            hide_gitignored = true,
+            hide_gitignored = false,
+            hide_hidden = false,
           },
           follow_current_file = {
             enabled = true,
@@ -205,6 +206,14 @@ return {
           follow_current_file = {
             enabled = true,
             leave_dirs_open = false,
+          },
+        },
+        event_handlers = {
+          {
+            event = "file_opened",
+            handler = function()
+              require("neo-tree.command").execute({ action = "close" })
+            end,
           },
         },
       })
