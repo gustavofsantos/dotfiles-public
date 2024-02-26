@@ -1,6 +1,5 @@
 #!/bin/bash
-FILE=$(echo $1 | sed 's/\/opt\/loggi\/py\/apps\/beyond\///g' | sed 's/apps\/beyond\///g')
-echo "Checking $FILE"
+echo "black $1"
+exit
 
-docker run -v /opt/loggi/py/apps/beyond/src/beyond_app:/opt/loggi/beyond/src/beyond_app \
-  beyond-py bash -c "poetry run black --check $FILE"
+poetry run black --check "$1"

@@ -1,5 +1,4 @@
 #!/bin/bash
-FILE=$(echo $1 | sed 's/\/opt\/loggi\/py\/apps\/beyond\///g')
-
-docker run -v /opt/loggi/py/apps/beyond/src/beyond_app:/opt/loggi/beyond/src/beyond_app \
-  beyond-py bash -c "poetry run isort --profile black $FILE"
+cd ~/loggi/py/apps/beyond || exit
+echo "Checking $1"
+poetry run isort --profile black "$1"
