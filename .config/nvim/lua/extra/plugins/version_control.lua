@@ -3,8 +3,6 @@ return {
     "lewis6991/gitsigns.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "tpope/vim-fugitive",
-      "tpope/vim-rhubarb",
       "sindrets/diffview.nvim",
       "nvim-telescope/telescope.nvim",
       "2kabhishek/co-author.nvim",
@@ -35,8 +33,11 @@ return {
     end,
   },
   {
+    "tpope/vim-fugitive",
+    dependencies = { "tpope/vim-rhubarb" },
+  },
+  {
     "sindrets/diffview.nvim",
-    event = "VeryLazy",
     config = function()
       local actions = require("diffview.actions")
 
