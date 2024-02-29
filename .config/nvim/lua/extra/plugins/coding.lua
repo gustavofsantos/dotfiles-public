@@ -47,12 +47,6 @@ return {
     end,
   },
   {
-    "gbprod/cutlass.nvim",
-    opts = {
-      cut_key = "x",
-    },
-  },
-  {
     "tpope/vim-projectionist",
     event = "BufRead",
     keys = {
