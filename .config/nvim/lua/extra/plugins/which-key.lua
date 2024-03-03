@@ -60,6 +60,7 @@ return {
         ["<leader>g"] = {
           name = "+git",
           s = { "<cmd>Git<cr>", "Status" },
+          c = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
           p = { "<cmd>Git pull<cr>", "Pull changes" },
           P = { "<cmd>Git push<cr>", "Push changes" },
           I = { "<cmd>GitCoAuthors<cr>", "Co-authors" },
