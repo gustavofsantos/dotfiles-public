@@ -25,6 +25,15 @@ return {
         },
       })
 
+      -- Marks
+      wk.register({
+        ["<leader>m"] = {
+          name = "+marks",
+          a = { require("harpoon.mark").add_file, "mark file" },
+          m = { require("harpoon.ui").toggle_quick_menu, "marks" },
+        },
+      })
+
       -- Searching
       wk.register({
         ["<leader>f"] = {
