@@ -3,41 +3,32 @@ return {
   {
     "ThePrimeagen/harpoon",
     dependencies = { "nvim-lua/plenary.nvim" },
+    branch = "harpoon2",
     event = "VeryLazy",
-    keys = {
-      {
-        "<M-1>",
-        function()
-          require("harpoon.ui").nav_file(1)
-        end,
-        mode = { "n" },
-        desc = "Navigate to file in slot 1",
-      },
-      {
-        "<M-2>",
-        function()
-          require("harpoon.ui").nav_file(2)
-        end,
-        mode = { "n" },
-        desc = "Navigate to file in slot 2",
-      },
-      {
-        "<M-3>",
-        function()
-          require("harpoon.ui").nav_file(3)
-        end,
-        mode = { "n" },
-        desc = "Navigate to file in slot 3",
-      },
-      {
-        "<M-4>",
-        function()
-          require("harpoon.ui").nav_file(4)
-        end,
-        mode = { "n" },
-        desc = "Navigate to file in slot 4",
-      },
-    },
+    config = function()
+      local hp = require("harpoon")
+      hp:setup()
+
+      vim.keymap.set("n", "<leader>ha", function()
+        hp:list():append()
+      end, { desc = "Add file to harpoon" })
+      vim.keymap.set("n", "<leader>ht", function()
+        hp.ui:toggle_quick_menu(hp:list())
+      end, { desc = "View marks" })
+
+      vim.keymap.set("n", "<M-1>", function()
+        hp:list():select(1)
+      end, { desc = "Navigate to file in slot 1" })
+      vim.keymap.set("n", "<M-2>", function()
+        hp:list():select(2)
+      end, { desc = "Navigate to file in slot 2" })
+      vim.keymap.set("n", "<M-3>", function()
+        hp:list():select(3)
+      end, { desc = "Navigate to file in slot 3" })
+      vim.keymap.set("n", "<M-4>", function()
+        hp:list():select(4)
+      end, { desc = "Navigate to file in slot 4" })
+    end,
   },
   {
     "nvim-telescope/telescope.nvim",
@@ -52,35 +43,6 @@ return {
         config = function()
           require("telescope").load_extension("fzf")
         end,
-      },
-    },
-    keys = {
-      {
-        "<F3>",
-        function()
-          require("telescope.builtin").grep_string()
-        end,
-        mode = { "n" },
-        desc = "Search",
-      },
-
-      {
-        "<F3>",
-        '"zy:Telescope grep_string default_text=<C-r>z<cr>',
-        mode = { "v" },
-        desc = "Search",
-      },
-
-      {
-        "<c-p>",
-        "<cmd>Telescope find_files<cr>",
-        desc = "Find files",
-      },
-
-      {
-        "<c-f>",
-        "<cmd>Telescope current_buffer_fuzzy_find<cr>",
-        desc = "Find in buffer",
       },
     },
     config = function()
@@ -178,7 +140,38 @@ return {
       })
 
       telescope.load_extension("git_worktree")
-      telescope.load_extension("session-lens")
+
+      vim.keymap.set(
+        "n",
+        "<leader>fx",
+        "<cmd>Telescope commands<cr>",
+        { desc = "Commands", noremap = true, silent = true }
+      )
+
+      vim.keymap.set(
+        "n",
+        "<F3>",
+        "<cmd>Telescope grep_string<cr>",
+        { desc = "Grep word under cursor", noremap = true, silent = true }
+      )
+      vim.keymap.set(
+        "v",
+        "<F3>",
+        '"zy:Telescope grep_string default_text=<C-r>z<cr>',
+        { desc = "Grep selected text", noremap = true, silent = true }
+      )
+      vim.keymap.set(
+        "n",
+        "<c-p>",
+        "<cmd>Telescope find_files<cr>",
+        { desc = "Find files", noremap = true, silent = true }
+      )
+      vim.keymap.set(
+        "n",
+        "<c-f>",
+        "<cmd>Telescope current_buffer_fuzzy_find<cr>",
+        { desc = "Find in buffer", noremap = true, silent = true }
+      )
     end,
   },
   {
@@ -217,9 +210,8 @@ return {
           },
         },
       })
+
+      vim.keymap.set("n", "<C-b>", "<cmd>Neotree toggle<cr>")
     end,
-    keys = {
-      { "<C-b>", "<cmd>Neotree toggle<cr>", desc = "Toggle file tree" },
-    },
   },
 }
