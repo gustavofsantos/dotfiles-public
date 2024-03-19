@@ -11,6 +11,20 @@ return {
     config = function()
       local wk = require("which-key")
 
+      -- Jumping
+      wk.register({
+        ["]"] = {
+          name = "+next",
+          h = { "<cmd>Gitsigns next_hunk<cr>", "Next hunk" },
+        },
+      })
+      wk.register({
+        ["["] = {
+          name = "+prev",
+          h = { "<cmd>Gitsigns prev_hunk<cr>", "Previous hunk" },
+        },
+      })
+
       -- Testing
       wk.register({
         ["<leader>t"] = {
@@ -53,7 +67,6 @@ return {
       })
 
       -- Git
-      local gitsigns = require("gitsigns")
       wk.register({
         ["<leader>g"] = {
           name = "+git",
@@ -62,44 +75,43 @@ return {
           p = { "<cmd>Git pull<cr>", "Pull changes" },
           P = { "<cmd>Git push<cr>", "Push changes" },
           I = { "<cmd>GitCoAuthors<cr>", "Co-authors" },
-          D = { "<cmd>DiffviewOpen<cr>", "Open diff view" },
-          T = { gitsigns.toggle_linehl, "Toggle highlight" },
-          X = { "<cmd>DiffviewClose<cr>", "Close diffview" },
         },
       })
       wk.register({
         ["<leader>gb"] = {
           name = "+buffer",
           b = { "<cmd>Git blame<cr>", "Blame" },
-          l = { "<cmd>DiffviewFileHistory %<cr>", "Log" },
-          o = { "<cmd>DiffviewFileHistory % --range=origin..HEAD<cr>", "Log (remote)" },
-          r = { gitsigns.reset_buffer, "Reset buffer" },
+          r = { "<cmd>Gitsigns reset_buffer<cr>", "Reset buffer" },
+          l = { "<cmd>DiffviewFileHistory %<cr>", "File history" },
+          L = { "<cmd>DiffviewFileHistory % --range=origin..HEAD<cr>", "File history (origin)" },
         },
       })
       wk.register({
-        ["<leader>gw"] = {
-          name = "+worktree",
-          c = { "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>", "Create worktree" },
-          l = { "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", "List worktrees" },
-        },
-      })
-      wk.register({
-        ["<leader>gh"] = {
-          name = "+hunk",
-          s = { gitsigns.stage_hunk, "Stage hunk" },
-          r = { gitsigns.reset_hunk, "Reset hunk" },
-          p = { gitsigns.preview_hunk, "Preview hunk" },
-        },
-      })
-      wk.register({
-        ["<leader>g"] = {
+        ["<leader>gb"] = {
+          name = "+buffer",
           b = {
             ':<C-U>!git blame <C-R>=expand("%:p") <CR> | sed -n <C-R>=line("\'<") <CR>,<C-R>=line("\'>") <CR>p <CR>',
             "Blame",
           },
-          ["lf"] = { "<cmd>DiffviewFileHistory<cr>", "Selection history" },
+          l = { "<cmd>DiffviewFileHistory<cr>", "File history" },
         },
       }, { mode = "v" })
+      wk.register({
+        ["<leader>gh"] = {
+          name = "+hunk",
+          t = { "<cmd>Gitsigns toggle_linehl<cr>", "Toggle line highlight" },
+          p = { "<cmd>Gitsigns preview_hunk<cr>", "Preview hunk" },
+          s = { "<cmd>Gitsigns stage_hunk<cr>", "Stage hunk" },
+          r = { "<cmd>Gitsigns reset_hunk<cr>", "Reset hunk" },
+        },
+      })
+      wk.register({
+        ["<leader>gd"] = {
+          name = "+diff",
+          o = { "<cmd>DiffviewOpen<cr>", "Open diff view" },
+          c = { "<cmd>DiffviewClose<cr>", "Close diffview" },
+        },
+      })
 
       -- others
       wk.register({

@@ -37,6 +37,15 @@ return {
     dependencies = { "tpope/vim-rhubarb" },
   },
   {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "sindrets/diffview.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    config = true,
+  },
+  {
     "sindrets/diffview.nvim",
     config = function()
       local actions = require("diffview.actions")
@@ -131,9 +140,5 @@ return {
         },
       })
     end,
-    keys = {
-      { "<leader>dvo", "<cmd>DiffviewOpen<cr>", desc = "Open diff view" },
-      { "<leader>dvc", "<cmd>DiffviewClose<cr>", desc = "Close diff view" },
-    },
   },
 }

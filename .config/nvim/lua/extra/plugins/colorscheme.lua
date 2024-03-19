@@ -66,10 +66,11 @@ return {
   {
     "rose-pine/neovim",
     name = "rose-pine",
-    enabled = false,
+    enabled = true,
     opts = {},
     init = function()
-      vim.cmd([[colorscheme rose-pine]])
+      vim.cmd("set background=light")
+      vim.cmd("colorscheme rose-pine")
     end,
   },
   {
@@ -80,7 +81,7 @@ return {
     "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
-    enabled = true,
+    enabled = false,
     config = function()
       require("kanagawa").setup({
         dimInactive = false,
@@ -106,6 +107,11 @@ return {
           },
         },
         overrides = function(colors)
+          -- only override the colors if the background is not light
+          if vim.o.background == "light" then
+            return {}
+          end
+
           return {
             -- Normal = { bg = colors.palette.sumiInk0 },
             -- NormalNC = { bg = bg_color }
@@ -136,6 +142,7 @@ return {
       })
     end,
     init = function()
+      vim.cmd("set background=light")
       vim.cmd("colorscheme kanagawa")
     end,
   },
