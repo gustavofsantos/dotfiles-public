@@ -93,6 +93,29 @@ return {
     },
   },
   {
+    "akinsho/bufferline.nvim",
+    version = "*",
+    dependencies = "nvim-tree/nvim-web-devicons",
+    opts = {
+      options = {
+        mode = "tabs",
+        diagnostics = "nvim_lsp",
+        offsets = {
+          {
+            filetype = "NvimTree",
+            text = "File Explorer",
+            separator = true,
+          },
+        },
+      },
+    },
+    config = true,
+    keys = {
+      { "n", "gt", "<cmd>BufferLineCycleNext<CR>" },
+      { "n", "gT", "<cmd>BufferLineCyclePrev<CR>" },
+    },
+  },
+  {
     "yorickpeterse/nvim-pqf",
     config = true,
   },

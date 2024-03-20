@@ -9,7 +9,7 @@ nnoremap <leader>pb :!bash -c "py-black %:p"<CR>
 nnoremap <leader>pbc :!bash -c "py-black-check %:p"<CR>
 " nnoremap <leader>pt :T bash -c "py-test-file %:t && echo 'Success' \| espeak \|\| echo 'Fail' \| espeak"<CR>
 
-nnoremap <leader>tn :TestNearest POSTGRES_DB=dev_db POSTGRES_PASSWORD=postgres POSTGRES_HOST=localhost POSTGRES_PORT=5432<CR>
-nnoremap <leader>tf :TestFile POSTGRES_DB=dev_db POSTGRES_PASSWORD=postgres POSTGRES_HOST=localhost POSTGRES_PORT=5432<CR>
+" nnoremap <leader>tn :TestNearest POSTGRES_DB=dev_db POSTGRES_PASSWORD=postgres POSTGRES_HOST=localhost POSTGRES_PORT=5432<CR>
+" nnoremap <leader>tf :TestFile POSTGRES_DB=dev_db POSTGRES_PASSWORD=postgres POSTGRES_HOST=localhost POSTGRES_PORT=5432<CR>
 
 " set colorcolumn=100

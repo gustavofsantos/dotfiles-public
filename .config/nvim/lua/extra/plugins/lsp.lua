@@ -188,7 +188,6 @@ return {
           local telescope = require("telescope.builtin")
 
           vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-          vim.keymap.set("n", "gT", telescope.treesitter, opts)
           vim.keymap.set("n", "gd", "<cmd>Glance definitions<cr>", opts)
           vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
           vim.keymap.set("n", "gi", "<cmd>Glance implementations<cr>", opts)

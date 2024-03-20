@@ -67,10 +67,19 @@ return {
     "rose-pine/neovim",
     name = "rose-pine",
     enabled = true,
-    opts = {},
+    opts = {
+      dim_inactive_windows = true,
+    },
     init = function()
-      vim.cmd("set background=light")
-      vim.cmd("colorscheme rose-pine")
+      -- vim.cmd("set background=light")
+      -- vim.cmd("colorscheme rose-pine")
+    end,
+  },
+  {
+    "srcery-colors/srcery-vim",
+    as = "srcery",
+    init = function()
+      -- vim.cmd("colorscheme srcery")
     end,
   },
   {
@@ -81,7 +90,6 @@ return {
     "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
-    enabled = false,
     config = function()
       require("kanagawa").setup({
         dimInactive = false,
@@ -142,7 +150,7 @@ return {
       })
     end,
     init = function()
-      vim.cmd("set background=light")
+      -- vim.cmd("set background=light")
       vim.cmd("colorscheme kanagawa")
     end,
   },
@@ -150,7 +158,6 @@ return {
     "ellisonleao/gruvbox.nvim",
     lazy = false,
     priority = 1000,
-    enabled = false,
     config = function()
       local bg = vim.o.background
       local palette = require("gruvbox").palette
@@ -193,8 +200,10 @@ return {
           ["@lsp.type.property"] = { link = "@property" },
         },
       })
-
-      vim.cmd([[colorscheme gruvbox]])
     end,
+  },
+  {
+    "loctvl842/monokai-pro.nvim",
+    opts = {},
   },
 }
