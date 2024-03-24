@@ -51,7 +51,6 @@ in
     # tools
     pkgs.btop
     pkgs.ripgrep
-    pkgs.wezterm
     pkgs.delta
     pkgs.starship
     pkgs.sheldon
