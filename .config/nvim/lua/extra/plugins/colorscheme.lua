@@ -69,6 +69,10 @@ return {
     enabled = true,
     opts = {
       dim_inactive_windows = true,
+      highlight_groups = {
+        StatusLine = { fg = "love", bg = "love", blend = 10 },
+        StatusLineNC = { fg = "subtle", bg = "surface" },
+      },
     },
     init = function()
       -- vim.cmd("set background=light")
@@ -92,7 +96,7 @@ return {
     priority = 1000,
     config = function()
       require("kanagawa").setup({
-        dimInactive = false,
+        dimInactive = true,
         globalStatus = true,
         commentStyle = { italic = true },
         functionStyle = { italic = true, bold = true },

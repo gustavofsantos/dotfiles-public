@@ -32,17 +32,18 @@ wezterm.on("user-var-changed", function(window, pane, name, value)
 end)
 
 return {
+    automatically_reload_config = false,
     force_reverse_video_cursor = true,
     color_scheme = "Kanagawa",
 
     font = wezterm.font("MonoLisa Nerd Font"),
     -- font_size = 10.0,
-    font_size = 10.6,
+    font_size = 11,
     freetype_load_flags = "NO_HINTING",
     freetype_load_target = "Normal",
     -- front_end = "OpenGL",
-    -- line_height = 1.2,
-    harfbuzz_features = { "calt=1", "clig=1", "liga=0" },
+    line_height = 1.2,
+    harfbuzz_features = { "calt=1", "clig=1", "liga=1" },
     bold_brightens_ansi_colors = false,
 
     window_padding = {

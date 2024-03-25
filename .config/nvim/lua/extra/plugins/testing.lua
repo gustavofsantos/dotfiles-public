@@ -60,7 +60,7 @@ return {
         adapters = {
           require("neotest-python")({
             args = function()
-              return { "--disable-warnings", "--ds", "beyond_app.settings.development" }
+              return { "-vv", "--disable-warnings", "--ds", "beyond_app.settings.development" }
             end,
             dap = { justMyCode = false },
             pytest_discover_instances = true,
