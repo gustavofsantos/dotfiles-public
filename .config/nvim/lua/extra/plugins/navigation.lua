@@ -83,6 +83,14 @@ return {
             previewer = true,
             theme = "ivy",
           },
+          live_grep = {
+            previewer = true,
+            theme = "ivy",
+          },
+          grep_string = {
+            previewer = true,
+            theme = "ivy",
+          },
           git_files = {
             previewer = true,
             theme = "ivy",
@@ -111,7 +119,7 @@ return {
           },
           buffers = {
             previewer = false,
-            theme = "ivy",
+            theme = "dropdown",
             mappings = {
               i = {
                 ["<c-d>"] = require("telescope.actions").delete_buffer,

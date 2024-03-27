@@ -35,85 +35,88 @@ return {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     enabled = true,
-    opts = {
-      options = {
-        section_separators = "",
-        component_separators = "",
-      },
-      sections = {
-        lualine_a = {
-          {
-            "mode",
-            draw_empty = true,
-            padding = 0,
-            fmt = function()
-              return " "
-            end,
+    config = function()
+      require("lualine").setup({
+        options = {
+          section_separators = "",
+          component_separators = "",
+        },
+        sections = {
+          lualine_a = {
+            {
+              "mode",
+              draw_empty = true,
+              padding = 0,
+              fmt = function()
+                return " "
+              end,
+            },
           },
-        },
-        lualine_b = {},
-        lualine_c = {
-          "branch",
-          { "filename", path = 1 },
-          { "diagnostics", sources = { "nvim_diagnostic", "nvim_workspace_diagnostic", "coc" } },
-        },
-        lualine_x = {
-          "diff",
-          {
-            "filetype",
-            colored = false, -- Displays filetype icon in color if set to true
-            icon_only = true, -- Display only an icon for filetype
+          lualine_b = {},
+          lualine_c = {
+            "branch",
+            { "filename", path = 1 },
+            { "diagnostics", sources = { "nvim_diagnostic", "nvim_workspace_diagnostic", "coc" } },
           },
-        },
-        lualine_y = {},
-        lualine_z = {},
-      },
-      inactive_sections = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = {
-          { "filename", path = 1 },
-          { "diagnostics", sources = { "nvim_diagnostic", "nvim_workspace_diagnostic", "coc" } },
-        },
-        lualine_x = {
-          {
-            "filetype",
-            colored = false, -- Displays filetype icon in color if set to true
-            icon_only = true, -- Display only an icon for filetype
+          lualine_x = {
+            "diff",
+            {
+              "filetype",
+              colored = false, -- Displays filetype icon in color if set to true
+              icon_only = true, -- Display only an icon for filetype
+            },
           },
+          lualine_y = {},
+          lualine_z = {},
         },
-        lualine_y = {},
-        lualine_z = {},
-      },
-      extensions = {
-        "neo-tree",
-        "fugitive",
-        "toggleterm",
-      },
-    },
+        inactive_sections = {
+          lualine_a = {},
+          lualine_b = {},
+          lualine_c = {
+            { "filename", path = 1 },
+            { "diagnostics", sources = { "nvim_diagnostic", "nvim_workspace_diagnostic", "coc" } },
+          },
+          lualine_x = {
+            {
+              "filetype",
+              colored = false, -- Displays filetype icon in color if set to true
+              icon_only = true, -- Display only an icon for filetype
+            },
+          },
+          lualine_y = {},
+          lualine_z = {},
+        },
+        extensions = {
+          "neo-tree",
+          "fugitive",
+          "toggleterm",
+        },
+      })
+    end,
   },
   {
     "akinsho/bufferline.nvim",
     version = "*",
     dependencies = "nvim-tree/nvim-web-devicons",
-    opts = {
-      options = {
-        mode = "tabs",
-        diagnostics = "nvim_lsp",
-        offsets = {
-          {
-            filetype = "NvimTree",
-            text = "File Explorer",
-            separator = true,
+    event = "VeryLazy",
+    config = function()
+      require("bufferline").setup({
+        options = {
+          mode = "tabs",
+          diagnostics = "nvim_lsp",
+          offsets = {
+            {
+              filetype = "NvimTree",
+              text = "File Explorer",
+              separator = true,
+            },
           },
         },
-      },
-    },
-    config = true,
-    keys = {
-      { "n", "gt", "<cmd>BufferLineCycleNext<CR>" },
-      { "n", "gT", "<cmd>BufferLineCyclePrev<CR>" },
-    },
+      })
+
+      vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>")
+      vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>")
+    end,
   },
   {
     "yorickpeterse/nvim-pqf",
