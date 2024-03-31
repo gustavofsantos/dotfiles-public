@@ -67,6 +67,7 @@ in
     pkgs.black
     pkgs.isort
     pkgsUnstable.zellij
+    pkgs.zoxide
     pkgs.lazygit
     pkgs.lazydocker
     pkgs.neovim

@@ -36,7 +36,7 @@ return {
     force_reverse_video_cursor = true,
     color_scheme = "Kanagawa",
 
-    font = wezterm.font("MonoLisa Nerd Font"),
+    font = wezterm.font("MonoLisa"),
     -- font_size = 10.0,
     font_size = 11,
     freetype_load_flags = "NO_HINTING",
@@ -45,6 +45,7 @@ return {
     line_height = 1.2,
     harfbuzz_features = { "calt=1", "clig=1", "liga=1" },
     bold_brightens_ansi_colors = false,
+    warn_about_missing_glyphs = false,
 
     window_padding = {
         left = 0,
