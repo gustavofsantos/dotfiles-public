@@ -36,3 +36,6 @@ commands:
 
   - name: "Weather: warnings"
     run: "weather-warnings"
+
+  - name: "List process on port"
+    run: "lsof -t -i:3000"

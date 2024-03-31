@@ -249,3 +249,4 @@ anaconda3/
 .yarn/
 .config/com.gitbutler.app/
 .config/warp-terminal/
+.config/gh-copilot/
