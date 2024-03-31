@@ -9,6 +9,10 @@ return {
     },
   },
   {
+    "projekt0n/circles.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" }
+  },
+  {
     "b0o/incline.nvim",
     dependencies = { "nvim-web-devicons" },
     event = "VeryLazy",
@@ -55,14 +59,14 @@ return {
           lualine_b = {},
           lualine_c = {
             "branch",
-            { "filename", path = 1 },
+            { "filename",    path = 1 },
             { "diagnostics", sources = { "nvim_diagnostic", "nvim_workspace_diagnostic", "coc" } },
           },
           lualine_x = {
             "diff",
             {
               "filetype",
-              colored = false, -- Displays filetype icon in color if set to true
+              colored = false,  -- Displays filetype icon in color if set to true
               icon_only = true, -- Display only an icon for filetype
             },
           },
@@ -73,13 +77,13 @@ return {
           lualine_a = {},
           lualine_b = {},
           lualine_c = {
-            { "filename", path = 1 },
+            { "filename",    path = 1 },
             { "diagnostics", sources = { "nvim_diagnostic", "nvim_workspace_diagnostic", "coc" } },
           },
           lualine_x = {
             {
               "filetype",
-              colored = false, -- Displays filetype icon in color if set to true
+              colored = false,  -- Displays filetype icon in color if set to true
               icon_only = true, -- Display only an icon for filetype
             },
           },
