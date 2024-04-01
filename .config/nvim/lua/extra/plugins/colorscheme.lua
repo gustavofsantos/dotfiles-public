@@ -133,8 +133,6 @@ return {
             StatusLineNC = { bg = colors.palette.sumiInk2 },
             ColorColumn = { bg = colors.palette.sumiInk2 },
 
-            PmenuSel = { fg = "NONE", bg = colors.theme.diff.text },
-
             TelescopeTitle = { fg = colors.theme.ui.special, bold = true },
             TelescopePromptNormal = { bg = colors.theme.ui.bg_p1 },
             TelescopePromptBorder = { fg = colors.theme.ui.bg_p1, bg = colors.theme.ui.bg_p1 },

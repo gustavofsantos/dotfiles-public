@@ -51,8 +51,8 @@ return {
         defaults = {
           dynamic_preview_title = true,
           prompt_position = "top",
-          prompt_prefix = " ",
-          selection_caret = " ",
+          prompt_prefix = "↳ ",
+          selection_caret = "→ ",
           sorting_strategy = "ascending",
           file_ignore_patterns = {
             "%.git/",
@@ -78,27 +78,27 @@ return {
             theme = "ivy",
             previewer = false,
             hidden = true,
-            disable_devicons = true
+            disable_devicons = true,
           },
           oldfiles = {
             previewer = true,
             theme = "ivy",
-            disable_devicons = true
+            disable_devicons = true,
           },
           live_grep = {
             previewer = true,
             theme = "ivy",
-            disable_devicons = true
+            disable_devicons = true,
           },
           grep_string = {
             previewer = true,
             theme = "ivy",
-            disable_devicons = true
+            disable_devicons = true,
           },
           git_files = {
             previewer = true,
             theme = "ivy",
-            disable_devicons = true
+            disable_devicons = true,
           },
           commands = {
             theme = "ivy",
@@ -135,10 +135,10 @@ return {
         },
         extensions = {
           fzf = {
-            fuzzy = true,                   -- false will only do exact matching
+            fuzzy = true, -- false will only do exact matching
             override_generic_sorter = true, -- override the generic sorter
-            override_file_sorter = true,    -- override the file sorter
-            case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
+            override_file_sorter = true, -- override the file sorter
+            case_mode = "smart_case", -- or "ignore_case" or "respect_case"
           },
           file_browser = {
             theme = "ivy",
