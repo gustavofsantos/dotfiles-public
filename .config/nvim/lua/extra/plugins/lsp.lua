@@ -5,7 +5,6 @@ return {
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
-      "dnlhc/glance.nvim",
       "b0o/schemastore.nvim",
       "folke/neodev.nvim",
       "nvim-telescope/telescope.nvim",
@@ -15,55 +14,6 @@ return {
 
       local mason = require("mason")
       local mason_lspconfig = require("mason-lspconfig")
-      local glance = require("glance")
-      local actions = glance.actions
-      glance.setup({
-        mappings = {
-          list = {
-            ["j"] = actions.next, -- Bring the cursor to the next item in the list
-            ["k"] = actions.previous, -- Bring the cursor to the previous item in the list
-            ["<Tab>"] = actions.next_location, -- Bring the cursor to the next location skipping groups in the list
-            ["<S-Tab>"] = actions.previous_location, -- Bring the cursor to the previous location skipping groups in the list
-            ["<C-u>"] = actions.preview_scroll_win(5),
-            ["<C-d>"] = actions.preview_scroll_win(-5),
-            ["s"] = actions.jump_vsplit,
-            ["S"] = actions.jump_split,
-            ["t"] = actions.jump_tab,
-            ["<CR>"] = actions.jump,
-            ["o"] = actions.jump,
-            ["l"] = actions.open_fold,
-            ["h"] = actions.close_fold,
-            ["<leader>l"] = actions.enter_win("preview"), -- Focus preview window
-            ["q"] = actions.close,
-            ["Q"] = actions.close,
-            ["<Esc>"] = actions.close,
-            ["<C-q>"] = actions.quickfix,
-            -- ['<Esc>'] = false -- disable a mapping
-          },
-          preview = {
-            ["Q"] = actions.close,
-            ["<Tab>"] = actions.next_location,
-            ["<S-Tab>"] = actions.previous_location,
-            ["<leader>l"] = actions.enter_win("list"), -- Focus list window
-          },
-        },
-        hooks = {
-          before_open = function(results, open, jump, method)
-            local uri = vim.uri_from_bufnr(0)
-            if #results == 1 then
-              local target_uri = results[1].uri or results[1].targetUri
-
-              if target_uri == uri then
-                jump(results[1])
-              else
-                open(results)
-              end
-            else
-              open(results)
-            end
-          end,
-        },
-      })
 
       mason.setup()
       mason_lspconfig.setup({
@@ -188,18 +138,28 @@ return {
           local telescope = require("telescope.builtin")
 
           vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-          vim.keymap.set("n", "gd", "<cmd>Glance definitions<cr>", opts)
+          vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
           vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-          vim.keymap.set("n", "gi", "<cmd>Glance implementations<cr>", opts)
+          vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
           vim.keymap.set("n", "gr", vim.lsp.buf.rename, opts)
-          vim.keymap.set("n", "gR", "<cmd>Glance references<cr>", opts)
+          vim.keymap.set("n", "gR", vim.lsp.buf.references, opts)
           vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+
           vim.keymap.set("n", "<leader>fs", function()
             telescope.lsp_document_symbols()
           end, { buffer = ev.buf, desc = "Find document symbols" })
+
           vim.keymap.set("n", "<leader>fS", function()
             telescope.lsp_dynamic_workspace_symbols()
           end, { buffer = ev.buf, desc = "Find workspace symbols" })
+
+          vim.keymap.set("n", "<leader>xx", function()
+            require("telescope.builtin").diagnostics()
+          end, { buffer = ev.buf, desc = "Buffer diagnostics" })
+
+          vim.keymap.set("n", "<leader>xw", function()
+            require("telescope.builtin").diagnostics({ bufno = 0 })
+          end, { buffer = ev.buf, desc = "Buffer diagnostics" })
         end,
       })
 
@@ -220,29 +180,12 @@ return {
         },
       })
     end,
-    keys = {
-      {
-        "<leader>xx",
-        function()
-          require("telescope.builtin").diagnostics()
-        end,
-        mode = { "n" },
-        desc = "Workspace diagnostics",
-      },
-      {
-        "<leader>xd",
-        function()
-          require("telescope.builtin").diagnostics({ bufno = 0 })
-        end,
-        mode = { "n" },
-        desc = "Document diagnostics",
-      },
-    },
   },
   {
     "j-hui/fidget.nvim",
     tag = "legacy",
     event = "LspAttach",
+    enabled = false,
     opts = {},
   },
 }
