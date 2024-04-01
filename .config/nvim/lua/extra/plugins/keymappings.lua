@@ -11,17 +11,46 @@ return {
     config = function()
       local wk = require("which-key")
 
+      -- Editor
+      wk.register({
+        ["<leader>e"] = {
+          name = "+editor",
+          s = { "<cmd>vsplit<cr>", "Split window" },
+          S = { "<cmd>split<cr>", "Split window horizontally" },
+        },
+      })
+      wk.register({
+        ["<leader>q"] = {
+          name = "+close/quickfix",
+          q = { "<cmd>q<cr>", "Close buffer" },
+          x = { "<cmd>cclose<cr>", "Close quickfix list" },
+          o = { "<cmd>copen<cr>", "Open quickfix list" },
+        },
+      })
+      wk.register({
+        ["<c-w>"] = {
+          name = "+window",
+          s = { "<cmd>vsplit<cr>", "Split window" },
+          S = { "<cmd>split<cr>", "Split window horizontally" },
+          ["<c-s>"] = { "<cmd>vsplit<cr>", "Split window" },
+        },
+      })
+
       -- Jumping
       wk.register({
         ["]"] = {
           name = "+next",
           h = { "<cmd>Gitsigns next_hunk<cr>", "Next hunk" },
+          q = { "<cmd>cnext<cr>", "Quickfix next" },
+          l = { "<cmd>lnext<cr>", "Location list next" },
         },
       })
       wk.register({
         ["["] = {
           name = "+prev",
           h = { "<cmd>Gitsigns prev_hunk<cr>", "Previous hunk" },
+          q = { "<cmd>cprevious<cr>", "Quickfix previous" },
+          l = { "<cmd>lprevious<cr>", "Location list previous" },
         },
       })
 
