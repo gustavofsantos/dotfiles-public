@@ -251,3 +251,4 @@ anaconda3/
 .config/warp-terminal/
 .config/gh-copilot/
 .config/systemd/user/sockets.target.wants/
+.config/font-manager/
