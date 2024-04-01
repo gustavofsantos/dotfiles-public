@@ -26,14 +26,6 @@ return {
     end,
   },
   {
-    "m4xshen/hardtime.nvim",
-    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-    event = "BufRead",
-    opts = {
-      restriction_mode = "hint",
-    },
-  },
-  {
     "numToStr/Comment.nvim",
     event = "VeryLazy",
     opts = {},
@@ -73,6 +65,7 @@ return {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
+    enabled = false,
     config = function()
       require("copilot").setup({
         filetypes = {
@@ -92,16 +85,6 @@ return {
         copilot_node_command = vim.fn.expand("$HOME") .. "/.nix-profile/bin/node",
       })
     end,
-  },
-  {
-    "ThePrimeagen/refactoring.nvim",
-    enabled = true,
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-    },
-    event = "BufRead",
-    opts = {},
   },
   {
     "folke/zen-mode.nvim",

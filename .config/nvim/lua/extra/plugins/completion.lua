@@ -29,7 +29,7 @@ return {
       cmp.setup({
         preselect = "None",
         performance = {
-          debounce = 250,
+          debounce = 200,
         },
         sorting = {
           comparators = {
@@ -46,10 +46,10 @@ return {
         completion = {
           completeopt = "menu,menuone,noinsert",
         },
-        window = {
-          completion = cmp.config.window.bordered(),
-          documentation = cmp.config.window.bordered(),
-        },
+        -- window = {
+        --   completion = cmp.config.window.bordered(),
+        --   documentation = cmp.config.window.bordered(),
+        -- },
         snippet = {
           expand = function(args)
             require("luasnip").lsp_expand(args.body)
