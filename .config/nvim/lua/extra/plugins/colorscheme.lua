@@ -91,6 +91,10 @@ return {
     dependencies = { "rktjmp/lush.nvim" },
   },
   {
+    "rmehri01/onenord.nvim",
+    branch = "main",
+  },
+  {
     "AlexvZyl/nordic.nvim",
     lazy = false,
     priority = 1000,
