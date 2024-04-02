@@ -5,7 +5,7 @@ return {
       "christoomey/vim-tmux-runner",
     },
     config = function()
-      vim.cmd([[let test#strategy = "vtr"]])
+      vim.cmd([[let test#strategy = "neovim"]])
       vim.cmd([[let test#javascript#playwright#options = "--headed --retries 0 --workers 1"]])
 
       vim.cmd("autocmd VimEnter * lua local ok, err = pcall(vim.cmd, 'VtrAttachToPane 1')")
