@@ -91,6 +91,17 @@ return {
     dependencies = { "rktjmp/lush.nvim" },
   },
   {
+    "AlexvZyl/nordic.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("nordic").setup({})
+    end,
+    init = function()
+      -- vim.cmd.colorscheme("nordic")
+    end,
+  },
+  {
     "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
@@ -153,7 +164,7 @@ return {
     end,
     init = function()
       -- vim.cmd("set background=light")
-      vim.cmd("colorscheme kanagawa")
+      vim.cmd.colorscheme("kanagawa")
     end,
   },
   {

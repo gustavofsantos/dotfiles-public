@@ -65,19 +65,13 @@ return {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
-    enabled = false,
+    enabled = true,
     config = function()
       require("copilot").setup({
         filetypes = {
-          javascript = true,
-          typescript = true,
-          javascriptreact = true,
-          typescriptreact = true,
-          python = true,
           lua = true,
           shell = true,
           sh = true,
-          markdown = true,
           ["*"] = false,
         },
         suggestion = { enabled = true, auto_trigger = true, debounce = 200 },
