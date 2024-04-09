@@ -11,11 +11,7 @@ return {
   {
     dir = "~/Code/solarized.nvim",
     priority = 1000,
-    enabled = false,
-    config = function()
-      require("solarized").setup()
-      vim.cmd([[colorscheme solarized]])
-    end,
+    enabled = true,
   },
   {
     dir = "~/Code/noir.nvim",
