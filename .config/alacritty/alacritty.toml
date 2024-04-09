@@ -1,4 +1,4 @@
-import = ["/home/gustavo/.config/alacritty/themes/noir.toml"]
+import = ["/home/gustavo/.config/alacritty/themes/kanagawa.toml"]
 
 [env]
 TERM = "xterm-256color"
@@ -7,24 +7,24 @@ TERM = "xterm-256color"
 size = 10
 
 [font.bold]
-family = "MonoLisa Nerd Font"
+family = "MonoLisa"
 style = "Bold"
 
 [font.bold_italic]
-family = "MonoLisa Nerd Font"
+family = "MonoLisa"
 style = "Bold Italic"
 
 [font.italic]
-family = "MonoLisa Nerd Font"
+family = "MonoLisa"
 style = "Regular Italic"
 
 [font.normal]
-family = "MonoLisa Nerd Font"
+family = "MonoLisa"
 style = "Regular"
 
 [font.offset]
 x = 0
-y = 0
+y = 1
 
 [window.padding]
 x = 0
