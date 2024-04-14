@@ -47,6 +47,10 @@ return {
     bold_brightens_ansi_colors = false,
     warn_about_missing_glyphs = false,
 
+    window_decorations = "RESIZE",
+
+    window_close_confirmation = 'NeverPrompt',
+
     window_padding = {
         left = 0,
         right = 0,
