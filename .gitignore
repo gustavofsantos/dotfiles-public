@@ -252,3 +252,4 @@ anaconda3/
 .config/gh-copilot/
 .config/systemd/user/sockets.target.wants/
 .config/font-manager/
+.config/op/
