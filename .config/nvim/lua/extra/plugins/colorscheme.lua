@@ -107,7 +107,7 @@ return {
     priority = 1000,
     config = function()
       require("kanagawa").setup({
-        dimInactive = true,
+        dimInactive = false,
         globalStatus = true,
         commentStyle = { italic = true },
         functionStyle = { italic = true, bold = true },
