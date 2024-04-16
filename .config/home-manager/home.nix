@@ -55,7 +55,9 @@ in
     pkgs.starship
     pkgs.sheldon
     pkgs.zsh
+    pkgs.gh
     pkgs.fd
+    pkgsUnstable.sesh
     pkgs.hyperfine
     pkgs.httpie
     pkgs.pyenv
@@ -75,6 +77,7 @@ in
     pkgs.neovide
     pkgs.helix
     pkgs.eza
+    pkgs.bat
     pkgs.yq
     pkgs.fzf
     pkgs.yarn
