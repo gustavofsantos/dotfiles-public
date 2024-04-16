@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo "Comparing two revisions"
+rev1=$(git branch | cut  -c 3- | gum filter --placeholder="Revision 1" --prompt="> ")
+rev2=$(git branch | cut  -c 3- | gum filter --placeholder="Revision 2" --prompt="> ")
+
+git --no-pager log --pretty=deploy "$rev1".."$rev2" -- .
+

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+rev1=$(git branch | cut  -c 3- | gum filter --placeholder="Revision 1" --prompt="> ")
+rev2=$(git branch | cut  -c 3- | gum filter --placeholder="Revision 2" --prompt="> ")
+
+git diff "$rev1".."$rev2"

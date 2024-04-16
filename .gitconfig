@@ -41,6 +41,8 @@
   b             = "!. ~/.githelpers && pretty_git_branch"
   bs            = !git checkout $(git branch | fzf)
   ski           = !git stash --keep-index
+  lcom		= !git-diff-list-commits
+  drev		= !git-diff
 
 [gpg]
   format = ssh
@@ -123,8 +125,8 @@
   defaultBranch = main
 
 [delta]
-  features = side-by-side line-numbers decorations
-  syntax-theme = Solarized (dark)
+  features = side-by-side line-numbers
+  syntax-theme = Kanagawa
   true-color = always
   navigate = true
 
@@ -151,5 +153,6 @@
 [maintenance]
 	repo = /opt/loggi/front-core-ds/main
 	repo = /opt/loggi/ui
+	repo = /opt/loggi/py
 [fetch]
 	writeCommitGraph = true

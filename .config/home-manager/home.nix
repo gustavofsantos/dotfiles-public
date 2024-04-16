@@ -58,6 +58,7 @@ in
     pkgs.gh
     pkgs.fd
     pkgsUnstable.sesh
+    pkgsUnstable.gum
     pkgs.hyperfine
     pkgs.httpie
     pkgs.pyenv
