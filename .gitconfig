@@ -141,18 +141,16 @@
   path = ~/themes.gitconfig
 
 [credential "https://github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
+  helper = 
+  helper = !/usr/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
+  helper = 
+  helper = !/usr/bin/gh auth git-credential
 [safe]
-	directory = /opt/loggi
-[gitbutler]
-	signCommits = false
+  directory = /opt/loggi
 [maintenance]
-	repo = /opt/loggi/front-core-ds/main
-	repo = /opt/loggi/ui
-	repo = /opt/loggi/py
+  repo = /opt/loggi/front-core-ds/main
+  repo = /opt/loggi/ui
+  repo = /opt/loggi/py
 [fetch]
-	writeCommitGraph = true
+  writeCommitGraph = true
