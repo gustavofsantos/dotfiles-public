@@ -247,45 +247,45 @@ themes {
     orange "#ffa066"
   }
   rose-pine {
-		bg "#403d52"
-		fg "#e0def4"
-		red "#eb6f92"
-		green "#31748f"
-		blue "#9ccfd8"
-		yellow "#f6c177"
-		magenta "#c4a7e7"
-		orange "#fe640b"
-		cyan "#ebbcba"
-		black "#26233a"
-		white "#e0def4"
-	}
+    bg "#403d52"
+    fg "#e0def4"
+    red "#eb6f92"
+    green "#31748f"
+    blue "#9ccfd8"
+    yellow "#f6c177"
+    magenta "#c4a7e7"
+    orange "#fe640b"
+    cyan "#ebbcba"
+    black "#26233a"
+    white "#e0def4"
+  }
   rose-pine-moon {
-		bg "#44415a"
-		fg "#e0def4"
-		red "#eb6f92"
-		green "#3e8fb0"
-		blue "#9ccfd8"
-		yellow "#f6c177"
-		magenta "#c4a7e7"
-		orange "#fe640b"
-		cyan "#ea9a97"
-		black "#393552"
-		white "#e0def4"
-	}
-	rose-pine-dawn {
-		bg "#faf4ed"
-		fg "#575279"
-		red "#b4637a"
-		green "#286983"
-		blue "#56949f"
-		yellow "#ea9d34"
-		magenta "#907aa9"
-		orange "#fe640b"
-		cyan "#d7827e"
-		black "#f2e9e1"
-		white "#575279"
-	}
-gruvbox-light {
+    bg "#44415a"
+    fg "#e0def4"
+    red "#eb6f92"
+    green "#3e8fb0"
+    blue "#9ccfd8"
+    yellow "#f6c177"
+    magenta "#c4a7e7"
+    orange "#fe640b"
+    cyan "#ea9a97"
+    black "#393552"
+    white "#e0def4"
+  }
+  rose-pine-dawn {
+    bg "#faf4ed"
+    fg "#575279"
+    red "#b4637a"
+    green "#286983"
+    blue "#56949f"
+    yellow "#ea9d34"
+    magenta "#907aa9"
+    orange "#fe640b"
+    cyan "#d7827e"
+    black "#f2e9e1"
+    white "#575279"
+  }
+  gruvbox-light {
     fg 124 111 100
     bg 251 82 75
     black 40 40 40
@@ -297,8 +297,8 @@ gruvbox-light {
     cyan 104 157 106
     white 213 196 161
     orange 214 93 14
-}
-gruvbox-dark {
+  }
+  gruvbox-dark {
     fg 213 196 161
     bg 40 40 40
     black 60 56 54
@@ -310,39 +310,39 @@ gruvbox-dark {
     cyan 104 157 106
     white 251 241 199
     orange 214 93 14
+  }
+  solarized-dark {
+    fg 253 246 227
+    bg 0 43 54
+    black 7 54 66
+    red 220 50 47
+    green 133 153 0
+    yellow 181 137 0
+    blue 38 139 210
+    magenta 211 54 130
+    cyan 42 161 152
+    white 238 232 213
+    orange 203 75 22
+  }
+solarized-light {
+    fg 101 123 131
+    bg 253 246 227
+    black 7 54 66
+    red 220 50 47
+    green 133 153 0
+    yellow 181 137 0
+    blue 38 139 210
+    magenta 211 54 130
+    cyan 42 161 152
+    white 238 232 213
+    orange 203 75 22
 }
-   solarized-dark {
-        fg 253 246 227
-        bg 0 43 54
-        black 7 54 66
-        red 220 50 47
-        green 133 153 0
-        yellow 181 137 0
-        blue 38 139 210
-        magenta 211 54 130
-        cyan 42 161 152
-        white 238 232 213
-        orange 203 75 22
-    }
-    solarized-light {
-        fg 101 123 131
-        bg 253 246 227
-        black 7 54 66
-        red 220 50 47
-        green 133 153 0
-        yellow 181 137 0
-        blue 38 139 210
-        magenta 211 54 130
-        cyan 42 161 152
-        white 238 232 213
-        orange 203 75 22
-    }
 }
 
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "gruvbox-dark"
+theme "kanagawa"
 
 // The name of the default layout to load on startup
 // Default: "default"
