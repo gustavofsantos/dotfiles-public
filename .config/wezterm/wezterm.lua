@@ -34,7 +34,7 @@ end)
 return {
     automatically_reload_config = false,
     force_reverse_video_cursor = true,
-    color_scheme = "Kanagawa",
+    color_scheme = "KanagawaDragon",
 
     font = wezterm.font("MonoLisa"),
     -- font_size = 10.0,
