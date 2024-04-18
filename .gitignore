@@ -253,3 +253,4 @@ anaconda3/
 .config/systemd/user/sockets.target.wants/
 .config/font-manager/
 .config/op/
+.luarocks/

@@ -1,0 +1,215 @@
+commands = {}
+dependencies = {
+   ["lua-curl"] = {
+      ["0.3.13-1"] = {
+         {
+            constraints = {
+               {
+                  op = ">=",
+                  version = {
+                     5, 1, string = "5.1"
+                  }
+               },
+               {
+                  op = "<",
+                  version = {
+                     5, 5, string = "5.5"
+                  }
+               }
+            },
+            name = "lua"
+         }
+      }
+   },
+   mimetypes = {
+      ["1.0.0-3"] = {
+         {
+            constraints = {
+               {
+                  op = ">=",
+                  version = {
+                     5, 1, string = "5.1"
+                  }
+               }
+            },
+            name = "lua"
+         }
+      }
+   },
+   ["nvim-nio"] = {
+      ["1.9.0-1"] = {
+         {
+            constraints = {
+               {
+                  op = ">=",
+                  version = {
+                     5, 1, string = "5.1"
+                  }
+               }
+            },
+            name = "lua"
+         }
+      }
+   },
+   xml2lua = {
+      ["1.5-2"] = {
+         {
+            constraints = {
+               {
+                  op = ">=",
+                  version = {
+                     5, 1, string = "5.1"
+                  }
+               },
+               {
+                  op = "<=",
+                  version = {
+                     5, 4, string = "5.4"
+                  }
+               }
+            },
+            name = "lua"
+         }
+      }
+   }
+}
+modules = {
+   XmlParser = {
+      "xml2lua/1.5-2"
+   },
+   cURL = {
+      "lua-curl/0.3.13-1"
+   },
+   ["cURL.impl.cURL"] = {
+      "lua-curl/0.3.13-1"
+   },
+   ["cURL.safe"] = {
+      "lua-curl/0.3.13-1"
+   },
+   ["cURL.utils"] = {
+      "lua-curl/0.3.13-1"
+   },
+   lcurl = {
+      "lua-curl/0.3.13-1"
+   },
+   mimetypes = {
+      "mimetypes/1.0.0-3"
+   },
+   ["nio.control"] = {
+      "nvim-nio/1.9.0-1"
+   },
+   ["nio.file"] = {
+      "nvim-nio/1.9.0-1"
+   },
+   ["nio.init"] = {
+      "nvim-nio/1.9.0-1"
+   },
+   ["nio.logger"] = {
+      "nvim-nio/1.9.0-1"
+   },
+   ["nio.lsp"] = {
+      "nvim-nio/1.9.0-1"
+   },
+   ["nio.lsp-types"] = {
+      "nvim-nio/1.9.0-1"
+   },
+   ["nio.process"] = {
+      "nvim-nio/1.9.0-1"
+   },
+   ["nio.streams"] = {
+      "nvim-nio/1.9.0-1"
+   },
+   ["nio.tasks"] = {
+      "nvim-nio/1.9.0-1"
+   },
+   ["nio.tests"] = {
+      "nvim-nio/1.9.0-1"
+   },
+   ["nio.ui"] = {
+      "nvim-nio/1.9.0-1"
+   },
+   ["nio.uv"] = {
+      "nvim-nio/1.9.0-1"
+   },
+   xml2lua = {
+      "xml2lua/1.5-2"
+   },
+   ["xmlhandler.dom"] = {
+      "xml2lua/1.5-2"
+   },
+   ["xmlhandler.print"] = {
+      "xml2lua/1.5-2"
+   },
+   ["xmlhandler.tree"] = {
+      "xml2lua/1.5-2"
+   }
+}
+repository = {
+   ["lua-curl"] = {
+      ["0.3.13-1"] = {
+         {
+            arch = "installed",
+            commands = {},
+            dependencies = {},
+            modules = {
+               cURL = "cURL.lua",
+               ["cURL.impl.cURL"] = "cURL/impl/cURL.lua",
+               ["cURL.safe"] = "cURL/safe.lua",
+               ["cURL.utils"] = "cURL/utils.lua",
+               lcurl = "lcurl.so"
+            }
+         }
+      }
+   },
+   mimetypes = {
+      ["1.0.0-3"] = {
+         {
+            arch = "installed",
+            commands = {},
+            dependencies = {},
+            modules = {
+               mimetypes = "mimetypes.lua"
+            }
+         }
+      }
+   },
+   ["nvim-nio"] = {
+      ["1.9.0-1"] = {
+         {
+            arch = "installed",
+            commands = {},
+            dependencies = {},
+            modules = {
+               ["nio.control"] = "nio/control.lua",
+               ["nio.file"] = "nio/file.lua",
+               ["nio.init"] = "nio/init.lua",
+               ["nio.logger"] = "nio/logger.lua",
+               ["nio.lsp"] = "nio/lsp.lua",
+               ["nio.lsp-types"] = "nio/lsp-types.lua",
+               ["nio.process"] = "nio/process.lua",
+               ["nio.streams"] = "nio/streams.lua",
+               ["nio.tasks"] = "nio/tasks.lua",
+               ["nio.tests"] = "nio/tests.lua",
+               ["nio.ui"] = "nio/ui.lua",
+               ["nio.uv"] = "nio/uv.lua"
+            }
+         }
+      }
+   },
+   xml2lua = {
+      ["1.5-2"] = {
+         {
+            arch = "installed",
+            commands = {},
+            dependencies = {},
+            modules = {
+               XmlParser = "XmlParser.lua",
+               xml2lua = "xml2lua.lua",
+               ["xmlhandler.dom"] = "xmlhandler/dom.lua",
+               ["xmlhandler.print"] = "xmlhandler/print.lua",
+               ["xmlhandler.tree"] = "xmlhandler/tree.lua"
+            }
+         }
+      }
+   }
+}

@@ -257,43 +257,20 @@
         {
           "name": "Not so important tokens",
           "scope": [
-            "keyword.operator.assignment.js",
-            "keyword.operator.assignment.ts",
-            "keyword.operator.assignment.tsx",
-            "keyword.operator.ternary.js",
-            "keyword.operator.ternary.ts",
-            "keyword.operator.ternary.tsx",
-            "punctuation.separator.comma.js",
-            "punctuation.separator.comma.ts",
-            "punctuation.separator.comma.tsx",
+            "keyword.operator.assignment",
+            "keyword.operator.ternary",
+            "punctuation.separator.comma",
             "punctuation.definition.template-expression.begin.js",
             "punctuation.definition.template-expression.end.js",
-            "punctuation.section.embedded.begin.js",
-            "punctuation.section.embedded.begin.ts",
-            "punctuation.section.embedded.begin.tsx",
-            "punctuation.section.embedded.end.js",
-            "punctuation.section.embedded.end.ts",
-            "punctuation.section.embedded.end.tsx",
-            "punctuation.definition.binding-pattern.array.js",
-            "punctuation.definition.binding-pattern.array.ts",
-            "punctuation.definition.binding-pattern.array.tsx",
-            "punctuation.separator.comma.js",
-            "punctuation.definition.block.js",
-            "punctuation.definition.block.ts",
-            "punctuation.definition.block.tsx",
-            "punctuation.definition.binding-pattern.object.js",
-            "punctuation.definition.binding-pattern.object.ts",
-            "punctuation.definition.binding-pattern.object.tsx",
-            "punctuation.definition.parameters.begin.js",
-            "punctuation.definition.parameters.begin.ts",
-            "punctuation.definition.parameters.begin.tsx",
-            "punctuation.definition.parameters.end.js",
-            "punctuation.definition.parameters.end.ts",
-            "punctuation.definition.parameters.end.tsx",
-            "storage.type.function.arrow.js",
-            "storage.type.function.arrow.ts",
-            "storage.type.function.arrow.tsx",
-            "punctuation.separator.parameter.js"
+            "punctuation.section.embedded.begin",
+            "punctuation.section.embedded.end",
+            "punctuation.definition.binding-pattern.array",
+            "punctuation.definition.block",
+            "punctuation.definition.binding-pattern.object",
+            "punctuation.definition.parameters.begin",
+            "punctuation.definition.parameters.end",
+            "storage.type.function.arrow",
+            "punctuation.separator.parameter"
           ],
           "settings": {
             "foreground": "#D7DBE0AB"
@@ -302,14 +279,10 @@
         {
           "name": "Not important tokens",
           "scope": [
-            "punctuation.separator.comma.ts",
-            "punctuation.terminator.statement.js",
-            "punctuation.terminator.statement.ts",
-            "punctuation.terminator.statement.tsx",
-            "meta.brace.round.js",
-            "meta.brace.round.ts",
-            "meta.brace.round.tsx",
-            "punctuation.definition.tag.prisma",
+            "punctuation.separator.comma",
+            "punctuation.terminator.statement",
+            "meta.brace.round",
+            "punctuation.definition.tag",
             "punctuation.section.property-list.begin.bracket.curly.css",
             "punctuation.section.property-list.end.bracket.curly.css",
             "punctuation.terminator.rule.css",
@@ -322,9 +295,16 @@
         },
         {
           "scope": [
-            "support.class.component.js",
-            "support.class.component.ts",
-            "support.class.component.tsx"
+            "meta.attribute",
+          ],
+          "settings": {
+            "foreground": "#D7DBE0"
+          }
+        },
+        {
+          "scope": [
+            "meta.function.parameters",
+            "support.class.component",
           ],
           "settings": {
             "foreground": "#CAECE6"
@@ -332,24 +312,16 @@
         },
         {
           "scope": [
-            "punctuation.definition.string.template.begin.js",
-            "punctuation.definition.string.template.begin.ts",
-            "punctuation.definition.string.template.begin.tsx",
-            "punctuation.definition.string.template.end.js",
-            "punctuation.definition.string.template.end.ts",
-            "punctuation.definition.string.template.end.tsx",
-            "punctuation.definition.string.begin.js",
-            "punctuation.definition.string.begin.ts",
-            "punctuation.definition.string.begin.tsx",
-            "punctuation.definition.string.end.js",
-            "punctuation.definition.string.end.ts",
-            "punctuation.definition.string.end.tsx",
-            "punctuation.definition.typeparameters.begin.tsx",
-            "punctuation.definition.typeparameters.end.tsx",
-            "string.quoted.double.end.prisma",
-            "string.quoted.double.start.prisma",
-            "punctuation.definition.string.begin.yaml",
-            "punctuation.definition.string.end.yaml"
+            "punctuation.definition.string.template.begin",
+            "punctuation.definition.string.template.end",
+            "punctuation.definition.string.begin",
+            "punctuation.definition.string.end",
+            "punctuation.definition.typeparameters.begin",
+            "punctuation.definition.typeparameters.end",
+            "string.quoted.double.start",
+            "string.quoted.double.end",
+            "punctuation.definition.string.begin",
+            "punctuation.definition.string.end"
           ],
           "settings": {
             "foreground": "#ECC48D80"
@@ -358,6 +330,7 @@
         {
           "name": "Imports",
           "scope": [
+            "source",
             "meta.import.js string",
             "meta.import.js variable",
             "meta.import.js meta.block variable.other",
@@ -393,16 +366,10 @@
         },
         {
           "scope": [
-            "meta.import.js",
-            "punctuation.terminator.statement.js",
-            "punctuation.terminator.statement.ts",
-            "punctuation.terminator.statement.tsx",
-            "keyword.control.import.js",
-            "keyword.control.from.js",
-            "keyword.control.import.tsx",
-            "keyword.control.from.tsx",
-            "keyword.control.import.ts",
-            "keyword.control.from.ts",
+            "meta.import",
+            "punctuation.terminator.statement",
+            "keyword.control.import",
+            "keyword.control.from",
             "meta.import.ts punctuation.definition.block.ts",
             "meta.import.tsx punctuation.definition.block.tsx",
             "meta.import.js punctuation.definition.string.begin.js",
@@ -421,15 +388,9 @@
             "meta.export.js punctuation.definition.block.js",
             "meta.export.js punctuation.definition.string.begin.js",
             "meta.export.js punctuation.definition.string.end.js",
-            "keyword.control.as.js",
-            "keyword.control.as.ts",
-            "keyword.control.as.tsx",
-            "comment.line.double-slash.js",
-            "comment.line.double-slash.ts",
-            "comment.line.double-slash.tsx",
-            "comment.block.documentation.js",
-            "comment.block.documentation.ts",
-            "comment.block.documentation.tsx"
+            "keyword.control.as",
+            "comment.line.double-slash",
+            "comment.block.documentation"
           ],
           "settings": {
             "foreground": "#8BADC180"

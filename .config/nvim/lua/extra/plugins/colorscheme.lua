@@ -122,7 +122,7 @@ return {
         variablebuiltinStyle = { italic = true },
         transparent = false,
         background = {
-          dark = "wave",
+          dark = "dragon",
           light = "lotus",
         },
         colors = {
