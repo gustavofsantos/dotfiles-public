@@ -78,27 +78,27 @@ return {
             theme = "ivy",
             previewer = false,
             hidden = true,
-            disable_devicons = true,
+            disable_devicons = false,
           },
           oldfiles = {
             previewer = true,
             theme = "ivy",
-            disable_devicons = true,
+            disable_devicons = false,
           },
           live_grep = {
             previewer = true,
             theme = "ivy",
-            disable_devicons = true,
+            disable_devicons = false,
           },
           grep_string = {
             previewer = true,
             theme = "ivy",
-            disable_devicons = true,
+            disable_devicons = false,
           },
           git_files = {
             previewer = true,
             theme = "ivy",
-            disable_devicons = true,
+            disable_devicons = false,
           },
           commands = {
             theme = "ivy",
@@ -125,7 +125,7 @@ return {
           buffers = {
             previewer = false,
             theme = "dropdown",
-            disable_devicons = true,
+            disable_devicons = false,
             mappings = {
               i = {
                 ["<c-d>"] = require("telescope.actions").delete_buffer,
