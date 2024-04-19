@@ -57,6 +57,7 @@ in
     pkgs.zsh
     pkgs.gh
     pkgs.fd
+    pkgs.kubectl
     pkgsUnstable.sesh
     pkgsUnstable.gum
     pkgs.hyperfine
