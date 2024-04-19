@@ -254,3 +254,6 @@ anaconda3/
 .config/font-manager/
 .config/op/
 .luarocks/
+.config/Neo4j Desktop
+.config/fontconfig
+.config/neo4j-relate
