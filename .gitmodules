@@ -2,3 +2,7 @@
 	path = .fonts
 	url = git@github.com:gustavofsantos/fonts.git
 	branch = main
+
+[submodule "projs/bjj"]
+	path = projs/bjj
+	url = git@github.com:gustavofsantos/bjj.git
