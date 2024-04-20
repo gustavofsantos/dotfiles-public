@@ -126,7 +126,7 @@
 
 [delta]
   features = side-by-side line-numbers
-  syntax-theme = Kanagawa
+  syntax-theme = tokyonight_day
   true-color = always
   navigate = true
 
