@@ -18,6 +18,9 @@ return {
     lazy = false,
     priority = 1000,
     opts = {},
+    init = function()
+      vim.cmd.colorscheme("tokyonight")
+    end
   },
   {
     "metalelf0/jellybeans-nvim",
@@ -97,7 +100,7 @@ return {
     end,
     init = function()
       -- vim.cmd("set background=light")
-      vim.cmd.colorscheme("kanagawa")
+      -- vim.cmd.colorscheme("kanagawa")
     end,
   },
   {

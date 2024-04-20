@@ -34,9 +34,9 @@ end)
 return {
     automatically_reload_config = false,
     force_reverse_video_cursor = true,
-    color_scheme = "KanagawaDragon",
+    color_scheme = "tokyonight_night",
 
-    font = wezterm.font("MonoLisa Nerd Font"),
+    font = wezterm.font("MonoLisa"),
     -- font_size = 10.0,
     font_size = 11,
     freetype_load_flags = "NO_HINTING",
@@ -52,10 +52,10 @@ return {
     window_close_confirmation = "NeverPrompt",
 
     window_padding = {
-        left = 0,
-        right = 0,
-        top = 0,
-        bottom = 0,
+        left = 4,
+        right = 4,
+        top = 4,
+        bottom = 4,
     },
 
     use_fancy_tab_bar = false,
