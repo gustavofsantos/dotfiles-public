@@ -54,7 +54,12 @@ in
     pkgs.delta
     pkgs.starship
     pkgs.sheldon
+    pkgs.grc
     pkgs.zsh
+    pkgs.fish
+    pkgs.fishPlugins.z
+    pkgs.fishPlugins.grc
+    pkgs.fishPlugins.fzf
     pkgs.gh
     pkgs.fd
     pkgs.kubectl

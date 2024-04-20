@@ -16,9 +16,6 @@ alias rt "npm run test"
 alias g="git"
 alias zl="zellij"
 
-alias emacs "emacsclient -c -a 'emacs'"
-alias em "emacs -nw"
-
 # Loggi aliases
 alias lggt "npm run test -- --bail --maxWorkers=2 --watchAll=false --coverage=false"
 alias lggw "npm run test -- --bail --maxWorkers=2 --coverage=false"
