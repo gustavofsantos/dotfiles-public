@@ -92,9 +92,6 @@ in
     pkgs.yarn
     pkgs.tmux
     pkgs.gitmux
-
-    # databases
-    pkgs.postgresql
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
