@@ -17,6 +17,8 @@ alias prisma "npx prisma"
 alias rt "npm run test"
 alias g="git"
 alias zl="zellij"
+alias lz "exa --icons --git"
+alias lza "exa --icons --git --all"
 
 # Loggi aliases
 alias lggt "npm run test -- --bail --maxWorkers=2 --watchAll=false --coverage=false"
