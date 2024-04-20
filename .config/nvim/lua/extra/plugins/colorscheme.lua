@@ -14,86 +14,14 @@ return {
     enabled = true,
   },
   {
-    dir = "~/Code/noir.nvim",
-    priority = 1000,
-    enabled = false,
-    config = function()
-      -- require("noir").setup()
-      vim.cmd([[colorscheme noir]])
-    end,
-  },
-  {
-    dir = "~/Code/houston.nvim",
-    priority = 1000,
-    enabled = false,
-    opts = {},
-    config = function()
-      vim.cmd([[set background=dark]])
-      vim.cmd([[colorscheme houston]])
-    end,
-  },
-  {
-    dir = "~/Code/jellybeans.nvim",
-    priority = 1000,
-    enabled = false,
-    config = function()
-      require("jellybeans").setup()
-      vim.cmd([[colorscheme jellybeans]])
-    end,
-  },
-  {
-    dir = "~/Code/jb.nvim",
-    priority = 1000,
-    enabled = false,
-    config = function()
-      require("jb").setup()
-      vim.cmd([[colorscheme jb]])
-    end,
-  },
-  {
-    dir = "~/Code/overnight.nvim",
-    priority = 1000,
-    enabled = false,
-    opts = {},
-    config = function()
-      vim.cmd([[colorscheme overnight]])
-    end,
-  },
-  {
-    "oxfist/night-owl.nvim",
+    "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
-  },
-  {
-    "rose-pine/neovim",
-    name = "rose-pine",
-    enabled = true,
-    opts = {
-      dim_inactive_windows = true,
-      highlight_groups = {
-        StatusLine = { fg = "love", bg = "love", blend = 10 },
-        StatusLineNC = { fg = "subtle", bg = "surface" },
-      },
-    },
-    init = function()
-      -- vim.cmd("set background=light")
-      -- vim.cmd("colorscheme rose-pine")
-    end,
-  },
-  {
-    "srcery-colors/srcery-vim",
-    as = "srcery",
-    init = function()
-      -- vim.cmd("colorscheme srcery")
-    end,
+    opts = {},
   },
   {
     "metalelf0/jellybeans-nvim",
     dependencies = { "rktjmp/lush.nvim" },
-  },
-  {
-    "rmehri01/onenord.nvim",
-    branch = "main",
   },
   {
     "AlexvZyl/nordic.nvim",
