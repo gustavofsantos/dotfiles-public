@@ -57,9 +57,11 @@ in
     pkgs.grc
     pkgs.zsh
     pkgs.fish
+    pkgs.fishPlugins.pure
     pkgs.fishPlugins.z
     pkgs.fishPlugins.grc
     pkgs.fishPlugins.fzf
+    pkgs.fishPlugins.forgit
     pkgs.gh
     pkgs.fd
     pkgs.kubectl
