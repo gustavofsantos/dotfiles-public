@@ -36,7 +36,7 @@ return {
     force_reverse_video_cursor = true,
     color_scheme = "tokyonight_night",
 
-    font = wezterm.font("MonoLisa"),
+    font = wezterm.font("MonoLisa Nerd Font"),
     -- font_size = 10.0,
     font_size = 11,
     freetype_load_flags = "NO_HINTING",
