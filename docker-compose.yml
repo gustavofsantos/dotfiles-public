@@ -19,3 +19,10 @@ services:
       NEO4J_AUTH: none
     volumes:
       - ./.data/neo4j:/data
+
+  neo4j_data_loader:
+    image: neo4j/neo4j-admin
+    command: neo4j-admin database load neo4j --from-path=/backups
+    volumes:
+      - ./.data/neo4j:/data
+      - ./projs/bjj:/backups
