@@ -19,12 +19,19 @@ return {
     priority = 1000,
     opts = {},
     init = function()
-      vim.cmd.colorscheme("tokyonight")
-    end
+      -- vim.cmd.colorscheme("tokyonight")
+    end,
   },
   {
     "metalelf0/jellybeans-nvim",
     dependencies = { "rktjmp/lush.nvim" },
+  },
+  {
+    "miikanissi/modus-themes.nvim",
+    priority = 1000,
+    init = function()
+      vim.cmd.colorscheme("modus_vivendi")
+    end,
   },
   {
     "AlexvZyl/nordic.nvim",
