@@ -34,7 +34,7 @@ end)
 return {
     automatically_reload_config = false,
     force_reverse_video_cursor = true,
-    color_scheme = "tokyonight_night",
+    color_scheme = "Modus Vivendi",
 
     font = wezterm.font("MonoLisa Nerd Font"),
     -- font_size = 10.0,
