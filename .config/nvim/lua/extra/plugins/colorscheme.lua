@@ -28,9 +28,9 @@ return {
   },
   {
     "miikanissi/modus-themes.nvim",
-    priority = 1000,
+    -- priority = 1000,
     init = function()
-      vim.cmd.colorscheme("modus_vivendi")
+      -- vim.cmd.colorscheme("modus_vivendi")
     end,
   },
   {
@@ -53,14 +53,14 @@ return {
         dimInactive = false,
         globalStatus = true,
         commentStyle = { italic = true },
-        functionStyle = { italic = true, bold = true },
+        functionStyle = { italic = false },
         keywordStyle = { italic = true },
-        statementStyle = { italic = true, bold = true },
+        statementStyle = { italic = false },
         typeStyle = { italic = true },
         variablebuiltinStyle = { italic = true },
         transparent = false,
         background = {
-          dark = "dragon",
+          dark = "wave",
           light = "lotus",
         },
         colors = {
@@ -107,7 +107,7 @@ return {
     end,
     init = function()
       -- vim.cmd("set background=light")
-      -- vim.cmd.colorscheme("kanagawa")
+      vim.cmd.colorscheme("kanagawa")
     end,
   },
   {
