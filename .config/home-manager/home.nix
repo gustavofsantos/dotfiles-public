@@ -62,6 +62,7 @@ in
     pkgs.fishPlugins.grc
     pkgs.fishPlugins.fzf
     pkgs.fishPlugins.forgit
+    pkgs.powershell
     pkgs.gh
     pkgs.fd
     pkgs.kubectl
