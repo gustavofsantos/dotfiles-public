@@ -10,7 +10,7 @@ return {
       hp:setup()
 
       vim.keymap.set("n", "<leader>ha", function()
-        hp:list():append()
+        hp:list():add()
       end, { desc = "Add file to harpoon" })
       vim.keymap.set("n", "<leader>ht", function()
         hp.ui:toggle_quick_menu(hp:list())
