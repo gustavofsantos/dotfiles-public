@@ -7,8 +7,6 @@ set -gx PATH ~/bin $PATH
 
 set -g theme_display_jobs_verbose yes
 
-set --universal pure_show_jobs true
-
 # Aliases
 alias v "nvim"
 alias vim "nvim"
@@ -48,3 +46,4 @@ end
 # <<< conda initialize <<<
 
 zoxide init fish | source
+starship init fish | source
