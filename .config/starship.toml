@@ -7,7 +7,6 @@ $directory\
 $git_branch\
 $git_state\
 $git_status\
-$cmd_duration\
 $line_break\
 $python\
 $character"""
@@ -19,6 +18,9 @@ disabled = true
 full_symbol = '🔋 '
 charging_symbol = '⚡️ '
 discharging_symbol = '💀 '
+
+[python]
+pyenv_version_name = false
 
 [[battery.display]]
 threshold = 30
@@ -66,7 +68,7 @@ modified = "​"
 staged = "​"
 renamed = "​"
 deleted = "​"
-stashed = "≡"
+stashed = "​"
 
 [kubernetes]
 format = 'on [⛵ ($user on )($cluster in )$context \($namespace\)](dimmed green) '

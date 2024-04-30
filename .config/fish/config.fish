@@ -4,6 +4,7 @@ set -gx EDITOR nvim
 
 set -gx PATH ~/.local/bin $PATH
 set -gx PATH ~/bin $PATH
+set -gx PATH "$HOME/.pyenv/bin" $PATH
 
 set -g theme_display_jobs_verbose yes
 
@@ -13,7 +14,9 @@ alias vim "nvim"
 alias jest "npx jest"
 alias prisma "npx prisma"
 alias rt "npm run test"
-alias g="git"
+alias g "git"
+alias k "kubectl"
+alias hm "home-manager"
 alias zl="zellij"
 alias lz "exa --icons --git"
 alias lza "exa --icons --git --all"
@@ -44,6 +47,10 @@ if test -f /home/gustavo/anaconda3/bin/conda
     eval /home/gustavo/anaconda3/bin/conda "shell.fish" "hook" $argv | source
 end
 # <<< conda initialize <<<
+
+
+pyenv init - | source
+pyenv virtualenv-init - | source
 
 zoxide init fish | source
 starship init fish | source
