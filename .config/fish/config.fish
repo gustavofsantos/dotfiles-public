@@ -20,6 +20,7 @@ alias hm "home-manager"
 alias zl="zellij"
 alias lz "exa --icons --git"
 alias lza "exa --icons --git --all"
+alias gogh "bash -c  \"\$(wget -qO- https://git.io/vQgMr)\""
 
 # Loggi aliases
 alias lggt "npm run test -- --bail --maxWorkers=2 --watchAll=false --coverage=false"
