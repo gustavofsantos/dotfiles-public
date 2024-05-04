@@ -2,9 +2,11 @@ set fish_greeting ""
 
 set -gx EDITOR nvim
 
+set -gx GOPATH "$HOME/go"
 set -gx PATH ~/.local/bin $PATH
 set -gx PATH ~/bin $PATH
 set -gx PATH "$HOME/.pyenv/bin" $PATH
+set -gx PATH "$GOPATH/bin" $PATH
 
 set -g theme_display_jobs_verbose yes
 
