@@ -10,13 +10,11 @@ return {
   -- },
   {
     dir = "~/Code/solarized.nvim",
-    priority = 1000,
     enabled = true,
   },
   {
     "folke/tokyonight.nvim",
     lazy = false,
-    priority = 1000,
     opts = {},
     init = function()
       -- vim.cmd.colorscheme("tokyonight")
@@ -37,6 +35,7 @@ return {
     "AlexvZyl/nordic.nvim",
     lazy = false,
     priority = 1000,
+    enabled = false,
     config = function()
       require("nordic").setup({})
     end,
@@ -50,14 +49,14 @@ return {
     priority = 1000,
     config = function()
       require("kanagawa").setup({
-        dimInactive = false,
+        dimInactive = true,
         globalStatus = true,
         commentStyle = { italic = true },
         functionStyle = { italic = false },
-        keywordStyle = { italic = true },
+        keywordStyle = { italic = false },
         statementStyle = { italic = false },
         typeStyle = { italic = true },
-        variablebuiltinStyle = { italic = true },
+        variablebuiltinStyle = { italic = false },
         transparent = false,
         background = {
           dark = "wave",
@@ -79,8 +78,6 @@ return {
           end
 
           return {
-            -- Normal = { bg = colors.palette.sumiInk0 },
-            -- NormalNC = { bg = bg_color }
             Constant = { fg = colors.palette.fujiWhite },
 
             StatusLine = { bg = colors.palette.sumiInk4 },
@@ -128,12 +125,12 @@ return {
           operators = false,
           folds = true,
         },
-        contrast = "",
+        contrast = "hard",
         dim_inactive = false,
         transparent_mode = false,
         overrides = {
-          SignColumn = { bg = palette.dark0 },
-          Function = { fg = palette.bright_green, italic = true, bold = false },
+          -- SignColumn = { bg = palette.dark0 },
+          -- Function = { fg = palette.bright_green, italic = true, bold = false },
           ["@property"] = {
             fg = bg == "dark" and palette.bright_blue or palette.faded_blue,
             italic = true,
@@ -159,7 +156,7 @@ return {
       })
     end,
     init = function()
-      vim.cmd.colorscheme("gruvbox")
+      -- vim.cmd.colorscheme("gruvbox")
     end,
   },
   {
