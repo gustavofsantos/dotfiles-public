@@ -72,6 +72,7 @@ return {
           lua = true,
           shell = true,
           sh = true,
+          yaml = true,
           ["*"] = false,
         },
         suggestion = { enabled = true, auto_trigger = true, debounce = 200 },

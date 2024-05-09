@@ -146,6 +146,10 @@ vim.cmd([[augroup highlight_yank
     au TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=500})
 augroup END]])
 
+vim.cmd([[
+  autocmd TermOpen * setlocal nonumber norelativenumber
+]])
+
 vim.api.nvim_create_user_command("Q", function()
   vim.cmd("q")
 end, { desc = "Quit" })

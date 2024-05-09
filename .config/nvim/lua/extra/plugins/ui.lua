@@ -32,6 +32,7 @@ return {
           lualine_b = {},
           lualine_c = {
             "branch",
+            "filetype",
             { "filename", path = 1 },
             { "diagnostics", sources = { "nvim_diagnostic", "nvim_workspace_diagnostic", "coc" } },
           },

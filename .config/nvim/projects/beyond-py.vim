@@ -1,6 +1,6 @@
-" let g:test#strategy = 'vtr'
+let g:test#strategy = 'vtr'
 let g:test#python#runner = 'pytest'
-let g:test#python#pytest#options = '--disable-warnings -vv --ds beyond_app.settings.test'
+let g:test#python#pytest#options = '--disable-warnings -q --ds beyond_app.settings.test'
 " let g:test#python#pytest#executable = 'py-test-file'
 
 " nnoremap <leader>pi :!bash -c "py-isort %:p"<CR>

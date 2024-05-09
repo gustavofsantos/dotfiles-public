@@ -8,21 +8,14 @@ return {
   --     vim.cmd([[colorscheme solarized]])
   --   end,
   -- },
+  "ronisbr/nano-theme.nvim",
+  "loctvl842/monokai-pro.nvim",
+  "nyoom-engineering/oxocarbon.nvim",
+  "kvrohit/rasmus.nvim",
+  "roobert/palette.nvim",
   {
     dir = "~/Code/solarized.nvim",
     enabled = true,
-  },
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    opts = {},
-    init = function()
-      -- vim.cmd.colorscheme("tokyonight")
-    end,
-  },
-  {
-    "metalelf0/jellybeans-nvim",
-    dependencies = { "rktjmp/lush.nvim" },
   },
   {
     "miikanissi/modus-themes.nvim",
@@ -49,7 +42,7 @@ return {
     priority = 1000,
     config = function()
       require("kanagawa").setup({
-        dimInactive = true,
+        dimInactive = false,
         globalStatus = true,
         commentStyle = { italic = true },
         functionStyle = { italic = false },
@@ -158,9 +151,5 @@ return {
     init = function()
       -- vim.cmd.colorscheme("gruvbox")
     end,
-  },
-  {
-    "loctvl842/monokai-pro.nvim",
-    opts = {},
   },
 }
