@@ -42,7 +42,7 @@ in
     # '')
 
     # programming languages and environments
-    pkgs.nodejs_21
+    pkgs.nodejs_22
     pkgs.ruby
     pkgs.python311
     pkgs.go
@@ -82,7 +82,7 @@ in
     pkgs.zoxide
     pkgs.lazygit
     pkgs.lazydocker
-    pkgs.neovim
+    pkgsUnstable.neovim
     pkgs.neovide
     pkgs.helix
     pkgs.eza
@@ -92,6 +92,7 @@ in
     pkgs.yarn
     pkgs.tmux
     pkgs.gitmux
+    pkgs.difftastic
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
