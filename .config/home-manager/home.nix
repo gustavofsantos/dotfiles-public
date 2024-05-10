@@ -75,6 +75,7 @@ in
     pkgs.python311Packages.pip
     pkgs.python311Packages.flake8
     pkgs.python311Packages.pep8
+    pkgs.python311Packages.debugpy
     pkgs.black
     pkgs.isort
     pkgsUnstable.zellij
@@ -93,6 +94,7 @@ in
     pkgs.tmux
     pkgs.gitmux
     pkgs.difftastic
+    pkgs.entr
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
