@@ -97,14 +97,21 @@ return {
     end,
     init = function()
       -- vim.cmd("set background=light")
-      vim.cmd.colorscheme("kanagawa")
+      -- vim.cmd.colorscheme("kanagawa")
+    end,
+  },
+  {
+    "sainnhe/gruvbox-material",
+    priority = 1000,
+    init = function()
+      vim.cmd([[let g:gruvbox_material_background = 'hard']])
+      vim.cmd.colorscheme("gruvbox-material")
     end,
   },
   {
     "ellisonleao/gruvbox.nvim",
     lazy = false,
     priority = 1000,
-    enabled = false,
     config = function()
       local bg = vim.o.background
       local palette = require("gruvbox").palette

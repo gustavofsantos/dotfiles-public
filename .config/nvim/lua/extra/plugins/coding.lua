@@ -5,25 +5,35 @@ return {
     "AndrewRadev/switch.vim",
     config = function()
       vim.cmd([[let g:switch_custom_definitions =
-    \ [
-    \   {
-    \     '^\(.*\)TODO\(.*\)$': '\1DOING\2',
-    \     '^\(.*\)DOING\(.*\)$': '\1DONE\2',
-    \     '^\(.*\)DONE\(.*\)$': '\1TODO\2',
-    \     '^\(.*\)\[ \]\(.*\)$': '\1\[/\]\2',
-    \     '^\(.*\)\[/\]\(.*\)$': '\1\[x\]\2',
-    \     '^\(.*\)\[x\]\(.*\)$': '\1\[ \]\2',
-    \     'it': 'fit',
-    \     'fit': 'xit',
-    \     'xit': 'it',
-    \     'true': 'false',
-    \     'false': 'true',
-    \     'True': 'False',
-    \     'False': 'True',
-    \   }
-    \ ]
-]])
+          \ [
+          \   {
+          \     '^\(.*\)TODO\(.*\)$': '\1DOING\2',
+          \     '^\(.*\)DOING\(.*\)$': '\1DONE\2',
+          \     '^\(.*\)DONE\(.*\)$': '\1TODO\2',
+          \     '^\(.*\)\[ \]\(.*\)$': '\1\[/\]\2',
+          \     '^\(.*\)\[/\]\(.*\)$': '\1\[x\]\2',
+          \     '^\(.*\)\[x\]\(.*\)$': '\1\[ \]\2',
+          \     'it': 'fit',
+          \     'fit': 'xit',
+          \     'xit': 'it',
+          \     'true': 'false',
+          \     'false': 'true',
+          \     'True': 'False',
+          \     'False': 'True',
+          \   }
+          \ ]
+      ]])
     end,
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio", "mfussenegger/nvim-dap-python" },
+    config = function()
+      require("dapui").setup()
+    end,
+    keys = {
+      { "<leader>du", "<cmd>lua require('dapui').toggle()<CR>", desc = "Toggle DAP UI" },
+    },
   },
   {
     "numToStr/Comment.nvim",
