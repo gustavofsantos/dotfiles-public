@@ -6,3 +6,7 @@
 [submodule "projs/bjj"]
 	path = projs/bjj
 	url = git@github.com:gustavofsantos/bjj.git
+
+[submodule ".tmux/plugins/tpm"]
+	path = .tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm.git
