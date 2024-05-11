@@ -257,3 +257,4 @@ anaconda3/
 .config/Neo4j Desktop
 .config/fontconfig
 .config/neo4j-relate
+.ollama
