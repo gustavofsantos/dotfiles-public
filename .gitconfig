@@ -16,6 +16,7 @@
   dh1           = diff HEAD~1
   l             = log --color --abbrev-commit --branches --graph --date=relative --format='%C(auto,yellow)%<(12,trunc)%ar%C(auto,reset) %C(auto,green)%<(10)%h%C(auto,reset) %C(auto,blue)%<(20)%an%C(auto,reset) %s'
   lg            = log --color --graph --abbrev-commit --branches --date=relative --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)'
+  ll		= log --pretty=deploy
   lz		= log --graph --oneline
   rh            = reset --hard
   dft           = difftool
