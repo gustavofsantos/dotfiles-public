@@ -9,15 +9,14 @@ TAG=$(echo $1 | awk -F '\\.\\.' '{ print $2 }' | awk -F '\/' '{ print $2 }')
 cat << EOF
 
 Ação: Deploy Beyond - Py
-Workflow: <replace here>
+Versão: $TAG
 Tag: https://github.com/loggi/py/releases/tag/beyond/$(echo $TAG | sed 's/\//%2F/g')
-
-Pull requests:
-$(list-prs $1 loggi/py)
+Diff: https://github.com/loggi/py/compare/$1
 
 Monitoramento:
 * [Sentry Beyond-Py](https://loggi.sentry.io/issues/?environment=production&project=4504600486150144&query=is%3Aunresolved+release%3Aprod-20230725.01&referrer=issue-list&statsPeriod=1h)
 * [Grafana Beyond](https://grafana.loggi.com/d/TZgxLo8nz/beyond-health?orgId=1)
 
-cc @dev-alem 
+Pull requests:
+$(list-prs $1 loggi/py)
 EOF
