@@ -68,10 +68,11 @@ return {
       "lewis6991/gitsigns.nvim",
       "nvim-tree/nvim-web-devicons",
     },
+    enabled = false,
     init = function()
       vim.g.barbar_auto_setup = false
     end,
-    lazy = false,
+    lazy = true,
     opts = {
       animation = false,
       clickable = false,

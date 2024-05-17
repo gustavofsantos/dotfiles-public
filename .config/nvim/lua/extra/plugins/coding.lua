@@ -28,6 +28,7 @@ return {
   {
     "rcarriga/nvim-dap-ui",
     dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio", "mfussenegger/nvim-dap-python" },
+    event = "VeryLazy",
     config = function()
       require("dapui").setup()
     end,
@@ -83,6 +84,8 @@ return {
           shell = true,
           sh = true,
           yaml = true,
+          python = true,
+          html = true,
           ["*"] = false,
         },
         suggestion = { enabled = true, auto_trigger = true, debounce = 200 },
