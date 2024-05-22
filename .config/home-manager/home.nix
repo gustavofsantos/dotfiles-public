@@ -95,6 +95,7 @@ in
     pkgs.gitmux
     pkgs.difftastic
     pkgs.entr
+    pkgs.mermaid-cli
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
