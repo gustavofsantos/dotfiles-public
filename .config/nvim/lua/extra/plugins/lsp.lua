@@ -30,12 +30,24 @@ return {
           "vimls",
           "bashls",
           "marksman",
+          "ltex",
         },
       })
 
       mason_lspconfig.setup_handlers({
         function(server_name)
           require("lspconfig")[server_name].setup({})
+        end,
+        ["ltex"] = function()
+          local lspconfig = require("lspconfig")
+
+          lspconfig.ltex.setup({
+            settings = {
+              ltex = {
+                language = { "pt-BR" },
+              },
+            },
+          })
         end,
         ["lua_ls"] = function()
           local lspconfig = require("lspconfig")

@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.opt.termguicolors = true
-vim.opt.background = "dark"
+vim.opt.background = "light"
 vim.opt.hidden = true
 vim.opt.encoding = "utf-8"
 vim.opt.number = true

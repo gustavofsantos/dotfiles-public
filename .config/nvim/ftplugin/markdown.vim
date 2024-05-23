@@ -1,7 +1,9 @@
-setlocal wrap
+setlocal linebreak
+setlocal nonumber
+setlocal textwidth=80
+
 " setlocal linebreak
 " setlocal nolist
-" setlocal textwidth=80
 
 " nmap h gh
 " nmap j gj
