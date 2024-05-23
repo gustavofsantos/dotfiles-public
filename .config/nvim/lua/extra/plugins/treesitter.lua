@@ -112,5 +112,7 @@ return {
       },
       tree_docs = { enable = true },
     })
+
+    vim.keymap.set("n", "<leader>tx", "<cmd>TSContextToggle<cr>", { noremap = true, silent = true })
   end,
 }

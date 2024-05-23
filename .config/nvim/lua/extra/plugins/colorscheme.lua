@@ -13,9 +13,50 @@ return {
   "nyoom-engineering/oxocarbon.nvim",
   "kvrohit/rasmus.nvim",
   "roobert/palette.nvim",
+  -- {
+  --   dir = "~/Code/solarized.nvim",
+  --   enabled = false,
+  -- },
   {
-    dir = "~/Code/solarized.nvim",
+    "maxmx03/solarized.nvim",
+    lazy = false,
+    priority = 1000,
     enabled = true,
+    opts = {
+      styles = {
+        comments = { italic = true, bold = false },
+        functions = { italic = false },
+        variables = { italic = false },
+        numbers = {},
+        constants = { bold = true },
+        parameters = {},
+        keywords = { italic = true },
+        types = {},
+      },
+      highlights = function(colors, colorhelper)
+        local darken = colorhelper.darken
+        local lighten = colorhelper.lighten
+
+        local is_dark = vim.o.background == "dark"
+        local cursor_line_bg = is_dark and darken(colors.base03, 100) or lighten(colors.base3, 100)
+
+        return {
+          LineNr = { fg = colors.base00, bg = colors.base03 },
+          CursorLineNr = { fg = colors.yellow, bg = cursor_line_bg },
+        }
+      end,
+    },
+    init = function()
+      -- vim.cmd.colorscheme("solarized")
+    end,
+  },
+  {
+    "mcchrish/zenbones.nvim",
+    dependencies = { "rktjmp/lush.nvim" },
+    lazy = false,
+    init = function()
+      vim.cmd.colorscheme("neobones")
+    end,
   },
   {
     "miikanissi/modus-themes.nvim",
@@ -97,7 +138,7 @@ return {
     end,
     init = function()
       -- vim.cmd("set background=light")
-      vim.cmd.colorscheme("kanagawa")
+      -- vim.cmd.colorscheme("kanagawa")
     end,
   },
   {

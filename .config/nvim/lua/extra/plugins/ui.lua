@@ -31,11 +31,10 @@ return {
           },
           lualine_b = {},
           lualine_c = {
-            "branch",
             { "filename", path = 1 },
-            { "diagnostics", sources = { "nvim_diagnostic", "nvim_workspace_diagnostic", "coc" } },
+            { "diagnostics", sources = { "nvim_diagnostic", "nvim_workspace_diagnostic" } },
           },
-          lualine_x = { "diff", "overseer", "filetype" },
+          lualine_x = { "overseer", "filetype" },
           lualine_y = {},
           lualine_z = {},
         },
@@ -44,7 +43,7 @@ return {
           lualine_b = {},
           lualine_c = {
             { "filename", path = 1 },
-            { "diagnostics", sources = { "nvim_diagnostic", "nvim_workspace_diagnostic", "coc" } },
+            { "diagnostics", sources = { "nvim_diagnostic", "nvim_workspace_diagnostic" } },
           },
           lualine_x = {},
           lualine_y = {},
