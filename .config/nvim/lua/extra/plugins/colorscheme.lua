@@ -64,7 +64,7 @@ return {
     priority = 1000,
     enabled = false,
     init = function()
-      -- vim.cmd.colorscheme("modus_vivendi")
+      vim.cmd.colorscheme("modus_vivendi")
     end,
   },
   {
@@ -157,6 +157,7 @@ return {
     lazy = false,
     enabled = false,
     priority = 1000,
+    enabled = false,
     config = function()
       local bg = vim.o.background
       local palette = require("gruvbox").palette
