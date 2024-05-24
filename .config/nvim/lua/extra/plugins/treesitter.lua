@@ -113,6 +113,10 @@ return {
       tree_docs = { enable = true },
     })
 
+    require("treesitter-context").setup({
+      enable = false,
+    })
+
     vim.keymap.set("n", "<leader>tx", "<cmd>TSContextToggle<cr>", { noremap = true, silent = true })
   end,
 }
