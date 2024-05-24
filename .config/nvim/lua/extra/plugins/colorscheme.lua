@@ -8,11 +8,11 @@ return {
   --     vim.cmd([[colorscheme solarized]])
   --   end,
   -- },
-  "ronisbr/nano-theme.nvim",
-  "loctvl842/monokai-pro.nvim",
-  "nyoom-engineering/oxocarbon.nvim",
-  "kvrohit/rasmus.nvim",
-  "roobert/palette.nvim",
+  -- "ronisbr/nano-theme.nvim",
+  -- "loctvl842/monokai-pro.nvim",
+  -- "nyoom-engineering/oxocarbon.nvim",
+  -- "kvrohit/rasmus.nvim",
+  -- "roobert/palette.nvim",
   -- {
   --   dir = "~/Code/solarized.nvim",
   --   enabled = false,
