@@ -21,7 +21,7 @@ return {
     "maxmx03/solarized.nvim",
     lazy = false,
     priority = 1000,
-    enabled = true,
+    enabled = false,
     opts = {
       styles = {
         comments = { italic = true, bold = false },
@@ -54,13 +54,15 @@ return {
     "mcchrish/zenbones.nvim",
     dependencies = { "rktjmp/lush.nvim" },
     lazy = false,
+    enabled = false,
     init = function()
       vim.cmd.colorscheme("neobones")
     end,
   },
   {
     "miikanissi/modus-themes.nvim",
-    -- priority = 1000,
+    priority = 1000,
+    enabled = false,
     init = function()
       -- vim.cmd.colorscheme("modus_vivendi")
     end,
@@ -138,20 +140,22 @@ return {
     end,
     init = function()
       -- vim.cmd("set background=light")
-      -- vim.cmd.colorscheme("kanagawa")
+      vim.cmd.colorscheme("kanagawa")
     end,
   },
   {
     "sainnhe/gruvbox-material",
     priority = 1000,
+    enabled = false,
     init = function()
       vim.cmd([[let g:gruvbox_material_background = 'hard']])
-      -- vim.cmd.colorscheme("gruvbox-material")
+      vim.cmd.colorscheme("gruvbox-material")
     end,
   },
   {
     "ellisonleao/gruvbox.nvim",
     lazy = false,
+    enabled = false,
     priority = 1000,
     config = function()
       local bg = vim.o.background
@@ -197,7 +201,7 @@ return {
       })
     end,
     init = function()
-      -- vim.cmd.colorscheme("gruvbox")
+      vim.cmd.colorscheme("gruvbox")
     end,
   },
 }
