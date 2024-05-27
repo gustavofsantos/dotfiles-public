@@ -8,27 +8,52 @@ return {
     config = function()
       local hp = require("harpoon")
       hp:setup()
-
-      vim.keymap.set("n", "<leader>ha", function()
-        hp:list():add()
-      end, { desc = "Add file to harpoon" })
-      vim.keymap.set("n", "<leader>ht", function()
-        hp.ui:toggle_quick_menu(hp:list())
-      end, { desc = "View marks" })
-
-      vim.keymap.set("n", "<M-1>", function()
-        hp:list():select(1)
-      end, { desc = "Navigate to file in slot 1" })
-      vim.keymap.set("n", "<M-2>", function()
-        hp:list():select(2)
-      end, { desc = "Navigate to file in slot 2" })
-      vim.keymap.set("n", "<M-3>", function()
-        hp:list():select(3)
-      end, { desc = "Navigate to file in slot 3" })
-      vim.keymap.set("n", "<M-4>", function()
-        hp:list():select(4)
-      end, { desc = "Navigate to file in slot 4" })
     end,
+    keys = {
+      {
+        "<leader>ha",
+        function()
+          require("harpoon"):list():add()
+        end,
+        { desk = "Add file to harpoon" },
+      },
+      {
+        "<leader>ht",
+        function()
+          local hp = require("harpoon")
+          hp.ui:toggle_quick_menu(hp:list())
+        end,
+        { desk = "View marks" },
+      },
+      {
+        "<M-1>",
+        function()
+          require("harpoon"):list():select(1)
+        end,
+        { desk = "Navigate to file in slot 1" },
+      },
+      {
+        "<M-2>",
+        function()
+          require("harpoon"):list():select(2)
+        end,
+        { desk = "Navigate to file in slot 2" },
+      },
+      {
+        "<M-3>",
+        function()
+          require("harpoon"):list():select(3)
+        end,
+        { desk = "Navigate to file in slot 3" },
+      },
+      {
+        "<M-4>",
+        function()
+          require("harpoon"):list():select(4)
+        end,
+        { desk = "Navigate to file in slot 4" },
+      },
+    },
   },
   {
     "nvim-telescope/telescope.nvim",
@@ -154,78 +179,47 @@ return {
       })
 
       telescope.load_extension("git_worktree")
-
-      vim.keymap.set(
-        "n",
-        "<leader>fx",
-        "<cmd>Telescope commands<cr>",
-        { desc = "Commands", noremap = true, silent = true }
-      )
-
-      vim.keymap.set(
-        "n",
-        "<F3>",
-        "<cmd>Telescope grep_string<cr>",
-        { desc = "Grep word under cursor", noremap = true, silent = true }
-      )
-      vim.keymap.set(
-        "v",
-        "<F3>",
-        '"zy:Telescope grep_string default_text=<C-r>z<cr>',
-        { desc = "Grep selected text", noremap = true, silent = true }
-      )
-      vim.keymap.set(
-        "n",
-        "<c-p>",
+    end,
+    keys = {
+      {
+        "<leader>p",
         "<cmd>Telescope find_files<cr>",
-        { desc = "Find files", noremap = true, silent = true }
-      )
-      vim.keymap.set(
-        "n",
+        { mode = "n", desc = "Find files", noremap = true, silent = true },
+      },
+      {
+        "<leader>o",
+        "<cmd>Telescope oldfiles<cr>",
+        { mode = "n", desc = "Open recent files", noremap = true, silent = true },
+      },
+      {
+        "<leader>b",
+        "<cmd>Telescope buffers<cr>",
+        { mode = "n", desc = "Switch buffer", noremap = true, silent = true },
+      },
+      {
         "<c-f>",
         "<cmd>Telescope current_buffer_fuzzy_find<cr>",
-        { desc = "Find in buffer", noremap = true, silent = true }
-      )
-    end,
+        { mode = "n", desc = "Find in buffer", noremap = true, silent = true },
+      },
+      {
+        "<F3>",
+        "<cmd>Telescope grep_string<cr>",
+        { mode = "n", desc = "Grep word under cursor", noremap = true, silent = true },
+      },
+      {
+        "<F3>",
+        '"zy:Telescope grep_string default_text=<C-r>z<cr>',
+        { mode = "v", desc = "Grep selected text", noremap = true, silent = true },
+      },
+    },
   },
   {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons",
-      "MunifTanjim/nui.nvim",
+    "stevearc/oil.nvim",
+    opts = {},
+    event = "VeryLazy",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    keys = {
+      { "-", "<cmd>Oil<cr>", { desc = "Open oil" } },
     },
-    config = function()
-      require("neo-tree").setup({
-        filesystem = {
-          filtered_items = {
-            hide_dotfiles = false,
-            hide_gitignored = false,
-            hide_hidden = false,
-          },
-          follow_current_file = {
-            enabled = true,
-            leave_dirs_open = true,
-          },
-        },
-        buffers = {
-          follow_current_file = {
-            enabled = true,
-            leave_dirs_open = false,
-          },
-        },
-        event_handlers = {
-          {
-            event = "file_opened",
-            handler = function()
-              require("neo-tree.command").execute({ action = "close" })
-            end,
-          },
-        },
-      })
-
-      vim.keymap.set("n", "<C-b>", "<cmd>Neotree toggle<cr>")
-    end,
   },
 }
