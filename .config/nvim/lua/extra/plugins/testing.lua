@@ -4,6 +4,7 @@ return {
     dependencies = {
       "christoomey/vim-tmux-runner",
     },
+    enabled = false,
     config = function()
       -- vim.cmd([[let test#strategy = "neovim_sticky"]])
       -- vim.cmd([[let test#strategy = "vtr"]])
@@ -22,20 +23,126 @@ return {
   },
   {
     "nvim-neotest/neotest",
-    enabled = false,
+    enabled = true,
+    ft = { "python" },
     dependencies = {
       "nvim-neotest/nvim-nio",
       "nvim-neotest/neotest-python",
       "nvim-lua/plenary.nvim",
       "antoinemadec/FixCursorHold.nvim",
       "nvim-treesitter/nvim-treesitter",
+      "mfussenegger/nvim-dap",
     },
     config = function()
+      local setup_python_adapter = require("neotest-python")
+      local beyond_py_args = {
+        "-q",
+        "--disable-warnings",
+        "--ds",
+        "beyond_app.settings.test",
+      }
+      local is_beyond_py = vim.fn.expand("%:p:h"):find("/opt/loggi/py/apps/beyond/") ~= nil
+      local python_args = { "--log-level", "DEBUG" }
+      if is_beyond_py then
+        python_args = beyond_py_args
+      end
+
+      vim.o.signcolumn = "yes"
       require("neotest").setup({
         adapters = {
-          require("neotest-python"),
+          setup_python_adapter({
+            dap = { justMyCode = true },
+            args = python_args,
+          }),
         },
       })
     end,
+    keys = {
+      {
+        "<leader>tn",
+        function()
+          local beyond_env = {
+            POSTGRES_DB = "dev_db",
+            POSTGRES_PASSWORD = "postgres",
+            POSTGRES_HOST = "localhost",
+            POSTGRES_PORT = "5432",
+          }
+          local is_beyond_py = vim.fn.expand("%:p:h"):find("/opt/loggi/py/apps/beyond/") ~= nil
+
+          if is_beyond_py then
+            require("neotest").run.run({ env = beyond_env })
+          else
+            require("neotest").run.run()
+          end
+        end,
+        { desc = "Run nearest test" },
+      },
+      {
+        "<leader>td",
+        function()
+          local beyond_env = {
+            POSTGRES_DB = "dev_db",
+            POSTGRES_PASSWORD = "postgres",
+            POSTGRES_HOST = "localhost",
+            POSTGRES_PORT = "5432",
+          }
+          local is_beyond_py = vim.fn.expand("%:p:h"):find("/opt/loggi/py/apps/beyond/") ~= nil
+
+          if is_beyond_py then
+            require("neotest").run.run({ strategy = "dap", env = beyond_env })
+          else
+            require("neotest").run.run({ strategy = "dap" })
+          end
+        end,
+        { desc = "Debug nearest test" },
+      },
+      {
+        "<leader>tf",
+        function()
+          local beyond_env = {
+            POSTGRES_DB = "dev_db",
+            POSTGRES_PASSWORD = "postgres",
+            POSTGRES_HOST = "localhost",
+            POSTGRES_PORT = "5432",
+          }
+          local is_beyond_py = vim.fn.expand("%:p:h"):find("/opt/loggi/py/apps/beyond/") ~= nil
+          if is_beyond_py then
+            require("neotest").run.run({ vim.fn.expand("%"), env = beyond_env })
+          else
+            require("neotest").run.run(vim.fn.expand("%"))
+          end
+        end,
+        { desc = "Run file tests" },
+      },
+      {
+        "<leader>tl",
+        function()
+          require("neotest").output_panel.clear()
+          require("neotest").run.run_last()
+        end,
+        { desc = "Run last" },
+      },
+      {
+        "<leader>ts",
+        function()
+          require("neotest").summary.toggle()
+        end,
+        { desc = "Toggle summary" },
+      },
+      {
+        "<leader>to",
+        function()
+          require("neotest").output.open({ enter = true, quiet = true })
+        end,
+        { desc = "Toggle output" },
+      },
+      {
+        "<leader>tp",
+        function()
+          require("neotest").output_panel.toggle()
+        end,
+        { desc = "Toggle output panel" },
+      },
+    },
   },
 }
