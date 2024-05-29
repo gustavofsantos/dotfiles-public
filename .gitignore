@@ -258,3 +258,4 @@ anaconda3/
 .config/fontconfig
 .config/neo4j-relate
 .ollama
+.virtualenvs/
