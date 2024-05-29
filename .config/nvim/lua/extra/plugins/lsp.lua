@@ -30,7 +30,7 @@ return {
           "vimls",
           "bashls",
           "marksman",
-          "ltex",
+          -- "ltex",
         },
       })
 
@@ -38,17 +38,17 @@ return {
         function(server_name)
           require("lspconfig")[server_name].setup({})
         end,
-        ["ltex"] = function()
-          local lspconfig = require("lspconfig")
-
-          lspconfig.ltex.setup({
-            settings = {
-              ltex = {
-                language = { "pt-BR" },
-              },
-            },
-          })
-        end,
+        -- ["ltex"] = function()
+        --   local lspconfig = require("lspconfig")
+        --
+        --   lspconfig.ltex.setup({
+        --     settings = {
+        --       ltex = {
+        --         language = { "pt-BR" },
+        --       },
+        --     },
+        --   })
+        -- end,
         ["lua_ls"] = function()
           local lspconfig = require("lspconfig")
 
@@ -151,7 +151,12 @@ return {
 
           vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
           vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-          vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+          vim.keymap.set("n", "K", function()
+            local winid = require("ufo").peekFoldedLinesUnderCursor()
+            if not winid then
+              vim.lsp.buf.hover()
+            end
+          end, opts)
           vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
           vim.keymap.set("n", "gr", vim.lsp.buf.rename, opts)
           vim.keymap.set("n", "gR", vim.lsp.buf.references, opts)

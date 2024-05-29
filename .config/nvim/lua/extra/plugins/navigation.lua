@@ -101,7 +101,7 @@ return {
         pickers = {
           find_files = {
             theme = "ivy",
-            previewer = false,
+            previewer = true,
             hidden = true,
             disable_devicons = false,
           },
@@ -164,16 +164,6 @@ return {
             override_generic_sorter = true, -- override the generic sorter
             override_file_sorter = true, -- override the file sorter
             case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-          },
-          file_browser = {
-            theme = "ivy",
-            respect_gitignore = false,
-            hidden = true,
-            previewer = false,
-            cwd_to_path = true,
-            select_buffer = true,
-            hijack_netrw = true,
-            display_stat = false,
           },
         },
       })
