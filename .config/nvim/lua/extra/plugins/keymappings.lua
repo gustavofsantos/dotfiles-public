@@ -17,6 +17,30 @@ return {
           name = "+editor",
           s = { "<cmd>vsplit<cr>", "Split window" },
           S = { "<cmd>split<cr>", "Split window horizontally" },
+          n = {
+            function()
+              local is_showing_line_numbers = vim.wo.number
+              if is_showing_line_numbers then
+                vim.o.number = false
+                vim.o.relativenumber = false
+              else
+                vim.o.number = true
+                vim.o.relativenumber = true
+              end
+            end,
+            "Toggle line numbers",
+          },
+          c = {
+            function()
+              local is_showing_signcol = vim.wo.signcolumn == "yes"
+              if is_showing_signcol then
+                vim.o.signcolumn = "no"
+              else
+                vim.o.signcolumn = "yes"
+              end
+            end,
+            "Toggle sign column",
+          },
         },
       })
       wk.register({
