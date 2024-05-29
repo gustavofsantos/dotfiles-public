@@ -35,6 +35,7 @@ alias nxe="nix-env"
 alias lz="eza"
 alias lza="eza --icons -1 -a -l --total-size"
 alias zj="zellij"
+alias eee="sesh connect \$(sesh list -t -c | gum filter --limit 1 --placeholder 'Pick a sesh' --height 50 --prompt='⚡')"
 
 # Loggi aliases
 alias lwt="docker-compose exec -e DJANGO_SETTINGS_MODULE=settings.test loggi_web_app pytest -vv"

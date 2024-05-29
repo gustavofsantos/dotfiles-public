@@ -4,6 +4,10 @@ path = "~/.config/nvim"
 startup_command = "nvim -c ':Telescope find_files'"
 
 [[session]]
+name = "home"
+path = "~"
+
+[[session]]
 name = "Beyond PY"
 path = "~/loggi/py/apps/beyond"
 
@@ -14,15 +18,15 @@ path = "~/loggi/ui/targets/beyond"
 [[session]]
 name = "Loggi Requests"
 path = "~/loggi/loggi-requests"
+startup_command = "nvim -c ':Telescope find_files'"
 
 [[session]]
 name = "Loggi xproto"
 path = "~/loggi/xproto"
+startup_command = "nvim -c ':Telescope find_files'"
 
 [[session]]
 name = "Loggi ledger"
 path = "~/loggi/wallet-api"
-
-
 
 
