@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.opt.termguicolors = true
-vim.opt.background = "dark"
+vim.opt.background = "light"
 vim.opt.hidden = true
 vim.opt.encoding = "utf-8"
 vim.opt.number = true
@@ -47,7 +47,7 @@ vim.opt.wildmode = "longest,full"
 vim.opt.updatetime = 100
 vim.opt.splitright = true
 vim.opt.splitbelow = true
-vim.opt.signcolumn = "no"
+vim.opt.signcolumn = "yes"
 vim.opt.cursorline = true
 vim.opt.swapfile = false
 vim.opt.showtabline = 1
@@ -92,10 +92,10 @@ vim.opt.clipboard:append({ "unnamedplus" })
 vim.opt.shortmess:append({
   I = false, -- No splash screen
   W = false, -- Don't print "written" when editing
-  a = true, -- Use abbreviations in messages ([RO] intead of [readonly])
-  c = true, -- Do not show ins-completion-menu messages (match 1 of 2)
-  F = true, -- Do not print file name when opening a file
-  s = true, -- Do not show "Search hit BOTTOM" message
+  a = true,  -- Use abbreviations in messages ([RO] intead of [readonly])
+  c = true,  -- Do not show ins-completion-menu messages (match 1 of 2)
+  F = true,  -- Do not print file name when opening a file
+  s = true,  -- Do not show "Search hit BOTTOM" message
 })
 vim.filetype.add({
   extension = {
