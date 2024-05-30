@@ -45,7 +45,9 @@ in
     pkgs.nodejs_22
     pkgs.ruby
     pkgs.python311
+    pkgs.elixir
     pkgs.go
+    pkgs.erlang
     pkgs.zulu17
 
     # tools
@@ -62,6 +64,7 @@ in
     pkgs.fishPlugins.fzf
     pkgs.fishPlugins.forgit
     pkgs.powershell
+    pkgs.elixir-ls
     pkgs.gh
     pkgs.fd
     pkgs.kubectl
@@ -84,7 +87,6 @@ in
     pkgs.lazygit
     pkgs.lazydocker
     pkgsUnstable.neovim
-    pkgs.neovide
     pkgs.helix
     pkgs.eza
     pkgs.bat
