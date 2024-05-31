@@ -125,6 +125,12 @@ return {
         desc = "Toggle REPL",
       },
       {
+        "<leader>da",
+        function()
+          require("dap").list_breakpoints()
+        end,
+      },
+      {
         "<leader>dl",
         function()
           require("dap").run_last()
