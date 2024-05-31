@@ -4,23 +4,23 @@ import = ["/home/gustavo/.config/alacritty/themes/kanagawa.toml"]
 TERM = "xterm-256color"
 
 [font]
-size = 10
+size = 12
 
 [font.bold]
-family = "MonoLisa Nerd Font"
-style = "Bold"
+family = "OperatorMono Nerd Font"
+style = "Regular"
 
 [font.bold_italic]
-family = "MonoLisa Nerd Font"
-style = "Bold Italic"
-
-[font.italic]
-family = "MonoLisa Nerd Font"
+family = "OperatorMono Nerd Font"
 style = "Regular Italic"
 
+[font.italic]
+family = "OperatorMono Nerd Font"
+style = "Medium Italic"
+
 [font.normal]
-family = "MonoLisa Nerd Font"
-style = "Regular"
+family = "OperatorMono Nerd Font"
+style = "Medium"
 
 [font.offset]
 x = 0
