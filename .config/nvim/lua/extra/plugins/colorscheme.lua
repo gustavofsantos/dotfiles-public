@@ -19,9 +19,6 @@ return {
   -- },
   {
     "maxmx03/solarized.nvim",
-    lazy = false,
-    priority = 1000,
-    enabled = false,
     opts = {
       styles = {
         comments = { italic = true, bold = false },
@@ -39,8 +36,10 @@ return {
 
         local is_dark = vim.o.background == "dark"
         local cursor_line_bg = is_dark and darken(colors.base03, 100) or lighten(colors.base3, 100)
+        local editor_bg = is_dark and darken(colors.base03, 25) or colors.base3
 
         return {
+          Normal = { bg = editor_bg },
           LineNr = { fg = colors.base00, bg = colors.base03 },
           CursorLineNr = { fg = colors.yellow, bg = cursor_line_bg },
         }
@@ -54,9 +53,9 @@ return {
     "mcchrish/zenbones.nvim",
     dependencies = { "rktjmp/lush.nvim" },
     lazy = false,
-    enabled = false,
+    enabled = true,
     init = function()
-      vim.cmd.colorscheme("neobones")
+      -- vim.cmd.colorscheme("neobones")
     end,
   },
   {
@@ -82,6 +81,7 @@ return {
   {
     "rebelot/kanagawa.nvim",
     lazy = false,
+    enabled = true,
     priority = 1000,
     config = function()
       require("kanagawa").setup({
