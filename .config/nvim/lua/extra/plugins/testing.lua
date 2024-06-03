@@ -36,8 +36,8 @@ return {
     config = function()
       local setup_python_adapter = require("neotest-python")
       local beyond_py_args = {
-        "-q",
         "--disable-warnings",
+        "-vv",
         "--ds",
         "beyond_app.settings.test",
       }

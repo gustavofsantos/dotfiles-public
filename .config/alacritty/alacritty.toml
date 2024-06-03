@@ -8,19 +8,19 @@ size = 12
 
 [font.bold]
 family = "OperatorMono Nerd Font"
-style = "Regular"
+style = "Medium"
 
 [font.bold_italic]
 family = "OperatorMono Nerd Font"
-style = "Regular Italic"
+style = "Medium Italic"
 
 [font.italic]
 family = "OperatorMono Nerd Font"
-style = "Medium Italic"
+style = "Book Italic"
 
 [font.normal]
 family = "OperatorMono Nerd Font"
-style = "Medium"
+style = "Book"
 
 [font.offset]
 x = 0
