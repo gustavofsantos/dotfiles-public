@@ -29,6 +29,7 @@ return {
       "nvim-neotest/nvim-nio",
       "nvim-neotest/neotest-python",
       "nvim-lua/plenary.nvim",
+      "stevearc/overseer.nvim",
       "antoinemadec/FixCursorHold.nvim",
       "nvim-treesitter/nvim-treesitter",
       "mfussenegger/nvim-dap",
@@ -55,6 +56,14 @@ return {
             args = python_args,
           }),
         },
+        consumers = {
+          overseer = require("neotest.consumers.overseer"),
+        },
+        overseer = {
+          enabled = true,
+          -- When this is true (the default), it will replace all neotest.run.* commands
+          force_default = false,
+        },
       })
     end,
     keys = {
@@ -70,7 +79,7 @@ return {
           local is_beyond_py = vim.fn.expand("%:p:h"):find("/opt/loggi/py/apps/beyond/") ~= nil
 
           if is_beyond_py then
-            require("neotest").run.run({ env = beyond_env })
+            require("neotest").overseer.run({ env = beyond_env })
           else
             require("neotest").run.run()
           end
@@ -107,12 +116,30 @@ return {
           }
           local is_beyond_py = vim.fn.expand("%:p:h"):find("/opt/loggi/py/apps/beyond/") ~= nil
           if is_beyond_py then
-            require("neotest").run.run({ vim.fn.expand("%"), env = beyond_env })
+            require("neotest").overseer.run({ vim.fn.expand("%"), env = beyond_env })
           else
             require("neotest").run.run(vim.fn.expand("%"))
           end
         end,
         { desc = "Run file tests" },
+      },
+      {
+        "<leader>ta",
+        function()
+          local beyond_env = {
+            POSTGRES_DB = "dev_db",
+            POSTGRES_PASSWORD = "postgres",
+            POSTGRES_HOST = "localhost",
+            POSTGRES_PORT = "5432",
+          }
+          local is_beyond_py = vim.fn.expand("%:p:h"):find("/opt/loggi/py/apps/beyond/") ~= nil
+          if is_beyond_py then
+            require("neotest").overseer.run({ "/opt/loggi/py/apps/beyond/src/beyond_app", env = beyond_env })
+          else
+            require("neotest").run.run(vim.fn.getcwd())
+          end
+        end,
+        { desc = "Run all tests" },
       },
       {
         "<leader>tl",
