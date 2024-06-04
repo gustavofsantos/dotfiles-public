@@ -57,17 +57,22 @@ return {
   },
   {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.3",
+    tag = "0.1.8",
     dependencies = {
-      "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-symbols.nvim",
       "ThePrimeagen/git-worktree.nvim",
+      { "AckslD/nvim-neoclip.lua", dependencies = { "kkharji/sqlite.lua" } },
       {
         "nvim-telescope/telescope-fzf-native.nvim",
         build = "make",
-        config = function()
-          require("telescope").load_extension("fzf")
-        end,
+      },
+      {
+        "danielfalk/smart-open.nvim",
+        branch = "0.2.x",
+        dependencies = {
+          "kkharji/sqlite.lua",
+          { "nvim-telescope/telescope-fzy-native.nvim" },
+        },
       },
     },
     config = function()
@@ -145,7 +150,7 @@ return {
             theme = "ivy",
           },
           diagnostics = {
-            theme = "ivy",
+            theme = "dropdown",
           },
           buffers = {
             previewer = false,
@@ -157,6 +162,9 @@ return {
               },
             },
           },
+          smart_open = {
+            theme = "ivy",
+          },
         },
         extensions = {
           fzf = {
@@ -165,10 +173,18 @@ return {
             override_file_sorter = true, -- override the file sorter
             case_mode = "smart_case", -- or "ignore_case" or "respect_case"
           },
+          smart_open = {
+            theme = "ivy",
+            cwd_only = true,
+            filename_first = true,
+          },
         },
       })
 
       telescope.load_extension("git_worktree")
+      -- telescope.load_extension("fzf")
+      telescope.load_extension("smart_open")
+      telescope.load_extension("neoclip")
     end,
     keys = {
       {
@@ -178,13 +194,43 @@ return {
       },
       {
         "<leader>o",
-        "<cmd>Telescope oldfiles<cr>",
-        { mode = "n", desc = "Open recent files", noremap = true, silent = true },
+        "<cmd>Telescope smart_open theme=ivy<cr>",
+        { mode = "n", desc = "Smart open", noremap = true, silent = true },
       },
       {
         "<leader>b",
         "<cmd>Telescope buffers<cr>",
         { mode = "n", desc = "Switch buffer", noremap = true, silent = true },
+      },
+      {
+        "<leader>fr",
+        "<cmd>Telescope resume<cr>",
+        { mode = "n", desc = "Resume search", noremap = true, silent = true },
+      },
+      {
+        "<leader>fc",
+        "<cmd>Telescope neoclip<cr>",
+        { mode = "n", desc = "Clipboard history", noremap = true, silent = true },
+      },
+      {
+        "<leader>fl",
+        "<cmd>Telescope live_grep<cr>",
+        { mode = "n", desc = "Live grep", noremap = true, silent = true },
+      },
+      {
+        "<leader>fg",
+        "<cmd>Telescope git_files<cr>",
+        { mode = "n", desc = "Find git files", noremap = true, silent = true },
+      },
+      {
+        "<leader>fk",
+        "<cmd>Telescope keymaps<cr>",
+        { mode = "n", desc = "Keymaps", noremap = true, silent = true },
+      },
+      {
+        "<leader>f?",
+        "<cmd>Telescope help_tags<cr>",
+        { mode = "n", desc = "Help tags", noremap = true, silent = true },
       },
       {
         "<c-f>",

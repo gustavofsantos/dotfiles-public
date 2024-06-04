@@ -22,11 +22,11 @@ return {
         current_line_blame = false,
         current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d>",
         signs = {
-          add = { text = "▏" },
-          change = { text = "▏" },
-          delete = { text = "▏" },
-          topdelete = { text = "▏" },
-          changedelete = { text = "▏" },
+          add = { text = "▌" },
+          change = { text = "▌" },
+          delete = { text = "▌" },
+          topdelete = { text = "▌" },
+          changedelete = { text = "▌" },
           untracked = { text = "░" },
         },
       })
@@ -61,7 +61,7 @@ return {
         keymaps = {
           disable_defaults = false, -- Disable the default keymaps
           view = {
-            { "n", "<leader>e", actions.focus_files,  { desc = "Bring focus to the file panel" } },
+            { "n", "<leader>e", actions.focus_files, { desc = "Bring focus to the file panel" } },
             { "n", "<leader>b", actions.toggle_files, { desc = "Toggle the file panel." } },
             {
               "n",
