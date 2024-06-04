@@ -61,6 +61,8 @@ return {
     dependencies = {
       "nvim-telescope/telescope-symbols.nvim",
       "ThePrimeagen/git-worktree.nvim",
+      "debugloop/telescope-undo.nvim",
+      "nvim-telescope/telescope-dap.nvim",
       { "AckslD/nvim-neoclip.lua", dependencies = { "kkharji/sqlite.lua" } },
       {
         "nvim-telescope/telescope-fzf-native.nvim",
@@ -185,6 +187,8 @@ return {
       -- telescope.load_extension("fzf")
       telescope.load_extension("smart_open")
       telescope.load_extension("neoclip")
+      telescope.load_extension("undo")
+      telescope.load_extension("dap")
     end,
     keys = {
       {
@@ -201,6 +205,11 @@ return {
         "<leader>b",
         "<cmd>Telescope buffers<cr>",
         { mode = "n", desc = "Switch buffer", noremap = true, silent = true },
+      },
+      {
+        "<leader>u",
+        "<cmd>Telescope undo theme=ivy<cr>",
+        { mode = "n", desc = "Undo history", noremap = true, silent = true },
       },
       {
         "<leader>fr",
