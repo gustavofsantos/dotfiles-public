@@ -49,6 +49,8 @@ in
     pkgs.go
     pkgs.erlang
     pkgs.zulu17
+    pkgs.clojure
+    pkgs.ghc
 
     # tools
     pkgs.btop
@@ -98,6 +100,11 @@ in
     pkgs.difftastic
     pkgs.entr
     pkgs.mermaid-cli
+    pkgs.clojure-lsp
+    pkgs.leiningen
+    pkgs.clj-kondo
+    pkgs.babashka
+    pkgs.cabal-install
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
