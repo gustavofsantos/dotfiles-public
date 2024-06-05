@@ -62,6 +62,19 @@ return {
     config = true,
   },
   {
+    "nvim-zh/colorful-winsep.nvim",
+    config = true,
+    opts = {
+      hi = {
+        link = "Keyword",
+      },
+      smooth = false,
+      symbols = { "─", "│", "╭", "╮", "╰", "╯" },
+      no_exec_files = { "packer", "TelescopePrompt", "mason", "CompetiTest", "NvimTree" },
+    },
+    event = { "WinNew" },
+  },
+  {
     "romgrk/barbar.nvim",
     dependencies = {
       "lewis6991/gitsigns.nvim",

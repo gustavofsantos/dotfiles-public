@@ -354,6 +354,15 @@ return {
         end
       end
 
+      local function get_toggleterm_id(props)
+        local id = " " .. vim.fn.bufname(props.buf):sub(-1) .. " "
+        return { { id, group = props.focused and "FloatTitle" or "Title" } }
+      end
+
+      local function is_toggleterm(bufnr)
+        return vim.bo[bufnr].filetype == "toggleterm"
+      end
+
       require("incline").setup({
         hide = {
           cursorline = true,
@@ -371,6 +380,10 @@ return {
           },
         },
         render = function(props)
+          if is_toggleterm(props.buf) then
+            return get_toggleterm_id(props)
+          end
+
           local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
           local ft_icon, ft_color = require("nvim-web-devicons").get_icon_color(filename)
           local modified = vim.api.nvim_buf_get_option(props.buf, "modified") and "bold,italic" or "bold"
