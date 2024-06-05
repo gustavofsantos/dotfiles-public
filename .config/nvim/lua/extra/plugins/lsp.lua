@@ -199,9 +199,10 @@ return {
       end
 
       vim.diagnostic.config({
-        virtual_text = {
-          prefix = "■",
-        },
+        -- virtual_text = {
+        --   prefix = "■",
+        -- },
+        virtual_text = false,
         update_in_insert = false,
         float = {
           source = "if_many",

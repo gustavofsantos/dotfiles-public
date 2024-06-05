@@ -1,5 +1,6 @@
 return {
   "akinsho/toggleterm.nvim",
+  dependencies = {},
   version = "*",
   event = "BufEnter",
   config = function()

@@ -63,6 +63,30 @@ return {
       "ThePrimeagen/git-worktree.nvim",
       "debugloop/telescope-undo.nvim",
       "nvim-telescope/telescope-dap.nvim",
+      {
+        "ryanmsnyder/toggleterm-manager.nvim",
+        config = function()
+          local toggleterm_manager = require("toggleterm-manager")
+          local actions = toggleterm_manager.actions
+
+          toggleterm_manager.setup({
+            mappings = { -- key mappings bound inside the telescope window
+              i = {
+                ["<CR>"] = { action = actions.toggle_term, exit_on_action = false }, -- toggles terminal open/closed
+                ["<C-i>"] = { action = actions.create_term, exit_on_action = false }, -- creates a new terminal buffer
+                ["<C-d>"] = { action = actions.delete_term, exit_on_action = false }, -- deletes a terminal buffer
+                ["<C-r>"] = { action = actions.rename_term, exit_on_action = false }, -- provides a prompt to rename a terminal
+              },
+              n = {
+                ["<CR>"] = { action = actions.toggle_term, exit_on_action = false }, -- toggles terminal open/closed
+                ["<C-i>"] = { action = actions.create_term, exit_on_action = false }, -- creates a new terminal buffer
+                ["<C-d>"] = { action = actions.delete_term, exit_on_action = false }, -- deletes a terminal buffer
+                ["<C-r>"] = { action = actions.rename_term, exit_on_action = false }, -- provides a prompt to rename a terminal
+              },
+            },
+          })
+        end,
+      },
       { "AckslD/nvim-neoclip.lua", dependencies = { "kkharji/sqlite.lua" } },
       {
         "nvim-telescope/telescope-fzf-native.nvim",
@@ -83,7 +107,7 @@ return {
         defaults = {
           dynamic_preview_title = true,
           prompt_position = "top",
-          prompt_prefix = "↳ ",
+          prompt_prefix = " ",
           selection_caret = "→ ",
           sorting_strategy = "ascending",
           file_ignore_patterns = {
@@ -107,27 +131,32 @@ return {
         },
         pickers = {
           find_files = {
+            prompt_prefix = " ",
             theme = "ivy",
             previewer = true,
             hidden = true,
             disable_devicons = false,
           },
           oldfiles = {
+            prompt_prefix = " ",
             previewer = true,
             theme = "ivy",
             disable_devicons = false,
           },
           live_grep = {
+            prompt_prefix = " ",
             previewer = true,
             theme = "ivy",
             disable_devicons = false,
           },
           grep_string = {
+            prompt_prefix = " ",
             previewer = true,
             theme = "ivy",
             disable_devicons = false,
           },
           git_files = {
+            prompt_prefix = " ",
             previewer = true,
             theme = "ivy",
             disable_devicons = false,
@@ -136,6 +165,7 @@ return {
             theme = "ivy",
           },
           current_buffer_fuzzy_find = {
+            prompt_prefix = " ",
             previewer = true,
             theme = "ivy",
           },
@@ -155,6 +185,7 @@ return {
             theme = "dropdown",
           },
           buffers = {
+            prompt_prefix = " ",
             previewer = false,
             theme = "dropdown",
             disable_devicons = false,
@@ -177,6 +208,7 @@ return {
           },
           smart_open = {
             theme = "ivy",
+            prompt_prefix = " ",
             cwd_only = true,
             filename_first = true,
           },
@@ -210,6 +242,11 @@ return {
         "<leader>u",
         "<cmd>Telescope undo theme=ivy<cr>",
         { mode = "n", desc = "Undo history", noremap = true, silent = true },
+      },
+      {
+        [[<C-t>]],
+        "<cmd>Telescope toggleterm_manager<cr>",
+        { mode = { "i", "n" }, desc = "Toggleterm manager" },
       },
       {
         "<leader>fr",
@@ -257,6 +294,103 @@ return {
         { mode = "v", desc = "Grep selected text", noremap = true, silent = true },
       },
     },
+  },
+  {
+    "b0o/incline.nvim",
+    event = "BufEnter",
+    config = function()
+      local icons = {
+        diagnostics = {
+          Error = " ",
+          Warn = " ",
+          Hint = " ",
+          Info = " ",
+        },
+        git = {
+          added = "",
+          changed = "",
+          deleted = "",
+        },
+      }
+      local function get_diagnostic_label(props)
+        local label = {}
+        for severity, icon in pairs(icons.diagnostics) do
+          local n = #vim.diagnostic.get(props.buf, { severity = vim.diagnostic.severity[string.upper(severity)] })
+          if n > 0 then
+            table.insert(label, { icon .. "" .. n .. " ", group = "DiagnosticSign" .. severity })
+          end
+        end
+        return label
+      end
+
+      local function get_git_diff(props)
+        local icons = { removed = "", changed = "", added = "" }
+        local labels = {}
+        local success, signs = pcall(vim.api.nvim_buf_get_var, props.buf, "gitsigns_status_dict")
+        if success then
+          for name, icon in pairs(icons) do
+            if tonumber(signs[name]) and signs[name] > 0 then
+              table.insert(labels, { icon .. " " .. signs[name] .. " ", group = "Diff" .. name })
+            end
+          end
+          return labels
+        else
+          for name, icon in pairs(icons) do
+            if tonumber(signs[name]) and signs[name] > 0 then
+              table.insert(labels, { icon .. " " .. signs[name] .. " ", group = "Diff" .. name })
+            end
+          end
+          return labels
+        end
+      end
+
+      local function get_toggleterm_id(props)
+        local id = " " .. vim.fn.bufname(props.buf):sub(-1) .. " "
+        return { { id, group = props.focused and "Identifier" or "FloatTitle" } }
+      end
+
+      local function is_toggleterm(bufnr)
+        return vim.bo[bufnr].filetype == "toggleterm"
+      end
+
+      require("incline").setup({
+        hide = {
+          cursorline = true,
+          focused_win = false,
+          only_win = false,
+        },
+        window = {
+          zindex = 30,
+          margin = {
+            vertical = { top = vim.o.laststatus == 3 and 0 or 1, bottom = 0 }, -- shift to overlap window borders
+            horizontal = { left = 0, right = 2 },
+          },
+        },
+        ignore = {
+          buftypes = {},
+          filetypes = { "neo-tree", "OverseerList" },
+          unlisted_buffers = false,
+        },
+        render = function(props)
+          if is_toggleterm(props.buf) then
+            return get_toggleterm_id(props)
+          end
+
+          local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
+          local ft_icon, ft_color = require("nvim-web-devicons").get_icon_color(filename)
+          local modified = vim.api.nvim_buf_get_option(props.buf, "modified") and "bold,italic" or "bold"
+
+          local buffer = {
+            -- { get_git_diff(props) },
+            { get_diagnostic_label(props) },
+            { ft_icon, guifg = ft_color },
+            { " " },
+            { filename, group = props.focused and "Identifier" or "TelescopeTitle", gui = "" },
+          }
+          return buffer
+        end,
+      })
+    end,
   },
   {
     "stevearc/oil.nvim",

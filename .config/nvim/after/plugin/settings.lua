@@ -14,7 +14,7 @@ vim.opt.hlsearch = true
 vim.opt.infercase = true
 vim.opt.showcmd = true
 vim.opt.cmdheight = 1
-vim.opt.laststatus = 2
+vim.opt.laststatus = 3
 vim.opt.expandtab = true
 vim.opt.smarttab = true
 vim.opt.cindent = true
@@ -80,10 +80,10 @@ if vim.g.neovide then
   vim.g.neovide_cursor_trail_size = 0.5
 end
 
-vim.opt.statusline = "%<%f"
-vim.opt.statusline:append("%{exists('g:loaded_fugitive')?' ':''}")
-vim.opt.statusline:append("%{exists('g:loaded_fugitive')?fugitive#statusline():''}")
-vim.opt.statusline:append("%h%m%r%=%-14.(%l,%c%V%) %P")
+-- vim.opt.statusline = "%<%f"
+-- vim.opt.statusline:append("%{exists('g:loaded_fugitive')?' ':''}")
+-- vim.opt.statusline:append("%{exists('g:loaded_fugitive')?fugitive#statusline():''}")
+-- vim.opt.statusline:append("%h%m%r%=%-14.(%l,%c%V%) %P")
 
 vim.opt.path:append({ "**" })
 vim.opt.wildignore:append({ "*/node_modules/*" })
