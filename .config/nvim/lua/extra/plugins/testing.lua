@@ -50,6 +50,10 @@ return {
 
       vim.o.signcolumn = "yes"
       require("neotest").setup({
+        status = {
+          signs = true,
+          virtual_text = true,
+        },
         adapters = {
           setup_python_adapter({
             dap = { justMyCode = true },

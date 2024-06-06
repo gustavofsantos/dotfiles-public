@@ -209,10 +209,10 @@ return {
       -- Diagnostic symbols in the sign column (gutter)
       --
       local signs = {
-        Error = " ",
-        Warn = " ",
+        Error = " ",
+        Warn = " ",
         Hint = " ",
-        Info = " ",
+        Info = " ",
       }
       for type, icon in pairs(signs) do
         local hl = "DiagnosticSign" .. type

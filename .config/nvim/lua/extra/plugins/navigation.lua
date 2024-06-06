@@ -301,10 +301,10 @@ return {
     config = function()
       local icons = {
         diagnostics = {
-          Error = " ",
-          Warn = " ",
+          Error = " ",
+          Warn = " ",
           Hint = " ",
-          Info = " ",
+          Info = " ",
         },
         git = {
           added = "",
@@ -379,10 +379,13 @@ return {
           local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
           local ft_icon, ft_color = require("nvim-web-devicons").get_icon_color(filename)
           local modified = vim.api.nvim_buf_get_option(props.buf, "modified") and "bold,italic" or "bold"
+          local is_test_file = vim.fn.expand("%:p"):find("tests/") ~= nil
 
           local buffer = {
             -- { get_git_diff(props) },
+            { is_test_file and " " or "" },
             { get_diagnostic_label(props) },
+            { " " },
             { ft_icon, guifg = ft_color },
             { " " },
             { filename, group = props.focused and "Identifier" or "TelescopeTitle", gui = "" },
