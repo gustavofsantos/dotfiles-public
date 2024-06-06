@@ -8,6 +8,27 @@ return {
       "b0o/schemastore.nvim",
       "folke/neodev.nvim",
       "nvim-telescope/telescope.nvim",
+      {
+        "dnlhc/glance.nvim",
+        cmd = "Glance",
+        ---@class GlanceOpts
+        opts = {
+          border = {
+            enable = true,
+            top_char = "―",
+            bottom_char = "―",
+          },
+          hooks = {
+            before_open = function(results, open, jump, method)
+              if #results == 1 then
+                jump(results[1]) -- argument is optional
+              else
+                open(results) -- argument is optional
+              end
+            end,
+          },
+        },
+      },
     },
     config = function()
       require("neodev").setup()
@@ -150,7 +171,7 @@ return {
           local telescope = require("telescope.builtin")
 
           vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-          vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+          vim.keymap.set("n", "gd", "<cmd>Glance definitions<cr>", opts)
           vim.keymap.set("n", "K", function()
             local winid = require("ufo").peekFoldedLinesUnderCursor()
             if not winid then
@@ -159,7 +180,7 @@ return {
           end, opts)
           vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
           vim.keymap.set("n", "gr", vim.lsp.buf.rename, opts)
-          vim.keymap.set("n", "gR", vim.lsp.buf.references, opts)
+          vim.keymap.set("n", "gR", "<cmd>Glance references<cr>", opts)
           vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 
           vim.keymap.set("n", "<leader>fs", function()

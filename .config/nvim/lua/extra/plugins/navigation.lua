@@ -245,7 +245,7 @@ return {
       },
       {
         [[<C-t>]],
-        "<cmd>Telescope toggleterm_manager<cr>",
+        "<cmd>Telescope toggleterm_manager theme=dropdown<cr>",
         { mode = { "i", "n" }, desc = "Toggleterm manager" },
       },
       {
