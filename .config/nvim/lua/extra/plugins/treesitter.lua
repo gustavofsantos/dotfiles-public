@@ -15,6 +15,7 @@ return {
     treesitter.setup({
       -- A list of parser names, or "all"
       ensure_installed = {
+        "clojure",
         "gitcommit",
         "git_rebase",
         "lua",
