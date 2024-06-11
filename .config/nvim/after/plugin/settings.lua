@@ -20,7 +20,7 @@ vim.opt.smarttab = true
 vim.opt.cindent = true
 vim.opt.shell = "zsh"
 vim.opt.backup = true
-vim.opt.backupdir = { "/home/gustavo/.local/share/nvim/backups" }
+vim.opt.backupdir = { vim.fn.expand('$HOME/.local/share/nvim/backups') }
 vim.opt.backupskip = { "/tmp/*", "/private/tmp/*" }
 vim.opt.writebackup = true
 vim.opt.inccommand = "split"
@@ -92,10 +92,10 @@ vim.opt.clipboard:append({ "unnamedplus" })
 vim.opt.shortmess:append({
   I = false, -- No splash screen
   W = false, -- Don't print "written" when editing
-  a = true, -- Use abbreviations in messages ([RO] intead of [readonly])
-  c = true, -- Do not show ins-completion-menu messages (match 1 of 2)
-  F = true, -- Do not print file name when opening a file
-  s = true, -- Do not show "Search hit BOTTOM" message
+  a = true,  -- Use abbreviations in messages ([RO] intead of [readonly])
+  c = true,  -- Do not show ins-completion-menu messages (match 1 of 2)
+  F = true,  -- Do not print file name when opening a file
+  s = true,  -- Do not show "Search hit BOTTOM" message
 })
 vim.filetype.add({
   extension = {

@@ -23,11 +23,28 @@ return {
     })
 
     overseer.register_template({
-      name = "beyond - run black",
+      name = "beyond - run black check",
       builder = function(params)
         return {
           cmd = { "poetry", "run", "black" },
           args = { "--check", "." },
+          cwd = "/opt/loggi/py/apps/beyond/",
+          components = { "default" },
+          env = {},
+        }
+      end,
+      condition = {
+        filetype = "python",
+        dir = "/opt/loggi/py/apps/beyond/",
+      },
+    })
+
+    overseer.register_template({
+      name = "beyond - run black format",
+      builder = function(params)
+        return {
+          cmd = { "poetry", "run", "black" },
+          args = { "." },
           cwd = "/opt/loggi/py/apps/beyond/",
           components = { "default" },
           env = {},
@@ -50,8 +67,8 @@ return {
     end, {})
   end,
   keys = {
-    { "<leader>rr", "<cmd>OverseerRun<cr>", { desc = "Run", noremap = true, silent = true } },
+    { "<leader>rr", "<cmd>OverseerRun<cr>",         { desc = "Run", noremap = true, silent = true } },
     { "<leader>rl", "<cmd>OverseerRestartLast<cr>", { desc = "Run last", noremap = true, silent = true } },
-    { "<leader>rt", "<cmd>OverseerToggle<cr>", { desc = "Toggle", noremap = true, silent = true } },
+    { "<leader>rt", "<cmd>OverseerToggle<cr>",      { desc = "Toggle", noremap = true, silent = true } },
   },
 }

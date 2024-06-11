@@ -70,15 +70,15 @@ return {
           local actions = toggleterm_manager.actions
 
           toggleterm_manager.setup({
-            mappings = { -- key mappings bound inside the telescope window
+            mappings = {                                                              -- key mappings bound inside the telescope window
               i = {
-                ["<CR>"] = { action = actions.toggle_term, exit_on_action = false }, -- toggles terminal open/closed
+                ["<CR>"] = { action = actions.toggle_term, exit_on_action = false },  -- toggles terminal open/closed
                 ["<C-i>"] = { action = actions.create_term, exit_on_action = false }, -- creates a new terminal buffer
                 ["<C-d>"] = { action = actions.delete_term, exit_on_action = false }, -- deletes a terminal buffer
                 ["<C-r>"] = { action = actions.rename_term, exit_on_action = false }, -- provides a prompt to rename a terminal
               },
               n = {
-                ["<CR>"] = { action = actions.toggle_term, exit_on_action = false }, -- toggles terminal open/closed
+                ["<CR>"] = { action = actions.toggle_term, exit_on_action = false },  -- toggles terminal open/closed
                 ["<C-i>"] = { action = actions.create_term, exit_on_action = false }, -- creates a new terminal buffer
                 ["<C-d>"] = { action = actions.delete_term, exit_on_action = false }, -- deletes a terminal buffer
                 ["<C-r>"] = { action = actions.rename_term, exit_on_action = false }, -- provides a prompt to rename a terminal
@@ -201,10 +201,10 @@ return {
         },
         extensions = {
           fzf = {
-            fuzzy = true, -- false will only do exact matching
+            fuzzy = true,                   -- false will only do exact matching
             override_generic_sorter = true, -- override the generic sorter
-            override_file_sorter = true, -- override the file sorter
-            case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+            override_file_sorter = true,    -- override the file sorter
+            case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
           },
           smart_open = {
             theme = "ivy",
@@ -379,16 +379,14 @@ return {
           local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
           local ft_icon, ft_color = require("nvim-web-devicons").get_icon_color(filename)
           local modified = vim.api.nvim_buf_get_option(props.buf, "modified") and "bold,italic" or "bold"
-          local is_test_file = vim.fn.expand("%:p"):find("tests/") ~= nil
 
           local buffer = {
             -- { get_git_diff(props) },
-            { is_test_file and " " or "" },
             { get_diagnostic_label(props) },
             { " " },
-            { ft_icon, guifg = ft_color },
+            { ft_icon,                    guifg = ft_color },
             { " " },
-            { filename, group = props.focused and "Identifier" or "TelescopeTitle", gui = "" },
+            { filename,                   group = props.focused and "Identifier" or "TelescopeTitle", gui = "" },
           }
           return buffer
         end,
