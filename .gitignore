@@ -259,3 +259,7 @@ anaconda3/
 .config/neo4j-relate
 .ollama
 .virtualenvs/
+.clojure/
+.clojure_history
+.config/anytype/
+debugpy/
