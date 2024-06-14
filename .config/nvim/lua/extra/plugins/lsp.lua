@@ -8,27 +8,6 @@ return {
       "b0o/schemastore.nvim",
       "folke/neodev.nvim",
       "nvim-telescope/telescope.nvim",
-      {
-        "dnlhc/glance.nvim",
-        cmd = "Glance",
-        ---@class GlanceOpts
-        opts = {
-          border = {
-            enable = true,
-            top_char = "―",
-            bottom_char = "―",
-          },
-          hooks = {
-            before_open = function(results, open, jump, method)
-              if #results == 1 then
-                jump(results[1]) -- argument is optional
-              else
-                open(results) -- argument is optional
-              end
-            end,
-          },
-        },
-      },
     },
     config = function()
       require("neodev").setup()
@@ -171,7 +150,7 @@ return {
           local telescope = require("telescope.builtin")
 
           vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-          vim.keymap.set("n", "gd", "<cmd>Glance definitions<cr>", opts)
+          vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
           vim.keymap.set("n", "K", function()
             local winid = require("ufo").peekFoldedLinesUnderCursor()
             if not winid then
@@ -180,24 +159,14 @@ return {
           end, opts)
           vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
           vim.keymap.set("n", "gr", vim.lsp.buf.rename, opts)
-          vim.keymap.set("n", "gR", "<cmd>Glance references<cr>", opts)
+          vim.keymap.set("n", "gR", vim.lsp.buf.references, opts)
           vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 
-          vim.keymap.set("n", "<leader>fs", function()
-            telescope.lsp_document_symbols()
-          end, { buffer = ev.buf, desc = "Find document symbols" })
-
-          vim.keymap.set("n", "<leader>fS", function()
-            telescope.lsp_dynamic_workspace_symbols()
-          end, { buffer = ev.buf, desc = "Find workspace symbols" })
-
-          vim.keymap.set("n", "<leader>xx", function()
-            require("telescope.builtin").diagnostics()
-          end, { buffer = ev.buf, desc = "Buffer diagnostics" })
+          vim.keymap.set("n", "<leader>xx", telescope.diagnostics, { buffer = ev.buf, desc = "Buffer diagnostics" })
 
           vim.keymap.set("n", "<leader>xw", function()
             require("telescope.builtin").diagnostics({ bufno = 0 })
-          end, { buffer = ev.buf, desc = "Buffer diagnostics" })
+          end, { buffer = ev.buf, desc = "Workspace diagnostics" })
 
           vim.keymap.set("n", "<leader>th", function()
             local is_enabled = vim.lsp.inlay_hint.is_enabled({ bufnr = 0 })
@@ -208,15 +177,10 @@ return {
 
       -- Diagnostic symbols in the sign column (gutter)
       --
-      local signs = {
-        Error = " ",
-        Warn = " ",
-        Hint = " ",
-        Info = " ",
-      }
+      local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
       for type, icon in pairs(signs) do
         local hl = "DiagnosticSign" .. type
-        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+        vim.fn.sign_define(hl, { text = "", texthl = hl, numhl = "" })
       end
 
       vim.diagnostic.config({
@@ -236,43 +200,6 @@ return {
     tag = "legacy",
     event = "LspAttach",
     enabled = false,
-    opts = {},
-  },
-  {
-    "folke/trouble.nvim",
-    branch = "dev",
-    keys = {
-      {
-        "<leader>xx",
-        "<cmd>Trouble diagnostics toggle<cr>",
-        desc = "Diagnostics (Trouble)",
-      },
-      {
-        "<leader>xX",
-        "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-        desc = "Buffer Diagnostics (Trouble)",
-      },
-      {
-        "<leader>cs",
-        "<cmd>Trouble symbols toggle focus=false<cr>",
-        desc = "Symbols (Trouble)",
-      },
-      {
-        "<leader>cl",
-        "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-        desc = "LSP Definitions / references / ... (Trouble)",
-      },
-      {
-        "<leader>xL",
-        "<cmd>Trouble loclist toggle<cr>",
-        desc = "Location List (Trouble)",
-      },
-      {
-        "<leader>xQ",
-        "<cmd>Trouble qflist toggle<cr>",
-        desc = "Quickfix List (Trouble)",
-      },
-    },
     opts = {},
   },
 }

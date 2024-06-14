@@ -1,5 +1,6 @@
 return {
   "christoomey/vim-tmux-navigator",
+  "christoomey/vim-tmux-runner",
   {
     "ThePrimeagen/harpoon",
     dependencies = { "nvim-lua/plenary.nvim" },
@@ -63,30 +64,6 @@ return {
       "ThePrimeagen/git-worktree.nvim",
       "debugloop/telescope-undo.nvim",
       "nvim-telescope/telescope-dap.nvim",
-      {
-        "ryanmsnyder/toggleterm-manager.nvim",
-        config = function()
-          local toggleterm_manager = require("toggleterm-manager")
-          local actions = toggleterm_manager.actions
-
-          toggleterm_manager.setup({
-            mappings = {                                                              -- key mappings bound inside the telescope window
-              i = {
-                ["<CR>"] = { action = actions.toggle_term, exit_on_action = false },  -- toggles terminal open/closed
-                ["<C-i>"] = { action = actions.create_term, exit_on_action = false }, -- creates a new terminal buffer
-                ["<C-d>"] = { action = actions.delete_term, exit_on_action = false }, -- deletes a terminal buffer
-                ["<C-r>"] = { action = actions.rename_term, exit_on_action = false }, -- provides a prompt to rename a terminal
-              },
-              n = {
-                ["<CR>"] = { action = actions.toggle_term, exit_on_action = false },  -- toggles terminal open/closed
-                ["<C-i>"] = { action = actions.create_term, exit_on_action = false }, -- creates a new terminal buffer
-                ["<C-d>"] = { action = actions.delete_term, exit_on_action = false }, -- deletes a terminal buffer
-                ["<C-r>"] = { action = actions.rename_term, exit_on_action = false }, -- provides a prompt to rename a terminal
-              },
-            },
-          })
-        end,
-      },
       { "AckslD/nvim-neoclip.lua", dependencies = { "kkharji/sqlite.lua" } },
       {
         "nvim-telescope/telescope-fzf-native.nvim",
@@ -216,7 +193,6 @@ return {
       })
 
       telescope.load_extension("git_worktree")
-      -- telescope.load_extension("fzf")
       telescope.load_extension("smart_open")
       telescope.load_extension("neoclip")
       telescope.load_extension("undo")
@@ -242,11 +218,6 @@ return {
         "<leader>u",
         "<cmd>Telescope undo theme=ivy<cr>",
         { mode = "n", desc = "Undo history", noremap = true, silent = true },
-      },
-      {
-        [[<C-t>]],
-        "<cmd>Telescope toggleterm_manager theme=dropdown<cr>",
-        { mode = { "i", "n" }, desc = "Toggleterm manager" },
       },
       {
         "<leader>fr",
@@ -381,9 +352,9 @@ return {
           local modified = vim.api.nvim_buf_get_option(props.buf, "modified") and "bold,italic" or "bold"
 
           local buffer = {
-            -- { get_git_diff(props) },
+            { get_git_diff(props) },
             { get_diagnostic_label(props) },
-            { " " },
+            -- { " " },
             { ft_icon,                    guifg = ft_color },
             { " " },
             { filename,                   group = props.focused and "Identifier" or "TelescopeTitle", gui = "" },

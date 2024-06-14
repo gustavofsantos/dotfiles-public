@@ -120,12 +120,12 @@ return {
             StatusLineNC = { bg = colors.palette.sumiInk2 },
             ColorColumn = { bg = colors.palette.sumiInk2 },
 
-            DiagnosticWarn = { link = "LineNr" },
-            DiagnosticInfo = { link = "LineNr" },
-            DiagnosticHint = { link = "LineNr" },
-            DiagnosticSignWarn = { link = "LineNr" },
-            DiagnosticSignInfo = { link = "LineNr" },
-            DiagnosticSignHint = { link = "LineNr" },
+            -- DiagnosticWarn = { link = "LineNr" },
+            -- DiagnosticInfo = { link = "LineNr" },
+            -- DiagnosticHint = { link = "LineNr" },
+            -- DiagnosticSignWarn = { link = "LineNr" },
+            -- DiagnosticSignInfo = { link = "LineNr" },
+            -- DiagnosticSignHint = { link = "LineNr" },
 
             TelescopeTitle = { fg = colors.theme.ui.special, bold = true },
             TelescopePromptNormal = { bg = colors.theme.ui.bg_p1 },
