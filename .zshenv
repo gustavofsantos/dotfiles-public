@@ -1,10 +1,12 @@
-if [ -e /home/gustavo/.cargo/env ]; then . /home/gustavo/.cargo/env;  fi
+if [ -e "$HOME/.cargo/env" ]; then . "$HOME/.cargo/env";  fi
+if [ -e "$HOME/.asdf/asdf.sh" ]; then . "$HOME/.asdf/asdf.sh"; fi
+. ~/.asdf/plugins/java/set-java-home.zsh
 
 export EDITOR='nvim'
 
 export GEM_HOME="$HOME/.gem"
 export ANDROID_HOME="$HOME/Android/Sdk"
-export PNPM_HOME="/home/gustavo/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 
 export PATH="$PNPM_HOME:$PATH"
 export PATH=$PATH:"$HOME"/.local/bin

@@ -34,3 +34,4 @@ function journal () {
 eval "$(sheldon source)"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
