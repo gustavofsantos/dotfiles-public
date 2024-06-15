@@ -2,7 +2,7 @@ nodejs 22.3.0
 fzf 0.53.0
 golang 1.22.4
 jq 1.7.1
-neovim 0.10
+neovim 0.10.0
 ripgrep 13.0.0
 tmux 3.4
 zoxide 0.9.4
