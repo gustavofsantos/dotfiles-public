@@ -263,3 +263,5 @@ anaconda3/
 .clojure_history
 .config/anytype/
 debugpy/
+.config/asdf-direnv/
+.config/direnv/
