@@ -23,3 +23,5 @@ clj-kondo 2024.05.24
 delta 0.17.0
 fd 10.1.0
 lua 5.4.6
+postgres 16.3
+gomigrate 4.17.1

@@ -48,6 +48,7 @@ asdf plugin-add sqlite
 asdf plugin-add tmux https://github.com/aphecetche/asdf-tmux.git
 asdf plugin add zellij https://github.com/chessmango/asdf-zellij.git
 asdf plugin add zoxide https://github.com/nyrst/asdf-zoxide.git
+asdf plugin-add gomigrate https://github.com/joschi/asdf-gomigrate
 
 echo "==== Installing tools ===="
 asdf install
