@@ -265,3 +265,4 @@ anaconda3/
 debugpy/
 .config/asdf-direnv/
 .config/direnv/
+dotfiles/
