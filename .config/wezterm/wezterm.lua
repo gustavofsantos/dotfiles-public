@@ -34,7 +34,7 @@ end)
 return {
     automatically_reload_config = false,
     force_reverse_video_cursor = true,
-    color_scheme = "Modus Operandi",
+    color_scheme = "Kanagawa",
 
     font = wezterm.font("MonoLisa Nerd Font"),
     -- font_size = 10.0,
@@ -42,7 +42,7 @@ return {
     freetype_load_flags = "NO_HINTING",
     freetype_load_target = "Normal",
     -- front_end = "OpenGL",
-    line_height = 1.2,
+    line_height = 1.4,
     harfbuzz_features = { "calt=1", "clig=1", "liga=1" },
     bold_brightens_ansi_colors = false,
     warn_about_missing_glyphs = false,
