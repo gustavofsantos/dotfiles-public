@@ -339,7 +339,7 @@ return {
         },
         ignore = {
           buftypes = {},
-          filetypes = { "neo-tree", "OverseerList" },
+          filetypes = { "neo-tree", "OverseerList", "oil" },
           unlisted_buffers = false,
         },
         render = function(props)
