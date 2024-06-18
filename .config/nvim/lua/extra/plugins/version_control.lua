@@ -35,9 +35,11 @@ return {
   {
     "tpope/vim-fugitive",
     dependencies = { "tpope/vim-rhubarb" },
+    event = "BufRead",
   },
   {
     "NeogitOrg/neogit",
+    enabled = false,
     dependencies = {
       "nvim-lua/plenary.nvim",
       "sindrets/diffview.nvim",
