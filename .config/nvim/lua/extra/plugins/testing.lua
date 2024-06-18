@@ -64,6 +64,12 @@ return {
           signs = true,
           virtual_text = true,
         },
+        floating = {
+          border = "",
+          max_height = 0.6,
+          max_width = 0.6,
+          options = {}
+        },
         adapters = {
           setup_python_adapter({
             dap = { justMyCode = true },

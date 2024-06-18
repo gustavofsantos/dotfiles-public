@@ -37,6 +37,7 @@ return {
     color_scheme = "Kanagawa",
 
     font = wezterm.font("MonoLisa Nerd Font"),
+    -- font = wezterm.font("OperatorMono Nerd Font", { weight = "Medium", }),
     -- font_size = 10.0,
     font_size = 11,
     freetype_load_flags = "NO_HINTING",
@@ -48,7 +49,7 @@ return {
     warn_about_missing_glyphs = false,
 
     window_decorations = "RESIZE",
-
+    window_background_opacity = 1.0,
     window_close_confirmation = "NeverPrompt",
 
     window_padding = {

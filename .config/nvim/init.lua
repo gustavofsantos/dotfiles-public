@@ -1,3 +1,7 @@
+require("settings")
+require("keymappings")
+require("notes")
+
 local disabled_built_ins = {
   "2html_plugin",
   "getscript",
@@ -33,12 +37,6 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-
-require("keymappings")
-require("notes")
-
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 
 require("lazy").setup({
   { import = "extra.plugins" },

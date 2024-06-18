@@ -114,7 +114,7 @@ return {
       })
       local dap, dapui = require("dap"), require("dapui")
 
-      vim.fn.sign_define("DapBreakpoint", { text = " ", texthl = "DiagnosticError", linehl = "", numhl = "" })
+      vim.fn.sign_define("DapBreakpoint", { text = "●", texthl = "DiagnosticError", linehl = "", numhl = "" })
 
       dap.listeners.before.attach.dapui_config = function()
         dapui.open()
@@ -324,7 +324,7 @@ return {
     event = "BufRead",
     config = function()
       vim.o.foldcolumn = "0" -- '0' is not bad
-      vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+      vim.o.foldlevel = 99   -- Using ufo provider need a large value, feel free to decrease the value
       vim.o.foldlevelstart = 99
       vim.o.foldenable = true
 
