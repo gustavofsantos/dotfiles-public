@@ -1,26 +1,28 @@
-import = ["/home/gustavo/.config/alacritty/themes/kanagawa.toml"]
+import = ["~/.config/alacritty/themes/nord.toml"]
+live_config_reload = false
 
 [env]
 TERM = "xterm-256color"
 
+
 [font]
-size = 12
+size = 11
 
 [font.bold]
-family = "OperatorMono Nerd Font"
-style = "Medium"
+family = "MonoLisa Nerd Font"
+style = "Bold"
 
 [font.bold_italic]
-family = "OperatorMono Nerd Font"
-style = "Medium Italic"
+family = "MonoLisa Nerd Font"
+style = "Bold Italic"
 
 [font.italic]
-family = "OperatorMono Nerd Font"
-style = "Book Italic"
+family = "MonoLisa Nerd Font"
+style = "Medium Italic"
 
 [font.normal]
-family = "OperatorMono Nerd Font"
-style = "Book"
+family = "MonoLisa Nerd Font"
+style = "Medium"
 
 [font.offset]
 x = 0
