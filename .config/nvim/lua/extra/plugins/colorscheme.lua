@@ -17,6 +17,7 @@ return {
   --   dir = "~/Code/solarized.nvim",
   --   enabled = false,
   -- },
+  { "cocopon/iceberg.vim" },
   {
     "maxmx03/solarized.nvim",
     opts = {
