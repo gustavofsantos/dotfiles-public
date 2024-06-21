@@ -1,6 +1,4 @@
 if [ -e "$HOME/.cargo/env" ]; then . "$HOME/.cargo/env";  fi
-if [ -e "$HOME/.asdf/asdf.sh" ]; then . "$HOME/.asdf/asdf.sh"; fi
-. ~/.asdf/plugins/java/set-java-home.zsh
 
 export EDITOR='nvim'
 
