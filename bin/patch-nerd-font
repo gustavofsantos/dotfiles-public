@@ -1,0 +1,8 @@
+#!/bin/bash
+
+docker run --rm \
+    --volume "$(pwd)/in":/input \
+    --volume "$(pwd)/out":/output \
+    --env PUID=$(id -u) --env PGID=$(id -g) \
+    ghcr.io/cdalvaro/docker-nerd-fonts-patcher:latest \
+    --quiet --no-progressbars --complete --careful
