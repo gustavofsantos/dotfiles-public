@@ -10,6 +10,7 @@ path = "~"
 [[session]]
 name = "Beyond PY"
 path = "~/loggi/py/apps/beyond"
+startup_command = "start-project-session.sh"
 
 [[session]]
 name = "Beyond UI"
