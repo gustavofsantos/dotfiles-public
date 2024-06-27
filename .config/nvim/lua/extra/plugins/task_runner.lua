@@ -56,6 +56,19 @@ return {
       },
     })
 
+    overseer.register_template({
+      name = "beyond - build proto",
+      builder = function()
+        return {
+          cmd = { "poetry", "run", "python" },
+          args = { "../../libs/buildproto.py", "apps/beyond/src/proto" },
+          cwd = "/opt/loggi/py/apps/beyond/",
+          components = { "default" },
+          env = {},
+        }
+      end,
+    })
+
     vim.api.nvim_create_user_command("OverseerRestartLast", function()
       local overseer = require("overseer")
       local tasks = overseer.list_tasks({ recent_first = true })
