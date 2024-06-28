@@ -38,6 +38,7 @@ alias lz="eza"
 alias lza="eza --icons -1 -a -l --total-size"
 alias zj="zellij"
 alias eee="sesh connect \$(sesh list -i | gum filter --limit 1 --placeholder 'Choose a session' --height 50 --prompt='⚡')"
+alias GO="z \$(zoxide query --list | gum filter --limit 1 --placeholder 'Go to')"
 
 # Loggi aliases
 alias lwt="docker-compose exec -e DJANGO_SETTINGS_MODULE=settings.test loggi_web_app pytest -vv"
