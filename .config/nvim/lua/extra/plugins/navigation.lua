@@ -366,7 +366,9 @@ return {
   },
   {
     "stevearc/oil.nvim",
-    opts = {},
+    opts = {
+      default_file_explorer = false,
+    },
     event = "VeryLazy",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = {
