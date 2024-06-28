@@ -44,6 +44,7 @@
   ski           = !git stash --keep-index
   lcom		= !git-diff-list-commits
   drev		= !git-diff
+  lazy		= !lazygit
 
 [gpg]
   format = ssh
