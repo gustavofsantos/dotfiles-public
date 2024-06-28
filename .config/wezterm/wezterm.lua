@@ -34,7 +34,7 @@ end)
 return {
     automatically_reload_config = false,
     force_reverse_video_cursor = true,
-    color_scheme = "Kanagawa",
+    color_scheme = "warp_dark",
 
     font = wezterm.font("MonoLisa Nerd Font"),
     -- font = wezterm.font("OperatorMono Nerd Font", { weight = "Medium", }),
