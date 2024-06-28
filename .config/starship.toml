@@ -1,6 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
+$jobs\
 $username\
 $hostname\
 $directory\
@@ -44,10 +45,11 @@ vimcmd_symbol = "[❮](green)"
 symbol = '⭘ '
 number_threshold = 4
 symbol_threshold = 1
+style = 'bold blue'
 
 [git_branch]
 format = "[$branch]($style)"
-style = "bright-black"
+style = "bold gray"
 
 [git_commit]
 disabled = true
