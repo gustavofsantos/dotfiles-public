@@ -2,6 +2,17 @@ return {
   "christoomey/vim-tmux-navigator",
   "christoomey/vim-tmux-runner",
   {
+    "stevearc/oil.nvim",
+    opts = {
+      default_file_explorer = false,
+    },
+    event = "VeryLazy",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    keys = {
+      { "-", "<cmd>Oil<cr>", { desc = "Open oil" } },
+    },
+  },
+  {
     "ThePrimeagen/harpoon",
     dependencies = { "nvim-lua/plenary.nvim" },
     branch = "harpoon2",
@@ -59,6 +70,7 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.8",
+    event = "VeryLazy",
     dependencies = {
       "nvim-telescope/telescope-symbols.nvim",
       "ThePrimeagen/git-worktree.nvim",
@@ -282,116 +294,6 @@ return {
         '"zy:Telescope grep_string default_text=<C-r>z<cr>',
         { mode = "v", desc = "Grep selected text", noremap = true, silent = true },
       },
-    },
-  },
-  {
-    "b0o/incline.nvim",
-    event = "BufEnter",
-    enabled = false,
-    config = function()
-      local icons = {
-        diagnostics = {
-          Error = " ",
-          Warn = " ",
-          Hint = " ",
-          Info = " ",
-        },
-        git = {
-          added = "",
-          changed = "",
-          deleted = "",
-        },
-      }
-      local function get_diagnostic_label(props)
-        local label = {}
-        for severity, icon in pairs(icons.diagnostics) do
-          local n = #vim.diagnostic.get(props.buf, { severity = vim.diagnostic.severity[string.upper(severity)] })
-          if n > 0 then
-            table.insert(label, { icon .. "" .. n .. " ", group = "DiagnosticSign" .. severity })
-          end
-        end
-        return label
-      end
-
-      local function get_git_diff(props)
-        local icons = { removed = "", changed = "", added = "" }
-        local labels = {}
-        local success, signs = pcall(vim.api.nvim_buf_get_var, props.buf, "gitsigns_status_dict")
-        if success then
-          for name, icon in pairs(icons) do
-            if tonumber(signs[name]) and signs[name] > 0 then
-              table.insert(labels, { icon .. " " .. signs[name] .. " ", group = "Diff" .. name })
-            end
-          end
-          return labels
-        else
-          for name, icon in pairs(icons) do
-            if tonumber(signs[name]) and signs[name] > 0 then
-              table.insert(labels, { icon .. " " .. signs[name] .. " ", group = "Diff" .. name })
-            end
-          end
-          return labels
-        end
-      end
-
-      local function get_toggleterm_id(props)
-        local id = " " .. vim.fn.bufname(props.buf):sub(-1) .. " "
-        return { { id, group = props.focused and "Identifier" or "FloatTitle" } }
-      end
-
-      local function is_toggleterm(bufnr)
-        return vim.bo[bufnr].filetype == "toggleterm"
-      end
-
-      require("incline").setup({
-        hide = {
-          cursorline = true,
-          focused_win = false,
-          only_win = false,
-        },
-        window = {
-          zindex = 30,
-          margin = {
-            vertical = { top = vim.o.laststatus == 3 and 0 or 1, bottom = 0 }, -- shift to overlap window borders
-            horizontal = { left = 0, right = 2 },
-          },
-        },
-        ignore = {
-          buftypes = {},
-          filetypes = { "neo-tree", "OverseerList", "oil" },
-          unlisted_buffers = false,
-        },
-        render = function(props)
-          if is_toggleterm(props.buf) then
-            return get_toggleterm_id(props)
-          end
-
-          local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
-          local ft_icon, ft_color = require("nvim-web-devicons").get_icon_color(filename)
-          local modified = vim.api.nvim_buf_get_option(props.buf, "modified") and "bold,italic" or "bold"
-
-          local buffer = {
-            { get_git_diff(props) },
-            { get_diagnostic_label(props) },
-            -- { " " },
-            { ft_icon,                    guifg = ft_color },
-            { " " },
-            { filename,                   group = props.focused and "Identifier" or "TelescopeTitle", gui = "" },
-          }
-          return buffer
-        end,
-      })
-    end,
-  },
-  {
-    "stevearc/oil.nvim",
-    opts = {
-      default_file_explorer = false,
-    },
-    event = "VeryLazy",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    keys = {
-      { "-", "<cmd>Oil<cr>", { desc = "Open oil" } },
     },
   },
 }
