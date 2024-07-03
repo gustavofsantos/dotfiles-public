@@ -1,7 +1,7 @@
 return {
   "christoomey/vim-tmux-navigator",
   "christoomey/vim-tmux-runner",
-  {
+  { -- stevearc/oil.nvim
     "stevearc/oil.nvim",
     opts = {
       default_file_explorer = false,
@@ -12,7 +12,7 @@ return {
       { "-", "<cmd>Oil<cr>", { desc = "Open oil" } },
     },
   },
-  {
+  { -- ThePrimeagen/harpoon
     "ThePrimeagen/harpoon",
     dependencies = { "nvim-lua/plenary.nvim" },
     branch = "harpoon2",
@@ -112,32 +112,29 @@ return {
             --     height = 0.4,
             prompt_position = "top",
           },
-          -- borderchars = {
-          --   prompt = { " ", " ", " ", " ", " ", " ", " ", " " },
-          --   results = { " " },
-          --   preview = { " " },
-          -- },
+          borderchars = {
+            prompt = { " ", " ", " ", " ", " ", " ", " ", " " },
+            results = { " " },
+            preview = { " " },
+          },
         },
         pickers = {
           find_files = {
             prompt_prefix = " ",
-            theme = "ivy",
+            theme = "dropdown",
             previewer = true,
             hidden = true,
-            prompt_title = false,
             disable_devicons = false,
           },
           oldfiles = {
             prompt_prefix = " ",
             previewer = true,
-            prompt_title = false,
-            theme = "ivy",
+            theme = "dropdown",
             disable_devicons = false,
           },
           live_grep = {
             prompt_prefix = " ",
             previewer = true,
-            prompt_title = false,
             theme = "ivy",
             disable_devicons = false,
           },
@@ -151,54 +148,42 @@ return {
           git_files = {
             prompt_prefix = " ",
             previewer = true,
-            prompt_title = false,
             theme = "ivy",
             disable_devicons = false,
           },
           commands = {
             theme = "ivy",
-            prompt_title = false,
           },
           current_buffer_fuzzy_find = {
             prompt_prefix = " ",
             previewer = true,
-            prompt_title = false,
             theme = "ivy",
           },
           lsp_references = {
             previewer = true,
-            prompt_title = false,
             theme = "ivy",
           },
           lsp_document_symbols = {
             previewer = true,
-            prompt_title = false,
             theme = "ivy",
           },
           lsp_dynamic_workspace_symbols = {
             previewer = true,
-            prompt_title = false,
             theme = "ivy",
           },
           diagnostics = {
             theme = "dropdown",
-            prompt_title = false,
           },
           buffers = {
             prompt_prefix = " ",
             previewer = false,
             theme = "dropdown",
             disable_devicons = false,
-            prompt_title = false,
             mappings = {
               i = {
                 ["<c-d>"] = require("telescope.actions").delete_buffer,
               },
             },
-          },
-          smart_open = {
-            theme = "ivy",
-            prompt_title = false,
           },
         },
         extensions = {
@@ -207,12 +192,6 @@ return {
             override_generic_sorter = true, -- override the generic sorter
             override_file_sorter = true,    -- override the file sorter
             case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
-          },
-          smart_open = {
-            theme = "ivy",
-            prompt_prefix = " ",
-            cwd_only = true,
-            filename_first = true,
           },
         },
       })
@@ -231,12 +210,12 @@ return {
       },
       {
         "<leader>o",
-        "<cmd>Telescope smart_open theme=ivy<cr>",
+        "<cmd>Telescope smart_open theme=dropdown<cr>",
         { mode = "n", desc = "Smart open", noremap = true, silent = true },
       },
       {
         "<leader>e",
-        "<cmd>Telescope oldfiles theme=ivy<cr>",
+        "<cmd>Telescope oldfiles<cr>",
         { mode = "n", desc = "Recent files", noremap = true, silent = true },
       },
       {
