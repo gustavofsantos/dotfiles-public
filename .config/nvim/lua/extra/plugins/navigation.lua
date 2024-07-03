@@ -269,6 +269,7 @@ return {
   {
     "b0o/incline.nvim",
     event = "BufEnter",
+    enabled = false,
     config = function()
       local icons = {
         diagnostics = {
