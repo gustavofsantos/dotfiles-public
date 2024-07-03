@@ -286,15 +286,6 @@ return {
     end,
   },
   {
-    "folke/zen-mode.nvim",
-    event = "VeryLazy",
-    opts = {},
-  },
-  {
-    "folke/twilight.nvim",
-    opts = {},
-  },
-  {
     "folke/flash.nvim",
     event = "VeryLazy",
     enabled = true,

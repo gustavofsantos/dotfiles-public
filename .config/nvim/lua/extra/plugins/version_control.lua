@@ -5,12 +5,15 @@ return {
       "nvim-lua/plenary.nvim",
       "sindrets/diffview.nvim",
       "nvim-telescope/telescope.nvim",
-      "2kabhishek/co-author.nvim",
     },
     event = "BufRead",
     keys = {
-      { "]h", "<cmd>Gitsigns next_hunk<cr>", desc = "Next hunk" },
-      { "[h", "<cmd>Gitsigns prev_hunk<cr>", desc = "Previous hunk" },
+      { "]h",          "<cmd>Gitsigns next_hunk<cr>",     desc = "Next hunk" },
+      { "[h",          "<cmd>Gitsigns prev_hunk<cr>",     desc = "Previous hunk" },
+      { "<leader>ght", "<cmd>Gitsigns toggle_linehl<cr>", desc = "Toggle line highlight" },
+      { "<leader>ghp", "<cmd>Gitsigns preview_hunk<cr>",  desc = "Preview hunk" },
+      { "<leader>ghs", "<cmd>Gitsigns stage_hunk<cr>",    desc = "Stage hunk" },
+      { "<leader>ghr", "<cmd>Gitsigns reset_hunk<cr>",    desc = "Reset hunk" },
     },
     config = function()
       local gitsigns = require("gitsigns")
@@ -29,6 +32,14 @@ return {
           changedelete = { text = "▎" },
           untracked = { text = "░" },
         },
+        signs_staged = {
+          add          = { text = '░' },
+          change       = { text = '░' },
+          delete       = { text = '░' },
+          topdelete    = { text = '░' },
+          changedelete = { text = '░' },
+          untracked    = { text = '░' },
+        },
       })
     end,
   },
@@ -36,16 +47,6 @@ return {
     "tpope/vim-fugitive",
     dependencies = { "tpope/vim-rhubarb" },
     event = "BufRead",
-  },
-  {
-    "NeogitOrg/neogit",
-    enabled = false,
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "sindrets/diffview.nvim",
-      "nvim-telescope/telescope.nvim",
-    },
-    config = true,
   },
   {
     "sindrets/diffview.nvim",

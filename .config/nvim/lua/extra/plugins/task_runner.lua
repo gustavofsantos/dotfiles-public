@@ -82,6 +82,7 @@ return {
   keys = {
     { "<leader>rr", "<cmd>OverseerRun<cr>",         { desc = "Run", noremap = true, silent = true } },
     { "<leader>rl", "<cmd>OverseerRestartLast<cr>", { desc = "Run last", noremap = true, silent = true } },
-    { "<leader>rt", "<cmd>OverseerToggle<cr>",      { desc = "Toggle", noremap = true, silent = true } },
+    { "<leader>rt", "<cmd>OverseerToggle<cr>",      { desc = "Toggle Overseer", noremap = true, silent = true } },
+    { "<leader>ro", "<cmd>OverseerToggle<cr>",      { desc = "Toggle Overseer", noremap = true, silent = true } },
   },
 }
