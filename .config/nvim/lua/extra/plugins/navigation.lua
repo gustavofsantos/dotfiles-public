@@ -67,7 +67,7 @@ return {
       },
     },
   },
-  {
+  { -- nvim-telescope/telescope.nvim
     "nvim-telescope/telescope.nvim",
     tag = "0.1.8",
     event = "VeryLazy",
@@ -303,4 +303,94 @@ return {
       },
     },
   },
+  { -- b0o/incline.nvim
+    "b0o/incline.nvim",
+    event = "BufEnter",
+    config = function()
+      local icons = {
+        diagnostics = {
+          Error = " ",
+          Warn = " ",
+          Hint = " ",
+          Info = " ",
+        },
+        git = {
+          added = "",
+          changed = "",
+          deleted = ""
+        }
+      }
+      local function get_diagnostic_label(props)
+        local label = {}
+        for severity, icon in pairs(icons.diagnostics) do
+          local n = #vim.diagnostic.get(props.buf, { severity = vim.diagnostic.severity[string.upper(severity)] })
+          if n > 0 then
+            table.insert(label, { icon .. "" .. n .. " ", group = "DiagnosticSign" .. severity })
+          end
+        end
+        return label
+      end
+
+      local function get_git_diff(props)
+        local icons = { removed = "", changed = "", added = "" }
+        local labels = {}
+        local success, signs = pcall(vim.api.nvim_buf_get_var, props.buf, "gitsigns_status_dict")
+        if success then
+          for name, icon in pairs(icons) do
+            if tonumber(signs[name]) and signs[name] > 0 then
+              table.insert(labels, { icon .. " " .. signs[name] .. " ", group = "Diff" .. name })
+            end
+          end
+          return labels
+        else
+          for name, icon in pairs(icons) do
+            if tonumber(signs[name]) and signs[name] > 0 then
+              table.insert(labels, { icon .. " " .. signs[name] .. " ", group = "Diff" .. name })
+            end
+          end
+          return labels
+        end
+      end
+
+      local function get_toggleterm_id(props)
+        local id = " " .. vim.fn.bufname(props.buf):sub(-1) .. " "
+        return { { id, group = props.focused and "Identifier" or "FloatTitle" } }
+      end
+
+      local function is_toggleterm(bufnr)
+        return vim.bo[bufnr].filetype == "toggleterm"
+      end
+      require("incline").setup({
+        hide = {
+          cursorline = true,
+          focused_win = false,
+          only_win = false,
+        },
+        window = {
+          zindex = 30,
+          margin = {
+            vertical = { top = vim.o.laststatus == 3 and 0 or 1, bottom = 0 }, -- shift to overlap window borders
+            horizontal = { left = 0, right = 2 },
+          },
+        },
+        ignore = {
+          buftypes = {},
+          filetypes = { "neo-tree", "OverseerList", "oil" },
+          unlisted_buffers = false,
+        },
+        render = function(props)
+          if is_toggleterm(props.buf) then
+            return get_toggleterm_id(props)
+          end
+
+          local buffer = {
+            { get_git_diff(props) },
+            { " " },
+            { get_diagnostic_label(props) },
+          }
+          return buffer
+        end,
+      })
+    end
+  }
 }
