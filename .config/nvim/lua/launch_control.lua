@@ -77,8 +77,9 @@ local launch_control = function()
     if option.nkeymap then
       local keymap = option.nkeymap
       local cmd = option.cmd
-
-      vim.api.nvim_set_keymap("n", keymap, "<cmd> " .. cmd .. "<CR>", { noremap = true, silent = true })
+      if type(cmd) == "string" then
+        vim.api.nvim_set_keymap("n", keymap, "<cmd> " .. cmd .. "<CR>", { noremap = true, silent = true })
+      end
     end
   end
 
