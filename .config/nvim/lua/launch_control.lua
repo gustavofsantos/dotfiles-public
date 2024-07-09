@@ -5,7 +5,6 @@ local finders = require("telescope.finders")
 local themes = require("telescope.themes")
 local conf = require("telescope.config").values
 
-local mappings = {}
 
 local icons = {
   file = " ",
@@ -14,6 +13,7 @@ local icons = {
   problem = " "
 }
 
+local mappings = {}
 mappings.navigation = {
   { "Find files",        cmd = "Telescope find_files",            tag = "file" },
   { "Recent files",      cmd = "Telescope oldfiles",              tag = "file" },
