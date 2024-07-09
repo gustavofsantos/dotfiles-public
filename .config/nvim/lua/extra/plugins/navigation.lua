@@ -18,12 +18,12 @@ return {
     branch = "harpoon2",
     event = "VeryLazy",
     config = function()
-      local hp = require("harpoon")
-      hp:setup()
+      local harpoon = require('harpoon')
+      harpoon:setup({})
     end,
     keys = {
       {
-        "<leader>ha",
+        "<leader>a",
         function()
           require("harpoon"):list():add()
         end,
@@ -73,10 +73,8 @@ return {
     event = "VeryLazy",
     dependencies = {
       "nvim-telescope/telescope-symbols.nvim",
-      "ThePrimeagen/git-worktree.nvim",
-      "debugloop/telescope-undo.nvim",
       "nvim-telescope/telescope-dap.nvim",
-      { "AckslD/nvim-neoclip.lua", dependencies = { "kkharji/sqlite.lua" } },
+      "octarect/telescope-menu.nvim",
       {
         "nvim-telescope/telescope-fzf-native.nvim",
         build = "make",
@@ -193,20 +191,50 @@ return {
             override_file_sorter = true,    -- override the file sorter
             case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
           },
+          menu = {
+            default = {
+              items = {
+                { "Navigation",      "Telescope menu navigation" },
+                { "Version Control", "Telescope menu vcs" }
+              }
+            },
+            navigation = {
+              items = {
+                { "Find files",        "Telescope find_files" },
+                { "Workspace symbols", "Telescope lsp_workspace_symbols" },
+                { "Document symbols",  "Telescope lsp_document_symbols" },
+              }
+            },
+            vcs = {
+              items = {
+                { "Stage hunk",    "Gitsigns stage_hunk" },
+                { "Reset hunk",    "Gitsigns reset_hunk" },
+                { "Preview hunk",  "Gitsigns preview_hunk" },
+                { "Next hunk",     "Gitsigns next_hunk" },
+                { "Previous hunk", "Gitsigns prev_hunk" },
+              }
+            },
+            run = {
+              items = {}
+            }
+          }
         },
       })
 
-      telescope.load_extension("git_worktree")
       telescope.load_extension("smart_open")
-      telescope.load_extension("neoclip")
-      telescope.load_extension("undo")
       telescope.load_extension("dap")
+      telescope.load_extension("menu")
     end,
     keys = {
       {
         "<leader>p",
         "<cmd>Telescope find_files<cr>",
         { mode = "n", desc = "Find files", noremap = true, silent = true },
+      },
+      {
+        "<C-k>",
+        "<cmd>Telescope menu<cr>",
+        { mode = "n", desc = "Menu", noremap = true, silent = true },
       },
       {
         "<leader>o",
