@@ -3,7 +3,7 @@ vim.g.maplocalleader = " "
 
 vim.opt.termguicolors = true
 vim.g.colorscheme = "default"
-vim.opt.background = "light"
+vim.opt.background = "dark"
 vim.opt.hidden = true
 vim.opt.encoding = "utf-8"
 vim.opt.number = false
