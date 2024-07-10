@@ -11,7 +11,6 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    enabled = false,
     config = function()
       require("lualine").setup({
         options = {
@@ -32,14 +31,24 @@ return {
           lualine_b = {},
           lualine_c = {
             { "filename",    path = 1 },
+            "searchcount",
             { "diagnostics", sources = { "nvim_diagnostic", "nvim_workspace_diagnostic" } },
           },
-          lualine_x = { "overseer", "filetype" },
+          lualine_x = { "overseer", "filetype", { "diff", symbols = { added = ' ', modified = ' ', removed = ' ' } } },
           lualine_y = {},
           lualine_z = {},
         },
         inactive_sections = {
-          lualine_a = {},
+          lualine_a = {
+            {
+              "mode",
+              draw_empty = true,
+              padding = 0,
+              fmt = function()
+                return " "
+              end,
+            },
+          },
           lualine_b = {},
           lualine_c = {
             { "filename",    path = 1 },
