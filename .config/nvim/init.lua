@@ -51,7 +51,7 @@ vim.opt.splitbelow = true
 vim.opt.signcolumn = "yes"
 vim.opt.cursorline = true
 vim.opt.swapfile = false
-vim.opt.showtabline = 2
+vim.opt.showtabline = 1
 -- vim.opt.mouse = "nv"
 -- vim.opt.colorcolumn = "100"
 

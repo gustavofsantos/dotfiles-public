@@ -30,11 +30,27 @@ return {
           },
           lualine_b = {},
           lualine_c = {
-            { "filename",    path = 1 },
+            { "filetype", colored = false },
+            { "filename", path = 4 },
             "searchcount",
-            { "diagnostics", sources = { "nvim_diagnostic", "nvim_workspace_diagnostic" } },
+            {
+              "diagnostics",
+              colored = false,
+              sources = { "nvim_diagnostic", "nvim_workspace_diagnostic" }
+            },
           },
-          lualine_x = { "overseer", "filetype", { "diff", symbols = { added = ' ', modified = ' ', removed = ' ' } } },
+          lualine_x = {
+            "overseer",
+            {
+              "diff",
+              colored = false,
+              symbols = {
+                added = ' ',
+                modified = ' ',
+                removed = ' '
+              }
+            }
+          },
           lualine_y = {},
           lualine_z = {},
         },
@@ -51,7 +67,7 @@ return {
           },
           lualine_b = {},
           lualine_c = {
-            { "filename",    path = 1 },
+            { "filename",    path = 4 },
             { "diagnostics", sources = { "nvim_diagnostic", "nvim_workspace_diagnostic" } },
           },
           lualine_x = {},
@@ -59,6 +75,8 @@ return {
           lualine_z = {},
         },
         extensions = {
+          "quickfix",
+          "overseer",
           "neo-tree",
           "fugitive",
           "toggleterm",

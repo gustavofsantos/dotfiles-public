@@ -25,6 +25,7 @@ return {
     end,
   },
   { "cocopon/iceberg.vim" },
+  { "aktersnurra/no-clown-fiesta.nvim" },
   {
     "maxmx03/solarized.nvim",
     opts = {
