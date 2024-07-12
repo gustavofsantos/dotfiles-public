@@ -30,7 +30,7 @@ return {
           },
           lualine_b = {},
           lualine_c = {
-            { "filetype", colored = false },
+            { "filetype", colored = false, icon_only = true },
             { "filename", path = 4 },
             "searchcount",
             {
@@ -67,8 +67,20 @@ return {
           },
           lualine_b = {},
           lualine_c = {
-            { "filename",    path = 4 },
-            { "diagnostics", sources = { "nvim_diagnostic", "nvim_workspace_diagnostic" } },
+            {
+              "filetype",
+              colored = false,
+              icon_only = true
+            },
+            {
+              "filename",
+              path = 4
+            },
+            {
+              "diagnostics",
+              colored = false,
+              sources = { "nvim_diagnostic", "nvim_workspace_diagnostic" }
+            },
           },
           lualine_x = {},
           lualine_y = {},
