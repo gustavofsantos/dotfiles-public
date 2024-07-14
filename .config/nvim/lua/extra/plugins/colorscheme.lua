@@ -26,6 +26,7 @@ return {
   },
   { "cocopon/iceberg.vim" },
   { "aktersnurra/no-clown-fiesta.nvim" },
+  { "loctvl842/monokai-pro.nvim" },
   {
     "maxmx03/solarized.nvim",
     opts = {
@@ -122,7 +123,6 @@ return {
             return {}
           end
 
-
           vim.api.nvim_set_hl(0, "NeotestPassed", { fg = colors.theme.diff.add })
           vim.api.nvim_set_hl(0, "NeotestRunning", { fg = colors.theme.diff.text })
           vim.api.nvim_set_hl(0, "NeotestFailed", { fg = colors.theme.diff.delete })
@@ -172,7 +172,7 @@ return {
             ["@tag.attribute"] = { italic = true },
             ["@punctuation.bracket"] = { fg = colors.palette.sumiInk6 },
             ["@conditional.ternary"] = { fg = colors.palette.oniViolet, italic = false },
-            ["@string.documentation.python"] = { link = "Comment" }
+            ["@string.documentation.python"] = { link = "Comment" },
           }
         end,
       })
