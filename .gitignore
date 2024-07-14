@@ -269,3 +269,4 @@ dotfiles/
 .motd_shown
 .aws
 .azure
+miniconda3/
