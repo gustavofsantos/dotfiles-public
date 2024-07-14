@@ -267,3 +267,5 @@ debugpy/
 .config/direnv/
 dotfiles/
 .motd_shown
+.aws
+.azure
