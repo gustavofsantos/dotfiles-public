@@ -30,7 +30,7 @@ return {
         { desk = "Add file to harpoon" },
       },
       {
-        "<leader>ht",
+        "gh",
         function()
           local hp = require("harpoon")
           hp.ui:toggle_quick_menu(hp:list())
