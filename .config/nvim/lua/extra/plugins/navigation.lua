@@ -354,7 +354,7 @@ return {
       },
       {
         "<leader>o",
-        "<cmd>Telescope smart_open theme=dropdown<cr>",
+        "<cmd>Telescope smart_open cwd_only=true theme=dropdown<cr>",
         { mode = "n", desc = "Smart open", noremap = true, silent = true },
       },
       {
