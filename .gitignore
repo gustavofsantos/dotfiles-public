@@ -270,3 +270,4 @@ dotfiles/
 .aws
 .azure
 miniconda3/
+.config/zed/.tmp*
