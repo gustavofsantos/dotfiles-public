@@ -1,12 +1,7 @@
-export HISTFILE=~/.zsh_history
+export HISTFILE=$HOME/.zsh_history
 export HISTTIMEFORMAT="[%F %T] "
-export HISTFILESIZE=1000000000
-export HISTSIZE=1000000000
-
-setopt INC_APPEND_HISTORY
-setopt EXTENDED_HISTORY
-setopt HIST_IGNORE_ALL_DUPS
-
+export SAVEHIST=1000
+export HISTSIZE=999
 
 if [[ $(uname -n) = "loggi" ]]; then
   export PATH="$HOME/.pyenv/bin:$PATH"
@@ -50,3 +45,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+setopt share_history
+setopt hist_expire_dump_first
+setopt hist_ignore_dups
+setopt hist_verify
