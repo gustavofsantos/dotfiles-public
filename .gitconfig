@@ -27,7 +27,7 @@
   contributors  = shortlog --summary --numbered
   export        = archive --format=zip --output=repo.zip HEAD
   su            = submodule update --init --recursive
-  conflicted    = !nvim +DiffviewOpen
+  conflict    = !nvim +DiffviewOpen
   dash		= !gh dash
   nuke		= !git clean -fd && git reset --hard
   w		= worktree
