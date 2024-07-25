@@ -1,12 +1,12 @@
 if [ -e "$HOME/.cargo/env" ]; then . "$HOME/.cargo/env";  fi
-if [ -e "$HOME/.asdf/asdf.sh" ]; then . "$HOME/.asdf/asdf.sh"; fi
-. ~/.asdf/plugins/java/set-java-home.zsh
 
 export EDITOR='nvim'
 
 export GEM_HOME="$HOME/.gem"
 export ANDROID_HOME="$HOME/Android/Sdk"
 export PNPM_HOME="$HOME/.local/share/pnpm"
+export NOTES_HOME="$HOME/Documents/notes"
+export WORKLOG_PATH="$HOME/Documents/main-vault/main/Loggi/worklog.md"
 
 export PATH="$PNPM_HOME:$PATH"
 export PATH=$PATH:"$HOME"/.local/bin
@@ -34,10 +34,12 @@ alias lsd="ls -lhF --color | grep --color=never '^d'"
 alias gogh="bash -c  \"\$(wget -qO- https://git.io/vQgMr)\""
 alias hm="home-manager"
 alias nxe="nix-env"
-alias lz="eza"
+alias ls="eza --icons -w 80"
 alias lza="eza --icons -1 -a -l --total-size"
+alias cd="z"
 alias zj="zellij"
 alias eee="sesh connect \$(sesh list -i | gum filter --limit 1 --placeholder 'Choose a session' --height 50 --prompt='⚡')"
+alias GO="z \$(zoxide query --list | gum filter --limit 1 --placeholder 'Go to')"
 
 # Loggi aliases
 alias lwt="docker-compose exec -e DJANGO_SETTINGS_MODULE=settings.test loggi_web_app pytest -vv"

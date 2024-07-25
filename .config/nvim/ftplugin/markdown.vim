@@ -1,6 +1,6 @@
-setlocal linebreak
-setlocal nonumber
-setlocal textwidth=80
+" setlocal linebreak
+" setlocal nonumber
+" setlocal textwidth=80
 
 " setlocal linebreak
 " setlocal nolist

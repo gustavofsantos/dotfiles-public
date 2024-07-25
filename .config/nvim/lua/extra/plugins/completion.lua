@@ -1,6 +1,5 @@
 ---@diagnostic disable: missing-fields
 return {
-  { "hrsh7th/vim-vsnip" },
   {
     "hrsh7th/nvim-cmp",
     event = { "InsertEnter", "CmdlineEnter", "BufRead" },

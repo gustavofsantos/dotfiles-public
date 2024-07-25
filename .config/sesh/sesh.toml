@@ -10,6 +10,7 @@ path = "~"
 [[session]]
 name = "Beyond PY"
 path = "~/loggi/py/apps/beyond"
+startup_command = "start-project-session.sh"
 
 [[session]]
 name = "Beyond UI"
@@ -29,4 +30,7 @@ startup_command = "nvim -c ':Telescope find_files'"
 name = "Loggi ledger"
 path = "~/loggi/wallet-api"
 
+[[session]]
+name = "Loggi Payment"
+path = "~/loggi/beyond-payment"
 

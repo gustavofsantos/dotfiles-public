@@ -105,6 +105,7 @@ in
     pkgs.clj-kondo
     pkgs.babashka
     pkgs.cabal-install
+    pkgs.sq
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

@@ -18,6 +18,16 @@ return {
   --   enabled = false,
   -- },
   {
+    dir = "~/Code/old_school.nvim",
+    enabled = false,
+    config = function()
+      vim.cmd.colorscheme("old_school")
+    end,
+  },
+  { "cocopon/iceberg.vim" },
+  { "aktersnurra/no-clown-fiesta.nvim" },
+  { "loctvl842/monokai-pro.nvim" },
+  {
     "maxmx03/solarized.nvim",
     opts = {
       styles = {
@@ -113,6 +123,10 @@ return {
             return {}
           end
 
+          vim.api.nvim_set_hl(0, "NeotestPassed", { fg = colors.theme.diff.add })
+          vim.api.nvim_set_hl(0, "NeotestRunning", { fg = colors.theme.diff.text })
+          vim.api.nvim_set_hl(0, "NeotestFailed", { fg = colors.theme.diff.delete })
+
           return {
             Constant = { fg = colors.palette.fujiWhite },
 
@@ -135,12 +149,30 @@ return {
             TelescopePreviewNormal = { bg = colors.theme.ui.bg_dim },
             TelescopePreviewBorder = { bg = colors.theme.ui.bg_dim, fg = colors.theme.ui.bg_dim },
 
+            -- NeotestPassed = { fg = colors.theme.diff.add },
+            -- NeotestRunning = { fg = colors.theme.diff.text },
+            -- NeotestFailed = { fg = colors.theme.diff.delete },
+            -- NeotestSkipped
+            -- NeotestTest
+            -- NeotestNamespace
+            -- NeotestFocused
+            -- NeotestFile
+            -- NeotestDir
+            -- NeotestBorder
+            -- NeotestIndent
+            -- NeotestExpandMarker
+            -- NeotestAdapterName
+            -- NeotestWinSelect
+            -- NeotestMarked
+            -- NeotestTarget
+
             ["@type"] = { italic = false, bold = true },
             ["@tag"] = { italic = false },
             ["@tag.delimiter"] = { fg = colors.palette.sumiInk6 },
             ["@tag.attribute"] = { italic = true },
             ["@punctuation.bracket"] = { fg = colors.palette.sumiInk6 },
             ["@conditional.ternary"] = { fg = colors.palette.oniViolet, italic = false },
+            ["@string.documentation.python"] = { link = "Comment" },
           }
         end,
       })

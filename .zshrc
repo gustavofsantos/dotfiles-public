@@ -1,12 +1,7 @@
-export HISTFILE=~/.zsh_history
+export HISTFILE=$HOME/.zsh_history
 export HISTTIMEFORMAT="[%F %T] "
-export HISTFILESIZE=1000000000
-export HISTSIZE=1000000000
-
-setopt INC_APPEND_HISTORY
-setopt EXTENDED_HISTORY
-setopt HIST_IGNORE_ALL_DUPS
-
+export SAVEHIST=1000
+export HISTSIZE=999
 
 if [[ $(uname -n) = "loggi" ]]; then
   export PATH="$HOME/.pyenv/bin:$PATH"
@@ -34,4 +29,24 @@ function journal () {
 eval "$(sheldon source)"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
-source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/gustavo/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/gustavo/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/gustavo/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/gustavo/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+setopt share_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_verify

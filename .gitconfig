@@ -4,6 +4,7 @@
 
 [alias]
   aa            = add --all
+  az		= "!git ls-files -m -o --exclude-standard | fzf --print0 -m | xargs -0 -t -o git add"
   b             = branch
   c             = commit
   co            = checkout
@@ -26,7 +27,7 @@
   contributors  = shortlog --summary --numbered
   export        = archive --format=zip --output=repo.zip HEAD
   su            = submodule update --init --recursive
-  conflicted    = !nvim +DiffviewOpen
+  conflict    = !nvim +DiffviewOpen
   dash		= !gh dash
   nuke		= !git clean -fd && git reset --hard
   w		= worktree
@@ -44,6 +45,7 @@
   ski           = !git stash --keep-index
   lcom		= !git-diff-list-commits
   drev		= !git-diff
+  lazy		= !lazygit
 
 [gpg]
   format = ssh

@@ -2,12 +2,22 @@ local function is_beyond_py()
   return vim.fn.expand("%:p:h"):find("/opt/loggi/py/apps/beyond/") ~= nil
 end
 
+local function is_beyond_payment()
+  return vim.fn.expand("%:p:h"):find("/opt/loggi/beyond%-payment") ~= nil
+end
+
 local function default_beyond_env()
   return {
     POSTGRES_DB = "dev_db",
     POSTGRES_PASSWORD = "postgres",
     POSTGRES_HOST = "localhost",
     POSTGRES_PORT = "5432",
+  }
+end
+
+local function default_beyond_payment_env()
+  return {
+    APP_DB_HOST = "0.0.0.0",
   }
 end
 
@@ -53,7 +63,7 @@ return {
         "--ds",
         "beyond_app.settings.test",
       }
-      local python_args = { "--log-level", "DEBUG" }
+      local python_args = {}
       if is_beyond_py() then
         python_args = beyond_py_args
       end
@@ -92,6 +102,8 @@ return {
         function()
           if is_beyond_py() then
             require("neotest").overseer.run({ env = default_beyond_env() })
+          elseif is_beyond_payment() then
+            require("neotest").overseer.run({ env = default_beyond_payment_env() })
           else
             require("neotest").run.run()
           end
@@ -103,6 +115,8 @@ return {
         function()
           if is_beyond_py() then
             require("neotest").run.run({ strategy = "dap", env = default_beyond_env() })
+          elseif is_beyond_payment() then
+            require("neotest").run.run({ strategy = "dap", env = default_beyond_payment_env() })
           else
             require("neotest").run.run({ strategy = "dap" })
           end
@@ -125,6 +139,8 @@ return {
         function()
           if is_beyond_py() then
             require("neotest").overseer.run({ "/opt/loggi/py/apps/beyond/src/beyond_app", env = default_beyond_env() })
+          elseif is_beyond_payment() then
+            require("neotest").overseer.run({ "/opt/loggi/beyond-payment", env = default_beyond_payment_env() })
           else
             require("neotest").run.run(vim.fn.getcwd())
           end

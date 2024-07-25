@@ -44,7 +44,7 @@ return {
     freetype_load_target = "Normal",
     -- front_end = "OpenGL",
     line_height = 1.2,
-    harfbuzz_features = { "calt=1", "clig=1", "liga=1" },
+    harfbuzz_features = { "clig=1", "liga=1" },
     bold_brightens_ansi_colors = false,
     warn_about_missing_glyphs = false,
 
