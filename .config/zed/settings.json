@@ -14,7 +14,7 @@
   "buffer_font_size": 16,
   "theme": {
     "mode": "system",
-    "light": "Solarized Light",
+    "light": "Gruvbox Dark Hard",
     "dark": "One Dark",
   },
   "git": {
