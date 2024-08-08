@@ -34,3 +34,6 @@ path = "~/loggi/wallet-api"
 name = "Loggi Payment"
 path = "~/loggi/beyond-payment"
 
+[[session]]
+name = "Loggi Web"
+path = "~/loggi/web"
