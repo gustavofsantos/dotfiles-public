@@ -271,3 +271,4 @@ dotfiles/
 .azure
 miniconda3/
 .config/zed/.tmp*
+.config/sq/
