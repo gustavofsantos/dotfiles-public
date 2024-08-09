@@ -42,7 +42,6 @@ return {
     font_size = 11,
     freetype_load_flags = "NO_HINTING",
     freetype_load_target = "Normal",
-    -- front_end = "OpenGL",
     line_height = 1.2,
     harfbuzz_features = { "clig=1", "liga=1" },
     bold_brightens_ansi_colors = false,
@@ -63,6 +62,13 @@ return {
     tab_bar_at_bottom = true,
     hide_tab_bar_if_only_one_tab = true,
     tab_max_width = 999999,
+
+    webgpu_preferred_adapter = {
+        backend = "Vulkan",
+        device_type = "Cpu",
+        name = "llvmpipe (LLVM 15.0.7, 256 bits)",
+    },
+    webgpu_power_preference = "HighPerformance",
 
     leader = { key = "a", mods = "CTRL" },
 
