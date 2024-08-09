@@ -73,5 +73,6 @@
   "vim-sleuth": { "branch": "master", "commit": "1cc4557420f215d02c4d2645a748a816c220e99b" },
   "vim-tmux-navigator": { "branch": "master", "commit": "5b3c701686fb4e6629c100ed32e827edf8dad01e" },
   "vim-tmux-runner": { "branch": "master", "commit": "eead441119d9863227f4c39dac7890aa09d6b4cd" },
+  "which-key.nvim": { "branch": "main", "commit": "6c1584eb76b55629702716995cca4ae2798a9cca" },
   "zenbones.nvim": { "branch": "main", "commit": "e9ba8305f65524f9355515cdd8704b2c6ba2def6" }
 }

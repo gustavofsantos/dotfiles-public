@@ -30,12 +30,12 @@ return {
           },
           lualine_b = {},
           lualine_c = {
-            { "filetype", colored = false, icon_only = true },
+            { "filetype", colored = true, icon_only = true },
             { "filename", path = 4 },
             "searchcount",
             {
               "diagnostics",
-              colored = false,
+              colored = true,
               sources = { "nvim_diagnostic", "nvim_workspace_diagnostic" }
             },
           },
@@ -43,7 +43,7 @@ return {
             "overseer",
             {
               "diff",
-              colored = false,
+              colored = true,
               symbols = {
                 added = ' ',
                 modified = ' ',
@@ -69,7 +69,7 @@ return {
           lualine_c = {
             {
               "filetype",
-              colored = false,
+              colored = true,
               icon_only = true
             },
             {
@@ -78,7 +78,7 @@ return {
             },
             {
               "diagnostics",
-              colored = false,
+              colored = true,
               sources = { "nvim_diagnostic", "nvim_workspace_diagnostic" }
             },
           },

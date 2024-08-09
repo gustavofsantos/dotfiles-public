@@ -58,6 +58,7 @@ return {
     config = function()
       local setup_python_adapter = require("neotest-python")
       local beyond_py_args = {
+        "-x",
         "--disable-warnings",
         "-vv",
         "--ds",
@@ -95,87 +96,91 @@ return {
           force_default = false,
         },
       })
+
+
+      local wk = require("which-key")
+      wk.add({
+        { "<leader>t", group = "test" },
+        {
+          "<leader>tn",
+          function()
+            if is_beyond_py() then
+              require("neotest").overseer.run({ env = default_beyond_env() })
+            elseif is_beyond_payment() then
+              require("neotest").overseer.run({ env = default_beyond_payment_env() })
+            else
+              require("neotest").run.run()
+            end
+          end,
+          desc = "nearest test"
+        },
+        {
+          "<leader>td",
+          function()
+            if is_beyond_py() then
+              require("neotest").run.run({ strategy = "dap", env = default_beyond_env() })
+            elseif is_beyond_payment() then
+              require("neotest").run.run({ strategy = "dap", env = default_beyond_payment_env() })
+            else
+              require("neotest").run.run({ strategy = "dap" })
+            end
+          end,
+          { desc = "debug nearest" },
+        },
+        {
+          "<leader>tf",
+          function()
+            if is_beyond_py() then
+              require("neotest").overseer.run({ vim.fn.expand("%"), env = default_beyond_env() })
+            else
+              require("neotest").run.run(vim.fn.expand("%"))
+            end
+          end,
+          desc = "test file",
+        },
+        {
+          "<leader>ta",
+          function()
+            if is_beyond_py() then
+              require("neotest").overseer.run({ "/opt/loggi/py/apps/beyond/src/beyond_app", env = default_beyond_env() })
+            elseif is_beyond_payment() then
+              require("neotest").overseer.run({ "/opt/loggi/beyond-payment", env = default_beyond_payment_env() })
+            else
+              require("neotest").run.run(vim.fn.getcwd())
+            end
+          end,
+          desc = "test all",
+        },
+        {
+          "<leader>tl",
+          function()
+            require("neotest").output_panel.clear()
+            require("neotest").run.run_last()
+          end,
+          desc = "test last",
+        },
+        {
+          "<leader>ts",
+          function()
+            require("neotest").summary.toggle()
+          end,
+          desc = "toggle summary",
+        },
+        {
+          "<leader>to",
+          function()
+            require("neotest").output.open({ enter = true, quiet = true })
+          end,
+          desc = "toggle output",
+        },
+        {
+          "<leader>tp",
+          function()
+            require("neotest").output_panel.toggle()
+          end,
+          desc = "toggle output panel",
+        },
+      })
     end,
-    keys = {
-      {
-        "<leader>tn",
-        function()
-          if is_beyond_py() then
-            require("neotest").overseer.run({ env = default_beyond_env() })
-          elseif is_beyond_payment() then
-            require("neotest").overseer.run({ env = default_beyond_payment_env() })
-          else
-            require("neotest").run.run()
-          end
-        end,
-        { desc = "Run nearest test" },
-      },
-      {
-        "<leader>td",
-        function()
-          if is_beyond_py() then
-            require("neotest").run.run({ strategy = "dap", env = default_beyond_env() })
-          elseif is_beyond_payment() then
-            require("neotest").run.run({ strategy = "dap", env = default_beyond_payment_env() })
-          else
-            require("neotest").run.run({ strategy = "dap" })
-          end
-        end,
-        { desc = "Debug nearest test" },
-      },
-      {
-        "<leader>tf",
-        function()
-          if is_beyond_py() then
-            require("neotest").overseer.run({ vim.fn.expand("%"), env = default_beyond_env() })
-          else
-            require("neotest").run.run(vim.fn.expand("%"))
-          end
-        end,
-        { desc = "Run file tests" },
-      },
-      {
-        "<leader>ta",
-        function()
-          if is_beyond_py() then
-            require("neotest").overseer.run({ "/opt/loggi/py/apps/beyond/src/beyond_app", env = default_beyond_env() })
-          elseif is_beyond_payment() then
-            require("neotest").overseer.run({ "/opt/loggi/beyond-payment", env = default_beyond_payment_env() })
-          else
-            require("neotest").run.run(vim.fn.getcwd())
-          end
-        end,
-        { desc = "Run all tests" },
-      },
-      {
-        "<leader>tl",
-        function()
-          require("neotest").output_panel.clear()
-          require("neotest").run.run_last()
-        end,
-        { desc = "Run last" },
-      },
-      {
-        "<leader>ts",
-        function()
-          require("neotest").summary.toggle()
-        end,
-        { desc = "Toggle summary" },
-      },
-      {
-        "<leader>to",
-        function()
-          require("neotest").output.open({ enter = true, quiet = true })
-        end,
-        { desc = "Toggle output" },
-      },
-      {
-        "<leader>tp",
-        function()
-          require("neotest").output_panel.toggle()
-        end,
-        { desc = "Toggle output panel" },
-      },
-    },
   },
 }

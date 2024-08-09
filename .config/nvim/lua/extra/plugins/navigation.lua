@@ -258,6 +258,7 @@ return {
         { "Workspace symbols",     cmd = "Telescope lsp_workspace_symbols",                    category = "navigation" },
 
         -- version control actions
+        { "Status",                cmd = "Git",                                                category = "vcs" },
         { "Commit",                cmd = "Git commit",                                         category = "vcs" },
         { "Pull",                  cmd = "Git pull",                                           category = "vcs" },
         { "Push",                  cmd = "Git push",                                           category = "vcs" },

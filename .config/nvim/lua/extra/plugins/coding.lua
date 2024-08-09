@@ -1,6 +1,26 @@
 return {
-  "tpope/vim-sleuth",
-  "mbbill/undotree",
+  {
+    "linux-cultist/venv-selector.nvim",
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "mfussenegger/nvim-dap", "mfussenegger/nvim-dap-python", --optional
+      { "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
+    },
+    lazy = false,
+    branch = "regexp", -- This is the regexp branch, use this for the new version
+    config = function()
+      require("venv-selector").setup({
+        settings = {
+          options = {
+            debug = true
+          }
+        }
+      })
+    end,
+    -- keys = {
+    --   { ",v", "<cmd>VenvSelect<cr>" },
+    -- },
+  },
   {
     "AndrewRadev/switch.vim",
     config = function()
@@ -26,28 +46,6 @@ return {
     end,
   },
   {
-    "linux-cultist/venv-selector.nvim",
-    dependencies = {
-      "neovim/nvim-lspconfig",
-      "mfussenegger/nvim-dap", "mfussenegger/nvim-dap-python", --optional
-      { "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
-    },
-    lazy = false,
-    branch = "regexp", -- This is the regexp branch, use this for the new version
-    config = function()
-      require("venv-selector").setup({
-        settings = {
-          options = {
-            debug = true
-          }
-        }
-      })
-    end,
-    -- keys = {
-    --   { ",v", "<cmd>VenvSelect<cr>" },
-    -- },
-  },
-  {
     "ThePrimeagen/refactoring.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -55,14 +53,17 @@ return {
     },
     config = function()
       require("refactoring").setup()
+
+      local wk = require("which-key")
+      wk.add({
+        {
+          "<leader>cr",
+          function() require('refactoring').select_refactor() end,
+          mode = { "n", "x" },
+          desc = "refactor"
+        }
+      })
     end,
-    keys = {
-      {
-        "<leader>R",
-        mode = { "n", "x" },
-        function() require('refactoring').select_refactor() end
-      }
-    }
   },
   {
     "mfussenegger/nvim-dap",
@@ -170,101 +171,104 @@ return {
 
       -- see: https://github.com/mfussenegger/nvim-dap-python?tab=readme-ov-file#debugpy
       require("dap-python").setup("~/.virtualenvs/debugpy/bin/python")
+
+      local wk = require("which-key")
+      wk.add({
+        { "<leader>cd", group = "debugger" },
+        {
+          "<leader>cdu",
+          function()
+            require("dapui").toggle()
+          end,
+          desc = "toggle dap ui",
+        },
+        {
+          "<F8>",
+          function()
+            require("dap").toggle_breakpoint()
+          end,
+          desc = "toggle breakpoint",
+        },
+        {
+          "<leader>cdh",
+          function()
+            require("dap.ui.widgets").hover()
+          end,
+          desc = "hover",
+          mode = { "n", "v" },
+        },
+        {
+          "<leader>cdp",
+          function()
+            require("dap.ui.widgets").preview()
+          end,
+          desc = "preview",
+          mode = { "n", "v" },
+        },
+        {
+          "<leader>cdf",
+          "<cmd>Telescope dap frames theme=ivy<cr>",
+          desc = "frames",
+        },
+        {
+          "<leader>cda",
+          "<cmd>Telescope dap list_breakpoints theme=ivy<cr>",
+          desc = "breakpoints",
+        },
+        {
+          "<leader>cdv",
+          "<cmd>Telescope dap variables theme=ivy<cr>",
+          desc = "variables",
+        },
+        {
+          "<leader>cd;",
+          "<cmd>Telescope dap commands theme=dropdown<cr>",
+          desc = "commands",
+        },
+        {
+          "<leader>cdr",
+          function()
+            require("dap").repl.toggle()
+          end,
+          desc = "toggle repl",
+        },
+        {
+          "<leader>cdl",
+          function()
+            require("dap").run_last()
+          end,
+          desc = "run last",
+        },
+        {
+          "<F5>",
+          function()
+            require("dap").continue()
+          end,
+          desc = "Continue",
+        },
+        {
+          "<F10>",
+          function()
+            require("dap").step_over()
+          end,
+          desc = "Step over",
+        },
+        {
+          "<F11>",
+          function()
+            require("dap").step_into()
+          end,
+          desc = "Step into",
+        },
+        {
+          "<F12>",
+          function()
+            require("dap").step_out()
+          end,
+          desc = "Step out",
+        },
+      })
     end,
-    keys = {
-      {
-        "<leader>du",
-        function()
-          require("dapui").toggle()
-        end,
-        desc = "Toggle DAP UI",
-      },
-      {
-        "<F8>",
-        function()
-          require("dap").toggle_breakpoint()
-        end,
-        desc = "Toggle breakpoint",
-      },
-      {
-        "<leader>dh",
-        function()
-          require("dap.ui.widgets").hover()
-        end,
-        desc = "Hover",
-        mode = { "n", "v" },
-      },
-      {
-        "<leader>dp",
-        function()
-          require("dap.ui.widgets").preview()
-        end,
-        desc = "Preview",
-        mode = { "n", "v" },
-      },
-      {
-        "<leader>df",
-        "<cmd>Telescope dap frames theme=ivy<cr>",
-        desc = "Frames",
-      },
-      {
-        "<leader>da",
-        "<cmd>Telescope dap list_breakpoints theme=ivy<cr>",
-        desc = "List breakpoints",
-      },
-      {
-        "<leader>dv",
-        "<cmd>Telescope dap variables theme=ivy<cr>",
-        desc = "Variables",
-      },
-      {
-        "<leader>d;",
-        "<cmd>Telescope dap commands theme=dropdown<cr>",
-        desc = "Commands",
-      },
-      {
-        "<F5>",
-        function()
-          require("dap").continue()
-        end,
-        desc = "Continue",
-      },
-      {
-        "<F10>",
-        function()
-          require("dap").step_over()
-        end,
-        desc = "Step over",
-      },
-      {
-        "<F11>",
-        function()
-          require("dap").step_into()
-        end,
-        desc = "Step into",
-      },
-      {
-        "<F12>",
-        function()
-          require("dap").step_out()
-        end,
-        desc = "Step out",
-      },
-      {
-        "<leader>dr",
-        function()
-          require("dap").repl.toggle()
-        end,
-        desc = "Toggle REPL",
-      },
-      {
-        "<leader>dl",
-        function()
-          require("dap").run_last()
-        end,
-        desc = "Run last",
-      },
-    },
   },
   {
     "numToStr/Comment.nvim",
