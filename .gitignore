@@ -272,3 +272,4 @@ dotfiles/
 miniconda3/
 .config/zed/.tmp*
 .config/sq/
+.vscode-remote-containers/
