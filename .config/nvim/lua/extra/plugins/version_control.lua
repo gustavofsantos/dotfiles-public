@@ -11,31 +11,32 @@ return {
       { "]h", "<cmd>Gitsigns next_hunk<cr>", desc = "Next hunk" },
       { "[h", "<cmd>Gitsigns prev_hunk<cr>", desc = "Previous hunk" },
     },
-    opts = {
-      signcolumn = true,
-      numhl = false,
-      linehl = false,
-      attach_to_untracked = false,
-      current_line_blame = false,
-      current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d>",
-      signs = {
-        add = { text = "▎" },
-        change = { text = "▎" },
-        delete = { text = "▎" },
-        topdelete = { text = "▎" },
-        changedelete = { text = "▎" },
-        untracked = { text = "░" },
-      },
-      signs_staged = {
-        add          = { text = '░' },
-        change       = { text = '░' },
-        delete       = { text = '░' },
-        topdelete    = { text = '░' },
-        changedelete = { text = '░' },
-        untracked    = { text = '░' },
-      },
-    },
     config = function()
+      require("gitsigns").setup({
+        signcolumn = true,
+        numhl = false,
+        linehl = false,
+        attach_to_untracked = false,
+        current_line_blame = false,
+        current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d>",
+        signs = {
+          add = { text = "▎" },
+          change = { text = "▎" },
+          delete = { text = "▎" },
+          topdelete = { text = "▎" },
+          changedelete = { text = "▎" },
+          untracked = { text = "░" },
+        },
+        signs_staged = {
+          add          = { text = '░' },
+          change       = { text = '░' },
+          delete       = { text = '░' },
+          topdelete    = { text = '░' },
+          changedelete = { text = '░' },
+          untracked    = { text = '░' },
+        },
+      })
+
       local wk = require("which-key")
       wk.add({
         { "<leader>gh",  group = "git hunk" },

@@ -163,6 +163,10 @@ return {
         enable = false,
       })
 
+
+      vim.opt.foldmethod = 'expr'
+      vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+
       -- vim.keymap.set("n", "<leader>tx", "<cmd>TSContextToggle<cr>", { noremap = true, silent = true })
     end,
   },

@@ -167,6 +167,9 @@ require("lazy").setup({
     event = "VeryLazy",
   }
 }, {
+  install = {
+    colorscheme = { "kanagawa" },
+  },
   checker = {
     enabled = false,
     notify = false,

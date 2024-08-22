@@ -60,6 +60,15 @@ return {
     end,
   },
   {
+    "gbprod/nord.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("nord").setup({})
+      -- vim.cmd.colorscheme("nord")
+    end,
+  },
+  {
     "mcchrish/zenbones.nvim",
     dependencies = { "rktjmp/lush.nvim" },
     lazy = false,
