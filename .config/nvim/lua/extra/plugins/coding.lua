@@ -54,15 +54,10 @@ return {
     config = function()
       require("refactoring").setup()
 
-      local wk = require("which-key")
-      wk.add({
-        {
-          "<leader>cr",
-          function() require('refactoring').select_refactor() end,
-          mode = { "n", "x" },
-          desc = "refactor"
-        }
-      })
+      vim.keymap.set({ "n", "x" },
+        "<leader>cr",
+        function() require('refactoring').select_refactor() end,
+        { noremap = true, silent = true, desc = "refactor" })
     end,
   },
   {
@@ -172,102 +167,89 @@ return {
       -- see: https://github.com/mfussenegger/nvim-dap-python?tab=readme-ov-file#debugpy
       require("dap-python").setup("~/.virtualenvs/debugpy/bin/python")
 
-      local wk = require("which-key")
-      wk.add({
-        { "<leader>cd", group = "debugger" },
-        {
-          "<leader>cdu",
-          function()
-            require("dapui").toggle()
-          end,
-          desc = "toggle dap ui",
-        },
-        {
-          "<F8>",
-          function()
-            require("dap").toggle_breakpoint()
-          end,
-          desc = "toggle breakpoint",
-        },
-        {
-          "<leader>cdh",
-          function()
-            require("dap.ui.widgets").hover()
-          end,
-          desc = "hover",
-          mode = { "n", "v" },
-        },
-        {
-          "<leader>cdp",
-          function()
-            require("dap.ui.widgets").preview()
-          end,
-          desc = "preview",
-          mode = { "n", "v" },
-        },
-        {
-          "<leader>cdf",
-          "<cmd>Telescope dap frames theme=ivy<cr>",
-          desc = "frames",
-        },
-        {
-          "<leader>cda",
-          "<cmd>Telescope dap list_breakpoints theme=ivy<cr>",
-          desc = "breakpoints",
-        },
-        {
-          "<leader>cdv",
-          "<cmd>Telescope dap variables theme=ivy<cr>",
-          desc = "variables",
-        },
-        {
-          "<leader>cd;",
-          "<cmd>Telescope dap commands theme=dropdown<cr>",
-          desc = "commands",
-        },
-        {
-          "<leader>cdr",
-          function()
-            require("dap").repl.toggle()
-          end,
-          desc = "toggle repl",
-        },
-        {
-          "<leader>cdl",
-          function()
-            require("dap").run_last()
-          end,
-          desc = "run last",
-        },
-        {
-          "<F5>",
-          function()
-            require("dap").continue()
-          end,
-          desc = "Continue",
-        },
-        {
-          "<F10>",
-          function()
-            require("dap").step_over()
-          end,
-          desc = "Step over",
-        },
-        {
-          "<F11>",
-          function()
-            require("dap").step_into()
-          end,
-          desc = "Step into",
-        },
-        {
-          "<F12>",
-          function()
-            require("dap").step_out()
-          end,
-          desc = "Step out",
-        },
-      })
+      vim.keymap.set("n", "<leader>cdu", function() require("dapui").toggle() end, { desc = "toggle dap ui" })
+      vim.keymap.set("n", "<F8>", function() require("dap").toggle_breakpoint() end, { desc = "toggle breakpoint" })
+      -- wk.add({
+      --   { "<leader>cd", group = "debugger" },
+      --   {
+      --     "<leader>cdh",
+      --     function()
+      --       require("dap.ui.widgets").hover()
+      --     end,
+      --     desc = "hover",
+      --     mode = { "n", "v" },
+      --   },
+      --   {
+      --     "<leader>cdp",
+      --     function()
+      --       require("dap.ui.widgets").preview()
+      --     end,
+      --     desc = "preview",
+      --     mode = { "n", "v" },
+      --   },
+      --   {
+      --     "<leader>cdf",
+      --     "<cmd>Telescope dap frames theme=ivy<cr>",
+      --     desc = "frames",
+      --   },
+      --   {
+      --     "<leader>cda",
+      --     "<cmd>Telescope dap list_breakpoints theme=ivy<cr>",
+      --     desc = "breakpoints",
+      --   },
+      --   {
+      --     "<leader>cdv",
+      --     "<cmd>Telescope dap variables theme=ivy<cr>",
+      --     desc = "variables",
+      --   },
+      --   {
+      --     "<leader>cd;",
+      --     "<cmd>Telescope dap commands theme=dropdown<cr>",
+      --     desc = "commands",
+      --   },
+      --   {
+      --     "<leader>cdr",
+      --     function()
+      --       require("dap").repl.toggle()
+      --     end,
+      --     desc = "toggle repl",
+      --   },
+      --   {
+      --     "<leader>cdl",
+      --     function()
+      --       require("dap").run_last()
+      --     end,
+      --     desc = "run last",
+      --   },
+      --   {
+      --     "<F5>",
+      --     function()
+      --       require("dap").continue()
+      --     end,
+      --     desc = "Continue",
+      --   },
+      --   {
+      --     "<F10>",
+      --     function()
+      --       require("dap").step_over()
+      --     end,
+      --     desc = "Step over",
+      --   },
+      --   {
+      --     "<F11>",
+      --     function()
+      --       require("dap").step_into()
+      --     end,
+      --     desc = "Step into",
+      --   },
+      --   {
+      --     "<F12>",
+      --     function()
+      --       require("dap").step_out()
+      --     end,
+      --     desc = "Step out",
+      --   },
+      -- })
     end,
   },
   {

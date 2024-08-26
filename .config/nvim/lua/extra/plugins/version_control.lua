@@ -37,20 +37,22 @@ return {
         },
       })
 
-      local wk = require("which-key")
-      wk.add({
-        { "<leader>gh",  group = "git hunk" },
-        { "<leader>ght", "<cmd>Gitsigns toggle_linehl<cr>", desc = "Toggle line highlight" },
-        { "<leader>ghp", "<cmd>Gitsigns preview_hunk<cr>",  desc = "Preview hunk" },
-        { "<leader>ghs", "<cmd>Gitsigns stage_hunk<cr>",    desc = "Stage hunk" },
-        { "<leader>ghr", "<cmd>Gitsigns reset_hunk<cr>",    desc = "Reset hunk" },
-      })
+      vim.keymap.set("n", "<leader>ght", "<cmd>Gitsigns toggle_linehl<cr>",
+        { noremap = true, silent = true, desc = "toggle line highlight" })
+      vim.keymap.set("n", "<leader>ght", "<cmd>Gitsigns toggle_linehl<cr>",
+        { noremap = true, silent = true, desc = "Toggle line highlight" })
+      vim.keymap.set("n", "<leader>ghp", "<cmd>Gitsigns preview_hunk<cr>",
+        { silent = true, noremap = true, desc = "Preview hunk" })
+      vim.keymap.set("n", "<leader>ghs", "<cmd>Gitsigns stage_hunk<cr>",
+        { silent = true, noremap = true, desc = "Stage hunk" })
+      vim.keymap.set("n", "<leader>ghr", "<cmd>Gitsigns reset_hunk<cr>",
+        { noremap = true, silent = true, desc = "Reset hunk" })
     end,
   },
   {
     "tpope/vim-fugitive",
     dependencies = { "tpope/vim-rhubarb" },
-    event = "BufRead",
+    event = "VeryLazy",
   },
   {
     "sindrets/diffview.nvim",

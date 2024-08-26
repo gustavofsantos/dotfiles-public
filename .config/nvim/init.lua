@@ -162,10 +162,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   { import = "extra.plugins" },
-  {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-  }
 }, {
   install = {
     colorscheme = { "kanagawa" },
