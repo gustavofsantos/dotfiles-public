@@ -130,8 +130,6 @@ return {
 
         highlight = {
           enable = true,
-          -- use_languagetree = true,
-          -- additional_vim_regex_highlighting = { "markdown" },
         },
         indent = {
           enable = true,
@@ -202,7 +200,7 @@ return {
           enable_close = true,
           enable_close_on_slash = true,
         },
-        tree_docs = { enable = true },
+        tree_docs = { enable = false },
       })
 
       require("treesitter-context").setup({
