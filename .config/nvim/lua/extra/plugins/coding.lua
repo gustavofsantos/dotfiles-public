@@ -167,8 +167,12 @@ return {
       -- see: https://github.com/mfussenegger/nvim-dap-python?tab=readme-ov-file#debugpy
       require("dap-python").setup("~/.virtualenvs/debugpy/bin/python")
 
-      vim.keymap.set("n", "<leader>cdu", function() require("dapui").toggle() end, { desc = "toggle dap ui" })
-      vim.keymap.set("n", "<F8>", function() require("dap").toggle_breakpoint() end, { desc = "toggle breakpoint" })
+      vim.keymap.set("n", "<leader>cdu", dapui.toggle, { desc = "toggle dap ui" })
+      vim.keymap.set("n", "<F5>", dap.continue, { desc = "continue" })
+      vim.keymap.set("n", "<F8>", dap.toggle_breakpoint, { desc = "toggle breakpoint" })
+      vim.keymap.set("n", "<F10>", dap.step_over, { desc = "step over" })
+      vim.keymap.set("n", "<F11>", dap.step_into, { desc = "step into" })
+      vim.keymap.set("n", "<F12>", dap.step_out, { desc = "step out" })
       -- wk.add({
       --   { "<leader>cd", group = "debugger" },
       --   {
@@ -220,34 +224,6 @@ return {
       --       require("dap").run_last()
       --     end,
       --     desc = "run last",
-      --   },
-      --   {
-      --     "<F5>",
-      --     function()
-      --       require("dap").continue()
-      --     end,
-      --     desc = "Continue",
-      --   },
-      --   {
-      --     "<F10>",
-      --     function()
-      --       require("dap").step_over()
-      --     end,
-      --     desc = "Step over",
-      --   },
-      --   {
-      --     "<F11>",
-      --     function()
-      --       require("dap").step_into()
-      --     end,
-      --     desc = "Step into",
-      --   },
-      --   {
-      --     "<F12>",
-      --     function()
-      --       require("dap").step_out()
-      --     end,
-      --     desc = "Step out",
       --   },
       -- })
     end,

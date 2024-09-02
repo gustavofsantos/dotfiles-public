@@ -123,6 +123,24 @@ end
 
 local register_beyond_tasks = function(overseer)
   overseer.register_template({
+    name = "beyons - run tests",
+    builder = function()
+      return {
+        cmd = { "poetry", "run", "pytest", "--disable-warnings", "--ds", "beyond_app.settings.test", "-vv" },
+        args = { "src/beyond_app" },
+        cwd = "/opt/loggi/py/apps/beyond/",
+        components = { "default" },
+        env = {
+          POSTGRES_DB = "dev_db",
+          POSTGRES_PASSWORD = "postgres",
+          POSTGRES_HOST = "localhost",
+          POSTGRES_PORT = "5432",
+        },
+      }
+    end
+  })
+
+  overseer.register_template({
     name = "beyond - run flake8",
     builder = function(params)
       return {

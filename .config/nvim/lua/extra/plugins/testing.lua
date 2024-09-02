@@ -12,6 +12,7 @@ local function default_beyond_env()
     POSTGRES_PASSWORD = "postgres",
     POSTGRES_HOST = "localhost",
     POSTGRES_PORT = "5432",
+    UNLEASH_URL = "http://localhost:4242/api"
   }
 end
 
@@ -59,9 +60,10 @@ return {
       local setup_python_adapter = require("neotest-python")
       local beyond_py_args = {
         "-x",
+        "-vv",
+        "--log-level", "DEBUG",
         "--disable-warnings",
-        "--ds",
-        "beyond_app.settings.test",
+        "--ds", "beyond_app.settings.test",
       }
       local python_args = {}
       if is_beyond_py() then
@@ -100,10 +102,7 @@ return {
       vim.keymap.set("n", "<leader>tn",
         function()
           if is_beyond_py() then
-            require("neotest").overseer.run({
-              env = default_beyond_env(),
-              -- cwd = "/opt/loggi/py/apps/beyond"
-            })
+            require("neotest").overseer.run({ env = default_beyond_env() })
           elseif is_beyond_payment() then
             require("neotest").overseer.run({ env = default_beyond_payment_env() })
           else
@@ -113,8 +112,7 @@ return {
         { noremap = true, silent = true, desc = "run nearest test" })
 
 
-      vim.keymap.set("n",
-        "<leader>td",
+      vim.keymap.set("n", "<leader>td",
         function()
           if is_beyond_py() then
             require("neotest").run.run({
@@ -143,22 +141,22 @@ return {
         { noremap = true, silent = true, desc = "test file" })
 
 
-      vim.keymap.set("n",
-        "<leader>ta",
-        function()
-          if is_beyond_py() then
-            require("neotest").overseer.run({
-              "/opt/loggi/py/apps/beyond/src/beyond_app",
-              env = default_beyond_env(),
-              cwd = "/opt/loggi/py/apps/beyond/src/beyond_app"
-            })
-          elseif is_beyond_payment() then
-            require("neotest").overseer.run({ "/opt/loggi/beyond-payment", env = default_beyond_payment_env() })
-          else
-            require("neotest").run.run(vim.fn.getcwd())
-          end
-        end,
-        { noremap = true, silent = true, desc = "test all" })
+      -- vim.keymap.set("n",
+      --   "<leader>ta",
+      --   function()
+      --     if is_beyond_py() then
+      --       require("neotest").overseer.run({
+      --         "/opt/loggi/py/apps/beyond/src/beyond_app",
+      --         env = default_beyond_env(),
+      --         cwd = "/opt/loggi/py/apps/beyond/src/beyond_app"
+      --       })
+      --     elseif is_beyond_payment() then
+      --       require("neotest").overseer.run({ "/opt/loggi/beyond-payment", env = default_beyond_payment_env() })
+      --     else
+      --       require("neotest").run.run(vim.fn.getcwd())
+      --     end
+      --   end,
+      --   { noremap = true, silent = true, desc = "test all" })
 
       vim.keymap.set("n",
         "<leader>tl",
