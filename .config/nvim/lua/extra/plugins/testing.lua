@@ -115,12 +115,7 @@ return {
       vim.keymap.set("n", "<leader>td",
         function()
           if is_beyond_py() then
-            require("neotest").run.run({
-              strategy = "dap",
-              env = default_beyond_env(),
-              cwd =
-              "/opt/loggi/py/apps/beyond/src/beyond_app"
-            })
+            require("neotest").run.run({ strategy = "dap", env = default_beyond_env() })
           elseif is_beyond_payment() then
             require("neotest").run.run({ strategy = "dap", env = default_beyond_payment_env() })
           else
