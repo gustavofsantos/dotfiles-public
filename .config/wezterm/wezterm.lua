@@ -71,8 +71,9 @@ config.automatically_reload_config = false
 config.force_reverse_video_cursor = true
 config.color_scheme = "Kanagawa"
 
-config.font = wezterm.font("MonoLisa Nerd Font")
-config.font_size = 11
+-- config.font = wezterm.font("MonoLisa Nerd Font")
+config.font = wezterm.font("BerkeleyMono Nerd Font")
+config.font_size = 14
 config.freetype_load_flags = "NO_HINTING"
 config.freetype_load_target = "Normal"
 config.line_height = 1.2
