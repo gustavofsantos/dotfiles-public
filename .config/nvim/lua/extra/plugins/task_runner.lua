@@ -25,6 +25,23 @@ local register_payment_tasks = function(overseer)
         env = {},
       }
     end,
+    condition = {
+      dir = "/opt/loggi/beyond-payment/",
+    },
+  })
+
+  overseer.register_template({
+    name = "payment: start production session",
+    builder = function()
+      return {
+        cmd = { "start-beyond-payments-session.sh" },
+        components = { "default" },
+        cwd = "/opt/loggi/beyond-payment/",
+      }
+    end,
+    condition = {
+      dir = "/opt/loggi/beyond-payment/",
+    },
   })
 
   overseer.register_template({
@@ -38,6 +55,9 @@ local register_payment_tasks = function(overseer)
         env = {},
       }
     end,
+    condition = {
+      dir = "/opt/loggi/beyond-payment/",
+    },
   })
 
   overseer.register_template({
@@ -51,6 +71,9 @@ local register_payment_tasks = function(overseer)
         env = {},
       }
     end,
+    condition = {
+      dir = "/opt/loggi/beyond-payment/",
+    },
   })
 
   overseer.register_template({
@@ -64,6 +87,9 @@ local register_payment_tasks = function(overseer)
         env = {},
       }
     end,
+    condition = {
+      dir = "/opt/loggi/beyond-payment/",
+    },
   })
 
   overseer.register_template({
@@ -78,7 +104,6 @@ local register_payment_tasks = function(overseer)
       }
     end,
     condition = {
-      filetype = "python",
       dir = "/opt/loggi/beyond-payment/",
     },
   })
@@ -95,7 +120,6 @@ local register_payment_tasks = function(overseer)
       }
     end,
     condition = {
-      filetype = "python",
       dir = "/opt/loggi/beyond-payment/",
     },
   })
@@ -112,7 +136,6 @@ local register_payment_tasks = function(overseer)
       }
     end,
     condition = {
-      filetype = "python",
       dir = "/opt/loggi/beyond-payment/",
     },
   })
@@ -129,7 +152,6 @@ local register_payment_tasks = function(overseer)
       }
     end,
     condition = {
-      filetype = "python",
       dir = "/opt/loggi/beyond-payment/",
     },
   })
@@ -151,25 +173,24 @@ local register_beyond_tasks = function(overseer)
           POSTGRES_PORT = "5432",
         },
       }
-    end
+    end,
+    condition = {
+      dir = "/opt/loggi/py/apps/beyond/",
+    },
   })
 
   overseer.register_template({
     name = "beyond: launch production shell",
     builder = function()
       return {
-        cmd = { "poetry", "run", "pytest", "--disable-warnings", "--ds", "beyond_app.settings.test", "-vv" },
-        args = { "src/beyond_app" },
+        cmd = { "start-beyond-session.sh" },
         cwd = "/opt/loggi/py/apps/beyond/",
         components = { "default" },
-        env = {
-          POSTGRES_DB = "dev_db",
-          POSTGRES_PASSWORD = "postgres",
-          POSTGRES_HOST = "localhost",
-          POSTGRES_PORT = "5432",
-        },
       }
-    end
+    end,
+    condition = {
+      dir = "/opt/loggi/py/apps/beyond/",
+    },
   })
 
   overseer.register_template({
@@ -184,7 +205,6 @@ local register_beyond_tasks = function(overseer)
       }
     end,
     condition = {
-      filetype = "python",
       dir = "/opt/loggi/py/apps/beyond/",
     },
   })
@@ -201,7 +221,6 @@ local register_beyond_tasks = function(overseer)
       }
     end,
     condition = {
-      filetype = "python",
       dir = "/opt/loggi/py/apps/beyond/",
     },
   })
@@ -218,7 +237,6 @@ local register_beyond_tasks = function(overseer)
       }
     end,
     condition = {
-      filetype = "python",
       dir = "/opt/loggi/py/apps/beyond/",
     },
   })
@@ -235,7 +253,6 @@ local register_beyond_tasks = function(overseer)
       }
     end,
     condition = {
-      filetype = "python",
       dir = "/opt/loggi/py/apps/beyond/",
     },
   })
