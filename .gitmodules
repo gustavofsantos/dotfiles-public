@@ -3,9 +3,10 @@
 	url = git@github.com:gustavofsantos/fonts.git
 	branch = main
 
-[submodule "projs/bjj"]
-	path = projs/bjj
-	url = git@github.com:gustavofsantos/bjj.git
+[submodule ".scripts"]
+	path = .scripts
+	url = git@github.com:gustavofsantos/private-scripts.git
+	branch = main
 
 [submodule ".tmux/plugins/tpm"]
 	path = .tmux/plugins/tpm
