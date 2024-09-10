@@ -263,7 +263,7 @@ return {
   config = function()
     local overseer = require("overseer")
     overseer.setup({
-      strategy = "toggleterm",
+      -- strategy = "toggleterm",
     })
     register_beyond_tasks(overseer)
     register_payment_tasks(overseer)
@@ -278,11 +278,12 @@ return {
         overseer.run_action(tasks[1], "restart")
       end
     end, {})
+
+    vim.keymap.set("n", "<leader>rr", "<cmd>OverseerRun<cr>", { desc = "run", noremap = true, silent = true })
+    vim.keymap.set("n", "<leader>rl", "<cmd>OverseerRestartLast<cr>", { desc = "run last", noremap = true, silent = true })
+    vim.keymap.set("n", "<leader>rt", "<cmd>OverseerToggle<cr>",
+      { desc = "toggle task runner", noremap = true, silent = true })
+    vim.keymap.set("n", "<leader>ro", "<cmd>OverseerToggle<cr>",
+      { desc = "toggle task runner", noremap = true, silent = true })
   end,
-  keys = {
-    { "<leader>rr", "<cmd>OverseerRun<cr>",         { desc = "Run", noremap = true, silent = true } },
-    { "<leader>rl", "<cmd>OverseerRestartLast<cr>", { desc = "Run last", noremap = true, silent = true } },
-    { "<leader>rt", "<cmd>OverseerToggle<cr>",      { desc = "Toggle Overseer", noremap = true, silent = true } },
-    { "<leader>ro", "<cmd>OverseerToggle<cr>",      { desc = "Toggle Overseer", noremap = true, silent = true } },
-  },
 }

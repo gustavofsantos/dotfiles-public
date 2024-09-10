@@ -19,7 +19,7 @@ return {
       mason_lspconfig.setup({
         ensure_installed = {
           "lua_ls",
-          "tsserver",
+          "ts_ls",
           "pyright",
           "dockerls",
           "docker_compose_language_service",
@@ -70,9 +70,9 @@ return {
             },
           })
         end,
-        ["tsserver"] = function()
+        ["ts_ls"] = function()
           local lspconfig = require("lspconfig")
-          lspconfig.tsserver.setup({
+          lspconfig.ts_ls.setup({
             root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
             settings = {
               typescript = {
