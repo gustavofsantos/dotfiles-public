@@ -12,6 +12,7 @@ export WORKLOG_PATH="$HOME/Documents/main-vault/main/Loggi/worklog.md"
 export PATH="$PNPM_HOME:$PATH"
 export PATH=$PATH:"$HOME"/.local/bin
 export PATH=$PATH:"$HOME"/.bin
+export PATH=$PATH:"$HOME"/.scripts/work/loggi
 export PATH=$PATH:"$HOME"/bin
 export PATH=$PATH:"$HOME"/dotfiles-public/bin
 export PATH=$PATH:"$HOME"/.emacs.d/bin
