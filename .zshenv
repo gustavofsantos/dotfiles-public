@@ -1,4 +1,5 @@
 if [ -e "$HOME/.cargo/env" ]; then . "$HOME/.cargo/env";  fi
+if [ -e /home/gustavo/.nix-profile/etc/profile.d/nix.sh ]; then . /home/gustavo/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 export EDITOR='nvim'
 
@@ -11,6 +12,7 @@ export WORKLOG_PATH="$HOME/Documents/main-vault/main/Loggi/worklog.md"
 export PATH="$PNPM_HOME:$PATH"
 export PATH=$PATH:"$HOME"/.local/bin
 export PATH=$PATH:"$HOME"/.bin
+export PATH=$PATH:"$HOME"/.scripts/work/loggi
 export PATH=$PATH:"$HOME"/bin
 export PATH=$PATH:"$HOME"/dotfiles-public/bin
 export PATH=$PATH:"$HOME"/.emacs.d/bin
@@ -36,7 +38,7 @@ alias hm="home-manager"
 alias nxe="nix-env"
 alias ls="eza --icons -w 80"
 alias lza="eza --icons -1 -a -l --total-size"
-alias cd="z"
+# alias cd="z"
 alias zj="zellij"
 alias eee="sesh connect \$(sesh list -i | gum filter --limit 1 --placeholder 'Choose a session' --height 50 --prompt='⚡')"
 alias GO="z \$(zoxide query --list | gum filter --limit 1 --placeholder 'Go to')"
@@ -61,3 +63,4 @@ alias lw_show_urls="docker-compose exec loggi_web_app bash -c 'python manage.py 
 alias dev_beyond="devcontainer --workspace-folder /opt/loggi/ui exec bash -c 'cd targets/beyond && npm start'"
 alias dev_beyond_test_watch="devcontainer --workspace-folder /opt/loggi/ui exec bash -c 'cd targets/beyond && npm run test -- --bail --coverage=false'"
 alias ui_review="gh pr list -S 'is:pr is:open user-review-requested:@me label:beyond-conversao' | fzf --preview 'gh pr view {1}' --preview-window down | awk '{print $1}' | xargs gh pr checkout"
+

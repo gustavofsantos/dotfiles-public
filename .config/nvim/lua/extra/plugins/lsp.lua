@@ -19,7 +19,7 @@ return {
       mason_lspconfig.setup({
         ensure_installed = {
           "lua_ls",
-          "tsserver",
+          "ts_ls",
           "pyright",
           "dockerls",
           "docker_compose_language_service",
@@ -70,9 +70,9 @@ return {
             },
           })
         end,
-        ["tsserver"] = function()
+        ["ts_ls"] = function()
           local lspconfig = require("lspconfig")
-          lspconfig.tsserver.setup({
+          lspconfig.ts_ls.setup({
             root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
             settings = {
               typescript = {
@@ -151,12 +151,7 @@ return {
 
           vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
           vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-          vim.keymap.set("n", "K", function()
-            local winid = require("ufo").peekFoldedLinesUnderCursor()
-            if not winid then
-              vim.lsp.buf.hover()
-            end
-          end, opts)
+          vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
           vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
           vim.keymap.set("n", "gr", vim.lsp.buf.rename, opts)
           vim.keymap.set("n", "gR", vim.lsp.buf.references, opts)

@@ -12,6 +12,7 @@ local function default_beyond_env()
     POSTGRES_PASSWORD = "postgres",
     POSTGRES_HOST = "localhost",
     POSTGRES_PORT = "5432",
+    UNLEASH_URL = "http://localhost:4242/api"
   }
 end
 
@@ -44,8 +45,8 @@ return {
   },
   {
     "nvim-neotest/neotest",
+    tag = "v5.3.5",
     enabled = true,
-    ft = { "python" },
     dependencies = {
       "nvim-neotest/nvim-nio",
       "nvim-neotest/neotest-python",
@@ -58,10 +59,11 @@ return {
     config = function()
       local setup_python_adapter = require("neotest-python")
       local beyond_py_args = {
-        "--disable-warnings",
+        "-x",
         "-vv",
-        "--ds",
-        "beyond_app.settings.test",
+        "--log-level", "DEBUG",
+        "--disable-warnings",
+        "--ds", "beyond_app.settings.test",
       }
       local python_args = {}
       if is_beyond_py() then
@@ -95,10 +97,9 @@ return {
           force_default = false,
         },
       })
-    end,
-    keys = {
-      {
-        "<leader>tn",
+
+
+      vim.keymap.set("n", "<leader>tn",
         function()
           if is_beyond_py() then
             require("neotest").overseer.run({ env = default_beyond_env() })
@@ -108,10 +109,10 @@ return {
             require("neotest").run.run()
           end
         end,
-        { desc = "Run nearest test" },
-      },
-      {
-        "<leader>td",
+        { noremap = true, silent = true, desc = "run nearest test" })
+
+
+      vim.keymap.set("n", "<leader>td",
         function()
           if is_beyond_py() then
             require("neotest").run.run({ strategy = "dap", env = default_beyond_env() })
@@ -121,9 +122,9 @@ return {
             require("neotest").run.run({ strategy = "dap" })
           end
         end,
-        { desc = "Debug nearest test" },
-      },
-      {
+        { noremap = true, silent = true, desc = "debug nearest" })
+
+      vim.keymap.set("n",
         "<leader>tf",
         function()
           if is_beyond_py() then
@@ -132,50 +133,54 @@ return {
             require("neotest").run.run(vim.fn.expand("%"))
           end
         end,
-        { desc = "Run file tests" },
-      },
-      {
-        "<leader>ta",
-        function()
-          if is_beyond_py() then
-            require("neotest").overseer.run({ "/opt/loggi/py/apps/beyond/src/beyond_app", env = default_beyond_env() })
-          elseif is_beyond_payment() then
-            require("neotest").overseer.run({ "/opt/loggi/beyond-payment", env = default_beyond_payment_env() })
-          else
-            require("neotest").run.run(vim.fn.getcwd())
-          end
-        end,
-        { desc = "Run all tests" },
-      },
-      {
+        { noremap = true, silent = true, desc = "test file" })
+
+
+      -- vim.keymap.set("n",
+      --   "<leader>ta",
+      --   function()
+      --     if is_beyond_py() then
+      --       require("neotest").overseer.run({
+      --         "/opt/loggi/py/apps/beyond/src/beyond_app",
+      --         env = default_beyond_env(),
+      --         cwd = "/opt/loggi/py/apps/beyond/src/beyond_app"
+      --       })
+      --     elseif is_beyond_payment() then
+      --       require("neotest").overseer.run({ "/opt/loggi/beyond-payment", env = default_beyond_payment_env() })
+      --     else
+      --       require("neotest").run.run(vim.fn.getcwd())
+      --     end
+      --   end,
+      --   { noremap = true, silent = true, desc = "test all" })
+
+      vim.keymap.set("n",
         "<leader>tl",
         function()
           require("neotest").output_panel.clear()
           require("neotest").run.run_last()
         end,
-        { desc = "Run last" },
-      },
-      {
+        { noremap = true, silent = true, desc = "test last" })
+
+      vim.keymap.set("n",
         "<leader>ts",
         function()
           require("neotest").summary.toggle()
         end,
-        { desc = "Toggle summary" },
-      },
-      {
+        { noremap = true, silent = true, desc = "toggle summary" })
+
+      vim.keymap.set("n",
         "<leader>to",
         function()
           require("neotest").output.open({ enter = true, quiet = true })
         end,
-        { desc = "Toggle output" },
-      },
-      {
+        { desc = "toggle output" })
+
+      vim.keymap.set("n",
         "<leader>tp",
         function()
           require("neotest").output_panel.toggle()
         end,
-        { desc = "Toggle output panel" },
-      },
-    },
+        { desc = "toggle output panel" })
+    end,
   },
 }

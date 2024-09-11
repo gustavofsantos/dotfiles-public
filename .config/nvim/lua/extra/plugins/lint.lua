@@ -7,7 +7,7 @@ return {
     local lint = require("lint")
     lint.linters_by_ft = {
       markdown = { "vale" },
-      python = { "flake8", "ruff" },
+      python = { "mypy", "flake8", "ruff" },
       javascript = { "eslint_d" },
       javascriptreact = { "eslint_d" },
       typescript = { "eslint_d" },

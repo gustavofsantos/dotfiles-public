@@ -1,10 +1,22 @@
 return {
-  "christoomey/vim-tmux-navigator",
-  "christoomey/vim-tmux-runner",
+  -- "christoomey/vim-tmux-navigator",
+  -- "christoomey/vim-tmux-runner",
+  {
+    "numToStr/Navigator.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("Navigator").setup()
+      vim.keymap.set({ 'n', 't' }, '<C-h>', '<CMD>NavigatorLeft<CR>')
+      vim.keymap.set({ 'n', 't' }, '<C-l>', '<CMD>NavigatorRight<CR>')
+      vim.keymap.set({ 'n', 't' }, '<C-k>', '<CMD>NavigatorUp<CR>')
+      vim.keymap.set({ 'n', 't' }, '<C-j>', '<CMD>NavigatorDown<CR>')
+    end
+  },
   { -- stevearc/oil.nvim
     "stevearc/oil.nvim",
     opts = {
       default_file_explorer = false,
+      skip_confirm_for_simple_edits = true,
     },
     event = "VeryLazy",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -258,6 +270,7 @@ return {
         { "Workspace symbols",     cmd = "Telescope lsp_workspace_symbols",                    category = "navigation" },
 
         -- version control actions
+        { "Status",                cmd = "Git",                                                category = "vcs" },
         { "Commit",                cmd = "Git commit",                                         category = "vcs" },
         { "Pull",                  cmd = "Git pull",                                           category = "vcs" },
         { "Push",                  cmd = "Git push",                                           category = "vcs" },
@@ -344,79 +357,34 @@ return {
       end
 
       vim.api.nvim_create_user_command("LaunchControl", launch_control, {})
+      vim.keymap.set("n", "gk", "<cmd>LaunchControl<cr>", { desc = "launch control" })
+      vim.keymap.set("n", "<leader>p", "<cmd>Telescope find_files<cr>",
+        { desc = "find file", noremap = true, silent = true })
+      vim.keymap.set("n", "<leader>o", "<cmd>Telescope smart_open cwd_only=true theme=dropdown<cr>",
+        { desc = "find file", noremap = true, silent = true })
+      vim.keymap.set("n", "<leader>e", "<cmd>Telescope oldfiles<cr>",
+        { desc = "find recent", noremap = true, silent = true })
+      vim.keymap.set("n", "<leader>b", "<cmd>Telescope buffers<cr>",
+        { desc = "find buffer", noremap = true, silent = true })
+      vim.keymap.set("n", "<leader>fs", "<cmd>Telescope lsp_document_symbols<cr>",
+        { desc = "find symbols", noremap = true, silent = true })
+      vim.keymap.set("n", "<leader>fr", "<cmd>Telescope resume<cr>",
+        { desc = "find resume", noremap = true, silent = true })
+      vim.keymap.set("n", "<leader>fc", "<cmd>Telescope neoclip<cr>",
+        { desc = "find clipboard", noremap = true, silent = true })
+      vim.keymap.set("n", "<leader>fl", "<cmd>Telescope live_grep<cr>",
+        { desc = "find live", noremap = true, silent = true })
+      vim.keymap.set("n", "<leader>fg", "<cmd>Telescope git_files<cr>",
+        { desc = "find git", noremap = true, silent = true })
+      vim.keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>",
+        { desc = "find keymaps", noremap = true, silent = true })
+      vim.keymap.set("n", "<leader>f?", "<cmd>Telescope help_tags<cr>",
+        { desc = "find help", noremap = true, silent = true })
+      vim.keymap.set("n", "<c-f>", "<cmd>Telescope current_buffer_fuzzy_find<cr>",
+        { desc = "find buffer", noremap = true, silent = true })
+      vim.keymap.set("v", "<F3>", '"zy:Telescope grep_string default_text=<C-r>z<cr>',
+        { desc = "find selected", noremap = true, silent = true })
+      vim.keymap.set("n", "<F3>", "<cmd>Telescope grep_string<cr>", { desc = "find word", noremap = true, silent = true })
     end,
-    keys = {
-      { "gk", "<cmd>LaunchControl<cr>", { desc = "Launch control" } },
-      {
-        "<leader>p",
-        "<cmd>Telescope find_files<cr>",
-        { mode = "n", desc = "Find files", noremap = true, silent = true },
-      },
-      {
-        "<leader>o",
-        "<cmd>Telescope smart_open cwd_only=true theme=dropdown<cr>",
-        { mode = "n", desc = "Smart open", noremap = true, silent = true },
-      },
-      {
-        "<leader>e",
-        "<cmd>Telescope oldfiles<cr>",
-        { mode = "n", desc = "Recent files", noremap = true, silent = true },
-      },
-      {
-        "<leader>b",
-        "<cmd>Telescope buffers<cr>",
-        { mode = "n", desc = "Switch buffer", noremap = true, silent = true },
-      },
-      {
-        "<leader>u",
-        "<cmd>Telescope undo theme=ivy<cr>",
-        { mode = "n", desc = "Undo history", noremap = true, silent = true },
-      },
-      {
-        "<leader>fr",
-        "<cmd>Telescope resume<cr>",
-        { mode = "n", desc = "Resume search", noremap = true, silent = true },
-      },
-      {
-        "<leader>fc",
-        "<cmd>Telescope neoclip<cr>",
-        { mode = "n", desc = "Clipboard history", noremap = true, silent = true },
-      },
-      {
-        "<leader>fl",
-        "<cmd>Telescope live_grep<cr>",
-        { mode = "n", desc = "Live grep", noremap = true, silent = true },
-      },
-      {
-        "<leader>fg",
-        "<cmd>Telescope git_files<cr>",
-        { mode = "n", desc = "Find git files", noremap = true, silent = true },
-      },
-      {
-        "<leader>fk",
-        "<cmd>Telescope keymaps<cr>",
-        { mode = "n", desc = "Keymaps", noremap = true, silent = true },
-      },
-      {
-        "<leader>f?",
-        "<cmd>Telescope help_tags<cr>",
-        { mode = "n", desc = "Help tags", noremap = true, silent = true },
-      },
-      {
-        "<c-f>",
-        "<cmd>Telescope current_buffer_fuzzy_find<cr>",
-        { mode = "n", desc = "Find in buffer", noremap = true, silent = true },
-      },
-      {
-        "<F3>",
-        "<cmd>Telescope grep_string<cr>",
-        { mode = "n", desc = "Grep word under cursor", noremap = true, silent = true },
-      },
-      {
-        "<F3>",
-        '"zy:Telescope grep_string default_text=<C-r>z<cr>',
-        { mode = "v", desc = "Grep selected text", noremap = true, silent = true },
-      },
-    },
   },
 }

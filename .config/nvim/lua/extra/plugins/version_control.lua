@@ -8,16 +8,11 @@ return {
     },
     event = "BufRead",
     keys = {
-      { "]h",          "<cmd>Gitsigns next_hunk<cr>",     desc = "Next hunk" },
-      { "[h",          "<cmd>Gitsigns prev_hunk<cr>",     desc = "Previous hunk" },
-      { "<leader>ght", "<cmd>Gitsigns toggle_linehl<cr>", desc = "Toggle line highlight" },
-      { "<leader>ghp", "<cmd>Gitsigns preview_hunk<cr>",  desc = "Preview hunk" },
-      { "<leader>ghs", "<cmd>Gitsigns stage_hunk<cr>",    desc = "Stage hunk" },
-      { "<leader>ghr", "<cmd>Gitsigns reset_hunk<cr>",    desc = "Reset hunk" },
+      { "]h", "<cmd>Gitsigns next_hunk<cr>", desc = "Next hunk" },
+      { "[h", "<cmd>Gitsigns prev_hunk<cr>", desc = "Previous hunk" },
     },
     config = function()
-      local gitsigns = require("gitsigns")
-      gitsigns.setup({
+      require("gitsigns").setup({
         signcolumn = true,
         numhl = false,
         linehl = false,
@@ -41,12 +36,23 @@ return {
           untracked    = { text = '░' },
         },
       })
+
+      vim.keymap.set("n", "<leader>ght", "<cmd>Gitsigns toggle_linehl<cr>",
+        { noremap = true, silent = true, desc = "toggle line highlight" })
+      vim.keymap.set("n", "<leader>ght", "<cmd>Gitsigns toggle_linehl<cr>",
+        { noremap = true, silent = true, desc = "Toggle line highlight" })
+      vim.keymap.set("n", "<leader>ghp", "<cmd>Gitsigns preview_hunk<cr>",
+        { silent = true, noremap = true, desc = "Preview hunk" })
+      vim.keymap.set("n", "<leader>ghs", "<cmd>Gitsigns stage_hunk<cr>",
+        { silent = true, noremap = true, desc = "Stage hunk" })
+      vim.keymap.set("n", "<leader>ghr", "<cmd>Gitsigns reset_hunk<cr>",
+        { noremap = true, silent = true, desc = "Reset hunk" })
     end,
   },
   {
     "tpope/vim-fugitive",
     dependencies = { "tpope/vim-rhubarb" },
-    event = "BufRead",
+    event = "VeryLazy",
   },
   {
     "sindrets/diffview.nvim",

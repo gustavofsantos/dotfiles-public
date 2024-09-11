@@ -99,7 +99,6 @@ in
     pkgs.gitmux
     pkgs.difftastic
     pkgs.entr
-    pkgs.mermaid-cli
     pkgs.clojure-lsp
     pkgs.leiningen
     pkgs.clj-kondo

@@ -1,6 +1,26 @@
 return {
-  "tpope/vim-sleuth",
-  "mbbill/undotree",
+  {
+    "linux-cultist/venv-selector.nvim",
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "mfussenegger/nvim-dap", "mfussenegger/nvim-dap-python", --optional
+      { "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
+    },
+    lazy = false,
+    branch = "regexp", -- This is the regexp branch, use this for the new version
+    config = function()
+      require("venv-selector").setup({
+        settings = {
+          options = {
+            debug = true
+          }
+        }
+      })
+    end,
+    -- keys = {
+    --   { ",v", "<cmd>VenvSelect<cr>" },
+    -- },
+  },
   {
     "AndrewRadev/switch.vim",
     config = function()
@@ -26,28 +46,20 @@ return {
     end,
   },
   {
-    "linux-cultist/venv-selector.nvim",
+    "ThePrimeagen/refactoring.nvim",
     dependencies = {
-      "neovim/nvim-lspconfig",
-      "mfussenegger/nvim-dap", "mfussenegger/nvim-dap-python", --optional
-      { "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
     },
-    lazy = false,
-    branch = "regexp", -- This is the regexp branch, use this for the new version
     config = function()
-      require("venv-selector").setup({
-        settings = {
-          options = {
-            debug = true
-          }
-        }
-      })
-    end,
-    -- keys = {
-    --   { ",v", "<cmd>VenvSelect<cr>" },
-    -- },
-  },
+      require("refactoring").setup()
 
+      vim.keymap.set({ "n", "x" },
+        "<leader>cr",
+        function() require('refactoring').select_refactor() end,
+        { noremap = true, silent = true, desc = "refactor" })
+    end,
+  },
   {
     "mfussenegger/nvim-dap",
     dependencies = {
@@ -154,101 +166,67 @@ return {
 
       -- see: https://github.com/mfussenegger/nvim-dap-python?tab=readme-ov-file#debugpy
       require("dap-python").setup("~/.virtualenvs/debugpy/bin/python")
+
+      vim.keymap.set("n", "<leader>cdu", dapui.toggle, { desc = "toggle dap ui" })
+      vim.keymap.set("n", "<F5>", dap.continue, { desc = "continue" })
+      vim.keymap.set("n", "<F8>", dap.toggle_breakpoint, { desc = "toggle breakpoint" })
+      vim.keymap.set("n", "<F10>", dap.step_over, { desc = "step over" })
+      vim.keymap.set("n", "<F11>", dap.step_into, { desc = "step into" })
+      vim.keymap.set("n", "<F12>", dap.step_out, { desc = "step out" })
+      -- wk.add({
+      --   { "<leader>cd", group = "debugger" },
+      --   {
+      --     "<leader>cdh",
+      --     function()
+      --       require("dap.ui.widgets").hover()
+      --     end,
+      --     desc = "hover",
+      --     mode = { "n", "v" },
+      --   },
+      --   {
+      --     "<leader>cdp",
+      --     function()
+      --       require("dap.ui.widgets").preview()
+      --     end,
+      --     desc = "preview",
+      --     mode = { "n", "v" },
+      --   },
+      --   {
+      --     "<leader>cdf",
+      --     "<cmd>Telescope dap frames theme=ivy<cr>",
+      --     desc = "frames",
+      --   },
+      --   {
+      --     "<leader>cda",
+      --     "<cmd>Telescope dap list_breakpoints theme=ivy<cr>",
+      --     desc = "breakpoints",
+      --   },
+      --   {
+      --     "<leader>cdv",
+      --     "<cmd>Telescope dap variables theme=ivy<cr>",
+      --     desc = "variables",
+      --   },
+      --   {
+      --     "<leader>cd;",
+      --     "<cmd>Telescope dap commands theme=dropdown<cr>",
+      --     desc = "commands",
+      --   },
+      --   {
+      --     "<leader>cdr",
+      --     function()
+      --       require("dap").repl.toggle()
+      --     end,
+      --     desc = "toggle repl",
+      --   },
+      --   {
+      --     "<leader>cdl",
+      --     function()
+      --       require("dap").run_last()
+      --     end,
+      --     desc = "run last",
+      --   },
+      -- })
     end,
-    keys = {
-      {
-        "<leader>du",
-        function()
-          require("dapui").toggle()
-        end,
-        desc = "Toggle DAP UI",
-      },
-      {
-        "<F8>",
-        function()
-          require("dap").toggle_breakpoint()
-        end,
-        desc = "Toggle breakpoint",
-      },
-      {
-        "<leader>dh",
-        function()
-          require("dap.ui.widgets").hover()
-        end,
-        desc = "Hover",
-        mode = { "n", "v" },
-      },
-      {
-        "<leader>dp",
-        function()
-          require("dap.ui.widgets").preview()
-        end,
-        desc = "Preview",
-        mode = { "n", "v" },
-      },
-      {
-        "<leader>df",
-        "<cmd>Telescope dap frames theme=ivy<cr>",
-        desc = "Frames",
-      },
-      {
-        "<leader>da",
-        "<cmd>Telescope dap list_breakpoints theme=ivy<cr>",
-        desc = "List breakpoints",
-      },
-      {
-        "<leader>dv",
-        "<cmd>Telescope dap variables theme=ivy<cr>",
-        desc = "Variables",
-      },
-      {
-        "<leader>d;",
-        "<cmd>Telescope dap commands theme=dropdown<cr>",
-        desc = "Commands",
-      },
-      {
-        "<F5>",
-        function()
-          require("dap").continue()
-        end,
-        desc = "Continue",
-      },
-      {
-        "<F10>",
-        function()
-          require("dap").step_over()
-        end,
-        desc = "Step over",
-      },
-      {
-        "<F11>",
-        function()
-          require("dap").step_into()
-        end,
-        desc = "Step into",
-      },
-      {
-        "<F12>",
-        function()
-          require("dap").step_out()
-        end,
-        desc = "Step out",
-      },
-      {
-        "<leader>dr",
-        function()
-          require("dap").repl.toggle()
-        end,
-        desc = "Toggle REPL",
-      },
-      {
-        "<leader>dl",
-        function()
-          require("dap").run_last()
-        end,
-        desc = "Run last",
-      },
-    },
   },
   {
     "numToStr/Comment.nvim",
@@ -335,6 +313,7 @@ return {
   {
     "kevinhwang91/nvim-ufo",
     dependencies = { "kevinhwang91/promise-async" },
+    enabled = false,
     event = "BufRead",
     config = function()
       vim.o.foldcolumn = "0" -- '0' is not bad
