@@ -1,6 +1,11 @@
 return {
   "tpope/vim-sleuth",
-  "mbbill/undotree",
+  {
+    "mbbill/undotree",
+    config = function()
+      vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<cr>", { desc = "undo tree", noremap = true, silent = true })
+    end
+  },
   {
     'echasnovski/mini.clue',
     version = false,
