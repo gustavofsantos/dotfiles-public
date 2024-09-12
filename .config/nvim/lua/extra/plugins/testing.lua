@@ -60,8 +60,7 @@ return {
       local setup_python_adapter = require("neotest-python")
       local beyond_py_args = {
         "-x",
-        "-vv",
-        "--log-level", "DEBUG",
+        "-v",
         "--disable-warnings",
         "--ds", "beyond_app.settings.test",
       }

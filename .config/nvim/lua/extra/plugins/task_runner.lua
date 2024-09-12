@@ -162,7 +162,7 @@ local register_beyond_tasks = function(overseer)
     name = "beyond: run tests",
     builder = function()
       return {
-        cmd = { "poetry", "run", "pytest", "--disable-warnings", "--ds", "beyond_app.settings.test", "-vv" },
+        cmd = { "poetry", "run", "pytest", "-vv", "-x", "--disable-warnings", "--ds", "beyond_app.settings.test" },
         args = { "src/beyond_app" },
         cwd = "/opt/loggi/py/apps/beyond/",
         components = { "default" },
@@ -280,7 +280,8 @@ return {
     end, {})
 
     vim.keymap.set("n", "<leader>rr", "<cmd>OverseerRun<cr>", { desc = "run", noremap = true, silent = true })
-    vim.keymap.set("n", "<leader>rl", "<cmd>OverseerRestartLast<cr>", { desc = "run last", noremap = true, silent = true })
+    vim.keymap.set("n", "<leader>rl", "<cmd>OverseerRestartLast<cr>",
+      { desc = "run last", noremap = true, silent = true })
     vim.keymap.set("n", "<leader>rt", "<cmd>OverseerToggle<cr>",
       { desc = "toggle task runner", noremap = true, silent = true })
     vim.keymap.set("n", "<leader>ro", "<cmd>OverseerToggle<cr>",
