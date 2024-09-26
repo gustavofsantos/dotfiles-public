@@ -38,7 +38,13 @@ return {
       return is_beyond_payment()
     end,
     config = function()
-      vim.cmd([[let test#strategy = "vtr"]])
+      if vim.env.TMUX then
+        vim.cmd([[let test#strategy = "vtr"]])
+      elseif vim.env.WEZTERM_PANE then
+        vim.cmd([[let test#strategy = "wezterm"]])
+      else
+        vim.cmd([[let test#strategy = "toggleterm"]])
+      end
       vim.cmd([[let test#javascript#playwright#options = "--headed --retries 0 --workers 1"]])
 
 
