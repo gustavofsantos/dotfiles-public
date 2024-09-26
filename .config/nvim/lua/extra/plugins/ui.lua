@@ -28,19 +28,20 @@ return {
               end,
             },
           },
-          lualine_b = {},
-          lualine_c = {
+          lualine_b = {
             { "filetype", colored = true, icon_only = true },
             { "filename", path = 4 },
+          },
+          lualine_c = {
             "searchcount",
             {
               "diagnostics",
               colored = true,
               sources = { "nvim_diagnostic", "nvim_workspace_diagnostic" }
             },
+            "overseer",
           },
           lualine_x = {
-            "overseer",
             {
               "diff",
               colored = true,

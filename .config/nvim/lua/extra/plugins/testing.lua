@@ -18,7 +18,13 @@ end
 
 local function default_beyond_payment_env()
   return {
-    APP_DB_HOST = "0.0.0.0",
+    APP_DB_HOST = "localhost",
+    APP_DB_PORT = "5432",
+    APP_TEST_DB_HOST = "localhost",
+    APP_TEST_DB_PORT = "5434",
+    APP_DB_NAME = "postgres",
+    APP_DB_USER = "postgres",
+    APP_DB_PASSWORD = "postgres",
   }
 end
 
@@ -26,27 +32,53 @@ end
 return {
   {
     "vim-test/vim-test",
-    enabled = false,
+    dependencies = { "christoomey/vim-tmux-runner" },
+    event = "BufRead",
+    cond = function()
+      return is_beyond_payment()
+    end,
     config = function()
-      -- vim.cmd([[let test#strategy = "neovim_sticky"]])
-      -- vim.cmd([[let test#strategy = "vtr"]])
-      vim.cmd([[let test#strategy = "toggleterm"]])
+      vim.cmd([[let test#strategy = "vtr"]])
       vim.cmd([[let test#javascript#playwright#options = "--headed --retries 0 --workers 1"]])
 
-      -- vim.cmd("autocmd VimEnter * lua local ok, err = pcall(vim.cmd, 'VtrAttachToPane 1')")
 
+      -- default mappings
       local opts = { noremap = true, silent = true }
       vim.keymap.set("n", "<leader>tn", "<cmd>TestNearest<cr>", opts)
       vim.keymap.set("n", "<leader>tf", "<cmd>TestFile<cr>", opts)
       vim.keymap.set("n", "<leader>ta", "<cmd>TestSuite<cr>", opts)
       vim.keymap.set("n", "<leader>tl", "<cmd>TestLast<cr>", opts)
       vim.keymap.set("n", "<leader>tv", "<cmd>TestVisit<cr>", opts)
+
+      if is_beyond_py() then
+        vim.cmd([[let test#python#runner = "pytest"]])
+        vim.cmd([[let test#python#pytest#options = "-x -vv --disable-warnings -q --pdb  --ds beyond_app.settings.test"]])
+
+        vim.keymap.set("n", "<leader>tn",
+          "<cmd>TestNearest POSTGRES_DB=dev_db POSTGRES_PASSWORD=postgres POSTGRES_HOST=localhost POSTGRES_PORT=5432<CR>",
+          opts)
+        vim.keymap.set("n", "<leader>tf",
+          "<cmd>TestFile POSTGRES_DB=dev_db POSTGRES_PASSWORD=postgres POSTGRES_HOST=localhost POSTGRES_PORT=5432<CR>",
+          opts)
+        vim.keymap.set("n", "<leader>ta",
+          "<cmd>TestSuite POSTGRES_DB=dev_db POSTGRES_PASSWORD=postgres POSTGRES_HOST=localhost POSTGRES_PORT=5432<CR>",
+          opts)
+        vim.keymap.set("n", "<leader>tl",
+          "<cmd>TestLast POSTGRES_DB=dev_db POSTGRES_PASSWORD=postgres POSTGRES_HOST=localhost POSTGRES_PORT=5432<CR>",
+          opts)
+      elseif is_beyond_payment() then
+        vim.cmd([[let test#python#runner = "pytest"]])
+        vim.cmd([[let test#python#pytest#executable = "poe test"]])
+        vim.cmd([[let test#python#pytest#options = ""]])
+      end
     end,
   },
   {
     "nvim-neotest/neotest",
     tag = "v5.3.5",
-    enabled = true,
+    cond = function()
+      return not is_beyond_payment()
+    end,
     dependencies = {
       "nvim-neotest/nvim-nio",
       "nvim-neotest/neotest-python",
@@ -60,13 +92,19 @@ return {
       local setup_python_adapter = require("neotest-python")
       local beyond_py_args = {
         "-x",
-        "-v",
+        "-vv",
         "--disable-warnings",
         "--ds", "beyond_app.settings.test",
+      }
+      local beyond_payments_arsgs = {
+        "-vv",
+        "-o", "log_cli=true",
       }
       local python_args = {}
       if is_beyond_py() then
         python_args = beyond_py_args
+      elseif is_beyond_payment() then
+        python_args = beyond_payments_arsgs
       end
 
       vim.o.signcolumn = "yes"
@@ -133,6 +171,16 @@ return {
           end
         end,
         { noremap = true, silent = true, desc = "test file" })
+      vim.keymap.set("n",
+        "<leader>twf",
+        function()
+          if is_beyond_py() then
+            require("neotest").watch.toggle({ vim.fn.expand("%"), env = default_beyond_env() })
+          else
+            require("neotest").watch.toggle(vim.fn.expand("%"))
+          end
+        end,
+        { noremap = true, silent = true, desc = "toggle watch test file" })
 
 
       -- vim.keymap.set("n",
