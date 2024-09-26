@@ -12,7 +12,7 @@ return {
     config = function()
       local miniclue = require('mini.clue')
       miniclue.setup({
-        window = { delay = 300 },
+        window = { delay = 500 },
         triggers = {
           -- Leader triggers
           { mode = 'n', keys = '<Leader>' },
