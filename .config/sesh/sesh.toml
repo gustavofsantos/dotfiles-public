@@ -1,7 +1,14 @@
 [[session]]
 name = "nvim config"
 path = "~/.config/nvim"
-startup_command = "nvim -c ':Telescope find_files'"
+
+[[session]]
+name = "wezterm config"
+path = "~/.config/wezterm"
+
+[[session]]
+name = "kitty config"
+path = "~/.config/kitty"
 
 [[session]]
 name = "home"
@@ -10,7 +17,6 @@ path = "~"
 [[session]]
 name = "Beyond PY"
 path = "~/loggi/py/apps/beyond"
-startup_command = "start-project-session.sh"
 
 [[session]]
 name = "Beyond UI"
@@ -19,15 +25,13 @@ path = "~/loggi/ui/targets/beyond"
 [[session]]
 name = "Loggi Requests"
 path = "~/loggi/loggi-requests"
-startup_command = "nvim -c ':Telescope find_files'"
 
 [[session]]
 name = "Loggi xproto"
 path = "~/loggi/xproto"
-startup_command = "nvim -c ':Telescope find_files'"
 
 [[session]]
-name = "Loggi ledger"
+name = "Loggi Wallet"
 path = "~/loggi/wallet-api"
 
 [[session]]
