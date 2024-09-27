@@ -58,7 +58,7 @@ return {
     priority = 1000,
     config = function()
       require("kanagawa").setup({
-        dimInactive = false,
+        dimInactive = true,
         globalStatus = true,
         commentStyle = { italic = true },
         functionStyle = { italic = false },
@@ -89,6 +89,7 @@ return {
           vim.api.nvim_set_hl(0, "NeotestPassed", { fg = colors.theme.diff.add })
           vim.api.nvim_set_hl(0, "NeotestRunning", { fg = colors.theme.diff.text })
           vim.api.nvim_set_hl(0, "NeotestFailed", { fg = colors.theme.diff.delete })
+
 
           return {
             Constant = { fg = colors.palette.fujiWhite },
@@ -128,6 +129,11 @@ return {
             -- NeotestWinSelect
             -- NeotestMarked
             -- NeotestTarget
+
+            Pmenu = { fg = colors.theme.ui.shade0, bg = colors.theme.ui.bg_p1 }, -- add `blend = vim.o.pumblend` to enable transparency
+            PmenuSel = { fg = "NONE", bg = colors.theme.ui.bg_p2 },
+            PmenuSbar = { bg = colors.theme.ui.bg_m1 },
+            PmenuThumb = { bg = colors.theme.ui.bg_p2 },
 
             ["@type"] = { italic = false, bold = true },
             ["@tag"] = { italic = false },
