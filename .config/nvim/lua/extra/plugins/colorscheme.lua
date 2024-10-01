@@ -32,6 +32,10 @@ return {
     },
   },
   {
+    "metalelf0/jellybeans-nvim",
+    dependencies = { "rktjmp/lush.nvim" },
+  },
+  {
     "gbprod/nord.nvim",
     lazy = false,
     priority = 1000,
