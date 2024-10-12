@@ -2,6 +2,7 @@ return {
   { "cocopon/iceberg.vim" },
   { "aktersnurra/no-clown-fiesta.nvim" },
   { "loctvl842/monokai-pro.nvim" },
+  { "vague2k/vague.nvim" },
   {
     "maxmx03/solarized.nvim",
     opts = {
@@ -62,7 +63,7 @@ return {
     priority = 1000,
     config = function()
       require("kanagawa").setup({
-        dimInactive = true,
+        dimInactive = false,
         globalStatus = true,
         commentStyle = { italic = true },
         functionStyle = { italic = false },

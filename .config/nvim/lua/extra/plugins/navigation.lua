@@ -76,6 +76,7 @@ return {
       },
       {
         "danielfalk/smart-open.nvim",
+        enabled = false,
         branch = "0.2.x",
         dependencies = {
           "kkharji/sqlite.lua",
@@ -139,7 +140,7 @@ return {
           git_files = {
             prompt_prefix = " ",
             previewer = true,
-            theme= "dropdown",
+            theme = "dropdown",
             disable_devicons = false,
           },
           commands = {
@@ -214,7 +215,7 @@ return {
         },
       })
 
-      telescope.load_extension("smart_open")
+      -- telescope.load_extension("smart_open")
       telescope.load_extension("dap")
 
       -- launch control
@@ -342,7 +343,7 @@ return {
       vim.keymap.set("n", "gk", "<cmd>LaunchControl<cr>", { desc = "launch control" })
       vim.keymap.set("n", "<leader>p", "<cmd>Telescope find_files<cr>",
         { desc = "find file", noremap = true, silent = true })
-      vim.keymap.set("n", "<leader>o", "<cmd>Telescope smart_open cwd_only=true<cr>",
+      vim.keymap.set("n", "<leader>o", "<cmd>Telescope find_files<cr>",
         { desc = "find file", noremap = true, silent = true })
       vim.keymap.set("n", "<leader>e", "<cmd>Telescope oldfiles<cr>",
         { desc = "find recent", noremap = true, silent = true })
