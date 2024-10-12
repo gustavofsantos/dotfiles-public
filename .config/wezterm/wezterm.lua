@@ -73,7 +73,7 @@ config.color_scheme = "Kanagawa"
 
 -- config.font = wezterm.font("MonoLisa Nerd Font")
 config.font = wezterm.font("BerkeleyMono Nerd Font")
-config.font_size = 14
+config.font_size = 12
 config.freetype_load_flags = "NO_HINTING"
 config.freetype_load_target = "Normal"
 config.line_height = 1.2

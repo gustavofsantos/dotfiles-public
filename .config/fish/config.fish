@@ -51,9 +51,5 @@ if test -f /home/gustavo/anaconda3/bin/conda
 end
 # <<< conda initialize <<<
 
-
-pyenv init - | source
-pyenv virtualenv-init - | source
-
 zoxide init fish | source
 starship init fish | source
