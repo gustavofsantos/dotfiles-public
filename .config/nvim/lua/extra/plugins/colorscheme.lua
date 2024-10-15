@@ -1,32 +1,8 @@
 return {
-  -- {
-  --   "gustavofsantos/solarized.nvim",
-  --   priority = 1000,
-  --   enabled = true,
-  --   config = function()
-  --     require("solarized").setup()
-  --     vim.cmd([[colorscheme solarized]])
-  --   end,
-  -- },
-  -- "ronisbr/nano-theme.nvim",
-  -- "loctvl842/monokai-pro.nvim",
-  -- "nyoom-engineering/oxocarbon.nvim",
-  -- "kvrohit/rasmus.nvim",
-  -- "roobert/palette.nvim",
-  -- {
-  --   dir = "~/Code/solarized.nvim",
-  --   enabled = false,
-  -- },
-  {
-    dir = "~/Code/old_school.nvim",
-    enabled = false,
-    config = function()
-      vim.cmd.colorscheme("old_school")
-    end,
-  },
   { "cocopon/iceberg.vim" },
   { "aktersnurra/no-clown-fiesta.nvim" },
   { "loctvl842/monokai-pro.nvim" },
+  { "vague2k/vague.nvim" },
   {
     "maxmx03/solarized.nvim",
     opts = {
@@ -37,7 +13,7 @@ return {
         numbers = {},
         constants = { bold = true },
         parameters = {},
-        keywords = { italic = true },
+        keywords = { italic = false, bold = true },
         types = {},
       },
       highlights = function(colors, colorhelper)
@@ -55,9 +31,10 @@ return {
         }
       end,
     },
-    init = function()
-      -- vim.cmd.colorscheme("solarized")
-    end,
+  },
+  {
+    "metalelf0/jellybeans-nvim",
+    dependencies = { "rktjmp/lush.nvim" },
   },
   {
     "gbprod/nord.nvim",
@@ -65,37 +42,19 @@ return {
     priority = 1000,
     config = function()
       require("nord").setup({})
-      -- vim.cmd.colorscheme("nord")
-    end,
-  },
-  {
-    "mcchrish/zenbones.nvim",
-    dependencies = { "rktjmp/lush.nvim" },
-    lazy = false,
-    enabled = true,
-    init = function()
-      -- vim.cmd.colorscheme("neobones")
     end,
   },
   {
     "miikanissi/modus-themes.nvim",
-    priority = 1000,
-    enabled = true,
-    -- config = function()
-    --   vim.cmd.colorscheme("modus_vivendi")
-    -- end,
   },
   {
     "AlexvZyl/nordic.nvim",
     lazy = false,
     priority = 1000,
     enabled = true,
-    -- config = function()
-    --   require("nordic").setup({})
-    -- end,
-    -- init = function()
-    --   vim.cmd.colorscheme("nordic")
-    -- end,
+    config = function()
+      require("nordic").setup({})
+    end,
   },
   {
     "rebelot/kanagawa.nvim",
@@ -136,6 +95,7 @@ return {
           vim.api.nvim_set_hl(0, "NeotestRunning", { fg = colors.theme.diff.text })
           vim.api.nvim_set_hl(0, "NeotestFailed", { fg = colors.theme.diff.delete })
 
+
           return {
             Constant = { fg = colors.palette.fujiWhite },
 
@@ -175,6 +135,11 @@ return {
             -- NeotestMarked
             -- NeotestTarget
 
+            Pmenu = { fg = colors.theme.ui.shade0, bg = colors.theme.ui.bg_p1 }, -- add `blend = vim.o.pumblend` to enable transparency
+            PmenuSel = { fg = "NONE", bg = colors.theme.ui.bg_p2 },
+            PmenuSbar = { bg = colors.theme.ui.bg_m1 },
+            PmenuThumb = { bg = colors.theme.ui.bg_p2 },
+
             ["@type"] = { italic = false, bold = true },
             ["@tag"] = { italic = false },
             ["@tag.delimiter"] = { fg = colors.palette.sumiInk6 },
@@ -188,7 +153,7 @@ return {
     end,
     init = function()
       -- vim.cmd("set background=light")
-      vim.cmd.colorscheme("kanagawa")
+      -- vim.cmd.colorscheme("kanagawa")
     end,
   },
   {
@@ -205,50 +170,50 @@ return {
     lazy = false,
     priority = 1000,
     enabled = true,
-    -- config = function()
-    --   local bg = vim.o.background
-    --   local palette = require("gruvbox").palette
-    --
-    --   require("gruvbox").setup({
-    --     terminal_colors = true,
-    --     italic = {
-    --       strings = false,
-    --       emphasis = false,
-    --       comments = true,
-    --       operators = false,
-    --       folds = true,
-    --     },
-    --     contrast = "hard",
-    --     dim_inactive = false,
-    --     transparent_mode = false,
-    --     overrides = {
-    --       -- SignColumn = { bg = palette.dark0 },
-    --       -- Function = { fg = palette.bright_green, italic = true, bold = false },
-    --       ["@property"] = {
-    --         fg = bg == "dark" and palette.bright_blue or palette.faded_blue,
-    --         italic = true,
-    --         bold = false,
-    --       },
-    --       ["@field"] = { link = "@property" },
-    --       ["@keyword"] = {
-    --         fg = bg == "dark" and palette.bright_purple or palette.faded_purple,
-    --         italic = true,
-    --         bold = false,
-    --       },
-    --       ["@boolean"] = {
-    --         fg = bg == "dark" and palette.bright_purple or palette.faded_purple,
-    --         italic = false,
-    --         bold = true,
-    --       },
-    --       ["@punctuation.delimiter"] = { fg = palette.gray },
-    --       ["@punctuation.bracket"] = { fg = palette.gray },
-    --       ["@tag.delimiter"] = { fg = palette.gray },
-    --       ["@lsp.type.parameter"] = { fg = palette.light1 },
-    --       ["@lsp.type.property"] = { link = "@property" },
-    --     },
-    --   })
-    --
-    --   vim.cmd.colorscheme("gruvbox")
-    -- end,
+    config = function()
+      local bg = vim.o.background
+      local palette = require("gruvbox").palette
+
+      require("gruvbox").setup({
+        terminal_colors = true,
+        italic = {
+          strings = false,
+          emphasis = false,
+          comments = true,
+          operators = false,
+          folds = true,
+        },
+        contrast = "hard",
+        dim_inactive = false,
+        transparent_mode = false,
+        overrides = {
+          -- SignColumn = { bg = palette.dark0 },
+          -- Function = { fg = palette.bright_green, italic = true, bold = false },
+          ["@property"] = {
+            fg = bg == "dark" and palette.bright_blue or palette.faded_blue,
+            italic = true,
+            bold = false,
+          },
+          ["@field"] = { link = "@property" },
+          ["@keyword"] = {
+            fg = bg == "dark" and palette.bright_purple or palette.faded_purple,
+            italic = true,
+            bold = false,
+          },
+          ["@boolean"] = {
+            fg = bg == "dark" and palette.bright_purple or palette.faded_purple,
+            italic = false,
+            bold = true,
+          },
+          ["@punctuation.delimiter"] = { fg = palette.gray },
+          ["@punctuation.bracket"] = { fg = palette.gray },
+          ["@tag.delimiter"] = { fg = palette.gray },
+          ["@lsp.type.parameter"] = { fg = palette.light1 },
+          ["@lsp.type.property"] = { link = "@property" },
+        },
+      })
+
+      -- vim.cmd.colorscheme("gruvbox")
+    end,
   },
 }

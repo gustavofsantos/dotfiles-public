@@ -1,8 +1,9 @@
 local wezterm = require("wezterm")
+local sessionizer = require("sessionizer")
 local act = wezterm.action
 
 wezterm.on("update-right-status", function(window, pane)
-    local date = wezterm.strftime("%Y-%m-%d %H:%M:%S")
+    local date = wezterm.strftime("%Y-%m-%d %H:%M")
 
     window:set_right_status(wezterm.format({
         { Text = date },
@@ -73,7 +74,7 @@ config.color_scheme = "Kanagawa"
 
 -- config.font = wezterm.font("MonoLisa Nerd Font")
 config.font = wezterm.font("BerkeleyMono Nerd Font")
-config.font_size = 14
+config.font_size = 12
 config.freetype_load_flags = "NO_HINTING"
 config.freetype_load_target = "Normal"
 config.line_height = 1.2
@@ -229,7 +230,7 @@ config.keys = {
     {
         key = "o",
         mods = "LEADER",
-        action = wezterm.action.RotatePanes("Clockwise"),
+        action = wezterm.action_callback(sessionizer.toggle),
     },
     {
         key = "n",

@@ -274,3 +274,4 @@ miniconda3/
 .config/sq/
 .vscode-remote-containers/
 .config/cosmic/
+.sqlite_history

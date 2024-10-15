@@ -50,7 +50,6 @@ in
     pkgs.erlang
     pkgs.zulu17
     pkgs.clojure
-    pkgs.ghc
 
     # tools
     pkgs.btop
@@ -59,12 +58,6 @@ in
     pkgs.starship
     pkgs.sheldon
     pkgs.grc
-    pkgs.zsh
-    pkgs.fish
-    pkgs.fishPlugins.z
-    pkgs.fishPlugins.grc
-    pkgs.fishPlugins.fzf
-    pkgs.fishPlugins.forgit
     pkgs.powershell
     pkgs.elixir-ls
     pkgs.gh

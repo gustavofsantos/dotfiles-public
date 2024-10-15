@@ -1,6 +1,5 @@
 return {
   -- "christoomey/vim-tmux-navigator",
-  -- "christoomey/vim-tmux-runner",
   {
     "numToStr/Navigator.nvim",
     event = "VeryLazy",
@@ -14,15 +13,15 @@ return {
   },
   { -- stevearc/oil.nvim
     "stevearc/oil.nvim",
-    opts = {
-      default_file_explorer = false,
-      skip_confirm_for_simple_edits = true,
-    },
     event = "VeryLazy",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    keys = {
-      { "-", "<cmd>Oil<cr>", { desc = "Open oil" } },
-    },
+    config = function()
+      require("oil").setup({
+        default_file_explorer = false,
+        skip_confirm_for_simple_edits = true,
+      })
+      vim.keymap.set("n", "-", "<cmd>Oil<cr>", { desc = "Open oil" })
+    end,
   },
   { -- ThePrimeagen/harpoon
     "ThePrimeagen/harpoon",
@@ -32,52 +31,37 @@ return {
     config = function()
       local harpoon = require('harpoon')
       harpoon:setup({})
+
+      vim.keymap.set("n", "<leader>a",
+        function() harpoon:list():add() end,
+        { desc = "harpoon file" }
+      )
+
+      vim.keymap.set("n", "gh",
+        function() harpoon.ui:toggle_quick_menu(harpoon:list()) end,
+        { desc = "toggle harpoon" }
+      )
+
+      vim.keymap.set("n", "<M-1>",
+        function() harpoon:list():select(1) end,
+        { desc = "slot 1" }
+      )
+
+      vim.keymap.set("n", "<M-2>",
+        function() harpoon:list():select(2) end,
+        { desc = "slot 2" }
+      )
+
+      vim.keymap.set("n", "<M-3>",
+        function() harpoon:list():select(3) end,
+        { desc = "slot 3" }
+      )
+
+      vim.keymap.set("n", "<M-4>",
+        function() harpoon:list():select(4) end,
+        { desc = "slot 4" }
+      )
     end,
-    keys = {
-      {
-        "<leader>a",
-        function()
-          require("harpoon"):list():add()
-        end,
-        { desk = "Add file to harpoon" },
-      },
-      {
-        "gh",
-        function()
-          local hp = require("harpoon")
-          hp.ui:toggle_quick_menu(hp:list())
-        end,
-        { desk = "View marks" },
-      },
-      {
-        "<M-1>",
-        function()
-          require("harpoon"):list():select(1)
-        end,
-        { desk = "Navigate to file in slot 1" },
-      },
-      {
-        "<M-2>",
-        function()
-          require("harpoon"):list():select(2)
-        end,
-        { desk = "Navigate to file in slot 2" },
-      },
-      {
-        "<M-3>",
-        function()
-          require("harpoon"):list():select(3)
-        end,
-        { desk = "Navigate to file in slot 3" },
-      },
-      {
-        "<M-4>",
-        function()
-          require("harpoon"):list():select(4)
-        end,
-        { desk = "Navigate to file in slot 4" },
-      },
-    },
   },
   { -- nvim-telescope/telescope.nvim
     "nvim-telescope/telescope.nvim",
@@ -92,6 +76,7 @@ return {
       },
       {
         "danielfalk/smart-open.nvim",
+        enabled = false,
         branch = "0.2.x",
         dependencies = {
           "kkharji/sqlite.lua",
@@ -144,29 +129,27 @@ return {
           live_grep = {
             prompt_prefix = " ",
             previewer = true,
-            theme = "ivy",
             disable_devicons = false,
           },
           grep_string = {
             prompt_prefix = " ",
             previewer = true,
             prompt_title = false,
-            theme = "ivy",
             disable_devicons = false,
           },
           git_files = {
             prompt_prefix = " ",
             previewer = true,
-            theme = "ivy",
+            theme = "dropdown",
             disable_devicons = false,
           },
           commands = {
-            theme = "ivy",
+            theme = "dropdown",
           },
           current_buffer_fuzzy_find = {
             prompt_prefix = " ",
             previewer = true,
-            theme = "ivy",
+            theme = "dropdown",
           },
           lsp_references = {
             previewer = true,
@@ -232,7 +215,7 @@ return {
         },
       })
 
-      telescope.load_extension("smart_open")
+      -- telescope.load_extension("smart_open")
       telescope.load_extension("dap")
 
       -- launch control
@@ -360,7 +343,7 @@ return {
       vim.keymap.set("n", "gk", "<cmd>LaunchControl<cr>", { desc = "launch control" })
       vim.keymap.set("n", "<leader>p", "<cmd>Telescope find_files<cr>",
         { desc = "find file", noremap = true, silent = true })
-      vim.keymap.set("n", "<leader>o", "<cmd>Telescope smart_open cwd_only=true theme=dropdown<cr>",
+      vim.keymap.set("n", "<leader>o", "<cmd>Telescope find_files<cr>",
         { desc = "find file", noremap = true, silent = true })
       vim.keymap.set("n", "<leader>e", "<cmd>Telescope oldfiles<cr>",
         { desc = "find recent", noremap = true, silent = true })

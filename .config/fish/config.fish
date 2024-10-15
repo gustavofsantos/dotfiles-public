@@ -46,14 +46,10 @@ end
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-if test -f /home/gustavo/anaconda3/bin/conda
-    eval /home/gustavo/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+if test -f "$HOME/anaconda3/bin/conda"
+    eval "$HOME/anaconda3/bin/conda" "shell.fish" "hook" $argv | source
 end
 # <<< conda initialize <<<
-
-
-pyenv init - | source
-pyenv virtualenv-init - | source
 
 zoxide init fish | source
 starship init fish | source
