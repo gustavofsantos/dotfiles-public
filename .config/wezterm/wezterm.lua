@@ -1,8 +1,9 @@
 local wezterm = require("wezterm")
+local sessionizer = require("sessionizer")
 local act = wezterm.action
 
 wezterm.on("update-right-status", function(window, pane)
-    local date = wezterm.strftime("%Y-%m-%d %H:%M:%S")
+    local date = wezterm.strftime("%Y-%m-%d %H:%M")
 
     window:set_right_status(wezterm.format({
         { Text = date },
@@ -229,7 +230,7 @@ config.keys = {
     {
         key = "o",
         mods = "LEADER",
-        action = wezterm.action.RotatePanes("Clockwise"),
+        action = wezterm.action_callback(sessionizer.toggle),
     },
     {
         key = "n",
