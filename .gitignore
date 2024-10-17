@@ -275,3 +275,5 @@ miniconda3/
 .vscode-remote-containers/
 .config/cosmic/
 .sqlite_history
+.tsh
+.pg_service.conf
