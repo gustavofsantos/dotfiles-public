@@ -98,6 +98,9 @@ in
     pkgs.babashka
     pkgs.cabal-install
     pkgs.sq
+
+    # databases
+    pkgs.postgresql
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
