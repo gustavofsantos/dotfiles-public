@@ -69,15 +69,16 @@ local config = {}
 
 
 config.automatically_reload_config = false
+config.default_cursor_style = "BlinkingBlock"
 config.force_reverse_video_cursor = true
-config.color_scheme = "Kanagawa"
+config.color_scheme = "Poimandres"
 
 -- config.font = wezterm.font("MonoLisa Nerd Font")
 config.font = wezterm.font("BerkeleyMono Nerd Font")
-config.font_size = 12
+config.font_size = 14
 config.freetype_load_flags = "NO_HINTING"
 config.freetype_load_target = "Normal"
-config.line_height = 1.2
+config.line_height = 1.35
 config.harfbuzz_features = { "clig=1", "liga=1" }
 config.bold_brightens_ansi_colors = false
 config.warn_about_missing_glyphs = false
@@ -87,10 +88,10 @@ config.window_background_opacity = 1.0
 config.window_close_confirmation = "NeverPrompt"
 
 config.window_padding = {
-    left = 8,
-    right = 8,
-    top = 8,
-    bottom = 8,
+    left = 16,
+    right = 16,
+    top = 16,
+    bottom = 16,
 }
 
 config.use_fancy_tab_bar = false
