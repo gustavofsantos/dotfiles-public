@@ -10,27 +10,33 @@ return {
   },
   { -- lualine
     "nvim-lualine/lualine.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    dependencies = { "nvim-tree/nvim-web-devicons", "arkav/lualine-lsp-progress", "letieu/harpoon-lualine" },
     config = function()
       require("lualine").setup({
         options = {
           globalstatus = true,
           section_separators = "",
-          component_separators = "",
+          component_separators = { left = '', right = '' },
         },
         sections = {
           lualine_a = {
             {
               "mode",
-              draw_empty = true,
-              padding = 0,
-              fmt = function()
-                return " "
-              end,
+              -- draw_empty = true,
+              -- padding = 0,
+              -- fmt = function()
+              --   return " "
+              -- end,
+            },
+          },
+          lualine_b = {
+            {
+              "branch",
+              icon = "",
             },
           },
           lualine_c = {
-            { "filetype", colored = true, icon_only = true },
+            { "filetype", colored = false, icon_only = true },
             { "filename", path = 1 },
             "searchcount",
             {
@@ -42,6 +48,10 @@ return {
           },
           lualine_x = {
             {
+              "lsp_progress",
+              display_components = { 'lsp_client_name', { 'percentage' } }
+            },
+            {
               "diff",
               colored = true,
               symbols = {
@@ -51,8 +61,11 @@ return {
               }
             }
           },
-          lualine_y = {},
-          lualine_z = {},
+          lualine_y = {
+            "harpoon2",
+            "location",
+          },
+          lualine_z = { "progress" },
         },
         inactive_sections = {
           lualine_a = {},
@@ -60,12 +73,12 @@ return {
           lualine_c = {
             {
               "filetype",
-              colored = true,
+              colored = false,
               icon_only = true
             },
             {
               "filename",
-              path = 4
+              path = 1
             },
             {
               "diagnostics",
@@ -81,7 +94,6 @@ return {
           lualine_a = {},
           lualine_b = {},
           lualine_c = {
-            { "filetype", colored = true, icon_only = true },
             { "filename", path = 4 },
             "searchcount",
           },
@@ -93,7 +105,6 @@ return {
           lualine_a = {},
           lualine_b = {},
           lualine_c = {
-            { "filetype", colored = true, icon_only = true },
             { "filename", path = 4 },
           },
           lualine_x = {},

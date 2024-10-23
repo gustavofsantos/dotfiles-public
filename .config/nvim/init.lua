@@ -22,7 +22,7 @@ require("lazy").setup({
   { import = "extra.plugins" },
 }, {
   install = {
-    colorscheme = { "kanagawa" },
+    colorscheme = { "poimandres" },
   },
   checker = {
     enabled = false,
@@ -33,4 +33,4 @@ require("lazy").setup({
   },
 })
 
-vim.cmd.colorscheme("kanagawa")
+vim.cmd.colorscheme("poimandres")

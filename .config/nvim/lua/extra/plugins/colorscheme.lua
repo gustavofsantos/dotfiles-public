@@ -4,6 +4,42 @@ return {
   { "loctvl842/monokai-pro.nvim" },
   { "vague2k/vague.nvim" },
   {
+    'olivercederborg/poimandres.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require('poimandres').setup {
+        bold_vert_split = false,          -- use bold vertical separators
+        dim_nc_background = false,        -- dim 'non-current' window backgrounds
+        disable_background = true,        -- disable background
+        disable_float_background = false, -- disable background for floats
+        disable_italics = false,          -- disable italics
+      }
+    end,
+  },
+  {
+    "craftzdog/solarized-osaka.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      transparent = false,
+      terminal_colors = true,
+      styles = {
+        comments = { italic = true },
+        keywords = { italic = true },
+        functions = {},
+        variables = {},
+        sidebars = "dark",
+        floats = "dark",
+      },
+      sidebars = { "qf", "help" },
+      day_brightness = 0.3,
+      hide_inactive_statusline = false,
+      dim_inactive = false,
+      lualine_bold = false,
+    },
+  },
+  {
     "maxmx03/solarized.nvim",
     opts = {
       styles = {
