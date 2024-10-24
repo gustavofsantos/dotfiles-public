@@ -71,7 +71,7 @@ local config = {}
 config.automatically_reload_config = false
 config.default_cursor_style = "BlinkingBlock"
 config.force_reverse_video_cursor = true
-config.color_scheme = "Poimandres"
+config.color_scheme = "Kanagawa"
 
 -- config.font = wezterm.font("MonoLisa Nerd Font")
 config.font = wezterm.font("BerkeleyMono Nerd Font")
@@ -84,7 +84,7 @@ config.bold_brightens_ansi_colors = false
 config.warn_about_missing_glyphs = false
 
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 1.0
+config.window_background_opacity = 0.98
 config.window_close_confirmation = "NeverPrompt"
 
 config.window_padding = {

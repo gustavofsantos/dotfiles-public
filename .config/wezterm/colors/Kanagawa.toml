@@ -1,3 +1,6 @@
+[metadata]
+name = 'Kanagawa'
+
 [colors]
 foreground = "#dcd7ba"
 background = "#1f1f28"
@@ -35,8 +38,8 @@ brights = [
 
 
 [colors.tab_bar]
-background = "#1f1f28"
-inactive_tab_edge = "#1f1f28"
+background = "#16161d"
+inactive_tab_edge = "#16161d"
 inactive_tab_edge_hover = "#586069"
 
 [colors.tab_bar.active_tab]
@@ -48,32 +51,32 @@ strikethrough = false
 underline = "None"
 
 [colors.tab_bar.inactive_tab]
-bg_color = "#1f1f28"
-fg_color = "#c8c093"
+bg_color = "#16161d"
+fg_color = "#727169"
 intensity = "Normal"
 italic = false
 strikethrough = false
 underline = "None"
 
 [colors.tab_bar.inactive_tab_hover]
-bg_color = "#1f1f28"
-fg_color = "#dcd7ba"
+bg_color = "#16161d"
+fg_color = "#727169"
 intensity = "Normal"
 italic = false
 strikethrough = false
 underline = "None"
 
 [colors.tab_bar.new_tab]
-bg_color = "#1f1f28"
-fg_color = "#c8c093"
+bg_color = "#16161d"
+fg_color = "#727169"
 intensity = "Normal"
 italic = false
 strikethrough = false
 underline = "None"
 
 [colors.tab_bar.new_tab_hover]
-bg_color = "#1f1f28"
-fg_color = "#dcd7ba"
+bg_color = "#16161d"
+fg_color = "#727169"
 intensity = "Normal"
 italic = false
 strikethrough = false
