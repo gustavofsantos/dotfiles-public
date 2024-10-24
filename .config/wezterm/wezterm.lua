@@ -1,5 +1,6 @@
 local wezterm = require("wezterm")
 local sessionizer = require("sessionizer")
+local utils = require("utils")
 local act = wezterm.action
 
 wezterm.on("update-right-status", function(window, pane)
@@ -33,15 +34,8 @@ wezterm.on("user-var-changed", function(window, pane, name, value)
     window:set_config_overrides(overrides)
 end)
 
-local function isViProcess(pane)
-    -- get_foreground_process_name On Linux, macOS and Windows,
-    -- the process can be queried to determine this path. Other operating systems
-    -- (notably, FreeBSD and other unix systems) are not currently supported
-    return pane:get_foreground_process_name():find('n?vim') ~= nil or pane:get_title():find("n?vim") ~= nil
-end
-
 local function conditionalActivatePane(window, pane, pane_direction, vim_direction)
-    if isViProcess(pane) then
+    if utils.is_vi_process(pane) then
         window:perform_action(
         -- This should match the keybinds you set in Neovim.
             act.SendKey({ key = vim_direction, mods = 'CTRL' }),
