@@ -1,75 +1,43 @@
 local wezterm = require("wezterm")
 local sessionizer = require("sessionizer")
-local utils = require("utils")
+require("navigation").setup()
+require("statusline").setup()
+
 local act = wezterm.action
 
-wezterm.on("update-right-status", function(window, pane)
-    local date = wezterm.strftime("%Y-%m-%d %H:%M")
+-- wezterm.on("user-var-changed", function(window, pane, name, value)
+--     local overrides = window:get_config_overrides() or {}
+--     if name == "ZEN_MODE" then
+--         local incremental = value:find("+")
+--         local number_value = tonumber(value)
+--         if incremental ~= nil then
+--             while number_value > 0 do
+--                 window:perform_action(wezterm.action.IncreaseFontSize, pane)
+--                 number_value = number_value - 1
+--             end
+--             overrides.enable_tab_bar = false
+--         elseif number_value < 0 then
+--             window:perform_action(wezterm.action.ResetFontSize, pane)
+--             overrides.font_size = nil
+--             overrides.enable_tab_bar = true
+--         else
+--             overrides.font_size = number_value
+--             overrides.enable_tab_bar = false
+--         end
+--     end
+--     window:set_config_overrides(overrides)
+-- end)
 
-    window:set_right_status(wezterm.format({
-        { Text = date },
-    }))
-end)
-
-wezterm.on("user-var-changed", function(window, pane, name, value)
-    local overrides = window:get_config_overrides() or {}
-    if name == "ZEN_MODE" then
-        local incremental = value:find("+")
-        local number_value = tonumber(value)
-        if incremental ~= nil then
-            while number_value > 0 do
-                window:perform_action(wezterm.action.IncreaseFontSize, pane)
-                number_value = number_value - 1
-            end
-            overrides.enable_tab_bar = false
-        elseif number_value < 0 then
-            window:perform_action(wezterm.action.ResetFontSize, pane)
-            overrides.font_size = nil
-            overrides.enable_tab_bar = true
-        else
-            overrides.font_size = number_value
-            overrides.enable_tab_bar = false
-        end
-    end
-    window:set_config_overrides(overrides)
-end)
-
-local function conditionalActivatePane(window, pane, pane_direction, vim_direction)
-    if utils.is_vi_process(pane) then
-        window:perform_action(
-        -- This should match the keybinds you set in Neovim.
-            act.SendKey({ key = vim_direction, mods = 'CTRL' }),
-            pane
-        )
-    else
-        window:perform_action(act.ActivatePaneDirection(pane_direction), pane)
-    end
-end
-
-wezterm.on('ActivatePaneDirection-right', function(window, pane)
-    conditionalActivatePane(window, pane, 'Right', 'l')
-end)
-wezterm.on('ActivatePaneDirection-left', function(window, pane)
-    conditionalActivatePane(window, pane, 'Left', 'h')
-end)
-wezterm.on('ActivatePaneDirection-up', function(window, pane)
-    conditionalActivatePane(window, pane, 'Up', 'k')
-end)
-wezterm.on('ActivatePaneDirection-down', function(window, pane)
-    conditionalActivatePane(window, pane, 'Down', 'j')
-end)
 
 local config = {}
 
-
 config.automatically_reload_config = false
-config.default_cursor_style = "BlinkingBlock"
 config.force_reverse_video_cursor = true
 config.color_scheme = "Kanagawa"
 
 -- config.font = wezterm.font("MonoLisa Nerd Font")
 config.font = wezterm.font("BerkeleyMono Nerd Font")
-config.font_size = 14
+config.font_size = 12
 config.freetype_load_flags = "NO_HINTING"
 config.freetype_load_target = "Normal"
 config.line_height = 1.35
@@ -90,7 +58,7 @@ config.window_padding = {
 
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
-config.hide_tab_bar_if_only_one_tab = true
+config.hide_tab_bar_if_only_one_tab = false
 config.tab_max_width = 999999
 
 for _, gpu in ipairs(wezterm.gui.enumerate_gpus()) do
