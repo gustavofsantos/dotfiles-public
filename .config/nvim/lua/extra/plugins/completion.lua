@@ -135,19 +135,4 @@ return {
       -- require("copilot_cmp").setup()
     end,
   },
-  {
-    "tpope/vim-dadbod",
-    dependencies = { "kristijanhusak/vim-dadbod-ui", "kristijanhusak/vim-dadbod-completion" },
-    ft = { "sql" },
-    cmd = {
-      'DBUI',
-      'DBUIToggle',
-      'DBUIAddConnection',
-      'DBUIFindBuffer',
-    },
-    config = function()
-      vim.g.db_ui_use_nerd_fonts = 1
-      require('cmp').setup.buffer({ sources = { { name = 'vim-dadbod-completion' } } })
-    end
-  },
 }
