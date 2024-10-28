@@ -40,7 +40,7 @@ alias ls="eza --icons -w 80"
 alias lza="eza --icons -1 -a -l --total-size"
 # alias cd="z"
 alias zj="zellij"
-alias eee="sesh connect \$(sesh list -c -t -H -i | gum filter --limit 1 --placeholder 'Choose a session' --height 50 --prompt='⚡')"
+alias eee="sesh connect \$(sesh l -c -i | gum filter --limit 1 --placeholder 'Choose a session' --height 10 --prompt='⚡')"
 alias GO="z \$(zoxide query --list | gum filter --limit 1 --placeholder 'Go to')"
 
 # Loggi aliases
