@@ -50,6 +50,7 @@ return {
         oldfiles = {
           prompt_prefix = " ",
           previewer = true,
+          hidden = true,
           theme = theme,
         },
         live_grep = {
