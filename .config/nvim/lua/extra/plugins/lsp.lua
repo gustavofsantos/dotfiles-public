@@ -23,7 +23,7 @@ return {
           "pyright",
           "dockerls",
           "docker_compose_language_service",
-          "eslint",
+          -- "eslint",
           "jsonls",
           "yamlls",
           "svelte",
@@ -70,36 +70,36 @@ return {
             },
           })
         end,
-        ["ts_ls"] = function()
-          local lspconfig = require("lspconfig")
-          lspconfig.ts_ls.setup({
-            root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
-            settings = {
-              typescript = {
-                inlayHints = {
-                  includeInlayParameterNameHints = "literal",
-                  includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-                  includeInlayFunctionParameterTypeHints = true,
-                  includeInlayVariableTypeHints = false,
-                  includeInlayPropertyDeclarationTypeHints = true,
-                  includeInlayFunctionLikeReturnTypeHints = true,
-                  includeInlayEnumMemberValueHints = true,
-                },
-              },
-              javascript = {
-                inlayHints = {
-                  includeInlayParameterNameHints = "all",
-                  includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-                  includeInlayFunctionParameterTypeHints = true,
-                  includeInlayVariableTypeHints = true,
-                  includeInlayPropertyDeclarationTypeHints = true,
-                  includeInlayFunctionLikeReturnTypeHints = true,
-                  includeInlayEnumMemberValueHints = true,
-                },
-              },
-            },
-          })
-        end,
+        -- ["ts_ls"] = function()
+        --   local lspconfig = require("lspconfig")
+        --   lspconfig.ts_ls.setup({
+        --     root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
+        --     settings = {
+        --       typescript = {
+        --         inlayHints = {
+        --           includeInlayParameterNameHints = "literal",
+        --           includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+        --           includeInlayFunctionParameterTypeHints = true,
+        --           includeInlayVariableTypeHints = false,
+        --           includeInlayPropertyDeclarationTypeHints = true,
+        --           includeInlayFunctionLikeReturnTypeHints = true,
+        --           includeInlayEnumMemberValueHints = true,
+        --         },
+        --       },
+        --       javascript = {
+        --         inlayHints = {
+        --           includeInlayParameterNameHints = "all",
+        --           includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+        --           includeInlayFunctionParameterTypeHints = true,
+        --           includeInlayVariableTypeHints = true,
+        --           includeInlayPropertyDeclarationTypeHints = true,
+        --           includeInlayFunctionLikeReturnTypeHints = true,
+        --           includeInlayEnumMemberValueHints = true,
+        --         },
+        --       },
+        --     },
+        --   })
+        -- end,
         ["jsonls"] = function()
           require("lspconfig").jsonls.setup({
             settings = {
