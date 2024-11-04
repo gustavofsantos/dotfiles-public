@@ -1,0 +1,86 @@
+[metadata]
+name = 'Kanagawa Lotus'
+author = 'Gustavo Santos'
+
+[colors]
+background = '#f2ecbc'
+foreground = '#545464'
+selection_bg = '#c9cbd1'
+selection_fg = '#43436c'
+# url_color = '#73A7BC'
+cursor_bg = '#43436c'
+cursor_fg = '#f2ecbc'
+cursor_border = '#43436c'
+# -- todo
+compose_cursor = '#FCC5E9'
+scrollbar_thumb = '#303340'
+split = '#171922'
+visual_bell = '#506477'
+
+ansi = [
+  '#1F1F28',
+  '#c84053',
+  '#6f894e',
+  '#77713f',
+  '#4d699b',
+  '#b35b79',
+  '#597b75',
+  '#545464',
+]
+brights = [
+  '#8a8980',
+  '#d7474b',
+  '#6e915f',
+  '#836f4a',
+  '#6693bf',
+  '#624c83',
+  '#5e857a',
+  '#43436c',
+]
+
+[colors.indexed]
+16 = '#cc6d00'
+17 = '#e82424'
+
+[colors.tab_bar]
+background = '#e5ddb0'
+
+[colors.tab_bar.active_tab]
+bg_color = '#e5ddb0'
+fg_color = '#716e61'
+intensity = 'Normal'
+italic = false
+strikethrough = false
+underline = 'None'
+
+[colors.tab_bar.inactive_tab]
+bg_color = '#d5cea3'
+fg_color = '#8a8980'
+intensity = 'Normal'
+italic = false
+strikethrough = false
+underline = 'None'
+
+[colors.tab_bar.inactive_tab_hover]
+bg_color = '#d5cea3'
+fg_color = '#8a8980'
+intensity = 'Normal'
+italic = false
+strikethrough = false
+underline = 'None'
+
+[colors.tab_bar.new_tab]
+bg_color = '#d5cea3'
+fg_color = '#8a8980'
+intensity = 'Normal'
+italic = false
+strikethrough = false
+underline = 'None'
+
+[colors.tab_bar.new_tab_hover]
+bg_color = '#d5cea3'
+fg_color = '#8a8980'
+intensity = 'Normal'
+italic = true
+strikethrough = false
+underline = 'None'
