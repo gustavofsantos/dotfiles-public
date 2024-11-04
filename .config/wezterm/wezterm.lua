@@ -1,16 +1,17 @@
-local wezterm = require("wezterm")
--- require("navigation").setup()
--- local keymapping = require("keymapping")
--- require("statusline").setup()
-
 local config = {}
+
+local wezterm = require("wezterm")
+require("navigation").setup()
+require("keymapping").setup(config)
+require("statusline").setup()
+
 
 config.automatically_reload_config = false
 config.force_reverse_video_cursor = true
 config.color_scheme = "Kanagawa"
 
-config.font = wezterm.font("MonoLisa Nerd Font")
--- config.font = wezterm.font("BerkeleyMono Nerd Font")
+-- config.font = wezterm.font("MonoLisa Nerd Font")
+config.font = wezterm.font("BerkeleyMono Nerd Font")
 config.font_size = 12
 config.freetype_load_flags = "NO_HINTING"
 config.freetype_load_target = "Normal"
@@ -23,11 +24,18 @@ config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.98
 config.window_close_confirmation = "NeverPrompt"
 
+-- config.window_padding = {
+--     left = 16,
+--     right = 16,
+--     top = 16,
+--     bottom = 16,
+-- }
+
 config.window_padding = {
-    left = 16,
-    right = 16,
-    top = 16,
-    bottom = 16,
+    left = 0,
+    right = 0,
+    top = 0,
+    bottom = 0,
 }
 
 config.use_fancy_tab_bar = false
@@ -41,7 +49,5 @@ for _, gpu in ipairs(wezterm.gui.enumerate_gpus()) do
         config.front_end = "WebGpu"
     end
 end
-
--- keymapping.setup(config)
 
 return config
