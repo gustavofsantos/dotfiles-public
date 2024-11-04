@@ -38,6 +38,7 @@
   "neodev.nvim": { "branch": "main", "commit": "46aa467dca16cf3dfe27098042402066d2ae242d" },
   "neotest": { "branch": "master", "commit": "0fe9186afac9b7874ba304fd28d6325d07e5e274" },
   "neotest-python": { "branch": "master", "commit": "a2861ab3c9a0bf75a56b11835c2bfc8270f5be7e" },
+  "neotest-vitest": { "branch": "main", "commit": "9e30dca989a2287cf3fde86b3e138ea7fa4de935" },
   "no-clown-fiesta.nvim": { "branch": "master", "commit": "6fda94cc0748a57e7057ce1e68ae4a3480ff4b78" },
   "nord.nvim": { "branch": "main", "commit": "4cc19936b1b57ba08eb461c5f450b3976cbb8e0c" },
   "nordic.nvim": { "branch": "main", "commit": "1ee4044077059b34eacd18d93613495a602c131f" },

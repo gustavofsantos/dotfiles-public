@@ -88,6 +88,7 @@ return {
     dependencies = {
       "nvim-neotest/nvim-nio",
       "nvim-neotest/neotest-python",
+      "marilari88/neotest-vitest",
       "nvim-lua/plenary.nvim",
       "stevearc/overseer.nvim",
       "antoinemadec/FixCursorHold.nvim",
@@ -113,7 +114,6 @@ return {
         python_args = beyond_payments_arsgs
       end
 
-      vim.o.signcolumn = "yes"
       require("neotest").setup({
         status = {
           signs = true,
@@ -130,6 +130,7 @@ return {
             dap = { justMyCode = true },
             args = python_args,
           }),
+          require("neotest-vitest"),
         },
         consumers = {
           overseer = require("neotest.consumers.overseer"),
@@ -146,10 +147,8 @@ return {
         function()
           if is_beyond_py() then
             require("neotest").overseer.run({ env = default_beyond_env() })
-          elseif is_beyond_payment() then
-            require("neotest").overseer.run({ env = default_beyond_payment_env() })
           else
-            require("neotest").run.run()
+            require("neotest").overseer.run()
           end
         end,
         { noremap = true, silent = true, desc = "run nearest test" })
@@ -159,8 +158,6 @@ return {
         function()
           if is_beyond_py() then
             require("neotest").run.run({ strategy = "dap", env = default_beyond_env() })
-          elseif is_beyond_payment() then
-            require("neotest").run.run({ strategy = "dap", env = default_beyond_payment_env() })
           else
             require("neotest").run.run({ strategy = "dap" })
           end
@@ -173,7 +170,7 @@ return {
           if is_beyond_py() then
             require("neotest").overseer.run({ vim.fn.expand("%"), env = default_beyond_env() })
           else
-            require("neotest").run.run(vim.fn.expand("%"))
+            require("neotest").overseer.run(vim.fn.expand("%"))
           end
         end,
         { noremap = true, silent = true, desc = "test file" })
@@ -209,8 +206,8 @@ return {
       vim.keymap.set("n",
         "<leader>tl",
         function()
-          require("neotest").output_panel.clear()
-          require("neotest").run.run_last()
+          -- require("neotest").output_panel.clear()
+          require("neotest").overseer.run_last()
         end,
         { noremap = true, silent = true, desc = "test last" })
 
