@@ -23,6 +23,10 @@ name = "Beyond UI"
 path = "~/loggi/ui/targets/beyond"
 
 [[session]]
+name = "app-web"
+path = "~/loggi/front-clientes-app-web"
+
+[[session]]
 name = "Loggi Requests"
 path = "~/loggi/loggi-requests"
 
@@ -35,7 +39,7 @@ name = "Loggi Wallet"
 path = "~/loggi/wallet-api"
 
 [[session]]
-name = "Loggi Payment"
+name = "Beyond Payments"
 path = "~/loggi/beyond-payment"
 
 [[session]]
