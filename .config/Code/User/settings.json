@@ -294,18 +294,13 @@
           }
         },
         {
-          "scope": [
-            "meta.attribute",
-          ],
+          "scope": ["meta.attribute"],
           "settings": {
             "foreground": "#D7DBE0"
           }
         },
         {
-          "scope": [
-            "meta.function.parameters",
-            "support.class.component",
-          ],
+          "scope": ["meta.function.parameters", "support.class.component"],
           "settings": {
             "foreground": "#CAECE6"
           }
@@ -580,5 +575,8 @@
   },
   "svelte.enable-ts-plugin": true,
   "workbench.startupEditor": "none",
-  "window.menuBarVisibility": "toggle"
+  "window.menuBarVisibility": "toggle",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  }
 }
