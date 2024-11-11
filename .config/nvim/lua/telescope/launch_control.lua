@@ -27,6 +27,11 @@ local mappings = {
   { "Functions",             cmd = "Telescope lsp_document_symbols symbols=function", category = "navigation" },
   { "Variables",             cmd = "Telescope lsp_document_symbols symbols=variable", category = "navigation" },
   { "Workspace symbols",     cmd = "Telescope lsp_workspace_symbols",                 category = "navigation" },
+  { "Keymapping",            cmd = "Telescope keymaps",                               category = "navigation" },
+  { "Commands",              cmd = "Telescope commands",                              category = "navigation" },
+  { "Registers",             cmd = "Telescope registers",                             category = "navigation" },
+  { "Search history",        cmd = "Telescope search_history",                        category = "navigation" },
+  { "Help tags",             cmd = "Telescope help_tags",                             category = "navigation" },
 
   -- version control actions
   { "Git status",            cmd = "Git",                                             category = "vcs" },
@@ -49,6 +54,7 @@ local mappings = {
   { "Split window below",    cmd = "split",                                           category = "action" },
   { "Disable formatting",    cmd = "FormatDisable",                                   category = "action" },
   { "Enable formatting",     cmd = "FormatEnable",                                    category = "action" },
+  { "Format file",           cmd = "echo 'todo'",                                     category = "action" },
   { "Run",                   cmd = "OverseerRun",                                     category = "action" },
   { "Runs",                  cmd = "OverseerToggle",                                  category = "action" },
   { "New tab",               cmd = "tabnew",                                          category = "action" },
@@ -56,6 +62,7 @@ local mappings = {
   { "Run file",              cmd = "!%",                                              category = "action" },
   { "Close buffer",          cmd = "bd",                                              category = "action" },
   { "Quit",                  cmd = "q",                                               category = "action" },
+  { "Reload config",         cmd = "Lazy reload",                                     category = "action" },
 }
 
 local dropdown_theme = themes.get_dropdown({})

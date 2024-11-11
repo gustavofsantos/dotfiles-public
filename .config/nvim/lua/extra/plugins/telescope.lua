@@ -46,6 +46,9 @@ return {
     },
     config = function()
       local telescope = require("telescope")
+      local actions = require('telescope.actions')
+      local state = require("telescope.actions.state")
+      local builtin = require("telescope.builtin")
       local launch_control = require("telescope.launch_control")
       telescope.setup({
         defaults = {
@@ -72,6 +75,38 @@ return {
             results = { " " },
             preview = { " " },
           },
+          mappings = {
+            i = {
+              ["<esc>"] = actions.close,
+              ["<C-r>"] = function()
+                builtin.resume({
+                  prompt_title = "[Current] |  Find Files  |  Symbols  |  Actions  |  Text ",
+                  default_text = state.get_current_line()
+                })
+              end,
+              ["<C-f>"] = function()
+                builtin.find_files({
+                  prompt_title = " Current  | [Find Files] |  Symbols  |  Actions  |  Text ",
+                  default_text = state.get_current_line()
+                })
+              end,
+              ["<C-m>"] = function()
+                builtin.lsp_document_symbols({
+                  prompt_title = " Current  |  Find Files  | [Symbols] |  Actions  |  Text ",
+                  default_text = state.get_current_line()
+                })
+              end,
+              ["<C-t>"] = function()
+                builtin.grep_string({
+                  prompt_title = " Current  |  Find Files  |  Symbols  |  Actions  | [Text]",
+                  default_text = state.get_current_line()
+                })
+              end,
+              ["<C-a>"] = function()
+                launch_control.launch_control()
+              end,
+            }
+          }
         },
         pickers = {
           find_files = {
@@ -152,26 +187,11 @@ return {
       vim.keymap.set("n", "<leader>p", "<cmd>Telescope find_files<cr>",
         { desc = "find file", noremap = true, silent = true })
 
-      vim.keymap.set("n", "<leader>b", "<cmd>Telescope buffers<cr>",
-        { desc = "find buffer", noremap = true, silent = true })
-
-      vim.keymap.set("n", "<leader>fs", "<cmd>Telescope lsp_document_symbols<cr>",
-        { desc = "find symbols", noremap = true, silent = true })
-
       vim.keymap.set("n", "<leader>fr", "<cmd>Telescope resume<cr>",
         { desc = "find resume", noremap = true, silent = true })
 
       vim.keymap.set("n", "<leader>fl", "<cmd>Telescope live_grep<cr>",
         { desc = "find live", noremap = true, silent = true })
-
-      vim.keymap.set("n", "<leader>fg", "<cmd>Telescope git_files<cr>",
-        { desc = "find git", noremap = true, silent = true })
-
-      vim.keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>",
-        { desc = "find keymaps", noremap = true, silent = true })
-
-      vim.keymap.set("n", "<leader>f?", "<cmd>Telescope help_tags<cr>",
-        { desc = "find help", noremap = true, silent = true })
 
       vim.keymap.set("n", "<c-f>", "<cmd>Telescope current_buffer_fuzzy_find<cr>",
         { desc = "find buffer", noremap = true, silent = true })
