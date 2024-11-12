@@ -10,6 +10,7 @@ local function default_beyond_env()
   return {
     POSTGRES_DB = "dev_db",
     POSTGRES_PASSWORD = "postgres",
+    POSTGRES_USER = "postgres",
     POSTGRES_HOST = "localhost",
     POSTGRES_PORT = "5432",
     UNLEASH_URL = "http://localhost:4242/api"

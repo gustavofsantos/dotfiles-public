@@ -159,11 +159,42 @@ end
 
 local register_beyond_tasks = function(overseer)
   overseer.register_template({
-    name = "beyond: run tests",
+    name = "run tests",
     builder = function()
       return {
         cmd = { "poetry", "run", "pytest", "-vv", "-x", "--disable-warnings", "--ds", "beyond_app.settings.test" },
         args = { "src/beyond_app" },
+        cwd = "/opt/loggi/py/apps/beyond/",
+        components = { "default" },
+        env = {
+          POSTGRES_DB = "dev_db",
+          POSTGRES_PASSWORD = "postgres",
+          POSTGRES_USER = "postgres",
+          POSTGRES_HOST = "localhost",
+          POSTGRES_PORT = "5432",
+        },
+      }
+    end,
+    condition = {
+      dir = "/opt/loggi/py/apps/beyond/",
+    },
+  })
+
+  overseer.register_template({
+    name = "run test file",
+    params = function()
+      local file_name = vim.fn.expand("%")
+      return {
+        file = {
+          type = "string",
+          default = file_name
+        }
+      }
+    end,
+    builder = function(params)
+      return {
+        cmd = { "poetry", "run", "pytest", "-vv", "-x", "--disable-warnings", "--ds", "beyond_app.settings.test" },
+        args = { params.file },
         cwd = "/opt/loggi/py/apps/beyond/",
         components = { "default" },
         env = {
@@ -174,9 +205,6 @@ local register_beyond_tasks = function(overseer)
         },
       }
     end,
-    condition = {
-      dir = "/opt/loggi/py/apps/beyond/",
-    },
   })
 
   overseer.register_template({
