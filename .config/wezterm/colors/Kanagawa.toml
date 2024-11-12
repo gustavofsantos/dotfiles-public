@@ -12,7 +12,7 @@ selection_bg = "#2d4f67"
 scrollbar_thumb = "#16161d"
 split = "#16161d"
 ansi = [
-  "#090618",
+  "#16161d",
   "#c34043",
   "#76946a",
   "#c0a36e",
@@ -35,10 +35,12 @@ brights = [
 [colors.indexed]
 16 = "#ffa066"
 17 = "#ff5d62"
+18 = "#2d4f67"
 
 
 [colors.tab_bar]
 background = "#16161d"
+foreground = "#727169"
 inactive_tab_edge = "#16161d"
 inactive_tab_edge_hover = "#586069"
 

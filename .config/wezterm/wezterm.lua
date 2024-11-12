@@ -2,7 +2,7 @@ local config = {}
 
 local wezterm = require("wezterm")
 require("navigation").setup()
-require("keymapping").setup(config)
+-- require("keymapping").setup(config)
 require("statusline").setup()
 
 
@@ -13,15 +13,11 @@ config.color_scheme = "Kanagawa"
 -- config.font = wezterm.font("MonoLisa Nerd Font")
 config.font = wezterm.font("BerkeleyMono Nerd Font")
 config.font_size = 12
-config.freetype_load_flags = "NO_HINTING"
-config.freetype_load_target = "Normal"
 config.line_height = 1.35
 config.harfbuzz_features = { "clig=1", "liga=1" }
-config.bold_brightens_ansi_colors = false
-config.warn_about_missing_glyphs = false
 
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.98
+config.window_background_opacity = 1.0
 config.window_close_confirmation = "NeverPrompt"
 
 -- config.window_padding = {
