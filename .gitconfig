@@ -155,5 +155,8 @@
   repo = /opt/loggi/front-core-ds/main
   repo = /opt/loggi/ui
   repo = /opt/loggi/py
+  repo = /opt/loggi/web
 [fetch]
   writeCommitGraph = true
+[gc]
+	auto = 100
