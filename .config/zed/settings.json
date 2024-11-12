@@ -9,13 +9,34 @@
 {
   "autosave": "on_focus_change",
   "buffer_font_family": "BerkeleyMono Nerd Font",
-  "vim_mode": true,
   "ui_font_size": 16,
   "buffer_font_size": 16,
+  "soft_wrap": "none",
+  "cursor_blink": false,
+  "vim_mode": true,
+  "tab_bar": {
+    "show": false
+  },
+  "project_panel": {
+    "show_diagnostics": "all",
+    "scrollbar": {
+      "show": "never"
+    }
+  },
+  "terminal": {
+    "dock": "bottom"
+  },
   "theme": {
     "mode": "system",
-    "light": "Gruvbox Dark Hard",
+    "light": "Kanagawa Lotus",
     "dark": "Kanagawa"
+  },
+  "indent_guides": {
+    "enabled": false
+  },
+  "preview_tabs": {
+    "enabled": false,
+    "enable_preview_from_code_navigation": false
   },
   "git": {
     "git_gutter": "tracked_files",
