@@ -78,35 +78,37 @@ return {
           mappings = {
             i = {
               ["<esc>"] = actions.close,
-              ["<C-r>"] = function()
-                builtin.resume({
-                  prompt_title = "[Current] |  Find Files  |  Symbols  |  Actions  |  Text ",
-                  default_text = state.get_current_line()
-                })
-              end,
-              ["<C-f>"] = function()
-                builtin.find_files({
-                  prompt_title = " Current  | [Find Files] |  Symbols  |  Actions  |  Text ",
-                  default_text = state.get_current_line()
-                })
-              end,
-              ["<C-m>"] = function()
-                builtin.lsp_document_symbols({
-                  prompt_title = " Current  |  Find Files  | [Symbols] |  Actions  |  Text ",
-                  default_text = state.get_current_line()
-                })
-              end,
-              ["<C-t>"] = function()
-                builtin.grep_string({
-                  prompt_title = " Current  |  Find Files  |  Symbols  |  Actions  | [Text]",
-                  default_text = state.get_current_line()
-                })
-              end,
-              ["<C-a>"] = function()
-                launch_control.launch_control()
-              end,
             }
           }
+          --     ["<C-r>"] = function()
+          --       builtin.resume({
+          --         prompt_title = "[Current] |  Find Files  |  Symbols  |  Actions  |  Text ",
+          --         default_text = state.get_current_line()
+          --       })
+          --     end,
+          --     ["<C-f>"] = function()
+          --       builtin.find_files({
+          --         prompt_title = " Current  | [Find Files] |  Symbols  |  Actions  |  Text ",
+          --         default_text = state.get_current_line()
+          --       })
+          --     end,
+          --     ["<C-m>"] = function()
+          --       builtin.lsp_document_symbols({
+          --         prompt_title = " Current  |  Find Files  | [Symbols] |  Actions  |  Text ",
+          --         default_text = state.get_current_line()
+          --       })
+          --     end,
+          --     ["<C-t>"] = function()
+          --       builtin.grep_string({
+          --         prompt_title = " Current  |  Find Files  |  Symbols  |  Actions  | [Text]",
+          --         default_text = state.get_current_line()
+          --       })
+          --     end,
+          --     ["<C-a>"] = function()
+          --       launch_control.launch_control()
+          --     end,
+          --   }
+          -- }
         },
         pickers = {
           find_files = {
@@ -186,6 +188,9 @@ return {
 
       vim.keymap.set("n", "<leader>p", "<cmd>Telescope find_files<cr>",
         { desc = "find file", noremap = true, silent = true })
+
+      vim.keymap.set("n", "<leader>b", "<cmd>Telescope buffers<cr>",
+        { desc = "buffers", noremap = true, silent = true })
 
       vim.keymap.set("n", "<leader>fr", "<cmd>Telescope resume<cr>",
         { desc = "find resume", noremap = true, silent = true })
