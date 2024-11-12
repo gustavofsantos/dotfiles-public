@@ -12,7 +12,7 @@
 \timing
 
 -- Use best available output format
-\x auto
+\x off
 \set VERBOSITY verbose
 \set HISTFILE ~/.psql_history- :DBNAME
 \set HISTCONTROL ignoredups
