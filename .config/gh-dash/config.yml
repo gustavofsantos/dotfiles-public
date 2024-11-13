@@ -5,9 +5,17 @@ prSections:
     author:
       hidden: true
 - title: Review
-  filters: is:open review-requested:@me
-- title: Beyond Conversão
-  filters: is:open org:loggi label:beyond label:beyond-conversao
+  filters: repo:loggi/py repo:loggi/loggi-web repo:loggi/beyond-payments repo:loggi/front-clientes-app-web is:pr is:open status:success review-requested:@me
+- title: PY
+  filters: is:open repo:loggi/py status:success
+- title: Front
+  filters: is:open repo:loggi/front-clientes-app-web status:success
+- title: LWEB
+  filters: is:open repo:loggi/loggi-web status:success
+- title: Payments
+  filters: is:open repo:loggi/beyond-payments status:success
+- title: Wallet API
+  filters: is:open repo:loggi/wallet-api status:success
 - title: Involved
   filters: is:open involves:@me -author:@me
 
@@ -71,6 +79,9 @@ keybindings:
 
 repoPaths:
   loggi/ui: ~/loggi/ui/
+  web-app: /opt/loggi/front-clientes-app-web/
+  beyond-py: /opt/loggi/py/apps/beyond/
+  beyond-payments: /opt/loggi/beyond-payment/
 
 theme:
   ui:
