@@ -13,9 +13,8 @@ config.color_scheme = "Kanagawa"
 -- config.font = wezterm.font("MonoLisa Nerd Font")
 config.font = wezterm.font("BerkeleyMono Nerd Font")
 config.font_size = 12
-config.line_height = 1.35
 config.max_fps = 120
-config.harfbuzz_features = { "clig=1", "liga=1" }
+config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 
 config.window_decorations = "RESIZE"
 config.window_background_opacity = 1.0
