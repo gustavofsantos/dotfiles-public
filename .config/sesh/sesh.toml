@@ -15,6 +15,10 @@ name = "home"
 path = "~"
 
 [[session]]
+name = "notes"
+path = "~/Documents/Obsidian/next"
+
+[[session]]
 name = "Beyond PY"
 path = "~/loggi/py/apps/beyond"
 
