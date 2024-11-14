@@ -22,7 +22,7 @@
   "iceberg.vim": { "branch": "master", "commit": "23835d5ed696436f716cbfdb56a93a7850fe3b18" },
   "jellybeans-nvim": { "branch": "main", "commit": "12a8687daf82bb4f69c5cb1dcc672bd9c5e6a094" },
   "kanagawa.nvim": { "branch": "master", "commit": "f491b0fe68fffbece7030181073dfe51f45cda81" },
-  "lazy.nvim": { "branch": "main", "commit": "cf8ecc2c5e4332760431a33534240b0cbc6680ab" },
+  "lazy.nvim": { "branch": "main", "commit": "077102c5bfc578693f12377846d427f49bc50076" },
   "lspkind.nvim": { "branch": "master", "commit": "59c3f419af48a2ffb2320cea85e44e5a95f71664" },
   "lualine-lsp-progress": { "branch": "master", "commit": "56842d097245a08d77912edf5f2a69ba29f275d7" },
   "lualine.nvim": { "branch": "master", "commit": "b431d228b7bbcdaea818bdc3e25b8cdbe861f056" },
