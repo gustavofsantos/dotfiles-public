@@ -6,8 +6,9 @@ export EDITOR='nvim'
 export GEM_HOME="$HOME/.gem"
 export ANDROID_HOME="$HOME/Android/Sdk"
 export PNPM_HOME="$HOME/.local/share/pnpm"
-export NOTES_HOME="$HOME/Documents/notes"
-export WORKLOG_PATH="$HOME/Documents/main-vault/main/Loggi/worklog.md"
+export NOTES_HOME="$HOME/Documents/Obsidian/next/Notes"
+export JOURNALS_HOME="$HOME/Documents/Obsidian/next/Journal"
+export WORKLOG_PATH="$HOME/Documents/Obsidian/next/Notes/Loggi/worklog.md"
 
 export PATH="$PNPM_HOME:$PATH"
 export PATH=$PATH:"$HOME"/.local/bin

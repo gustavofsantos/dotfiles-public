@@ -20,10 +20,10 @@ export NVM_DIR="$HOME/.nvm"
 
 ## functions
 function note () {
-  nvim ~/notes/z/$(date +%Y%m%d%H%M%S).md
+  nvim $NOTES_HOME/$(date +%Y%m%d%H%M%S).md
 }
 function journal () {
-  nvim ~/notes/journal/$(date +%Y-%m-%d).md
+  nvim $JOURNALS_HOME/$(date +%Y-%m-%d).md
 }
 
 eval "$(sheldon source)"
