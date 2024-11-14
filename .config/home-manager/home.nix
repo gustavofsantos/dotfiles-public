@@ -9,8 +9,8 @@ in
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "gustavo";
-  home.homeDirectory = "/home/gustavo";
+  home.username = "gustavo-santos";
+  home.homeDirectory = "/home/gustavo-santos";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -43,13 +43,10 @@ in
 
     # programming languages and environments
     pkgs.nodejs_22
-    pkgs.ruby
     pkgs.python311
     pkgs.elixir
     pkgs.go
     pkgs.erlang
-    pkgs.zulu17
-    pkgs.clojure
 
     # tools
     pkgs.btop
@@ -92,11 +89,6 @@ in
     pkgs.gitmux
     pkgs.difftastic
     pkgs.entr
-    pkgs.clojure-lsp
-    pkgs.leiningen
-    pkgs.clj-kondo
-    pkgs.babashka
-    pkgs.cabal-install
     pkgs.sq
 
     # databases
