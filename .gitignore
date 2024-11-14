@@ -277,3 +277,4 @@ miniconda3/
 .sqlite_history
 .tsh
 .pg_service.conf
+.supermaven/
