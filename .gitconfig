@@ -160,4 +160,4 @@
 [fetch]
   writeCommitGraph = true
 [gc]
-	auto = 100
+  auto = 100
