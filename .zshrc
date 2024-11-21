@@ -37,6 +37,6 @@ setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_verify
 
-# Initialize zsh completions (added by deno install script)
-autoload -Uz compinit
-compinit
+# # Initialize zsh completions (added by deno install script)
+# autoload -Uz compinit
+# compinit
