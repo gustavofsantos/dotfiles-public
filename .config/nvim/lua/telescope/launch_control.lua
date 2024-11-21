@@ -51,20 +51,31 @@ local mappings = {
   { "Workspace diagnostics", cmd = "Telescope diagnostics",                           category = "problem" },
 
   -- basic actions
-  { "Split window",          cmd = "vsplit",                                          category = "action" },
-  { "Split window below",    cmd = "split",                                           category = "action" },
-  { "Disable formatting",    cmd = "FormatDisable",                                   category = "action" },
-  { "Enable formatting",     cmd = "FormatEnable",                                    category = "action" },
-  { "Format file",           cmd = "echo 'todo'",                                     category = "action" },
-  { "Toggle background",     desc = "Toggle beween dark or light background",         cmd = utils.toggle_background,               category = "action" },
-  { "Run",                   cmd = "OverseerRun",                                     category = "action" },
-  { "Runs",                  cmd = "OverseerToggle",                                  category = "action" },
-  { "New tab",               cmd = "tabnew",                                          category = "action" },
-  { "New file",              cmd = "enew",                                            category = "action" },
-  { "Run file",              cmd = "!%",                                              category = "action" },
-  { "Close buffer",          cmd = "bd",                                              category = "action" },
-  { "Quit",                  cmd = "q",                                               category = "action" },
-  { "Reload config",         cmd = "Lazy reload",                                     category = "action" },
+  { "Split window",          desc = "Split on the right",                             cmd = "vsplit",                              category = "action" },
+  { "Split window below",    desc = "Split current window below",                     cmd = "split",                               category = "action" },
+  { "Format buffer",         desc = "Format current file/buffer/region",              cmd = "Format",                              category = "action" },
+  { "Disable formatting",    desc = "Disable auto format",                            cmd = "FormatDisable",                       category = "action" },
+  { "Enable formatting",     desc = "Enable auto format",                             cmd = "FormatEnable",                        category = "action" },
+  {
+    "Toggle formatting",
+    desc = "Toggle auto format",
+    cmd = "FormatToggle",
+    category = "action",
+    predicate = function()
+      if vim.g.disable_autoformat then return false end
+      return true
+    end
+  },
+  { "Format file",       cmd = "echo 'todo'",                             category = "action" },
+  { "Toggle background", desc = "Toggle beween dark or light background", cmd = utils.toggle_background, category = "action" },
+  { "Run",               cmd = "OverseerRun",                             category = "action" },
+  { "Runs",              cmd = "OverseerToggle",                          category = "action" },
+  { "New tab",           cmd = "tabnew",                                  category = "action" },
+  { "New file",          cmd = "enew",                                    category = "action" },
+  { "Run file",          cmd = "!%",                                      category = "action" },
+  { "Close buffer",      cmd = "bd",                                      category = "action" },
+  { "Quit",              cmd = "q",                                       category = "action" },
+  { "Reload config",     cmd = "Lazy reload",                             category = "action" },
 }
 
 local dropdown_theme = themes.get_dropdown({})
@@ -77,6 +88,13 @@ end
 ---@param category string
 local get_category_icon = function(category)
   return categories[category] or ""
+end
+
+local get_toggle_icon = function(option)
+  if option.predicate then
+    return option.predicate() and "" or ""
+  end
+  return " "
 end
 
 local launch_control = function()
@@ -102,7 +120,7 @@ local launch_control = function()
           entry_maker = function(option)
             return {
               value = option,
-              display = get_category_icon(option.category) .. " " .. option[1],
+              display = get_category_icon(option.category) .. " " .. get_toggle_icon(option) .. " " .. option[1],
               ordinal = option[1] .. " " .. (option.desc or ""),
               cmd = option.cmd,
             }
