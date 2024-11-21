@@ -1,5 +1,5 @@
 # Add deno completions to search path
-if [[ ":$FPATH:" != *":/home/gustavo/.zsh/completions:"* ]]; then export FPATH="/home/gustavo/.zsh/completions:$FPATH"; fi
+if [[ ":$FPATH:" != *":$HOME/.zsh/completions:"* ]]; then export FPATH="$HOME/.zsh/completions:$FPATH"; fi
 export HISTFILE=$HOME/.zsh_history
 export HISTTIMEFORMAT="[%F %T] "
 export SAVEHIST=1000
@@ -36,7 +36,7 @@ setopt share_history
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_verify
-. "/home/gustavo/.deno/env"
+
 # Initialize zsh completions (added by deno install script)
 autoload -Uz compinit
 compinit

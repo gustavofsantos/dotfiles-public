@@ -1,5 +1,6 @@
 if [ -e "$HOME/.cargo/env" ]; then . "$HOME/.cargo/env";  fi
-if [ -e /home/gustavo/.nix-profile/etc/profile.d/nix.sh ]; then . /home/gustavo/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+if [ -e "$HOME/.deno/env" ]; then . "$HOME/.deno/env" fi
+if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then . "$HOME/.nix-profile/etc/profile.d/nix.sh"; fi # added by Nix installer
 
 export EDITOR='nvim'
 
