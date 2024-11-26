@@ -92,7 +92,7 @@ end
 
 local get_toggle_icon = function(option)
   if option.predicate then
-    return option.predicate() and "" or ""
+    return option.predicate() and " " or " "
   end
   return " "
 end
@@ -146,5 +146,10 @@ end
 local M = {}
 
 M.launch_control = launch_control
+
+M.add = function(name, cmd, category, desc, predicate)
+  table.insert(mappings,
+    { name, cmd = cmd, category = category or "action", desc = desc or "", predicate = predicate or nil })
+end
 
 return M
