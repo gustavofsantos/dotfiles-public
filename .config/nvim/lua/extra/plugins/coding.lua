@@ -151,6 +151,11 @@ return {
       vim.keymap.set("n", "<F10>", dap.step_over, { desc = "step over" })
       vim.keymap.set("n", "<F11>", dap.step_into, { desc = "step into" })
       vim.keymap.set("n", "<F12>", dap.step_out, { desc = "step out" })
+      vim.keymap.set("n", "<leader>cdh", function() require("dap.ui.widgets").hover() end, { desc = "hover" })
+      vim.keymap.set("n", "<leader>cdp", function() require("dap.ui.widgets").preview() end, { desc = "preview" })
+
+      -- launch_control.add("Debug hover", function() require("dap.ui.widgets").hover() end)
+      -- launch_control.add("Debug preview", function() require("dap.ui.widgets").preview() end)
       -- wk.add({
       --   { "<leader>cd", group = "debugger" },
       --   {
