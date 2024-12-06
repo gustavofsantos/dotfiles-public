@@ -11,3 +11,8 @@
 [submodule ".tmux/plugins/tpm"]
 	path = .tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm.git
+
+[submodule "nvim-config"]
+	path = .config/nvim
+	url = git@github.com:gustavofsantos/nvim-config.git
+
