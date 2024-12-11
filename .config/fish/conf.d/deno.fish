@@ -1,1 +1,1 @@
-source "/home/gustavo/.deno/env.fish"
+test -r "$HOME/.deno/env.fish"; and source "$HOME/.deno/env.fish"
