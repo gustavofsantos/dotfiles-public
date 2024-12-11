@@ -280,3 +280,4 @@ miniconda3/
 .supermaven/
 .config/Wave/
 .config/waveterm/
+.config/zed/tasks.json
