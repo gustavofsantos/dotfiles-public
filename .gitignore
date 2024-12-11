@@ -278,3 +278,5 @@ miniconda3/
 .tsh
 .pg_service.conf
 .supermaven/
+.config/Wave/
+.config/waveterm/
