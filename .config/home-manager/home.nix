@@ -85,11 +85,14 @@ in
     pkgs.yq
     pkgs.fzf
     pkgs.yarn
-    pkgs.tmux
+    pkgsUnstable.tmux
     pkgs.gitmux
     pkgs.difftastic
     pkgs.entr
     pkgs.sq
+    pkgsUnstable.television
+    pkgsUnstable.eget
+    pkgs.harlequin
 
     # databases
     pkgs.postgresql
