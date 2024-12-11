@@ -1,5 +1,3 @@
-# Add deno completions to search path
-if [[ ":$FPATH:" != *":$HOME/.zsh/completions:"* ]]; then export FPATH="$HOME/.zsh/completions:$FPATH"; fi
 export HISTFILE=$HOME/.zsh_history
 export HISTTIMEFORMAT="[%F %T] "
 export SAVEHIST=1000
@@ -40,3 +38,12 @@ setopt hist_verify
 # # Initialize zsh completions (added by deno install script)
 # autoload -Uz compinit
 # compinit
+
+
+function drmid-fn {
+       imgs=$(docker images -q -f dangling=true)
+       [ ! -z "$imgs" ] && docker rmi "$imgs" || echo "no dangling images."
+}
+
+
+alias drmid=drmid-fn
