@@ -1,6 +1,7 @@
-# Nordic Colorscheme for Wezterm.
-# Based on https://github.com/AlexvZyl/nordic.nvim
-# Author: @kuntau
+[metadata]
+aliases = []
+author = "kuntau"
+name = "Nordic"
 
 [colors]
 foreground    = "#D8DEE9"
@@ -16,12 +17,12 @@ brights       = [ "#3B4252", "#D06F79", "#B1D196", "#F0D399", "#88C0D0",  "#C895
 
 
 [colors.tab_bar]
-background              = "#242933"
-inactive_tab_edge       = "#242933"
+background              = "#191D24"
+inactive_tab_edge       = "#191D24"
 inactive_tab_edge_hover = "#3B4252"
 
 [colors.tab_bar.active_tab]
-bg_color = "#242933"
+bg_color = "#2E3440"
 fg_color = "#8FBCBB"
 intensity = "Normal"
 italic = false
@@ -29,7 +30,7 @@ strikethrough = false
 underline = "None"
 
 [colors.tab_bar.inactive_tab]
-bg_color = "#242933"
+bg_color = "#191D24"
 fg_color = "#D8DEE9"
 intensity = "Normal"
 italic = false
@@ -37,7 +38,7 @@ strikethrough = false
 underline = "None"
 
 [colors.tab_bar.inactive_tab_hover]
-bg_color = "#3B4252"
+bg_color = "#191D24"
 fg_color = "#D8DEE9"
 intensity = "Normal"
 italic = false
@@ -45,7 +46,7 @@ strikethrough = false
 underline = "None"
 
 [colors.tab_bar.new_tab]
-bg_color = "#242933"
+bg_color = "#191D24"
 fg_color = "#D8DEE9"
 intensity = "Normal"
 italic = false
@@ -53,7 +54,7 @@ strikethrough = false
 underline = "None"
 
 [colors.tab_bar.new_tab_hover]
-bg_color = "#3B4252"
+bg_color = "#191D24"
 fg_color = "#D8DEE9"
 intensity = "Normal"
 italic = false
