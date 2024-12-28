@@ -2,14 +2,13 @@ local config = {}
 
 local wezterm = require("wezterm")
 require("navigation").setup()
-require("keymapping").setup(config)
+-- require("keymapping").setup(config)
 -- require("statusline").setup()
 
 
 config.automatically_reload_config = false
 config.force_reverse_video_cursor = true
--- config.color_scheme = "Kanagawa"
-config.color_scheme = "Nordic"
+config.color_scheme = "Kanagawa"
 
 -- config.font = wezterm.font("MonoLisa Nerd Font")
 -- config.font = wezterm.font_with_fallback({
