@@ -80,7 +80,8 @@
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
-      "g c c": "editor::ToggleComments"
+      "g c c": "editor::ToggleComments",
+      "space t f": ["task::Spawn", { "task_name": "Test file" }]
     }
   },
   {
