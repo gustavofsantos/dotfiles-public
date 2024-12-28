@@ -7,6 +7,13 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "assistant": {
+    "default_model": {
+      "provider": "google",
+      "model": "gemini-1.5-flash"
+    },
+    "version": "2"
+  },
   "autosave": "on_focus_change",
   "buffer_font_family": "BerkeleyMono Nerd Font",
   "ui_font_size": 16,
@@ -15,7 +22,7 @@
   "cursor_blink": false,
   "vim_mode": true,
   "tab_bar": {
-    "show": false
+    "show": true
   },
   "project_panel": {
     "show_diagnostics": "all",
@@ -28,7 +35,7 @@
   },
   "theme": {
     "mode": "system",
-    "light": "Kanagawa Lotus",
+    "light": "Fleet Gray",
     "dark": "Kanagawa"
   },
   "indent_guides": {
@@ -42,6 +49,13 @@
     "git_gutter": "tracked_files",
     "inline_blame": {
       "enabled": false
+    }
+  },
+  "context_servers": {
+    "postgres-context-server": {
+      "settings": {
+        "database_url": "postgres://teleport@localhost:53189/prod"
+      }
     }
   }
 }
