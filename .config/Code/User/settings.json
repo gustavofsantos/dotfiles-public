@@ -1,9 +1,9 @@
 {
-  "workbench.colorTheme": "Night Owl",
+  "workbench.colorTheme": "Vesper",
   "workbench.editor.showTabs": "multiple",
   "workbench.editor.tabSizing": "fit",
   "workbench.tree.indent": 16,
-  "editor.fontFamily": "'MonoLisa Nerd Font', 'Operator Mono Book'",
+  "editor.fontFamily": "'BerkeleyMono Nerd Font', 'MonoLisa Nerd Font', 'Operator Mono Book'",
   "editor.lineHeight": 28,
   "editor.fontSize": 16,
   "editor.fontWeight": "400",
@@ -578,5 +578,6 @@
   "window.menuBarVisibility": "toggle",
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
-  }
+  },
+  "database-client.autoSync": true
 }
