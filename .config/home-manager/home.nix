@@ -47,6 +47,7 @@ in
     pkgs.elixir
     pkgs.go
     pkgs.erlang
+    pkgsUnstable.zig
 
     # tools
     pkgs.btop
