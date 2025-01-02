@@ -1,0 +1,4 @@
+font-family = MonoLisa Nerd Font
+font-feature = liga,calt
+adjust-cell-height = 3
+theme = nord
