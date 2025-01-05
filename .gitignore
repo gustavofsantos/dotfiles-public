@@ -281,5 +281,5 @@ miniconda3/
 .config/Wave/
 .config/waveterm/
 .config/zed/tasks.json
-.dbclient/
 .psql_history-prod
+.dbclient
