@@ -283,3 +283,4 @@ miniconda3/
 .config/zed/tasks.json
 .psql_history-prod
 .dbclient
+.config/uv/
