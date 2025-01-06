@@ -63,6 +63,7 @@ in
     pkgs.kubectl
     pkgsUnstable.sesh
     pkgsUnstable.gum
+    pkgs.neofetch
     pkgs.hyperfine
     pkgs.httpie
     pkgs.pyenv
