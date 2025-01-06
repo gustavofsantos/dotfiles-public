@@ -1,4 +1,9 @@
-font-family = MonoLisa Nerd Font
+font-family = BerkeleyMono Nerd Font
 font-feature = liga,calt
+font-size = 14
 adjust-cell-height = 3
 theme = nord
+gtk-titlebar = false
+window-padding-x = 8
+window-padding-y = 8
+custom-shader = false
