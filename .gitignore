@@ -284,3 +284,4 @@ miniconda3/
 .psql_history-prod
 .dbclient
 .config/uv/
+.psql_history-zenware
