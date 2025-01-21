@@ -1,6 +1,6 @@
 font-family = BerkeleyMono Nerd Font
 font-feature = liga,calt
-font-size = 13
+font-size = 16
 adjust-cell-height = 3
 theme = GruvboxLight
 gtk-titlebar = false
@@ -9,3 +9,10 @@ background-blur-radius = 20
 window-padding-x = 8
 window-padding-y = 8
 custom-shader = false
+
+# Keybindings
+keybind = super+c=copy_to_clipboard
+keybind = super+v=paste_from_clipboard
+keybind = super+shift+c=copy_to_clipboard
+keybind = super+shift+v=paste_from_clipboard
+keybind = super+shift+comma=reload_config
