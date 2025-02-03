@@ -9,16 +9,23 @@
   {
     "context": "Workspace",
     "bindings": {
-      "space o": "file_finder::Toggle",
-      "space b": ["file_finder::Toggle", { "separate_history": true }],
-      "ctrl-\\": "workspace::ToggleBottomDock"
+      "ctrl-\\": "workspace::ToggleBottomDock",
+      "ctrl-shift-f": "project_search::ToggleFocus"
     }
   },
   {
-    "context": "Editor",
+    "context": "Workspace &&  vim_mode == normal && !VimWaiting && !VimCount",
     "bindings": {
-      // "j k": ["workspace::SendKeystrokes", "escape"]
-      "alt-l": "assistant::InsertIntoEditor"
+      "-": "workspace::ToggleLeftDock",
+      "space b": "tab_switcher::Toggle",
+      "space o": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "ProjectSearchBar || ProjectSearchView",
+    "bindings": {
+      "escape": "project_search::ToggleFocus",
+      "ctrl-c": "project_search::ToggleFocus"
     }
   },
   {
@@ -37,15 +44,22 @@
     "context": "Editor && VimControl && !VimWaiting && !menu",
     "bindings": {
       "ctrl-w z": "workspace::ToggleZoom",
+      // Navigation
       "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
       "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
       "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
       "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
-      "ctrl-\\": "terminal_panel::ToggleFocus",
       "ctrl-w s": "pane::SplitLeft",
       "ctrl-w ctrl-s": "pane::SplitLeft",
       "ctrl-w shift-s": "pane::SplitDown",
-      "-": "pane::RevealInProjectPanel"
+      "ctrl-\\": "terminal_panel::ToggleFocus",
+      "-": "workspace::ToggleLeftDock",
+
+      "alt-k": "editor::MoveLineUp",
+      "alt-j": "editor::MoveLineDown",
+
+      "g .": "editor::ToggleCodeActions",
+      "g r": "editor::Rename"
     }
   },
   {
@@ -61,20 +75,12 @@
   {
     "context": "Editor && vim_mode == normal && !VimWaiting && !VimCount",
     "bindings": {
+      "space o": "file_finder::Toggle",
+      "space b": "tab_switcher::Toggle",
       "space space": "pane::AlternateFile",
-      "space f l": "project_search::ToggleFocus",
-      "0": [
-        "vim::StartOfLine",
-        {
-          "displayLines": true
-        }
-      ],
-      "$": [
-        "vim::EndOfLine",
-        {
-          "displayLines": true
-        }
-      ]
+      "space z": "buffer_search::Deploy",
+      "0": ["vim::StartOfLine", { "displayLines": true }],
+      "$": ["vim::EndOfLine", { "displayLines": true }]
     }
   },
   {
@@ -91,10 +97,23 @@
     }
   },
   {
+    "context": "FileFinder",
+    "bindings": {
+      "ctrl-s": "pane::SplitRight",
+      "ctrl-shift-s": "pane::SplitDown"
+    }
+  },
+  {
+    "context": "TabSwitcher",
+    "bindings": {
+      "ctrl-d": "tab_switcher::CloseSelectedItem"
+    }
+  },
+  {
     "context": "Terminal",
     "bindings": {
-      "ctrl-\\": "workspace::ToggleBottomDock"
-      // "ctrl-u": "terminal::Clear"
+      "ctrl-\\": "workspace::ToggleBottomDock",
+      "ctrl-u": "terminal::Clear"
     }
   },
   {
