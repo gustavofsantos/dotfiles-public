@@ -294,3 +294,7 @@ miniconda3/
 .continue
 .psql_history-postgres .psql_history-zenware
 .psql_history-postgres
+.config/Cursor/
+.config/Windsurf/
+.config/LM Studio/
+.config/gopls/
