@@ -47,3 +47,10 @@ function drmid-fn {
 
 
 alias drmid=drmid-fn
+
+# bun completions
+[ -s "/home/gustavo/.bun/_bun" ] && source "/home/gustavo/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
