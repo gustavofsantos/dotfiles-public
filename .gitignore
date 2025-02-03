@@ -285,3 +285,12 @@ miniconda3/
 .dbclient
 .config/uv/
 .psql_history-zenware
+.bun
+.codeium
+.windsurf
+.cursor
+.lmstudio/
+.lmstudio-home-pointer
+.continue
+.psql_history-postgres .psql_history-zenware
+.psql_history-postgres
