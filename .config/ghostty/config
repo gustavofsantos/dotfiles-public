@@ -1,8 +1,8 @@
 font-family = BerkeleyMono Nerd Font
-font-feature = liga,calt
-font-size = 16
-adjust-cell-height = 3
-theme = GruvboxLight
+font-feature = calt
+font-size = 14
+adjust-cell-height = 4
+theme = Kanagawa Wave
 gtk-titlebar = false
 background-opacity = 0.985
 background-blur-radius = 20
