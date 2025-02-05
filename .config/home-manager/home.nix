@@ -92,9 +92,6 @@ in
     pkgs.difftastic
     pkgs.entr
     pkgs.sq
-    pkgsUnstable.television
-    pkgsUnstable.eget
-    pkgs.harlequin
 
     # databases
     pkgs.postgresql
