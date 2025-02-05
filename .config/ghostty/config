@@ -1,11 +1,10 @@
-font-family = BerkeleyMono Nerd Font
-font-feature = calt
-font-size = 14
+font-family = MonoLisa Nerd Font
+# font-feature = calt
+font-size = 13
 adjust-cell-height = 4
-theme = Kanagawa Wave
+theme = Builtin Solarized Dark
 gtk-titlebar = false
-background-opacity = 0.985
-background-blur-radius = 20
+background-opacity = 1
 window-padding-x = 8
 window-padding-y = 8
 custom-shader = false
