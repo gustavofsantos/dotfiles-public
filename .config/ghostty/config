@@ -1,6 +1,19 @@
-font-family = MonoLisa Nerd Font
-# font-feature = calt
-font-size = 13
+# Berkeley Mono
+font-family = BerkeleyMono Nerd Font
+font-feature = -calt, -liga, -dlig.
+#
+# Mono Lisa
+# font-family = MonoLisa Nerd Font
+
+# Operator Mono
+# font-family = OperatorMono Nerd Font
+# font-style = Book
+# font-style-bold = Bold
+# font-style-italic = Book Italic
+# font-style-bold-italic = Bold Italic
+# font-feature = -liga,-dlig,+calt
+
+font-size = 12
 adjust-cell-height = 4
 theme = Kanagawa Wave
 gtk-titlebar = false
@@ -15,3 +28,27 @@ keybind = super+v=paste_from_clipboard
 keybind = super+shift+c=copy_to_clipboard
 keybind = super+shift+v=paste_from_clipboard
 keybind = super+shift+comma=reload_config
+
+# keybind = ctrl+a>c=new_tab
+# keybind = ctrl+a>shift+l=next_tab
+# keybind = ctrl+a>shift+h=previous_tab
+# keybind = ctrl+a>comma=move_tab:-1
+# keybind = ctrl+a>period=move_tab:1
+# keybind = ctrl+a>1=goto_tab:1
+# keybind = ctrl+a>2=goto_tab:2
+# keybind = ctrl+a>3=goto_tab:3
+# keybind = ctrl+a>4=goto_tab:4
+# keybind = ctrl+a>5=goto_tab:5
+# keybind = ctrl+a>6=goto_tab:6
+# keybind = ctrl+a>7=goto_tab:7
+# keybind = ctrl+a>8=goto_tab:8
+# keybind = ctrl+a>9=goto_tab:9
+# keybind = ctrl+a>s=new_split:right
+# keybind = ctrl+a>ctrl+s=new_split:right
+# keybind = ctrl+a>shift+s=new_split:down
+# keybind = ctrl+a>j=goto_split:bottom
+# keybind = ctrl+a>k=goto_split:top
+# keybind = ctrl+a>h=goto_split:left
+# keybind = ctrl+a>l=goto_split:right
+# keybind = ctrl+a>z=toggle_split_zoom
+# keybind = ctrl+a>e=equalize_splits
