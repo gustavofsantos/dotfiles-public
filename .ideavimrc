@@ -2,11 +2,12 @@
 let mapleader=" "
 
 """ plugins ---------------------------------
-set easymotion
-set argtextobj
-set NERDTree
-set commentary
 set surround
+set easymotion
+set commentary
+set sneak
+set nerdtree
+set highlightedyank
 
 """ plugin settings -------------------------
 let g:argtextobj_pairs="[:],(:),<:>"
@@ -18,30 +19,54 @@ set ideastatusicon=gray
 set idearefactormode=keep
 
 """ common settings -------------------------
-set noerrorbells
-set tabstop=2 softtabstop=2
-set shiftwidth=2
-set expandtab
-set smartindent
+set scrolloff=10
+set clipboard+=unnamed
 set showmode
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
 set so=5
 set incsearch
 set nu
 set noswapfile
 set nobackup
-set cmdheight=2
 set hidden
 set encoding=utf-8
 set nohlsearch
 set relativenumber
 
 """ mappings --------------------------------
+" Common LSP mappings
+map gd <Action>(GotoDeclaration)
+map gi <Action>(GotoImplementation)
+map gR <Action>(RenameElement)
+map g. <Action>(ShowIntentionActions)
+map K <Action>(QuickDocumentation)
+
+map <leader>tn <Action>(Test
+
 " Editor mappings
+map <leader>o <Action>(GotoFile)
+map <leader>e <Action>(RecentFiles)
+map <leader>b <Action>(RecentFiles)
+map <leader>l <Action>(SearchEverywhere)
 map <leader>s <Plug>(easymotion-s)
-map <leader>e <Plug>(easymotion-f)
+map <leader>ws <Action>(SplitVertically)
+map <leader>wS <Action>(SplitHorizontally)
+
+map [[ <Action>(MethodUp)
+map ]] <Action>(MethodDown)
+
+map <C-h> <C-w>h
+map <C-l> <C-w>l
+map <C-k> <C-w>k
+map <C-j> <C-w>j
+
+map <C-\\> <Action>(ActivateTerminalToolWindow)
 
 " project mappings
-map <C-b> :NERDTree<CR>
+map <C-b> :NERDTreeToggle<CR>
 map <leader>ff <Action>(GotoFile)
 map <leader>pa <Action>(GotoAction)
 map <leader>py <Action>(GotoSymbol)
@@ -50,29 +75,9 @@ map <leader>fe <Action>(RecentFiles)
 map <leader>fee <Action>(RecentLocations)
 
 """ File mappings ---------------------------
-" -- Open move panel
-map <leader>fm <Action>(Move)
-
-" -- Code navigation mappings
-" Go to symbol implementation
-map <leader>gd <Action>(GotoImplementation)
-" Show intent box
-map <leader>ci <Action>(ShowIntentionActions)
 
 " -- Window and tab mappings
 " Close a window
 map <C-q> <Action>(CloseContent)
 
-" Git mappings
-map <leader>gs <Action>(CheckinProject)
-map <leader>gl <Action>(Vcs.History)
-map <leader>gfl <Action>(Vcs.ShowTabbedFileHistory)
-
-" Refactoring mappings
-map <leader>rn <Action>(RenameElement)
-map <leader>rf <Action>(RenameFile)
-" Open "Refactor This" popup
-map <leader>rt <Action>(Refactorings.QuickListPopupAction)
-
 map <leader>z <Action>(ToggleZenMode)
-map <C-n> <Action>(ActivateTerminalToolWindow)
