@@ -3,6 +3,9 @@ export HISTTIMEFORMAT="[%F %T] "
 export SAVEHIST=1000
 export HISTSIZE=999
 
+
+fpath=("$HOME/completions/" $fpath)
+
 if [[ $(uname -n) = "loggi" ]]; then
   export PATH="$HOME/.pyenv/bin:$PATH"
   eval "$(pyenv init -)"
@@ -25,6 +28,10 @@ function note () {
 function journal () {
   nvim $JOURNALS_HOME/$(date +%Y-%m-%d).md
 }
+function drmid-fn {
+  imgs=$(docker images -q -f dangling=true)
+  [ ! -z "$imgs" ] && docker rmi "$imgs" || echo "no dangling images."
+}
 
 eval "$(sheldon source)"
 eval "$(zoxide init zsh)"
@@ -35,22 +42,15 @@ setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_verify
 
-# # Initialize zsh completions (added by deno install script)
-# autoload -Uz compinit
-# compinit
-
-
-function drmid-fn {
-       imgs=$(docker images -q -f dangling=true)
-       [ ! -z "$imgs" ] && docker rmi "$imgs" || echo "no dangling images."
-}
-
-
 alias drmid=drmid-fn
 
-# bun completions
-[ -s "/home/gustavo/.bun/_bun" ] && source "/home/gustavo/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+[ -s "$HOME/.deno/env" ] && source "$HOME/.deno/env"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

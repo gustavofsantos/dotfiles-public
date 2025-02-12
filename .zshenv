@@ -1,6 +1,8 @@
 if [ -e "$HOME/.cargo/env" ]; then . "$HOME/.cargo/env";  fi
 if [ -e "$HOME/.deno/env" ]; then . "$HOME/.deno/env"; fi
-if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then . "$HOME/.nix-profile/etc/profile.d/nix.sh"; fi # added by Nix installer
+if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then . "$HOME/.nix-profile/etc/profile.d/nix.sh"; fi
+if [ -e "$HOME/.sdkman/bin/sdkman-init.sh" ]; then source "$HOME/.sdkman/bin/sdkman-init.sh"; fi
+if [ -e "$HOME/.local_envs" ]; then source "$HOME/.local_envs"; fi
 
 export EDITOR='nvim'
 
@@ -10,8 +12,8 @@ export PATH="$GOPATH/bin:$PATH"
 export GEM_HOME="$HOME/.gem"
 export ANDROID_HOME="$HOME/Android/Sdk"
 export PNPM_HOME="$HOME/.local/share/pnpm"
-export NOTES_HOME="$HOME/Documents/Obsidian/next/Notes"
-export JOURNALS_HOME="$HOME/Documents/Obsidian/next/Journal"
+export NOTES_HOME="$HOME/Documents/Obsidian/vault/"
+export JOURNALS_HOME="$HOME/Documents/Obsidian/vault/"
 export WORKLOG_PATH="$HOME/Documents/Obsidian/next/Notes/Loggi/worklog.md"
 
 export PATH="$PNPM_HOME:$PATH"

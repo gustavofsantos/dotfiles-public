@@ -14,9 +14,6 @@ shell = "zsh"
 
 [plugins]
 
-[plugins.zsh-completions]
-github = 'zsh-users/zsh-completions'
-
 [plugins.zsh-autosuggestions]
 github = 'zsh-users/zsh-autosuggestions'
 use = ['{{ name }}.zsh']
