@@ -298,3 +298,9 @@ miniconda3/
 .config/Windsurf/
 .config/LM Studio/
 .config/gopls/
+.config/google-cloud-tools-java
+.idea/
+.local_envs
+completions
+.pdfbox.cache
+.testcontainers.properties
