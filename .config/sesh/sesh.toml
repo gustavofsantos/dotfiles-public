@@ -11,23 +11,27 @@ name = "kitty config"
 path = "~/.config/kitty"
 
 [[session]]
+name = "ghostty config"
+path = "~/.config/ghostty"
+
+[[session]]
 name = "home"
 path = "~"
 
 [[session]]
 name = "notes"
-path = "~/Documents/Obsidian/next"
+path = "~/Documents/Obsidian/vault/"
 
 [[session]]
-name = "Beyond PY"
+name = "Loggi Beyond PY"
 path = "~/loggi/py/apps/beyond"
 
 [[session]]
-name = "Beyond UI"
+name = "Loggi Beyond UI"
 path = "~/loggi/ui/targets/beyond"
 
 [[session]]
-name = "app-web"
+name = "Loggi App"
 path = "~/loggi/front-clientes-app-web"
 
 [[session]]
@@ -39,13 +43,17 @@ name = "Loggi xproto"
 path = "~/loggi/xproto"
 
 [[session]]
-name = "Loggi Wallet"
+name = "Loggi wallet-api"
 path = "~/loggi/wallet-api"
 
 [[session]]
-name = "Beyond Payments"
+name = "Loggi beyond-payments"
 path = "~/loggi/beyond-payment"
 
 [[session]]
 name = "Loggi Web"
 path = "~/loggi/web"
+
+[[session]]
+name = "Loggi SPT"
+path = "/opt/loggi/sales-pricing-tool"
