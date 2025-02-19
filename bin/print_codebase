@@ -1,0 +1,91 @@
+#!/bin/bash
+# Check if an argument was provided
+if [ -z "$1" ]; then
+  echo "Usage: $0 <file-or-directory>"
+  exit 1
+fi
+
+TARGET="$1"
+
+# Ensure we're in a Git repository
+if ! git rev-parse --show-toplevel > /dev/null 2>&1; then
+  echo "Error: Not inside a Git repository."
+  exit 1
+fi
+
+# Get repository root for relative paths
+REPO_ROOT=$(git rev-parse --show-toplevel)
+
+# Check if the target exists
+if [ ! -e "$TARGET" ]; then
+  echo "Error: '$TARGET' does not exist."
+  exit 1
+fi
+
+# Build a list of files
+files=()
+if [ -f "$TARGET" ]; then
+  files+=("$TARGET")
+elif [ -d "$TARGET" ]; then
+  # Recursively find all files in the directory (excluding directories)
+  while IFS= read -r -d $'\0' file; do
+    files+=("$file")
+  done < <(find "$TARGET" -type f -print0)
+fi
+
+# Function to determine language based on file extension
+get_language() {
+  local file="$1"
+  local ext="${file##*.}"
+  case "$ext" in
+    js)
+      echo "js"
+      ;;
+    java)
+      echo "java"
+      ;;
+    kt)
+      echo "kt"
+      ;;
+    py)
+      echo "python"
+      ;;
+    rb)
+      echo "ruby"
+      ;;
+    sh)
+      echo "bash"
+      ;;
+    html)
+      echo "html"
+      ;;
+    css)
+      echo "css"
+      ;;
+    md)
+      echo "markdown"
+      ;;
+    *)
+      echo "text"
+      ;;
+  esac
+}
+
+# Process each file
+for file in "${files[@]}"; do
+  # Use git check-ignore to see if the file is ignored by .gitignore (from repo root)
+  # We use the relative path from the repo root to match patterns defined in .gitignore.
+  relpath=$(realpath --relative-to="$REPO_ROOT" "$file")
+  if git check-ignore -q "$relpath"; then
+    continue
+  fi
+
+  echo "File: $file"
+
+  lang=$(get_language "$file")
+  # Print the code block header with the file path attribute
+  echo "\`\`\`$lang path=$file"
+  cat "$file"
+  echo "\`\`\`"
+  echo ""  # Blank line for readability
+done
