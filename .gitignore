@@ -306,3 +306,4 @@ completions
 .testcontainers.properties
 .redis-insight/
 java_error_in_idea.hprof
+.config/systemd/user/tray.target
