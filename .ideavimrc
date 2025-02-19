@@ -2,11 +2,12 @@
 let mapleader=" "
 
 """ plugins ---------------------------------
+Plug 'justinmk/vim-sneak'
 set surround
 set easymotion
 set commentary
-set sneak
-set nerdtree
+set ideajoin
+set mini-ai
 set highlightedyank
 
 """ plugin settings -------------------------
@@ -19,22 +20,21 @@ set ideastatusicon=gray
 set idearefactormode=keep
 
 """ common settings -------------------------
-set scrolloff=10
-set clipboard+=unnamed
+set scrolloff=5
+set clipboard+=ideaput
 set showmode
 set ignorecase
 set smartcase
 set incsearch
 set hlsearch
-set so=5
 set incsearch
-set nu
+set nonumber
+set norelativenumber
 set noswapfile
 set nobackup
 set hidden
 set encoding=utf-8
 set nohlsearch
-set relativenumber
 
 """ mappings --------------------------------
 " Common LSP mappings
@@ -44,26 +44,33 @@ map gR <Action>(RenameElement)
 map g. <Action>(ShowIntentionActions)
 map K <Action>(QuickDocumentation)
 
-map <leader>tn <Action>(Test
 
 " Editor mappings
+map <leader><leader> <C-^>
+map <leader>p <Action>(GotoAction)
 map <leader>o <Action>(GotoFile)
 map <leader>e <Action>(RecentFiles)
 map <leader>b <Action>(RecentFiles)
-map <leader>l <Action>(SearchEverywhere)
-map <leader>s <Plug>(easymotion-s)
+map <leader>l <Action>(FindInPath)
 map <leader>ws <Action>(SplitVertically)
 map <leader>wS <Action>(SplitHorizontally)
+map <leader>rc <Action>(RunClass)
+map <leader>tl <Action>(Rerun)
+map <M-l> <Action>(copilot.applyInlays)
+map <C-\\> <Action>(ActivateTerminalToolWindow)
 
 map [[ <Action>(MethodUp)
 map ]] <Action>(MethodDown)
+map ]d <Action>(GotoNextError)
+map [d <Action>(GotoPreviousError)
 
-map <C-h> <C-w>h
-map <C-l> <C-w>l
-map <C-k> <C-w>k
-map <C-j> <C-w>j
+nmap <C-h> <C-w>h
+nmap <C-l> <C-w>l
+nmap <C-k> <C-w>k
+nmap <C-j> <C-w>j
 
-map <C-\\> <Action>(ActivateTerminalToolWindow)
+" Version control
+map <leader>ghr <Action>(Vcs.RollbackChangedLines)
 
 " project mappings
 map <C-b> :NERDTreeToggle<CR>
