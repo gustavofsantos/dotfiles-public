@@ -154,9 +154,19 @@
   directory = /opt/loggi
 [maintenance]
   repo = /opt/loggi/front-core-ds/main
+  repo = /opt/loggi/front-design-tokens/
+  repo = /opt/loggi/front-clientes-app-web/
   repo = /opt/loggi/ui
   repo = /opt/loggi/py
+  repo = /opt/loggi/beyond-payment/
+  repo = /opt/loggi/crm-integrator/
   repo = /opt/loggi/web
+  repo = /opt/loggi/jvm
+  repo = /opt/loggi/ops
+  repo = /opt/loggi/platform/
+  repo = /opt/loggi/sales-pricing-tool/
+  repo = /opt/loggi/wallet-api/
+  repo = /opt/loggi/xproto/
 [fetch]
   writeCommitGraph = true
 [gc]
