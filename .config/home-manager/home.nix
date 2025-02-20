@@ -7,6 +7,8 @@ let
 in
 
 {
+  nixpkgs.config.allowUnfreePredicate = (pkg: true);
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "gustavo-santos";
@@ -92,9 +94,12 @@ in
     pkgs.difftastic
     pkgs.entr
     pkgs.sq
+    pkgsUnstable.mongosh
 
     # databases
     pkgs.postgresql
+    pkgsUnstable.mongodb
+    pkgsUnstable.redis
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -125,6 +130,11 @@ in
   home.sessionVariables = {
     EDITOR = "nvim";
   };
+
+  # services.mongodb.enable = true;
+
+  # services.redis.servers."local".enable=true;
+  # services.redis.servers."local".port=6379;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
