@@ -95,11 +95,6 @@ in
     pkgs.entr
     pkgs.sq
     pkgsUnstable.mongosh
-
-    # databases
-    pkgs.postgresql
-    pkgsUnstable.mongodb
-    pkgsUnstable.redis
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
