@@ -1,0 +1,230 @@
+// Place your key bindings in this file to override the defaults
+// leader key: space
+[
+    // Disable some default keybindings
+    {
+        "command": "-windsurf.prioritized.chat.open",
+        "key": "ctrl+l",
+        "when": "!terminalFocus"
+    },
+    // Windsurf keybindings
+    {
+        "command": "windsurf.prioritized.chat.open",
+        "key": "alt-l"
+    },
+    // Navigation
+    {
+        "command": "workbench.action.navigateLeft",
+        "key": "ctrl-h"
+    },
+    {
+        "command": "workbench.action.navigateRight",
+        "key": "ctrl-l"
+    },
+    {
+        "command": "workbench.action.navigateUp",
+        "key": "ctrl-k"
+    },
+    {
+        "command": "workbench.action.navigateDown",
+        "key": "ctrl-j"
+    },
+    {
+        "command": "workbench.action.quickOpen",
+        "key": "space o",
+        "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+    },
+    {
+        "command": "workbench.action.quickOpen",
+        "key": "space e",
+        "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+    },
+    {
+        "command": "workbench.action.showAllEditors",
+        "key": "space b",
+        "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+    },
+    {
+        "command": "workbench.action.findInFiles",
+        "key": "space l",
+        "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+    },
+    {
+        "command": "workbench.action.closeActiveEditor",
+        "key": "space q",
+        "when": "(vim.mode == 'Normal' && editorTextFocus) || !inputFocus"
+    },
+    {
+        "key": "] d",
+        "command": "editor.action.marker.next",
+        "when": "vim.mode == 'Normal' && editorTextFocus"
+    },
+    {
+        "key": "[ d",
+        "command": "editor.action.marker.prev",
+        "when": "vim.mode == 'Normal' && editorTextFocus"
+    },
+    {
+        "key": "ctrl-y",
+        "command": "editor.action.inlineSuggest.commit",
+        "when": "vim.mode == 'Insert' && editorTextFocus && suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl-n",
+        "command": "workbench.action.navigateDown",
+        "when": "findWidgetVisible"
+    },
+    {
+        "key": "ctrl-p",
+        "command": "workbench.action.navigateUp",
+        "when": "findWidgetVisible"
+    },
+    {
+        "key": "-",
+        "args": {
+            "commands": [
+                "workbench.action.toggleSidebarVisibility",
+                "workbench.files.action.focusFilesExplorer"
+            ]
+        },
+        "command": "runCommands",
+        "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && !sideBarFocus"
+    },
+    {
+        "args": {
+            "commands": [
+                "workbench.action.toggleSidebarVisibility",
+                "workbench.action.focusActiveEditorGroup"
+            ]
+        },
+        "command": "runCommands",
+        "key": "-",
+        "when": "sideBarFocus && !inputFocus"
+    },
+    {
+        "command": "workbench.action.toggleSidebarVisibility",
+        "key": "-",
+        "when": "vim.mode == 'Normal' && editorTextFocus && foldersViewVisible"
+    },
+    {
+        "command": "workbench.action.splitEditor",
+        "key": "space w s",
+        "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+    },
+    {
+        "command": "workbench.action.splitEditorDown",
+        "key": "space w shift-s",
+        "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+    },
+    {
+        "command": "editor.action.moveLinesUpAction",
+        "key": "alt-k",
+        "when": "(vim.mode == 'Normal' || vim.mode == 'VisualLine') && editorTextFocus"
+    },
+    {
+        "command": "editor.action.moveLinesDownAction",
+        "key": "alt-j",
+        "when": "(vim.mode == 'Normal' || vim.mode == 'VisualLine') && editorTextFocus"
+    },
+    /// LSP
+    // K - Show hover doc
+    {
+        "command": "editor.action.showHover",
+        "key": "shift-k",
+        "when": "vim.mode == 'Normal' && editorTextFocus"
+    },
+    // g. - Code actions
+    {
+        "command": "editor.action.codeAction",
+        "key": "g .",
+        "when": "vim.mode == 'Normal' && editorTextFocus"
+    },
+    // gr - Rename symbol
+    {
+        "command": "editor.action.rename",
+        "key": "g r",
+        "when": "vim.mode == 'Normal' && editorTextFocus"
+    },
+    // Go to definition
+    {
+        "command": "workbench.action.gotoSymbol",
+        "key": "g d",
+        "when": "vim.mode == 'Normal' && editorTextFocus"
+    },
+    // gR - Find references
+    {
+        "command": "editor.action.goToReferences",
+        "key": "g shift-r",
+        "when": "vim.mode == 'Normal' && editorTextFocus"
+    },
+    // gi - Go to implementation
+    {
+        "command": "editor.action.goToImplementation",
+        "key": "g i",
+        "when": "vim.mode == 'Normal' && editorTextFocus"
+    },
+    /// File Explorer
+    {
+        "command": "renameFile",
+        "key": "r",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "command": "filesExplorer.copy",
+        "key": "c",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "command": "filesExplorer.paste",
+        "key": "p",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "command": "filesExplorer.cut",
+        "key": "x",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "command": "deleteFile",
+        "key": "d",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "command": "explorer.newFile",
+        "key": "shift-5",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "command": "explorer.openToSide",
+        "key": "s",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "args": {
+            "commands": [
+                "workbench.action.splitEditorDown",
+                "explorer.openAndPassFocus",
+                "workbench.action.closeOtherEditors"
+            ]
+        },
+        "command": "runCommands",
+        "key": "shift-s",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "command": "explorer.openAndPassFocus",
+        "key": "enter",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsFolder && !inputFocus"
+    },
+    {
+        "command": "list.toggleExpand",
+        "key": "enter",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && explorerResourceIsFolder && !inputFocus"
+    },
+    /// Terminal
+    {
+        "key": "ctrl+capslock ctrl+\\",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus || terminalIsOpen)"
+    },
+]

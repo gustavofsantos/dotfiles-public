@@ -1,0 +1,473 @@
+{
+    "windsurf.autocompleteSpeed": "default",
+    "windsurf.autoExecutionPolicy": "off",
+    "windsurf.chatFontSize": "default",
+    "windsurf.rememberLastModelSelection": true,
+    "windsurf.openRecentConversation": false,
+    "windsurf.explainAndFixInCurrentConversation": true,
+    "windsurf.autoOpenEditedFiles": false,
+    "windsurf.cascadeOpenOnReload": false,
+    "workbench.colorTheme": "Night Owl",
+    "workbench.editor.showTabs": "none",
+    "workbench.editor.tabSizing": "shrink",
+    "workbench.iconTheme": "chalice-icon-theme",
+    "workbench.startupEditor": "none",
+    "breadcrumbs.enabled": false,
+    "editor.minimap.enabled": false,
+    "editor.fontFamily": "'MonoLisa Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
+    "editor.fontSize": 16,
+    "editor.lineHeight": 28,
+    "editor.lineNumbers": "off",
+    "editor.guides.indentation": false,
+    "editor.cursorSurroundingLines": 6,
+    "editor.bracketPairColorization.enabled": false,
+    // git
+    "git.autofetch": false,
+    // terminal
+    "terminal.integrated.fontSize": 16,
+    // vscodevim
+    "vim.leader": "<space>",
+    "vim.surround": true,
+    "vim.easymotion": false,
+    "vim.sneak": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.highlightedyank.enable": true,
+    "vim.highlightedyank.duration": 300,
+    "vim.handleKeys": {
+        "<C-p>": true,
+    },
+    "vim.normalModeKeyBindingsNonRecursive": [
+        // my keymappings
+        // <leader><leader> -> switch between the current file and the last file
+        // <C-p> -> command palette
+        // - -> Toggle file navigation
+        // <leader>o -> Find file
+        // <leader>e -> Find in recent files
+        // <leader>b -> Find in open files
+        // <leader>l -> Fuzzy find in file contents
+        // <leader>z -> Fuzzy find in buffer
+        // ]d -> Move to next diagnostic
+        // [d -> Move to previous diagnostic
+        // K -> Show hover documentation
+        // gd -> Go to definition
+        // g. -> Code actions
+        // gr -> Rename symbol
+        // gR -> Show references
+        { "before": [ "<leader><leader>" ], "commands": [ "workbench.action.openRecent" ] },
+        { "before": ["<leader>o"], "commands": [ "workbench.action.openRecent" ] },
+        { "before": ["<leader>e"], "commands": [ "workbench.action.openRecent" ] },
+        {
+            "before": [
+                "<leader>ws"
+            ],
+            "commands": [
+                "workbench.action.splitEditor"
+            ]
+        },
+        {
+            "before": [
+                "<leader>wS"
+            ],
+            "commands": [
+                "workbench.action.splitEditorDown"
+            ]
+        },
+        {
+            "before": [
+                "<c-h>"
+            ],
+            "after": [
+                "<c-w>",
+                "h"
+            ]
+        },
+        {
+            "before": [
+                "<c-j>"
+            ],
+            "after": [
+                "<c-w>",
+                "j"
+            ]
+        },
+        {
+            "before": [
+                "<c-k>"
+            ],
+            "after": [
+                "<c-w>",
+                "k"
+            ]
+        },
+        {
+            "before": [
+                "<c-l>"
+            ],
+            "after": [
+                "<c-w>",
+                "l"
+            ]
+        },
+        {
+            "before": [
+                "<C-p>"
+            ],
+            "commands": [
+                "workbench.action.showCommands"
+            ]
+        },
+        {
+            "before": [
+                "<C-n>"
+            ],
+            "commands": [
+                ":nohl"
+            ]
+        },
+        {
+            "before": [
+                "K"
+            ],
+            "commands": [
+                "editor.action.showHover"
+            ],
+            "silent": true
+        },
+        {
+            "before": [
+                "gd"
+            ],
+            "commands": [
+                "editor.action.gotoDefinition"
+            ],
+            "silent": true
+        },
+        {
+            "before": [
+                "gr"
+            ],
+            "commands": [
+                "editor.action.rename",
+            ],
+            "silent": true
+        },
+        {
+            "before": [
+                "g."
+            ],
+            "commands": [
+                "editor.action.quickFix"
+            ],
+            "silent": true
+        },
+        {
+            "before": [
+                "]d"
+            ],
+            "commands": [
+                "editor.action.marker.next"
+            ],
+            "silent": true
+        },
+        {
+            "before": [
+                "[d"
+            ],
+            "commands": [
+                "editor.action.marker.prev"
+            ],
+            "silent": true
+        },
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        },
+        {
+            "before": [
+                "p",
+            ],
+            "after": [
+                "p",
+                "g",
+                "v",
+                "y"
+            ]
+        }
+    ],
+    // To improve performance
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
+    "git.openRepositoryInParentFolders": "never",
+    "[json]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "editor.quickSuggestions": {
+            "other": "on",
+            "comments": "off",
+            "strings": "off"
+        }
+    },
+    "workbench.colorCustomizations": {
+        "[Night Owl]": {
+            "activityBar.background": "#000C1D",
+            "activityBar.border": "#102a44",
+            "editorGroup.border": "#102a44",
+            "sideBar.background": "#001122",
+            "editorCursor.foreground": "#FAF39F",
+            "sideBar.border": "#102a44",
+            "sideBar.foreground": "#8BADC1"
+        },
+    },
+    "editor.tokenColorCustomizations": {
+        "[Night Owl]": {
+            "textMateRules": [
+                {
+                    "name": "Italic font style",
+                    "scope": [
+                        "storage.type.js",
+                        "storage.type.ts",
+                        "storage.type.tsx",
+                        "storage.type.class.js",
+                        "storage.type.class.ts",
+                        "storage.type.class.tsx",
+                        "storage.type.function.js",
+                        "storage.type.function.ts",
+                        "storage.type.function.tsx",
+                        "storage.type.type.ts",
+                        "storage.type.type.tsx",
+                        "keyword.control.conditional.js",
+                        "keyword.control.conditional.ts",
+                        "keyword.control.conditional.tsx",
+                        "support.type.property-name.json",
+                        "support.type.property-name.css",
+                        "variable.other.assignment.prisma",
+                        "storage.type.model.prisma",
+                        "storage.type.config.prisma",
+                        "entity.name.tag.yaml",
+                        "variable.other.env",
+                        "keyword.other.sql"
+                    ],
+                    "settings": {
+                        "fontStyle": "italic"
+                    }
+                },
+                {
+                    "name": "Normal font style",
+                    "scope": [
+                        "variable.other.constant.js",
+                        "variable.other.constant.ts",
+                        "variable.other.constant.tsx",
+                        "entity.name.function.js",
+                        "entity.name.function.ts",
+                        "entity.name.function.tsx"
+                    ],
+                    "settings": {
+                        "fontStyle": ""
+                    }
+                },
+                {
+                    "scope": [
+                        "punctuation.support.type.property-name.begin.json",
+                        "punctuation.support.type.property-name.end.json",
+                        "punctuation.accessor.js",
+                        "punctuation.accessor.ts",
+                        "punctuation.accessor.tsx",
+                        "punctuation.accessor.optional.js",
+                        "punctuation.accessor.optional.ts",
+                        "punctuation.accessor.optional.tsx",
+                        "punctuation.separator.key-value.mapping.yaml"
+                    ],
+                    "settings": {
+                        "foreground": "#7FDBCA80"
+                    }
+                },
+                {
+                    "scope": [
+                        "punctuation.separator.dictionary.key-value.json",
+                        "punctuation.definition.dictionary.begin.json",
+                        "punctuation.definition.dictionary.end.json",
+                        "punctuation.definition.array.begin.json",
+                        "punctuation.definition.array.end.json",
+                        "punctuation.separator.dictionary.pair.json",
+                        "punctuation.separator.array.json"
+                    ],
+                    "settings": {
+                        "foreground": "#CAECE680"
+                    }
+                },
+                {
+                    "scope": [
+                        "punctuation.definition.string.begin.json",
+                        "punctuation.definition.string.end.json",
+                        "punctuation.separator.key-value.js",
+                        "punctuation.separator.key-value.ts",
+                        "punctuation.separator.key-value.tsx"
+                    ],
+                    "settings": {
+                        "foreground": "#C789D680"
+                    }
+                },
+                {
+                    "name": "Not so important tokens",
+                    "scope": [
+                        "keyword.operator.assignment",
+                        "keyword.operator.ternary",
+                        "punctuation.separator.comma",
+                        "punctuation.definition.template-expression.begin.js",
+                        "punctuation.definition.template-expression.end.js",
+                        "punctuation.section.embedded.begin",
+                        "punctuation.section.embedded.end",
+                        "punctuation.definition.binding-pattern.array",
+                        "punctuation.definition.block",
+                        "punctuation.definition.binding-pattern.object",
+                        "punctuation.definition.parameters.begin",
+                        "punctuation.definition.parameters.end",
+                        "storage.type.function.arrow",
+                        "punctuation.separator.parameter"
+                    ],
+                    "settings": {
+                        "foreground": "#D7DBE0AB"
+                    }
+                },
+                {
+                    "name": "Not important tokens",
+                    "scope": [
+                        "punctuation.separator.comma",
+                        "punctuation.terminator.statement",
+                        "meta.brace.round",
+                        "punctuation.definition.tag",
+                        "punctuation.section.property-list.begin.bracket.curly.css",
+                        "punctuation.section.property-list.end.bracket.curly.css",
+                        "punctuation.terminator.rule.css",
+                        "punctuation.separator.list.comma.css",
+                        "punctuation.terminator.tailwind.tailwind"
+                    ],
+                    "settings": {
+                        "foreground": "#D7DBE050"
+                    }
+                },
+                {
+                    "scope": [
+                        "meta.attribute"
+                    ],
+                    "settings": {
+                        "foreground": "#D7DBE0"
+                    }
+                },
+                {
+                    "scope": [
+                        "meta.function.parameters",
+                        "support.class.component"
+                    ],
+                    "settings": {
+                        "foreground": "#CAECE6"
+                    }
+                },
+                {
+                    "scope": [
+                        "punctuation.definition.string.template.begin",
+                        "punctuation.definition.string.template.end",
+                        "punctuation.definition.string.begin",
+                        "punctuation.definition.string.end",
+                        "punctuation.definition.typeparameters.begin",
+                        "punctuation.definition.typeparameters.end",
+                        "string.quoted.double.start",
+                        "string.quoted.double.end",
+                        "punctuation.definition.string.begin",
+                        "punctuation.definition.string.end"
+                    ],
+                    "settings": {
+                        "foreground": "#ECC48D80"
+                    }
+                },
+                {
+                    "name": "Imports",
+                    "scope": [
+                        "source",
+                        "meta.import.js string",
+                        "meta.import.js variable",
+                        "meta.import.js meta.block variable.other",
+                        "meta.import.tsx",
+                        "meta.import.tsx string",
+                        "meta.import.tsx variable",
+                        "meta.import.tsx meta.block variable.other",
+                        "meta.import.ts",
+                        "meta.import.ts string",
+                        "meta.import.ts variable",
+                        "meta.import.ts meta.block variable.other",
+                        "meta.import.ts keyword.control.type.ts",
+                        "meta.import.tsx keyword.control.type.tsx",
+                        "meta.import.ts variable.other.readwrite.alias.ts",
+                        "meta.import.tsx variable.other.readwrite.alias.tsx",
+                        "meta.import.js string.quoted.single.js",
+                        "meta.import.ts string.quoted.single.ts",
+                        "meta.import.tsx string.quoted.single.tsx",
+                        "meta.import.js string.quoted.double.js",
+                        "meta.import.ts string.quoted.double.ts",
+                        "meta.import.tsx string.quoted.double.tsx",
+                        "meta.import.js variable.other.readwrite.alias.js",
+                        "meta.import.js constant.language.import-export-all.js",
+                        "meta.export.js variable.other.readwrite.alias.js",
+                        "meta.export.js string.quoted.single.js",
+                        "meta.export.js keyword.control.default.js",
+                        "constant.language.import-export-all.ts",
+                        "constant.language.import-export-all.tsx"
+                    ],
+                    "settings": {
+                        "foreground": "#8BADC1"
+                    }
+                },
+                {
+                    "scope": [
+                        "meta.import",
+                        "punctuation.terminator.statement",
+                        "keyword.control.import",
+                        "keyword.control.from",
+                        "meta.import.ts punctuation.definition.block.ts",
+                        "meta.import.tsx punctuation.definition.block.tsx",
+                        "meta.import.js punctuation.definition.string.begin.js",
+                        "meta.import.js punctuation.definition.string.end.js",
+                        "meta.import.tsx punctuation.definition.string.begin.tsx",
+                        "meta.import.tsx punctuation.definition.string.end.tsx",
+                        "meta.import.ts punctuation.definition.string.begin.ts",
+                        "meta.import.ts punctuation.definition.string.end.ts",
+                        "meta.import.js punctuation.definition.block.js",
+                        "meta.import.ts punctuation.definition.block.ts",
+                        "meta.import.tsx punctuation.definition.block.tsx",
+                        "meta.import.js punctuation.separator.comma.js",
+                        "meta.import.ts punctuation.separator.comma.ts",
+                        "meta.import.tsx punctuation.separator.comma.tsx",
+                        "meta.export.js keyword.control.export.js",
+                        "meta.export.js punctuation.definition.block.js",
+                        "meta.export.js punctuation.definition.string.begin.js",
+                        "meta.export.js punctuation.definition.string.end.js",
+                        "keyword.control.as",
+                        "comment.line.double-slash",
+                        "comment.block.documentation"
+                    ],
+                    "settings": {
+                        "foreground": "#8BADC180"
+                    }
+                }
+            ]
+        }
+    }
+}
