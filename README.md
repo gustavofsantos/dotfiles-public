@@ -1,5 +1,7 @@
 # Dotfiles
 
+> This repo is archived. I'm leaning down my configurations to use my ever first dotfiles repo: https://github.com/gustavofsantos/dot-files
+
 Hello, this is my home directory including my personal public configuration files.
 
 ## Note for myself
